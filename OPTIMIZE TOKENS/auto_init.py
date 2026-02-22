@@ -13,6 +13,7 @@ Usage:
 """
 
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -21,6 +22,8 @@ LOG_DIR = Path("D:\\MEMORY\\OPTIMIZE TOKENS\\logs")
 CLAUDE_MD = Path("D:\\MEMORY\\CLAUDE.md")
 COUNTER_FILE = LOG_DIR / "tool_count.json"
 SETTINGS_PATH = Path.home() / ".claude" / "settings.json"
+CONTEXT_PROFILES = Path.home() / ".claude" / "context-profiles.json"
+MEMORY_DIR = Path.home() / ".claude" / "projects" / "D--MEMORY" / "memory"
 
 
 def check_claude_md():
@@ -48,6 +51,26 @@ def check_plugins():
     print(f"  Simplifier: {'OFF' if 'superpowers:code-simplifier' in disabled else 'ON'}")
 
 
+def load_context_profile():
+    """Load context profile from env or config file"""
+    if not CONTEXT_PROFILES.exists():
+        return None
+    try:
+        profiles = json.loads(CONTEXT_PROFILES.read_text())
+        profile_name = os.getenv("CLAUDE_CONTEXT_PROFILE", "default")
+        profile = profiles.get(profile_name, profiles.get("default"))
+        if profile:
+            context_files = profile.get("context_files", [])
+            print(f"  [PROFILE] {profile_name}: {len(context_files)} context file(s)")
+            for cf in context_files:
+                file_path = MEMORY_DIR / cf.replace("memory/", "")
+                if file_path.exists():
+                    size = len(file_path.read_text())
+                    print(f"    ✓ {cf} ({size} bytes)")
+    except (json.JSONDecodeError, OSError):
+        pass
+
+
 def reset_counter():
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     data = {"calls": 0, "started": datetime.now().isoformat()}
@@ -68,6 +91,7 @@ def main():
     print("\n[PRE-SESSION CHECK]")
     check_claude_md()
     check_plugins()
+    load_context_profile()
     if not check_only:
         reset_counter()
         log_init()

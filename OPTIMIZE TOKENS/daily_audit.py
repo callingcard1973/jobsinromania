@@ -139,70 +139,75 @@ def audit_local():
     return results
 
 
-def audit_raspibig():
-    """Audit raspibig CLAUDE.md files via SSH."""
-    try:
-        cmd = [
-            "ssh", "tudor@192.168.100.21",
-            "find /opt -name CLAUDE.md -type f | xargs wc -lc 2>/dev/null | grep -v total"
-        ]
-        out = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-        if out.returncode != 0:
-            return [{"error": f"SSH failed: {out.stderr.strip()}"}]
+def parse_wc_output(output, machine_prefix=""):
+    """Parse wc -lc output into results dict."""
+    results = []
+    for line in output.strip().split("\n"):
+        if not line.strip():
+            continue
+        parts = line.split()
+        if len(parts) >= 3:
+            lines = int(parts[0])
+            chars = int(parts[1])
+            filepath = " ".join(parts[2:])
+            tokens = chars // CHARS_PER_TOKEN
+            bloated = lines > MAX_LINES or tokens > MAX_TOKENS
+            results.append({
+                "file": f"{machine_prefix}{filepath}" if machine_prefix else filepath,
+                "lines": lines,
+                "tokens": tokens,
+                "bloated": bloated
+            })
+    return results
 
-        results = []
-        for line in out.stdout.strip().split("\n"):
-            if not line.strip():
-                continue
-            parts = line.split()
-            if len(parts) >= 3:
-                lines = int(parts[0])
-                chars = int(parts[1])
-                filepath = " ".join(parts[2:])
-                tokens = chars // CHARS_PER_TOKEN
-                bloated = lines > MAX_LINES or tokens > MAX_TOKENS
-                results.append({
-                    "file": filepath,
-                    "lines": lines,
-                    "tokens": tokens,
-                    "bloated": bloated
-                })
-        return results
+
+def audit_remote_machines():
+    """Audit both raspibig and raspi in parallel batch operations."""
+    raspibig_results = []
+    raspi_results = []
+
+    # Batch: Consolidate both SSH calls into single parallel subprocess run
+    try:
+        # SSH to raspibig
+        raspibig_cmd = "find /opt -name CLAUDE.md -type f | xargs wc -lc 2>/dev/null | grep -v total"
+        raspibig_proc = subprocess.Popen(
+            ["ssh", "tudor@192.168.100.21", raspibig_cmd],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+        )
+
+        # SSH to raspi (in parallel)
+        raspi_cmd = "find ~/MEMORY -name CLAUDE.md -type f | xargs wc -lc 2>/dev/null | grep -v total"
+        raspi_proc = subprocess.Popen(
+            ["ssh", "tudor@192.168.100.20", raspi_cmd],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+        )
+
+        # Wait for both to complete
+        raspibig_out, raspibig_err = raspibig_proc.communicate(timeout=30)
+        raspi_out, raspi_err = raspi_proc.communicate(timeout=30)
+
+        if raspibig_proc.returncode == 0 and raspibig_out.strip():
+            raspibig_results = parse_wc_output(raspibig_out, "[raspibig] ")
+        if raspi_proc.returncode == 0 and raspi_out.strip():
+            raspi_results = parse_wc_output(raspi_out, "[raspi] ")
+
     except (subprocess.TimeoutExpired, OSError) as e:
-        return [{"error": str(e)}]
+        raspibig_results = [{"error": f"Raspibig SSH: {str(e)}"}]
+        raspi_results = [{"error": f"Raspi SSH: {str(e)}"}]
+
+    return raspibig_results, raspi_results
+
+
+def audit_raspibig():
+    """Audit raspibig CLAUDE.md files via SSH (legacy wrapper)."""
+    raspibig_results, _ = audit_remote_machines()
+    return raspibig_results
 
 
 def audit_raspi():
-    """Audit raspi CLAUDE.md files via SSH."""
-    try:
-        cmd = [
-            "ssh", "tudor@192.168.100.20",
-            "find ~/MEMORY -name CLAUDE.md -type f | xargs wc -lc 2>/dev/null | grep -v total"
-        ]
-        out = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-        if out.returncode != 0:
-            return [{"error": f"SSH failed: {out.stderr.strip()}"}]
-
-        results = []
-        for line in out.stdout.strip().split("\n"):
-            if not line.strip():
-                continue
-            parts = line.split()
-            if len(parts) >= 3:
-                lines = int(parts[0])
-                chars = int(parts[1])
-                filepath = " ".join(parts[2:])
-                tokens = chars // CHARS_PER_TOKEN
-                bloated = lines > MAX_LINES or tokens > MAX_TOKENS
-                results.append({
-                    "file": filepath,
-                    "lines": lines,
-                    "tokens": tokens,
-                    "bloated": bloated
-                })
-        return results
-    except (subprocess.TimeoutExpired, OSError) as e:
-        return [{"error": str(e)}]
+    """Audit raspi CLAUDE.md files via SSH (legacy wrapper)."""
+    _, raspi_results = audit_remote_machines()
+    return raspi_results
 
 
 def main():
@@ -218,32 +223,29 @@ def main():
     if trimmed_lines:
         print(f"  Auto-trimmed: {trimmed_lines} lines removed")
 
-    # Auto-trim raspibig too
+    # Batch: Auto-trim both remote machines in parallel
     try:
-        subprocess.run(
+        raspibig_trim = subprocess.Popen(
             ["ssh", "tudor@192.168.100.21",
-             "python3 /opt/ACTIVE/INFRA/SKILLS/claude_md_bulk_trim.py 2>/dev/null | tail -3"],
-            capture_output=True, text=True, timeout=60
+             "python3 /opt/ACTIVE/INFRA/SKILLS/claude_md_bulk_trim.py 2>/dev/null"],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
-    except Exception:
-        pass
-
-    # Auto-trim raspi too
-    try:
-        subprocess.run(
+        raspi_trim = subprocess.Popen(
             ["ssh", "tudor@192.168.100.20",
              "python3 ~/MEMORY/OPTIMIZE\\ TOKENS/daily_audit.py 2>/dev/null"],
-            capture_output=True, text=True, timeout=60
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
-    except Exception:
-        pass
+        raspibig_trim.communicate(timeout=60)
+        raspi_trim.communicate(timeout=60)
+    except Exception as e:
+        print(f"  [WARN] Remote trim failed: {e}")
 
-    raspibig = audit_raspibig()
+    # Batch: Audit both remote machines in parallel
+    raspibig, raspi = audit_remote_machines()
     raspibig_bloated = [r for r in raspibig if r.get("bloated")]
     raspibig_total = sum(r.get("lines", 0) for r in raspibig if "lines" in r)
     print(f"  Raspibig: {len(raspibig)} files, {len(raspibig_bloated)} bloated, {raspibig_total} total lines")
 
-    raspi = audit_raspi()
     raspi_bloated = [r for r in raspi if r.get("bloated")]
     raspi_total = sum(r.get("lines", 0) for r in raspi if "lines" in r)
     print(f"  Raspi: {len(raspi)} files, {len(raspi_bloated)} bloated, {raspi_total} total lines")

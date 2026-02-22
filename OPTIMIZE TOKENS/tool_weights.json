@@ -1,0 +1,43 @@
+{
+  "tool_weights": {
+    "Bash": 150,
+    "Bash(git:*)": 200,
+    "Bash(python:*)": 200,
+    "Bash(ssh:*)": 750,
+    "Bash(scp:*)": 800,
+    "Bash(plink:*)": 800,
+    "Bash(curl:*)": 300,
+    "Bash(other)": 150,
+    "Read": 1200,
+    "Read(small)": 800,
+    "Read(large)": 3000,
+    "Edit": 1000,
+    "Write": 1000,
+    "Glob": 400,
+    "Grep": 800,
+    "WebFetch": 3000,
+    "WebSearch": 4000,
+    "NotebookEdit": 1500,
+    "Task": 2000,
+    "TaskOutput": 500,
+    "TaskCreate": 300,
+    "TaskUpdate": 300,
+    "TaskList": 500
+  },
+  "context_costs": {
+    "MEMORY.md": 900,
+    "infrastructure.md": 600,
+    "email_campaigns.md": 700,
+    "CLAUDE.md_avg": 950,
+    "Playwright_plugin": 500,
+    "superpowers_plugin": 400
+  },
+  "baseline": {
+    "description": "Tokens always loaded at session start",
+    "MEMORY.md": 900,
+    "Playwright_plugin": 0,
+    "superpowers_plugin": 400,
+    "system_prompt": 1000,
+    "total": 2300
+  }
+}
