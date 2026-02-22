@@ -1,0 +1,137 @@
+{
+  "date": "2026-02-22T11:06:27.902465",
+  "local": {
+    "total": 277,
+    "bloated": 209,
+    "total_lines": 37316
+  },
+  "raspibig": {
+    "total": 122,
+    "bloated": 90,
+    "total_lines": 17142
+  },
+  "local_bloated": [
+    {
+      "file": "D:\\MEMORY\\A2_SITE_DEPLOYER\\CLAUDE.md",
+      "lines": 79,
+      "tokens": 1166,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\ANOFM\\CLAUDE.md",
+      "lines": 97,
+      "tokens": 1345,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\ARTICLES\\CLAUDE.md",
+      "lines": 104,
+      "tokens": 989,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\AUTOREPLY\\CLAUDE.md",
+      "lines": 110,
+      "tokens": 1672,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\BULGARIA\\CLAUDE.md",
+      "lines": 187,
+      "tokens": 2575,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\CONSTRUCTION PROJECTS\\CLAUDE.md",
+      "lines": 123,
+      "tokens": 1583,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\CV\\CLAUDE.md",
+      "lines": 106,
+      "tokens": 1159,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\DELIVERY\\CLAUDE.md",
+      "lines": 231,
+      "tokens": 2872,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\FACTORYJOBS_PDF\\CLAUDE.md",
+      "lines": 110,
+      "tokens": 1084,
+      "bloated": true
+    },
+    {
+      "file": "D:\\MEMORY\\FALIMENT\\CLAUDE.md",
+      "lines": 358,
+      "tokens": 2576,
+      "bloated": true
+    }
+  ],
+  "remote_bloated": [
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/ROMANIA/CLAUDE.md",
+      "lines": 285,
+      "tokens": 2266,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/ROMANIA/FUZZY/CLAUDE.md",
+      "lines": 227,
+      "tokens": 1553,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/SOCIAL/LINKEDIN/CLAUDE.md",
+      "lines": 115,
+      "tokens": 711,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/ROMANIA/CLAUDE.md",
+      "lines": 215,
+      "tokens": 1800,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/ROMANIA/DATA_GOV_RO/CLAUDE.md",
+      "lines": 109,
+      "tokens": 859,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/ROMANIA/RECOM/CLAUDE.md",
+      "lines": 143,
+      "tokens": 862,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/CLAUDE.md",
+      "lines": 166,
+      "tokens": 1317,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/EUROPE/RECYCLING/CLAUDE.md",
+      "lines": 59,
+      "tokens": 459,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/EUROPE/EURES/CLAUDE.md",
+      "lines": 69,
+      "tokens": 537,
+      "bloated": true
+    },
+    {
+      "file": "/opt/ACTIVE/SCRAPERS/EUROPE/EUROPE/EURES/ARCHIVES/eures_scrapers_20251117_170350/SWITZERLAND/CLAUDE.md",
+      "lines": 497,
+      "tokens": 3584,
+      "bloated": true
+    }
+  ]
+}
