@@ -9,6 +9,7 @@ Setup (run once):
 """
 
 import os
+import re
 import json
 import subprocess
 from datetime import datetime
@@ -21,9 +22,104 @@ MAX_LINES = 50
 MAX_TOKENS = 1500
 CHARS_PER_TOKEN = 4
 
+SKIP_SECTIONS = {
+    "session state", "incidents", "lessons learned", "faq",
+    "troubleshooting", "version", "implementation checklist",
+    "pending responses", "next steps", "changelog", "history", "notes",
+}
+BOILERPLATE = [
+    "this file provides guidance",
+    "this file gives claude code",
+    "claude code (claude.ai/code)",
+]
+
+
+def trim_file(path):
+    """Auto-trim a single CLAUDE.md to <=50 lines."""
+    try:
+        content = path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return 0
+
+    orig_lines = len(content.splitlines())
+    if orig_lines <= MAX_LINES:
+        return 0
+
+    lines = content.splitlines()
+    result = []
+    in_code_block = False
+    in_skip_section = False
+    prev_blank = False
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
+        if stripped.startswith("##"):
+            section_name = stripped.lstrip("#").strip().lower()
+            section_name = re.sub(r"\(.*?\)", "", section_name).strip()
+            if any(skip in section_name for skip in SKIP_SECTIONS):
+                in_skip_section = True
+                continue
+            else:
+                in_skip_section = False
+        if in_skip_section:
+            continue
+        if any(bp in stripped.lower() for bp in BOILERPLATE):
+            continue
+        if not stripped:
+            if prev_blank:
+                continue
+            prev_blank = True
+        else:
+            prev_blank = False
+        result.append(line)
+
+    if len(result) > MAX_LINES:
+        result = [l for l in result if not re.match(r"^\s*\|[-\s|:]+\|\s*$", l)]
+    if len(result) > MAX_LINES:
+        result = result[:MAX_LINES]
+    while result and not result[-1].strip():
+        result.pop()
+
+    path.write_text("\n".join(result) + "\n", encoding="utf-8")
+    return orig_lines - len(result)
+
+
+def audit_and_trim_local():
+    """Audit and auto-trim local CLAUDE.md files."""
+    results = []
+    trimmed_total = 0
+    root = Path("D:\\MEMORY")
+    for f in root.rglob("CLAUDE.md"):
+        try:
+            content = f.read_text(encoding="utf-8", errors="ignore")
+            lines = len(content.splitlines())
+            tokens = len(content) // CHARS_PER_TOKEN
+            bloated = lines > MAX_LINES or tokens > MAX_TOKENS
+            if bloated:
+                saved = trim_file(f)
+                trimmed_total += saved
+                content = f.read_text(encoding="utf-8", errors="ignore")
+                lines = len(content.splitlines())
+                tokens = len(content) // CHARS_PER_TOKEN
+                bloated = lines > MAX_LINES or tokens > MAX_TOKENS
+            results.append({
+                "file": str(f),
+                "lines": lines,
+                "tokens": tokens,
+                "bloated": bloated
+            })
+        except OSError:
+            pass
+    return results, trimmed_total
+
 
 def audit_local():
-    """Audit local CLAUDE.md files."""
+    """Audit local CLAUDE.md files (no trimming)."""
     results = []
     root = Path("D:\\MEMORY")
     for f in root.rglob("CLAUDE.md"):
@@ -80,12 +176,24 @@ def main():
     now = datetime.now()
     log_file = LOG_DIR / f"audit_{now.strftime('%Y%m%d')}.json"
 
-    print(f"[AUDIT] {now.strftime('%Y-%m-%d %H:%M')}")
+    print(f"[AUDIT+TRIM] {now.strftime('%Y-%m-%d %H:%M')}")
 
-    local = audit_local()
+    local, trimmed_lines = audit_and_trim_local()
     local_bloated = [r for r in local if r.get("bloated")]
     local_total = sum(r.get("lines", 0) for r in local)
     print(f"  Local: {len(local)} files, {len(local_bloated)} bloated, {local_total} total lines")
+    if trimmed_lines:
+        print(f"  Auto-trimmed: {trimmed_lines} lines removed")
+
+    # Auto-trim raspibig too
+    try:
+        subprocess.run(
+            ["ssh", "tudor@192.168.100.21",
+             "python3 /opt/ACTIVE/INFRA/SKILLS/claude_md_bulk_trim.py 2>/dev/null | tail -3"],
+            capture_output=True, text=True, timeout=60
+        )
+    except Exception:
+        pass
 
     remote = audit_raspibig()
     remote_bloated = [r for r in remote if r.get("bloated")]

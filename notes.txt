@@ -1,0 +1,2 @@
+
+TOKEN OPTIMIZATION RULE: All CLAUDE.md files must be <=50 lines and <=1500 tokens. When creating or editing CLAUDE.md files: no code blocks, no session state sections, no FAQ, no boilerplate like "This file provides guidance to Claude Code". Keep only: title, purpose (1 line), key tables, essential conventions. Auto-trimmer runs daily on laptop and weekly on raspibig.
