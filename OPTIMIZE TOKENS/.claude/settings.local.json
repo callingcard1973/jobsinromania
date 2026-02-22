@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(cd D:\\\\MEMORY\\\\OPTIMIZE TOKENS:*)",
-      "Bash(cat:*)"
-    ]
-  }
-}
