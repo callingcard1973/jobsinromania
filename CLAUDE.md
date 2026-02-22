@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## What This Is
 
 `D:\MEMORY` — operational hub for InterJob European Recruitment Network. 28 websites, email campaigns, scrapers, CV processing, multilingual content.
@@ -20,44 +18,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Directory Index
 
-Each has its own CLAUDE.md with commands, architecture, and data details.
-
 | Directory | What |
 |-----------|------|
 | `A2_SITE_DEPLOYER/` | Deploy sites to cPanel + SEO |
 | `ARTICLES/` | LLM articles → 11 languages → deploy |
 | `AUTOREPLY/` | Sort 30 email accounts + autoresponders |
-| `CONSTRUCTION PROJECTS/` | TED contractors + agency registries (400 workers project) |
+| `CONSTRUCTION PROJECTS/` | TED contractors + agency registries |
 | `CV/` | CV scanner, web UI, file watcher |
-| `DELIVERY/` | ANOFM employer extraction → enrichment → Brevo campaigns |
+| `DELIVERY/` | ANOFM employer extraction → enrichment → Brevo |
 | `FACTORYJOBS/` | Deep-enriched employer database (3,751 companies) |
 | `FACTORYJOBS_PDF/` | Recruitment PDFs (6 campaigns × 38 languages) |
-| `PLASARE 400 MUNCITORI/` | Master 400-worker placement: Bulgaria, Norway, agencies, EURES |
+| `PLASARE 400 MUNCITORI/` | 400-worker placement: Bulgaria, Norway, EURES |
 | `SITE_PAGES/` | Local mirror of all site HTML |
-| `llm_tasks/` | LLM task framework: spam, bounces, articles, monitoring |
-| `MR ANUP/SLOVENIA/` | Slovenia market entry: 63K AJPES companies, EURES contacts, 50-col unified schema |
-| `OPT/` | Partial copy of raspibig /opt/ (scrapers, credentials) |
-| `LLM DOWNLOAD/` | PicoClaw expansion (20 task types), model benchmarking, OPENDATA products |
-
-## Email (all 28 domains)
-
-Server: nl1-cl8-ats1.a2hosting.com — IMAP 993, SMTP 465/587. Username = full email. Every domain has office@, dmarc@, unsubscribe@.
-Passwords in `OPT/opt/EMAIL/.env` and `A2_SITE_DEPLOYER/env/*.env`.
+| `llm_tasks/` | LLM task framework: spam, bounces, articles |
+| `MR ANUP/SLOVENIA/` | Slovenia: 63K AJPES companies, EURES contacts |
+| `OPT/` | Partial copy of raspibig /opt/ (scrapers, creds) |
+| `LLM DOWNLOAD/` | PicoClaw, model benchmarking, OPENDATA |
 
 ## Conventions
 
-- SSH: always use `192.168.100.21`, not hostname `raspibig` (Tailscale routing issue)
+- SSH: always `192.168.100.21`, not hostname (Tailscale routing issue)
 - SCP to Windows: forward slashes `"D:/MEMORY/path/"`
-- SSH from Windows: single quotes around command (prevent `$variable` expansion)
-- Scrapers: max 2 concurrent on raspibig. Run Playwright locally.
+- SSH from Windows: single quotes around command
+- Scrapers: max 2 concurrent on raspibig. Playwright locally.
 - A2 docroot: `~/domainname/` (NOT `~/public_html/`)
 - RTL languages (ar, ur, ps): `dir="rtl"` in HTML
 - All apply links → `https://interjob.ro/apply.html`
-
-## API Keys & Credentials
-
-**OpenCage Geocoding:** `geocoding_skill.py` at `d:\MEMORY\geocoding_skill.py` (laptop), `/opt/SKILLS/geocoding_skill.py` (raspibig). Key in `OPENCAGE_API_KEY` env var. See skill file for usage.
+- Email: nl1-cl8-ats1.a2hosting.com — IMAP 993, SMTP 465/587. Passwords in `OPT/opt/EMAIL/.env`
 
 ## Sensitive Files
-
-`raspi.json`, `OPT/opt/EMAIL/.env`, `A2_SITE_DEPLOYER/env/*.env` — do not share.
+`raspi.json`, `OPT/opt/EMAIL/.env`, `A2_SITE_DEPLOYER/env/*.env` — do not share. OpenCage key in `OPENCAGE_API_KEY` env var.

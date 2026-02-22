@@ -1,113 +1,68 @@
 #!/usr/bin/env python3
 """
-Token Monitor Hook - Real-time context usage monitoring for Claude Code.
+Token Monitor — Estimate session token usage from log data.
 
-This script monitors context consumption and warns at usage thresholds:
-  - 50%: Warning - start planning to /clear or /compact
-  - 75%: Strong warning - consider /compact now
-  - 90%: Critical - immediately /clear or restart
-
-Installation:
-  Add to ~/.claude/settings.json in "hooks" section:
-
-  "hooks": {
-    "PostToolUse": {
-      "command": "python D:\\\\MEMORY\\\\OPTIMIZE TOKENS\\\\token_monitor.py"
-    }
-  }
-
-The hook receives context via stdin with tool execution metadata.
+Usage:
+  python token_monitor.py              # Show current session estimate
+  python token_monitor.py --reset      # Reset tool call counter
 """
 
 import json
 import sys
-import os
 from datetime import datetime
 from pathlib import Path
 
 LOG_DIR = Path("D:\\MEMORY\\OPTIMIZE TOKENS\\logs")
+COUNTER_FILE = LOG_DIR / "tool_count.json"
 
-def log_event(level, message, metadata=None):
-    """Log monitoring event."""
-    LOG_DIR.mkdir(parents=True, exist_ok=True)
+# Rough estimates per tool call (input + output tokens)
+TOKENS_PER_TOOL_CALL = 1200  # average across Read/Edit/Bash/Grep
+CONTEXT_WINDOW = 200000      # Claude's context window
 
-    log_file = LOG_DIR / f"monitor_{datetime.now().strftime('%Y%m%d')}.jsonl"
-    entry = {
-        "timestamp": datetime.now().isoformat(),
-        "level": level,
-        "message": message,
-        "metadata": metadata or {}
-    }
 
-    with open(log_file, 'a') as f:
-        f.write(json.dumps(entry) + '\n')
-
-    # Print to stderr for user visibility
-    if level in ["warning", "critical"]:
-        print(f"[{level.upper()}] {message}", file=sys.stderr)
-
-def estimate_context_usage():
-    """
-    Estimate current context usage from environment.
-
-    In a real implementation, this would read from Claude Code's
-    context management APIs or environment variables.
-
-    For now, we return a placeholder that can be updated when
-    Claude Code provides context metrics.
-    """
-    # Try to read from environment if Claude Code exposes it
-    usage_pct = os.environ.get('CLAUDE_CONTEXT_USAGE_PCT')
-    if usage_pct:
+def load_counter():
+    if COUNTER_FILE.exists():
         try:
-            return float(usage_pct)
-        except ValueError:
+            with open(COUNTER_FILE, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, OSError):
             pass
+    return {"calls": 0, "started": datetime.now().isoformat()}
 
-    # Fallback: use token count estimation from stdin if available
-    try:
-        hook_input = sys.stdin.read()
-        if hook_input:
-            data = json.loads(hook_input)
-            # If input contains token/context metrics, extract them
-            if 'context_usage_percent' in data:
-                return float(data['context_usage_percent'])
-    except:
-        pass
 
-    return None
+def save_counter(data):
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    with open(COUNTER_FILE, 'w') as f:
+        json.dump(data, f)
 
-def check_thresholds(usage_pct):
-    """Check context usage against thresholds and warn."""
-    if usage_pct is None:
-        return
-
-    level = None
-    message = None
-
-    if usage_pct >= 90:
-        level = "critical"
-        message = f"Context at {usage_pct}% - IMMEDIATELY run /clear or restart session"
-    elif usage_pct >= 75:
-        level = "warning"
-        message = f"Context at {usage_pct}% - Consider running /compact now"
-    elif usage_pct >= 50:
-        level = "info"
-        message = f"Context at {usage_pct}% - Plan to /clear or /compact soon"
-
-    if level:
-        log_event(level, message, {"usage_percent": usage_pct})
 
 def main():
-    """Monitor and warn about context usage."""
-    usage_pct = estimate_context_usage()
+    if "--reset" in sys.argv:
+        save_counter({"calls": 0, "started": datetime.now().isoformat()})
+        print("[RESET] Tool call counter zeroed")
+        return
 
-    if usage_pct:
-        check_thresholds(usage_pct)
+    data = load_counter()
+    calls = data["calls"]
+    started = data.get("started", "unknown")
+    estimated_tokens = calls * TOKENS_PER_TOOL_CALL
+    fill_pct = min(100, round(100 * estimated_tokens / CONTEXT_WINDOW, 1))
+
+    print(f"\n[SESSION ESTIMATE]")
+    print(f"  Tool calls:      {calls}")
+    print(f"  Est. tokens:     ~{estimated_tokens:,}")
+    print(f"  Context fill:    ~{fill_pct}%")
+    print(f"  Started:         {started}")
+
+    if fill_pct >= 90:
+        print(f"\n  [CRITICAL] Run /clear or restart NOW")
+    elif fill_pct >= 75:
+        print(f"\n  [WARNING] Run /compact soon")
+    elif fill_pct >= 50:
+        print(f"\n  [INFO] Consider /compact")
     else:
-        # Log that we ran but couldn't determine usage
-        # (not an error - Claude Code may not expose metrics yet)
-        log_event("debug", "Hook executed, context metrics unavailable")
+        print(f"\n  [OK] Context usage normal")
+
 
 if __name__ == '__main__':
     main()
