@@ -1,0 +1,51 @@
+chain,region,category,email,priority,campaign
+Kaufland,Nacional,Produs Montan - Brânza și Produse Lactate,procurement@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Nacional,Produs Montan - Brânza și Produse Lactate,categorie@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Bucuresti,Produs Montan - Brânza și Produse Lactate,procurement@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Bucuresti,Produs Montan - Brânza și Produse Lactate,categorie@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Cluj,Produs Montan - Brânza și Produse Lactate,procurement@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Cluj,Produs Montan - Brânza și Produse Lactate,categorie@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Timisoara,Produs Montan - Brânza și Produse Lactate,procurement@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Timisoara,Produs Montan - Brânza și Produse Lactate,categorie@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Constanta,Produs Montan - Brânza și Produse Lactate,procurement@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Kaufland,Constanta,Produs Montan - Brânza și Produse Lactate,categorie@kaufland.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Nacional,Romaneste - Produse Montane,fornitori@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Nacional,Romaneste - Produse Montane,supply@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Bucuresti,Romaneste - Produse Montane,fornitori@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Bucuresti,Romaneste - Produse Montane,supply@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Nord,Romaneste - Produse Montane,fornitori@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Nord,Romaneste - Produse Montane,supply@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Centru,Romaneste - Produse Montane,fornitori@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Centru,Romaneste - Produse Montane,supply@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Est,Romaneste - Produse Montane,fornitori@lidl.ro,HIGH,Hypermarket_Q1_2026
+Lidl,Est,Romaneste - Produse Montane,supply@lidl.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Bucuresti,Sourcing Local - Produs Traditional,sourcing@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Bucuresti,Sourcing Local - Produs Traditional,local-suppliers@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Cluj,Sourcing Local - Produs Traditional,sourcing@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Cluj,Sourcing Local - Produs Traditional,local-suppliers@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Constanta,Sourcing Local - Produs Traditional,sourcing@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Constanta,Sourcing Local - Produs Traditional,local-suppliers@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Timisoara,Sourcing Local - Produs Traditional,sourcing@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Timisoara,Sourcing Local - Produs Traditional,local-suppliers@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Iasi,Sourcing Local - Produs Traditional,sourcing@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Carrefour,Iasi,Sourcing Local - Produs Traditional,local-suppliers@carrefour.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Bucuresti,Local Producers - Premium,suppliers@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Bucuresti,Local Producers - Premium,procurement@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Nord,Local Producers - Premium,suppliers@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Nord,Local Producers - Premium,procurement@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Sud,Local Producers - Premium,suppliers@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Sud,Local Producers - Premium,procurement@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Est,Local Producers - Premium,suppliers@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Est,Local Producers - Premium,procurement@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Vest,Local Producers - Premium,suppliers@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Mega Image,Vest,Local Producers - Premium,procurement@megaimage.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Bucuresti,Local Sourcing,suppliers@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Bucuresti,Local Sourcing,sourcing@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Cluj,Local Sourcing,suppliers@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Cluj,Local Sourcing,sourcing@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Constanta,Local Sourcing,suppliers@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Constanta,Local Sourcing,sourcing@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Timisoara,Local Sourcing,suppliers@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Timisoara,Local Sourcing,sourcing@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Iasi,Local Sourcing,suppliers@auchan.ro,HIGH,Hypermarket_Q1_2026
+Auchan,Iasi,Local Sourcing,sourcing@auchan.ro,HIGH,Hypermarket_Q1_2026
