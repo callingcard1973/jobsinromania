@@ -37,24 +37,34 @@ from config import Config
 @pytest.fixture
 def temp_database():
     """Create a temporary database for testing."""
-    with tempfile.TemporaryDirectory() as temp_dir:
-        db_path = os.path.join(temp_dir, "test.db")
+    # Use a regular temporary file instead of TemporaryDirectory
+    # to avoid Windows file locking issues
+    import tempfile
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".db")
+    db_path = temp_file.name
+    temp_file.close()
 
-        # Create test configuration
-        test_config = Config()
-        test_config.database.sqlite_path = db_path
+    # Create test configuration
+    test_config = Config()
+    test_config.database.sqlite_path = db_path
 
-        # Patch the global config
-        import config
-        original_config = config.config
-        config.config = test_config
+    # Patch the global config
+    import config
+    original_config = config.config
+    config.config = test_config
 
+    try:
+        db = Database()
+        yield db
+    finally:
+        # Properly close all connections
+        db.close_connections()
+        config.config = original_config
+        # Clean up the temp file
         try:
-            db = Database()
-            yield db
-        finally:
-            db.close_connections()
-            config.config = original_config
+            os.unlink(db_path)
+        except (OSError, PermissionError):
+            pass  # Ignore cleanup errors on Windows
 
 
 class TestDatabaseConnection:
@@ -125,7 +135,9 @@ class TestDatabaseConnection:
         db = temp_database
         db.initialize_database()
 
-        with db.get_session() as session:
+        # Use a separate session for this test to avoid rollback issues
+        session = db._sqlite_session_factory()
+        try:
             # Try to create a match with non-existent worker
             match = WorkerEmployerMatch(
                 worker_id=999,  # Non-existent
@@ -136,6 +148,9 @@ class TestDatabaseConnection:
             # This should fail due to foreign key constraints
             with pytest.raises(Exception):  # SQLite will raise IntegrityError
                 session.commit()
+        finally:
+            session.rollback()
+            session.close()
 
 
 class TestEmployerModel:
@@ -147,7 +162,13 @@ class TestEmployerModel:
         db = temp_database
         db.initialize_database()
         with db.get_session() as session:
-            yield session
+            try:
+                yield session
+            except:
+                session.rollback()
+                raise
+            finally:
+                session.rollback()  # Always rollback test transactions
 
     def test_employer_creation(self, db_session):
         """Test creating an employer record."""
@@ -202,17 +223,27 @@ class TestEmployerModel:
         db_session.add(employer1)
         db_session.commit()
 
-        # Try to create another with same email
-        employer2 = Employer(
-            name="Company B",
-            country="FR",
-            sector="Manufacturing",
-            contact_email="contact@company.com"  # Same email
-        )
-        db_session.add(employer2)
+        # Use a separate session for the integrity constraint test
+        from src.database import get_database
+        db = get_database()
+        # Ensure the session factory exists
+        _ = db.sqlite_engine  # This triggers creation of the session factory
+        test_session = db._sqlite_session_factory()
+        try:
+            # Try to create another with same email
+            employer2 = Employer(
+                name="Company B",
+                country="FR",
+                sector="Manufacturing",
+                contact_email="contact@company.com"  # Same email
+            )
+            test_session.add(employer2)
 
-        with pytest.raises(Exception):  # Should raise IntegrityError
-            db_session.commit()
+            with pytest.raises(Exception):  # Should raise IntegrityError
+                test_session.commit()
+        finally:
+            test_session.rollback()
+            test_session.close()
 
     def test_employer_search(self, db_session):
         """Test employer search functionality."""
@@ -259,7 +290,13 @@ class TestWorkerModel:
         db = temp_database
         db.initialize_database()
         with db.get_session() as session:
-            yield session
+            try:
+                yield session
+            except:
+                session.rollback()
+                raise
+            finally:
+                session.rollback()  # Always rollback test transactions
 
     def test_worker_creation_with_gdpr(self, db_session):
         """Test creating a worker with GDPR compliance."""
@@ -346,19 +383,30 @@ class TestANOFMEventModel:
         db = temp_database
         db.initialize_database()
         with db.get_session() as session:
-            yield session
+            try:
+                yield session
+            except:
+                session.rollback()
+                raise
+            finally:
+                session.rollback()  # Always rollback test transactions
 
     def test_event_creation(self, db_session):
         """Test creating an ANOFM event."""
+        from datetime import date, timedelta
+        # Use a future date for testing
+        future_date = date.today() + timedelta(days=30)
+        deadline_date = date.today() + timedelta(days=15)
+
         event = ANOFMEvent(
             name="Bursa Locurilor de Munca Hunedoara",
-            date=date(2025, 6, 15),
+            date=future_date,
             location="Casa de Cultura, Deva",
             region="Hunedoara",
             organizer_contact="AJOFM Hunedoara",
             organizer_email="contact@ajofm-hunedoara.ro",
             participation_fee=Decimal("200.00"),
-            registration_deadline=date(2025, 6, 1)
+            registration_deadline=deadline_date
         )
 
         db_session.add(event)
@@ -390,7 +438,7 @@ class TestANOFMEventModel:
         # Valid target region
         event = ANOFMEvent(
             name="Test Event",
-            date=date(2025, 6, 15),
+            date=date.today() + timedelta(days=60),
             location="Test Location",
             region="Hunedoara"  # Valid target region
         )
@@ -433,7 +481,7 @@ class TestWorkerEmployerMatch:
             # Create test event
             event = ANOFMEvent(
                 name="Test Event",
-                date=date(2025, 6, 15),
+                date=date.today() + timedelta(days=60),
                 location="Test Location",
                 region="Hunedoara"
             )
@@ -590,7 +638,7 @@ class TestLegalComplianceModel:
         with db.get_session() as session:
             event = ANOFMEvent(
                 name="Test Event",
-                date=date(2025, 6, 15),
+                date=date.today() + timedelta(days=60),
                 location="Test Location",
                 region="Hunedoara"
             )
@@ -609,7 +657,7 @@ class TestLegalComplianceModel:
                 compliance_type=ComplianceType.ANOFM_REGISTRATION,
                 requirement="Register participation with ANOFM",
                 status=ComplianceStatus.PENDING,
-                expiration_date=date(2025, 6, 10)
+                expiration_date=date.today() + timedelta(days=50)
             )
 
             session.add(compliance)
@@ -649,7 +697,7 @@ class TestFinancialTrackingModel:
         with db.get_session() as session:
             event = ANOFMEvent(
                 name="Test Event",
-                date=date(2025, 6, 15),
+                date=date.today() + timedelta(days=60),
                 location="Test Location",
                 region="Hunedoara"
             )
@@ -747,7 +795,7 @@ class TestDatabaseIntegration:
             # Create sample event
             event = ANOFMEvent(
                 name="Bursa Locurilor de Munca Hunedoara",
-                date=date(2025, 6, 15),
+                date=date.today() + timedelta(days=60),
                 location="Casa de Cultura, Deva",
                 region="Hunedoara",
                 participation_fee=Decimal("200.00")

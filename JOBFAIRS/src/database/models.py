@@ -196,6 +196,13 @@ class Employer(Base, BaseModel):
             raise ValueError("Invalid email format")
         return email.lower()
 
+    def __init__(self, **kwargs):
+        """Initialize employer with proper data retention."""
+        super().__init__(**kwargs)
+        if 'data_retention_until' not in kwargs or kwargs['data_retention_until'] is None:
+            from datetime import date, timedelta
+            self.data_retention_until = date.today() + timedelta(days=config.gdpr.employer_data_retention_days)
+
     @classmethod
     def get_by_id(cls, session, employer_id):
         """Get employer by ID."""
