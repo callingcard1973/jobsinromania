@@ -196,6 +196,54 @@ class Employer(Base, BaseModel):
             raise ValueError("Invalid email format")
         return email.lower()
 
+    @classmethod
+    def get_by_id(cls, session, employer_id):
+        """Get employer by ID."""
+        return session.query(cls).filter(cls.id == employer_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all employers with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new employer."""
+        employer = cls(**kwargs)
+        session.add(employer)
+        session.flush()  # Get ID without committing
+        return employer
+
+    @classmethod
+    def update(cls, session, employer_id, **kwargs):
+        """Update existing employer."""
+        employer = cls.get_by_id(session, employer_id)
+        if employer:
+            for key, value in kwargs.items():
+                if hasattr(employer, key):
+                    setattr(employer, key, value)
+            session.flush()
+        return employer
+
+    @classmethod
+    def delete(cls, session, employer_id):
+        """Delete employer."""
+        employer = cls.get_by_id(session, employer_id)
+        if employer:
+            session.delete(employer)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find employers by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
+
     def __repr__(self):
         return f"<Employer(id={self.id}, name='{self.name}', country='{self.country}')>"
 
@@ -257,6 +305,54 @@ class ANOFMEvent(Base, BaseModel):
         if not self.registration_deadline:
             return self.is_upcoming()
         return date.today() <= self.registration_deadline
+
+    @classmethod
+    def get_by_id(cls, session, event_id):
+        """Get event by ID."""
+        return session.query(cls).filter(cls.id == event_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all events with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new event."""
+        event = cls(**kwargs)
+        session.add(event)
+        session.flush()  # Get ID without committing
+        return event
+
+    @classmethod
+    def update(cls, session, event_id, **kwargs):
+        """Update existing event."""
+        event = cls.get_by_id(session, event_id)
+        if event:
+            for key, value in kwargs.items():
+                if hasattr(event, key):
+                    setattr(event, key, value)
+            session.flush()
+        return event
+
+    @classmethod
+    def delete(cls, session, event_id):
+        """Delete event."""
+        event = cls.get_by_id(session, event_id)
+        if event:
+            session.delete(event)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find events by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
 
     def __repr__(self):
         return f"<ANOFMEvent(id={self.id}, name='{self.name}', date={self.date}, region='{self.region}')>"
@@ -345,6 +441,54 @@ class Worker(Base, BaseModel):
             return 0
         return (self.data_retention_until - date.today()).days
 
+    @classmethod
+    def get_by_id(cls, session, worker_id):
+        """Get worker by ID."""
+        return session.query(cls).filter(cls.id == worker_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all workers with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new worker."""
+        worker = cls(**kwargs)
+        session.add(worker)
+        session.flush()  # Get ID without committing
+        return worker
+
+    @classmethod
+    def update(cls, session, worker_id, **kwargs):
+        """Update existing worker."""
+        worker = cls.get_by_id(session, worker_id)
+        if worker:
+            for key, value in kwargs.items():
+                if hasattr(worker, key):
+                    setattr(worker, key, value)
+            session.flush()
+        return worker
+
+    @classmethod
+    def delete(cls, session, worker_id):
+        """Delete worker."""
+        worker = cls.get_by_id(session, worker_id)
+        if worker:
+            session.delete(worker)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find workers by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
+
     def __repr__(self):
         return f"<Worker(id={self.id}, name='{self.first_name} {self.last_name}', region='{self.region}')>"
 
@@ -423,6 +567,54 @@ class WorkerEmployerMatch(Base, BaseModel):
             return True
         return False
 
+    @classmethod
+    def get_by_id(cls, session, match_id):
+        """Get match by ID."""
+        return session.query(cls).filter(cls.id == match_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all matches with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new match."""
+        match = cls(**kwargs)
+        session.add(match)
+        session.flush()  # Get ID without committing
+        return match
+
+    @classmethod
+    def update(cls, session, match_id, **kwargs):
+        """Update existing match."""
+        match = cls.get_by_id(session, match_id)
+        if match:
+            for key, value in kwargs.items():
+                if hasattr(match, key):
+                    setattr(match, key, value)
+            session.flush()
+        return match
+
+    @classmethod
+    def delete(cls, session, match_id):
+        """Delete match."""
+        match = cls.get_by_id(session, match_id)
+        if match:
+            session.delete(match)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find matches by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
+
     def __repr__(self):
         return f"<WorkerEmployerMatch(id={self.id}, worker_id={self.worker_id}, employer_id={self.employer_id}, stage='{self.match_stage.value}')>"
 
@@ -471,6 +663,54 @@ class LegalCompliance(Base):
         if not self.expiration_date:
             return None
         return (self.expiration_date - date.today()).days
+
+    @classmethod
+    def get_by_id(cls, session, compliance_id):
+        """Get compliance record by ID."""
+        return session.query(cls).filter(cls.id == compliance_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all compliance records with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new compliance record."""
+        compliance = cls(**kwargs)
+        session.add(compliance)
+        session.flush()  # Get ID without committing
+        return compliance
+
+    @classmethod
+    def update(cls, session, compliance_id, **kwargs):
+        """Update existing compliance record."""
+        compliance = cls.get_by_id(session, compliance_id)
+        if compliance:
+            for key, value in kwargs.items():
+                if hasattr(compliance, key):
+                    setattr(compliance, key, value)
+            session.flush()
+        return compliance
+
+    @classmethod
+    def delete(cls, session, compliance_id):
+        """Delete compliance record."""
+        compliance = cls.get_by_id(session, compliance_id)
+        if compliance:
+            session.delete(compliance)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find compliance records by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
 
     def __repr__(self):
         return f"<LegalCompliance(id={self.id}, type='{self.compliance_type.value}', status='{self.status.value}')>"
@@ -540,6 +780,54 @@ class Communication(Base):
         if error_reason:
             self.notes = f"{self.notes}\nFailed: {error_reason}" if self.notes else f"Failed: {error_reason}"
 
+    @classmethod
+    def get_by_id(cls, session, communication_id):
+        """Get communication by ID."""
+        return session.query(cls).filter(cls.id == communication_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all communications with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new communication."""
+        communication = cls(**kwargs)
+        session.add(communication)
+        session.flush()  # Get ID without committing
+        return communication
+
+    @classmethod
+    def update(cls, session, communication_id, **kwargs):
+        """Update existing communication."""
+        communication = cls.get_by_id(session, communication_id)
+        if communication:
+            for key, value in kwargs.items():
+                if hasattr(communication, key):
+                    setattr(communication, key, value)
+            session.flush()
+        return communication
+
+    @classmethod
+    def delete(cls, session, communication_id):
+        """Delete communication."""
+        communication = cls.get_by_id(session, communication_id)
+        if communication:
+            session.delete(communication)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find communications by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
+
     def __repr__(self):
         return f"<Communication(id={self.id}, type='{self.message_type.value}', recipient='{self.recipient_type}:{self.recipient_id}')>"
 
@@ -597,6 +885,54 @@ class FinancialTracking(Base):
 
         overdue_date = self.invoice_date + timedelta(days=days)
         return date.today() > overdue_date
+
+    @classmethod
+    def get_by_id(cls, session, tracking_id):
+        """Get financial tracking record by ID."""
+        return session.query(cls).filter(cls.id == tracking_id).first()
+
+    @classmethod
+    def get_all(cls, session, limit=100, offset=0):
+        """Get all financial tracking records with pagination."""
+        return session.query(cls).limit(limit).offset(offset).all()
+
+    @classmethod
+    def create(cls, session, **kwargs):
+        """Create new financial tracking record."""
+        tracking = cls(**kwargs)
+        session.add(tracking)
+        session.flush()  # Get ID without committing
+        return tracking
+
+    @classmethod
+    def update(cls, session, tracking_id, **kwargs):
+        """Update existing financial tracking record."""
+        tracking = cls.get_by_id(session, tracking_id)
+        if tracking:
+            for key, value in kwargs.items():
+                if hasattr(tracking, key):
+                    setattr(tracking, key, value)
+            session.flush()
+        return tracking
+
+    @classmethod
+    def delete(cls, session, tracking_id):
+        """Delete financial tracking record."""
+        tracking = cls.get_by_id(session, tracking_id)
+        if tracking:
+            session.delete(tracking)
+            session.flush()
+            return True
+        return False
+
+    @classmethod
+    def find_by(cls, session, **filters):
+        """Find financial tracking records by criteria."""
+        query = session.query(cls)
+        for key, value in filters.items():
+            if hasattr(cls, key):
+                query = query.filter(getattr(cls, key) == value)
+        return query.all()
 
     def __repr__(self):
         return f"<FinancialTracking(id={self.id}, type='{self.transaction_type.value}', amount={self.amount} {self.currency})>"
