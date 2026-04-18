@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peste si Pastrav - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Peste si Pastrav">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:12px 0}
+.product-item{text-align:center;padding:8px;background:#f9f9f9;border-radius:6px;transition:all 0.2s}
+.product-item:hover{background:#f0f0f0;transform:scale(1.02)}
+.product-img{width:80px;height:80px;object-fit:cover;border-radius:4px;margin-bottom:4px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.product-name{font-size:.75em;color:#555;word-wrap:break-word;line-height:1.2}
+.more-products{display:flex;align-items:center;justify-content:center;height:80px;color:#999;font-size:.85em;font-weight:600}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eee;color:#666;font-size:.85em}
+.product-count{font-weight:600;color:#2d5016}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}.products-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+@media(max-width:400px){.product-img{width:60px;height:60px}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="dairy.html">🧀 Lactate si Oua</a>
+<a href="honey.html">🍯 Miere si Apicole</a>
+<a href="fresh-fv.html">🥬 Fructe si Legume Proaspete</a>
+<a href="processed-fv.html">🫙 Conserve si Sucuri</a>
+<a href="meat.html">🥩 Carne si Mezeluri</a>
+<a href="fish.html" class="active">🐟 Peste si Pastrav</a>
+<a href="cereals.html">🌾 Cereale si Faina</a>
+<a href="bakery.html">🍞 Panificatie</a>
+<a href="herbs.html">🌿 Plante si Ceaiuri</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="BACAU">BACAU</option><option value="BACĂU">BACĂU</option><option value="BRASOV">BRASOV</option><option value="GORJ">GORJ</option><option value="NEAMT">NEAMT</option><option value="PRAHOVA">PRAHOVA</option><option value="SUCEAVA">SUCEAVA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🐟 Peste si Pastrav (12 producatori)</h2><div class="grid"><div class="card" data-county="BRASOV">
+<h3>DIVERTIS AGRIPEX S.R.L.</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-de-viștișoara.jpg" alt="PĂSTRĂV DE VIȘTIȘOARA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV DE VIȘTIȘOARA</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BACĂU">
+<h3>ÎNTREPRINDERE FAMILIALĂ PALIȘTAN I. MIHAI</h3>
+<div class="county">📍 BACĂU</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-afumat-în-hârzob-de-brad.jpg" alt="PĂSTRĂV AFUMAT ÎN HÂRZOB DE BRAD" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV AFUMAT ÎN HÂRZOB DE BRAD</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zacuscă-de-păstrăv.jpg" alt="ZACUSCĂ DE PĂSTRĂV" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ZACUSCĂ DE PĂSTRĂV</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="BACAU">
+<h3>PALIȘTAN I. MIHAI ÎNTREPRINDERE FAMILIALĂ</h3>
+<div class="county">📍 BACAU</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cârnați-din-păstrăv.jpg" alt="CÂRNAȚI DIN PĂSTRĂV" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DIN PĂSTRĂV</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv.jpg" alt="PĂSTRĂV" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="NEAMT">
+<h3>REGIA NAȚIONALĂ A PĂDURILOR ROMSILVA RA BUCUREȘTI - DIRECȚIA SILVICĂ NEAMȚ</h3>
+<div class="county">📍 NEAMT</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/file-de-păstrăv-afumat-condimentat-„borca”.jpg" alt="FILE DE PĂSTRĂV AFUMAT CONDIMENTAT „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FILE DE PĂSTRĂV AFUMAT CONDIMENTAT „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/file-de-păstrăv-afumat-„borca”.jpg" alt="FILE DE PĂSTRĂV AFUMAT „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FILE DE PĂSTRĂV AFUMAT „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/file-de-păstrăv-pe-pat-de-legume-„borca”.jpg" alt="FILE DE PĂSTRĂV PE PAT DE LEGUME „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FILE DE PĂSTRĂV PE PAT DE LEGUME „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hârzob-de-păstrăv-în-cobză-de-cetină-„borca”.jpg" alt="HÂRZOB DE PĂSTRĂV ÎN COBZĂ DE CETINĂ „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HÂRZOB DE PĂSTRĂV ÎN COBZĂ DE CETINĂ „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-afumat-„borca”.jpg" alt="PĂSTRĂV AFUMAT „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV AFUMAT „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-de-munte-„borca”.jpg" alt="PĂSTRĂV DE MUNTE „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV DE MUNTE „BORCA”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zacuscă-de-păstrăv-„borca”.jpg" alt="ZACUSCĂ DE PĂSTRĂV „BORCA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ZACUSCĂ DE PĂSTRĂV „BORCA”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>SC DORIPESCO PROD SRL</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-afumat-150g.jpg" alt="PĂSTRĂV AFUMAT 150G" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV AFUMAT 150G</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="PRAHOVA">
+<h3>S.C. ECOTROUT FARM S.R.L</h3>
+<div class="county">📍 PRAHOVA</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/fluștuc-de-păstrăv-curcubeu.jpg" alt="FLUȘTUC DE PĂSTRĂV-CURCUBEU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FLUȘTUC DE PĂSTRĂV-CURCUBEU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pate-de-ficat-de-păstrăv-zamorean.jpg" alt="PATE DE FICAT DE PĂSTRĂV ZAMOREAN" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PATE DE FICAT DE PĂSTRĂV ZAMOREAN</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-murărit-pe-zamora.jpg" alt="PĂSTRĂV MURĂRIT PE ZAMORA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV MURĂRIT PE ZAMORA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-în-osânză-de-legume.jpg" alt="PĂSTRĂV ÎN OSÂNZĂ DE LEGUME" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV ÎN OSÂNZĂ DE LEGUME</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">4 produse</span>
+</div></div>
+<div class="card" data-county="PRAHOVA">
+<h3>S.C. ECOTROUT FARM S.R.L.</h3>
+<div class="county">📍 PRAHOVA</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-jăruit.jpg" alt="PĂSTRĂV JĂRUIT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV JĂRUIT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-prăvălit-și-proțăpit.jpg" alt="PĂSTRĂV PRĂVĂLIT ȘI PROȚĂPIT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV PRĂVĂLIT ȘI PROȚĂPIT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-zamorean.jpg" alt="PĂSTRĂV ZAMOREAN" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV ZAMOREAN</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-zamorean-morcovit.jpg" alt="PĂSTRĂV ZAMOREAN MORCOVIT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV ZAMOREAN MORCOVIT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-în-zamă-de-roșii.jpg" alt="PĂSTRĂV ÎN ZAMĂ DE ROȘII" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV ÎN ZAMĂ DE ROȘII</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tocană-de-păstrăv-cu-legume.jpg" alt="TOCANĂ DE PĂSTRĂV CU LEGUME" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TOCANĂ DE PĂSTRĂV CU LEGUME</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tocană-de-păstrăv-jăruit-cu-legume.jpg" alt="TOCANĂ DE PĂSTRĂV JĂRUIT CU LEGUME" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TOCANĂ DE PĂSTRĂV JĂRUIT CU LEGUME</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="PRAHOVA">
+<h3>SC ECOTROUTFISH SRL</h3>
+<div class="county">📍 PRAHOVA</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cârnați-de-păstrăv-„doftana”.jpg" alt="Cârnați de păstrăv „Doftana”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cârnați de păstrăv „Doftana”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-acvacultură.jpg" alt="Păstrăv acvacultură" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Păstrăv acvacultură</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-copt-și-afumat-la-jar-„doftana”.jpg" alt="Păstrăv copt și afumat la jar „Doftana”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Păstrăv copt și afumat la jar „Doftana”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zacuscă-de-păstrăv-„doftana”.jpg" alt="Zacuscă de păstrăv „Doftana”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Zacuscă de păstrăv „Doftana”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">4 produse</span>
+</div></div>
+<div class="card" data-county="GORJ">
+<h3>S.C. NORDA S.R.L.</h3>
+<div class="county">📍 GORJ</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-de-izvor.jpg" alt="PĂSTRĂV DE IZVOR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV DE IZVOR</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. PALERMO S.R.L.</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-de-munte-”valea-sâmbetei”.jpg" alt="PĂSTRĂV DE MUNTE ”VALEA SÂMBETEI”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV DE MUNTE ”VALEA SÂMBETEI”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="SUCEAVA">
+<h3>SC QUALITY NATURAL SRL</h3>
+<div class="county">📍 SUCEAVA</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cobză-din-păstrăv-afumat-„valeputna”.jpg" alt="Cobză din păstrăv afumat „Valeputna”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cobză din păstrăv afumat „Valeputna”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-afumat-file-„valeputna”.jpg" alt="Păstrăv afumat file „Valeputna”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Păstrăv afumat file „Valeputna”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstrăv-afumat-„valeputna”.jpg" alt="Păstrăv afumat „Valeputna”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Păstrăv afumat „Valeputna”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. TURISM PALER S.R.L.</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🐟 Peste si Pastrav</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/păstrăv-de-munte-”popas-sâmbăta”.jpg" alt="PĂSTRĂV DE MUNTE ”POPAS SÂMBĂTA”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRĂV DE MUNTE ”POPAS SÂMBĂTA”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)</div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

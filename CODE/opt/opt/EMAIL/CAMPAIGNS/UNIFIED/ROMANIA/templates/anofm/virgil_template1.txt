@@ -1,0 +1,22 @@
+Subject: {job_title} -- {company_name}
+
+Buna ziua{contact_greeting}
+
+{sender_tagline}.
+
+{company_name} cauta {job_title}{city_text} -- avem persoane disponibile rapid din Romania, Moldova, Nepal, Pakistan.
+
+0 costuri angajator, garantie inlocuire.
+
+Raspundeti cu "Interesat" si revin cu detalii in 24h.
+
+Virgil
+{sender_brand}
+WhatsApp: +44 7842 964322
+{sender_url}
+
+
+Daca doriti sa vedeti profiluri inainte de a decide, putem trimite un catalog mostra - specializat pe sectorul dvs sau general cu toate domeniile.
+Raspundeti la {catalog_email} pentru catalog.
+
+{gdpr_footer_ro}

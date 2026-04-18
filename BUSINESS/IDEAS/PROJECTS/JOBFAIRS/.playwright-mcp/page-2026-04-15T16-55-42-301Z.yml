@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "buildjobs.eu_" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - link "English" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Romana" [ref=e7] [cursor=pointer]:
+          - /url: /ro/
+        - link "नेपाली" [ref=e8] [cursor=pointer]:
+          - /url: /ne/
+        - link "हिंदी" [ref=e9] [cursor=pointer]:
+          - /url: /hi/
+        - link "اردو" [ref=e10] [cursor=pointer]:
+          - /url: /ur/
+        - link "العربية" [ref=e11] [cursor=pointer]:
+          - /url: /ar/
+        - link "Русский" [ref=e12] [cursor=pointer]:
+          - /url: /ru/
+        - link "Українська" [ref=e13] [cursor=pointer]:
+          - /url: /uk/
+  - generic [ref=e14]:
+    - heading "Construction Jobs in Europe" [level=1] [ref=e15]:
+      - text: Construction
+      - emphasis [ref=e16]: Jobs
+      - text: in Europe
+    - paragraph [ref=e17]: Skilled construction workers needed in Germany, Netherlands, Belgium, Austria. Carpenters, masons, plumbers, electricians welcome.
+    - generic [ref=e18]:
+      - img "Construction crane at sunset" [ref=e19]
+      - img "Workers on construction site" [ref=e20]
+      - img "Steel structure construction" [ref=e21]
+      - img "Highway construction aerial" [ref=e22]
+    - generic [ref=e23]:
+      - link "Apply Now" [ref=e24] [cursor=pointer]:
+        - /url: https://interjob.ro/apply.html
+      - link "View Complete Job List (PDF)" [ref=e25] [cursor=pointer]:
+        - /url: https://archive.org/details/eures-jobs-buildjobs-eu-en
+    - paragraph [ref=e26]: Free PDF catalog with jobs, salaries, locations, requirements. Download or share!
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: "2"
+        - generic [ref=e30]: Available Jobs
+      - generic [ref=e31]:
+        - generic [ref=e32]: "2"
+        - generic [ref=e33]: Open Positions
+      - generic [ref=e34]:
+        - generic [ref=e35]: "11"
+        - generic [ref=e36]: EU Countries
+  - generic [ref=e37]:
+    - heading "Choose Your Language" [level=2] [ref=e39]
+    - generic [ref=e40]:
+      - link "English" [ref=e41] [cursor=pointer]:
+        - /url: /
+      - link "Romana" [ref=e42] [cursor=pointer]:
+        - /url: /ro/
+      - link "नेपाली" [ref=e43] [cursor=pointer]:
+        - /url: /ne/
+      - link "हिंदी" [ref=e44] [cursor=pointer]:
+        - /url: /hi/
+      - link "اردو" [ref=e45] [cursor=pointer]:
+        - /url: /ur/
+      - link "العربية" [ref=e46] [cursor=pointer]:
+        - /url: /ar/
+      - link "Русский" [ref=e47] [cursor=pointer]:
+        - /url: /ru/
+      - link "Українська" [ref=e48] [cursor=pointer]:
+        - /url: /uk/
+  - generic [ref=e49]:
+    - heading "Why Work in Europe" [level=2] [ref=e51]
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]: 💰
+        - heading "High Salaries" [level=3] [ref=e55]
+        - paragraph [ref=e56]: Earn 1,500-4,000 EUR/month with legal contracts and social benefits.
+      - generic [ref=e57]:
+        - generic [ref=e58]: 🏠
+        - heading "Accommodation" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Many employers provide free or subsidized housing for workers.
+      - generic [ref=e61]:
+        - generic [ref=e62]: ✈️
+        - heading "Visa Support" [level=3] [ref=e63]
+        - paragraph [ref=e64]: We help with work permits and visa processing for non-EU citizens.
+      - generic [ref=e65]:
+        - generic [ref=e66]: 📋
+        - heading "Legal Employment" [level=3] [ref=e67]
+        - paragraph [ref=e68]: All jobs are 100% legal with proper contracts and insurance.
+  - generic [ref=e69]:
+    - heading "Jobs Available In" [level=2] [ref=e71]
+    - generic [ref=e72]:
+      - generic [ref=e73]: Germany
+      - generic [ref=e74]: Netherlands
+      - generic [ref=e75]: Belgium
+      - generic [ref=e76]: Austria
+      - generic [ref=e77]: Switzerland
+      - generic [ref=e78]: Denmark
+      - generic [ref=e79]: Sweden
+      - generic [ref=e80]: Norway
+      - generic [ref=e81]: Finland
+      - generic [ref=e82]: Ireland
+      - generic [ref=e83]: Luxembourg
+  - generic [ref=e84]:
+    - heading "Apply via Telegram" [level=2] [ref=e86]
+    - generic [ref=e87]:
+      - generic [ref=e88]: 🤖
+      - heading "Send Your CV on Telegram" [level=3] [ref=e89]
+      - paragraph [ref=e90]: The fastest way to apply. Open our Telegram bot, send your CV, and get matched with construction employers across Europe. Available in 13 languages.
+      - link "@BuildJobsEU_bot" [ref=e91] [cursor=pointer]:
+        - /url: https://t.me/BuildJobsEU_bot
+        - img [ref=e92]
+        - text: "@BuildJobsEU_bot"
+      - paragraph [ref=e94]: Free • No registration • 13 languages supported
+  - generic [ref=e95]:
+    - heading "Download Job Catalog (PDF)" [level=2] [ref=e96]
+    - paragraph [ref=e97]: Complete list of available positions with salaries, locations, and requirements.
+    - paragraph [ref=e98]: Print it, share it with friends, or save for later!
+    - generic [ref=e99]:
+      - link "View on Archive.org" [ref=e100] [cursor=pointer]:
+        - /url: https://archive.org/details/eures-jobs-buildjobs-eu-en
+      - link "Direct Download" [ref=e101] [cursor=pointer]:
+        - /url: /jobs/jobs_catalog.pdf
+  - contentinfo [ref=e102]:
+    - paragraph [ref=e103]:
+      - strong [ref=e104]: BuildJobs.eu — Connecting Workers with European Opportunities
+    - paragraph [ref=e105]:
+      - link "Jobs" [ref=e106] [cursor=pointer]:
+        - /url: /jobs/
+      - text: "|"
+      - link "Apply" [ref=e107] [cursor=pointer]:
+        - /url: https://interjob.ro/apply.html
+      - text: "|"
+      - link "Privacy" [ref=e108] [cursor=pointer]:
+        - /url: /privacy.html
+      - text: "|"
+      - link "Contact" [ref=e109] [cursor=pointer]:
+        - /url: /contact.html
+    - paragraph [ref=e110]: © 2026 buildjobs.eu — All jobs sourced from official EU job portals

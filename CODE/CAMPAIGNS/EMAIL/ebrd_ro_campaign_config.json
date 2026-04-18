@@ -1,0 +1,45 @@
+{
+  "db": {
+    "host": "localhost",
+    "dbname": "anofm",
+    "user": "tudor",
+    "password": "tudor"
+  },
+  "env_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/.env",
+  "campaign_name": "EBRD_CONSTRUCTORI_RO",
+  "campaign_description": "Targeted outreach to 685 Romanian companies in EBRD project cities. Each email references the specific EBRD project in their city.",
+  "templates_dir": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/ROMANIA/templates/ebrd_constructori/",
+  "csv_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/ROMANIA/ebrd_all_sectors.csv",
+  "csv_mode": true,
+  "tables": {
+    "send_log": "send_log",
+    "dnc": "dnc",
+    "col_email": "email",
+    "col_name": "company",
+    "col_company": "company",
+    "col_city": "ebrd_city",
+    "col_sector": "ebrd_project"
+  },
+  "sectors": {
+    "CORPORATE": {
+      "sender_type": "brevo",
+      "sender_key": "BREVO_SEICARESCU_API_KEY",
+      "sender_email": "tudor@seicarescu.com",
+      "sender_name": "Tudor Seicarescu - BP&P Partners",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 50,
+      "delay_min": 360,
+      "delay_max": 600,
+      "enabled": true,
+      "template_prefix": "template",
+      "filter_type": "corporate",
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      }
+    }
+  },
+  "null_status_is_pending": true
+}

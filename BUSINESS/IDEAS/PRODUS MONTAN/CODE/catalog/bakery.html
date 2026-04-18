@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panificatie - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Panificatie">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:12px 0}
+.product-item{text-align:center;padding:8px;background:#f9f9f9;border-radius:6px;transition:all 0.2s}
+.product-item:hover{background:#f0f0f0;transform:scale(1.02)}
+.product-img{width:80px;height:80px;object-fit:cover;border-radius:4px;margin-bottom:4px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.product-name{font-size:.75em;color:#555;word-wrap:break-word;line-height:1.2}
+.more-products{display:flex;align-items:center;justify-content:center;height:80px;color:#999;font-size:.85em;font-weight:600}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eee;color:#666;font-size:.85em}
+.product-count{font-weight:600;color:#2d5016}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}.products-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+@media(max-width:400px){.product-img{width:60px;height:60px}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="dairy.html">🧀 Lactate si Oua</a>
+<a href="honey.html">🍯 Miere si Apicole</a>
+<a href="fresh-fv.html">🥬 Fructe si Legume Proaspete</a>
+<a href="processed-fv.html">🫙 Conserve si Sucuri</a>
+<a href="meat.html">🥩 Carne si Mezeluri</a>
+<a href="fish.html">🐟 Peste si Pastrav</a>
+<a href="cereals.html">🌾 Cereale si Faina</a>
+<a href="bakery.html" class="active">🍞 Panificatie</a>
+<a href="herbs.html">🌿 Plante si Ceaiuri</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="ALBA">ALBA</option><option value="HARGHITA">HARGHITA</option><option value="HUNEDOARA">HUNEDOARA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🍞 Panificatie (4 producatori)</h2><div class="grid"><div class="card" data-county="HUNEDOARA">
+<h3>BĂLUȘE ILEANA SONIA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 HUNEDOARA</div>
+<div><span class="badge">🍞 Panificatie</span> <span class="badge">🧀 Lactate si Oua</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ouă.jpg" alt="OUĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">OUĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tăiței.jpg" alt="TĂIȚEI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TĂIȚEI</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>GERGELY I. ZSOLT ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🍞 Panificatie</span> <span class="badge">🧀 Lactate si Oua</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ouă-de-prepeliță.jpg" alt="OUĂ DE PREPELIȚĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">OUĂ DE PREPELIȚĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tăieței-de-casă-cu-ouă-de-prepeliță.jpg" alt="TĂIEȚEI DE CASĂ CU OUĂ DE PREPELIȚĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TĂIEȚEI DE CASĂ CU OUĂ DE PREPELIȚĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="HUNEDOARA">
+<h3>SC LOVENTAL SRL</h3>
+<div class="county">📍 HUNEDOARA</div>
+<div><span class="badge">🍞 Panificatie</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/pâine-albă-700-gr.jpg" alt="Pâine albă 700 gr" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Pâine albă 700 gr</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="ALBA">
+<h3>S.C. SPONI S.R.L.</h3>
+<div class="county">📍 ALBA</div>
+<div><span class="badge">🍞 Panificatie</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/pâine-albă-pe-vatră.jpg" alt="PÂINE ALBĂ PE VATRĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PÂINE ALBĂ PE VATRĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)</div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

@@ -1,0 +1,47 @@
+{
+  "db": {
+    "host": "/var/run/postgresql",
+    "dbname": "interjob_master",
+    "user": "tudor",
+    "password": "scraper123"
+  },
+  "env_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/.env",
+  "campaign_name": "NORWAY_VIRGIL",
+  "templates_dir": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/jobfairs/",
+  "null_status_is_pending": true,
+  "tables": {
+    "contacts": "norway_virgil",
+    "send_log": "norway_virgil_send_log",
+    "dnc": "norway_virgil_dnc",
+    "col_email": "email",
+    "col_name": "company",
+    "col_company": "company",
+    "col_city": "city",
+    "col_sector": "source_campaign",
+    "col_sector_name": "sector_name",
+    "col_org_number": "org_number",
+    "col_campaign_status": "campaign_status",
+    "col_last_contacted": "last_contacted"
+  },
+  "sectors": {
+    "NORWAY_VIRGIL": {
+      "sender_key": "BREVO_BUILDJOBS_API_KEY",
+      "sender_email": "office@buildjobs.eu",
+      "sender_name": "InterJob Recruitment Fairs",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 150,
+      "delay_min": 360,
+      "delay_max": 600,
+      "enabled": false,
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      }
+    }
+  },
+  "notes": "45,925 Norwegian employers - unified job fair campaign. Sources: Construction 18K, TED Winners 8K, Transport 6.5K, Industrial 5K, HoReCa 4.2K, Oil/Offshore 3K, EURES 655, HR Managers 261. VIRGIL manages.",
+  "enabled": false,
+  "daily_limit": 150
+}

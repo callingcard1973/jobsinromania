@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Judete - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Judete">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:12px 0}
+.product-item{text-align:center;padding:8px;background:#f9f9f9;border-radius:6px;transition:all 0.2s}
+.product-item:hover{background:#f0f0f0;transform:scale(1.02)}
+.product-img{width:80px;height:80px;object-fit:cover;border-radius:4px;margin-bottom:4px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.product-name{font-size:.75em;color:#555;word-wrap:break-word;line-height:1.2}
+.more-products{display:flex;align-items:center;justify-content:center;height:80px;color:#999;font-size:.85em;font-weight:600}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eee;color:#666;font-size:.85em}
+.product-count{font-weight:600;color:#2d5016}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}.products-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+@media(max-width:400px){.product-img{width:60px;height:60px}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="dairy.html">🧀 Lactate si Oua</a>
+<a href="honey.html">🍯 Miere si Apicole</a>
+<a href="fresh-fv.html">🥬 Fructe si Legume Proaspete</a>
+<a href="processed-fv.html">🫙 Conserve si Sucuri</a>
+<a href="meat.html">🥩 Carne si Mezeluri</a>
+<a href="fish.html">🐟 Peste si Pastrav</a>
+<a href="cereals.html">🌾 Cereale si Faina</a>
+<a href="bakery.html">🍞 Panificatie</a>
+<a href="herbs.html">🌿 Plante si Ceaiuri</a>
+<a href="judete.html" class="active">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<h2>📍 Producatori pe Judete</h2><div class="grid"><div class="card"><h3>📍 ALBA</h3><div class="county">52 producatori</div></div>
+<div class="card"><h3>📍 ARAD</h3><div class="county">2 producatori</div></div>
+<div class="card"><h3>📍 ARGEȘ</h3><div class="county">6 producatori</div></div>
+<div class="card"><h3>📍 BACAU</h3><div class="county">35 producatori</div></div>
+<div class="card"><h3>📍 BACĂU</h3><div class="county">2 producatori</div></div>
+<div class="card"><h3>📍 BIHOR</h3><div class="county">17 producatori</div></div>
+<div class="card"><h3>📍 BISTRITA NASAUD</h3><div class="county">207 producatori</div></div>
+<div class="card"><h3>📍 BISTRIȚA NĂSĂUD</h3><div class="county">5 producatori</div></div>
+<div class="card"><h3>📍 BRASOV</h3><div class="county">82 producatori</div></div>
+<div class="card"><h3>📍 BRAȘOV</h3><div class="county">4 producatori</div></div>
+<div class="card"><h3>📍 BUZĂU</h3><div class="county">17 producatori</div></div>
+<div class="card"><h3>📍 CARAȘ SEVERIN</h3><div class="county">57 producatori</div></div>
+<div class="card"><h3>📍 CLUJ</h3><div class="county">98 producatori</div></div>
+<div class="card"><h3>📍 COVASNA</h3><div class="county">280 producatori</div></div>
+<div class="card"><h3>📍 DÂMBOVIȚA</h3><div class="county">11 producatori</div></div>
+<div class="card"><h3>📍 GORJ</h3><div class="county">54 producatori</div></div>
+<div class="card"><h3>📍 HARGHITA</h3><div class="county">84 producatori</div></div>
+<div class="card"><h3>📍 HUNEDOARA</h3><div class="county">71 producatori</div></div>
+<div class="card"><h3>📍 MARAMURES</h3><div class="county">101 producatori</div></div>
+<div class="card"><h3>📍 MEHEDINȚI</h3><div class="county">6 producatori</div></div>
+<div class="card"><h3>📍 MUREȘ</h3><div class="county">20 producatori</div></div>
+<div class="card"><h3>📍 NEAMT</h3><div class="county">17 producatori</div></div>
+<div class="card"><h3>📍 NEAMȚ</h3><div class="county">5 producatori</div></div>
+<div class="card"><h3>📍 PRAHOVA</h3><div class="county">13 producatori</div></div>
+<div class="card"><h3>📍 SATU MARE</h3><div class="county">33 producatori</div></div>
+<div class="card"><h3>📍 SIBIU</h3><div class="county">49 producatori</div></div>
+<div class="card"><h3>📍 SUCEAVA</h3><div class="county">43 producatori</div></div>
+<div class="card"><h3>📍 SĂLAJ</h3><div class="county">2 producatori</div></div>
+<div class="card"><h3>📍 TIMIȘ</h3><div class="county">1 producatori</div></div>
+<div class="card"><h3>📍 VALCEA</h3><div class="county">104 producatori</div></div>
+<div class="card"><h3>📍 VRANCEA</h3><div class="county">28 producatori</div></div>
+<div class="card"><h3>📍 VĂLCEA</h3><div class="county">1 producatori</div></div>
+</div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)</div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

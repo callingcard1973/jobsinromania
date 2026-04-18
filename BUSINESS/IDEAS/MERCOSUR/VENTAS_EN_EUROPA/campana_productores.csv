@@ -1,0 +1,233 @@
+email,company,country,sector,website
+contacto@livent.com,Livent Corporation (Argentina),AR,Lithium Carbonate,livent.com
+contacto@allkem.co,Allkem Limited (Olaroz),AR,Lithium Carbonate,allkem.co
+contacto@arcadiumlithium.com,Arcadium Lithium (Fenix),AR,Lithium,arcadiumlithium.com
+contacto@poscopilbara.com,Posco Pilbara (Sal de Vida),AR,Lithium,poscopilbara.com
+contacto@eramet.com,Eramet (Centenario-Ratones),AR,Lithium Carbonate,eramet.com
+contacto@riotinto.com,Rio Tinto (Rincon),AR,Lithium,riotinto.com
+contacto@ganfenglithium.com,Ganfeng Lithium (Mariana),AR,Lithium,ganfenglithium.com
+contacto@lithiumamericas.com,Lithium Americas (Cauchari-Olaroz),AR,Lithium,lithiumamericas.com
+contacto@jemse.gob.ar,JEMSE S.A.,AR,State Mining Company,jemse.gob.ar
+contacto@lakeresources.com.au,Lake Resources (Kachi),AR,Lithium Exploration,lakeresources.com.au
+contacto@argosyminerals.com.au,Argosy Minerals (Rincon),AR,Lithium Exploration,argosyminerals.com.au
+contacto@ioneer.com,ioneer Ltd (Cinti),AR,Lithium Exploration,ioneer.com
+contacto@allkem.co,Orocobre (merged Allkem),AR,Lithium Exploration,allkem.co
+contacto@neolithium.ca,Neo Lithium (Tres Quebradas),AR,Lithium Exploration,neolithium.ca
+contacto@sqm.com,SQM (Sociedad Quimica y Minera),CL,"Lithium, Potassium, Iodine",sqm.com
+contacto@albemarle.com,Albemarle Chile,CL,Lithium,albemarle.com
+contacto@codelco.com,CODELCO (Maricunga),CL,"Copper, Lithium",codelco.com
+contacto@byd.com,BYD Chile,CL,"Battery, Lithium Processing",byd.com
+contacto@lithiumchile.ca,Lithium Chile Inc,CL,Lithium Exploration,lithiumchile.ca
+contacto@wealthminerals.com,Wealth Minerals (Atacama),CL,Lithium Exploration,wealthminerals.com
+contacto@ylb.gob.bo,Yacimientos de Litio Bolivianos (YLB),BO,State Lithium Company,ylb.gob.bo
+contacto@comibol.gob.bo,COMIBOL (Lithium Division),BO,State Mining,comibol.gob.bo
+contacto@cbmm.com,CBMM - Companhia Brasileira de Metalurgia e Mineracao,BR,Niobium Mining & Processing,cbmm.com
+contacto@cmocgroup.com,CMOC Brasil (Niobras),BR,Niobium Mining,cmocgroup.com
+contacto@mineracaotaboca.com.br,Mineracao Taboca (Pitinga),BR,"Niobium, Tantalum, Tin Mining",mineracaotaboca.com.br
+contacto@vale.com,VALE S.A. (Niobium Division),BR,Mining Holding,vale.com
+contacto@codemge.com.br,Companhia de Desenvolvimento de Araxa (CODEMGE),BR,State Mining Company,codemge.com.br
+contacto@niobaymetals.com,NioBay Metals,BR,Niobium Development,niobaymetals.com
+contacto@magrisresources.com,Magris Resources (Craviola),BR,Niobium Exploration,magrisresources.com
+contacto@ibram.org.br,IBRAM - Instituto Brasileiro de Mineracao,BR,Industry Association,ibram.org.br
+contacto@nexco.com.ar,Nexco S.A.,AR,Honey Export,nexco.com.ar
+contacto@mielesdelsur.com.ar,Mieles del Sur S.A.,AR,Honey Processing & Export,mielesdelsur.com.ar
+contacto@mielargentina.com,Miel Argentina S.A.,AR,Honey Export,mielargentina.com
+contacto@apigourmet.com.ar,API Gourmet,AR,Premium Honey,apigourmet.com.ar
+contacto@mielesdeluruguay.com,Mieles del Uruguay S.A.,UY,Honey Export,mielesdeluruguay.com
+contacto@calnu.com.uy,CALNU (Cooperativa Agropecuaria Ltda del Norte Uruguayo),UY,Agricultural Cooperative,calnu.com.uy
+contacto@waxgreen.com.br,Wax Green Natural Products,BR,Bee Products,waxgreen.com.br
+contacto@breyer.com.br,Breyer & Cia,BR,Honey Export,breyer.com.br
+contacto@apisflora.com.br,Apis Flora,BR,Bee Products,apisflora.com.br
+contacto@redapicola.cl,Red Apicola Nacional de Chile,CL,National Beekeeping Network,redapicola.cl
+contacto@jbs.com.br,JBS S.A.,BR,Beef/Poultry,jbs.com.br
+contacto@marfrig.com.br,Marfrig Global Foods,BR,Beef,marfrig.com.br
+contacto@minervafoods.com,Minerva Foods,BR,Beef,minervafoods.com
+contacto@bfrsa.com,BRF S.A.,BR,Poultry/Pork,bfrsa.com
+contacto@frigol.com.br,Frigol,BR,Beef,frigol.com.br
+contacto@masterboi.com.br,Masterboi,BR,Beef,masterboi.com.br
+contacto@gorina.com.ar,Frigorifico Gorina,AR,Beef,gorina.com.ar
+contacto@quickfood.com.ar,Quickfood (Marfrig),AR,Beef,quickfood.com.ar
+contacto@rfrioplatense.com.ar,Frigorifico Rioplatense,AR,Beef,rfrioplatense.com.ar
+contacto@friar.com.ar,FRIAR S.A.,AR,Beef,friar.com.ar
+contacto@arrebeef.com,Arre Beef,AR,Beef,arrebeef.com
+contacto@paladini.com.ar,Frigorifico Paladini,AR,Beef/Pork,paladini.com.ar
+contacto@tacuarembo.com.uy,Frigorifico Tacuarembo,UY,Beef,tacuarembo.com.uy
+contacto@bfrsa.com,Breeders & Packers Uruguay (BPU),UY,Beef,bfrsa.com
+contacto@nirea.com.uy,Frigorifico San Jacinto (NIREA),UY,Beef,nirea.com.uy
+contacto@frigorificoconcepcion.com,Frigorifico Concepcion,PY,Beef,frigorificoconcepcion.com
+contacto@frigomerc.com.py,Frigomerc,PY,Beef,frigomerc.com.py
+contacto@neuland.com.py,Frigorifico Neuland,PY,Beef,neuland.com.py
+contacto@aluar.com.ar,Aluar Aluminio Argentino S.A.I.C.,AR,Aluminio,www.aluar.com.ar
+contacto@cargill.com.br,Cargill Brasil,BR,Grains/Food,cargill.com.br
+contacto@bunge.com.br,Bunge Brasil,BR,Grains/Food,bunge.com.br
+contacto@adm.com,ADM do Brasil,BR,Grains,adm.com
+contacto@ldc.com,Louis Dreyfus Brasil,BR,Commodities,ldc.com
+contacto@citrosuco.com.br,Citrosuco,BR,Orange Juice,citrosuco.com.br
+contacto@cutrale.com.br,Cutrale,BR,Orange Juice,cutrale.com.br
+contacto@raizen.com.br,Raizen,BR,Sugar/Ethanol,raizen.com.br
+contacto@copersucar.com.br,Copersucar,BR,Sugar/Ethanol,copersucar.com.br
+contacto@saomartinho.com.br,Sao Martinho,BR,Sugar/Ethanol,saomartinho.com.br
+contacto@biosev.com,Biosev,BR,Sugar/Ethanol,biosev.com
+contacto@tereos.com,Tereos Brasil,BR,Sugar,tereos.com
+contacto@vale.com,Vale S.A.,BR,Iron Ore/Mining,vale.com
+contacto@csn.com.br,CSN Mineracao,BR,Iron Ore,csn.com.br
+contacto@angloamerican.com,Anglo American Brasil,BR,Iron Ore/Nickel,angloamerican.com
+contacto@samarco.com,Samarco,BR,Iron Ore,samarco.com
+contacto@cbmm.com,CBMM,BR,Niobium,cbmm.com
+contacto@suzano.com.br,Suzano,BR,Pulp/Paper,suzano.com.br
+contacto@klabin.com.br,Klabin,BR,Pulp/Paper,klabin.com.br
+contacto@eldoradobrasil.com.br,Eldorado Brasil,BR,Pulp,eldoradobrasil.com.br
+contacto@gerdau.com,Gerdau,BR,Steel,gerdau.com
+contacto@usiminas.com,Usiminas,BR,Steel,usiminas.com
+contacto@csn.com.br,CSN - Cia Siderurgica Nacional,BR,Steel,csn.com.br
+contacto@arcelormittal.com.br,ArcelorMittal Brasil,BR,Steel,arcelormittal.com.br
+contacto@cba.com.br,CBA - Cia Brasileira de Aluminio,BR,Aluminum,cba.com.br
+contacto@embraer.com,Embraer,BR,Aerospace,embraer.com
+contacto@helibras.com.br,Helibras,BR,Aerospace,helibras.com.br
+contacto@weg.net,WEG S.A.,BR,Electric Motors,weg.net
+contacto@tupy.com.br,Tupy S.A.,BR,Auto Parts,tupy.com.br
+contacto@iochpe.com.br,Iochpe-Maxion,BR,Wheels/Chassis,iochpe.com.br
+contacto@randon.com.br,Randon,BR,Trailers/Parts,randon.com.br
+contacto@braskem.com.br,Braskem,BR,Petrochemicals,braskem.com.br
+contacto@unipar.com,Unipar,BR,Chemicals,unipar.com
+contacto@cooxupe.com.br,Cooxupe,BR,Coffee,cooxupe.com.br
+contacto@cocapec.com.br,Cocapec,BR,Coffee,cocapec.com.br
+contacto@amaggi.com.br,Amaggi,BR,Soy/Grains,amaggi.com.br
+contacto@slcagricola.com.br,SLC Agricola,BR,Soy/Cotton,slcagricola.com.br
+contacto@grendene.com.br,Grendene,BR,Footwear,grendene.com.br
+contacto@alpargatas.com.br,Alpargatas,BR,Footwear,alpargatas.com.br
+contacto@jbscouros.com.br,JBS Couros,BR,Leather,jbscouros.com.br
+contacto@agd.com.ar,Aceitera General Deheza (AGD),AR,Soy/Grains,agd.com.ar
+contacto@molinosagro.com.ar,Molinos Agro,AR,Grains/Oils,molinosagro.com.ar
+contacto@vicentin.com.ar,Vicentin,AR,Soy/Grains,vicentin.com.ar
+contacto@cargill.com.ar,Cargill Argentina,AR,Grains,cargill.com.ar
+contacto@bunge.com.ar,Bunge Argentina,AR,Grains,bunge.com.ar
+contacto@ldc.com,Louis Dreyfus Argentina,AR,Commodities,ldc.com
+contacto@adm.com,ADM Argentina,AR,Grains,adm.com
+contacto@nidera.com.ar,Nidera,AR,Grains,nidera.com.ar
+contacto@estanciasdelsur.com.ar,Estancias del Sur,AR,Beef,estanciasdelsur.com.ar
+contacto@chandon.com.ar,Bodegas Chandon Argentina,AR,Wine,chandon.com.ar
+contacto@catenawines.com,Bodega Catena Zapata,AR,Wine,catenawines.com
+contacto@trivento.com,Trivento Bodegas,AR,Wine,trivento.com
+contacto@norton.com.ar,Bodega Norton,AR,Wine,norton.com.ar
+contacto@familiazuccardi.com,Familia Zuccardi,AR,Wine,familiazuccardi.com
+contacto@trapiche.com.ar,Trapiche,AR,Wine,trapiche.com.ar
+contacto@luigibosca.com.ar,Luigi Bosca,AR,Wine,luigibosca.com.ar
+contacto@livent.com,Livent Argentina,AR,Lithium,livent.com
+contacto@allkem.co,Allkem (Olaroz),AR,Lithium,allkem.co
+contacto@arcadiumlithium.com,Arcadium Lithium,AR,Lithium,arcadiumlithium.com
+contacto@riotinto.com,Rio Tinto Rincon,AR,Lithium,riotinto.com
+contacto@posco.com,Posco Argentina (Sal de Vida),AR,Lithium,posco.com
+contacto@honeymax.com.ar,HoneyMax,AR,Honey,honeymax.com.ar
+contacto@conexamericas.com,ConexAmericas,AR,Honey,conexamericas.com
+contacto@newsan.com.ar,Newsan Food,AR,Seafood,newsan.com.ar
+contacto@pesqueradeseado.com.ar,Pesquera Deseado,AR,Seafood,pesqueradeseado.com.ar
+contacto@argenova.com.ar,Argenova,AR,Seafood,argenova.com.ar
+contacto@aluar.com.ar,Aluar Aluminio Argentino,AR,Aluminum,aluar.com.ar
+contacto@ternium.com,Ternium Argentina,AR,Steel,ternium.com
+contacto@tenaris.com,Tenaris,AR,Steel Pipes,tenaris.com
+contacto@acindar.com.ar,Acindar (ArcelorMittal),AR,Steel,acindar.com.ar
+contacto@ypf.com,YPF,AR,Oil/Gas/Chemicals,ypf.com
+contacto@dow.com,Dow Argentina,AR,Chemicals,dow.com
+contacto@expofrut.com.ar,Expofrut Argentina,AR,Fruits,expofrut.com.ar
+contacto@patagonianfruits.com,Patagonian Fruits,AR,Fruits,patagonianfruits.com
+contacto@sanmiguelglobal.com,San Miguel S.A.,AR,Lemons/Citrus,sanmiguelglobal.com
+contacto@citrusvil.com.ar,Citrusvil,AR,Lemons,citrusvil.com.ar
+contacto@prodeman.com,Prodeman,AR,Peanuts,prodeman.com
+contacto@lorenzati.com.ar,Lorenzati Ruetsch,AR,Peanuts,lorenzati.com.ar
+contacto@bfrsa.com,BPU - Breeders & Packers Uruguay,UY,Beef,bfrsa.com
+contacto@frigorificocarrasco.com,Frigorifico Carrasco,UY,Beef,frigorificocarrasco.com
+contacto@conaprole.com.uy,Conaprole,UY,Dairy,conaprole.com.uy
+contacto@lactalis.com,Lactalis Uruguay,UY,Dairy,lactalis.com
+contacto@saman.com.uy,Saman,UY,Rice,saman.com.uy
+contacto@coopar.com.uy,Coopar,UY,Rice,coopar.com.uy
+contacto@barracaerro.com.uy,Barraca Erro,UY,Grains,barracaerro.com.uy
+contacto@upm.com,UPM Uruguay,UY,Pulp,upm.com
+contacto@montesdelplata.com.uy,Montes del Plata,UY,Pulp,montesdelplata.com.uy
+contacto@lanastrinidad.com,Lanas Trinidad,UY,Wool,lanastrinidad.com
+contacto@caputto.com.uy,Caputto,UY,Citrus,caputto.com.uy
+contacto@codelco.com,Codelco,CL,Copper,codelco.com
+contacto@aminerals.cl,Antofagasta Minerals,CL,Copper,aminerals.cl
+contacto@bhp.com,BHP Chile,CL,Copper,bhp.com
+contacto@angloamerican.com,Anglo American Chile,CL,Copper,angloamerican.com
+contacto@sqm.com,SQM,CL,Lithium,sqm.com
+contacto@aquachile.com,Empresas AquaChile,CL,Salmon,aquachile.com
+contacto@multiexportfoods.com,Multiexport Foods,CL,Salmon,multiexportfoods.com
+contacto@cermaq.com,Cermaq Chile,CL,Salmon,cermaq.com
+contacto@australis-seafoods.com,Australis Seafoods,CL,Salmon,australis-seafoods.com
+contacto@blumar.com,Blumar,CL,Salmon/Seafood,blumar.com
+contacto@camanchaca.cl,Camanchaca,CL,Salmon/Seafood,camanchaca.cl
+contacto@conchaytoro.com,Concha y Toro,CL,Wine,conchaytoro.com
+contacto@vspt.cl,VSPT Wine Group,CL,Wine,vspt.cl
+contacto@santarita.com,Santa Rita,CL,Wine,santarita.com
+contacto@sanpedro.cl,Vina San Pedro,CL,Wine,sanpedro.cl
+contacto@errazuriz.com,Vina Errazuriz,CL,Wine,errazuriz.com
+contacto@dole.cl,Dole Chile,CL,Fruits,dole.cl
+contacto@garces.cl,Agricola Garces,CL,Fruits,garces.cl
+contacto@daviddelcurto.cl,David del Curto,CL,Fruits,daviddelcurto.cl
+contacto@copefrut.cl,Copefrut,CL,Fruits,copefrut.cl
+contacto@cmpc.com,CMPC,CL,Pulp/Paper,cmpc.com
+contacto@arauco.cl,Arauco,CL,Pulp/Wood,arauco.cl
+contacto@agrosuper.cl,Agrosuper,CL,Poultry/Pork,agrosuper.cl
+contacto@carozzi.cl,Carozzi,CL,Food,carozzi.cl
+contacto@frigorificoguarani.com.py,Frigorifico Guarani,PY,Beef,frigorificoguarani.com.py
+contacto@athenafoods.com,Athena Foods Paraguay,PY,Beef,athenafoods.com
+contacto@cargill.com.py,Cargill Paraguay,PY,Grains,cargill.com.py
+contacto@azpa.com.py,Azucarera Paraguaya (AZPA),PY,Sugar,azpa.com.py
+contacto@grupocartes.com.py,Grupo Cartes,PY,Conglomerate,grupocartes.com.py
+contacto@tabesa.com.py,Tabacalera del Este (TABESA),PY,Tobacco,tabesa.com.py
+contacto@petropar.gov.py,PETROPAR,PY,Oil/Gas,petropar.gov.py
+contacto@itaipu.gov.py,Itaipu Binacional,PY,Energy,itaipu.gov.py
+contacto@selecta.com.py,Selecta,PY,Yerba Mate,selecta.com.py
+contacto@pajarito.com.py,Pajarito,PY,Yerba Mate,pajarito.com.py
+contacto@comibol.gob.bo,COMIBOL,BO,Mining,comibol.gob.bo
+contacto@minerasancristobal.com,Minera San Cristobal,BO,Zinc/Silver,minerasancristobal.com
+contacto@ypfb.gob.bo,YPFB,BO,Oil/Gas,ypfb.gob.bo
+contacto@fino.com.bo,Industrias de Aceite (FINO),BO,Soy/Oils,fino.com.bo
+contacto@tahuamanu.com,Tahuamanu,BO,Brazil Nuts,tahuamanu.com
+contacto@andeanvalley.com,Andean Valley,BO,Quinoa,andeanvalley.com
+contacto@cfrn.com.bo,Cerveceria Boliviana Nacional (CBN),BO,Beverages,cfrn.com.bo
+contacto@pilandina.com,PIL Andina,BO,Dairy,pilandina.com
+contacto@southerncoppercorp.com,Southern Copper Corporation,PE,Copper,southerncoppercorp.com
+contacto@antamina.com,Antamina,PE,Copper/Zinc,antamina.com
+contacto@minsur.com,Minsur,PE,Tin,minsur.com
+contacto@buenaventura.com,Buenaventura,PE,Gold/Silver,buenaventura.com
+contacto@volcan.com.pe,Volcan Compania Minera,PE,Zinc/Silver,volcan.com.pe
+contacto@nexaresources.com,Nexa Resources Peru,PE,Zinc,nexaresources.com
+contacto@hochschildmining.com,Hochschild Mining,PE,Gold/Silver,hochschildmining.com
+contacto@pluspetrol.net,Pluspetrol,PE,Oil/Gas,pluspetrol.net
+contacto@petroperu.com.pe,Petroperu,PE,Oil/Gas,petroperu.com.pe
+contacto@tasa.com.pe,TASA (Tecnologica de Alimentos),PE,Fishing/Fishmeal,tasa.com.pe
+contacto@austral.com.pe,Austral Group,PE,Fishing/Fishmeal,austral.com.pe
+contacto@exalmar.com.pe,Exalmar,PE,Fishing/Fishmeal,exalmar.com.pe
+contacto@camposol.com.pe,Camposol,PE,Agriculture/Fruits,camposol.com.pe
+contacto@danper.com,Danper,PE,Agriculture,danper.com
+contacto@viru.com.pe,Viru S.A.,PE,Agriculture,viru.com.pe
+contacto@cocla.com.pe,COCLA,PE,Coffee,cocla.com.pe
+contacto@creditex.com.pe,Creditex,PE,Textiles,creditex.com.pe
+contacto@michell.com.pe,Michell y Cia,PE,Alpaca/Textiles,michell.com.pe
+contacto@incatops.com,Inca Tops,PE,Alpaca/Textiles,incatops.com
+contacto@eppetroecuador.ec,Petroecuador,EC,Oil/Gas,eppetroecuador.ec
+contacto@rfrsa.com,Reybanpac (Favorita),EC,Bananas,rfrsa.com
+contacto@ubesa.com.ec,Ubesa,EC,Bananas,ubesa.com.ec
+contacto@gruponomoa.com,Noboa Corporation,EC,Bananas,gruponomoa.com
+contacto@santapriscila.com,Industrial Pesquera Santa Priscila (IPSP),EC,Shrimp,santapriscila.com
+contacto@omarsa.com,Omarsa,EC,Shrimp,omarsa.com
+contacto@promarisco.com,Promarisco,EC,Shrimp,promarisco.com
+contacto@expalsa.com,Expalsa,EC,Shrimp,expalsa.com
+contacto@republicadelcacao.com,Republica del Cacao,EC,Cacao,republicadelcacao.com
+contacto@pacarichocolate.com,Pacari,EC,Cacao,pacarichocolate.com
+contacto@rfrprima.com,Florexpo (Rosaprima),EC,Flowers,rfrprima.com
+contacto@falconfarms.com,Falconfarms,EC,Flowers,falconfarms.com
+contacto@nevadoecuador.com,Nevado Ecuador,EC,Flowers,nevadoecuador.com
+contacto@nirsa.com,NIRSA,EC,Tuna,nirsa.com
+contacto@pdvsa.com,PDVSA,VE,Oil/Gas,pdvsa.com
+contacto@empresaspolar.com,Empresas Polar,VE,Food/Beverages,empresaspolar.com
+contacto@rfrnsantateresa.com,Ron Santa Teresa,VE,Beverages,rfrnsantateresa.com
+contacto@exxonmobil.com,ExxonMobil Guyana,GY,Oil/Gas,exxonmobil.com
+contacto@guysuco.com,Guyana Sugar Corporation (GuySuCo),GY,Sugar,guysuco.com
+contacto@demrum.com,Demerara Distillers (DDL),GY,Rum/Beverages,demrum.com
+contacto@grdb.gy,Guyana Rice Development Board (GRDB),GY,Rice,grdb.gy
+contacto@staatsolie.com,Staatsolie,SR,Oil/Gas,staatsolie.com
+contacto@grassalco.com,Grassalco,SR,Mining,grassalco.com
+contacto@sfrb.sr,SBB (Stichting Bosbeheer),SR,Timber,sfrb.sr

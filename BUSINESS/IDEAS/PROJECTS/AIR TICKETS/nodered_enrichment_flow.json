@@ -1,0 +1,98 @@
+[
+    {
+        "id": "enrichment_tab",
+        "type": "tab",
+        "label": "Email Enrichment",
+        "disabled": false
+    },
+    {
+        "id": "enrichment_http_in",
+        "type": "http in",
+        "z": "enrichment_tab",
+        "name": "Enrichment Status POST",
+        "url": "/enrichment-status",
+        "method": "post",
+        "x": 150,
+        "y": 80,
+        "wires": [["enrichment_store", "enrichment_http_out", "enrichment_debug"]]
+    },
+    {
+        "id": "enrichment_http_get",
+        "type": "http in",
+        "z": "enrichment_tab",
+        "name": "Enrichment Status GET",
+        "url": "/enrichment-status",
+        "method": "get",
+        "x": 150,
+        "y": 160,
+        "wires": [["enrichment_read"]]
+    },
+    {
+        "id": "enrichment_store",
+        "type": "change",
+        "z": "enrichment_tab",
+        "name": "Store status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enrichment_status",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "x": 400,
+        "y": 60,
+        "wires": [[]]
+    },
+    {
+        "id": "enrichment_http_out",
+        "type": "http response",
+        "z": "enrichment_tab",
+        "name": "OK",
+        "statusCode": "200",
+        "x": 400,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "enrichment_debug",
+        "type": "debug",
+        "z": "enrichment_tab",
+        "name": "Enrichment Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "x": 400,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "enrichment_read",
+        "type": "change",
+        "z": "enrichment_tab",
+        "name": "Read status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "enrichment_status",
+                "tot": "flow"
+            }
+        ],
+        "x": 400,
+        "y": 160,
+        "wires": [["enrichment_get_out"]]
+    },
+    {
+        "id": "enrichment_get_out",
+        "type": "http response",
+        "z": "enrichment_tab",
+        "name": "Return status",
+        "statusCode": "200",
+        "x": 600,
+        "y": 160,
+        "wires": []
+    }
+]

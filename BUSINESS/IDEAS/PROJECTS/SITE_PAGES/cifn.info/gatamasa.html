@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATAMASA - Platformă comenzi online pentru restaurante</title>
+    <meta name="description" content="GATAMASA - Platformă online pentru administrarea comenzilor în restaurant. Software pentru comenzi directe de la clienți.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d6f 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .feature h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 3rem 0;
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+        }
+
+        .contact {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .contact h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🍽️ GATAMASA</h1>
+            <p class="subtitle">Platformă comenzi online pentru restaurante</p>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="description">
+                <strong>GATAMASA este o platformă online pentru administrarea comenzilor în restaurant.</strong>
+                <br><br>
+                Software care permite restaurantului să primească comenzi direct de la clienți,
+                restaurantul își ia comenzile direct, își păstrează clienții -
+                un magazin online pentru restaurante + sistem de gestionare comenzi.
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>📱 Comenzi Directe</h3>
+                    <p>Clienții comandă direct de la restaurant, fără intermediari.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>🏪 Magazin Online</h3>
+                    <p>Fiecare restaurant își are propriul magazin online personalizat.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>📊 Gestionare Comenzi</h3>
+                    <p>Sistem complet de administrare și urmărire comenzi.</p>
+                </div>
+
+                <div class="feature">
+                    <h3>👥 Păstrează Clienții</h3>
+                    <p>Construiește baza proprie de clienți fideli.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Vrei să afli mai multe despre GATAMASA?</h2>
+            <a href="mailto:contact@cifn.info?subject=Informații GATAMASA&body=Bună ziua,%0A%0AÎmi doresc să aflu mai multe informații despre platforma GATAMASA pentru restaurantul meu.%0A%0AMultumesc!" class="cta-button">
+                📧 Contactează-ne pentru Demo
+            </a>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h3>Contact</h3>
+            <p><strong>Email:</strong> contact@cifn.info</p>
+            <p><strong>Website:</strong> cifn.info</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 GATAMASA - Platformă comenzi online pentru restaurante</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "db": {
+    "host": "localhost",
+    "dbname": "interjob_master",
+    "user": "tudor",
+    "password": "scraper123"
+  },
+  "env_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/.env",
+  "campaign_name": "FLIGHT_AGENCIES",
+  "templates_dir": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/flight_agencies/",
+  "dashboard_port": 8096,
+  "url_prefix": "/flight_agencies",
+  "country_flag": "&#9992;&#65039;",
+  "country_filter": null,
+  "gov_domains": ["gov", "edu", "mil"],
+  "exclude_nace": [],
+  "exclude_sources": [],
+  "null_status_is_pending": true,
+  "tables": {
+    "contacts": "flight_agencies_campaign",
+    "send_log": "flight_agencies_send_log",
+    "dnc": "romania_dnc",
+    "responses": "flight_agencies_responses",
+    "col_email": "email",
+    "col_name": "denumire_agentie",
+    "col_company": "operator_economic",
+    "col_city": "localitate",
+    "col_employees": "id",
+    "col_sector": "tip_agentie",
+    "col_sector_name": "tip_agentie",
+    "col_org_number": "cui",
+    "col_tier": "id",
+    "col_caen": "nr_licenta",
+    "col_campaign_status": "campaign_status",
+    "col_last_contacted": "last_contacted"
+  },
+  "sectors": {
+    "ORGANIZATOARE": {
+      "filter": "tip_agentie = 'Organizatoare'",
+      "sender_key": "BREVO_EXPATSINROMANIA_API_KEY",
+      "sender_email": "office@expatsinromania.org",
+      "sender_name": "InterJob Flights",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 50,
+      "delay_min": 65,
+      "delay_max": 300,
+      "enabled": true,
+      "template_prefix": "flight_partner",
+      "sender_type": "brevo",
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      },
+      "batch_size": 0,
+      "template_count": 1
+    },
+    "ORGANIZATOARE_ONLINE": {
+      "filter": "tip_agentie = 'OrganizatoareOnline'",
+      "sender_key": "BREVO_EXPATSINROMANIA_API_KEY",
+      "sender_email": "office@expatsinromania.org",
+      "sender_name": "InterJob Flights",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 30,
+      "delay_min": 65,
+      "delay_max": 300,
+      "enabled": false,
+      "template_prefix": "flight_partner",
+      "sender_type": "brevo",
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      },
+      "batch_size": 0,
+      "template_count": 1
+    }
+  },
+  "gmail_senders": [],
+  "policy": {
+    "description": "Partnership outreach to IATA-accredited Romanian travel agencies for flight ticket reselling",
+    "contacts_available": 1448,
+    "target": "Organizatoare + OrganizatoareOnline travel agencies (IATA/GDS holders)",
+    "goal": "Find 5-10 sub-agent partners to ticket flights for InterJob placed workers"
+  }
+}

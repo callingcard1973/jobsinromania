@@ -1,0 +1,1223 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carne si Mezeluri - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Carne si Mezeluri">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:12px 0}
+.product-item{text-align:center;padding:8px;background:#f9f9f9;border-radius:6px;transition:all 0.2s}
+.product-item:hover{background:#f0f0f0;transform:scale(1.02)}
+.product-img{width:80px;height:80px;object-fit:cover;border-radius:4px;margin-bottom:4px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.product-name{font-size:.75em;color:#555;word-wrap:break-word;line-height:1.2}
+.more-products{display:flex;align-items:center;justify-content:center;height:80px;color:#999;font-size:.85em;font-weight:600}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eee;color:#666;font-size:.85em}
+.product-count{font-weight:600;color:#2d5016}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}.products-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+@media(max-width:400px){.product-img{width:60px;height:60px}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="dairy.html">🧀 Lactate si Oua</a>
+<a href="honey.html">🍯 Miere si Apicole</a>
+<a href="fresh-fv.html">🥬 Fructe si Legume Proaspete</a>
+<a href="processed-fv.html">🫙 Conserve si Sucuri</a>
+<a href="meat.html" class="active">🥩 Carne si Mezeluri</a>
+<a href="fish.html">🐟 Peste si Pastrav</a>
+<a href="cereals.html">🌾 Cereale si Faina</a>
+<a href="bakery.html">🍞 Panificatie</a>
+<a href="herbs.html">🌿 Plante si Ceaiuri</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="ALBA">ALBA</option><option value="ARGEȘ">ARGEȘ</option><option value="BIHOR">BIHOR</option><option value="BISTRITA NASAUD">BISTRITA NASAUD</option><option value="BRASOV">BRASOV</option><option value="COVASNA">COVASNA</option><option value="GORJ">GORJ</option><option value="HARGHITA">HARGHITA</option><option value="HUNEDOARA">HUNEDOARA</option><option value="MUREȘ">MUREȘ</option><option value="SIBIU">SIBIU</option><option value="VALCEA">VALCEA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🥩 Carne si Mezeluri (39 producatori)</h2><div class="grid"><div class="card" data-county="BISTRITA NASAUD">
+<h3>AGRO-ARDEAL S.R.L.</h3>
+<div class="county">📍 BISTRITA NASAUD</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/salam-de-vită.jpg" alt="SALAM DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SALAM DE VITĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="GORJ">
+<h3>AGURIDĂ GRIGORE</h3>
+<div class="county">📍 GORJ</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cârnăciori-de-oaie.jpg" alt="CÂRNĂCIORI DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNĂCIORI DE OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-oaie.jpg" alt="PASTRAMĂ DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sloi-de-oaie.jpg" alt="SLOI DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLOI DE OAIE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>ASOCIAȚIA COMPOSESORALĂ TERCS INEU</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carne-tranșată-de-vită.jpg" alt="CARNE TRANȘATĂ DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE TRANȘATĂ DE VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/salam-tercsi.jpg" alt="SALAM TERCSI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SALAM TERCSI</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="VALCEA">
+<h3>BĂBU MARIA</h3>
+<div class="county">📍 VALCEA</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/brânză-de-burduf-”stâna-ștefanu”.jpg" alt="BRÂNZĂ DE BURDUF ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ DE BURDUF ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cașcaval-”stâna-ștefanu”.jpg" alt="CAȘCAVAL ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘCAVAL ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-afine-”stâna-ștefanu”.jpg" alt="DULCEAȚĂ AFINE ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ AFINE ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-prune-”stâna-ștefanu”.jpg" alt="DULCEAȚĂ DE PRUNE ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE PRUNE ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-zmeură-”stâna-ștefanu”.jpg" alt="DULCEAȚĂ ZMEURĂ ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ ZMEURĂ ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-oaie-”stâna-ștefanu”.jpg" alt="PASTRAMĂ OAIE ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ OAIE ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-afine-”stâna-ștefanu”.jpg" alt="SIROP AFINE ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP AFINE ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-brad-”stâna-ștefanu”.jpg" alt="SIROP BRAD ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP BRAD ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-păpădie.jpg" alt="SIROP PĂPĂDIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP PĂPĂDIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-soc-”stâna-ștefanu”.jpg" alt="SIROP SOC ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP SOC ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-zmeură-”stâna-ștefanu”.jpg" alt="SIROP ZMEURĂ ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP ZMEURĂ ”STÂNA ȘTEFANU”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sloi-oaie-”stâna-ștefanu”.jpg" alt="SLOI OAIE ”STÂNA ȘTEFANU”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLOI OAIE ”STÂNA ȘTEFANU”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">12 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>BO-COV MEAT COOPERATIVĂ AGRICOLĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carne-hamburger-vită-condimentată.jpg" alt="CARNE HAMBURGER VITĂ CONDIMENTATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE HAMBURGER VITĂ CONDIMENTATĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carne-hamburger-vită-necondimentată.jpg" alt="CARNE HAMBURGER VITĂ NECONDIMENTATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE HAMBURGER VITĂ NECONDIMENTATĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mici-din-carne-de-vită.jpg" alt="MICI DIN CARNE DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MICI DIN CARNE DE VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulpă-de-vită.jpg" alt="PULPĂ DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULPĂ DE VITĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">4 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>BOTĂ ANCA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-bovină.jpg" alt="CARCASĂ BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>BR-ZOO-COV S.R.L.</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>COMPOSESORATUL ”CSIKSOMLYO”</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="SIBIU">
+<h3>CRISTEA I. M. IOAN PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 SIBIU</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/pastramă-de-oaie.jpg" alt="PASTRAMĂ DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE OAIE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>CUCU V.A. CRISTIAN PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>DANCS V. ANNA-MARIA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/brânză-burduf-de-oaie-”ferma-dancsék”.jpg" alt="BRÂNZĂ BURDUF DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ BURDUF DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/brânză-cu-mucegai-alb-”ferma-dancsék”.jpg" alt="BRÂNZĂ CU MUCEGAI ALB ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ CU MUCEGAI ALB ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/brânză-dulce-de-oaie-”ferma-dancsék”.jpg" alt="BRÂNZĂ DULCE DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ DULCE DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/brânză-maturată-semitare-”ferma-dancsék”.jpg" alt="BRÂNZĂ MATURATĂ SEMITARE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ MATURATĂ SEMITARE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/caș-proaspăt-de-oaie-”ferma-dancsék”.jpg" alt="CAȘ PROASPĂT DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘ PROASPĂT DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-oaie-”ferma-dancsék”.jpg" alt="CÂRNAȚI DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnăciori-de-oaie-”ferma-dancsék”.jpg" alt="CÂRNĂCIORI DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNĂCIORI DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/iaurt-din-lapte-de-oaie-”ferma-dancsék”.jpg" alt="IAURT DIN LAPTE DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">IAURT DIN LAPTE DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/lapte-gros-de-oaie-”ferma-dancsék”.jpg" alt="LAPTE GROS DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE GROS DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-berbecuți-”ferma-dancsék”.jpg" alt="PASTRAMĂ DE BERBECUȚI ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE BERBECUȚI ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-oaie-”ferma-dancsék”.jpg" alt="PASTRAMĂ DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE OAIE ”FERMA DANCSÉK”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sana-din-lapte-de-oaie-”ferma-dancsék”.jpg" alt="SANA DIN LAPTE DE OAIE ”FERMA DANCSÉK”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SANA DIN LAPTE DE OAIE ”FERMA DANCSÉK”</div>
+            </div><div class="product-item more-products">+2 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">14 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>DESZKE K. DALMA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>INCZE IRMA-MELINDA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-ovine.jpg" alt="CARCASĂ OVINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ OVINE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>ISTRATE IOAN</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/brânză-de-burduf-„ferma-istrate”-fundata.jpg" alt="BRÂNZĂ DE BURDUF „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ DE BURDUF „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/caș-„ferma-istrate”-fundata.jpg" alt="CAȘ „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘ „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cașcaval-„ferma-istrate”-fundata.jpg" alt="CAȘCAVAL „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘCAVAL „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-oaie-și-vițel-„ferma-istrate”-fundata.jpg" alt="CÂRNAȚI DE OAIE ȘI VIȚEL „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE OAIE ȘI VIȚEL „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-berbecuț-„ferma-istrate”-fundata.jpg" alt="PASTRAMĂ DE BERBECUȚ „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE BERBECUȚ „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-vițel-„ferma-istrate”-fundata.jpg" alt="PASTRAMĂ DE VIȚEL „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE VIȚEL „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/telemea-de-oaie-„ferma-istrate”-fundata.jpg" alt="TELEMEA DE OAIE „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TELEMEA DE OAIE „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/telemea-de-vacă-„ferma-istrate”-fundata.jpg" alt="TELEMEA DE VACĂ „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TELEMEA DE VACĂ „FERMA ISTRATE” FUNDATA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/urdă-„ferma-istrate”-fundata.jpg" alt="URDĂ „FERMA ISTRATE” FUNDATA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">URDĂ „FERMA ISTRATE” FUNDATA</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">9 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>KOVACS ZSUZSANNA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-ovine.jpg" alt="CARCASĂ OVINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ OVINE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="SIBIU">
+<h3>LIMBĂȘAN M. DAVID DANIEL P.F.A.</h3>
+<div class="county">📍 SIBIU</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cotlet-afumat-de-mangalița-de-la-racovița.jpg" alt="COTLET AFUMAT DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COTLET AFUMAT DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnaț-afumat-de-mangalița-de-la-racovița.jpg" alt="CÂRNAȚ AFUMAT DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚ AFUMAT DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnaț-afumat-picant-de-mangalița-de-la-racovița.jpg" alt="CÂRNAȚ AFUMAT PICANT DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚ AFUMAT PICANT DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gușă-de-mangalița-de-la-racovița.jpg" alt="GUȘĂ DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GUȘĂ DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-afumată-de-mangalița-de-la-racovița.jpg" alt="PASTRAMĂ AFUMATĂ DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ AFUMATĂ DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastă-de-jumeri-cu-boia-de-mangalița-de-la-racovița.jpg" alt="PASTĂ DE JUMERI CU BOIA DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTĂ DE JUMERI CU BOIA DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastă-de-jumeri-cu-chilly-de-mangalița-de-la-racovița.jpg" alt="PASTĂ DE JUMERI CU CHILLY DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTĂ DE JUMERI CU CHILLY DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastă-de-jumeri-de-mangalița-de-la-racovița.jpg" alt="PASTĂ DE JUMERI DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTĂ DE JUMERI DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pateu-de-mangalița-de-la-racovița.jpg" alt="PATEU DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PATEU DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/piept-afumat-de-mangalița-de-la-racovița.jpg" alt="PIEPT AFUMAT DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PIEPT AFUMAT DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/slănină-afumată-de-mangalița-de-la-racovița.jpg" alt="SLĂNINĂ AFUMATĂ DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLĂNINĂ AFUMATĂ DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/unsoare-de-mangalița-de-la-racovița.jpg" alt="UNSOARE DE MANGALIȚA DE LA RACOVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">UNSOARE DE MANGALIȚA DE LA RACOVIȚA</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">12 produse</span>
+</div></div>
+<div class="card" data-county="BIHOR">
+<h3>LOLE CĂTĂLIN-DUMITRU PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 BIHOR</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/antricot-vită.jpg" alt="ANTRICOT VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ANTRICOT VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carcasă-vită.jpg" alt="CARCASĂ VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mușchiuleț-vită.jpg" alt="MUȘCHIULEȚ VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUȘCHIULEȚ VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulpă-vită.jpg" alt="PULPĂ VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULPĂ VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/rasol-de-vită.jpg" alt="RASOL DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">RASOL DE VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/steak.jpg" alt="STEAK" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">STEAK</div>
+            </div>
+            <div class="product-item">
+                <img src="products/vrăbioară-vită.jpg" alt="VRĂBIOARĂ VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">VRĂBIOARĂ VITĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="ALBA">
+<h3>MIORIȚA OACHEȘE COOPERATIVA AGRICOLĂ</h3>
+<div class="county">📍 ALBA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/virșli-miorița-oacheșe.jpg" alt="VIRȘLI MIORIȚA OACHEȘE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">VIRȘLI MIORIȚA OACHEȘE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="HUNEDOARA">
+<h3>NADOCARM ALIM SRL</h3>
+<div class="county">📍 HUNEDOARA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cârnați-de-casă.jpg" alt="CÂRNAȚI DE CASĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE CASĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnăciori-subțiri-picanți.jpg" alt="CÂRNĂCIORI SUBȚIRI PICANȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNĂCIORI SUBȚIRI PICANȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/șunculiță-țărănească.jpg" alt="ȘUNCULIȚĂ ȚĂRĂNEASCĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ȘUNCULIȚĂ ȚĂRĂNEASCĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="ARGEȘ">
+<h3>NĂSTĂSESCU CONSTANTIN</h3>
+<div class="county">📍 ARGEȘ</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/brânză-burduf-oaie.jpg" alt="BRÂNZĂ BURDUF OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ BURDUF OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cartofi.jpg" alt="CARTOFI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARTOFI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/caș-afumat-vacă.jpg" alt="CAȘ AFUMAT VACĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘ AFUMAT VACĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cașcaval-vacă.jpg" alt="CAȘCAVAL VACĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘCAVAL VACĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceapă.jpg" alt="CEAPĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAPĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/fasole.jpg" alt="FASOLE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FASOLE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/lapte-oaie.jpg" alt="LAPTE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/lapte-vacă.jpg" alt="LAPTE VACĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE VACĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mere.jpg" alt="MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/morcov.jpg" alt="MORCOV" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MORCOV</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-oaie.jpg" alt="PASTRAMĂ OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pere.jpg" alt="PERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PERE</div>
+            </div><div class="product-item more-products">+9 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">21 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>OZSVATH Z. ZOLTAN ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>RUSANDU S.R.L.</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>S.C. AGRO BESTIALIS S.R.L.</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>SC AGROFERMA GRAMINIA DMG SRL</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-bovină.jpg" alt="CARCASĂ BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="GORJ">
+<h3>SC BEEFCARM 2017 SRL</h3>
+<div class="county">📍 GORJ</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/burger-angus.jpg" alt="Burger Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Burger Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-grill-angus.jpg" alt="Cârnați grill Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cârnați grill Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-picanți-angus.jpg" alt="Cârnați picanți Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cârnați picanți Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/parizer-angus.jpg" alt="Parizer Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Parizer Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-angus.jpg" alt="Pastramă Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Pastramă Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastă-de-mici-angus.jpg" alt="Pastă de mici Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Pastă de mici Angus</div>
+            </div>
+            <div class="product-item">
+                <img src="products/salam-montan-angus.jpg" alt="Salam montan Angus" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Salam montan Angus</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>SC BERKE INTEGRATOR DE PRELUCRARE A CĂRNII SRL</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/antricot-de-cerb.jpg" alt="ANTRICOT DE CERB" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ANTRICOT DE CERB</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cap-de-miel.jpg" alt="CAP DE MIEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAP DE MIEL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carcasă-de-miel.jpg" alt="CARCASĂ DE MIEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ DE MIEL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carne-de-cerb-pentru-tocăniță.jpg" alt="CARNE DE CERB PENTRU TOCĂNIȚĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE DE CERB PENTRU TOCĂNIȚĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carne-de-miel-lucru.jpg" alt="CARNE DE MIEL LUCRU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE DE MIEL LUCRU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceafă-mistreț-fără-os.jpg" alt="CEAFĂ MISTREȚ FĂRĂ OS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAFĂ MISTREȚ FĂRĂ OS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coadă-de-miel.jpg" alt="COADĂ DE MIEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COADĂ DE MIEL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coaste-de-miel-fără-os.jpg" alt="COASTE DE MIEL FĂRĂ OS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COASTE DE MIEL FĂRĂ OS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cotlet-mistreț-fără-os.jpg" alt="COTLET MISTREȚ FĂRĂ OS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COTLET MISTREȚ FĂRĂ OS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/creier-de-miel.jpg" alt="CREIER DE MIEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CREIER DE MIEL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-casă-din-carne-de-cerb.jpg" alt="CÂRNAȚI DE CASĂ DIN CARNE DE CERB" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE CASĂ DIN CARNE DE CERB</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-miel-harghita.jpg" alt="CÂRNAȚI DE MIEL HARGHITA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE MIEL HARGHITA</div>
+            </div><div class="product-item more-products">+29 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">41 produse</span>
+</div></div>
+<div class="card" data-county="MUREȘ">
+<h3>SC BLACK ANGUS SRL</h3>
+<div class="county">📍 MUREȘ</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/antricot-cu-os.jpg" alt="ANTRICOT CU OS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ANTRICOT CU OS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/antricot-fără-os.jpg" alt="ANTRICOT FĂRĂ OS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ANTRICOT FĂRĂ OS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/bavetă-(flanksteak).jpg" alt="BAVETĂ (FLANKSTEAK)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BAVETĂ (FLANKSTEAK)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/brisket.jpg" alt="BRISKET" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRISKET</div>
+            </div>
+            <div class="product-item">
+                <img src="products/burger-(100%-angus).jpg" alt="BURGER (100% ANGUS)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BURGER (100% ANGUS)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cabanos-calibru-22/24.jpg" alt="CABANOS CALIBRU 22/24" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CABANOS CALIBRU 22/24</div>
+            </div>
+            <div class="product-item">
+                <img src="products/capac-pulpă.jpg" alt="CAPAC PULPĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAPAC PULPĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carne-gulaș.jpg" alt="CARNE GULAȘ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE GULAȘ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/carne-tocată-(100%-angus).jpg" alt="CARNE TOCATĂ (100% ANGUS)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARNE TOCATĂ (100% ANGUS)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceafă.jpg" alt="CEAFĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAFĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chiulotă.jpg" alt="CHIULOTĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CHIULOTĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coaste-(beefribs).jpg" alt="COASTE (BEEFRIBS)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COASTE (BEEFRIBS)</div>
+            </div><div class="product-item more-products">+21 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">33 produse</span>
+</div></div>
+<div class="card" data-county="ARGEȘ">
+<h3>S.C. COȘCO-VELE S.R.L</h3>
+<div class="county">📍 ARGEȘ</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cârnați-de-casă-afumați-”coșco-vele”.jpg" alt="Cârnați de casă afumați ”Coșco-Vele”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cârnați de casă afumați ”Coșco-Vele”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-oaie-afumată-”coșco-vele”.jpg" alt="Pastramă de oaie afumată ”Coșco-Vele”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Pastramă de oaie afumată ”Coșco-Vele”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">2 produse</span>
+</div></div>
+<div class="card" data-county="BISTRITA NASAUD">
+<h3>S.C. DANY MASTERCHEF S.R.L.</h3>
+<div class="county">📍 BISTRITA NASAUD</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/caltaboș-de-porc.jpg" alt="CALTABOȘ DE PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CALTABOȘ DE PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/costiță-afumată.jpg" alt="COSTIȚĂ AFUMATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COSTIȚĂ AFUMATĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-bratwurst.jpg" alt="CÂRNAȚI BRATWURST" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI BRATWURST</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-casă---porc.jpg" alt="CÂRNAȚI DE CASĂ - PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE CASĂ - PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-subțiri-nepicanți-de-porc.jpg" alt="CÂRNAȚI SUBȚIRI NEPICANȚI DE PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI SUBȚIRI NEPICANȚI DE PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-subțiri-oaie-porc.jpg" alt="CÂRNAȚI SUBȚIRI OAIE-PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI SUBȚIRI OAIE-PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-subțiri-picanți-de-porc.jpg" alt="CÂRNAȚI SUBȚIRI PICANȚI DE PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI SUBȚIRI PICANȚI DE PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-subțiri-vită-porc.jpg" alt="CÂRNAȚI SUBȚIRI VITĂ-PORC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI SUBȚIRI VITĂ-PORC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-și-carne-în-untură-la-borcan.jpg" alt="CÂRNAȚI ȘI CARNE ÎN UNTURĂ LA BORCAN" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI ȘI CARNE ÎN UNTURĂ LA BORCAN</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gușă-de-porc-fiartă-cu-usturoi-și-paprika.jpg" alt="GUȘĂ DE PORC FIARTĂ, CU USTUROI ȘI PAPRIKA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GUȘĂ DE PORC FIARTĂ, CU USTUROI ȘI PAPRIKA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mușchi-marinat-afumat.jpg" alt="MUȘCHI MARINAT AFUMAT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUȘCHI MARINAT AFUMAT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastă-de-mici.jpg" alt="PASTĂ DE MICI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTĂ DE MICI</div>
+            </div><div class="product-item more-products">+3 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">15 produse</span>
+</div></div>
+<div class="card" data-county="ALBA">
+<h3>SC LA MESENI SRL</h3>
+<div class="county">📍 ALBA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/crenvurști-de-vită.jpg" alt="CRENVURȘTI DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CRENVURȘTI DE VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mici-de-vită.jpg" alt="MICI DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MICI DE VITĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/parizer-de-vită.jpg" alt="PARIZER DE VITĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PARIZER DE VITĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>S.C. REBO ANGUS KARPATEN S.R.L.</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. SĂNDEL MISANA S.R.L.</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/lapte-de-oaie.jpg" alt="LAPTE DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE DE OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/lapte-de-vacă.jpg" alt="LAPTE DE VACĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE DE VACĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-de-oaie.jpg" alt="PASTRAMĂ DE OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ DE OAIE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="ALBA">
+<h3>S.C. SUANI CENTER S.R.L.</h3>
+<div class="county">📍 ALBA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cotlet-afumat-de-la-frații-suciu.jpg" alt="COTLET AFUMAT DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COTLET AFUMAT DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cârnați-de-casă-de-la-frații-suciu.jpg" alt="CÂRNAȚI DE CASĂ DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CÂRNAȚI DE CASĂ DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/muschi-porc-de-la-frații-suciu.jpg" alt="MUSCHI PORC DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUSCHI PORC DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/muschi-țărănesc-de-la-frații-suciu.jpg" alt="MUSCHI ȚĂRĂNESC DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUSCHI ȚĂRĂNESC DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-porc-de-la-frații-suciu.jpg" alt="PASTRAMĂ PORC DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ PORC DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/slăninuță-de-la-frații-suciu.jpg" alt="SLĂNINUȚĂ DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLĂNINUȚĂ DE LA FRAȚII SUCIU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/slănină-afumată-de-la-frații-suciu.jpg" alt="SLĂNINĂ AFUMATĂ DE LA FRAȚII SUCIU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLĂNINĂ AFUMATĂ DE LA FRAȚII SUCIU</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="GORJ">
+<h3>ȘEANDRU ARON</h3>
+<div class="county">📍 GORJ</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/brânză-de-burduf.jpg" alt="BRÂNZĂ DE BURDUF" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BRÂNZĂ DE BURDUF</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cașcaval.jpg" alt="CAȘCAVAL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAȘCAVAL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pastramă-oaie.jpg" alt="PASTRAMĂ OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PASTRAMĂ OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sloi-oaie.jpg" alt="SLOI OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SLOI OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/telemea-oaie.jpg" alt="TELEMEA OAIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TELEMEA OAIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/unt.jpg" alt="UNT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">UNT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/urdă.jpg" alt="URDĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">URDĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">7 produse</span>
+</div></div>
+<div class="card" data-county="GORJ">
+<h3>SÎRBU-GUȘE CORINA PFA</h3>
+<div class="county">📍 GORJ</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/balmoș-”stâna-ursului”.jpg" alt="BALMOȘ ”STÂNA URSULUI”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BALMOȘ ”STÂNA URSULUI”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/telemea-de-oaie-”stâna-ursului”.jpg" alt="TELEMEA DE OAIE ”STÂNA URSULUI”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TELEMEA DE OAIE ”STÂNA URSULUI”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tocan-de-oaie-”stâna-ursului”.jpg" alt="TOCAN DE OAIE ”STÂNA URSULUI”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TOCAN DE OAIE ”STÂNA URSULUI”</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>SZECSETE ARPAD ÎNTREPRINDERE FAMILIALĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-ovine.jpg" alt="CARCASĂ OVINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ OVINE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>SZIGETHI SZABOLCS PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasa-bovină.jpg" alt="CARCASA BOVINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASA BOVINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="ALBA">
+<h3>TRANSYLVANIA PREMIUM ANGUS COOPERATIVĂ AGRICOLĂ</h3>
+<div class="county">📍 ALBA</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cotlet-maturat-angus.jpg" alt="COTLET MATURAT ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COTLET MATURAT ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cărnați-transylvania-premium-angus.jpg" alt="CĂRNAȚI TRANSYLVANIA PREMIUM ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂRNAȚI TRANSYLVANIA PREMIUM ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mușchiuleț-maturat-angus.jpg" alt="MUȘCHIULEȚ MATURAT ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUȘCHIULEȚ MATURAT ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/parizer-transylvania-premium-angus.jpg" alt="PARIZER TRANSYLVANIA PREMIUM ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PARIZER TRANSYLVANIA PREMIUM ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulpă-maturată-angus.jpg" alt="PULPĂ MATURATĂ ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULPĂ MATURATĂ ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstramă-transylvania-premium-angus.jpg" alt="PĂSTRAMĂ TRANSYLVANIA PREMIUM ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTRAMĂ TRANSYLVANIA PREMIUM ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/salam-de-vară-transylvania-premium-angus.jpg" alt="SALAM DE VARĂ TRANSYLVANIA PREMIUM ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SALAM DE VARĂ TRANSYLVANIA PREMIUM ANGUS</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tibon-maturat-angus.jpg" alt="TIBON MATURAT ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TIBON MATURAT ANGUS</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">8 produse</span>
+</div></div>
+<div class="card" data-county="MUREȘ">
+<h3>VALEA MUREȘULUI SUPERIOR COOPERATIVĂ AGRICOLĂ</h3>
+<div class="county">📍 MUREȘ</div>
+<div><span class="badge">🥩 Carne si Mezeluri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/carcasă-de-vită-angus.jpg" alt="CARCASĂ DE VITĂ ANGUS" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARCASĂ DE VITĂ ANGUS</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)</div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

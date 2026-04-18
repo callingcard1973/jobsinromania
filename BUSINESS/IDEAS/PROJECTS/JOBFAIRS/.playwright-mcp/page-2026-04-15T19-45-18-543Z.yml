@@ -1,0 +1,4 @@
+- generic [ref=e3]:
+  - heading "403" [level=1] [ref=e4]
+  - heading "Forbidden" [level=2] [ref=e5]
+  - paragraph [ref=e6]: Access to this resource on the server is denied!

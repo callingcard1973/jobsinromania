@@ -1,0 +1,121 @@
+What you should do (actual proposals, not motivational quotes)
+1. Split into 3 clear funnels (non-negotiable)
+A. Investors
+
+Landing page:
+
+“Invest in Romanian Agriculture & Tech”
+ROI-focused
+case studies
+structured deals
+B. Patent / Tech sellers
+
+Landing page:
+
+“Sell or license your patent internationally”
+process + examples + outcomes
+C. Network / community
+
+Separate site or subdomain:
+
+events
+expat stuff
+community
+
+Right now they cannibalize credibility.
+
+2. Rewrite homepage (brutally simple)
+
+Above the fold:
+
+“We help investors deploy capital in Eastern Europe through agriculture and technology deals generating X–Y% returns.”
+
+Then:
+
+3 clear paths:
+Invest
+Sell a technology
+Partner
+
+No scrolling essay required.
+
+3. Add real case studies (this is the money lever)
+
+Example format:
+
+Case: 2,500 ha farm acquisition
+
+Investment: €3.2M
+ROI: 18%
+Timeline: 24 months
+Exit options
+
+You already have this info buried
+Just surface it like you actually want money.
+
+4. Productize your services
+
+Right now everything is vague consulting.
+
+Turn it into offers:
+
+“Investor Tour Package – €X”
+“Patent Evaluation – €X”
+“Deal Sourcing Retainer – €X/month”
+
+People trust things they can understand and price.
+
+5. Kill fluff, keep authority
+
+Remove:
+
+“changemakers, lifestyle designers”
+vague philosophy paragraphs
+
+Keep:
+
+numbers
+deals
+process
+
+You’re not a TED talk. You’re trying to move capital.
+
+6. Add one strong CTA (not 5 weak ones)
+
+Pick ONE primary action:
+
+Book a call
+Apply as investor
+Submit patent
+
+Right now it’s:
+WhatsApp / email / LinkedIn / vibes.
+
+7. Design fixes (quick wins)
+Add visual hierarchy (right now it’s text soup)
+Use diagrams:
+“How tech transfer works”
+“Investment pipeline”
+Add trust badges:
+partnerships
+institutions
+recognizable logos
+Positioning fix (the real unlock)
+
+You’re sitting on a strong positioning but not using it:
+
+👉 “Bridge between Western capital and Eastern European assets”
+
+That’s rare. That’s valuable.
+
+Everything on the site should scream that.
+
+If I had to summarize brutally
+
+The site says:
+
+“I do many impressive things”
+
+It should say:
+
+“I help you make money doing this specific thing, here’s proof”

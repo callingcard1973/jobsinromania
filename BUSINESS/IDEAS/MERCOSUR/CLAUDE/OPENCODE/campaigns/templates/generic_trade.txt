@@ -1,0 +1,28 @@
+Subject: {commodity} Suppliers - {tariff_benefit} Under {trade_agreement}
+
+Dear {company},
+
+I facilitate trade connections between European buyers and certified exporters under the {trade_agreement} agreement.
+
+OPPORTUNITY:
+The {trade_agreement} agreement provides {tariff_benefit} tariff benefits for {commodity_short} products entering the EU.
+
+WHAT WE OFFER:
+- Direct access to {supplier_count} verified exporters
+- Product sourcing and supplier matching
+- Trade documentation support
+- Quality verification
+
+CURRENT SUPPLIERS:
+{top_suppliers}
+
+If {company} sources {commodity_short} products, I would welcome a brief call to discuss your requirements and introduce suitable suppliers.
+
+Best regards,
+
+Tudor Seicarescu
+Trade Facilitation
+tudor@interjob.ro
+
+--
+Sent to {email}. Reply STOP to unsubscribe.

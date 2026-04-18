@@ -1,0 +1,1216 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plante si Ceaiuri - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Plante si Ceaiuri">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:12px 0}
+.product-item{text-align:center;padding:8px;background:#f9f9f9;border-radius:6px;transition:all 0.2s}
+.product-item:hover{background:#f0f0f0;transform:scale(1.02)}
+.product-img{width:80px;height:80px;object-fit:cover;border-radius:4px;margin-bottom:4px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.product-name{font-size:.75em;color:#555;word-wrap:break-word;line-height:1.2}
+.more-products{display:flex;align-items:center;justify-content:center;height:80px;color:#999;font-size:.85em;font-weight:600}
+.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eee;color:#666;font-size:.85em}
+.product-count{font-weight:600;color:#2d5016}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}.products-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}}
+@media(max-width:400px){.product-img{width:60px;height:60px}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="dairy.html">🧀 Lactate si Oua</a>
+<a href="honey.html">🍯 Miere si Apicole</a>
+<a href="fresh-fv.html">🥬 Fructe si Legume Proaspete</a>
+<a href="processed-fv.html">🫙 Conserve si Sucuri</a>
+<a href="meat.html">🥩 Carne si Mezeluri</a>
+<a href="fish.html">🐟 Peste si Pastrav</a>
+<a href="cereals.html">🌾 Cereale si Faina</a>
+<a href="bakery.html">🍞 Panificatie</a>
+<a href="herbs.html" class="active">🌿 Plante si Ceaiuri</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="BACAU">BACAU</option><option value="BIHOR">BIHOR</option><option value="BISTRITA NASAUD">BISTRITA NASAUD</option><option value="BISTRIȚA NĂSĂUD">BISTRIȚA NĂSĂUD</option><option value="BRASOV">BRASOV</option><option value="CARAȘ SEVERIN">CARAȘ SEVERIN</option><option value="CLUJ">CLUJ</option><option value="COVASNA">COVASNA</option><option value="HARGHITA">HARGHITA</option><option value="HUNEDOARA">HUNEDOARA</option><option value="MARAMURES">MARAMURES</option><option value="MEHEDINȚI">MEHEDINȚI</option><option value="NEAMT">NEAMT</option><option value="PRAHOVA">PRAHOVA</option><option value="SUCEAVA">SUCEAVA</option><option value="VALCEA">VALCEA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🌿 Plante si Ceaiuri (25 producatori)</h2><div class="grid"><div class="card" data-county="NEAMT">
+<h3>AMY FVD LIO S.R.L.</h3>
+<div class="county">📍 NEAMT</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine-negre-congelate.jpg" alt="AFINE NEGRE CONGELATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE NEGRE CONGELATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/afine-negre-proaspete.jpg" alt="AFINE NEGRE PROASPETE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE NEGRE PROASPETE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/afine-negre-uscate.jpg" alt="AFINE NEGRE USCATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE NEGRE USCATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/bureți-țepoși-(hydnum-repandum)---proaspeți.jpg" alt="BUREȚI ȚEPOȘI (Hydnum repandum) - PROASPEȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BUREȚI ȚEPOȘI (Hydnum repandum) - PROASPEȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină-congelată.jpg" alt="CĂTINĂ CONGELATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ CONGELATĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină-proaspătă.jpg" alt="CĂTINĂ PROASPĂTĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ PROASPĂTĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ghebe-(armillaria-mellea)---proaspete.jpg" alt="GHEBE (Armillaria mellea) - PROASPETE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GHEBE (Armillaria mellea) - PROASPETE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ghebe-(armillaria-mellea)---uscate.jpg" alt="GHEBE (Armillaria mellea) - USCATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GHEBE (Armillaria mellea) - USCATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-(cantharellus-cibarius)---congelați.jpg" alt="GĂLBIORI (Cantharellus cibarius) - CONGELAȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI (Cantharellus cibarius) - CONGELAȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-(cantharellus-cibarius)---uscați.jpg" alt="GĂLBIORI (Cantharellus cibarius) - USCAȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI (Cantharellus cibarius) - USCAȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-(cantharellus-cibarius)-proaspeți.jpg" alt="GĂLBIORI (Cantharellus cibarius)-PROASPEȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI (Cantharellus cibarius)-PROASPEȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi--(boletus-edulis-b.-aereus-b.-reticulatus)--proaspeți.jpg" alt="HRIBI  (Boletus edulis, B. aereus, B. reticulatus)- PROASPEȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI  (Boletus edulis, B. aereus, B. reticulatus)- PROASPEȚI</div>
+            </div><div class="product-item more-products">+13 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">25 produse</span>
+</div></div>
+<div class="card" data-county="CARAȘ SEVERIN">
+<h3>ARMAȘ GHEORGHE MARIUS</h3>
+<div class="county">📍 CARAȘ SEVERIN</div>
+<div><span class="badge">🌾 Cereale si Faina</span> <span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ceapă.jpg" alt="CEAPĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAPĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cireșe.jpg" alt="CIREȘE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CIREȘE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/căpșuni.jpg" alt="CĂPȘUNI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂPȘUNI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mere.jpg" alt="MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/morcovi.jpg" alt="MORCOVI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MORCOVI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pere.jpg" alt="PERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/piersici.jpg" alt="PIERSICI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PIERSICI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/porumb-zaharat.jpg" alt="PORUMB ZAHARAT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PORUMB ZAHARAT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/prune.jpg" alt="PRUNE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PRUNE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păstârnac-rădăcină.jpg" alt="PĂSTÂRNAC RĂDĂCINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂSTÂRNAC RĂDĂCINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pătrunjel.jpg" alt="PĂTRUNJEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂTRUNJEL</div>
+            </div><div class="product-item more-products">+3 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">15 produse</span>
+</div></div>
+<div class="card" data-county="BISTRIȚA NĂSĂUD">
+<h3>ASOCIAȚIA AFI PROFAMILIA</h3>
+<div class="county">📍 BISTRIȚA NĂSĂUD</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/chisăliță-de-afine.jpg" alt="Chisăliță de afine" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de afine</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-cireșe-pădurețe.jpg" alt="Chisăliță de cireșe pădurețe" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de cireșe pădurețe</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-merișor-sălbatic.jpg" alt="Chisăliță de merișor sălbatic" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de merișor sălbatic</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-mură.jpg" alt="Chisăliță de mură" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de mură</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-nuci-verzi.jpg" alt="Chisăliță de nuci verzi" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de nuci verzi</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-pene-de-rujă.jpg" alt="Chisăliță de pene de rujă" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de pene de rujă</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-pomnițe.jpg" alt="Chisăliță de pomnițe" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de pomnițe</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-soc.jpg" alt="Chisăliță de soc" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de soc</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-de-zneură.jpg" alt="Chisăliță de zneură" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță de zneură</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-din-pene-de-acăț.jpg" alt="Chisăliță din pene de acăț" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță din pene de acăț</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-din-pene-de-lilie.jpg" alt="Chisăliță din pene de lilie" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță din pene de lilie</div>
+            </div>
+            <div class="product-item">
+                <img src="products/chisăliță-din-pere-pietroase.jpg" alt="Chisăliță din pere pietroase" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Chisăliță din pere pietroase</div>
+            </div><div class="product-item more-products">+14 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">26 produse</span>
+</div></div>
+<div class="card" data-county="BRASOV">
+<h3>CHEMARK ROM S.R.L.</h3>
+<div class="county">📍 BRASOV</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="HARGHITA">
+<h3>GALL ERZSEBET ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 HARGHITA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/extract-afine-negre.jpg" alt="Extract afine negre" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Extract afine negre</div>
+            </div>
+            <div class="product-item">
+                <img src="products/extract-afine-roșii.jpg" alt="Extract afine roșii" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Extract afine roșii</div>
+            </div>
+            <div class="product-item">
+                <img src="products/extract-de-coacăze-negre.jpg" alt="Extract de coacăze negre" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Extract de coacăze negre</div>
+            </div>
+            <div class="product-item">
+                <img src="products/extract-de-cătină.jpg" alt="Extract de cătină" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Extract de cătină</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-afine-negre-fără-zahăr.jpg" alt="Gem afine negre fără zahăr" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem afine negre fără zahăr</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-afine-roșii.jpg" alt="Gem afine roșii" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem afine roșii</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-afine-roșii-fără-zahăr.jpg" alt="Gem afine roșii fără zahăr" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem afine roșii fără zahăr</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-de-afine-negre.jpg" alt="Gem de afine negre" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem de afine negre</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-de-coacăze-negre.jpg" alt="Gem de coacăze negre" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem de coacăze negre</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-de-coarne.jpg" alt="Gem de coarne" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem de coarne</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-de-josta.jpg" alt="Gem de josta" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem de josta</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gem-de-mure.jpg" alt="Gem de mure" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Gem de mure</div>
+            </div><div class="product-item more-products">+16 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">28 produse</span>
+</div></div>
+<div class="card" data-county="VALCEA">
+<h3>LAZĂR ALEXANDRA</h3>
+<div class="county">📍 VALCEA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/dulceață-de-mere.jpg" alt="DULCEAȚĂ DE MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE MERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-rubarbăr.jpg" alt="DULCEAȚĂ DE RUBARBĂR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE RUBARBĂR</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-trandafir.jpg" alt="DULCEAȚĂ DE TRANDAFIR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE TRANDAFIR</div>
+            </div>
+            <div class="product-item">
+                <img src="products/fenicul.jpg" alt="FENICUL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FENICUL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mere.jpg" alt="MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/rubarbăr.jpg" alt="RUBARBĂR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">RUBARBĂR</div>
+            </div>
+            <div class="product-item">
+                <img src="products/salvie.jpg" alt="SALVIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SALVIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-de-rubarbăr.jpg" alt="SIROP DE RUBARBĂR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP DE RUBARBĂR</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-de-trandafir.jpg" alt="SIROP DE TRANDAFIR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP DE TRANDAFIR</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">9 produse</span>
+</div></div>
+<div class="card" data-county="MEHEDINȚI">
+<h3>MLADIN ILIE</h3>
+<div class="county">📍 MEHEDINȚI</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="CLUJ">
+<h3>ORBOK BELA</h3>
+<div class="county">📍 CLUJ</div>
+<div><span class="badge">🌾 Cereale si Faina</span> <span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ardei.jpg" alt="ARDEI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ARDEI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/caise.jpg" alt="CAISE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CAISE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cartofi.jpg" alt="CARTOFI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARTOFI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/castraveți.jpg" alt="CASTRAVEȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CASTRAVEȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceapă.jpg" alt="CEAPĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAPĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cimbru.jpg" alt="CIMBRU" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CIMBRU</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cireșe.jpg" alt="CIREȘE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CIREȘE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/căpșuni.jpg" alt="CĂPȘUNI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂPȘUNI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dovleac.jpg" alt="DOVLEAC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DOVLEAC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dovlecei.jpg" alt="DOVLECEI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DOVLECEI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/fasole.jpg" alt="FASOLE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FASOLE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gulii.jpg" alt="GULII" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GULII</div>
+            </div><div class="product-item more-products">+21 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">33 produse</span>
+</div></div>
+<div class="card" data-county="PRAHOVA">
+<h3>PIELE LILIANA-RODICA</h3>
+<div class="county">📍 PRAHOVA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ardei.jpg" alt="ARDEI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ARDEI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ardei-iute.jpg" alt="ARDEI IUTE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ARDEI IUTE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cartofi.jpg" alt="CARTOFI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CARTOFI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/castraveți.jpg" alt="CASTRAVEȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CASTRAVEȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-ardei-iute.jpg" alt="DULCEAȚĂ DE ARDEI IUTE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE ARDEI IUTE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-soc.jpg" alt="DULCEAȚĂ DE SOC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE SOC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-zmeură.jpg" alt="DULCEAȚĂ DE ZMEURĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE ZMEURĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mere.jpg" alt="MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pere.jpg" alt="PERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PERE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/prune.jpg" alt="PRUNE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PRUNE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/soc.jpg" alt="SOC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SOC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/tomate.jpg" alt="TOMATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">TOMATE</div>
+            </div><div class="product-item more-products">+1 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">13 produse</span>
+</div></div>
+<div class="card" data-county="BIHOR">
+<h3>PORGE TAMAȘ BIANCA CRISTINA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 BIHOR</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="BISTRITA NASAUD">
+<h3>RUS DANIEL VICTOR PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 BISTRITA NASAUD</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine-de-pădure-congelate.jpg" alt="AFINE DE PĂDURE CONGELATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE DE PĂDURE CONGELATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați.jpg" alt="HRIBI CONGELAȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mentă-congelată.jpg" alt="MENTĂ CONGELATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MENTĂ CONGELATĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/merișoare-de-pădure-congelate.jpg" alt="MERIȘOARE DE PĂDURE CONGELATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MERIȘOARE DE PĂDURE CONGELATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mure-congelate.jpg" alt="MURE CONGELATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MURE CONGELATE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zmeură-congelată.jpg" alt="ZMEURĂ CONGELATĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ZMEURĂ CONGELATĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">6 produse</span>
+</div></div>
+<div class="card" data-county="CLUJ">
+<h3>S.C. BUNĂTĂȚIUSCATE S.R.L.</h3>
+<div class="county">📍 CLUJ</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/amestec-de-legume.jpg" alt="AMESTEC DE LEGUME" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AMESTEC DE LEGUME</div>
+            </div>
+            <div class="product-item">
+                <img src="products/amestec-de-legume-cu-leurdă.jpg" alt="AMESTEC DE LEGUME CU LEURDĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AMESTEC DE LEGUME CU LEURDĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-uscați.jpg" alt="GĂLBIORI USCAȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI USCAȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-uscați.jpg" alt="HRIBI USCAȚI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI USCAȚI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-gălbiori.jpg" alt="PULBERE DE GĂLBIORI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DE GĂLBIORI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-hribi.jpg" alt="PULBERE DE HRIBI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DE HRIBI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-leurdă.jpg" alt="PULBERE DE LEURDĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DE LEURDĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-urzică.jpg" alt="PULBERE DE URZICĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DE URZICĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-zmeură.jpg" alt="PULBERE DE ZMEURĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DE ZMEURĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-din-fructe-de-la-munte.jpg" alt="PULBERE DIN FRUCTE DE LA MUNTE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DIN FRUCTE DE LA MUNTE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-din-muguri-de-brad.jpg" alt="PULBERE DIN MUGURI DE BRAD" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PULBERE DIN MUGURI DE BRAD</div>
+            </div>
+            <div class="product-item">
+                <img src="products/roșii-cherry-uscate.jpg" alt="ROȘII CHERRY USCATE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ROȘII CHERRY USCATE</div>
+            </div><div class="product-item more-products">+1 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">13 produse</span>
+</div></div>
+<div class="card" data-county="COVASNA">
+<h3>SC CĂTINA CATALINA SRL</h3>
+<div class="county">📍 COVASNA</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="VALCEA">
+<h3>SC ECO BATIRO SERVICES SRL</h3>
+<div class="county">📍 VALCEA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine.jpg" alt="AFINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/crăițe.jpg" alt="CRĂIȚE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CRĂIȚE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ghebe.jpg" alt="GHEBE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GHEBE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori.jpg" alt="GĂLBIORI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi.jpg" alt="HRIBI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mure.jpg" alt="MURE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MURE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/măceșe.jpg" alt="MĂCEȘE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MĂCEȘE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/nuci-în-coajă.jpg" alt="NUCI ÎN COAJĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">NUCI ÎN COAJĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zmeură.jpg" alt="ZMEURĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ZMEURĂ</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">10 produse</span>
+</div></div>
+<div class="card" data-county="CLUJ">
+<h3>S.C. ECO FRUCT TOTAL S.R.L.</h3>
+<div class="county">📍 CLUJ</div>
+<div><span class="badge">🌾 Cereale si Faina</span> <span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#ff980020;color:#ff9800">Maturat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine-(vaccinium-myrtillus)-congelate.jpg" alt="AFINE (Vaccinium myrtillus)-congelate" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE (Vaccinium myrtillus)-congelate</div>
+            </div>
+            <div class="product-item">
+                <img src="products/afine-(vaccinium-myrtillus)-uscate.jpg" alt="AFINE (Vaccinium myrtillus)-uscate" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE (Vaccinium myrtillus)-uscate</div>
+            </div>
+            <div class="product-item">
+                <img src="products/alune-(corylus-avellana).jpg" alt="ALUNE (Corylus avellana)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ALUNE (Corylus avellana)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/bureți-de-rouă-(marasmius-oreades)-congelați.jpg" alt="BUREȚI DE ROUĂ (Marasmius oreades)-congelați" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BUREȚI DE ROUĂ (Marasmius oreades)-congelați</div>
+            </div>
+            <div class="product-item">
+                <img src="products/bureți-de-rouă-(marasmius-oreades)-proaspeți.jpg" alt="BUREȚI DE ROUĂ (Marasmius oreades)-proaspeți" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BUREȚI DE ROUĂ (Marasmius oreades)-proaspeți</div>
+            </div>
+            <div class="product-item">
+                <img src="products/bureți-țepoși-(hydnum-repandum)--proaspeți.jpg" alt="BUREȚI ȚEPOȘI (Hydnum repandum) -proaspeți" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BUREȚI ȚEPOȘI (Hydnum repandum) -proaspeți</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cimbrișor-(thymus-sp.).jpg" alt="CIMBRIȘOR (Thymus sp.)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CIMBRIȘOR (Thymus sp.)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coacăze-(ribes-nigrum)-uscate.jpg" alt="COACĂZE (Ribes nigrum)-uscate" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COACĂZE (Ribes nigrum)-uscate</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coada-șoricelului-(achileea-millefolium)-uscată.jpg" alt="COADA ȘORICELULUI (Achileea millefolium)-uscată" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COADA ȘORICELULUI (Achileea millefolium)-uscată</div>
+            </div>
+            <div class="product-item">
+                <img src="products/coarne (cornus-mas).jpg" alt="COARNE (Cornus mas)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">COARNE (Cornus mas)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/crăiţe-(amanita-caesarea)---proaspete.jpg" alt="CRĂIŢE (Amanita caesarea) - proaspete" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CRĂIŢE (Amanita caesarea) - proaspete</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină-(hippophae-rhamnoides)-congelată.jpg" alt="CĂTINĂ (Hippophae rhamnoides)-congelată" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ (Hippophae rhamnoides)-congelată</div>
+            </div><div class="product-item more-products">+40 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">52 produse</span>
+</div></div>
+<div class="card" data-county="BACAU">
+<h3>S.C. ELCOMSAT-SERV.S.R.L.</h3>
+<div class="county">📍 BACAU</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ceai-de-cătină.jpg" alt="Ceai de cătină" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Ceai de cătină</div>
+            </div>
+            <div class="product-item">
+                <img src="products/pulbere-de-cătină.jpg" alt="Pulbere de cătină" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Pulbere de cătină</div>
+            </div>
+            <div class="product-item">
+                <img src="products/suc-de-cătină.jpg" alt="Suc de cătină" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Suc de cătină</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="BIHOR">
+<h3>SC EMILIAN FUNGHI SRL</h3>
+<div class="county">📍 BIHOR</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine-negre-congelate-„terarium”.jpg" alt="AFINE NEGRE CONGELATE „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE NEGRE CONGELATE „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/afine-proaspete-„terarium”.jpg" alt="AFINE PROASPETE „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE PROASPETE „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină-congelată-„terarium”.jpg" alt="CĂTINĂ CONGELATĂ „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ CONGELATĂ „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină-proaspătă-„terarium”.jpg" alt="CĂTINĂ PROASPĂTĂ „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ PROASPĂTĂ „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-congelați-„terarium”.jpg" alt="GĂLBIORI CONGELAȚI „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI CONGELAȚI „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/gălbiori-proaspeți-„terarium”.jpg" alt="GĂLBIORI PROASPEȚI „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GĂLBIORI PROASPEȚI „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-calitatea-a-ii-a-„terarium”.jpg" alt="HRIBI CONGELAȚI CALITATEA A-II-A „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI CALITATEA A-II-A „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-calitatea-i-„terarium”.jpg" alt="HRIBI CONGELAȚI CALITATEA I „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI CALITATEA I „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-cubulețe-calitatea-a-ii-a-„terarium”.jpg" alt="HRIBI CONGELAȚI CUBULEȚE CALITATEA A-II-A „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI CUBULEȚE CALITATEA A-II-A „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-cubulețe-calitatea-i-„terarium”.jpg" alt="HRIBI CONGELAȚI CUBULEȚE CALITATEA I „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI CUBULEȚE CALITATEA I „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-cuburi-calitatea-a-iii-a-„terarium”.jpg" alt="HRIBI CONGELAȚI CUBURI CALITATEA A-III-A „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI CUBURI CALITATEA A-III-A „TERARIUM”</div>
+            </div>
+            <div class="product-item">
+                <img src="products/hribi-congelați-lamele/jumătăți-„terarium”.jpg" alt="HRIBI CONGELAȚI LAMELE/JUMĂTĂȚI „TERARIUM”" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">HRIBI CONGELAȚI LAMELE/JUMĂTĂȚI „TERARIUM”</div>
+            </div><div class="product-item more-products">+3 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">15 produse</span>
+</div></div>
+<div class="card" data-county="HUNEDOARA">
+<h3>SC FOLIHAUS SRL</h3>
+<div class="county">📍 HUNEDOARA</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/microplante.jpg" alt="MICROPLANTE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MICROPLANTE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">1 produse</span>
+</div></div>
+<div class="card" data-county="CLUJ">
+<h3>S.C. HOSUS TURISM S.R.L.</h3>
+<div class="county">📍 CLUJ</div>
+<div><span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ceai-de-muguri-de-brad.jpg" alt="CEAI DE MUGURI DE BRAD" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI DE MUGURI DE BRAD</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-merișoare-fără-zahăr-adăugat.jpg" alt="DULCEAȚĂ DE MERIȘOARE FĂRĂ ZAHĂR ADĂUGAT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE MERIȘOARE FĂRĂ ZAHĂR ADĂUGAT</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-de-merișoare-fără-zahăr-adăugat.jpg" alt="SIROP DE MERIȘOARE FĂRĂ ZAHĂR ADĂUGAT" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP DE MERIȘOARE FĂRĂ ZAHĂR ADĂUGAT</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="SUCEAVA">
+<h3>SC MOVILEȘTII SRL</h3>
+<div class="county">📍 SUCEAVA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ceai-de-roiniță-sucevița.jpg" alt="CEAI DE ROINIȚĂ SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI DE ROINIȚĂ SUCEVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-de-salvie-sucevița.jpg" alt="CEAI DE SALVIE SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI DE SALVIE SUCEVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-b-(bilostim).jpg" alt="CEAI SUCEVIȚA B (BILOSTIM)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA B (BILOSTIM)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-dp-(diuretic-plant).jpg" alt="CEAI SUCEVIȚA DP (DIURETIC-PLANT)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA DP (DIURETIC-PLANT)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-dxp-(detox-plant).jpg" alt="CEAI SUCEVIȚA DXP (DETOX-PLANT)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA DXP (DETOX-PLANT)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-gc-(gastro-calm).jpg" alt="CEAI SUCEVIȚA GC (GASTRO-CALM)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA GC (GASTRO-CALM)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-r-(relaxant).jpg" alt="CEAI SUCEVIȚA R (RELAXANT)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA R (RELAXANT)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceai-sucevița-tp-(tuso-plant).jpg" alt="CEAI SUCEVIȚA TP (TUSO-PLANT)" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CEAI SUCEVIȚA TP (TUSO-PLANT)</div>
+            </div>
+            <div class="product-item">
+                <img src="products/dulceață-de-afine-sălbatice-sucevița.jpg" alt="DULCEAȚĂ DE AFINE SĂLBATICE SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">DULCEAȚĂ DE AFINE SĂLBATICE SUCEVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/oțet-de-mere-cu-cătină-sucevița.jpg" alt="OȚET DE MERE CU CĂTINĂ SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">OȚET DE MERE CU CĂTINĂ SUCEVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/peltea-de-aronia-sucevița.jpg" alt="PELTEA DE ARONIA SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PELTEA DE ARONIA SUCEVIȚA</div>
+            </div>
+            <div class="product-item">
+                <img src="products/sirop-de-afine-sălbatice-sucevița.jpg" alt="SIROP DE AFINE SĂLBATICE SUCEVIȚA" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SIROP DE AFINE SĂLBATICE SUCEVIȚA</div>
+            </div><div class="product-item more-products">+8 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">20 produse</span>
+</div></div>
+<div class="card" data-county="MARAMURES">
+<h3>SC PEGASUS VITAE SRL</h3>
+<div class="county">📍 MARAMURES</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge">🫙 Conserve si Sucuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> <span class="badge" style="background:#2196f320;color:#2196f3">Procesat</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/extract-de-afine.jpg" alt="EXTRACT DE AFINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">EXTRACT DE AFINE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/extract-de-cătină.jpg" alt="EXTRACT DE CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">EXTRACT DE CĂTINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/fructe-de-cătină.jpg" alt="FRUCTE DE CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">FRUCTE DE CĂTINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/suc-de-mere.jpg" alt="SUC DE MERE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SUC DE MERE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">4 produse</span>
+</div></div>
+<div class="card" data-county="HUNEDOARA">
+<h3>SC ULEIURI NATURALE SRL</h3>
+<div class="county">📍 HUNEDOARA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ulei-aromatizat-de-floarea-soarelui-cu-ardei-iute.jpg" alt="ULEI AROMATIZAT DE FLOAREA SOARELUI CU ARDEI IUTE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI AROMATIZAT DE FLOAREA SOARELUI CU ARDEI IUTE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ulei-aromatizat-de-floarea-soarelui-cu-busuioc.jpg" alt="ULEI AROMATIZAT DE FLOAREA SOARELUI CU BUSUIOC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI AROMATIZAT DE FLOAREA SOARELUI CU BUSUIOC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ulei-aromatizat-de-floarea-soarelui-cu-cimbrișor.jpg" alt="ULEI AROMATIZAT DE FLOAREA SOARELUI CU CIMBRIȘOR" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI AROMATIZAT DE FLOAREA SOARELUI CU CIMBRIȘOR</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ulei-aromatizat-de-floarea-soarelui-cu-rozmarin.jpg" alt="ULEI AROMATIZAT DE FLOAREA SOARELUI CU ROZMARIN" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI AROMATIZAT DE FLOAREA SOARELUI CU ROZMARIN</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ulei-de-dovleac-presat-la-rece.jpg" alt="ULEI DE DOVLEAC PRESAT LA RECE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI DE DOVLEAC PRESAT LA RECE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ulei-de-floarea-soarelui-presat-la-rece.jpg" alt="ULEI DE FLOAREA SOARELUI PRESAT LA RECE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">ULEI DE FLOAREA SOARELUI PRESAT LA RECE</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">6 produse</span>
+</div></div>
+<div class="card" data-county="VALCEA">
+<h3>ȘTEFĂNOIU ELENA-ANDREEA</h3>
+<div class="county">📍 VALCEA</div>
+<div><span class="badge">🧀 Lactate si Oua</span> <span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/afine.jpg" alt="AFINE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">AFINE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/busuioc-de-câmp.jpg" alt="BUSUIOC DE CÂMP" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">BUSUIOC DE CÂMP</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ghebe.jpg" alt="GHEBE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">GHEBE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/lapte-crud-de-vacă.jpg" alt="LAPTE CRUD DE VACĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">LAPTE CRUD DE VACĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mentă.jpg" alt="MENTĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MENTĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/muguri-de-brad.jpg" alt="MUGURI DE BRAD" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">MUGURI DE BRAD</div>
+            </div>
+            <div class="product-item">
+                <img src="products/parasol.jpg" alt="PARASOL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PARASOL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/plămânărică.jpg" alt="PLĂMÂNĂRICĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PLĂMÂNĂRICĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/păducel.jpg" alt="PĂDUCEL" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">PĂDUCEL</div>
+            </div>
+            <div class="product-item">
+                <img src="products/salvie.jpg" alt="SALVIE" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SALVIE</div>
+            </div>
+            <div class="product-item">
+                <img src="products/soc.jpg" alt="SOC" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">SOC</div>
+            </div>
+            <div class="product-item">
+                <img src="products/urzică.jpg" alt="URZICĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">URZICĂ</div>
+            </div><div class="product-item more-products">+1 mai multe</div></div>
+<div class="card-footer">
+    <span class="product-count">13 produse</span>
+</div></div>
+<div class="card" data-county="MARAMURES">
+<h3>ȚIPLEA IOAN-PETRU PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 MARAMURES</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/căpșuni.jpg" alt="CĂPȘUNI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂPȘUNI</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="CĂTINĂ" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">CĂTINĂ</div>
+            </div>
+            <div class="product-item">
+                <img src="products/nuci.jpg" alt="NUCI" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">NUCI</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">3 produse</span>
+</div></div>
+<div class="card" data-county="VALCEA">
+<h3>ZAMFIROIU ELENA IONELA</h3>
+<div class="county">📍 VALCEA</div>
+<div><span class="badge">🥬 Fructe si Legume Proaspete</span> <span class="badge">🌿 Plante si Ceaiuri</span> <span class="badge" style="background:#4caf5020;color:#4caf50">Proaspat</span> <span class="badge" style="background:#9c27b020;color:#9c27b0">Neperisabil</span> </div>
+<div class="products-grid">
+            <div class="product-item">
+                <img src="products/ardei.jpg" alt="Ardei" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Ardei</div>
+            </div>
+            <div class="product-item">
+                <img src="products/castraveți.jpg" alt="Castraveți" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Castraveți</div>
+            </div>
+            <div class="product-item">
+                <img src="products/ceapă.jpg" alt="Ceapă" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Ceapă</div>
+            </div>
+            <div class="product-item">
+                <img src="products/căpșuni.jpg" alt="Căpșuni" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Căpșuni</div>
+            </div>
+            <div class="product-item">
+                <img src="products/cătină.jpg" alt="Cătină" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Cătină</div>
+            </div>
+            <div class="product-item">
+                <img src="products/fasole.jpg" alt="Fasole" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Fasole</div>
+            </div>
+            <div class="product-item">
+                <img src="products/mure.jpg" alt="Mure" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Mure</div>
+            </div>
+            <div class="product-item">
+                <img src="products/roșii.jpg" alt="Roșii" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Roșii</div>
+            </div>
+            <div class="product-item">
+                <img src="products/usturoi.jpg" alt="Usturoi" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Usturoi</div>
+            </div>
+            <div class="product-item">
+                <img src="products/zmeură.jpg" alt="Zmeură" class="product-img" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjhGOUZBIi8+CjxwYXRoIGQ9Ik00MCAyMEM0OCAyMCA1NSAyNyA1NSAzNUM1NSA0MyA0OCA1MCA0MCA1MEMzMiA1MCAyNSA0MyAyNSAzNUMyNSAyNyAzMiAyMCA0MCAyMFoiIGZpbGw9IiMyRDUwMTYiLz4KPHBhdGggZD0iTTQwIDMwQzQ0IDMwIDQ3IDMzIDQ3IDM3QzQ3IDQxIDQ0IDQ0IDQwIDQ0QzM2IDQ0IDMzIDQxIDMzIDM3QzMzIDMzIDM2IDMwIDQwIDMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'" />
+                <div class="product-name">Zmeură</div>
+            </div></div>
+<div class="card-footer">
+    <span class="product-count">10 produse</span>
+</div></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)</div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

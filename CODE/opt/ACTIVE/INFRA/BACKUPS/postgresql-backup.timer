@@ -1,0 +1,15 @@
+[Unit]
+Description=Daily PostgreSQL Backup Timer
+Requires=postgresql-backup.service
+
+[Timer]
+# Run daily at 2:30 AM (low traffic time)
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+RandomizedDelaySec=300
+
+# Ensure timer doesn't run too frequently if system was down
+AccuracySec=1h
+
+[Install]
+WantedBy=timers.target

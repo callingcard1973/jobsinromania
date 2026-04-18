@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="es" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="es" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="es"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="Centro de Información de Uruguay XXI" />
+<meta name="description" content="Acceda a nuestros principales informes, documentos y herramientas." />
+<meta name="keywords" content="informes, documentos, estadísticas, uruguay xxi, exportaciones, inversiones" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="es" />
+    <meta name="author" content="AreaW3 - www.areaw3.com"/>
+    <title>Centro de Información de Uruguay XXI</title>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+    <link rel='dns-prefetch' href='//maps.googleapis.com'/>
+            <link rel='canonical' href='https://www.uruguayxxi.gub.uy/es/centro-informacion/'/>
+        <!--OG ITEM-->
+        <meta name='twitter:site' content='@XXI'>
+        <meta name='twitter:card' content='summary'/>
+        <meta name='twitter:title' content='Centro de Información de Uruguay XXI'/>
+        <meta name='twitter:description' content='Acceda a nuestros principales informes, documentos y herramientas.'/>
+        <meta name='twitter:image' content='https://www.uruguayxxi.gub.uy/assets/images/300x300.jpg'/>
+
+        <meta property='fb:app_id' content='796414760409643'/>
+        <meta property='og:type' content='website'/>
+        <meta property='og:title' content='Centro de Información de Uruguay XXI'/>
+        <meta property='og:description' content='Acceda a nuestros principales informes, documentos y herramientas.'/>
+        <meta property='og:url' content='https://www.uruguayxxi.gub.uy/es/centro-informacion/'/>
+        <meta property='og:image' content='https://www.uruguayxxi.gub.uy/assets/images/300x300.jpg'/>
+        <meta property='og:site_name' content='XXI'/>
+
+        <meta itemprop='name' content='Centro de Información de Uruguay XXI'/>
+        <meta itemprop='description' content='Acceda a nuestros principales informes, documentos y herramientas.'/>
+        <meta itemprop='image' content='https://www.uruguayxxi.gub.uy/assets/images/300x300.jpg'/>
+        <!--Fin OG ITEM-->
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/public/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/public/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/public/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/public/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/public/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/public/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/public/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/public/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" href="/public/favicon/favicon.ico"/>
+
+                    <style>
+            .page-loading {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-transition: all .4s .2s ease-in-out;
+                transition: all .4s .2s ease-in-out;
+                background-color: #fff;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 9999;
+            }
+
+            .page-loading.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .page-loading-inner {
+                position: absolute;
+                top: 40%;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                -webkit-transition: opacity .2s ease-in-out;
+                transition: opacity .2s ease-in-out;
+                opacity: 0;
+            }
+
+            .page-loading.active > .page-loading-inner {
+                opacity: 1;
+            }
+
+            .page-loading-inner > span {
+                display: block;
+                font-family: 'Inter', sans-serif;
+                font-size: 1rem;
+                font-weight: normal;
+                color: #737491;
+            }
+        </style>
+        <script>
+            (function () {
+                window.onload = function () {
+                    var preloader = document.querySelector('.page-loading');
+                    if (preloader) {
+                        setTimeout(function () {
+                            preloader.classList.remove('active');
+                        }, 1000);
+                    }
+                };
+            })();
+        </script>
+    
+    <script>
+        var culture = 'es';
+        var uri_base_item = null;
+        var uri_base_list = null;
+        var translations = [];
+        var dates_con_eventos = [];
+        var validatorConfig = [];
+    </script>
+
+            <link rel="stylesheet" href="/public/build/app.e40067f8.css"/>
+    
+            <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-N9WMNJQ');</script><!-- End Google Tag Manager -->
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5DVV2GH');</script><!-- End Google Tag Manager -->
+        </script>
+    </head>
+<!-- Body-->
+<body class="informacion bg-secondary is-sidebar ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9WMNJQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript><!-- End Google Tag Manager (noscript) -->
+
+               <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DVV2GH" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript><!-- End Google Tag Manager (noscript) -->
+
+    <!-- Page loading spinner-->
+            <div class="page-loading active">
+            <div class="page-loading-inner">
+                <style>
+    svg {
+        width: 130px;
+    }
+
+    /* make keyframes that tell the start state and the end state of our object */
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fade-in {
+        opacity: 0; /* make things invisible upon start */
+        -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation: fadeIn ease-in 1;
+        animation: fadeIn ease-in 1;
+
+        -webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+    }
+
+    .fade-in.one {
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+
+    .fade-in.two {
+        -webkit-animation-delay: 0.7s;
+        -moz-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+    }
+
+    .fade-in.three {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+    .fade-in.four {
+        -webkit-animation-delay: 3s;
+        -moz-animation-delay: 3s;
+        animation-delay: 3s;
+    }
+</style>
+<!--?xml version="1.0"?-->
+<svg version="1.1" id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="114.013px"
+        height="117.007px" viewBox="218.333 43 114.013 117.007" enable-background="new 218.333 43 114.013 117.007"
+        xml:space="preserve">
+    <g>
+        <path id="back-circle" class="fade-in one" fill="#00549C" d="M226.213,48.577c-5.411,12.098-8.398,26.063-7.301,41.198
+		c2.932,40.356,31.541,71.839,63.09,69.571c17.821-1.317,33.031-13.005,42.355-30.218c2.117-3.956,1.246-6.191-2.073-2.711
+		c-41.388,43.771-93.108-2.032-94.979-53.75c-0.623-8.317-0.207-16.397,0.966-24.091C228.826,45.154,227.304,46.117,226.213,48.577"
+        />
+        <path id="mid-circle" class="fade-in three" fill="#FFC341" d="M292.381,72.584c2.183,1.493,4.315,2.772,6.901,2.636c0.293-0.024,0.818,0.042,1.066,0.461
+		c0.111,0.245,0.36,0.709-0.168,1.317c-2.102,2.161-5.422,3.771-8.973,4.425c1.105,2.379,2.359,4.54,4.66,5.713
+		c0.273,0.147,0.715,0.465,0.682,0.937c0,0.275-0.031,0.799-0.797,1.065c-2.903,0.844-6.569,0.563-9.986-0.679
+		c-0.203,2.625-0.248,5.121,1.178,7.245c0.18,0.263,0.389,0.763,0.141,1.188c-0.141,0.219-0.461,0.668-1.234,0.529
+		c-2.959-0.742-5.949-2.767-8.301-5.559c-1.521,2.146-2.767,4.288-2.627,6.876c0.025,0.289-0.039,0.814-0.455,1.084
+		c-0.266,0.09-0.748,0.349-1.357-0.19c-2.175-2.099-3.735-5.371-4.389-8.944c-2.361,1.12-4.537,2.354-5.713,4.638
+		c-0.152,0.271-0.469,0.688-0.963,0.688c-0.24,0-0.775-0.092-1.071-0.765c-0.813-2.945-0.524-6.583,0.709-10.001
+		c-2.63-0.207-5.106-0.236-7.293,1.182c-0.279,0.177-0.731,0.387-1.161,0.138c-0.203-0.138-0.676-0.458-0.536-1.234
+		c0.745-2.968,2.806-5.949,5.587-8.301c-2.176-1.532-4.305-2.777-6.904-2.63c-0.316,0.027-0.815-0.039-1.064-0.46
+		c-0.14-0.257-0.349-0.757,0.18-1.357c2.104-2.175,5.365-3.741,8.962-4.378c-1.106-2.378-2.352-4.551-4.657-5.729
+		c-0.279-0.148-0.709-0.473-0.685-0.97c0-0.252,0.051-0.775,0.779-1.062c2.92-0.832,6.583-0.539,10.001,0.674
+		c0.223-2.6,0.251-5.121-1.179-7.284c-0.176-0.252-0.386-0.713-0.137-1.137c0.137-0.246,0.472-0.684,1.242-0.542
+		c2.924,0.746,5.941,2.813,8.292,5.59c1.521-2.173,2.768-4.3,2.639-6.913c-0.053-0.313,0.031-0.821,0.461-1.063
+		c0.232-0.141,0.729-0.353,1.34,0.188c2.187,2.088,3.733,5.371,4.372,8.956c2.396-1.098,4.565-2.343,5.727-4.654
+		c0.156-0.286,0.488-0.723,0.966-0.676c0.252,0,0.776,0.028,1.069,0.776c0.833,2.926,0.536,6.556-0.718,9.97
+		c2.642,0.251,5.129,0.279,7.305-1.175c0.248-0.154,0.748-0.357,1.16-0.106c0.224,0.141,0.676,0.47,0.537,1.239
+		C297.222,67.204,295.166,70.241,292.381,72.584"/>
+        <path id="fore-circle" class="fade-in two" fill="#00549C" d="M267.689,130.529c-4.564-2.176-5.23-5.229,1.686-5.16
+		c39.738,0.273,56.799-44.695,56.146-79.173c-0.066-2.957,1.206-3.998,2.406-0.183c2.01,6.204,3.303,12.886,3.836,19.87
+		c2.6,35.912-17.143,66.846-43.95,68.806C280.802,135.205,274.054,133.563,267.689,130.529"/>
+    </g>
+</svg>
+            </div>
+        </div>
+    
+<main class="page-wrapper">
+    <style>
+    @media (min-width: 992px) {
+        .navbar-expand-lg .dropdown-mega .dropdown-column {
+            min-width: unset !important;
+            width: unset !important;
+        }
+    }
+
+    .dropdown-mega .dropdown-column .dropdown-item {
+        white-space: nowrap !important;
+    }
+</style>
+<header class="header navbar navbar-expand-lg navbar-light bg-light navbar-shadow navbar-sticky pb-2" data-scroll-header data-fixed-element>
+    <div class="container px-0 px-xl-3">
+        <a class="navbar-brand flex-shrink-0 ms-lg-0 pe-lg-2 me-0 me-lg-4 mt-2" href="https://www.uruguayxxi.gub.uy/es/"><img class="d-none d-lg-block" src="/public/img/logo-es.svg?1" alt="URUGUAY XXI" width="200"><img class="d-lg-none mb-2" src="/public/img/logo-es.svg?1" alt="URUGUAY XXI" width="200"></a>
+        <div class="row d-inline">
+            <div class="col-xs-12 text-right ps-0">
+                <li class="nav-item d-inline d-sm-none">
+                    <a href="https://uruguay.uy/" target="_blank" class="ms-1 me-1 small" style="color: #000;"><b>uruguay.uy</b></a>
+                </li>
+                <button class="navbar-toggler ms-n2 me-2 order-lg-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-collapse  offcanvas-end order-lg-3" id="primaryMenu">
+            <div class="offcanvas-header pb-0">
+                <h5 class="mt-1 mb-0"></h5>
+                <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-none d-md-block" style="flex-direction: column;">
+                <ul class="list-group list-group-horizontal navbar-nav container text-right w-100 d-none d-md-block">
+                    <li class=" px-0 list-group-item nav-item d-inline dropdown dropdown-mega dropdown-mega-quienes-somos">
+                        <a class="dropdown-toggle redirecto me-2 small" style="color:#000;" href="#" data-redirecto="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/" data-bs-toggle="dropdown"><b>¿Quiénes somos?</b></a>
+                        <div class="dropdown-menu desktop" id="menu-quienes" style="min-height: 250px;width: 70%;margin-left: 0;">
+                            <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/" style="background-image: url(/public/img/menu_quienessomos.jpg);">
+                                                                                                    <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Quiénes</span>
+                                                                    <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">somos</span>
+                                                            </a>
+                            <div class="dropdown-column">
+                                <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/">Sobre Uruguay XXI</a>
+                                <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/areas/">Áreas</a>
+                                <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/equipo-gerencial/">Equipo gerencial</a>
+                            </div>
+                            <div class="dropdown-column w-50">
+                                <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/informacion-gestion-contable/">Información de gestión y contable</a>
+                                <a class="dropdown-item titulo-menu" href="/es/quienes-somos/transparencia/">Transparencia</a>
+                                <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/llamados-licitaciones/">Llamados y licitaciones</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=" px-0 list-group-item nav-item d-inline">
+                        <a href="https://uruguay.uy/" target="_blank" class="ms-1 me-1 small" style="color: #000;"><b>uruguay.uy</b></a>
+                    </li>
+                    <li class=" px-0 list-group-item nav-item d-inline">
+                        <form action="https://www.uruguayxxi.gub.uy/es/centro-informacion/" class=" d-inline-block" style="max-width: 250px; margin: 0 10px;">
+                            <div class="input-group flex-nowrap">
+                                <i class="ai-search position-absolute top-50 start-0 translate-middle-y text-muted ms-3"></i>
+                                <input class="form-control rounded-start ms-0 fs-sm py-1" type="text" name="q" placeholder="Buscar por palabra clave" value="">
+                                <button class="btn btn-primary rounded-end py-1" type="submit">
+                                    <i class="ai-chevron-right fs-xl"></i></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li class=" px-0 list-group-item nav-item d-inline">
+                        <select class="no-select-2 bg-gradient text-white border-0 p-2 rounded-pill lang-es" id="lang-selector">
+                            <option value="https://www.uruguayxxi.gub.uy/es/centro-informacion/" selected>ES</option>
+                            <option value="https://www.uruguayxxi.gub.uy/en/information-center/" >EN</option>
+                            <option value="https://www.uruguayxxi.gub.uy/pt/centro-informacao/" >PT</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav container justify-content-end w-100">
+                <li class="nav-item dropdown dropdown-mega dropdown-mega-home d-block d-sm-none">
+                    <a class="nav-link -dropdown-toggle" href="https://www.uruguayxxi.gub.uy/es/">Inicio</a>
+                </li>
+
+                                <li class="nav-item d-inline dropdown dropdown-mega dropdown-mega-quienes-somos-mobile d-block d-sm-none">
+                    <a class="nav-link dropdown-toggle redirecto-" href="#" data-redirecto="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/" data-bs-toggle="dropdown">¿Quiénes somos?</a>
+                    <div class="dropdown-menu mobile" id="menu-quienes" style="min-height: 250px">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/" style="background-image: url(/public/img/menu_quienessomos.jpg);">
+                                                                                        <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Quiénes</span>
+                                                            <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">somos</span>
+                                                    </a>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/sobre-uruguay-xxi/">Sobre Uruguay XXI</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/areas/">Áreas</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/equipo-gerencial/">Equipo gerencial</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/informacion-gestion-contable/">Información de gestión y contable</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quienes-somos/transparencia/">Transparencia</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/quienes-somos/llamados-licitaciones/">Llamados y licitaciones</a>
+                        </div>
+                    </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-noticias">
+                    <a class="nav-link -dropdown-toggle" href="/es/noticias/">Noticias</a>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-eventos">
+                    <a class="nav-link -dropdown-toggle" href="/es/eventos/">Agenda</a>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-quiero-exportar">
+                    <a class="nav-link d-none d-md-block" href="https://www.uruguayxxi.gub.uy/es/quiero-exportar/">EXPORTAR</a>
+                    <a class="nav-link dropdown-toggle d-block d-md-none" href="#" data-bs-toggle="dropdown">Exportar</a>
+                    <div class="dropdown-menu mobile">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-exportar/" style="background-image: url(/public/img/menu_exportar.jpg?1);"><span class="bg-gradient gradient-green text-right rounded-pill titulo-portada mb-1">Exportar</span></a>
+                        <div class="dropdown-column -column-quiero-exportar">
+                            <a class="dropdown-item titulo-menu d-block d-sm-none" href="/es/quiero-exportar/">Exportar</a>
+                                                        <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/servicios/">Servicios</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item p-1" href="/es/quiero-exportar/servicios/informacion/">Información</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item p-1" href="/es/quiero-exportar/servicios/formacion/">Formación</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item p-1" href="/es/quiero-exportar/servicios/asesoramiento/">Asesoramiento</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item p-1" href="/es/quiero-exportar/servicios/promocion/">Promoción</a>
+                                </li>
+                            </ul>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/ecommerce/">E-commerce</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/herramientas/">Herramientas</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/exportaciones-1/">Agenda</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/noticias/exportaciones-1/">Noticias</a>
+                            <a class="dropdown-item titulo-menu" target="_blank"  href="/es/mas-comercio/">Más comercio</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/historias-exito/">Historias de éxito</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/contacto/">Contacto</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu desktop" style="min-height: 250px">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-exportar/" style="background-image: url(/public/img/menu_exportar.jpg?1);"><span class="bg-gradient gradient-green text-right rounded-pill titulo-portada mb-1">Exportar</span></a>
+                                                <div class="dropdown-column -column-quiero-exportar">
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/servicios/">Servicios</a>
+                            <a class="dropdown-item p-0" href="/es/quiero-exportar/servicios/informacion/">Información</a>
+                            <a class="dropdown-item p-0" href="/es/quiero-exportar/servicios/formacion/">Formación</a>
+                            <a class="dropdown-item p-0" href="/es/quiero-exportar/servicios/asesoramiento/">Asesoramiento</a>
+                            <a class="dropdown-item p-0" href="/es/quiero-exportar/servicios/promocion/">Promoción</a>
+                        </div>
+                        <div class="dropdown-column -column-quiero-exportar">
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/ecommerce/">E-commerce</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/herramientas/">Herramientas</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/exportaciones-1/">Agenda</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/noticias/exportaciones-1/">Noticias</a>
+                        </div>
+                        <div class="dropdown-column -column-quiero-exportar">
+                            <a class="dropdown-item titulo-menu" target="_blank" href="/es/mas-comercio/">Más comercio</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/historias-exito/">Historias de éxito</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-exportar/contacto/">Contacto</a>
+                        </div>
+                    </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-quiero-comprar">
+                    <a class="nav-link d-none d-md-block" href="https://www.uruguayxxi.gub.uy/es/quiero-comprar/">COMPRAR</a>
+                    <a class="nav-link dropdown-toggle d-block d-md-none" href="#" data-bs-toggle="dropdown">Comprar</a>
+                    <div class="dropdown-menu mobile">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-comprar/" style="background-image: url(/public/img/menu_comprar.jpeg);"><span class="bg-gradient gradient-naranja text-right rounded-pill titulo-portada mb-1">Comprar</span></a>
+                        <div class="dropdown-column column-quiero-comprar">
+                            <a class="dropdown-item titulo-menu d-block d-sm-none" href="/es/quiero-comprar/">Comprar</a>
+                            <a class="dropdown-item menu-quiero-comprar current" href="#">Sectores</a>
+                            <ul class="dropdown-menu">
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Agroindustria &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/agroindustria/">Agroindustria</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/agroindustria/lanas/">Lanas</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Alimentos y bebidas &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/">Alimentos y bebidas</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/aceite-de-oliva/">Aceite de oliva</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/alimentos-procesados/">Alimentos procesados</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/alimentos-saludables/">Alimentos saludables</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/arroz/">Arroz</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/carnes/">Carnes</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/caviar/">Caviar</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/dulces-mieles-y-mermeladas/">Dulces, mieles y mermeladas</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/frutas/">Frutas</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/lacteos/">Lácteos</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/alimentos-y-bebidas/vinos/">Vinos</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Arquitectura, Ingeniería y Construcción &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/">Arquitectura, Ingeniería y Construcción</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/arquitectura/">Arquitectura</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/construccion/">Construcción</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/ingenieria/">Ingeniería</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Cannabis &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/cannabis/">Cannabis</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/cannabis/canamo-industrial/">Cañamo industrial</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/cannabis/medicinal/">Medicinal</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Diseño &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/diseno/">Diseño</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/diseno/moda/">Moda</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">Industrias creativas &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/">Industrias creativas</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/audiovisual/">Audiovisual</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/ilustracion/">Ilustración</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/industria-editorial/">Industria Editorial</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/musica/">Música</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/publicidad/">Publicidad</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/industrias-creativas/videojuegos/">Videojuegos</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item" href="#">TIC &raquo; </a>
+                                        <ul class="submenu dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="/es/quiero-comprar/sectores/tic/">TIC</a>
+                                            </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/tic/desarrollo-de-software/">Desarrollo de software</a>
+                                                </li>
+                                                                                            <li>
+                                                    <a class="dropdown-item" href="/es/quiero-comprar/sectores/tic/productos-tecnologicos/">Productos tecnológicos</a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+                                                            </ul>
+                            <a class="dropdown-item menu-quiero-comprar" href="/es/quiero-comprar/servicios-al-comprador/">Servicios</a>
+                            <a class="dropdown-item menu-quiero-comprar" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/compradores/">Documentos</a>
+                            <a class="dropdown-item menu-quiero-comprar" href="https://www.uruguayxxi.gub.uy/es/catalogo-compradores/">Catálogo para Compradores</a>
+                            <a class="dropdown-item menu-quiero-comprar" href="https://www.uruguayxxi.gub.uy/es/noticias/quiero-comprar/">Noticias</a>
+                            <a class="dropdown-item menu-quiero-comprar" href="https://www.uruguayxxi.gub.uy/es/eventos/quiero-comprar/">Agenda</a>
+                            <a class="dropdown-item menu-quiero-comprar" href="/es/quiero-comprar/contacto/">Contacto</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu desktop">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-comprar/" style="background-image: url(/public/img/menu_comprar.jpeg);"><span class="bg-gradient gradient-naranja text-right rounded-pill titulo-portada mb-1">Comprar</span></a>
+                        <div class="dropdown-column column-quiero-comprar">
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="javascript:void(0)">Sectores</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="/es/quiero-comprar/servicios-al-comprador/">Servicios</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/compradores/">Documentos</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="https://www.uruguayxxi.gub.uy/es/catalogo-compradores/">Catálogo para Compradores</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="https://www.uruguayxxi.gub.uy/es/noticias/quiero-comprar/">Noticias</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/quiero-comprar/">Agenda</a>
+                            <a class="dropdown-item menu-quiero-comprar titulo-menu" href="/es/quiero-comprar/contacto/">Contacto</a>
+                        </div>
+                                                                            <div class="dropdown-column column-quiero-comprar">
+                                                                                                                                            <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/alimentos-y-bebidas/">
+                                        Alimentos y bebidas                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/aceite-de-oliva/">
+                                            Aceite de oliva                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/alimentos-procesados/">
+                                            Alimentos procesados                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/alimentos-saludables/">
+                                            Alimentos saludables                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/arroz/">
+                                            Arroz                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/carnes/">
+                                            Carnes                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/caviar/">
+                                            Caviar                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/dulces-mieles-y-mermeladas/">
+                                            Dulces, mieles y<br />
+mermeladas                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/frutas/">
+                                            Frutas                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/lacteos/">
+                                            Lácteos                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/alimentos-y-bebidas/vinos/">
+                                            Vinos                                        </a>
+                                                                                                                                                                                <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/tic/">
+                                        TIC                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/tic/desarrollo-de-software/">
+                                            Desarrollo de software                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/tic/productos-tecnologicos/">
+                                            Productos tecnológicos                                        </a>
+                                                                                                </div>
+                                                    <div class="dropdown-column column-quiero-comprar">
+                                                                                                                                            <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/agroindustria/">
+                                        Agroindustria                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/agroindustria/lanas/">
+                                            Lanas                                        </a>
+                                                                                                                                                                                <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/cannabis/">
+                                        Cannabis                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/cannabis/canamo-industrial/">
+                                            Cañamo industrial                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/cannabis/medicinal/">
+                                            Medicinal                                        </a>
+                                                                                                                                                                                <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/industrias-creativas/">
+                                        Industrias creativas                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/audiovisual/">
+                                            Audiovisual                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/ilustracion/">
+                                            Ilustración                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/industria-editorial/">
+                                            Industria Editorial                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/musica/">
+                                            Música                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/publicidad/">
+                                            Publicidad                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/industrias-creativas/videojuegos/">
+                                            Videojuegos                                        </a>
+                                                                                                </div>
+                                                    <div class="dropdown-column column-quiero-comprar">
+                                                                                                                                            <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/">
+                                        Arquitectura, Ingeniería<br />
+y Construcción                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/arquitectura/">
+                                            Arquitectura                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/construccion/">
+                                            Construcción                                        </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/arquitectura-ingenieria-y-construccion/ingenieria/">
+                                            Ingeniería                                        </a>
+                                                                                                                                                                                <a class="dropdown-item titulo-menu text-comprar"
+                                       href="/es/quiero-comprar/sectores/diseno/">
+                                        Diseño                                    </a>
+                                                                            <a class="dropdown-item p-0"
+                                           href="/es/quiero-comprar/sectores/diseno/moda/">
+                                            Moda                                        </a>
+                                                                                                </div>
+                                            </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-quiero-invertir">
+                    <a class="nav-link d-none d-md-block" href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/">INVERTIR</a>
+                    <a class="nav-link dropdown-toggle d-block d-md-none" href="#" data-bs-toggle="dropdown">Invertir</a>
+                    <div class="dropdown-menu mobile">
+
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-invertir/" style="background-image: url(/public/img/menu_invertir.jpg);"><span class="bg-gradient gradient-violeta text-right rounded-pill titulo-portada mb-1">Invertir</span></a>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu d-block d-sm-none" href="/es/quiero-invertir/">Invertir</a>
+                            <a class="dropdown-item titulo-menu" href="javascript:void(0)">Sectores</a>
+                            <ul class="dropdown-menu">
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/centros-de-negocios-y-servicios/">Centros de Negocios y Servicios</a>
+                                    </li>
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/agronegocios-y-alimentos/">Agronegocios y Alimentos</a>
+                                    </li>
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/industrias-tecnologicas/">Industrias Tecnológicas</a>
+                                    </li>
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/ciencias-de-la-vida/">Ciencias de la vida</a>
+                                    </li>
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/otras-industrias/">Otras Industrias</a>
+                                    </li>
+                                                                                                        <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/transicion-energetica/">Transición Energética</a>
+                                    </li>
+                                                            </ul>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/sector/cartera-de-proyectos-de-inversion/">Cartera de Proyectos de Inversión</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/por-que-uruguay/">Por qué Uruguay</a>
+                            <a class="dropdown-item titulo-menu" href="javascript:void(0)">Plataformas de negocio</a>
+                            <ul class="dropdown-menu">
+                                                                    <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/comercial-y-servicios-1/">Comercial y servicios</a>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/distribucion-regional-1/">Distribución regional</a>
+                                    </li>
+                                                                    <li>
+                                        <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/innovacion-1/">Innovación</a>
+                                    </li>
+                                                            </ul>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/servicios/">Servicios</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/herramientas/">Herramientas</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/live-in-uruguay/">Live in Uruguay</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/faq/">FAQ</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/inversiones-1/">Agenda</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/contacto/">Contacto</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu desktop" id="menu-invertir" style="min-height: 250px">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/quiero-invertir/" style="background-image: url(/public/img/menu_invertir.jpg);"><span class="bg-gradient gradient-violeta text-right rounded-pill titulo-portada mb-1">Invertir</span></a>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="javascript:void(0)">Sectores</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/centros-de-negocios-y-servicios/">Centros de Negocios y Servicios</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/agronegocios-y-alimentos/">Agronegocios y Alimentos</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/industrias-tecnologicas/">Industrias Tecnológicas</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/ciencias-de-la-vida/">Ciencias de la vida</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/otras-industrias/">Otras Industrias</a>
+                                                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/sector/transicion-energetica/">Transición Energética</a>
+                                                    </div>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/sector/cartera-de-proyectos-de-inversion/">Cartera de Proyectos de Inversión</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/por-que-uruguay/">Por qué Uruguay</a>
+                            <a class="dropdown-item titulo-menu" href="javascript:void(0)">Plataformas de negocio</a>
+                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/comercial-y-servicios-1/">Comercial y servicios</a>
+                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/distribucion-regional-1/">Distribución regional</a>
+                                                            <a class="dropdown-item p-0" href="/es/quiero-invertir/plataformas-de-negocio/innovacion-1/">Innovación</a>
+                                                    </div>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/servicios/">Servicios</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/herramientas/">Herramientas</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/live-in-uruguay/">Live in Uruguay</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/faq/">FAQ</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/inversiones-1/">Agenda</a>
+                            <a class="dropdown-item titulo-menu" href="/es/quiero-invertir/contacto/">Contacto</a>
+                        </div>
+                    </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-marca-pais">
+                    <a class="nav-link d-none d-md-block" href="https://www.uruguayxxi.gub.uy/es/marca-pais/">MARCA PAÍS</a>
+                    <a class="nav-link dropdown-toggle d-block d-md-none" href="#" data-bs-toggle="dropdown">Marca País</a>
+                    <div class="dropdown-menu mobile">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/marca-pais/" style="background-image: url(/public/img/marca_pais/menu_marcapais.jpg);">
+                            <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Marca País</span>
+                        </a>
+                        <div class="dropdown-column ">
+                            <a class="dropdown-item titulo-menu d-block d-sm-none" href="/es/marca-pais/">Marca País</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/embajadores/">Embajadores</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/hacete-socio/">Hacete socio</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/socios/">Socios</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/manual-de-uso-de-marca/">Manual</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/marca-pais/">Agenda</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/noticias/marca-pais/">Noticias</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu desktop" style="min-height: 250px;width: 70%;margin-left: 0;">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl" href="/es/marca-pais/" style="background-image: url(/public/img/marca_pais/menu_marcapais.jpg);">
+                                                                                        <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Marca</span>
+                                                            <span class="bg-gradient text-right rounded-pill titulo-portada mb-1">País</span>
+                                                    </a>
+                        <div class="dropdown-column">
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/embajadores/">Embajadores</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/hacete-socio/">Hacete socio</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/eventos/marca-pais/">Agenda</a>
+                        </div>
+                        <div class="dropdown-column w-50">
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/socios/">Socios</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/marca-pais/manual-de-uso-de-marca/">Manual</a>
+                            <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/noticias/marca-pais/">Noticias</a>
+                        </div>
+                    </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega dropdown-mega-informaciones">
+                    <a class="nav-link d-none d-md-block" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/">CENTRO DE INFORMACIÓN</a>
+                    <a class="nav-link dropdown-toggle d-block d-md-none" href="#" data-bs-toggle="dropdown">Centro de información</a>
+                    <div class="dropdown-menu mobile">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl px-2" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/" style="background-image: url(/public/img/centro_informacion/img_portada.jpg);"><span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Centro de</span><span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Información</span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item no-before" href="/es/centro-informacion/">Centro de información</a>
+                            </li>
+                                                            <li><a class="dropdown-item no-before" href="#">Informes &raquo; </a>
+    <ul class="submenu dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/documentos-de-trabajo/">Documentos de trabajo</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/fichas-producto-destino/">Fichas Producto Destino</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-comercio-exterior/">Informes de comercio exterior</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-departamentos/">Informes de departamentos</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-paises/">Informes de países</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-sectoriales/">Informes sectoriales</a></li>
+            </ul>
+</li>                                                            <li><a class="dropdown-item no-before" href="#">Información estadística &raquo; </a>
+    <ul class="submenu dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/clasificacion-uruguay-xxi/">Clasificación Uruguay XXI</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/esfuerzo-nacional-innovador/">Esfuerzo Nacional Innovador</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/exportaciones/">Exportaciones</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/importaciones/">Importaciones</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/monitor-macroeconomico/">Monitor Macroeconómico</a></li>
+            </ul>
+</li>                                                            <li><a class="dropdown-item no-before" href="#">Herramientas &raquo; </a>
+    <ul class="submenu dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/compradores/">Compradores</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/exportadores/">Exportadores</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/inversores/">Inversores</a></li>
+            </ul>
+</li>                                                            <li><a class="dropdown-item no-before" href="#">Guías y programas &raquo; </a>
+    <ul class="submenu dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias/">Guías</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/programas/">Programas</a></li>
+            </ul>
+</li>                                                            <li><a class="dropdown-item no-before" href="#">Materiales promocionales &raquo; </a>
+    <ul class="submenu dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/business-cases/">Business cases</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/catalogos/">Catálogos</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/folletos/">Folletos</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/presentacion-pais/">Presentación País</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/presentaciones-eventos/">Presentaciones Eventos</a></li>
+                    <li><a class="dropdown-item" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/videos/">Videos</a></li>
+            </ul>
+</li>                                                            <li><a class="dropdown-item no-before" href="#">Centro de prensa &raquo; </a>
+    <ul class="submenu dropdown-menu">
+            </ul>
+</li>                                                    </ul>
+                    </div>
+                    <div class="dropdown-menu desktop">
+                        <a class="dropdown-column dropdown-column-img bg-secondary text-right border-radius-xl px-2" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/" style="background-image: url(/public/img/centro_informacion/img_portada.jpg);"><span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Centro de</span><span class="bg-gradient text-right rounded-pill titulo-portada mb-1">Información</span></a>
+                                                                            <div class="dropdown-column">
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/">Informes</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/documentos-de-trabajo/">Documentos de trabajo</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/fichas-producto-destino/">Fichas Producto Destino</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-comercio-exterior/">Informes de comercio exterior</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-departamentos/">Informes de departamentos</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-de-paises/">Informes de países</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes-sectoriales/">Informes sectoriales</a>
+                                
+                                                            </div>
+                                                    <div class="dropdown-column">
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/">Información estadística</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/clasificacion-uruguay-xxi/">Clasificación Uruguay XXI</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/esfuerzo-nacional-innovador/">Esfuerzo Nacional Innovador</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/exportaciones/">Exportaciones</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/importaciones/">Importaciones</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/monitor-macroeconomico/">Monitor Macroeconómico</a>
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/herramientas/">Herramientas</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/compradores/">Compradores</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/exportadores/">Exportadores</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/inversores/">Inversores</a>
+                                
+                                                            </div>
+                                                    <div class="dropdown-column">
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias-y-programas/">Guías y programas</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias/">Guías</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/programas/">Programas</a>
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/materiales-promocionales/">Materiales promocionales</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/business-cases/">Business cases</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/catalogos/">Catálogos</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/folletos/">Folletos</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/presentacion-pais/">Presentación País</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/presentaciones-eventos/">Presentaciones Eventos</a>
+    <a class="dropdown-item p-0" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/videos/">Videos</a>
+                                
+                                                            </div>
+                                                    <div class="dropdown-column">
+                                                                    <a class="dropdown-item titulo-menu" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/centro-de-prensa/">Centro de prensa</a>
+                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                            </div>
+                </li>
+                
+                                <li class="nav-item dropdown dropdown-mega ">
+                    <a class="nav-link -dropdown-toggle d-none d-md-block" href="/es/contacto/" style="color:#1db7eb!important; font-size: 24px;padding-top: 4px;"><i class="ai-mail"></i></a>
+                    <a class="nav-link d-block d-sm-none" href="/es/contacto/">Contacto</a>
+                </li>
+                
+                                <li class="nav-item d-block d-sm-none ">
+                    <p class="nav-link pb-0 mb-2">Idiomas</p>
+                    <div class="d-flex flex-row">
+                        <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/" class="nav-link py-0 ">ES</a> |
+                        <a href="https://www.uruguayxxi.gub.uy/en/information-center/" class="nav-link py-0 ">EN</a> |
+                        <a href="https://www.uruguayxxi.gub.uy/pt/centro-informacao/" class="nav-link py-0 ">PT</a>
+                    </div>
+                </li>
+                            </ul>
+        </div>
+    </div>
+</header>
+    <div class="bg-secondary">
+    <section class="container my-2 py-3">
+    <div class="row justify-content-center">
+        <div class="col-xl-12">
+            <div class="tns-carousel-wrapper">
+                <div class="tns-carousel-inner" data-carousel-options='{"axis": "vertical", "gutter": 15, "nav":false, "controls":false }'>
+                    <!-- Item-->
+                    <div>
+                        <div class="pb-3 pb-md-0 ps-md-7 ms-md-3">
+                            <div class="bg-size-cover bg-position-center rounded-3 py-7" style="background-image: url(/public/img/centro_informacion/img_portada.jpg);">
+                                <div class="d-md-flex align-items-center ms-md-n7 text-center text-md-start">
+                                    <div class="bg-white rounded --card --card-body d-none d-md-flex py-grid-gutter px-grid-gutter border-0 shadow-lg me-6 scale-up" --style="max-width: 24rem;">
+                                        <div>
+                                                                                            <p class="titulo-portada text-gris-o">Bienvenidos al <br>
+                                                    <span class="bg-gradient  rounded-pill titulo-portada mb-1 mt-1">Centro de Información</span><br>
+                                                    <span class="bg-gradient  rounded-pill titulo-portada mb-1">de Uruguay XXI</span>
+                                                </p>
+                                                <p class="text-left copete-portada mb-0 text-gris-o">Acceda a los principales documentos, <br> herramientas e informes estadísticos.</p>
+                                                                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-md-none mt-n6 px-3 scale-up">
+                                <div class="card card-body py-grid-gutter px-grid-gutter border-0 shadow mx-auto" style="max-width: 24rem;">
+                                                                            <p class="titulo-portada text-gris-o">Bienvenidos al <br>
+                                            <span class="bg-gradient  rounded-pill">Centro de Información</span><br>
+                                            <span class="bg-gradient  rounded-pill">de Uruguay XXI</span>
+                                        </p>
+                                        <p class="text-left copete-portada mb-0 text-gris-o">Acceda a los principales documentos, herramientas e informes estadísticos.</p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></div>
+<section class="container  pb-4">
+    <div class="  btn-gradient rounded py-2">
+        <div class="widget">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="mb-0 pe-4 d-none d-md-block ff-uru-b fs-20 text-white">Buscar por palabra clave</p>
+                <div class=" text-center">
+                    <div class="widget search -mb-3">
+    <form class="subscription-form validate" action="" method="get" name="mc-embedded-subscribe-form" novalidate>
+        <div class="input-group flex-nowrap"><i class="ai-search position-absolute top-50 start-0 translate-middle-y text-muted ms-3"></i>
+            <input class="form-control rounded-start ms-0 fs-sm" type="email" name="q" placeholder="Buscar" value="">
+            <button class="btn btn-primary rounded-end" type="submit"><i class="ai-chevron-right fs-xl"></i></button>
+        </div>
+    </form>
+</div>                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bg-white">
+    <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pb-3">
+  <div class="d-md-flex align-items-center w-100">
+    <p class="fs-21 d-flex mb-0 text-gris-o ff-uru-b nowrap-desktop">Qué ofrece el Centro de Información</p>
+    <div class="progress w-100 my-3 mx-auto ms-md-3" style=" height: 2px;">
+      <div class="progress-bar  " role="progressbar" style="width: 100%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  </nav>
+                </div>
+            </div>
+                        <div class="row" id="que_ofrece">
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_5.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Informes</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Información detallada sobre mercados, informes sectoriales y reportes mensuales y anuales de comercio exterior.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_5.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Informes</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Información detallada sobre mercados, informes sectoriales y reportes mensuales y anuales de comercio exterior.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_4.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Información</span><br>
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">estadística</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Información estadística actualizada sobre Uruguay y datos de las principales variables macroeconómicas del país.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_4.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Información</a>                        <br>
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >estadística</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Información estadística actualizada sobre Uruguay y datos de las principales variables macroeconómicas del país.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_17.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/herramientas/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Herramientas</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Herramientas sobre acuerdos comerciales, oportunidades, normativas y sistemas útiles para inversores, exportadores y compradores internacionales.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_17.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/herramientas/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/herramientas/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Herramientas</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Herramientas sobre acuerdos comerciales, oportunidades, normativas y sistemas útiles para inversores, exportadores y compradores internacionales.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_64.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias-y-programas/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Guías y</span><br>
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">programas</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Infórmese aquí acerca de los principales programas y servicios que propone Uruguay XXI o descargue la Guía del Inversor y la Guía del Exportador.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_64.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias-y-programas/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias-y-programas/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Guías y</a>                        <br>
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/guias-y-programas/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >programas</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Infórmese aquí acerca de los principales programas y servicios que propone Uruguay XXI o descargue la Guía del Inversor y la Guía del Exportador.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_26.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/materiales-promocionales/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Materiales</span><br>
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">promocionales</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Conozca y descargue aquí nuestros folletos informativos, videos, brochures y presentaciones sectoriales y sobre el país.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_26.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/materiales-promocionales/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/materiales-promocionales/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Materiales</a>                        <br>
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/materiales-promocionales/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >promocionales</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Conozca y descargue aquí nuestros folletos informativos, videos, brochures y presentaciones sectoriales y sobre el país.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                                    <div class="col-md-2 px-2 mb-3 d-none d-md-block ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_58.png"/>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/centro-de-prensa/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:270px;">
+                <p class="">
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">Centro de</span><br>
+                                            <span class="bg-gradient rounded-pill  mb-1 pt-2  fs-18 ff-uru">prensa</span><br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Acceda a los comunicados y contenidos de prensa y fotografías de alta calidad de las principales actividades que organiza y de las que participa la agencia.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class=" col-12 px-3 mb-3 d-block d-md-none ofrece_single">
+    <div class="card shadow-lg  card-slide ">
+        <div class="card-slide-inner">
+            <img class="card-img-top " src="/public/img/centro_informacion/que_ofrece/categoria_58.png.movil.png?1"/>
+            <div href="https://www.uruguayxxi.gub.uy/es/centro-informacion/centro-de-prensa/" class="card-body bg-gradient-transparent text-center py-2 px-1" style="height:320px;">
+                <p class="fs-18">
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/centro-de-prensa/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >Centro de</a>                        <br>
+                                            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/centro-de-prensa/" class="btn btn-gradient btn-sm rounded-pill fs-18 mb-1 px-5 fw-bolder ff-uru" >prensa</a>                        <br>
+                                    </p>
+                <p class="fs-sm text-white mb-1 pt-2 hidden-content">Acceda a los comunicados y contenidos de prensa y fotografías de alta calidad de las principales actividades que organiza y de las que participa la agencia.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+        </div>
+    </section>
+</div>
+<div>
+            <section>
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pb-3">
+  <div class="d-md-flex align-items-center w-100">
+    <p class="fs-21 d-flex mb-0 text-gris-o ff-uru-b nowrap-desktop">Herramientas</p>
+    <div class="progress w-100 my-3 mx-auto ms-md-3" style=" height: 2px;">
+      <div class="progress-bar  " role="progressbar" style="width: 100%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+      <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/herramientas/" class="ms-md-3 btn btn-outline-primary  bg-light rounded-pill btn-sm fs-15 mt-3 mt-md-0">+ herramientas</a>
+  </nav>
+                    </div>
+                </div>
+                <div class="row ">
+                                                                        
+<div class="col-12 col-md-6 mb-3 herramienta_doble">
+    <div class=" card bg-blue-to-white-down mb-4 shadow-lg card-hover text-dark border-0 h-100">
+        <div class="card-body  px-3 pt-2 pb-0 ">
+            <div class="d-flex align-items-center  justify-content-between mb-2 mt-1">
+                <a class=" nav-heading " target="_self" href="https://www.uruguayxxi.gub.uy/es/mas-comercio/"><img src="/uploads/herramienta/e97e53184b5c1878872479f83389d1287e0d4205.png" style="height: 80px;"/></a>
+            </div>
+            <a href="https://www.uruguayxxi.gub.uy/es/mas-comercio/" class="no-hover titulo">
+                <p class="lh-16 ff-uru">Más Comercio</p></a>
+            <p class="copete mb-0 text-gris-o">Talleres y mentorías en todo el país para que emprendedores y empresas uruguayas de bienes y servicios puedan crecer a nuevos mercados.</p>
+        </div>
+        <footer class=" px-3 pb-3 d-md-flex justify-content-between" style="z-index:999">
+            <div class="pb-2">
+                <a class="d-flex meta-link fs-sm align-items-center" target="1" href="https://www.uruguayxxi.gub.uy/es/mas-comercio/"><img class="flex-shrink-0 rounded-circle loaded tns-complete" src="/public/img/centro_informacion/flechita.svg" width="25"><div class="ps-1 ms-1 mt-n1 text-gris-o">Acceder</div></a>            </div>
+                    </footer>
+    </div>
+</div>
+                                                                                                
+<div class="col-12 col-md-3 mb-3 herramienta_single">
+    <div class="card  mb-4 border-0 shadow-lg card-hover h-100">
+        <div class="card-body  px-3 pt-2 pb-0">
+            <div class="d-flex align-items-center  justify-content-between mb-2 mt-1">
+                <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/servicios-herramientas/finishing-schools/"><img src="/uploads/herramienta/3beb7799deda3fa81e3af68975db95cbdc5a5466.png" class=" -w-25" style="height: 60px;"/></a>
+            </div>
+            <a  target="_blank" href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/servicios-herramientas/finishing-schools/" class="no-hover titulo mb-0 "><p class="lh-18 mb-2 ff-uru">Finishing Schools</p></a>
+            <p class="copete mb-0 text-gris-o">Instrumento en alianza con INEFOP que permite acceder a apoyos de hasta un 70% de los costos de capacitación de las empresas.</p>
+        </div>
+        <footer class="fs-sm px-3 pb-3" style="z-index:999">
+            <div class="pb-2">
+                <a class="d-flex meta-link fs-sm align-items-center" target="1" href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/servicios-herramientas/finishing-schools/"><img class="flex-shrink-0 rounded-circle loaded tns-complete" src="/public/img/centro_informacion/flechita.svg" width="25"><div class="ps-1 ms-1 mt-n1 text-gris-o">Acceder</div></a>            </div>
+                    </footer>
+    </div>
+</div>                                                                                                
+<div class="col-12 col-md-3 mb-3 herramienta_single">
+    <div class="card  mb-4 border-0 shadow-lg card-hover h-100">
+        <div class="card-body  px-3 pt-2 pb-0">
+            <div class="d-flex align-items-center  justify-content-between mb-2 mt-1">
+                <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/guias-inversor/"><img src="/uploads/herramienta/8ca4da572023eea1695b20281eb446df13dd8d82.png" class=" -w-25" style="height: 60px;"/></a>
+            </div>
+            <a  target="_blank" href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/guias-inversor/" class="no-hover titulo mb-0 "><p class="lh-18 mb-2 ff-uru">Guia del Inversor</p></a>
+            <p class="copete mb-0 text-gris-o">Comience a desarrollar su proyecto en nuestro país, conozca como establecer su empresa, requisitos de entrada, regímenes promocionales a la inversión, entre otros.</p>
+        </div>
+        <footer class="fs-sm px-3 pb-3" style="z-index:999">
+            <div class="pb-2">
+                <a class="d-flex meta-link fs-sm align-items-center" target="1" href="https://www.uruguayxxi.gub.uy/es/quiero-invertir/guias-inversor/"><img class="flex-shrink-0 rounded-circle loaded tns-complete" src="/public/img/centro_informacion/flechita.svg" width="25"><div class="ps-1 ms-1 mt-n1 text-gris-o">Acceder</div></a>            </div>
+                    </footer>
+    </div>
+</div>                                                            </div>
+            </div>
+        </section>
+        <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pb-3">
+  <div class="d-md-flex align-items-center w-100">
+    <p class="fs-21 d-flex mb-0 text-gris-o ff-uru-b nowrap-desktop">Informes</p>
+    <div class="progress w-100 my-3 mx-auto ms-md-3" style=" height: 2px;">
+      <div class="progress-bar  " role="progressbar" style="width: 100%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+      <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/" class="ms-md-3 btn btn-outline-primary  bg-light rounded-pill btn-sm fs-15 mt-3 mt-md-0">+ informes</a>
+  </nav>
+                </div>
+            </div>
+            <div class="row ">
+                                    <div class="col-12 col-md-6 mb-3 informe_doble">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url('/uploads/informacion/d79d78b532ff1ac6b7391e3a90ab33648a3e670a.png'); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body px-3 d-flex align-items-end">
+                <div class=" d-flex flex-column">
+                                            <a class=" nav-heading py-3" href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/encuesta-empresas-de-estados-unidos-en-uruguay/"><span class="categoria bg-white text-dark px-3 py-2 rounded-pill">Información estadística</span></a>
+                                        <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/encuesta-empresas-de-estados-unidos-en-uruguay/" class="no-hover -titulo stretched-link">
+                        <p class=" text-white h4 m-0 ff-uru">Encuesta empresas de Estados Unidos en Uruguay</p>
+                    </a>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>                                                    
+<div class="col-12 col-md-3 mb-3 informe_single">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url(/uploads/informacion/3377f0665a68ef10059b1f042e5109e7af431e99.jpg); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body px-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/brasil-2026/"><span class="categoria bg-white text-dark px-3 py-2 rounded-pill">Informes de países</span></a>
+                                    </div>
+
+            </div>
+                        <footer class="fs-sm px-3 py-4" style="z-index: 999;">
+                <div class=" mb-n2">
+                    <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/brasil-2026/" class="no-hover titulo stretched-link">
+                        <p class="text-white mb-2 h4 ff-uru">Brasil - 2026</p>
+                    </a>
+                    <div class="copete mb-0 text-white d-none d-md-block">
+                        Brasil se consolida como el principal socio comercial de Uruguay en la región, ofreciendo un mercado de 213 millones de personas con altas oportunidades para el sector agroindustrial y manufacturero. El informe presenta un analisis sobre el intercambio bilateral, las inversiones brasileñas y las ventajas competitivas dentro del marco del Mercosur.                    </div>
+                </div>
+            </footer>
+                    </div>
+    </div>
+</div>                                    
+<div class="col-12 col-md-3 mb-3 informe_single">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url(/uploads/informacion/69b47669e4682e3ca3f24f017f271496b2e06e21.png); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body px-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/sector-cannabis-en-uruguay-2026/"><span class="categoria bg-white text-dark px-3 py-2 rounded-pill">Informes sectoriales</span></a>
+                                    </div>
+
+            </div>
+                        <footer class="fs-sm px-3 py-4" style="z-index: 999;">
+                <div class=" mb-n2">
+                    <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/sector-cannabis-en-uruguay-2026/" class="no-hover titulo stretched-link">
+                        <p class="text-white mb-2 h4 ff-uru">Sector Cannabis en Uruguay 2026</p>
+                    </a>
+                    <div class="copete mb-0 text-white d-none d-md-block">
+                        Uruguay se consolida como hub estratégico para la inversión en cannabis y la exportación biotecnológica. El informe presenta las ventajas del pais para la produccion, en un mercado con estabilidad jurídica y un marco regulatorio de vanguardia.                    </div>
+                </div>
+            </footer>
+                    </div>
+    </div>
+</div>                            </div>
+        </div>
+    </section>
+</div>
+<section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12">
+                <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pb-3">
+  <div class="d-md-flex align-items-center w-100">
+    <p class="fs-21 d-flex mb-0 text-gris-o ff-uru-b nowrap-desktop">Información estadística</p>
+    <div class="progress w-100 my-3 mx-auto ms-md-3" style=" height: 2px;">
+      <div class="progress-bar  " role="progressbar" style="width: 100%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+      <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informacion-estadistica/" class="ms-md-3 btn btn-outline-primary  bg-light rounded-pill btn-sm fs-15 mt-3 mt-md-0">+ información</a>
+  </nav>
+            </div>
+        </div>
+        <div class="row ">
+                            <div class="col-12 col-md-3 mb-3 informacion_estadistica">
+    <div class="card mb-4 col shadow-lg card-hover  border-0 h-100">
+        <div class="card-body p-3 ">
+            <div class="d-flex align-items-center  justify-content-between mb-3">
+                                    <a class=" nav-heading " href="#"><span class="tag tag-categoria px-3 py-2">Información estadística</span></a>
+                            </div>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/importaciones-de-bienes/" class="azul-hover titulo stretched-link">
+                <p class="text-turquesa mb-2 ff-uru">Importaciones de bienes</p>
+            </a>
+            <p class="copete mb-0">Serie de importaciones de bienes de Uruguay  (2023 - 2025).
+Contiene: Año - Mes - Origen - NCM 10 - US$ FOB - Kg Netos</p>
+        </div>
+            </div>
+</div>                            <div class="col-12 col-md-3 mb-3 informacion_estadistica">
+    <div class="card mb-4 col shadow-lg card-hover  border-0 h-100">
+        <div class="card-body p-3 ">
+            <div class="d-flex align-items-center  justify-content-between mb-3">
+                                    <a class=" nav-heading " href="#"><span class="tag tag-categoria px-3 py-2">Información estadística</span></a>
+                            </div>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/resultado-encuesta-a-inversores-extranjeros/" class="azul-hover titulo stretched-link">
+                <p class="text-turquesa mb-2 ff-uru">Resultado encuesta a inversores extranjeros</p>
+            </a>
+            <p class="copete mb-0">Uruguay XXI presenta los resultados de la encuesta a inversores extranjeros.</p>
+        </div>
+            </div>
+</div>                            <div class="col-12 col-md-3 mb-3 informacion_estadistica">
+    <div class="card mb-4 col shadow-lg card-hover  border-0 h-100">
+        <div class="card-body p-3 ">
+            <div class="d-flex align-items-center  justify-content-between mb-3">
+                                    <a class=" nav-heading " href="#"><span class="tag tag-categoria px-3 py-2">Informes sectoriales</span></a>
+                            </div>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/exportaciones-de-bienes-con-zonas-francas-2023/" class="azul-hover titulo stretched-link">
+                <p class="text-turquesa mb-2 ff-uru">Exportaciones de bienes con zonas francas 2023</p>
+            </a>
+            <p class="copete mb-0">
+RESUMEN EJECUTIVO
+
+Las zonas francas de Uruguay son regímenes especiales para impulsar la inversión, la producción y el comercio de bienes y servicios. ...</p>
+        </div>
+            </div>
+</div>                            <div class="col-12 col-md-3 mb-3 informacion_estadistica">
+    <div class="card mb-4 col shadow-lg card-hover  border-0 h-100">
+        <div class="card-body p-3 ">
+            <div class="d-flex align-items-center  justify-content-between mb-3">
+                                    <a class=" nav-heading " href="#"><span class="tag tag-categoria px-3 py-2">Información estadística</span></a>
+                            </div>
+            <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/exportaciones-de-bienes-con-zonas-francas/" class="azul-hover titulo stretched-link">
+                <p class="text-turquesa mb-2 ff-uru">Exportaciones de bienes con Zonas Francas</p>
+            </a>
+            <p class="copete mb-0">Serie histórica con las exportaciones de bienes de Uruguay incluyendo las zonas francas (2001 -  febrero 2026*).
+Contiene: Año - Mes - Destino - NCM a 10 dígitos - US$ FOB - Kg Netos y Clasificación Uruguay XXI
+(*) último mes con valores preliminares (solicitudes de exportación)</p>
+        </div>
+            </div>
+</div>                    </div>
+    </div>
+</section>
+<div class="bg-white">
+    <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pb-3">
+  <div class="d-md-flex align-items-center w-100">
+    <p class="fs-21 d-flex mb-0 text-gris-o ff-uru-b nowrap-desktop">Informes recientes</p>
+    <div class="progress w-100 my-3 mx-auto ms-md-3" style=" height: 2px;">
+      <div class="progress-bar  " role="progressbar" style="width: 100%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+      <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/informes/" class="ms-md-3 btn btn-outline-primary  bg-light rounded-pill btn-sm fs-15 mt-3 mt-md-0">+ informes</a>
+  </nav>
+                </div>
+            </div>
+            <div class="row ">
+                                    <div class="col-12 col-md-3 mb-3 informe_reciente">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url('/uploads/informacion/293460a409eb20c695e05326cf21efb5848b0e76.png'); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body p-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/informe-mensual-de-comercio-exterior-febrero-2026/"><span class="categoria bg-white px-3 py-2 rounded-pill text-azul">Informes</span></a>
+                                    </div>
+            </div>
+            <footer class="fs-sm px-3 pb-3" style="z-index: 999;">
+                <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/informe-mensual-de-comercio-exterior-febrero-2026/" class="link link-light stretched-link">
+                    <div class="d-flex align-items-center  justify-content-between mb-n2 show_hover">
+                        <span class=" -ps-2  fs-20 ff-uru">Informe Mensual de Comercio Exterior- Febrero 2026</span>
+                    </div>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>                                    <div class="col-12 col-md-3 mb-3 informe_reciente">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url('/uploads/informacion/9bd48d0fa9b36fabfa0cc6500099a222e06f8bd7.jpg'); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body p-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/informe-mensual-de-comercio-exterior-enero-2026/"><span class="categoria bg-white px-3 py-2 rounded-pill text-azul">Informes</span></a>
+                                    </div>
+            </div>
+            <footer class="fs-sm px-3 pb-3" style="z-index: 999;">
+                <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/informe-mensual-de-comercio-exterior-enero-2026/" class="link link-light stretched-link">
+                    <div class="d-flex align-items-center  justify-content-between mb-n2 show_hover">
+                        <span class=" -ps-2  fs-20 ff-uru">Informe Mensual de Comercio Exterior - Enero 2026</span>
+                    </div>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>                                    <div class="col-12 col-md-3 mb-3 informe_reciente">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url('/uploads/informacion/e8fa30a44dbe5e000ab9ea572641deaef9c222f9.jpg'); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body p-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/inversion-extranjera-directa-2025/"><span class="categoria bg-white px-3 py-2 rounded-pill text-azul">Informes sectoriales</span></a>
+                                    </div>
+            </div>
+            <footer class="fs-sm px-3 pb-3" style="z-index: 999;">
+                <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/inversion-extranjera-directa-2025/" class="link link-light stretched-link">
+                    <div class="d-flex align-items-center  justify-content-between mb-n2 show_hover">
+                        <span class=" -ps-2  fs-20 ff-uru">Inversión Extranjera Directa  - 2025</span>
+                    </div>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>                                    <div class="col-12 col-md-3 mb-3 informe_reciente">
+    <div class="card mb-4 p-0 border-0 h-100 shadow-lg card-hover" style="background-image:url('/uploads/informacion/8c7bc54e0663c74fd9e98027f893dd6953d4fc31.png'); background-size: cover; min-height: 260px;">
+        <div class="card border-0 bg-gradient-turquesa-transparent h-100">
+            <div class="card-body p-3 ">
+                <div class="d-flex align-items-center  justify-content-end mb-4">
+                                            <a class=" nav-heading " href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/sector-ecuestre-en-uruguay-2025/"><span class="categoria bg-white px-3 py-2 rounded-pill text-azul">Informes sectoriales</span></a>
+                                    </div>
+            </div>
+            <footer class="fs-sm px-3 pb-3" style="z-index: 999;">
+                <a href="https://www.uruguayxxi.gub.uy/es/centro-informacion/articulo/sector-ecuestre-en-uruguay-2025/" class="link link-light stretched-link">
+                    <div class="d-flex align-items-center  justify-content-between mb-n2 show_hover">
+                        <span class=" -ps-2  fs-20 ff-uru">Sector Ecuestre en Uruguay - 2025</span>
+                    </div>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>                            </div>
+        </div>
+    </section>
+</div>
+
+<div class="bg-gradient w-100 rounded-0">
+    <section>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 ">
+    <div class="card border-0 ">
+        <div class="card-body py-3 px-3 px-sm-4 text-wrap text-center">
+            <p class=" text-center tag tag-categoria  px-3 pt-2 ff-uru-b">
+                <span class="fs-30 text-white">¿Necesitás más información?</span>
+            </p>
+            <p class="fs-15 text-muted text-center mb-2 text-gris-o ">Completá el siguiente formulario y contactaremos a la brevedad.</p>
+            <div data-bs-toggle="collapse" data-bs-target="#flush-contact-form" aria-expanded="false" aria-controls="flush-contact-form" id="flush-headcontact-form" class="text-center collapsed hover-scale cursor-pointer">
+                                    <i class="ai-chevrons-right text-turquesa h3" style="transform: rotate(90deg);"></i>
+                            </div>
+            <div class="text-start accordion-collapse collapsed collapse" id="flush-contact-form" aria-labelledby="flush-headcontact-form">
+
+                                                                    <form class="needs-validation pt-2 px-md-3" action="" method="post" name="contacto_form" id="contacto_form">
+        <input type="hidden" name="contacto_form[id]" id="contacto_form_id" /><input type="hidden" name="contacto_form[tipo_consulta]" value="Centro de Información" id="contacto_form_tipo_consulta" /><input type="hidden" name="contacto_form[descarga]" value="" id="contacto_form_descarga" /><input class="form_ga_client_id" type="hidden" name="contacto_form[ga_client_id]" value="" id="contacto_form_ga_client_id" /><input type="hidden" name="contacto_form[_csrf_token]" value="1ae2c1bbf257f1f263971f89f7fd70b8" id="contacto_form__csrf_token" />                                <div class="row">
+                                                                                                        <div class="col-md-6 mb-3 pb-1 ">
+                        <input type="text" name="contacto_form[nombre]" value="" class="form-control" placeholder="Nombre *" id="contacto_form_nombre" />                                                                    </div>
+                                                                                                                        <div class="col-md-6 mb-3 pb-1 ">
+                        <input type="text" name="contacto_form[apellido]" value="" class="form-control" placeholder="Apellido " id="contacto_form_apellido" />                                                                    </div>
+                                                                                                                        <div class="col-md-6 mb-3 pb-1 ">
+                        <input type="text" name="contacto_form[email]" value="" class="form-control" placeholder="E-mail *" id="contacto_form_email" />                                                                    </div>
+                                                                                                                        <div class="col-md-6 mb-3 pb-1 ">
+                        <input type="text" name="contacto_form[tel]" value="" class="form-control" placeholder="Teléfono - Celular *" id="contacto_form_tel" />                                                                    </div>
+                                                                                                                        <div class="col-md-6 mb-3 pb-1 ">
+                        <select data-placeholder="Seleccione país *" data-allow-clear="1" name="contacto_form[country_id]" class="form-select" placeholder="País *" id="contacto_form_country_id">
+<option value="" selected="selected"></option>
+<option value="1">Afganistán</option>
+<option value="2">Albania</option>
+<option value="3">Alemania</option>
+<option value="4">Andorra</option>
+<option value="5">Angola</option>
+<option value="6">Anguila</option>
+<option value="7">Antártida</option>
+<option value="8">Antigua y Barbuda</option>
+<option value="9">Arabia Saudí</option>
+<option value="10">Argelia</option>
+<option value="11">Argentina</option>
+<option value="12">Armenia</option>
+<option value="13">Aruba</option>
+<option value="14">Australia</option>
+<option value="15">Austria</option>
+<option value="16">Azerbaiyán</option>
+<option value="17">Bahamas</option>
+<option value="18">Bangladés</option>
+<option value="19">Barbados</option>
+<option value="20">Baréin</option>
+<option value="21">Bélgica</option>
+<option value="22">Belice</option>
+<option value="23">Benín</option>
+<option value="24">Bermudas</option>
+<option value="25">Bielorrusia</option>
+<option value="26">Bolivia</option>
+<option value="27">Bosnia y Herzegovina</option>
+<option value="28">Botsuana</option>
+<option value="29">Brasil</option>
+<option value="30">Brunéi</option>
+<option value="31">Bulgaria</option>
+<option value="32">Burkina Faso</option>
+<option value="33">Burundi</option>
+<option value="34">Bután</option>
+<option value="35">Cabo Verde</option>
+<option value="36">Camboya</option>
+<option value="37">Camerún</option>
+<option value="38">Canadá</option>
+<option value="39">Canarias</option>
+<option value="40">Caribe neerlandés</option>
+<option value="41">Catar</option>
+<option value="42">Ceuta y Melilla</option>
+<option value="43">Chad</option>
+<option value="44">Chequia</option>
+<option value="45">Chile</option>
+<option value="46">China</option>
+<option value="47">Chipre</option>
+<option value="48">Ciudad del Vaticano</option>
+<option value="49">Colombia</option>
+<option value="50">Comoras</option>
+<option value="51">Congo</option>
+<option value="52">Corea del Norte</option>
+<option value="53">Corea del Sur</option>
+<option value="54">Costa Rica</option>
+<option value="55">Côte d’Ivoire</option>
+<option value="56">Croacia</option>
+<option value="57">Cuba</option>
+<option value="58">Curazao</option>
+<option value="59">Diego García</option>
+<option value="60">Dinamarca</option>
+<option value="61">Dominica</option>
+<option value="62">Ecuador</option>
+<option value="63">Egipto</option>
+<option value="64">El Salvador</option>
+<option value="65">Emiratos Árabes Unidos</option>
+<option value="66">Eritrea</option>
+<option value="67">Eslovaquia</option>
+<option value="68">Eslovenia</option>
+<option value="69">España</option>
+<option value="70">Estados Unidos</option>
+<option value="71">Estonia</option>
+<option value="72">Esuatini</option>
+<option value="73">Etiopía</option>
+<option value="74">Filipinas</option>
+<option value="75">Finlandia</option>
+<option value="76">Fiyi</option>
+<option value="77">Francia</option>
+<option value="78">Gabón</option>
+<option value="79">Gambia</option>
+<option value="80">Georgia</option>
+<option value="81">Ghana</option>
+<option value="82">Gibraltar</option>
+<option value="83">Granada</option>
+<option value="84">Grecia</option>
+<option value="85">Groenlandia</option>
+<option value="86">Guadalupe</option>
+<option value="87">Guam</option>
+<option value="88">Guatemala</option>
+<option value="89">Guayana Francesa</option>
+<option value="90">Guernsey</option>
+<option value="91">Guinea</option>
+<option value="92">Guinea Ecuatorial</option>
+<option value="93">Guinea-Bisáu</option>
+<option value="94">Guyana</option>
+<option value="95">Haití</option>
+<option value="96">Honduras</option>
+<option value="97">Hungría</option>
+<option value="98">India</option>
+<option value="99">Indonesia</option>
+<option value="100">Irak</option>
+<option value="101">Irán</option>
+<option value="102">Irlanda</option>
+<option value="103">Isla de la Ascensión</option>
+<option value="104">Isla de Man</option>
+<option value="105">Isla de Navidad</option>
+<option value="106">Isla Norfolk</option>
+<option value="107">Islandia</option>
+<option value="108">Islas Åland</option>
+<option value="109">Islas Caimán</option>
+<option value="110">Islas Cocos</option>
+<option value="111">Islas Cook</option>
+<option value="112">Islas Feroe</option>
+<option value="113">Islas Georgia del Sur y Sandwich del Sur</option>
+<option value="114">Islas Malvinas</option>
+<option value="115">Islas Marianas del Norte</option>
+<option value="116">Islas Marshall</option>
+<option value="117">Islas menores alejadas de EE. UU.</option>
+<option value="118">Islas Pitcairn</option>
+<option value="119">Islas Salomón</option>
+<option value="120">Islas Turcas y Caicos</option>
+<option value="121">Islas Vírgenes Británicas</option>
+<option value="122">Islas Vírgenes de EE. UU.</option>
+<option value="123">Israel</option>
+<option value="124">Italia</option>
+<option value="125">Jamaica</option>
+<option value="126">Japón</option>
+<option value="127">Jersey</option>
+<option value="128">Jordania</option>
+<option value="129">Kazajistán</option>
+<option value="130">Kenia</option>
+<option value="131">Kirguistán</option>
+<option value="132">Kiribati</option>
+<option value="133">Kosovo</option>
+<option value="134">Kuwait</option>
+<option value="135">Laos</option>
+<option value="136">Lesoto</option>
+<option value="137">Letonia</option>
+<option value="138">Líbano</option>
+<option value="139">Liberia</option>
+<option value="140">Libia</option>
+<option value="141">Liechtenstein</option>
+<option value="142">Lituania</option>
+<option value="143">Luxemburgo</option>
+<option value="144">Macedonia</option>
+<option value="145">Madagascar</option>
+<option value="146">Malasia</option>
+<option value="147">Malaui</option>
+<option value="148">Maldivas</option>
+<option value="149">Mali</option>
+<option value="150">Malta</option>
+<option value="151">Marruecos</option>
+<option value="152">Martinica</option>
+<option value="153">Mauricio</option>
+<option value="154">Mauritania</option>
+<option value="155">Mayotte</option>
+<option value="156">México</option>
+<option value="157">Micronesia</option>
+<option value="158">Moldavia</option>
+<option value="159">Mónaco</option>
+<option value="160">Mongolia</option>
+<option value="161">Montenegro</option>
+<option value="162">Montserrat</option>
+<option value="163">Mozambique</option>
+<option value="164">Myanmar (Birmania)</option>
+<option value="165">Namibia</option>
+<option value="166">Nauru</option>
+<option value="167">Nepal</option>
+<option value="168">Nicaragua</option>
+<option value="169">Níger</option>
+<option value="170">Nigeria</option>
+<option value="171">Niue</option>
+<option value="172">Noruega</option>
+<option value="173">Nueva Caledonia</option>
+<option value="174">Nueva Zelanda</option>
+<option value="175">Omán</option>
+<option value="176">Países Bajos</option>
+<option value="177">Pakistán</option>
+<option value="178">Palaos</option>
+<option value="179">Panamá</option>
+<option value="180">Papúa Nueva Guinea</option>
+<option value="181">Paraguay</option>
+<option value="182">Perú</option>
+<option value="183">Polinesia Francesa</option>
+<option value="184">Polonia</option>
+<option value="185">Portugal</option>
+<option value="186">Pseudo-Accents</option>
+<option value="187">Pseudo-Bidi</option>
+<option value="188">Puerto Rico</option>
+<option value="189">RAE de Hong Kong (China)</option>
+<option value="190">RAE de Macao (China)</option>
+<option value="191">Reino Unido</option>
+<option value="192">República Centroafricana</option>
+<option value="193">República Democrática del Congo</option>
+<option value="194">República Dominicana</option>
+<option value="195">Reunión</option>
+<option value="196">Ruanda</option>
+<option value="197">Rumanía</option>
+<option value="198">Rusia</option>
+<option value="199">Sáhara Occidental</option>
+<option value="200">Samoa</option>
+<option value="201">Samoa Americana</option>
+<option value="202">San Bartolomé</option>
+<option value="203">San Cristóbal y Nieves</option>
+<option value="204">San Marino</option>
+<option value="205">San Martín</option>
+<option value="206">San Pedro y Miquelón</option>
+<option value="207">San Vicente y las Granadinas</option>
+<option value="208">Santa Elena</option>
+<option value="209">Santa Lucía</option>
+<option value="210">Santo Tomé y Príncipe</option>
+<option value="211">Senegal</option>
+<option value="212">Serbia</option>
+<option value="213">Seychelles</option>
+<option value="214">Sierra Leona</option>
+<option value="215">Singapur</option>
+<option value="216">Sint Maarten</option>
+<option value="217">Siria</option>
+<option value="218">Somalia</option>
+<option value="219">Sri Lanka</option>
+<option value="220">Sudáfrica</option>
+<option value="221">Sudán</option>
+<option value="222">Sudán del Sur</option>
+<option value="223">Suecia</option>
+<option value="224">Suiza</option>
+<option value="225">Surinam</option>
+<option value="226">Svalbard y Jan Mayen</option>
+<option value="227">Tailandia</option>
+<option value="228">Taiwán</option>
+<option value="229">Tanzania</option>
+<option value="230">Tayikistán</option>
+<option value="231">Territorio Británico del Océano Índico</option>
+<option value="232">Territorios Australes Franceses</option>
+<option value="233">Territorios Palestinos</option>
+<option value="234">Timor-Leste</option>
+<option value="235">Togo</option>
+<option value="236">Tokelau</option>
+<option value="237">Tonga</option>
+<option value="238">Trinidad y Tobago</option>
+<option value="239">Tristán de Acuña</option>
+<option value="240">Túnez</option>
+<option value="241">Turkmenistán</option>
+<option value="242">Turquía</option>
+<option value="243">Tuvalu</option>
+<option value="244">Ucrania</option>
+<option value="245">Uganda</option>
+<option value="246">Uruguay</option>
+<option value="247">Uzbekistán</option>
+<option value="248">Vanuatu</option>
+<option value="249">Venezuela</option>
+<option value="250">Vietnam</option>
+<option value="251">Wallis y Futuna</option>
+<option value="252">Yemen</option>
+<option value="253">Yibuti</option>
+<option value="254">Zambia</option>
+<option value="255">Zimbabue</option>
+</select>                                                                    </div>
+                                                                                                                        <div class="col-md-12 mb-3 pb-1 ">
+                        <textarea rows="4" cols="30" name="contacto_form[consulta]" class="form-control" placeholder="Consulta *" id="contacto_form_consulta"></textarea>                                                                    </div>
+                                                                                                                        <div class="col-md-12 mb-3 pb-1 ">
+                        <input type="hidden" size="10" id="contacto_form_recaptcha_hidden" name="contacto_form[recaptcha]" /><script>function recaptcha_refill_contacto_form_recaptcha_hidden(data){document.getElementById("contacto_form_recaptcha_hidden").value = data; $("#contacto_form_recaptcha_hidden").valid();}</script><script src="https://www.google.com/recaptcha/api.js?hl=es"></script><div class="g-recaptcha" data-sitekey="6LcfVGIUAAAAAFyJEv_1i2g3dkp8Xdq_DFpFgpO6" data-callback="recaptcha_refill_contacto_form_recaptcha_hidden"></div>                                                                    </div>
+                                                                                                                    </div>
+
+        
+        <div id="fieldset_contacto_form_terminos" class="col-md-12 mb-1">
+            <div class="form-check form-switch mt-0">
+                <input class="form-check-input" type="checkbox" id="contacto_form_terminos" checked="" name="contacto_form[terminos]">
+                                    <label class="form-check-label" for="contacto_form_terminos">
+                        Acepto las
+                        <a href="https://www.uruguayxxi.gub.uy/es/quienes-somos/transparencia/" target="_blank"><u>politicas de privacidad</u></a> del sitio.*</label>
+                            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-gradient   rounded-pill fs-15 px-6 mt-4">Enviar</button>
+        </div>
+    </form>
+    <script>
+        validatorConfig['contacto_form'] = {"rules":{"contacto_form[terminos]":{"required":true},"contacto_form[nombre]":{"required":true},"contacto_form[apellido]":{"required":false},"contacto_form[email]":{"required":true,"email":true,"custom_email":true},"contacto_form[tel]":{"required":true},"contacto_form[country_id]":{"required":true},"contacto_form[consulta]":{"required":true},"contacto_form[recaptcha]":{"required":true}},"messages":{"contacto_form[terminos]":{"required":"El campo 'Pol\u00edticas de privacidad' es obligatorio."},"contacto_form[nombre]":{"required":"El campo \"Nombre\" es obligatorio."},"contacto_form[apellido]":{"required":"El campo \"Apellido\" es obligatorio."},"contacto_form[email]":{"required":"El campo \"E-mail\" es obligatorio.","email":"El campo \"E-mail\" es inv\u00e1lido.","custom_email":"El campo \"E-mail\" es inv\u00e1lido."},"contacto_form[tel]":{"required":"El campo \"Tel\u00e9fono - Celular\" es obligatorio."},"contacto_form[country_id]":{"required":"El campo \"Pa\u00eds\" es obligatorio."},"contacto_form[consulta]":{"required":"El campo \"Consulta\" es obligatorio."},"contacto_form[recaptcha]":{"required":"El campo \"reCAPTCHA\" es obligatorio."}}};
+    </script>
+                            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</main>
+
+
+<footer class="footer bg-dark py-4">
+    <div class="container pt-3 pt-md-0 pb-3">
+        <div class="row pb-4 border-bottom-light ">
+            <div class="col-md-3 align-self-center  col-12 text-center">
+                <a class="d-block mb-3 mx-auto" href="/" style="width: 153px;"><img src="/public/img/logo-w-es.svg" alt="Uruguay XXI"></a>
+            </div>
+            <div class="col-md-3  col-12 border-left-light py-3 text-center text-md-start">
+                <div class="widget widget-light text-white fs-ms h-100">
+                    <ul class="d-flex flex-column justify-content-between  h-100">
+                        <li>
+                            <p class="mb-0 fs-md"><b>DIRECCIÓN</b></p>
+                            <p class="mb-0">Rincón 518-528. Montevideo-Uruguay</p>
+                        </li>
+                        <li>
+                            <p class="mb-0 fs-md"><b>TELÉFONO</b></p>
+                            <p class="mb-0">(598) 2915 3838</p>
+                        </li>
+                        <li>
+                            <p class="mb-0 fs-md"><b>E-MAIL</b></p>
+                            <p class="mb-0">info@uruguayxxi.gub.uy</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-12 border-left-light  py-3 text-center text-md-start">
+                <div class="widget widget-light text-white fs-xs">
+                    <ul>
+                        <li><p class="mb-4 fs-md"><b>
+                                                                            SÍGUENOS EN
+                                                                    </b></p></li>
+                        <li class="mb-0">
+                            <a class="widget-link py-0" href="https://twitter.com/UruguayXXI" target="_blank"><i class="ai-twitter"></i> Twitter</a>
+                        </li>
+                        <li class="mb-0">
+                            <a class="widget-link py-0" href="https://www.linkedin.com/company/uruguay-xxi/" target="_blank"><i class="ai-linkedin"></i> Linkedin</a>
+                        </li>
+                        <li class="mb-0">
+                            <a class="widget-link py-0" href="https://www.instagram.com/uruguayxxi/" target="_blank"><i class="ai-instagram"></i> Instagram</a>
+                        </li>
+                        <li class="mb-0">
+                            <a class="widget-link py-0" href="https://www.youtube.com/user/UruguayXXIGUB" target="_blank"><i class="ai-youtube youTube"></i> YouTube</a>
+                        </li>
+                        <li class="mb-0">
+                            <a class="widget-link py-0" href="https://www.flickr.com/photos/uruguayxxi/" target="_blank"><img src="/public/img/flickr_icon-01.svg" width="12" height="12"> &nbsp;&nbsp;Flickr</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-12 border-left-light  py-3 text-center text-md-start">
+                <div class="widget widget-light text-white fs-xs">
+                    <div class="text-center text-white">
+                        <img src="/public/img/inco_news.svg" width="40" class="mb-2">
+                        <p class="mb-0 font-weight-bold titulo-news-footer">NEWSLETTER URUGUAY XXI</p>
+                        <p class="mb-0">
+                                                            Deseo recibir información de:
+                                                        </p>
+                    </div>
+
+                                                                <a href="/es/suscripcion/uruguay-xxi/" style="text-decoration:none !important;">
+                            <p class="tag-news-footer text-black mb-0 bg-white">
+                                <img src="/public/img/iconmas.svg" width="20" class="me-2"> Uruguay XXI                            </p>
+                        </a>
+                                            <a href="/es/suscripcion/invertir-en-uruguay/" style="text-decoration:none !important;">
+                            <p class="tag-news-footer text-black mb-0 bg-white">
+                                <img src="/public/img/iconmas.svg" width="20" class="me-2"> Invertir en Uruguay                            </p>
+                        </a>
+                                            <a href="/es/suscripcion/marca-pais/" style="text-decoration:none !important;">
+                            <p class="tag-news-footer text-black mb-0 bg-white">
+                                <img src="/public/img/iconmas.svg" width="20" class="me-2"> Marca País                            </p>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</footer><a class="btn-scroll-top" href="#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up"> </i></a>
+    <script async defer type="text/javascript" src="/public/build/app.8067c464.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.getElementById('lang-selector').addEventListener('change', function () {
+            document.location.href = this.value;
+        });
+        /////// Prevent closing from click inside dropdown
+        document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        })
+
+        // make it as accordion for smaller screens
+        if (window.innerWidth < 992) {
+
+            // close all inner dropdowns when parent is closed
+            document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+                everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                    // after dropdown is hidden, then find all submenus
+                    this.querySelectorAll('.submenu').forEach(function (everysubmenu) {
+                        // hide every submenu as well
+                        everysubmenu.style.display = 'none';
+                    });
+                })
+            });
+
+            document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+
+                    let nextEl = this.nextElementSibling;
+                    if (nextEl && nextEl.classList.contains('submenu')) {
+                        // prevent opening link if link needs to open dropdown
+                        e.preventDefault();
+                        console.log(nextEl);
+                        if (nextEl.style.display == 'block') {
+                            nextEl.style.display = 'none';
+                        } else {
+                            nextEl.style.display = 'block';
+                        }
+
+                    }
+                });
+            })
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+EEATINGH PLATFORM CONTRACTS PROJECT
+Started: 2026-04-04
+
+==== OBJECTIVE ====
+Generate 4 service contracts for eeatingh platform with 7% commission structure:
+1. Tudor Seicarescu (Persoana Fizica)
+2. Gospodarii de Altadata (Cooperativa Agricola)
+3. Interjob Solutions Europe SRL (Romania)
+4. Interjob Solutions Europe Limited (UK)
+
+Payment Terms: 7% commission, payment end of month from Tudor
+
+==== DATA COLLECTED ====
+
+TUDOR SEICARESCU (Person)
+- CNP: 1730405100039
+- Name: TUDOR SEICARESCU
+- Address: Mun. Bucuresti Sec. 3, Bd. Ramnicu Sarat nr. 31 bl. 11B sc. B et. 8 ap. 78
+- Sex: M
+- CI Valid: 06.03.2019 - 05.04.2029
+- Saved: I:\DOCUMENTS\acte scanate Tudor Seicarescu\TUDOR_SEICARESCU_DATE_PERSONALE.txt
+
+INTERJOB SOLUTIONS EUROPE LIMITED (UK)
+- Company Number: 16561158
+- Registered Address: 61 Lancaster Street, Warrington, England, WA5 1AL
+- Incorporation Date: 5 July 2025
+- Business Type: Management consultancy activities
+- IBAN: BE55 9055 1428 8044
+- BIC/SWIFT: TRWIBEB1XXX
+- Account Number: 5142880
+- Bank: Wise, Brussels
+- Saved: I:\DOCUMENTS\acte scanate Tudor Seicarescu\INTERJOB_WARRINGTON_UK_DATE.txt
+
+INTERJOB SOLUTIONS EUROPE SRL (Romania)
+- CUI: 50817311
+- Business: Recruitment & Personnel Solutions
+- Services: 30+ projects across 6 European countries
+- Experience: 13+ years in HR
+- Website: https://interjobs.ro/
+- Saved: I:\DOCUMENTS\acte scanate Tudor Seicarescu\INTERJOB_SOLUTIONS_EUROPE_ROMANIA_DATE.txt
+
+GOSPODARII DE ALTADATA (Cooperativa Agricola) - PENDING
+- CUI: 51957925 (to confirm)
+- Location: I:\DOCUMENTS\acte scanate Tudor Seicarescu\COOP GOSPODARII DE ALTADATA\
+- File: Copii STATUT+Act Constitutiv GRĂDINARII DE ALTĂDATĂ.pdf (16MB)
+- Data Needed: Legal name, administrator, address, phone, email
+
+==== COMMISSION STRUCTURE (PROPOSED) ====
+- Commission: 7% from platform revenues
+- Base: Gross or net revenues? (TBD)
+- Cooperativa receives: Start of month (from platform)
+- Tudor receives: End of month (from Cooperativa)
+- Interjob role: TBD
+
+==== OPEN QUESTIONS ====
+1. Gospodarii de Altadata: Exact data from PDF?
+2. eeatingh Platform: Own platform or external? Payment transfer capability?
+3. Commission base: Gross or net revenues?
+4. Interjob role: Service provider, intermediary, or separate contract?
+5. Contract type: Service agreement, platform usage agreement, revenue share?
+
+==== MEMORY SAVED ====
+- eeatingh_contracts_status.md (C:\Users\apami\.claude\projects\D--MEMORY\memory\)
+- MEMORY.md index updated
+- All TXT files with company/person data in I:\DOCUMENTS\acte scanate Tudor Seicarescu\
+
+==== NEXT STEPS ====
+1. Provide Gospodarii de Altadata data from PDF
+2. Clarify eeatingh platform details
+3. Confirm commission structure
+4. Generate 4 tailored contracts (GDPR-compliant, bilingual if needed)

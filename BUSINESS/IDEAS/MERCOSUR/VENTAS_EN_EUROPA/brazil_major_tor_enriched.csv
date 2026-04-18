@@ -1,0 +1,32 @@
+company,cnpj,website,razao_social,email,telefone,cidade,uf,situacao,status
+JBS S.A.,02916265000160,jbs.com.br,JBS S/A,tributos.rfb@jbs.com.br,+551131444000,São Paulo,SP,Ativa,OK
+BRF S.A.,01838723000127,brf.com,BRF S.A.,tributariocsc@brf.com,+554732494100,Itajaí,SC,Ativa,OK
+Marfrig Global Foods,03853896000140,marfrig.com.br,MARFRIG GLOBAL FOODS S.A.,paralegal.corporativo@marfrig.com.br,+551145937403,São Paulo,SP,Ativa,OK
+Minerva Foods,67620377000114,minervafoods.com,MINERVA S.A.,jose.ferreira@minervafoods.com,+551733213355,Barretos,SP,Ativa,OK
+Vale S.A.,33592510000154,vale.com,VALE S.A.,,+552134856600,Rio de Janeiro,RJ,Ativa,OK
+CBMM,33131541000108,cbmm.com,COMPANHIA BRASILEIRA DE METALURGIA E MINERACAO,cbmm@cbmm.com,+553436693000,Araxá,MG,Ativa,OK
+CSN,33042730000104,csn.com.br,COMPANHIA SIDERURGICA NACIONAL,tributariocsn@csn.com.br,+551130497100,São Paulo,SP,Ativa,OK
+Samarco,16628281000161,samarco.com,SAMARCO MINERACAO S.A.,documentos.judiciais@samarco.com,+553132698787,Belo Horizonte,MG,Ativa,OK
+Petrobras,33000167000101,petrobras.com.br,PETROLEO BRASILEIRO S A PETROBRAS,cc-rfisc@petrobras.com.br,+552121660000,Rio de Janeiro,RJ,Ativa,OK
+Raizen,33453598000123,raizen.com.br,RAIZEN S.A.,fiscalizacaocar@raizen.com,+551934238000,Rio de Janeiro,RJ,Ativa,OK
+Gerdau S.A.,33611500000119,gerdau.com,GERDAU S.A.,cpg-dteicms@gerdau.com.br,+551130946600,São Paulo,SP,Ativa,OK
+Usiminas,60894730000105,usiminas.com,USINAS SIDERURGICAS DE MINAS GERAIS S/A. USIMINAS,,+553134999019,Belo Horizonte,MG,Ativa,OK
+ArcelorMittal Brasil,17469701000177,arcelormittal.com.br,ARCELORMITTAL BRASIL S.A.,equipe.paralegal@arcelormittal.com.br,+553132191485,Belo Horizonte,MG,Ativa,OK
+Suzano,16404287000155,suzano.com.br,SUZANO S.A.,regularidades@suzano.com.br,+551136365000,Salvador,BA,Ativa,OK
+Klabin,89637490000145,klabin.com.br,KLABIN S.A.,cont_fisc_sc@klabin.com.br,+551130469918,São Paulo,SP,Ativa,OK
+Cargill Brasil,60498706000157,cargill.com.br,CARGILL AGRICOLA S A,atendimento_cnpj@cargill.com,+551150993311,São Paulo,SP,Ativa,OK
+Bunge Brasil,84046101000193,bunge.com.br,BUNGE ALIMENTOS S/A,fiscalizacao.fiscal@bunge.com,+554737032200,Gaspar,SC,Ativa,OK
+ADM do Brasil,02003402000175,adm.com,ADM DO BRASIL LTDA,fiscalizacoes@adm.com,+551151853500,Vitória,ES,Ativa,OK
+Citrosuco,33010786000187,citrosuco.com.br,CITROSUCO S/A AGROINDUSTRIA,juridicocontencioso@citrosuco.com,+551633838500,Matão,SP,Ativa,OK
+Cooxupe,20770566000100,cooxupe.com.br,COOPERATIVA REGIONAL DE CAFEICULTORES EM GUAXUPE LTDA COOXUPE,andreluiz@cooxupe.com.br,+553536961065,Guaxupé,MG,Ativa,OK
+Louis Dreyfus Brasil,47067525000102,ldc.com,,,,,,,Invalid CNPJ
+SLC Agricola,89096457000155,slcagricola.com.br,SLC AGRICOLA S.A.,fiscal.federal@slcagricola.com.br,+555132307799,Porto Alegre,RS,Ativa,OK
+Braskem,42150391000170,braskem.com.br,BRASKEM S.A,cadastrodasempresasdogrupo@braskem.com,+557135047100,Camaçari,BA,Ativa,OK
+Embraer,07689002000189,embraer.com,EMBRAER S.A.,daniel.saran@embraer.com.br,+551239271000,São José dos Campos,SP,Ativa,OK
+WEG S.A.,84429695000111,weg.net,WEG SA,contabil1@weg.net,+554732764775,Jaraguá do Sul,SC,Ativa,OK
+Randon,89086144000116,randon.com.br,RANDONCORP S.A.,atendimentofiscalcsc@randoncorp.com,+555432392000,Caxias do Sul,RS,Ativa,OK
+Tupy S.A.,84683374000194,tupy.com.br,,,,,,,Invalid CNPJ
+CBA,61409892000173,cba.com.br,COMPANHIA BRASILEIRA DE ALUMINIO,cadastrodeempresas@votorantim.com,+554133885365,São Paulo,SP,Ativa,OK
+Alcoa Brasil,23637697000101,alcoa.com,ALCOA ALUMINIO S/A,dl-safiscal@alcoa.com.br,+553537295484,Poços de Caldas,MG,Ativa,OK
+Copersucar,13720936000161,copersucar.com.br,,,,,,,Invalid CNPJ
+Sao Martinho,51466860000156,saomartinho.com.br,SAO MARTINHO S/A,tributos.csc@saomartinho.com.br,+551639819000,Pradópolis,SP,Ativa,OK

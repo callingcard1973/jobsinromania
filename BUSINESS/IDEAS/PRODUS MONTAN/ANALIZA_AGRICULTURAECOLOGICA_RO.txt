@@ -1,0 +1,167 @@
+ANALIZA TEHNICA — agriculturaecologica.ro
+==========================================
+Data: 2026-03-08
+URL: https://www.agriculturaecologica.ro/
+
+Operator: Asociatia 100% pentru Mediu
+Scop: Registrul de piata al operatorilor certificati in agricultura ecologica
+
+----------------------------------------------------------------------
+STACK TEHNIC
+----------------------------------------------------------------------
+
+CMS:            WordPress
+Tema:           Custom child theme (bazat pe BuddyX)
+Page Builder:   Custom CSS + Gravity Forms
+Comunitate:     BuddyPress (profiluri utilizatori)
+E-commerce:     WooCommerce (limitat, nu e marketplace activ)
+Formulare:      Gravity Forms (comenzi, contact)
+Filtrare:       Beautiful Taxonomy Filters + Eco Search Switch
+Harta:          LeafletJS (harta interactiva producatori)
+Iconuri:        FontAwesome
+Taburi:         GPTMP Tabordion (vertical tabs, accordion pe mobil)
+Paginare:       WP-PageNavi (numere + next/prev)
+Continut:       Dinamic (AJAX/server-side) — nu se vede in HTML static
+
+----------------------------------------------------------------------
+CATEGORII PRODUSE ECOLOGICE
+----------------------------------------------------------------------
+
+Principale (din URL /categorie/):
+  - Lactate si Branzeturi (/categorie/lactate-si-branzeturi/)
+  - Fructe
+  - Legume
+  - Cereale
+  - Inputuri pentru agricultura ecologica
+
+Dupa tip activitate (/tipul-activitatii/):
+  - Productie
+  - Procesare (pregatire)
+  - Distributie / Plasare pe piata
+  - Depozitare
+  - Import
+  - Export
+
+Dupa forma juridica (/forma/):
+  - Cooperativa agricola
+  - Asociatie
+
+Dupa cod CAEN (filtrare dedicata)
+
+----------------------------------------------------------------------
+STRUCTURA CONTINUT
+----------------------------------------------------------------------
+
+Total producatori:  13.521 (scrapati de noi pe 2026-03-08)
+Pagini paginare:    339+ pagini (din scraper)
+Producatori/pagina: ~40
+Card producator:    Nume, locatie, produse, activitati, CAEN, website, Facebook
+Preturi:            Partial (clasa .pret in CSS, dar rar completat)
+Imagini:            Placeholder/logo (rar poze reale)
+
+----------------------------------------------------------------------
+FILTRE DISPONIBILE
+----------------------------------------------------------------------
+
+1. Dropdown categorie produs
+2. Dropdown tip activitate (productie/procesare/distributie/etc)
+3. Dropdown forma juridica (cooperativa/asociatie)
+4. Dropdown cod CAEN
+5. Cautare text libera
+6. Filtrare pe harta (LeafletJS)
+
+----------------------------------------------------------------------
+MENIU NAVIGARE COMPLET
+----------------------------------------------------------------------
+
+Producatori
+  Filtrare dupa CAEN
+  Producatori activi
+  Productie
+  Procesare
+  Distributie
+  Depozitare
+  Import
+  Export
+  Cooperative
+  Asociatii
+Jurnal (Blog)
+Harta
+Pentru fermieri
+  Ghid agricultura ecologica
+  Seminte si material saditor
+  Inputuri pentru agricultura ecologica
+  Substante permise
+  Consultanti
+  Inregistrare consultant
+Contact
+Social: WhatsApp, Facebook, BioRomania
+
+----------------------------------------------------------------------
+DATE SCRAPATE DE NOI (2026-03-08)
+----------------------------------------------------------------------
+
+Total producatori:   13.521
+Cu website:          13.520 (99.9%)
+Cu Facebook:         459 (3.4%)
+Cu produse:          11.863 (87.7%)
+Cu activitati:       13.521 (100%)
+Cu cod CAEN:         7.448 (55.1%)
+Cu telefon:          0 (contactele sunt pe pagina de detaliu)
+Cu email:            0 (contactele sunt pe pagina de detaliu)
+
+Fisiere:
+  - producers.csv (3.4 MB, 13.521 randuri)
+  - producers.json (7.5 MB)
+  - stats.json
+
+----------------------------------------------------------------------
+COMPARATIE CU PRODUSMONTAN.RO
+----------------------------------------------------------------------
+
+                     | agriculturaecologica.ro | produsmontan.ro
+---------------------|------------------------|------------------
+Producatori          | 13.521                 | ~1.900
+Categorii            | ~10+ (CAEN-based)      | 8 fixe
+Harta                | DA (LeafletJS)         | NU
+Comanda online       | Partial (Gravity Forms)| NU
+Comunitate           | DA (BuddyPress)        | NU
+Website producator   | 99.9% au link          | Partial
+Filtre               | 6 tipuri               | 4 dropdown-uri
+Continut dinamic     | DA (AJAX)              | DA (WP standard)
+
+----------------------------------------------------------------------
+COMPARATIE CU CATALOGUL NOSTRU (agroevolution.com/catalog/)
+----------------------------------------------------------------------
+
+                     | agriculturaecologica.ro | Catalogul nostru
+---------------------|------------------------|------------------
+Platforma            | WordPress heavy        | HTML static
+Producatori montani  | 0 (doar bio/eco)       | 1.331
+Producatori bio      | 13.521                 | 0 (de adaugat)
+Comanda online       | Partial                | DA (WhatsApp)
+Viteza               | Lenta (AJAX/BuddyPress)| Rapida
+Imagini              | Placeholder            | Text-only
+Contact producator   | Pe pagina detaliu      | Ascuns (prin coop)
+
+----------------------------------------------------------------------
+OPORTUNITATI
+----------------------------------------------------------------------
+
+1. 13.521 producatori bio = de adaugat la catalogul nostru
+   (dupa fix scraper pt email/telefon din paginile de detaliu)
+
+2. Ei au harta (LeafletJS) — noi putem adauga similar
+
+3. Suprapunere producatori: unii sunt SI montan SI bio
+   = dubla certificare = premium mai mare
+
+4. Website-urile producatorilor (13.520) = sursa pt email/telefon
+   (scrape website-ul fiecaruia pt contact)
+
+5. 459 pagini Facebook = canal marketing direct
+
+6. Categorii CAEN = clasificare mai granulara decat cele 8 montane
+
+7. Site-ul lor e LENT si complicat — oportunitate pt o alternativa
+   simpla, rapida, cu comanda directa

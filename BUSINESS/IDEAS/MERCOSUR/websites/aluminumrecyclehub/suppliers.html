@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercosur Supplier Directory | Lithium & Niobium</title>
+    <meta name="description" content="Verified Brazilian and Argentine suppliers of lithium, niobium, and critical minerals for EU manufacturers.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f7fafc; }
+
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .filters {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filters label { font-weight: 600; }
+        .filters select, .filters input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .commodity-section {
+            background: white;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .commodity-header {
+            background: #2d5a87;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .commodity-header h2 { font-size: 1.5rem; }
+        .commodity-header .count { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 15px; }
+
+        .supplier-grid {
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .supplier-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .supplier-card:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+
+        .supplier-info h3 { color: #2d5a87; margin-bottom: 5px; font-size: 1.2rem; }
+        .supplier-info .location { color: #666; margin-bottom: 10px; }
+        .supplier-info .products { margin-bottom: 10px; }
+        .supplier-info .products span {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin: 2px;
+        }
+        .supplier-info .capacity { color: #38a169; font-weight: 600; }
+        .supplier-info .notes { color: #666; font-style: italic; margin-top: 5px; font-size: 0.9rem; }
+
+        .supplier-meta { text-align: right; }
+        .supplier-meta .certifications {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .supplier-meta .cert {
+            background: #c6f6d5;
+            color: #276749;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .supplier-meta .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .supplier-meta .status.verified { background: #c6f6d5; color: #276749; }
+        .supplier-meta a {
+            display: block;
+            margin-top: 10px;
+            color: #2d5a87;
+            text-decoration: none;
+        }
+        .supplier-meta a:hover { text-decoration: underline; }
+
+        .cta-banner {
+            background: #f6ad55;
+            color: #744210;
+            padding: 30px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+        }
+        .cta-banner h3 { margin-bottom: 10px; }
+        .cta-banner a {
+            display: inline-block;
+            background: #744210;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: #90cdf4; }
+
+        @media (max-width: 700px) {
+            .supplier-card { grid-template-columns: 1fr; }
+            .supplier-meta { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Mercosur Supplier Directory</h1>
+        <p>Verified suppliers of lithium, niobium, and critical minerals from Brazil and Argentina</p>
+    </header>
+
+    <div class="filters">
+        <label>Filter:</label>
+        <select id="commodity-filter">
+            <option value="all">All Commodities</option>
+            <option value="lithium">Lithium</option>
+            <option value="niobium">Niobium</option>
+        </select>
+        <select id="country-filter">
+            <option value="all">All Countries</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Argentina">Argentina</option>
+        </select>
+        <input type="text" placeholder="Search company..." id="search">
+    </div>
+
+    <!-- LITHIUM SECTION -->
+    <section class="commodity-section" data-commodity="lithium">
+        <div class="commodity-header">
+            <h2>Lithium Suppliers</h2>
+            <span class="count">6 verified suppliers</span>
+        </div>
+        <div class="supplier-grid">
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Livent Corporation</h3>
+                    <div class="location">Salta, Argentina</div>
+                    <div class="products">
+                        <span>Lithium carbonate</span>
+                        <span>Lithium hydroxide</span>
+                    </div>
+                    <div class="capacity">Capacity: 25,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 14001</span>
+                        <span class="cert">IATF 16949</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://livent.com" target="_blank">livent.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Allkem Limited (Olaroz)</h3>
+                    <div class="location">Jujuy, Argentina</div>
+                    <div class="products">
+                        <span>Lithium carbonate</span>
+                        <span>Battery grade</span>
+                    </div>
+                    <div class="capacity">Capacity: 42,500 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 9001</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://allkem.com" target="_blank">allkem.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Arcadium Lithium</h3>
+                    <div class="location">Multiple locations, Argentina</div>
+                    <div class="products">
+                        <span>Lithium hydroxide</span>
+                        <span>Lithium carbonate</span>
+                    </div>
+                    <div class="capacity">Capacity: 75,000 t/yr (combined)</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 14001</span>
+                        <span class="cert">Responsible Lithium</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://arcadiumlithium.com" target="_blank">arcadiumlithium.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>Sigma Lithium</h3>
+                    <div class="location">Minas Gerais, Brazil</div>
+                    <div class="products">
+                        <span>Spodumene concentrate</span>
+                        <span>Green lithium</span>
+                    </div>
+                    <div class="capacity">Capacity: 104,000 t/yr</div>
+                    <div class="notes">Carbon neutral production</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">Carbon Neutral</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://sigmalithium.com" target="_blank">sigmalithium.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>CBL - Companhia Brasileira de Litio</h3>
+                    <div class="location">Minas Gerais, Brazil</div>
+                    <div class="products">
+                        <span>Lithium carbonate</span>
+                        <span>Technical grade</span>
+                    </div>
+                    <div class="capacity">Capacity: 6,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 9001</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://cbl.com.br" target="_blank">cbl.com.br</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>AMG Lithium</h3>
+                    <div class="location">Minas Gerais, Brazil</div>
+                    <div class="products">
+                        <span>Spodumene</span>
+                        <span>Lithium concentrate</span>
+                    </div>
+                    <div class="capacity">Capacity: 90,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 14001</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://amg-nv.com" target="_blank">amg-nv.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NIOBIUM SECTION -->
+    <section class="commodity-section" data-commodity="niobium">
+        <div class="commodity-header" style="background: #276749;">
+            <h2>Niobium Suppliers</h2>
+            <span class="count">3 verified suppliers</span>
+        </div>
+        <div class="supplier-grid">
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>CBMM - Companhia Brasileira de Metalurgia e Mineracao</h3>
+                    <div class="location">Araxa, Minas Gerais, Brazil</div>
+                    <div class="products">
+                        <span>Ferroniobium</span>
+                        <span>Niobium oxide</span>
+                        <span>High-purity niobium</span>
+                    </div>
+                    <div class="capacity">Capacity: 100,000 t/yr</div>
+                    <div class="notes">World's largest - 80% global supply</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 9001</span>
+                        <span class="cert">ISO 14001</span>
+                        <span class="cert">IATF 16949</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://cbmm.com" target="_blank">cbmm.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>CMOC Brasil / Niobras</h3>
+                    <div class="location">Catalao, Goias, Brazil</div>
+                    <div class="products">
+                        <span>Ferroniobium</span>
+                    </div>
+                    <div class="capacity">Capacity: 9,500 t/yr</div>
+                    <div class="notes">Second largest producer globally</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 9001</span>
+                        <span class="cert">ISO 14001</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://cmocgroup.com" target="_blank">cmocgroup.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>Mineracao Taboca / Minsur</h3>
+                    <div class="location">Amazonas, Brazil</div>
+                    <div class="products">
+                        <span>Ferroniobium</span>
+                        <span>Tantalum</span>
+                    </div>
+                    <div class="capacity">Capacity: 2,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">ISO 14001</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://minsur.com" target="_blank">minsur.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <h3>Need an Introduction to These Suppliers?</h3>
+        <p>We connect EU manufacturers directly with verified Mercosur suppliers. Free for buyers.</p>
+        <a href="index.html#contact">Request Introductions</a>
+    </div>
+
+    <footer>
+        <p><strong>EU-Mercosur Raw Materials Hub</strong></p>
+        <p>Part of <a href="https://interjob.ro">InterJob Solutions Europe</a></p>
+    </footer>
+
+    <script>
+        // Simple filtering
+        document.getElementById('commodity-filter').addEventListener('change', filterSuppliers);
+        document.getElementById('country-filter').addEventListener('change', filterSuppliers);
+        document.getElementById('search').addEventListener('input', filterSuppliers);
+
+        function filterSuppliers() {
+            const commodity = document.getElementById('commodity-filter').value;
+            const country = document.getElementById('country-filter').value;
+            const search = document.getElementById('search').value.toLowerCase();
+
+            document.querySelectorAll('.commodity-section').forEach(section => {
+                const sectionCommodity = section.dataset.commodity;
+                if (commodity === 'all' || commodity === sectionCommodity) {
+                    section.style.display = 'block';
+                    section.querySelectorAll('.supplier-card').forEach(card => {
+                        const cardCountry = card.dataset.country;
+                        const cardText = card.textContent.toLowerCase();
+                        const countryMatch = country === 'all' || cardCountry === country;
+                        const searchMatch = !search || cardText.includes(search);
+                        card.style.display = countryMatch && searchMatch ? 'grid' : 'none';
+                    });
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

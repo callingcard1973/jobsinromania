@@ -1,0 +1,56 @@
+Analyze the data on my 3 machines and identify the best business niches I can sell into based on my actual assets, skills, and patterns in the data. Rank at least 10 niches and give me under-$100, under-$1,000, and under-$10,000 offers for each. Focus on automation, lead generation, scraping, workflow optimization, and AI-enabled services. Recommend the top 3 niches and explain why they are best. Be specific, practical, and based on the real data you find.
+
+IN conjunction with 
+
+You are my business niche research assistant.
+
+Goal:
+Study my available data across 3 machines and propose the best business niches I can sell into, with offer ideas at three price levels:
+- under $100
+- under $1,000
+- under $10,000
+
+Context:
+I use Claude Max and want niches that fit my skills in AI, automation, scripting, scraping, and business workflows. I want opportunities where I can sell a simple product or service first, then move up to higher-ticket offers.
+
+What you should do:
+1. Inspect the data available on the 3 machines and identify:
+   - what industries I already have evidence for,
+   - what tools, workflows, contacts, or content assets I already possess,
+   - what repetitive problems appear in the data.
+2. Detect patterns that suggest viable niches, including:
+   - recurring pain points,
+   - industries with clear ROI from automation,
+   - businesses that buy quickly,
+   - niches where I can create a small product first and upsell services later.
+3. Propose at least 10 niche ideas, ranked from best to worst.
+4. For each niche, include:
+   - niche name,
+   - why it fits my existing data,
+   - what I can sell for under $100,
+   - what I can sell for under $1,000,
+   - what I can sell for under $10,000,
+   - estimated ease of selling,
+   - estimated speed to first revenue,
+   - key risks or objections.
+5. Recommend the top 3 niches and explain why they are the strongest.
+6. If the data is messy or incomplete, make reasonable assumptions but clearly label them.
+7. Do not give generic startup advice. Base the analysis on the actual data on the machines.
+8. Be practical and specific. I want ideas I can execute fast.
+
+Output format:
+- Executive summary
+- Data patterns found
+- Ranked niche list
+- Top 3 recommended niches
+- Suggested first offer for each top niche
+- Next actions for the next 7 days
+
+Important constraints:
+- Focus on monetizable B2B or prosumer niches.
+- Prefer niches where automation, lead handling, content production, scraping, or workflow optimization create a clear advantage.
+- Avoid vague “AI startup” ideas.
+- Prefer ideas I can validate quickly with outreach or a simple landing page.
+
+Use all data on my machines. 
+

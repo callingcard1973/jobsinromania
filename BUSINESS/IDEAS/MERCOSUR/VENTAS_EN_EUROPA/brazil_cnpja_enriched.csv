@@ -1,0 +1,25 @@
+company,cnpj,razao_social,email,phone,city,state,status
+Marfrig,03853896000169,,,,,,HTTP 400
+BRF,01838723000227,,,,,,HTTP 400
+Vale,33592510000154,VALE S.A.,,2134856600,Rio de Janeiro,RJ,OK
+JBS,02916265000160,JBS S/A,tributos.rfb@jbs.com.br,1131444000,São Paulo,SP,OK
+Minerva Foods,67620377000114,MINERVA S.A.,jose.ferreira@minervafoods.com,1733213355,Barretos,SP,OK
+CBMM,16819498000100,,,,,,HTTP 400
+Petrobras,33000167000101,PETROLEO BRASILEIRO S A PETROBRAS,cc-rfisc@petrobras.com.br,2121660000,Rio de Janeiro,RJ,OK
+Raizen,33453598000123,RAIZEN S.A.,fiscalizacaocar@raizen.com,1934238000,Rio de Janeiro,RJ,OK
+CSN,33042730000104,COMPANHIA SIDERURGICA NACIONAL,tributariocsn@csn.com.br,1130497100,São Paulo,SP,OK
+Gerdau,33611500000119,GERDAU S.A.,cpg-dteicms@gerdau.com.br,1130946600,São Paulo,SP,OK
+Cargill Brasil,60498706000133,,,,,,HTTP 400
+Usiminas,60894730000105,USINAS SIDERURGICAS DE MINAS GERAIS S/A. USIMINAS,,3134999019,Belo Horizonte,MG,OK
+ArcelorMittal Brasil,17469701000177,ARCELORMITTAL BRASIL S.A.,equipe.paralegal@arcelormittal.com.br,3132191485,Belo Horizonte,MG,OK
+Suzano,16404287000155,SUZANO S.A.,regularidades@suzano.com.br,1136365000,Salvador,BA,OK
+Klabin,89637490000145,KLABIN S.A.,cont_fisc_sc@klabin.com.br,1130469918,São Paulo,SP,OK
+ADM do Brasil,02003402000140,,,,,,HTTP 400
+Bunge Brasil,84046101007293,,,,,,HTTP 400
+Cooxupe,20683555000128,,,,,,HTTP 400
+Citrosuco,51327225000108,,,,,,HTTP 400
+Braskem,42150391000170,BRASKEM S.A,cadastrodasempresasdogrupo@braskem.com,7135047100,Camaçari,BA,OK
+Alcoa Brasil,23637697000100,,,,,,HTTP 400
+Embraer,07689002000189,EMBRAER S.A.,daniel.saran@embraer.com.br,1239271000,São José dos Campos,SP,OK
+CBA,61409892000173,COMPANHIA BRASILEIRA DE ALUMINIO,cadastrodeempresas@votorantim.com,4133885365,São Paulo,SP,OK
+WEG,84429695000111,WEG SA,contabil1@weg.net,4732764775,Jaraguá do Sul,SC,OK

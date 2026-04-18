@@ -1,0 +1,732 @@
+id,email,company,contact_person,country,phone,alt_email,positions_count,job_count,quality_score,source,campaign_status,last_contacted,created_at
+17,hilde.brit.loften@bodo.kommune.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+2,post@trondheimliftutleie.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+7,IRFO@bjornafjorden.kommune.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+9,marianne.grimstad.sorensen@nav.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+12,guro.bondevik@mio.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+15,michaela.bergstrom@adecco.no,"","",Norway,+470000024,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+16,rasmus@abmarketing.no,"","",Norway,+4746305432,"",1,1,60,eures_contacts,pending,,2026-04-14 15:36:59.361894
+3,tinove@fredrikstad.kommune.no,"","",Norway,+4798603073,"",1,1,50,eures_contacts,pending,,2026-04-14 15:36:59.361894
+11,linda.boerstad@sarpsborg.com,"","",Norway,"",anette.hoe@sarpsborg.com,1,1,40,eures_contacts,pending,,2026-04-14 15:36:59.361894
+1,morten.longum@sweco.no,"","",Norway,"",lene.utbjoe@sweco.no,1,1,40,eures_contacts,pending,,2026-04-14 15:36:59.361894
+10,jorunn.hystad@stord.kommune.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+18,ronny@hovlandbaat.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+4,carinaelida.landberg@bal.oslo.kommune.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+5,sbkhan@vestreviken.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+13,sebjorg.thorset@bergen.kommune.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+6,birgitte.moltubakk@baerum.kommune.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+8,pedagogisk.tromsogfinnmark@adecco.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+14,kontakt@superrens.no,"","",Norway,"","",1,1,30,eures_contacts,pending,,2026-04-14 15:36:59.361894
+36,post@corvita.no,Corvita,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+37,postmottak@tromsfylke.no,Tromsfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+38,post@unn.no,Unn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+39,stig@normex.no,Normex,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+40,post@bulk.no,Bulk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+41,info@ggov.no,Ggov,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+42,iwona.paterka@stodig.no,COLUMBIA STÖDIG POLAND SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+43,post@bengtsbistro.no,Bengtsbistro,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+44,post@pecus.no,Pecus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+45,post@fiberproff.no,Fiberproff,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+46,andre@konsis.no,Konsis,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+47,tolcon@tolcon.no,Tolcon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+48,postmottak@usn.no,Usn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+49,post@ode.no,Ode,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+50,post@jdps.no,Jdps,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+51,bjorn.ronning@geno.no,GENO SA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+52,post@norwegianguideservice.no,Norwegianguideservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+53,post@hadselmaskin.no,Hadselmaskin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+54,postmottak@ringerike.kommune.no,Ringerike,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+55,post@dmp.no,Dmp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+56,marianna@thelook.no,Thelook,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+57,butikk@clinique-helene.no,Clinique Helene,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+58,sustainability@intility.no,Intility,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+59,postmottak@rana.kommune.no,Rana,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+60,skade@protectorforsikring.no,Protectorforsikring,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+61,haugaland-vgs@skole.rogfk.no,Skole,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+62,post@sus.no,Sus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+63,beredskap@storfjord.kommune.no,Storfjord,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+64,midtbyen@graffigrill.no,Graffigrill,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+65,post@sanner-hotell.no,Sanner Hotell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+66,gard@atriumpeople.no,Atriumpeople,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+67,kontakt@esmeralda.no,Esmeralda,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+68,postmottak@nesbyen.kommune.no,Nesbyen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+69,kundeservice@musti.no,Musti,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+70,tilbakemelding-nett@lorenskog.kommune.no,Lorenskog,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+71,lars.steinar.laingen@karlsoy.kommune.no,Karlsoy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+72,post@fellesforbundet.no,Fellesforbundet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+73,rad@bjornafjorden.kommune.no,Bjornafjorden,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+74,postmottak@helse-mr.no,Helse Mr,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+75,post@avento.no,Avento,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+76,velkommen@husettonsberg.no,Husettonsberg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+77,post@ragnashage.no,Ragnashage,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+78,hei@wood.no,Wood,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+79,post@fjordmaritime.no,Fjordmaritime,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+80,jon.eikhaug@uib.no,UNIVERSITETET I BERGEN,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+81,post@tromsooutdoor.no,Tromsooutdoor,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+82,post@helmus.no,Helmus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+83,christoffer.maroy@efb.no,Eide Fjordbruk AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+84,andre.collier@gtwas.no,Gtwas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+85,svein@toolserv.no,Toolserv,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+86,info@academicwork.no,Academicwork,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+87,post@blueday.no,Blueday,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+88,firmapost@mwg.no,Mwg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+89,kontor@laringsverkstedet.no,Laringsverkstedet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+90,kundeservice@hmspartnernorge.no,Hmspartnernorge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+91,post@osloautosalg.no,Osloautosalg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+92,post@valdres.no,Valdres,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+93,post@vinde-tt.no,Vinde Tt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+94,post@prostyling.no,Prostyling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+95,info@matfikseren.no,Matfikseren,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+96,post@skm.stat.no,Skm,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+97,post@sezar.no,Sezar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+98,kundeservice@naturkompaniet.no,Naturkompaniet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+99,servicesenter@forsvarsbygg.no,Forsvarsbygg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+100,post@arentreprenor.no,Arentreprenor,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+101,info@fibo.no,Fibo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+102,post@lokalrekruttering.no,Lokalrekruttering,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+103,aleksandra@tbebemanning.no,Tbebemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+104,post@acel.no,Acel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+105,post@risorby.no,Risorby,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+106,bodo@flyttogvask.no,Flyttogvask,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+107,johs@dekkservicevest.no,Dekkservicevest,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+108,support@karriere.no,Karriere,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+109,post@sav.no,Sav,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+110,hei@makegraphics.no,Makegraphics,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+111,booking@norskbiltransport.no,Norskbiltransport,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+112,post@solcellekraft.no,Solcellekraft,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+113,kskare@deloitte.no,DELOITTE LIMITED,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+114,oyvind@sandoybyggservice.no,Sandoybyggservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+115,kontakt@ulvenfrisor.no,Ulvenfrisor,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+116,carine@bedriftskonsulent.no,VPK PACKAGING S.R.L.,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+117,post@biosort.no,Biosort,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+118,kai@skogservice.no,Skogservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+119,l.haaland@auto2000.no,AUTO 2000 S.R.L,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+120,info@ivbeauty.no,Ivbeauty,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+121,arkaden@lakkbar.no,Lakkbar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+122,post@hoiax.no,Hoiax,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+123,ishavsbyen.vgs@tromsfylke.no,Tromsfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+124,personell@skpersonell.no,Skpersonell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+125,kundeservice@lalash.no,Lalash,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+126,firmapost@mvp.no,Mvp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+127,solveig.kvam@cappa.no,VITA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+128,post@vard.no,Vard,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+129,post@syrstadengbil.no,Syrstadengbil,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+130,post@espira.no,Espira,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+131,support@cares.no,Cares,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+132,post@cafesann.no,Cafesann,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+133,kontor@element-partner.no,Element Partner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+134,post@salongin.no,Salongin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+135,postmottak@ullensvang.kommune.no,Ullensvang,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+136,post@e4p.no,E4P,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+137,vikenfs@afk.no,Afk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+138,hege@lsenteret.no,Lsenteret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+139,postmottak@alta.kommune.no,Alta,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+140,cert@ncsc.no,Ncsc,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+141,post@ukh.no,Ukh,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+142,post@landskapsservice.no,Landskapsservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+143,rebekka.stangeland@auroraomsorg.no,Auroraomsorg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+144,info@glowhousebeauty.no,Glowhousebeauty,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+145,post@io.kommune.no,Io,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+146,jeanette.rostad.krogstad@oneco.no,ONECO NETWORKS AB,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+147,nettredaktor@jus.uio.no,Jus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+148,postmottak@nordrefollo.kommune.no,Nordrefollo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+149,oystein.moen@norsvin.no,NORSVIN SA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+150,post@skc.no,Skc,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+151,post@cruit.no,Cruit,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+152,post@svgmek.no,Svgmek,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+153,postmottak@sshf.no,Sshf,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+154,hei@detnorsketeatret.no,Detnorsketeatret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+155,firmapost@bmoelektro.no,Bmoelektro,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+156,booking@tangendyrepark.no,Tangendyrepark,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+157,postmottak@khio.no,Khio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+158,postmottak@nordlandssykehuset.no,Nordlandssykehuset,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+159,info@bergenguideservice.no,Bergenguideservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+160,info@smashbuddies.no,Smashbuddies,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+161,eva.dahle.rabben@konfliktraadet.no,Konfliktraadet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+162,oslo@utdanningsforbundet.no,Utdanningsforbundet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+163,liv@wavepersonell.no,Wavepersonell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+164,nhf@nhf.no,Nhf,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+165,firmapost@erik-larm.no,Erik Larm,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+166,sigve@shngroup.no,Shngroup,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+167,post@ikomm.no,Ikomm,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+168,jostein@simula.no,SIMULA RESEARCH LABORATORY AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+169,kunde@gs-maskin.no,Gs Maskin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+170,post@prosecure.no,Prosecure,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+171,post@fonnesshipping.no,Fonnesshipping,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+172,kjell-arne@bupa.no,Bupa,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+173,kundeservice@verisure.no,Verisure,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+174,regnskap@toma.no,Toma,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+175,post@psw.no,Psw,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+176,post@nibio.no,Nibio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+177,sit.kafe.kalvskinnet@sit.no,Sit,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+178,tor.morten@nordanlegg.no,Nordanlegg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+179,post@workshop.no,Workshop,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+180,firmapost@stiansen.no,Stiansen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+181,kundeservice@varoma.no,Varoma,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+182,post@norgestakblikk.no,Norgestakblikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+183,bestill@greenerfood.no,Greenerfood,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+184,post@ceidsvoll.no,Ceidsvoll,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+185,post@beckmeister.no,Beckmeister,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+186,epost@sostrenekarlsen.no,Sostrenekarlsen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+187,flaskepost@seilnorge.no,Seilnorge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+188,post@scangranitt.no,Scangranitt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+189,dag.skoglund@linea.no,LINEA .,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+190,post@havnaomsorg.no,Havnaomsorg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+191,postmottak@finnmarkssykehuset.no,Finnmarkssykehuset,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+192,postmottak@sthf.no,Sthf,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+193,post@finstadjorgensen.no,Finstadjorgensen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+194,post@arcticexplorers.no,Arcticexplorers,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+195,marzena.koksanowicz@voice.no,MATCH S.R.L.,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+196,post@kanvas.no,Kanvas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+197,gry@aksessbemanning.no,Aksessbemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+198,post@haugogruudvvs.no,Haugogruudvvs,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+199,postmottak@nissedal.kommune.no,Nissedal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+200,post@bergenpersonal.no,Bergenpersonal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+201,post@gront-anlegg.no,Gront Anlegg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+202,hei@emploi.no,Emploi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+203,bordbestilling@osteriakreo.no,Osteriakreo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+204,post@magmageopark.no,Magmageopark,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+205,sjur.kvamme@sensio.no,Sensio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+206,postmottak@ahus.no,Ahus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+207,firmapost@datelco.no,Datelco,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+208,info@cityservices.no,Cityservices,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+209,resepsjon@nymosvingenlegesenter.no,Nymosvingenlegesenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+210,kristiansund.vgs@mrfylke.no,Mrfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+211,ellinor@iogr.no,MATRE S.R.L,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+212,vegard@sterimedical.no,Sterimedical,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+213,post@novasea.no,Novasea,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+214,service@thelondonbarber.no,Thelondonbarber,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+215,salg@prostage.no,Prostage,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+216,sales@nereida.no,Nereida,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+217,post@industriplast.no,Industriplast,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+218,tef@amv-as.no,ANDERSEN MEK VERKSTED AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+219,hovedkontor@leifgrimsrud.no,Leifgrimsrud,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+220,willy.raknes@vestlandbyggservice.no,Vestlandbyggservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+221,post@uia.no,Uia,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+222,lukas.blom@ivar.no,IVAR IKS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+223,booking@skeikampenbooking.no,Skeikampenbooking,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+224,post@oslomuseum.no,Oslomuseum,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+225,post@anno.no,Anno,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+226,lmo@jks.no,Schneider Electric Norge AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+227,info@mattechat.no,Mattechat,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+228,konsern@teamverksted.no,Teamverksted,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+229,post@busscharter.no,Busscharter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+230,hei@navn.no,Navn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+231,post@fossmv.no,Fossmv,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+232,kontakt@romsdalelektro.no,Romsdalelektro,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+233,plan-erstatningstrafikk@nobina.no,Nobina,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+234,post@coromatic.no,Coromatic,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+235,redaksjonen@dio.dep.no,Dio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+236,post@solid-assistanse.no,Solid Assistanse,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+237,e-post@kautokeino.kommune.no,Kautokeino,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+238,oystein@meyerhaugen.no,KLP Skadeforsikring AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+239,postmottak@stortinget.no,Stortinget,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+240,post@ir.nt.no,Ir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+241,post@unikbyggmester.no,Unikbyggmester,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+242,paulb@nupi.no,NORSK UTENRIKSPOLITISK INSTITUTT,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+243,strategi@met.no,Met,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+244,support@firesafe.no,Firesafe,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+245,post@langsetsolutions.no,Langsetsolutions,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+246,postmottak@lillestrom.kommune.no,Lillestrom,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+247,post@visitfauske.no,Visitfauske,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+248,richard.hovdsveen@prokom.no,Prokom,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+249,olaug.gylland@securitas.no,Securitas Technology,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+250,post@ovgj.no,Ovgj,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+251,bedriftskunde@plantasjen.no,Plantasjen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+252,iselin.breirem@ru.no,Ru,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+253,salg@rogbil.no,Rogbil,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+254,aeco@aeco.no,Aeco,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+255,webredaksjon@odont.uio.no,Odont,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+256,post@alfaenergi.no,Alfaenergi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+257,office@lkhjelle.no,Lkhjelle,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+258,post@lotusasiancuisine.no,Lotusasiancuisine,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+259,post@ellingard.no,Ellingard,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+260,terje.gausen@moller.no,Moller,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+261,oddgeir.husoy@mmcfp.no,MMC FIRST PROCESS AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+262,post@tinde.no,Tinde,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+263,post@taxi1000.no,Taxi1000,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+264,olaviken@olaviken.no,Olaviken,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+265,abt@kvinesdalsparebank.no,Kvinesdalsparebank,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+266,post@medvindassistanse.no,Medvindassistanse,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+267,post@bnbank.no,Bnbank,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+268,postmottak@sivilombudet.no,Sivilombudet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+269,companymail@gard.no,Gard,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+270,rikke.raknes@dyroy.kommune.no,Dyroy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+271,post@nutrimar.no,Nutrimar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+272,firmapost@sunnaas.no,Sunnaas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+273,camilla.grana@randstad.no,Randstad,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+274,anette.sather.haagensen@nmbu.no,Nmbu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+275,post@afk.no,Afk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+276,hello@lilycountryclub.no,Lilycountryclub,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+277,hei@kassa.no,Kassa,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+278,westcon@westcon.no,Westcon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+279,post@advela.no,Advela,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+280,kamila@safebemanning.no,Safebemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+281,kommunikasjon@horten.kommune.no,Horten,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+282,raymond.myrland@dekkteam.no,Dekkteam,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+283,fh@carboncentric.no,Carboncentric,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+284,presse@aquagen.no,Aquagen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+285,ir@remarkable.no,Remarkable,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+286,post@aqila.no,Aqila,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+287,post@narvikbygg.no,Narvikbygg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+288,post@chemringnobel.no,Chemringnobel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+289,post@vikingbad.no,Vikingbad,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+290,kommunikasjon@etj.no,Etj,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+291,bord@theatercafeen.no,Theatercafeen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+292,nettredaktor@bufdir.no,Bufdir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+293,post@mekle.no,Mekle,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+294,post@klingenberghotel.no,Klingenberghotel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+295,bordbestilling@kullt.no,Kullt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+296,meg@domene.no,Domene,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+297,nybil@hoylandet-auto.no,Hoylandet Auto,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+298,post@sularorbuer.no,Sularorbuer,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+299,byggesak@sirdal.kommune.no,Sirdal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+300,post@lysbemanning.no,Lysbemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+301,anders.robertsen@salmar.no,SALMAR FARMING AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+302,post@alier.no,Alier,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+303,post@fpkmaling.no,Fpkmaling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+304,stian.skar.ludvigsen@vlfk.no,VESTLAND FYLKESKOMMUNE,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+305,kommunikasjon@orkland.kommune.no,Orkland,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+306,postmottak@luroy.kommune.no,Luroy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+307,firmapost@olengen.no,Olengen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+308,salg@resthon.no,Resthon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+309,post@forskningsetikk.no,Forskningsetikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+310,post@washpoint.no,Washpoint,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+311,post@nettpartner.no,Nettpartner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+312,helpdesk@dale.no,Dale,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+313,tonjesaeby@bal.oslo.kommune.no,OSLO KOMMUNE,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+314,booking@bakkalandethotell.no,Bakkalandethotell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+315,snorre@jbpartner.no,Jbpartner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+316,post@asfaltspesialisten.no,Asfaltspesialisten,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+317,marit.elisabeth.apeland.alfsvag@stavanger.kommune.no,Stavanger kommune,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+318,booking@geiloskiskole.no,Geiloskiskole,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+319,post@hlsenteret.no,Hlsenteret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+320,rotstigen@rotstigen.no,Rotstigen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+321,post@hnikt.no,Hnikt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+322,post@skistuahemsedal.no,Skistuahemsedal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+323,postmottak@vestreviken.no,Vestreviken,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+324,post@solbergmoentannlegesenter.no,Solbergmoentannlegesenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+325,post@tjlast.no,Tjlast,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+326,post@osebergmiljo.no,Osebergmiljo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+327,office@tersanhavyard.no,Tersanhavyard,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+328,mail@jobconnect.no,Jobconnect,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+329,garasjer@igland.no,Igland,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+330,hei@noddi.no,Noddi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+331,postmottak@overhalla.kommune.no,Overhalla,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+332,post@trysilfjell.no,Trysilfjell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+333,jnb@statskog.no,STATSKOG SF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+334,hds@haraldsplass.no,Haraldsplass,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+335,u003enettredaktor@bufdir.no,Bufdir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+336,turistinfo@visitvesteralen.no,Visitvesteralen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+337,post@sykehusinnkjop.no,Sykehusinnkjop,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+338,kundeservice@megaflis.no,Megaflis,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+339,ke@ansett.no,Ansett,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+340,hpro@hansenprotection.no,Hansenprotection,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+341,truls.skarvik@ahlsell.no,Ahlsell Norge AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+342,postmottak@hnt.no,Hnt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+343,eirik.bjornestad@sweco.no,SWECO NORGE AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+344,navn@domene.no,Domene,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+345,proysenhuset@ringsaker.kommune.no,Ringsaker,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+346,post@serve.no,Serve,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+347,post@celebrate.no,Celebrate,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+348,sales@pharmamarine.no,Pharmamarine,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+349,post@sectoralarm.no,Sectoralarm,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+350,kunde@cloudconnection.no,Cloudconnection,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+351,a-jahr@online.no,Online,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+352,post@noteless.no,Noteless,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+353,post@tjeldsundbrua.no,Tjeldsundbrua,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+354,anette.aase@fiskeridir.no,FISKERIDIREKTORATET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+355,post@temp-team.no,Temp Team,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+356,post@teateret.no,Teateret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+357,post@fagdykk.no,Fagdykk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+358,kundeservice@istad.no,Istad,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+359,bil@norskautosenter.no,Norskautosenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+360,emmasim@oslomet.no,OSLOMET - STORBYUNIVERSITETET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+361,post@primecargo.no,Primecargo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+362,booking@anker-brygge.no,Anker Brygge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+363,iman.remo@politiet.no,POLITIDIREKTORATET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+364,post@norrein.no,Norrein,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+365,vitnemalsportalen@sikt.no,Sikt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+366,post@reno-vest.no,Reno Vest,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+367,post@a-work.no,A Work,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+368,postmottak@stami.no,Stami,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+369,post@micronet.no,Micronet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+370,ingun.stray.schmidt@formue.no,Formue,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+371,kundeservice@europris.no,Europris,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+372,nina.grunfeld@inn.no,UNIVERSITETET I INNLANDET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+373,kundeservice@jernia.no,Jernia,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+374,hei@alnatannregulering.no,Alnatannregulering,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+375,kontakt@vagsbygd.vgs.no,Vagsbygd,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+376,shawk@shamonsnekkeri.no,Shamonsnekkeri,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+377,post@wangensten.no,Wangensten,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+378,support@grade.no,Grade,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+379,itt@froy.no,Froy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+380,post@publiq.no,Publiq,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+381,post@gjesdal.kommune.no,Gjesdal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+382,kontakt@eksempel.no,Eksempel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+383,erlend.friestad@hareid.kommune.no,Hareid,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+384,info@maskinpakking.no,Maskinpakking,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+385,simon@jagtech.no,Jagtech,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+386,salg@glassmester1.no,Glassmester1,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+387,gunhilds@unis.no,UNIS AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+388,jarle.wahler@vegvesen.no,Vegvesen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+389,reservation@sixt.no,Sixt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+390,mj@advokatfirmajahaj.no,Advokatfirmajahaj,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+391,post@suphankitchen.no,Suphankitchen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+392,postmottak.oraker@osloskolen.no,Osloskolen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+393,faktura@naroysund.kommune.no,Naroysund,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+394,post@stefanus.no,Stefanus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+395,post@ringebu.kommune.no,Ringebu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+396,post@metrostav-norge.no,Metrostav Norge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+397,kpr@kapebemanning.no,Kapebemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+398,linn.stellander@voice.no,VIC,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+399,service@brunvoll.no,Brunvoll,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+400,firmapost@bmo.no,Bmo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+401,firmapost@berland-bygg.no,Berland Bygg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+402,post@forskningsradet.no,Forskningsradet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+403,post@eos-utvalget.no,Eos Utvalget,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+404,patrick@tonsbergtak.no,Tonsbergtak,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+405,post@essensdagspa.no,Essensdagspa,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+406,erlend.hansen.juvik@adresseavisen.no,Adresseavisen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+407,post@renalti.no,Renalti,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+408,m.g.markussen@khm.uio.no,Universitetet i Oslo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+409,postmottak@justervesenet.no,Justervesenet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+410,k.m.ostbakken@samfunnsforskning.no,INSTITUTT FOR SAMFUNNSFORSKNING,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+411,kystruten@havila.no,Havila,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+412,post@eurobusnordic.no,Eurobusnordic,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+413,bruker@domene.no,Domene,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+414,post@brageva.no,Brageva,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+415,kurs@svommepartner.no,Svommepartner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+416,post@bibbisfrisor.no,Bibbisfrisor,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+417,astrup@astrup.no,Astrup,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+418,joachim.kahler@nofence.no,Nofence,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+419,kundesenter@vinmonopolet.no,Vinmonopolet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+420,nettbutikk@norwaydesigns.no,Norwaydesigns,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+421,post@vognteknikk.no,Vognteknikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+422,post@sogndaltannlegesenter.no,Sogndaltannlegesenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+423,smn@smn.no,Smn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+424,gabriel@lostacos.no,Lostacos,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+425,firmapost@levelek.no,Levelek,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+426,postmottak-8215@kriminalomsorg.no,Kriminalomsorg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+427,support@nyweb.no,Nyweb,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+428,post@invo.no,Invo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+429,linda.henriksen@personalhuset.no,AXESS TECHNOLOGIES LIMITED,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+430,post@hamaroy-nf.no,Hamaroy Nf,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+431,booking@fisketorget-delikatesse.no,Fisketorget Delikatesse,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+432,post@folk.no,Folk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+433,kr@ahlsell.no,Ahlsell,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+434,kripos@politiet.no,Politiet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+435,nettredaktor@hf.uio.no,Hf,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+436,jorn.madsen@bautautvikling.no,Bautautvikling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+437,espen.rafter@polaria.no,POLARIA OY,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+438,rune.nilsen@hi.no,HAVFORSKNINGSINSTITUTTET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+439,hei@nationaltheatret.no,Nationaltheatret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+440,personalhuset@personalhuset.no,Personalhuset,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+441,post@hadeland-glassverk.no,Hadeland Glassverk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+442,kristine.melgaard@compass-group.no,Compass Group,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+443,postmottak@ntnu.no,Ntnu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+444,post@leveldigital.no,Leveldigital,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+445,tin@grong-sparebank.no,Grong Sparebank,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+446,resepsjon@clp.no,Clp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+447,post@renta.no,Renta,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+448,post@gabler.no,Gabler,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+449,post@frontforvaltning.no,Frontforvaltning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+450,info@nfm.no,Nfm,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+451,info@mmcfp.no,Mmcfp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+452,post@bergeninternasjonalekultursenter.no,Bergeninternasjonalekultursenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+453,orjan.tvedt@vegvesen.no,STATENS VEGVESEN,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+454,post@pst.politiet.no,Pst,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+455,postmottak@narvik.kommune.no,Narvik,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+456,post@mrfylke.no,Mrfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+457,laila@batne.no,ELTECO SRL,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+458,post@lds.no,Lds,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+459,postmottak@aama.no,Aama,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+460,postmottak@nes.kommune.no,Nes,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+461,mikkel.brudvik.sanderud@telenor.no,TELENOR NORGE AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+462,post@crystalservice.no,Crystalservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+463,epost@bjbmaskin.no,Bjbmaskin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+464,post@therma.no,Therma,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+465,post@miljodir.no,Miljodir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+466,post@rauma.kommune.no,Rauma,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+467,post@augustum.no,Augustum,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+468,nettredaktor@uio.no,Uio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+469,equient@equient.no,Equient,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+470,h.fagerli@met.no,METEOROLOGISK INSTITUTT,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+471,post@vegsund-slip.no,Vegsund Slip,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+472,info@bravida.no,Bravida,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+473,support@nuu.no,Nuu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+474,kjell.skartseterhagen@nittedal.kirken.no,Nittedal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+475,post@hkdir.no,Hkdir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+476,rune@moyo.no,Moyo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+477,post@fjellmark.no,Fjellmark,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+478,salg@solabobil.no,Solabobil,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+479,lisbet@viaitalia.no,Viaitalia,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+480,therese.fosholt.moe@ramboll.no,Ramboll,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+481,info@vzu.no,Vzu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+482,post@prosjektvask.no,Prosjektvask,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+483,camilla.misfjord.nilsen@farrisbad.no,Farrisbad,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+484,faktura@bymisjon.no,Bymisjon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+485,fjordbyen@ulna.no,Ulna,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+486,sondre@klas.no,Klas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+487,karley.l.campbell@uit.no,UiT the Arctic University of Norway,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+488,sah@exhausto.no,EXHAUSTO AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+489,kino@tonsbergfilmhus.no,Tonsbergfilmhus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+490,solbjorg@betania-alta.no,ALTA SPA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+491,post@mnas.no,Mnas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+492,post@jaro.no,Jaro,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+493,post@eurox.no,Eurox,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+494,arne.harstad@ruter.no,RUTER AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+495,%20ingerine@muzziball.no,Muzziball,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+496,post@techconsult.no,Techconsult,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+497,post@senja.kommune.no,Senja,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+498,ole.magnus.urdal@gabler.no,Gabler,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+499,enter@loopacademy.no,Loopacademy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+500,sabima@sabima.no,Sabima,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+501,post@aktoeiendom.no,Aktoeiendom,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+502,marked@hfasader.no,Hfasader,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+503,postmottak@bronnoy.kommune.no,Bronnoy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+504,webteknisk@lanekassen.no,Lanekassen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+505,postmottak@ffk.no,Ffk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+506,asbjorg.meyer@skagerakenergi.no,LEDE AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+507,post@redcross.no,Redcross,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+508,postmottak@aal.kommune.no,Aal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+509,post@turnor.no,Turnor,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+510,postmottak@tromso.kommune.no,Tromso,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+511,post@smartdekk.no,Smartdekk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+512,johan.vogt@people.no,PEOPLE S.R.L.,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+513,post@rightbemanning.no,Rightbemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+514,nina.anthonsen@anticimex.no,ANTICIMEX,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+515,postmottak@birkenes.kommune.no,Birkenes,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+516,post@villabekk.no,Villabekk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+517,din@epostadresse.no,Epostadresse,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+518,c.lewis-jones@birralee.no,BIRRALEE INTERNATIONAL SCHOOL TRONDHEIM AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+519,christian@ansu.no,Ansu,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+520,daniel.ler.johnson@motor-trade.no,Motor Trade,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+521,figura@protex.no,Protex,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+522,post@all10.no,All10,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+523,post@shmsolutions.no,Shmsolutions,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+524,tab@opsas.no,Opsas,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+525,camilla.kaspersen@auroraomsorg.no,Auroraomsorg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+526,post@hahus.no,Hahus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+527,ove@atlantico.no,ATLANTICO S.R.L.,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+528,oyvind.borresen@tide.no,TIDE SRL,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+529,postmottak@evenes.kommune.no,Evenes,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+530,mark@monteringsgutta.no,Monteringsgutta,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+531,info@lagunaprodukter.no,Lagunaprodukter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+532,postmottak@oslohavn.no,Oslohavn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+533,hei@solsidenbar.no,Solsidenbar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+534,delelager@altamotorsenter.no,Altamotorsenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+535,kundeservice@fagerhult.no,Fagerhult,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+536,post@tt-teknikk.no,Tt Teknikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+537,support@samey.no,Samey,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+538,postmottak@pasientreiser.no,Pasientreiser,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+539,post@gatsby.no,Gatsby,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+540,post@mbgs.no,Mbgs,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+541,postmottak@caa.no,Caa,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+542,bardufoss@olearys.no,Olearys,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+543,kontakt@forsvaret.no,Forsvaret,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+544,post@normaskin-tana.no,Normaskin Tana,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+545,post@europress.no,Europress,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+546,post@northgroup.no,Northgroup,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+547,dl.grilstad@bhg.no,Bhg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+548,post@vireo.no,Vireo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+549,postmottak@nesna.kommune.no,Nesna,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+550,post@proel.no,PROEL SPA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+551,oslo@monterosasport.no,Monterosasport,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+552,tips@dagensmedisin.no,Dagensmedisin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+553,info@sorrisniva.no,Sorrisniva,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+554,iris@zymtech.no,ZYMTECH LIFE SCIENCE AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+555,postmottak@oygarden.kommune.no,Oygarden,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+556,david2004@osloskolen.no,Osloskolen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+557,regine.krefting@manpower.no,AIRBUS DEFENCE AND SPACE GMBH,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+558,epost@sondre-land.kommune.no,Sondre Land,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+559,marte.kaardahl@horten.kommune.no,Horten,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+560,jth@hamnoy.no,Hamnoy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+561,post@oslotransportogflytteservice.no,Oslotransportogflytteservice,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+562,contact@inflowcontrol.no,Inflowcontrol,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+563,post@lapasteria.no,Lapasteria,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+564,heydi@heydi.no,Heydi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+565,marit.rabbe@addpersona.no,Addpersona,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+566,kontakt@hungrytiger.no,Hungrytiger,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+567,post@oslo-universitetssykehus.no,Oslo Universitetssykehus,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+568,hmn@digdir.no,DIGITALISERINGSDIREKTORATET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+569,vegard.aakre@drammen.kommune.no,Drammen Eiendom KF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+570,post@kystverket.no,Kystverket,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+571,post@stenumgardbygg.no,Stenumgardbygg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+572,booking@eikandfriends.no,Eikandfriends,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+573,ekommune@bjornafjorden.kommune.no,Bjornafjorden,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+574,ks@ks.no,Ks,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+575,mail@exploro.no,Exploro,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+576,post@honefoss-vaktselskap.no,Honefoss Vaktselskap,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+577,post@stolav.no,Stolav,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+578,tormartin@hammerobygg.no,Hammerobygg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+579,dagligleder@sixtrening.no,SIX,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+580,henvendelser@enevo.no,Enevo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+581,postmottak.fagskolen@osloskolen.no,Osloskolen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+582,kristine.ronning@hitra.kommune.no,Hitra kommune,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+583,frer@fatland.no,Fatland,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+584,post@vizir.no,Vizir,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+585,nett@utviklingssenter.no,Utviklingssenter,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+586,tonje.oderud@sus.no,HELSE STAVANGER HF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+587,joachim@lofotenbiomarine.no,Lofotenbiomarine,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+588,post@adma.no,Adma,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+589,forkjop@obos.no,Obos,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+590,post@unis.no,Unis,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+591,magne.tronnes2@banenor.no,BANE NOR SF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+592,post@totalsolution.no,Totalsolution,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+593,post@fjordcamp.no,Fjordcamp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+594,postmottak@sykehusapotek-nord.no,Sykehusapotek Nord,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+595,mail@hoglund.no,Hoglund,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+596,post@ksbeauty.no,Ksbeauty,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+597,post@kvitsoy-hushjelp.no,Kvitsoy Hushjelp,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+598,salmar@salmar.no,Salmar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+599,inntak@mrfylke.no,Mrfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+600,post@cafelokka.no,Cafelokka,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+601,post@himolde.no,Himolde,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+602,info@bravura-norge.no,Bravura Norge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+603,hei@oktoberlogistikk.no,Oktoberlogistikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+604,malin@lannisters.no,Lannisters,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+605,post@kaffebryggeren.no,Kaffebryggeren,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+606,ordre@dogman.no,Dogman,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+607,kundeservice@happybytes.no,Happybytes,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+608,post@people.no,People,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+609,lille@japansushi.no,Japansushi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+610,post@futurabowling.no,Futurabowling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+611,bergen@visindi.no,Visindi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+612,post@vimato.no,Vimato,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+613,post@akerbla.no,Akerbla,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+614,post@knowit.no,Knowit,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+615,riving@h2miljo.no,H2Miljo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+616,fsi@lettbyggteknikk.no,Lettbyggteknikk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+617,post@storfjord.kommune.no,Storfjord,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+618,post@caramba.no,Caramba,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+619,post@s32.no,S32,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+620,vian@meisel.no,Meisel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+621,henrik.forsstrom@octannklinikker.no,Octannklinikker,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+622,admin@hdb.no,Hdb,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+623,post@hadelandcatering.no,Hadelandcatering,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+624,post@auroraomsorg.no,Auroraomsorg,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+625,post@finsadal.no,Finsadal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+626,post@tos.no,Tos,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+627,postmottak@sykehuset-innlandet.no,Sykehuset Innlandet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+628,fakturamottak@volda.kommune.no,Volda,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+629,post@pedagogiskbemanning.no,Pedagogiskbemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+630,post@veoy.no,Veoy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+631,ehe@gassco.no,GASSCO AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+632,sandra@renex.no,Renex,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+633,svein@effectbemanning.no,Effectbemanning,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+634,post@tyrifjord-golfklubb.no,Tyrifjord Golfklubb,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+635,info@stenarecycling.no,Stenarecycling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+636,oslo@multiconsult.no,Multiconsult,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+637,post@nekton.no,Nekton,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+638,karina.vorland.lovstad@helse-bergen.no,HELSE BERGEN HF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+639,post@utelivpartner.no,Utelivpartner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+640,pal@elfo.no,ELFO S.R.L.,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+641,post@norgesfrivilligsentraler.no,Norgesfrivilligsentraler,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+642,borge.barlindhaug@jeffersonwells.no,NORTURA SA,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+643,post@bambussushi.no,Bambussushi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+644,post@oppdalspekemat.no,Oppdalspekemat,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+645,post@nor-log.no,Nor Log,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+646,norrenhold@live.no,Live,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+647,post@dekk24.no,Dekk24,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+648,firmapost@nrva.no,Nrva,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+649,post@calmaklinikken.no,Calmaklinikken,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+650,post@restaurantlilleitalia.no,Restaurantlilleitalia,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+651,ida.vestli.eilertsen@unn.no,UNIVERSITETSSYKEHUSET NORD-NORGE HF,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+652,invoice@dacon.no,Dacon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+653,gon@crewmate.no,BREVIK ENGINEERING AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+654,fagskolen@mrfylke.no,Mrfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+655,kontakt@omsorgsgruppen.no,Omsorgsgruppen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+656,post@gdts.no,Gdts,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+657,kundesenter@solarnorge.no,Solarnorge,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+658,noen@eksempel.no,Eksempel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+659,firmapost@fagskolen-innlandet.no,Fagskolen Innlandet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+660,andrew@norskavvikling.no,Norskavvikling,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+661,kundesenter@lyko.no,Lyko,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+662,postmottak@svk.no,Svk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+663,post@betanien.no,Betanien,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+664,hero@hero.no,Hero,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+665,post@dekkverden.no,Dekkverden,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+666,post@thermax.no,Thermax,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+667,silje@vhr.no,Vhr,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+668,reservations@losbygods.no,Losbygods,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+669,post@gjovik-boligstiftelse.no,Gjovik Boligstiftelse,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+670,post@atg.no,ATG GmbH,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+671,service@seafood.no,Seafood,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+672,eli-ane.lund@etikkradet.no,Finansdepartementet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+673,irene@grannar.no,Grannar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+674,booking@olivia.no,Olivia,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+675,postmottak@fd.dep.no,Fd,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+676,info@orkla.no,Orkla,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+677,postmottak@helse-bergen.no,Helse Bergen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+678,post@helse-fonna.no,Helse Fonna,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+679,tips@tv2.no,Tv2,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+680,post@elektro-team.no,Elektro Team,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+681,post@oslosnarveier.no,Oslosnarveier,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+682,steinar.svendsen@frogn.kommune.no,Frogn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+683,post@bemex-rekruttering.no,Bemex Rekruttering,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+684,post@hallgruppen.no,Hallgruppen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+685,post@leveloffshore.no,Leveloffshore,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+686,hilde.munkeby@nord.no,NORD UNIVERSITET,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+687,firmapost@eltilsynet.no,Eltilsynet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+688,post@vatromsgruppen.no,Vatromsgruppen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+689,morten.ovrebo@tine.no,"""TINE""",,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+690,contracting@socon.no,Socon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+691,post@fagne.no,Fagne,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+692,mn@skc.no,HANSEN PROTECTION AS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+693,kundeservice@compass-group.no,Compass Group,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+694,roman.tomaszewicz@bautamaritime.no,BAUTA MARITIME SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+695,endre@norfacility.no,Norfacility,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+696,post@ds-betong.no,Ds Betong,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+697,post@skagerraksparebank.no,Skagerraksparebank,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+698,kontakt@mio.no,Mio,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+699,post@nordiskauto.no,Nordiskauto,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+700,brobekk.sor@byggmakker.no,Byggmakker,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+701,hf@joblaunch.no,MVP SRL,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+702,post@letsclean.no,Letsclean,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+703,support@lovdata.no,Lovdata,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+704,janne.berget.glesnes@throg.no,ROGALAND FYLKESKOMMUNE,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+705,post@adprosjekt.no,Adprosjekt,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+706,post@piperep.no,Piperep,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+707,post@bblpivotal.no,Bblpivotal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+708,oen@vestpark.no,Vestpark,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+709,firmapost@elteco.no,Elteco,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+710,postmottak@andoy.kommune.no,Andoy,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+711,kontakt@sameyde.vgs.no,Sameyde,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+712,post@innlandetfylke.no,Innlandetfylke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+713,mail@rekrutteringshusetmork.no,Rekrutteringshusetmork,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+714,soknad@altamuseum.no,Verdensarvsenter for bergkunst - Alta museum IKS,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+715,alejandro.escalona@uis.no,UNIVERSITETET I STAVANGER,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+716,postmottak@fin.dep.no,Fin,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+717,postmottak@bindal.kommune.no,Bindal,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+718,post@frantz.no,Frantz,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+719,porsangerkommune@porsanger.kommune.no,Porsanger,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+720,postmottak@agderfk.no,Agderfk,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+721,post@kartverket.no,Kartverket,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+722,post@sula.kommune.no,Sula,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+723,post.hamar@kirken-hamar.no,Kirken Hamar,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+724,post@vinterfestuka.no,Vinterfestuka,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+725,anlegg@veidekke.no,Veidekke,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+726,trond@funpubtromso.no,Funpubtromso,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+727,post@bergokonomi.no,Bergokonomi,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+728,post@aquainnovasjon.no,Aquainnovasjon,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+729,post@saltenzoo.no,Saltenzoo,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+730,nettredaktor@mn.uio.no,Mn,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+731,post@alstahaug.kommune.no,Alstahaug,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+19,postmottak@rogbr.no,Rogbr,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+20,post@regionhadeland.no,Regionhadeland,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+21,jkg@activepeople.no,ONCE,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+22,mail@trolltungahotel.no,Trolltungahotel,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+23,post@kringla.no,Kringla,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+24,dinner@dinner.no,Dinner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+25,post@steinkompaniet.no,Steinkompaniet,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+26,post@felleskassen.no,Felleskassen,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+27,post@fasaderenovering.no,Fasaderenovering,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+28,post@dmmh.no,Dmmh,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+29,administrasjon@lindbak.no,Lindbak,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+30,ellefsen@h-vekst.no,H Vekst,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+31,servicedesk@kirkepartner.no,Kirkepartner,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+32,sales@firstseafood.no,Firstseafood,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+33,post@borgenkarriere.no,Borgenkarriere,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+34,info@devity.no,Devity,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037
+35,sisrep@nfk.no,NORDLAND FYLKESKOMMUNE,,NO,,,,,,agencies_eures,pending,,2026-04-14 15:36:59.773037

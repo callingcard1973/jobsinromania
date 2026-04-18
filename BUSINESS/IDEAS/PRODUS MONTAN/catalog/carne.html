@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carne si Produse din Carne - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Carne si Produse din Carne">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .products{font-size:.85em;color:#555;line-height:1.5}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="carne.html" class="active">🥩 Carne si Produse din Carne</a>
+<a href="peste.html">🐟 Peste si Produse din Peste</a>
+<a href="lapte.html">🧀 Lapte si Produse Lactate</a>
+<a href="apicole.html">🍯 Produse Apicole (Miere)</a>
+<a href="paine.html">🍞 Paine si Patiserie</a>
+<a href="vegetale.html">🥔 Produse Vegetale</a>
+<a href="oua.html">🥚 Oua</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="ALBA">ALBA</option><option value="ARGEȘ">ARGEȘ</option><option value="BISTRITA NASAUD">BISTRITA NASAUD</option><option value="BRASOV">BRASOV</option><option value="COVASNA">COVASNA</option><option value="GORJ">GORJ</option><option value="HARGHITA">HARGHITA</option><option value="HUNEDOARA">HUNEDOARA</option><option value="MUREȘ">MUREȘ</option><option value="SIBIU">SIBIU</option><option value="VALCEA">VALCEA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🥩 Carne si Produse din Carne (30 producatori)</h2><div class="grid"><div class="card" data-county="BISTRITA NASAUD">
+<h3>AGRO-ARDEAL S.R.L.</h3>
+<div class="county">📍 BISTRITA NASAUD &mdash; Sat Orheiu Bistriței, Nr. 107A, Comuna Cetate, Județul Bistrița Năsăud</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> SALAM DE VITĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="GORJ">
+<h3>AGURIDĂ GRIGORE</h3>
+<div class="county">📍 GORJ &mdash; Sat Cernădia, Comuna Baia de Fier, Nr. 116, Județul Gorj</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CÂRNĂCIORI DE OAIE, PASTRAMĂ DE OAIE, SLOI DE OAIE</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="VALCEA">
+<h3>BĂBU MARIA</h3>
+<div class="county">📍 VALCEA &mdash; Str. Gilorțel, nr. 37, localitatea Novaci, județul Gorj</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> BRÂNZĂ DE BURDUF ”STÂNA ȘTEFANU”, CAȘCAVAL ”STÂNA ȘTEFANU”, DULCEAȚĂ AFINE ”STÂNA ȘTEFANU”, DULCEAȚĂ DE PRUNE ”STÂNA ȘTEFANU”, DULCEAȚĂ ZMEURĂ ”STÂNA ȘTEFANU”, PASTRAMĂ OAIE ”STÂNA ȘTEFANU”, SIROP AFINE ”STÂNA ȘTEFANU”, SIROP BRAD ”STÂNA ȘTEFANU”, SIROP PĂPĂDIE, SIROP SOC ”STÂNA ȘTEFANU” (+2)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>BO-COV MEAT COOPERATIVĂ AGRICOLĂ</h3>
+<div class="county">📍 COVASNA &mdash; Municipiul Sfântu Gheorghe, Str. Ozunului, Nr. 2, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARNE HAMBURGER VITĂ CONDIMENTATĂ, CARNE HAMBURGER VITĂ NECONDIMENTATĂ, MICI DIN CARNE DE VITĂ, PULPĂ DE VITĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>BOTĂ ANCA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 BRASOV &mdash; Localitatea Sâmbăta de Sus, nr. 88, județul Brașov</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASĂ BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>BR-ZOO-COV S.R.L.</h3>
+<div class="county">📍 COVASNA &mdash; Sat Zăbala, nr. 855, Comuna Zăbala, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="HARGHITA">
+<h3>COMPOSESORATUL ”CSIKSOMLYO”</h3>
+<div class="county">📍 HARGHITA &mdash; Municipiul Miercurea Ciuc, Str. Szek, Nr.123, Județul Harghita</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="SIBIU">
+<h3>CRISTEA I. M. IOAN PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 SIBIU &mdash; Sat Gura Râului, comuna Gura Râului, nr. 374, județul Sibiu</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> PASTRAMĂ DE OAIE</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>CUCU V.A. CRISTIAN PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 BRASOV &mdash; Sat Ucea de Jos, Comuna Ucea, Nr. 202, Județul Brașov</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>DANCS V. ANNA-MARIA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA &mdash; Sat Comandău, Comuna Comandău, Nr. 186, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> BRÂNZĂ BURDUF DE OAIE ”FERMA DANCSÉK”, BRÂNZĂ CU MUCEGAI ALB ”FERMA DANCSÉK”, BRÂNZĂ DULCE DE OAIE ”FERMA DANCSÉK”, BRÂNZĂ MATURATĂ SEMITARE ”FERMA DANCSÉK”, CAȘ PROASPĂT DE OAIE ”FERMA DANCSÉK”, CÂRNAȚI DE OAIE ”FERMA DANCSÉK”, CÂRNĂCIORI DE OAIE ”FERMA DANCSÉK”, IAURT DIN LAPTE DE OAIE ”FERMA DANCSÉK”, LAPTE GROS DE OAIE ”FERMA DANCSÉK”, PASTRAMĂ DE BERBECUȚI ”FERMA DANCSÉK” (+4)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>DESZKE K. DALMA ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 COVASNA &mdash; Municipiul Sfântu Gheorghe, Str. Vânătorilor, Nr. 58, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="SIBIU">
+<h3>LIMBĂȘAN M. DAVID DANIEL P.F.A.</h3>
+<div class="county">📍 SIBIU &mdash; Localitatea RACOVIȚA, Str. Brazilor nr. 300, jud. Sibiu</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> COTLET AFUMAT DE MANGALIȚA DE LA RACOVIȚA, CÂRNAȚ AFUMAT DE MANGALIȚA DE LA RACOVIȚA, CÂRNAȚ AFUMAT PICANT DE MANGALIȚA DE LA RACOVIȚA, GUȘĂ DE MANGALIȚA DE LA RACOVIȚA, PASTRAMĂ AFUMATĂ DE MANGALIȚA DE LA RACOVIȚA, PASTĂ DE JUMERI CU BOIA DE MANGALIȚA DE LA RACOVIȚA, PASTĂ DE JUMERI CU CHILLY DE MANGALIȚA DE LA RACOVIȚA, PASTĂ DE JUMERI DE MANGALIȚA DE LA RACOVIȚA, PATEU DE MANGALIȚA DE LA RACOVIȚA, PIEPT AFUMAT DE MANGALIȚA DE LA RACOVIȚA (+2)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="ALBA">
+<h3>MIORIȚA OACHEȘE COOPERATIVA AGRICOLĂ</h3>
+<div class="county">📍 ALBA &mdash; Sat Săsciori, comuna Săsciori, nr.389, județul Alba</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> VIRȘLI MIORIȚA OACHEȘE</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="HUNEDOARA">
+<h3>NADOCARM ALIM SRL</h3>
+<div class="county">📍 HUNEDOARA &mdash; Loc. DEVA, Str. Depozitelor nr. 2A, Jud. HUNEDOARA</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CÂRNAȚI DE CASĂ, CÂRNĂCIORI SUBȚIRI PICANȚI, ȘUNCULIȚĂ ȚĂRĂNEASCĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="ARGEȘ">
+<h3>NĂSTĂSESCU CONSTANTIN</h3>
+<div class="county">📍 ARGEȘ &mdash; Sat Șuici, nr.148, comuna Șuici, județul Argeș</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> BRÂNZĂ BURDUF OAIE, CARTOFI, CAȘ AFUMAT VACĂ, CAȘCAVAL VACĂ, CEAPĂ, FASOLE, LAPTE OAIE, LAPTE VACĂ, MERE, MORCOV (+11)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="HARGHITA">
+<h3>OZSVATH Z. ZOLTAN ÎNTREPRINDERE INDIVIDUALĂ</h3>
+<div class="county">📍 HARGHITA &mdash; Sat Căpâlnița, Comuna Căpâlnița, Nr. 289A, Județul Harghita</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>RUSANDU S.R.L.</h3>
+<div class="county">📍 COVASNA &mdash; Sat Zăbala, nr. 217, Comuna Zăbala, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>S.C. AGRO BESTIALIS S.R.L.</h3>
+<div class="county">📍 COVASNA &mdash; Sat Angheluș, Comuna Ghidfalău, Nr. 1A, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>SC AGROFERMA GRAMINIA DMG SRL</h3>
+<div class="county">📍 BRASOV &mdash; Strada Albinelor, nr. 9, localitatea Brașov, județul Brașov</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASĂ BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="GORJ">
+<h3>SC BEEFCARM 2017 SRL</h3>
+<div class="county">📍 GORJ &mdash; Sat Gornățel, comuna Schela, nr. 332, camera 1, jud. Gorj</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> Burger Angus, Cârnați grill Angus, Cârnați picanți Angus, Parizer Angus, Pastramă Angus, Pastă de mici Angus, Salam montan Angus</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="MUREȘ">
+<h3>SC BLACK ANGUS SRL</h3>
+<div class="county">📍 MUREȘ &mdash; Sat Măgherani, nr. 470/A, comuna Măgherani, județul Mureș</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> ANTRICOT CU OS, ANTRICOT FĂRĂ OS, BAVETĂ (FLANKSTEAK), BRISKET, BURGER (100% ANGUS), CABANOS CALIBRU 22/24, CAPAC PULPĂ, CARNE GULAȘ, CARNE TOCATĂ (100% ANGUS), CEAFĂ (+23)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="ARGEȘ">
+<h3>S.C. COȘCO-VELE S.R.L</h3>
+<div class="county">📍 ARGEȘ &mdash; comuna Rucăr, sat Rucăr, str. Industriașilor, nr. 1, județul Argeș</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> Cârnați de casă afumați ”Coșco-Vele”, Pastramă de oaie afumată ”Coșco-Vele”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BISTRITA NASAUD">
+<h3>S.C. DANY MASTERCHEF S.R.L.</h3>
+<div class="county">📍 BISTRITA NASAUD &mdash; Municipiul Bistrița Năsăud, strada Colibiței, nr.2, scara A, etaj 3, ap. 15, jud</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CALTABOȘ DE PORC, COSTIȚĂ AFUMATĂ, CÂRNAȚI BRATWURST, CÂRNAȚI DE CASĂ - PORC, CÂRNAȚI SUBȚIRI NEPICANȚI DE PORC, CÂRNAȚI SUBȚIRI OAIE-PORC, CÂRNAȚI SUBȚIRI PICANȚI DE PORC, CÂRNAȚI SUBȚIRI VITĂ-PORC, CÂRNAȚI ȘI CARNE ÎN UNTURĂ LA BORCAN, GUȘĂ DE PORC FIARTĂ, CU USTUROI ȘI PAPRIKA (+5)</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="HARGHITA">
+<h3>S.C. REBO ANGUS KARPATEN S.R.L.</h3>
+<div class="county">📍 HARGHITA &mdash; Sat Sub Cetate, Comuna Zetea, Str. Principală, Nr. 2, Județul Harghita</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. SĂNDEL MISANA S.R.L.</h3>
+<div class="county">📍 BRASOV &mdash; Sat Sohodol, Comuna Bran, Str. Ioan de Pușcariu, Nr. 27, Județul Brașov</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> LAPTE DE OAIE, LAPTE DE VACĂ, PASTRAMĂ DE OAIE</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="ALBA">
+<h3>S.C. SUANI CENTER S.R.L.</h3>
+<div class="county">📍 ALBA &mdash; Sat Săsciori, Comuna Săsciori, Nr. 332, Județul Alba</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> COTLET AFUMAT DE LA FRAȚII SUCIU, CÂRNAȚI DE CASĂ DE LA FRAȚII SUCIU, MUSCHI PORC DE LA FRAȚII SUCIU, MUSCHI ȚĂRĂNESC DE LA FRAȚII SUCIU, PASTRAMĂ PORC DE LA FRAȚII SUCIU, SLĂNINUȚĂ DE LA FRAȚII SUCIU, SLĂNINĂ AFUMATĂ DE LA FRAȚII SUCIU</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="GORJ">
+<h3>ȘEANDRU ARON</h3>
+<div class="county">📍 GORJ &mdash; Oraș Novaci, str. Dumbrava, nr. 147, județul Gorj</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> BRÂNZĂ DE BURDUF, CAȘCAVAL, PASTRAMĂ OAIE, SLOI OAIE, TELEMEA OAIE, UNT, URDĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="GORJ">
+<h3>SÎRBU-GUȘE CORINA PFA</h3>
+<div class="county">📍 GORJ &mdash; Oraș Tismana, str. Principală (Ungureni), nr. 453, județul Gorj</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> BALMOȘ ”STÂNA URSULUI”, TELEMEA DE OAIE ”STÂNA URSULUI”, TOCAN DE OAIE ”STÂNA URSULUI”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="COVASNA">
+<h3>SZIGETHI SZABOLCS PERSOANĂ FIZICĂ AUTORIZATĂ</h3>
+<div class="county">📍 COVASNA &mdash; Sat Peteni, Nr. 55, Comuna Zăbala, Județul Covasna</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> CARCASA BOVINĂ</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="ALBA">
+<h3>TRANSYLVANIA PREMIUM ANGUS COOPERATIVĂ AGRICOLĂ</h3>
+<div class="county">📍 ALBA &mdash; Localitatea Galda de Jos, Nr. 591, Județul Alba</div>
+<div><span class="badge">🥩 Carne si Produse din Carne</span> </div>
+<div class="products"><strong>Produse:</strong> COTLET MATURAT ANGUS, CĂRNAȚI TRANSYLVANIA PREMIUM ANGUS, MUȘCHIULEȚ MATURAT ANGUS, PARIZER TRANSYLVANIA PREMIUM ANGUS, PULPĂ MATURATĂ ANGUS, PĂSTRAMĂ TRANSYLVANIA PREMIUM ANGUS, SALAM DE VARĂ TRANSYLVANIA PREMIUM ANGUS, TIBON MATURAT ANGUS</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)<br>
+Contact: <a href="mailto:cumparlegume@agroevolution.com">cumparlegume@agroevolution.com</a> | Tel: +33 7 51 17 13 56<br>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn" style="margin-top:15px">💬 Comanda pe WhatsApp</a></div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

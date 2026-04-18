@@ -1,0 +1,162 @@
+{
+  "norway": {
+    "_comment": "Jobs in Norway for Romanian audience. Primary lang=RO.",
+    "ro": {
+      "country_native": "Norvegia",
+      "currency": "NOK",
+      "amounts": ["22.000", "25.000", "28.000", "30.000"],
+      "hooks": [
+        "Norvegia cauta urgent muncitori romani! Salariu {amount} {currency} pe luna plus cazare si bilet. Link in bio, aplica acum.",
+        "Atentie! {positions} locuri deschise in Norvegia pentru romani. {amount} {currency} net plus cazare gratis. Link in bio.",
+        "In Norvegia un muncitor ia {amount} {currency} pe luna. Cazare si bilet platite de firma. Link in bio.",
+        "Fara agent, fara taxe. Firma din Norvegia plateste {amount} {currency} plus cazare. Link in bio, aplica direct."
+      ]
+    }
+  },
+  "romania": {
+    "_comment": "Jobs in Romania for foreign audiences.",
+    "en": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romania is hiring workers now. {amount} euro per month plus free housing and flight paid. Link in bio, apply today.",
+        "Attention! {positions} jobs open in Romania for foreign workers. {amount} euro plus accommodation. Link in bio.",
+        "Work in Romania legally. {amount} euro salary, company pays housing and flight. Link in bio, limited spots.",
+        "No agent, no fees. Direct employer in Romania pays {amount} euro plus housing. Link in bio, apply now."
+      ]
+    },
+    "fr": {
+      "country_native": "Roumanie",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "La Roumanie recrute maintenant. {amount} euros par mois plus logement et billet payes. Lien en bio.",
+        "Attention! {positions} postes ouverts en Roumanie pour travailleurs etrangers. {amount} euros plus logement. Lien en bio.",
+        "Travaille en Roumanie legalement. {amount} euros, logement et billet payes par l employeur. Lien en bio.",
+        "Sans agent, sans frais. Employeur direct en Roumanie paie {amount} euros plus logement. Lien en bio."
+      ]
+    },
+    "es": {
+      "country_native": "Rumania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Rumania busca trabajadores ahora. {amount} euros al mes mas alojamiento y billete pagados. Link en bio.",
+        "Atencion! {positions} puestos abiertos en Rumania para extranjeros. {amount} euros mas alojamiento. Link en bio.",
+        "Trabaja en Rumania legalmente. {amount} euros, la empresa paga alojamiento y billete. Link en bio.",
+        "Sin agente, sin comision. Empresa rumana paga {amount} euros mas alojamiento. Link en bio."
+      ]
+    },
+    "it": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "La Romania cerca lavoratori adesso. {amount} euro al mese piu alloggio e biglietto pagati. Link in bio.",
+        "Attenzione! {positions} posti aperti in Romania per stranieri. {amount} euro piu alloggio. Link in bio.",
+        "Lavora in Romania legalmente. {amount} euro, l azienda paga alloggio e biglietto. Link in bio.",
+        "Senza agente, senza tasse. Datore di lavoro rumeno paga {amount} euro piu alloggio. Link in bio."
+      ]
+    },
+    "de": {
+      "country_native": "Rumaenien",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Rumaenien sucht jetzt Arbeiter. {amount} Euro pro Monat plus Unterkunft und Ticket bezahlt. Link in Bio.",
+        "Achtung! {positions} Stellen offen in Rumaenien fuer Auslaender. {amount} Euro plus Unterkunft. Link in Bio.",
+        "Arbeite legal in Rumaenien. {amount} Euro, Firma zahlt Unterkunft und Ticket. Link in Bio.",
+        "Kein Vermittler, keine Gebuehren. Rumaenischer Arbeitgeber zahlt {amount} Euro plus Unterkunft. Link in Bio."
+      ]
+    },
+    "ur": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romania mein naukri ka bara mauqa. {amount} euro mahina, rehaish aur ticket free. Bio mein link.",
+        "Dhyan dein! Romania mein {positions} naukriyan khuli hain. {amount} euro plus rehaish. Bio mein link.",
+        "Romania mein legal kaam. {amount} euro salary, company rehaish aur ticket deti hai. Bio mein link.",
+        "Koi agent nahi, koi fees nahi. Direct company {amount} euro plus rehaish deti hai. Bio mein link."
+      ]
+    },
+    "hi": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romania mein naukri ka mauka hai. {amount} euro har mahine, rehne ki jagah aur ticket free. Bio mein link.",
+        "Dhyan dijiye! Romania mein {positions} naukriyan khuli hain videshiyon ke liye. {amount} euro plus rehaish.",
+        "Romania mein legal kaam karein. {amount} euro, company rehaish aur ticket deti hai. Bio mein link.",
+        "Bina agent, bina fees. Direct company {amount} euro plus rehaish. Bio mein link, turant apply karein."
+      ]
+    },
+    "ar": {
+      "country_native": "Rumania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Rumania tabhath ean eumal alan. {amount} yuru shahriaan mae alsakan watadhkirat majanaan. Alrrabt fi albyu.",
+        "Antbh! {positions} wazifat maftuhat fi Rumania lilajanib. {amount} yuru mae alsakan. Alrrabt fi albyu.",
+        "Aieml fi Rumania bisuratin qanuniat. {amount} yuru, alsharikat tadfae alsakan waltadhakir. Alrrabt fi albyu.",
+        "Dun wasit, dun rusum. Sahib aleamal alrrumaaniu yadfae {amount} yuru mae alsakan. Alrrabt fi albyu."
+      ]
+    },
+    "tl": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romania ay naghahanap ng mga trabahador ngayon. {amount} euro kada buwan plus libreng tirahan at tiket.",
+        "Pansinin! {positions} trabaho bukas sa Romania para sa mga dayuhan. {amount} euro plus tirahan. Link sa bio.",
+        "Magtrabaho sa Romania ng legal. {amount} euro, ang kumpanya ang magbabayad ng tirahan at tiket.",
+        "Walang agent, walang bayad. Direktang employer sa Romania nagbabayad ng {amount} euro plus tirahan."
+      ]
+    },
+    "vi": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romania dang tuyen cong nhan. Luong {amount} euro mot thang, an o va ve may bay mien phi. Link trong bio.",
+        "Chu y! {positions} viec lam tai Romania cho nguoi nuoc ngoai. {amount} euro kem cho o. Link trong bio.",
+        "Lam viec hop phap tai Romania. {amount} euro, cong ty tra cho o va ve may bay. Link trong bio.",
+        "Khong moi gioi, khong phi. Nha tuyen dung Romania tra {amount} euro kem cho o. Link trong bio."
+      ]
+    },
+    "uk": {
+      "country_native": "Rumuniia",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Rumuniia shukaie pratsivnykiv zaraz. {amount} yevro na misiats plius zhytlo i kvytok bezkoshtovno. Posylannia v bio.",
+        "Uvaha! {positions} vakansii v Rumunii dlia inozemtsiv. {amount} yevro plius zhytlo. Posylannia v bio.",
+        "Pratsiuite v Rumunii leghalno. {amount} yevro, kompaniia platyt za zhytlo i kvytok. Posylannia v bio.",
+        "Bez ahenta, bez komisii. Rumunskyi robotodavets platyt {amount} yevro plius zhytlo. Posylannia v bio."
+      ]
+    },
+    "bn": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romaniay ekhon kaaj khuje. {amount} euro mashik, thakar byabostha o ticket free. Bio te link, ekhon apply korun.",
+        "Mnejog din! Romaniay {positions} kaj khola ache bideshi shromikder jonno. {amount} euro shonge thakar byabostha.",
+        "Romaniay legal kaj korun. {amount} euro, company thakar jaygai o ticket deby. Bio te link.",
+        "Kono agent nai, kono fees nai. Direct Romanian company {amount} euro plus thakar byabostha deby. Bio te link."
+      ]
+    },
+    "ne": {
+      "country_native": "Romania",
+      "currency": "EUR",
+      "amounts": ["900", "1200", "1500", "1800"],
+      "hooks": [
+        "Romaniama ahile kaam khojeko. {amount} euro masik, bas ra ticket free. Bio ma link, abai apply garnus.",
+        "Dhyan dinus! Romaniama {positions} kaam khola chha bideshi karmacariharuka lagi. {amount} euro bas sahit.",
+        "Romaniama legal kaam garnus. {amount} euro, company le bas ra ticket dincha. Bio ma link.",
+        "Koi agent chaina, koi fees chaina. Seedha Romanian malik {amount} euro bas sahit dincha. Bio ma link."
+      ]
+    }
+  }
+}

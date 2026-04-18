@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e10]: The login is invalid.
+    - generic [ref=e13]:
+      - img "logo" [ref=e15]
+      - generic [ref=e17]:
+        - generic [ref=e18]: Username
+        - textbox "Username" [ref=e20]:
+          - /placeholder: Enter your username.
+          - text: loaiidil
+        - generic [ref=e21]: Password
+        - textbox "Password" [ref=e23]:
+          - /placeholder: Enter your account password.
+        - button "Log in" [ref=e26] [cursor=pointer]
+    - generic [ref=e29]:
+      - text: "Select a locale:"
+      - link "English" [ref=e30] [cursor=pointer]:
+        - /url: javascript:void(0)
+  - generic [ref=e31]:
+    - text: Copyright© 2026 cPanel, L.L.C.
+    - link "Privacy Policy" [ref=e32] [cursor=pointer]:
+      - /url: https://go.cpanel.net/privacy

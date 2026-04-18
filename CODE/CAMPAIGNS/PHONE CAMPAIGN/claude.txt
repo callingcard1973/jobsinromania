@@ -1,0 +1,1 @@
+This is for the phone campaign, we extract numbers from anofm and we make a phone campaign.

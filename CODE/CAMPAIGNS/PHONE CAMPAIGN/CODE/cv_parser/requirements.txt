@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pdfplumber
+pdf2image
+pytesseract
+python-docx
+beautifulsoup4
+requests
+pillow

@@ -1,0 +1,51 @@
+# EBRD PSD Scraper - Project State
+# Generated 2026-04-03
+
+## What
+Scraping all EBRD (European Bank for Reconstruction and Development) Project
+Summary Document pages to extract company contacts, project details, and financing info.
+
+## Source
+https://www.ebrd.com/home/work-with-us/projects/psd/{ID}.html
+PSD IDs range: 40000-57000 (~17,000 to check)
+
+## What We Extract Per Project
+- psd_id, project_id
+- title (project name)
+- country, sector, notice_type (State/Private)
+- status (Exploratory/Signed/Implementing/Complete/Repaying)
+- ebrd_finance (amount), finance_desc (loan/equity description)
+- total_cost
+- overview (full project description, up to 1000 chars)
+- contact_name, contact_email, contact_phone, contact_website, contact_address
+- url (source page)
+
+## Existing Data (before scrape)
+- ebrd_private_projects.csv: 7,745 private sector projects from official XLSX download
+- ebrd_all_companies.csv: 1,915 unique company names
+- Romania: 453 projects, EUR 9.2B total investment
+- Total EBRD: 8,818 projects, EUR 214B (1991-2024)
+- Top countries: Russia 22.1B, Turkiye 20.8B, Ukraine 16B, Poland 14.1B, Romania 9.2B
+
+## Scraper Setup
+- Script: /opt/ACTIVE/SCRAPERS/EBRD/ebrd_psd_scraper.py (on raspibig)
+- Skill: /opt/ACTIVE/INFRA/SKILLS/ebrd_psd_scraper.py
+- Output CSV: /opt/ACTIVE/SCRAPERS/EBRD/data/ebrd_psd_details.csv
+- State: /opt/ACTIVE/SCRAPERS/EBRD/data/psd_state.json (resumes on restart)
+- Node-RED: "EBRD Scraper" tab, checks every 5 min, auto-restarts
+- Delay: 10-30 sec random between requests, rotating user agents
+- Saves: every 5 records to CSV + state file
+- Estimated: ~4 days to complete all 17K IDs
+
+## Data Quality
+- Not all PSD pages have company contacts (some are state/sovereign projects)
+- Contact info in "Company Contact Information" section: name, email, phone, website, address
+- All output in ASCII
+- IDs are not sequential (many 404 gaps)
+
+## Next Steps After Scrape
+1. Import to PostgreSQL (ebrd database)
+2. Cross-reference with interjob_master companies
+3. Enrich with romania DB contacts
+4. Filter Romania projects (453) for outreach
+5. Match with EU TED procurement data

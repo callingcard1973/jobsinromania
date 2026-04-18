@@ -1,0 +1,13 @@
+[Unit]
+Description=CV Parser API
+After=network.target
+
+[Service]
+ExecStart=python3 /opt/ACTIVE/PHONE_CAMPAIGN/cv_parser/app.py
+WorkingDirectory=/opt/ACTIVE/PHONE_CAMPAIGN/cv_parser
+Restart=always
+User=tudor
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

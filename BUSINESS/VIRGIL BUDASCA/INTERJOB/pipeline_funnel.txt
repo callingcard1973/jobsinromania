@@ -1,0 +1,88 @@
+# InterJob Pipeline Funnel — 2026-04-18
+
+## Funnel Overview
+
+```
+OUTREACH (campaigns)
+    ↓
+RESPONSES (response_tracker.py — 19 inboxes, every 5 min)
+    ↓
+CLASSIFICATION (INTERESTED / WORKER_APPLICATION / BOUNCE)
+    ↓
+    ├── EMPLOYER INTERESTED → Solonet draft order (solonet_pipeline.py)
+    │       ↓ Tudor approves /send_solonet_X
+    │       ↓ Solonet responds
+    │       ↓ Workers placed → /solonet_placed_X <n> <eur>
+    │       ↓ REVENUE
+    │
+    └── WORKER APPLICATION → master_applicants.db (worker_router.py)
+            ↓ Auto-reply with interjob.ro/apply.html
+            ↓ Tudor reviews
+            ↓ Match to employer order
+            ↓ PLACEMENT + REVENUE
+```
+
+---
+
+## Active Outreach Campaigns (2026-04-18)
+
+| Campaign | Volume/day | Target | Status |
+|----------|-----------|--------|--------|
+| ANOFM (14 sectors) | 2,249 | RO employers | LIVE |
+| HARGHITA Phase 3 | 100 | Harghita employers | LIVE |
+| EBRD A+B | 150 | EU contractors | LIVE |
+| FI_TED_CONSTRUCTION | 80 | FI construction | LIVE |
+| norway_virgil | 10 | NO employers | LIVE |
+| DELIVERY_RO_2026 | 100 | RO logistics | LIVE |
+| ISC Construction | 340 | RO construction | SLEEPING |
+| Workforce Exchange | archived | RO employers | DONE (100 sent) |
+| **TOTAL ACTIVE** | **~2,689/day** | | |
+
+---
+
+## Solonet Order Funnel (DB: interjob_master.solonet_orders)
+
+| Stage | Trigger | Action |
+|-------|---------|--------|
+| DRAFT | response_tracker detects .ro INTERESTED | Auto-created |
+| SENT | Tudor `/send_solonet_X` | Email → solonet.vacancy@gmail.com |
+| RESPONDED | Solonet replies | Manual update `/solonet_responded_X` |
+| PLACED | Workers start | `/solonet_placed_X <workers> <eur>` |
+| FOLLOW_UP | 3 days no response | Watchdog auto-triggers |
+
+---
+
+## Worker Pipeline (DB: master_applicants.db)
+
+| Metric | Value |
+|--------|-------|
+| Total workers | 758+ |
+| Location | `/opt/ACTIVE/OPENDATA/DATA/` on raspibig |
+| Auto-reply | interjob.ro/apply.html |
+| Sectors | Construction, care, factory, horeca, warehouse |
+
+**Gap:** Workers outnumbered by employer demand. Need more applicant inflow.
+
+---
+
+## Revenue Tracking
+
+| Command | What |
+|---------|------|
+| `/solonet` | See all active orders |
+| `/solonet_placed_X <w> <eur>` | Log placement + revenue |
+| `/responses` | Recent employer responses |
+| `/workers` | Worker applicant stats |
+| `/leads` | Open employer leads |
+
+---
+
+## Conversion Targets
+
+| Stage | Target Rate | Notes |
+|-------|------------|-------|
+| Email → Open | ~20% | Not tracked yet |
+| Open → Reply | 5–10% | HARGHITA target 30% |
+| Reply → Order | 30–50% | AJOFM data advantage |
+| Order → Placement | 60–80% | Depends on worker availability |
+| **End-to-end** | **1–3%** | Per email sent |

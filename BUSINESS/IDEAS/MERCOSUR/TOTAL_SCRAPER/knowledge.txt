@@ -1,0 +1,687 @@
+# PostgreSQL Database Optimization Knowledge
+# raspibig (192.168.100.21) - InterJob Master System
+# Compiled: 2026-03-22
+
+================================================================================
+## INFRASTRUCTURE
+================================================================================
+
+Machines:
+- raspibig: 192.168.100.21 (scraping, DB, campaigns)
+- raspi: 192.168.100.20 (email sending, backups)
+
+Storage:
+- NVMe: 235 GB (PostgreSQL default)
+- HDD: 916 GB (/mnt/hdd - large tables/archives)
+
+Databases (13 total, was 21):
+- interjob_master: 116 GB (main + consolidated schemas)
+- romania: 9.5 GB
+- opendata: 7.3 GB
+- csv_raw: 5.3 GB
+- firme_romania: 2.1 GB
+- + 8 smaller DBs
+
+================================================================================
+## DEDUPLICATION
+================================================================================
+
+PROBLEM: 209M+ row companies table with duplicate emails
+
+SOLUTION: Parallel batch processing
+
+Single-thread approach (SLOW):
+- 100K rows per batch
+- 31 hours estimated
+- Lock contention issues
+
+Parallel approach (FAST):
+- 6 workers simultaneously
+- 100K rows per worker per batch
+- 20 minutes actual
+- 93x faster
+
+CRITICAL FIXES:
+1. Added fcntl.LOCK_EX to prevent multiple cron instances
+2. Killed 32 competing DELETE queries causing lock contention
+3. Reduced RowExclusiveLocks from 1109 to 3
+
+RESULTS:
+- Batch dedup: 370,562 removed
+- Global pass: 91,683 removed
+- TOTAL: 462,245 duplicates removed
+- Remaining: 0
+
+Scripts:
+- /opt/ACTIVE/DB/dedup_manager.py (single instance, cron)
+- /opt/ACTIVE/DB/dedup_parallel.py (multi-worker, manual)
+
+================================================================================
+## PERFORMANCE OPTIMIZATION
+================================================================================
+
+### pg_stat_statements Analysis
+
+Top slow queries identified:
+1. UPDATE tenders SET winner_company_id - 294s avg
+2. UPDATE procurement_awards SET winner - 348s avg
+3. SELECT source LIKE '%pattern%' - 1009s avg
+4. COUNT(*) GROUP BY country - 94 min
+5. COUNT(*) full table - 84 min
+
+### Indexes Created
+
+For slow UPDATE queries:
+- idx_tenders_winner ON tenders(winner_company_id)
+- idx_procurement_awards_winner ON procurement_awards(winner_company_id)
+
+For WHERE/JOIN columns:
+- idx_agencies_country ON agencies(country)
+- idx_agencies_name ON agencies(name)
+- idx_no_contacts_email ON no_contacts(email)
+- idx_ted_winners_contractor ON ted_winners(contractor)
+- idx_ted_winners_country ON ted_winners(contractor_country)
+
+For LIKE queries (trigram):
+- idx_companies_source_trgm ON companies USING gin(source gin_trgm_ops)
+
+### Materialized Views (instant aggregations)
+
+BEFORE: GROUP BY queries = 75-140 minutes
+AFTER: SELECT * FROM mv_* = <1 second
+
+Created:
+- mv_country_stats (country, total, with_email, with_phone)
+- mv_source_stats (source, total)
+
+Refresh: Daily at 04:30 via cron
+
+### Configuration (postgresql.conf)
+
+shared_buffers = 4GB          (good for 8GB RAM)
+work_mem = 64MB               (good for complex queries)
+maintenance_work_mem = 512MB  (good for VACUUM/INDEX)
+effective_cache_size = 12GB   (good)
+max_connections = 50          (appropriate)
+random_page_cost = 1.1        (optimized for NVMe)
+
+No changes needed - already optimized.
+
+### Autovacuum Tuning
+
+Large tables configured:
+- companies: scale_factor=0.01 (triggers at 2M dead rows)
+- fr_companies: scale_factor=0.02
+- procurement_awards: scale_factor=0.02
+
+================================================================================
+## DATABASE CONSOLIDATION
+================================================================================
+
+BEFORE: 21 databases
+AFTER: 13 databases
+
+Migrated to interjob_master as schemas:
+| Schema | Tables | Size |
+| belgium | 5 | 93 MB |
+| business_intelligence | 7 | 8 MB |
+| cifn_eu | 1 | 8 MB |
+| fonduri_europene | 2 | 46 MB |
+| food_distribution | 16 | 45 MB |
+| horeca | 1 | 19 MB |
+| moldova | 11 | 11 MB |
+| norway | 6 | 12 MB |
+
+Access: SELECT * FROM belgium.companies;
+
+================================================================================
+## CLEANUP
+================================================================================
+
+Empty tables dropped (15):
+- job_fairs, employer_requests, romania_dnc, ted_awards
+- produs_montan_send_log, a1_scoli_send_log, bg_yellowpages
+- system_logs, bg_responses, carbon_projects, dk_dnc, etc.
+
+Invalid emails cleaned:
+- 33M emails without @ -> NULL
+- 387 emails with spaces -> trimmed/NULL
+
+================================================================================
+## AUTOMATION (CRON)
+================================================================================
+
+| Schedule | Script | Purpose |
+|----------|--------|---------|
+| */5 min | dedup_manager.py | Batch dedup (done) |
+| */30 min | db_alerts.py | Telegram alerts |
+| 02:00 Sun | VACUUM companies | Weekly maintenance |
+| 03:00 daily | nightly_maintenance.sh | Backup + VACUUM |
+| 04:30 daily | refresh_views.py | Refresh mat. views |
+
+================================================================================
+## LOCK CONTENTION FIX
+================================================================================
+
+PROBLEM:
+- 35+ concurrent DELETE queries competing
+- 1109 RowExclusiveLocks
+- Queries running 2-3 hours each
+- 5 deadlocks recorded
+
+ROOT CAUSE:
+- dedup_manager.py had no instance lock
+- Cron spawned new process every 5 min while previous still running
+
+FIX:
+1. Added fcntl.LOCK_EX lock file to dedup_manager.py
+2. Killed 32 competing DELETE queries
+3. Reduced batch size 100K -> 50K for single-thread
+4. Created parallel version with 6 workers
+
+RESULT:
+- RowExclusiveLocks: 1109 -> 3
+- No more competing queries
+- Dedup completed in 20 minutes
+
+================================================================================
+## SCRIPTS CREATED
+================================================================================
+
+/opt/ACTIVE/DB/dedup_manager.py      - Single-instance batch dedup (cron)
+/opt/ACTIVE/DB/dedup_parallel.py     - Multi-worker parallel dedup
+/opt/ACTIVE/DB/db_health.py          - Health dashboard
+/opt/ACTIVE/DB/db_alerts.py          - Telegram alerts
+/opt/ACTIVE/DB/slow_query_monitor.py - Query performance monitor
+/opt/ACTIVE/DB/cache_warmer.py       - Redis cache warmer
+/opt/ACTIVE/DB/refresh_views.py      - Mat. view refresh
+/opt/ACTIVE/DB/query_benchmark.py    - Performance benchmark
+/opt/ACTIVE/DB/consolidate_dbs.sh    - DB consolidation
+/opt/ACTIVE/DB/partition_companies.sql - Partitioning (ready)
+
+================================================================================
+## USEFUL COMMANDS
+================================================================================
+
+# Database health
+python3 /opt/ACTIVE/DB/db_health.py
+
+# Slow queries
+sudo -u postgres psql -d interjob_master -c "
+SELECT left(query, 60), calls, round(total_exec_time::numeric/1000,1) as total_sec
+FROM pg_stat_statements ORDER BY total_exec_time DESC LIMIT 10;"
+
+# Check duplicates
+sudo -u postgres psql -d interjob_master -c "
+SELECT COUNT(*) FROM (
+  SELECT lower(email), COUNT(*) FROM companies
+  WHERE email IS NOT NULL GROUP BY lower(email) HAVING COUNT(*) > 1
+) x;"
+
+# Check locks
+sudo -u postgres psql -c "
+SELECT locktype, mode, COUNT(*) FROM pg_locks GROUP BY locktype, mode ORDER BY count DESC;"
+
+# Active queries
+sudo -u postgres psql -c "
+SELECT pid, now() - query_start as duration, left(query, 50)
+FROM pg_stat_activity WHERE state = 'active' ORDER BY query_start;"
+
+# Database sizes
+sudo -u postgres psql -c "
+SELECT datname, pg_size_pretty(pg_database_size(datname))
+FROM pg_database ORDER BY pg_database_size(datname) DESC;"
+
+# Table sizes
+sudo -u postgres psql -d interjob_master -c "
+SELECT relname, pg_size_pretty(pg_total_relation_size(c.oid))
+FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE c.relkind = 'r' AND n.nspname = 'public'
+ORDER BY pg_total_relation_size(c.oid) DESC LIMIT 10;"
+
+# Index usage
+sudo -u postgres psql -d interjob_master -c "
+SELECT indexrelname, idx_scan, pg_size_pretty(pg_relation_size(indexrelid))
+FROM pg_stat_user_indexes ORDER BY idx_scan DESC LIMIT 10;"
+
+# Cache hit ratio
+sudo -u postgres psql -c "
+SELECT
+  sum(heap_blks_hit) / nullif(sum(heap_blks_hit) + sum(heap_blks_read), 0) as cache_ratio
+FROM pg_statio_user_tables;"
+
+================================================================================
+## PENDING TASKS
+================================================================================
+
+1. VACUUM FULL companies - reclaim 462K row holes (~10-15 GB)
+2. REINDEX companies - rebuild indexes after mass delete
+3. ANALYZE companies - update statistics
+4. ADD UNIQUE CONSTRAINT - prevent future duplicates
+5. Consolidate remaining small DBs (eures_scraper, email_sender)
+
+================================================================================
+## KEY LEARNINGS
+================================================================================
+
+1. ALWAYS use fcntl locks for cron scripts that may overlap
+2. Parallel processing = 93x faster for large table operations
+3. Materialized views eliminate slow GROUP BY queries
+4. pg_stat_statements reveals actual bottlenecks
+5. Kill competing queries before they cause deadlocks
+6. Batch processing with state tracking = resumable operations
+7. Trigram indexes (gin_trgm_ops) for LIKE queries
+8. Consolidate small DBs into schemas for simpler management
+9. Check for cross-batch duplicates after windowed dedup
+10. Global pass needed after batch dedup for complete cleanup
+
+================================================================================
+## MERCOSUR SCRAPER DATA & FINDINGS
+================================================================================
+
+### OVERVIEW
+
+EU-Mercosur Trade Agreement Status:
+- Provisional application: May 1, 2026
+- Financial opportunity: EUR 4 billion savings for EU importers
+- Business model: Commission-based broker/matchmaker (2.5-5% of deal value)
+- Revenue projections: EUR 48K-150K Year 1
+
+### DIRECTORIES
+
+/opt/ACTIVE/IDEAS/MERCOSUR/
+  CLAUDE.md                    - Master strategy (412 lines)
+  CLAUDE/OPENCODE/             - Implementation code
+    SYNTHESIS.md               - Full opportunity analysis
+    DATA_SOURCES.md            - 10+ APIs documented
+    NEXT_STEPS.md              - Action plan
+    scrapers/mercosur/         - 25+ Python scrapers
+    campaigns/templates/       - Email templates
+  BACKUP_20260321/             - Campaign data backup
+  websites/                    - Live landing pages
+  VENTAS_EN_EUROPA/            - European sales data
+
+### SCRAPERS (25+ files)
+
+WORKING:
+- connectamericas_web.py       - 20K+ records
+- apex_brasil_scraper.py       - 12K+ records
+- brazil_exporters.py          - 10K+ records
+- brazil_comex.py              - Customs data
+
+GOVERNMENT PORTALS:
+- apex_brasil.py               - APEX Brasil directory
+- argentina_exporta.py         - Argentina export portal
+- prochile.py                  - ProChile directory
+- rediex_paraguay.py           - Paraguay export agency
+- uruguay_xxi.py               - Uruguay XXI
+
+COMPANY REGISTRIES:
+- argentina_afip.py            - AFIP tax registry
+- brazil_cnpj.py               - Brazilian company registry
+- chile_sii.py                 - Chile tax service
+- uruguay_dgi.py               - Uruguay tax registry
+
+TRADE ASSOCIATIONS:
+- abemel_honey.py              - Brazilian honey exporters
+- abiec_beef.py                - Brazilian beef exporters
+- ibram_mining.py              - Brazilian mining
+- ipcva_argentina.py           - Argentine beef
+
+TRADE SHOWS:
+- apas_show.py                 - APAS supermarket show
+- expoaladi.py                 - ALADI expo
+- fenavinho.py                 - Wine fair
+- fispal.py                    - Food industry
+- mercoagro.py                 - Agriculture
+
+DIRECTORIES:
+- connectamericas.py           - IDB platform
+- dnb_latam.py                 - D&B Latin America
+- kompass_latam.py             - Kompass directory
+- trademap.py                  - ITC Trade Map
+
+ORCHESTRATION:
+- run_all.py                   - Master runner
+- gentle_runner.py             - Sequential with delays
+- parallel/orchestrator.py     - Parallel workers
+
+PROCESSING:
+- enrich_contacts.py           - Website contact scraping
+- sector_enricher.py           - Commodity code mapping
+- deep_scraper.py              - Deep page extraction
+- final_merge.py               - Data consolidation
+
+### CAMPAIGN DATA (22 files, ~14,277 rows)
+
+Commodities covered:
+- agrifood, aluminum, beef, cleantech, coffee, copper
+- fruits, honey, limestone, machinery, minerals, niobium
+- poultry, pulp/paper, salmon, seafood, shrimp, soy
+- steel, sugar, wine
+
+CSV Structure:
+email, company, country, city, website, contract_value_eur,
+commodity, commodity_short, supplier_count, supplier_countries,
+top_suppliers
+
+Sample (beef campaign):
+- 493 EU food buyers
+- 23 Brazilian/Argentinian exporters matched
+- Top suppliers: JBS, Marfrig, Minerva Foods
+
+### VERIFIED SUPPLIERS (19 total)
+
+LITHIUM (6):
+- Livent (Argentina)
+- Allkem (Argentina)
+- Arcadium (Argentina)
+- Sigma Lithium (Brazil)
+- CBL (Chile)
+- AMG (Brazil)
+
+NIOBIUM (3):
+- CBMM (Brazil) - 80% world market
+- CMOC/Niobras (Brazil)
+- Mineracao Taboca (Brazil)
+
+BEEF (5):
+- JBS S.A. (Brazil)
+- Marfrig (Brazil)
+- Minerva Foods (Brazil)
+- Frigorifico Gorina (Argentina)
+- INAC members (Uruguay)
+
+HONEY (5):
+- NEXCO (Argentina)
+- Mieles del Sur (Argentina)
+- COSAR (Uruguay)
+- Urucoop (Uruguay)
+- CONAP (Brazil)
+
+### WEBSITES DEPLOYED
+
+Live URLs:
+1. aluminumrecyclehub.com/mercosur/
+2. aluminumrecyclehub.com/mercosur/suppliers.html
+3. agroevolution.com/mercosur/
+4. agroevolution.com/mercosur/suppliers.html
+5. interjob.ro/mercosur/
+
+### DATABASE MATCHING
+
+PostgreSQL: interjob_master (raspibig)
+
+Tables:
+- ted_winners: 1.57M EU contract winners, 375K with emails
+- companies: 500K+ from 42 countries
+
+Matching SQL:
+SELECT company_name, email, country
+FROM ted_winners
+WHERE cpv_codes LIKE '%14%'  -- Steel (niobium buyers)
+AND email IS NOT NULL;
+
+### DATA SOURCES (APIs)
+
+FREE:
+- UN Comtrade (trade flows)
+- Brazil ComexStat (customs)
+- World Bank WITS (tariffs)
+- ITC Trade Map (statistics)
+- Argentina INDEC (exports)
+- ConnectAmericas (IDB platform)
+
+COMMERCIAL:
+- Volza (import/export records)
+- TradeAtlas
+- Tendata
+
+### EMAIL TEMPLATES
+
+By Agreement:
+- MERCOSUR: beef.txt, honey.txt, lithium.txt, niobium.txt
+- CETA Canada: agrifood.txt, aluminum.txt, cleantech.txt,
+               lumber.txt, machinery.txt, minerals.txt, seafood.txt
+
+Embassy Outreach:
+- Letters in Romanian for 7 embassies in Bucharest
+- Argentina, Brazil, Paraguay, Uruguay, Chile, Peru, Colombia
+
+### CANADA-EU (CETA) - COMPLETED
+
+7 sectors:
+- seafood, aluminum, lumber, minerals
+- cleantech, agrifood, machinery
+
+Results:
+- 29 Canadian suppliers
+- 33,233 EU buyers matched
+- 136,636 total matches
+- 7 campaign CSVs (480-500 buyers each)
+
+### HOW DATA WAS FOUND
+
+1. TED DATABASE (EU procurement)
+   - 1.57M contract winners scraped from TED
+   - Filtered by CPV codes (commodity classification)
+   - Matched to HS codes for trade alignment
+
+2. COMEX STAT (Brazil customs)
+   - Official Brazilian export statistics
+   - Company names extracted from customs declarations
+   - Cross-referenced with CNPJ registry
+
+3. CONNECT AMERICAS (IDB platform)
+   - Inter-American Development Bank platform
+   - 20K+ Latin American exporters
+   - Web scraping with gentle runner
+
+4. APEX BRASIL
+   - Brazilian export promotion agency
+   - 12K+ verified exporters
+   - Sectoral directories scraped
+
+5. TRADE ASSOCIATIONS
+   - ABIEC (beef), ABEMEL (honey), IBRAM (mining)
+   - Membership lists extracted
+   - Contact enrichment via company websites
+
+6. COMPANY REGISTRIES
+   - CNPJ (Brazil), AFIP (Argentina), SII (Chile)
+   - Company status and basic data
+   - Cross-reference for verification
+
+### ENRICHMENT PROCESS
+
+Step 1: Scrape company names from source
+Step 2: Match to company registries for verification
+Step 3: Scrape company websites for contact info
+Step 4: Map to HS/CPV codes for commodity classification
+Step 5: Match to TED winners (EU buyers)
+Step 6: Generate campaign CSV files
+
+### GAPS IDENTIFIED
+
+1. Contact enrichment incomplete (many suppliers without email)
+2. No active execution logs visible
+3. Some scrapers untested
+4. ConnectAmericas volume needs verification
+
+### NEXT ACTIONS
+
+Phase 2 (Wine, Coffee, Soy, Machinery):
+- Run wine scraper (Chile, Argentina)
+- Run coffee scraper (Brazil, Colombia)
+- Run soy scraper (Brazil, Argentina, Paraguay)
+- Run machinery scraper (Brazil, Mexico)
+
+Phase 5 Pipeline:
+- UK Brexit opportunities
+- African Continental FTA
+- India-EU FTA
+- GCC agreements
+
+================================================================================
+## MERCOSUR OPEN DATA (Updated 2026-03-22)
+================================================================================
+
+### DATA DIRECTORY
+/opt/ACTIVE/IDEAS/MERCOSUR/TOTAL_SCRAPER/data/
+├── argentina/
+│   └── argentina_exports_*.xls  ← WORKING (INDEC)
+├── brazil/
+│   ├── brazil_winners_*.csv     ← WORKING (5K companies)
+│   ├── brazil_producers_*.json  ← WORKING (175 exporters)
+│   └── brazil_exporters_*.json  ← WORKING (scraped)
+├── chile/
+│   └── chile_exports.csv        ← WORKING (4.8K)
+├── uruguay/
+│   └── uruguay_exp.csv          ← WORKING (145K)
+└── paraguay/
+    └── (1.6M already in DB)
+
+### WORKING SOURCES
+
+| Country | Source | URL/Method | Status |
+|---------|--------|------------|--------|
+| Argentina | INDEC | https://www.indec.gob.ar/ftp/cuadros/economia/sh_expo_pais.xls | ✓ |
+| Brazil | Scrapers | brazil_producers.py, connectamericas_scraper.py | ✓ |
+| Chile | Manual | Previous CSV (4.8K) | ✓ |
+| Uruguay | BCU | Manual download | ✓ |
+| Paraguay | DB | 1.6M already imported | ✓ |
+
+### BLOCKED/FAILED SOURCES
+
+| Source | URL | Reason |
+|--------|-----|--------|
+| Brazil COMEXSTAT | balanca.economia.gov.br | Government blocks wget/curl |
+| Brazil CNPJ | dados.gov.br/dados/cnpj | Returns 0 bytes |
+| Brazil IBGE | ibge.gov.br | Blocked |
+| UN Comtrade API | comtradeapi.un.org | 404 errors |
+| Chile Aduana | aduana.cl | Returns error page |
+
+### DATABASE STATUS (interjob_master.companies)
+
+| Country | Records | Source |
+|---------|---------|--------|
+| Paraguay | 1,604,208 | Imported |
+| Uruguay | 115,167 | BCU + scraped |
+| Brazil | 14,492 | Various scrapers |
+| Argentina | 6,584 | INDEC |
+| Chile | 3,852 | Aduana |
+
+### CRON SCHEDULE
+
+Randomized download at 3:47 AM daily:
+47 3 * * * /opt/ACTIVE/IDEAS/MERCOSUR/TOTAL_SCRAPER/download_opendata.sh
+
+Script location: /opt/ACTIVE/IDEAS/MERCOSUR/TOTAL_SCRAPER/download_opendata.sh
+
+### KEY LEARNINGS
+
+1. Brazil government APIs block automated downloads - use scrapers instead
+2. Argentina INDEC FTP works reliably
+3. Never use fixed cron times - always randomize minutes
+4. Paraguay already has 1.6M companies - no need to download
+5. Focus on data enrichment (emails/phones) not quantity
+
+### BRAZIL ENRICHMENT VIA RECEITAWS API (WORKING)
+
+**API:** https://receitaws.com.br/v1/cnpj/{cnpj}
+**Rate Limit:** 3 requests/minute (free tier)
+**Returns:** email, phone, address, status, directors
+
+Script: /opt/ACTIVE/IDEAS/MERCOSUR/TOTAL_SCRAPER/enrich_brazil_cnpj.py
+- Uses 22-28 second delays between requests
+- Enriches companies in DB that have CNPJ but missing email/phone
+- ~11,327 Brazil private companies with CNPJs in DB
+- At 3 req/min = ~63 hours to enrich all
+
+**To run:**
+```bash
+python3 /opt/ACTIVE/IDEAS/MERCOSUR/TOTAL_SCRAPER/enrich_brazil_cnpj.py
+```
+
+**Alternative: Batch mode (overnight)**
+Add to cron: Run enrichment in small batches overnight
+
+================================================================================
+## SESSION LOG: March 22, 2026 - Parallel Scraper Implementation
+================================================================================
+
+### WHAT WAS BUILT
+
+Created 6-worker parallel scraping architecture in:
+/opt/ACTIVE/IDEAS/MERCOSUR/CLAUDE/OPENCODE/scrapers/mercosur/parallel/
+
+Files created:
+- orchestrator.py     - Master controller, spawns workers
+- config.py           - Targets, timeouts, thread counts
+- worker_websites.py  - Website contact extraction (10 threads)
+- worker_enricher.py  - Email pattern generation (8 threads) - BEST
+- worker_associations.py - Trade association scraping (needs Selenium)
+- worker_govapis.py   - Government API discovery
+- worker_registries.py - Bulk registry downloads
+- worker_tradeshows.py - Trade show exhibitors (needs Selenium)
+- merger.py           - Consolidates all worker outputs
+- requirements.txt    - Dependencies
+
+### RESULTS
+
+Before: 677 companies, 144 emails (21%)
+After:  700 companies, 246 emails (35%)
+
+Improvement: +101 emails (+70%)
+
+### WHAT WORKED
+
+1. worker_enricher.py - 71% success rate (97/137 emails)
+   - Generates info@domain, contact@domain patterns
+   - Verifies domain has MX records
+   - Best single approach for email finding
+
+2. deep_scraper.py - 76 new companies
+   - CAPECO Paraguay grains: 66 companies
+   - ABPA Brazil poultry: 10 companies
+
+3. Orchestrator ran all 6 workers successfully in 23 minutes
+
+### WHAT DIDN'T WORK
+
+1. Association/TradeShow workers - Need Selenium (JS rendering)
+2. Government APIs - Not publicly exposed (APEX, ProChile, etc.)
+3. Kompass LATAM - Blocked/anti-scraping
+4. UN Comtrade/TradeMap - API format changed
+5. brazil_comex.py - Parser bug
+
+### KEY INSIGHT
+
+Email pattern generation (info@domain.com) works better than scraping.
+Most websites don't expose emails, but domains accept standard patterns.
+
+### FILES SAVED
+
+/mnt/hdd/GLOBAL_DOWNLOADS/mercosur_final/
+- mercosur_combined_20260322.json      # 700 companies
+- mercosur_contacts_20260322_final.csv # 246 with email
+
+### COMMANDS TO RERUN
+
+# Run enricher (best worker)
+cd /opt/ACTIVE/IDEAS/MERCOSUR/CLAUDE/OPENCODE/scrapers/mercosur/parallel
+python3 worker_enricher.py --no-search --threads 8
+
+# Run all workers
+python3 orchestrator.py --all --sequential
+
+# Merge results
+python3 merger.py --include-existing
+
+### NEXT STEPS
+
+1. Install Selenium for JS pages
+2. Hunter.io API for professional email finding
+3. Fix brazil_comex.py parser
+4. Manual research for top companies
+

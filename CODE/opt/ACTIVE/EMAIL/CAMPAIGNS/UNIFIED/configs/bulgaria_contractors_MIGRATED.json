@@ -1,0 +1,131 @@
+{
+  "db": {
+    "dbname": "interjob_master",
+    "user": "tudor",
+    "password": "scraper123",
+    "host": "/var/run/postgresql"
+  },
+  "env_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/.env",
+  "campaign_name": "BULGARIA_CONTRACTORS",
+  "campaign_code": "BG_SCANDINAVIA",
+  "templates_dir": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/bulgaria/",
+  "dashboard_port": 8098,
+  "url_prefix": "/bulgaria_contractors",
+  "country_flag": "&#127463;&#127468;",
+  "country_filter": null,
+  "gov_domains": [
+    "government.bg",
+    "parliament.bg",
+    "minfin.bg",
+    "mh.government.bg",
+    "mon.bg",
+    "mvr.bg"
+  ],
+  "exclude_nace": [],
+  "exclude_sources": [],
+  "source_filter": [
+    "ksb",
+    "ukazatelite",
+    "ted",
+    "aop",
+    "ted_orgs"
+  ],
+  "null_status_is_pending": true,
+  "tables": {
+    "contacts": "bg_campaign",
+    "send_log": "bg_send_log",
+    "dnc": "bg_dnc",
+    "responses": "bg_responses",
+    "col_email": "email",
+    "col_name": "name",
+    "col_company": "name",
+    "col_city": "city",
+    "col_sector": "source",
+    "col_sector_name": "category",
+    "col_org_number": "eik",
+    "col_campaign_status": "campaign_status",
+    "col_last_contacted": "last_contacted"
+  },
+  "template": "ted_scandinavia_BILINGUAL.txt",
+  "sectors": {
+    "CONSTRUCTION": {
+      "caen": [],
+      "sender_type": "brevo",
+      "sender_key": "BREVO_BUILDJOBS_API_KEY",
+      "sender_email": "office@buildjobs.eu",
+      "sender_name": "BuildJobs Europe",
+      "reply_to": "office@buildjobs.eu",
+      "daily_limit": 270,
+      "delay_min": 600,
+      "delay_max": 900,
+      "enabled": true,
+      "business_hours": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "start": 0,
+        "end": 24
+      },
+      "contact_filter": "MOD(ABS(hashtext(email)), 3) = 0"
+    },
+    "MANUFACTURING": {
+      "caen": [],
+      "sender_type": "brevo",
+      "sender_key": "BREVO_SEICARESCU_API_KEY",
+      "sender_email": "tudor@seicarescu.com",
+      "sender_name": "InterJob Solutions Europe",
+      "reply_to": "tudor@seicarescu.com",
+      "daily_limit": 280,
+      "delay_min": 600,
+      "delay_max": 900,
+      "enabled": true,
+      "contact_filter": "MOD(ABS(hashtext(email)), 3) = 1",
+      "business_hours": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "start": 0,
+        "end": 24
+      }
+    },
+    "SERVICES": {
+      "caen": [],
+      "sender_type": "brevo",
+      "sender_key": "BREVO_CAREWORKERS_API_KEY",
+      "sender_email": "office@careworkers.eu",
+      "sender_name": "InterJob Care Solutions",
+      "reply_to": "office@careworkers.eu",
+      "daily_limit": 290,
+      "delay_min": 600,
+      "delay_max": 900,
+      "enabled": true,
+      "contact_filter": "MOD(ABS(hashtext(email)), 3) = 2",
+      "business_hours": {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "start": 0,
+        "end": 24
+      }
+    }
+  },
+  "notes": "MIGRATED: Bulgarian construction contractors using working Brevo accounts. BuildJobs (270/day), Seicarescu (280/day), CareWorkers (290/day). Total 840/day capacity. Contact filter distributes emails evenly across 3 accounts via hashtext modulo."
+}

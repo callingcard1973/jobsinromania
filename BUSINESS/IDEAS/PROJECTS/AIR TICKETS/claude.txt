@@ -1,0 +1,55 @@
+# AIR TICKETS — Travel Reselling Operation
+
+## What This Is
+Complete travel ticket reselling operation for InterJob network.
+Flights, tours, trains, buses, ferries, transfers, events, accommodation, insurance, cruises.
+From anywhere to anywhere. Not just Romania.
+
+## Key Files
+
+| File | What |
+|------|------|
+| HANDOFF.md | Complete handoff — what's done, what's pending, quick-start commands |
+| ULTRAPLAN_AIR_TICKETS.md | 10-task implementation plan for campaign launch |
+| TICKET_RESELLING_COMPLETE_LANDSCAPE.md | MASTER: 100+ APIs, all verticals, unified aggregators, Romania market |
+| FLIGHT_APIs_RESEARCH.md | 60+ flight-specific programs with signup URLs |
+| IATA_PARTNERS_ROMANIA.md | Sub-agent partnership research (Paralela 45, Christian Tour, etc.) |
+| flight_agencies.json | Orchestrator campaign config (deployed to raspibig) |
+| flights.html | Flight search page (needs API key — Travelpayouts or Kiwi) |
+| price_monitor.py | Price monitor bot for 10 ethnic routes (deployed to raspibig) |
+| scrape_agencies_raspi.py | Scraper: 2,968 agency websites, 30 workers, extracts services/API/GDS/booking/RSS |
+| agentii_turistice_clean.csv | 2,968 licensed Romanian agencies from SITUR |
+| agentii_organizatoare_campaign.csv | 1,448 IATA-accredited agencies (campaign CSV) |
+| templates/flight_partner_template1.txt | Email template for agency partnership outreach |
+
+## Raspibig Locations
+
+| What | Path |
+|------|------|
+| Campaign config | /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/configs/flight_agencies.json |
+| Template | /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/flight_agencies/template1.txt |
+| Price monitor | /opt/ACTIVE/FLIGHTS/price_monitor.py |
+| Agency scraper | /opt/ACTIVE/FLIGHTS/scrape_agencies.py |
+| Scrape output | /opt/ACTIVE/FLIGHTS/agentii_scraped.csv |
+| Source CSV | /opt/ACTIVE/FLIGHTS/agentii_turistice_clean.csv |
+| Logs | /opt/ACTIVE/FLIGHTS/logs/ |
+
+## PostgreSQL Tables (interjob_master)
+- flight_agencies_campaign — 1,448 IATA agencies
+- flight_agencies_send_log — send tracking
+- flight_prices — price monitor data
+
+## Status
+- Campaign: DEPLOYED, awaiting Tudor's GO + template approval
+- Scraper: RUNNING (2,968 sites, 30 workers)
+- Price monitor: deployed, needs API key
+- Flight page: built, needs API key + FTP deploy
+- Kiwi email: SENT to affiliates@kiwi.com
+
+## API Registrations Needed (Tudor)
+1. Travelpayouts — travelpayouts.com/registration (instant, free)
+2. Awin — awin.com (Wizz+Ryanair+Booking.com)
+3. CJ Affiliate — cj.com (Turkish, Emirates, Qatar, Ticketmaster)
+4. Profitshare.ro (Vola.ro, Paravion)
+5. eSKY Linker — eskypartners.com (instant, 20-40%)
+6. Duffel — duffel.com (own markup, $3+1%/ticket)

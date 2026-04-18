@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EU Funding Dashboard</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#1a1a2e; color:#e0e0e0; }
+.header { background:#16213e; padding:20px; text-align:center; border-bottom:2px solid #0f3460; }
+.header h1 { color:#e94560; font-size:1.5em; }
+.tabs { display:flex; gap:10px; padding:15px 20px; background:#16213e; }
+.tab { padding:8px 20px; background:#0f3460; border:none; color:#e0e0e0; cursor:pointer; border-radius:5px; font-size:0.9em; }
+.tab.active { background:#e94560; color:white; }
+.controls { padding:10px 20px; display:flex; gap:10px; align-items:center; }
+.controls input { padding:8px 12px; background:#16213e; border:1px solid #0f3460; color:#e0e0e0; border-radius:5px; width:300px; }
+.controls select { padding:8px; background:#16213e; border:1px solid #0f3460; color:#e0e0e0; border-radius:5px; }
+.count { color:#888; font-size:0.85em; padding:0 20px; }
+table { width:100%; border-collapse:collapse; font-size:0.85em; }
+th { background:#0f3460; padding:10px 8px; text-align:left; position:sticky; top:0; cursor:pointer; }
+th:hover { background:#e94560; }
+td { padding:8px; border-bottom:1px solid #1a1a2e; max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+tr:hover { background:#16213e; }
+a { color:#e94560; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.email { color:#4ecca3; }
+.phone { color:#7ec8e3; }
+.loading { text-align:center; padding:40px; color:#888; }
+</style>
+</head>
+<body>
+<div class="header"><h1 id="title">EU Funding Dashboard</h1></div>
+<div class="tabs" id="tabs"></div>
+<div class="controls">
+  <input type="text" id="search" placeholder="Search...">
+  <select id="judet-filter"><option value="">All Counties</option></select>
+</div>
+<div class="count" id="count"></div>
+<div style="overflow-x:auto"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+<div class="loading" id="loading">Loading...</div>
+
+<script>
+let CONFIG = null;
+let DATA = [];
+let currentView = 0;
+
+async function loadConfig() {
+  const r = await fetch('config.json?' + Date.now());
+  CONFIG = await r.json();
+  document.getElementById('title').textContent = CONFIG.title;
+  const tabs = document.getElementById('tabs');
+  CONFIG.views.forEach((v, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'tab' + (i === 0 ? ' active' : '');
+    btn.textContent = v.name;
+    btn.onclick = () => switchView(i);
+    tabs.appendChild(btn);
+  });
+  await loadView(0);
+}
+
+async function switchView(i) {
+  currentView = i;
+  document.querySelectorAll('.tab').forEach((t, j) => t.className = 'tab' + (j === i ? ' active' : ''));
+  document.getElementById('search').value = '';
+  await loadView(i);
+}
+
+async function loadView(i) {
+  const v = CONFIG.views[i];
+  document.getElementById('loading').style.display = 'block';
+  let url = CONFIG.supabase_url + '/rest/v1/' + v.table + '?select=*';
+  if (v.filter) url += '&' + v.filter;
+  if (v.sort) url += '&order=' + v.sort;
+  if (v.limit) url += '&limit=' + v.limit;
+  const r = await fetch(url, {
+    headers: { 'apikey': CONFIG.supabase_anon_key, 'Authorization': 'Bearer ' + CONFIG.supabase_anon_key }
+  });
+  DATA = await r.json();
+  document.getElementById('loading').style.display = 'none';
+  // Populate county filter
+  const counties = [...new Set(DATA.map(r => r.judet).filter(Boolean))].sort();
+  const sel = document.getElementById('judet-filter');
+  sel.innerHTML = '<option value="">All Counties</option>';
+  counties.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; sel.appendChild(o); });
+  renderTable(v.columns);
+}
+
+function renderTable(columns) {
+  const search = document.getElementById('search').value.toLowerCase();
+  const judet = document.getElementById('judet-filter').value;
+  let rows = DATA;
+  if (search) rows = rows.filter(r => columns.some(c => (r[c] || '').toLowerCase().includes(search)));
+  if (judet) rows = rows.filter(r => r.judet === judet);
+  // Header
+  const thead = document.getElementById('thead');
+  thead.innerHTML = '<tr>' + columns.map(c => '<th onclick="sortBy(\'' + c + '\')">' + c.replace(/_/g, ' ') + '</th>').join('') + '</tr>';
+  // Body
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = rows.map(r => '<tr>' + columns.map(c => {
+    let v = r[c] || '';
+    if (c === 'email' && v) v = '<a class="email" href="mailto:' + v + '">' + v + '</a>';
+    else if (c === 'telefon' && v) v = '<a class="phone" href="tel:' + v + '">' + v + '</a>';
+    else if (c === 'url' && v) v = '<a href="' + v + '" target="_blank">link</a>';
+    return '<td title="' + (r[c] || '').replace(/"/g, '') + '">' + v + '</td>';
+  }).join('') + '</tr>').join('');
+  document.getElementById('count').textContent = rows.length + ' / ' + DATA.length + ' records';
+}
+
+function sortBy(col) {
+  DATA.sort((a, b) => ((a[col] || '') > (b[col] || '') ? 1 : -1));
+  renderTable(CONFIG.views[currentView].columns);
+}
+
+document.getElementById('search').addEventListener('input', () => renderTable(CONFIG.views[currentView].columns));
+document.getElementById('judet-filter').addEventListener('change', () => renderTable(CONFIG.views[currentView].columns));
+loadConfig();
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+CSV                                                                       Total     Web   Email     Gap
+----------------------------------------------------------------------------------------------------
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Sweden\Sweden_contacts_50.csv         498,430 498,080       0 498,080
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Sweden\Sweden_contacts_50.csv     498,430 498,080       0 498,080
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Norway\Norway_contacts_50.csv         297,752 297,039       0 297,039
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Norway\Norway_contacts_50.csv     297,752 297,039       0 297,039
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Finland\Finland_contacts_50.csv       135,813 135,791       0 135,791
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Finland\Finland_contacts_50.csv   135,813 135,791       0 135,791
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Unknown\Unknown_contacts_50.csv       104,827 104,125       0 104,125
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Unknown\Unknown_contacts_50.csv   104,827 104,125       0 104,125
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Germany\Germany_contacts_50.csv        89,974  89,960       0  89,960
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Germany\Germany_contacts_50.csv    89,974  89,960       0  89,960
+CLAUDE\OPT\DATA\EURES_SYNC\master_contacts.csv                           51,086  50,978       0  50,978
+CLAUDE\OPT\opt\DATA\EURES_SYNC\master_contacts.csv                       51,086  50,978       0  50,978
+CLAUDE\PLAN27\DATA\EURES\master_contacts.csv                             51,086  50,978       0  50,978
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Poland\Poland_contacts_50.csv          46,544  46,249       0  46,249
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Poland\Poland_contacts_50.csv      46,544  46,249       0  46,249
+Z.AI\DENMARK\kaggle_danish_companies.csv                                 79,274  21,429       0  21,429
+Z.AI\DENMARK\DATA\DanishCompanyData_cleaned.csv                          79,274  21,429       0  21,429
+CLAUDE\OPT\DATA\EU_PROCUREMENT\cordis_organizations.csv                  21,206  21,203       0  21,203
+CLAUDE\OPT\opt\DATA\EU_PROCUREMENT\cordis_organizations.csv              21,206  21,203       0  21,203
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\master_contacts_50.csv                 18,996  18,963       0  18,963
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\master_contacts_50.csv             18,996  18,963       0  18,963
+IDEAS\PRODUS MONTAN\CODE\SCRAPER AGRICULTURA ECOLOGICA\DATA\producers    13,521  13,520       0  13,520
+IDEAS\PRODUS MONTAN\CODE\SCRAPER AGRICULTURA ECOLOGICA\DATA\producers    13,521  13,520       9  13,511
+IDEAS\PRODUS MONTAN\CODE\SCRAPER AGRICULTURA ECOLOGICA\DATA\producers    13,521  13,520      18  13,502
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Denmark\Denmark_contacts_50.csv        11,993  11,993       0  11,993
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Denmark\Denmark_contacts_50.csv    11,993  11,993       0  11,993
+CLAUDE\DATA\TED\ted_winners_2023.csv                                    229,269  52,555  42,979   9,576
+CLAUDE\OPT\DATA\ROMANIA\FIRME_ROMANIA\DATA\all_romania_companies.csv   4,116,148   9,273       0   9,273
+CLAUDE\OPT\opt\DATA\ROMANIA\FIRME_ROMANIA\DATA\all_romania_companies.  4,116,148   9,273       0   9,273
+CLAUDE\OPT\opt\FIRME_ROMANIA\DATA\all_romania_companies.csv            4,116,148   9,273       0   9,273
+CLAUDE\OPT\opt\ROMANIA\DATA\FIRME_ROMANIA\DATA\all_romania_companies.  4,116,148   9,273       0   9,273
+AIR TICKETS\TOURISM_DATA\wikidata_hotels_30000.csv                       30,000   8,252       0   8,252
+CLAUDE\OPT\DATA\SCRAPER_CSV\EURES\Belgium\Belgium_contacts_50.csv         8,223   8,223       0   8,223
+CLAUDE\OPT\opt\DATA\SCRAPER_CSV\EURES\Belgium\Belgium_contacts_50.csv     8,223   8,223       0   8,223
+CLAUDE\OPT\DATA\MONTHLY\2025-12\month_2025-12_all.csv                   222,265 222,213 214,656   7,557
+CLAUDE\OPT\opt\DATA\MONTHLY\2025-12\month_2025-12_all.csv               222,265 222,213 214,656   7,557
+CLAUDE\OPT\DATA\EU_SUBSIDY\EU_KOHESIO_MASTER_20260105_042210.csv        771,264   7,266       0   7,266
+CLAUDE\OPT\opt\DATA\EU_SUBSIDY\EU_KOHESIO_LATEST.csv                    771,264   7,266       0   7,266
+CLAUDE\OPT\opt\DATA\EU_SUBSIDY\EU_KOHESIO_MASTER_20260105_042210.csv    771,264   7,266       0   7,266
+CLAUDE\OPT\DATA\ROMANIA\ONRC\valid_urls.csv                               7,239   7,239       0   7,239
+CLAUDE\OPT\opt\DATA\ROMANIA\ONRC\valid_urls.csv                           7,239   7,239       0   7,239
+CLAUDE\OPT\opt\ROMANIA\DATA\ONRC\valid_urls.csv                           7,239   7,239       0   7,239
+CLAUDE\OPT\DATA\ROMANIA\DOMAINS\all_ro_domains.csv                        8,579   7,217       0   7,217
+CLAUDE\OPT\opt\DATA\ROMANIA\DOMAINS\all_ro_domains.csv                    8,579   7,217       0   7,217
+CLAUDE\OPT\opt\ROMANIA\DATA\DOMAINS\all_ro_domains.csv                    8,579   7,217       0   7,217
+CLAUDE\DATA\TED\ted_winners_2020.csv                                    144,423  32,091  24,928   7,163
+CLAUDE\OPT\DATA\ROMANIA\WEBSITE_CONTACTS\contacts_fast.csv                8,021   8,021   1,616   6,405
+CLAUDE\OPT\opt\DATA\ROMANIA\WEBSITE_CONTACTS\contacts_fast.csv            8,021   8,021   1,616   6,405
+CLAUDE\OPT\opt\ROMANIA\DATA\WEBSITE_CONTACTS\contacts_fast.csv            8,021   8,021   1,616   6,405
+AIR TICKETS\TOURISM_DATA\osm_hotels_europe_9652.csv                       9,651   6,078       0   6,078
+----------------------------------------------------------------------------------------------------
+TOTAL (top 50)                                                                                  2,867,233
+
+All CSVs with gap: 2666
+Total unique URLs to scrape: 170,333

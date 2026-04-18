@@ -1,0 +1,162 @@
+ID,Proiect,Categorie,Tip,Fisier,Ce_face,Status,Venit_EUR,Efort_ore,Actualizare
+IDEA-001,GUMROAD DATA PRODUCTS,PRODUS,plan,descriptions/ + products/,"Produse date CSV/PDF pe Gumroad one-time: firme constructii RO, castigatori TED pe tara+sector, date insolventa, ferme la vanzare, bundle toate. Pret EUR 29-199/dataset. Venit pasiv post-publicare.",GATA,900-15000 one-shot,8,2026-04-18
+IDEA-002,NORVEGIA RECRUITMENT,CAMPANIE,date,norway_campaign (PostgreSQL),Recrutare Norway multi-canal: email outreach 335K+ contacte norvegiene (agentii + angajatori directi constructii/oil/maritim) + organizare job fair (sponsorizare EUR 500-2000) + comision plasare EUR 500-1000/muncitor.,GATA,5000-30000/plasare,5,2026-04-18
+IDEA-003,INSOLVENTA ALERTS & ASSETS,PRODUS,plan,INSOLVENTA/IDEAS.md,"Monetizare DB insolventa: 770K companii monitorizate + 222K falimentare. Dual model: abonament alerte EUR 19-99/luna (contabili/auditori/furnizori) + lead sales EUR 5-20/lead (colectori creante, investitori active falimentare, proprietati BPI).",PLANIFICAT,1900-3800/luna,8,2026-04-18
+IDEA-004,AGENTII RECRUTARE PLATFORM,CAMPANIE,date,recruitment_agencies_campaign.csv,Enablement agentii recrutare: DB + campanii + unelte white-label pentru 18K+ agentii UE. Muncitori RO plasati in UE/international. Monetizare: EUR 420K+/an plasari + EUR 2K-10K/luna broker leads + EUR 200-500/luna catalog white-label + licenta franciza EUR 500-2000/luna.,GATA,420000/an,40,2026-04-18
+IDEA-005,HORECA FOOD DISTRIBUTION,CAMPANIE,date,seap_food_winners_enriched.csv,Campanii B2B distributie alimentara: 28K+ contacte HORECA + 3030 castigatori SEAP alimentari + Freskon exhibitors. Email + WhatsApp outreach. Monetizare: EUR 500-5000/contract plasare sau comision broker.,GATA,500-5000/contract,20,2026-04-18
+IDEA-006,BULGARIA ALUMINUM CAMPAIGNS,CAMPANIE,date,bg_ted + bg_companies (PostgreSQL),Campanii recrutare sectoare specifice: 79K contacte Bulgaria constructii + 611 companii reciclare aluminiu. Comision plasare muncitori EUR 3000-5000. Acelasi model DB→campanie ca Norvegia.,GATA,3000-5000/plasare,5,2026-04-18
+IDEA-007,ROMANIA DB,DATE,cod,create_romania_db.py (raspibig),FACUT — 8.9M companii dar doar 19K emailuri unice (144K non-null dar 19K distincte). Nevoie imbogatire.,FACUT partial,deblocheaza campanii RO dupa enrichment,10,2026-04-12
+IDEA-008,TELEGRAM LICITATII CHANNELS,PRODUS,plan,-,"Canale Telegram cu alerte automate licitatii/tender: @FoodTendersRO (SEAP alimentar), @TenderAlerts (5.1M EU tenders cu filtre), @InsolvencyRO. Tier premium EUR 5-49/luna + bot versiune.",PLANIFICAT,50-200/post,8,2026-04-18
+IDEA-009,TED EU TENDER INTELLIGENCE,CAMPANIE,date,ted_winners (PostgreSQL),Produse date licitatii EU: campanii email 13K+ castigatori TED + API/dashboard 5.1M tenders + newsletter saptamanal top CPV. Monetizare: per plasare + abonament API EUR 99-499/luna + spatiu reclama newsletter.,GATA,150000+,80,2026-04-18
+IDEA-010,POLONIA KRAZ,DATE,scraper,-,Descarca CSV 9175 agentii recrutare poloneze din registru guvernamental,PLANIFICAT,adauga la IDEA-004,0.5,2026-03-15
+IDEA-011,COOPERATIVA AGRICOLA,PRODUS,cod,scripts/week1_*.py,"Cooperativa 140+ producatori montani: export EU legume/fructe + plasare sezoniera muncitori (EUR 200-500/plasare, Jun-Sep) + registru digital membri (CUI ANAF validat) + outreach 30K HORECA EU. Taxa membru EUR 50-200/an + 5% comision vanzari.",INGHETAT,200000-2000000/an,200,2026-04-18
+IDEA-012,TRASABILITATE,PRODUS,cod,PRODUS TRASABIL/backend/app.py,SaaS trasabilitate alimente - FastAPI + CLI,INGHETAT,99-499/luna/client,160,2026-03-15
+IDEA-013,CUMPARFERME,PRODUS,plan,-,Brokerage active falimentare - 8663 ferme + 192K companii,INGHETAT,5000-20000/tranzactie,40,2026-03-15
+IDEA-014,COMPANY DATA API DASHBOARD,PRODUS,plan,-,"Date companii live: 117K+ firme RO + 5.1M EU tenders + insolventa + contracte SEAP. Acces: CSV one-time vs dashboard abonament vs REST API vs bundle RapidAPI (ANAF+email+company+CV+insolventa). EUR 500-5000/luna dashboard, EUR 99-499/luna API, EUR 0.01-0.50/call.",INGHETAT,500-5000/luna,40,2026-04-18
+IDEA-015,LICITATII SAAS,PRODUS,plan,-,→ contopita in IDEA-009,MERGED,,80,2026-04-18
+IDEA-016,PRODUS MONTAN,PRODUS,cod,CODE/*.py + DATA/*.csv,Catalog 1331 producatori montani - WooCommerce + campanie. Deadline AGRIP: 23 apr 2026,ACTIV,7500-52500/an,20,2026-04-12
+IDEA-017,LEO BUZAU,CAMPANIE,date,LEO_BUZAU_FINAL_ENRICHED.csv,34K companii Buzau - inchiriere proprietati cand Leo e gata,INGHETAT,variabil,2,2026-03-15
+IDEA-018,DATING SPEEDMATCH,PRODUS,plan,DATING/claude.md,Aplicatie dating - NU se face,UCIS,0,0,2026-03-15
+IDEA-019,NEPAL MANPOWER,CAMPANIE,plan,-,Recrutare Nepal - nevoie partener + licenta DOFE,UCIS,0,0,2026-03-15
+IDEA-020,CONTRACTE INTERNATIONALE,CAMPANIE,plan,-,Facilitare contracte Saudi/UAE/DE - joc Fortune 500,UCIS,0,0,2026-03-15
+IDEA-021,TALL WOMEN STORE,PRODUS,plan,-,Dropshipping - zero pasiune,UCIS,0,0,2026-03-15
+IDEA-022,NOTARY SOFTWARE,PRODUS,plan,-,Software notariat - zero clienti,UCIS,0,0,2026-03-15
+IDEA-023,TRAINING CONSTRUCTII,PRODUS,plan,-,Training siguranta constructii - prea complex,UCIS,0,0,2026-03-15
+IDEA-024,OIPA AGRI-FOOD,PRODUS,plan,-,Platforma agri-food - fuzionat cu COOPERATIVA + PRODUS MONTAN,UCIS,0,0,2026-03-15
+IDEA-025,ASOCIATII,DATE,cod,ASOC PROP/*.py,"Registru 90K+ ONG-uri Romania - 42 judete, 49 CSV-uri",INGHETAT,neclar,4,2026-04-12
+IDEA-026,CHINA TRADE,CERCETARE,scraper,scrapers/*.py,"3 scrapere (Made-in-China, NBS API, UN Comtrade) + 8 CSV-uri indicatori",CERCETARE,neclar,10,2026-03-22
+IDEA-027,FOOD HORECA,CAMPANIE,cod,SUPERMARKETS_CLAUDE/CODE/*.py,→ contopita in IDEA-005,MERGED,,20,2026-04-18
+IDEA-028,FRESKON,DATE,date,freskon_exhibitors.csv,Contacte expozanti targuri europene,ACTIV,parte din campanii,1,2026-04-12
+IDEA-029,DELECROIX AGRI EQUIPMENT,CERCETARE,scraper,scrape_competitors.py,"Parteneriat distributie echipamente recoltare Delecroix (benzi transportoare, remorci legume, statii sortare). Canal vanzare: analiza concurenta + outreach Norvegia (firme agricole) + cooperativa/fermieri mici RO. Comision 10% pe vanzare.",CERCETARE,comision Delecroix,5,2026-04-18
+IDEA-030,EMAIL CLASSIFIER SAAS,PRODUS,cod,email_responder.py + train_classifier.py,"Clasificator email SaaS: model sklearn (94.5% acuratete) + LLM auto-responder + generare draft Gmail. API B2B pentru agentii recrutare, imobiliare, logistica. EUR 29-149/luna per client, 1000+ clasificari.",ACTIV,productizabil B2B,20,2026-04-18
+IDEA-031,MERCOSUR,CAMPANIE,scraper,40+ scrapere + 50+ CSV-uri,22 campanii sectoriale (beef/honey/lithium/etc) + registre 4 tari + ambasade,ACTIV,variabil export,100,2026-03-22
+IDEA-032,NATO,CERCETARE,cod,OPENCODE/scripts/*.py,5 scripturi achizitii militare SEAP + matching capacitati,ACTIV,subcontractare,10,2026-04-12
+IDEA-033,UNIFIED DB,REFERINTA,cod,company_lookup.py + db_helper.py,Utilitare cautare companii in PostgreSQL,ACTIV,suport intern,2,2026-04-12
+IDEA-034,UK CONTRACTORS,CAMPANIE,plan,COUNTRIES/UK/IDEAS.md,→ contopita in IDEA-009,MERGED,,20,2026-04-18
+IDEA-035,ALUMINUM,CAMPANIE,date,recyclers_aluminum.csv,→ contopita in IDEA-006,MERGED,,5,2026-04-18
+IDEA-036,INSOLVENTA ACTIVE ASSETS,CERCETARE,plan,INSOLVENTA/IDEAS.md,→ contopita in IDEA-003,MERGED,,40,2026-04-18
+IDEA-037,EVENT PUBLISHER,PRODUS,cod,quick_post.py + publisher.py + job_publisher.py,Auto-publicare multi-platforma (Telegram 6 canale + FB + LinkedIn pregatite),ACTIV,reach candidati,10,2026-03-19
+IDEA-038,ELDERFLOWER,PRODUS,plan,LLM/MEMORY/ELDERFLOWER/IDEAS.md,"Pivnita Bunicii - agent vanzari 10% comision, Welcome Box expati, export UE",CERCETARE,5000-60000/an,20,2026-04-12
+IDEA-039,CANADA CETA,CERCETARE,plan,CANADA_EU/claude.md,"Arbitraj CETA/CPTPP, transfer tehnologic, export agri-food Canada",CERCETARE,50000-2000000/an,100,2026-04-12
+IDEA-040,EU PROIECTE,CAMPANIE,date,european_funds (PostgreSQL),15969 beneficiari fonduri UE cu email - campanie consultanta + OIPA,GATA,consultanta,2,2026-04-09
+IDEA-041,FDATING,PERSONAL,plan,DATING/FDATING_SEARCH.md,Cautare profile fdating.com - cont activ Tudor,PLANIFICAT,personal,2,2026-04-12
+IDEA-042,DELECROIX,PARTENERIAT,plan,D:\MEMORY\DELECROIX\claude.md,→ contopita in IDEA-029,MERGED,,5,2026-04-18
+IDEA-043,COMPANY DATA ENRICHMENT PLATFORM,DATE,cod,-,Platforma enrichment date companii: CUI → lookup ANAF → validare email → extractie bilant → status live. Tiers monetizare: EUR 0.05-0.20/record enrichment bulk + EUR 5-20/raport companie (ANAF+bilant+insolventa+SEAP+angajati) + EUR 0.02-0.10/record curatare date + EUR 200/raport economic judet.,PLANIFICAT,multiplicator campanii RO,20,2026-04-18
+IDEA-044,TELEGRAM LICITATII BOT,PRODUS,cod,-,→ contopita in IDEA-008,MERGED,,8,2026-04-18
+IDEA-045,CLASIFICATOR EMAIL SAAS,PRODUS,cod,LLM/train_classifier.py,→ contopita in IDEA-030,MERGED,,15,2026-04-18
+IDEA-046,CATALOG GENERATOR PLATFORM,PRODUS,cod,INVENTAR/IDEA-046/,"Generator cataloage white-label si PDF personalizate: angajatori/produse/tenders pe 9+ domenii x 20 tari plus cataloage oferta per client (ex: AVP Park echipamente joaca tiered pe populatie localitate). Output HTML → PDF → print-ready (KDP/Lulu). EUR 99/catalog custom, EUR 15-49/carte KDP.",ACTIV,10000-60000/an,20,2026-04-18
+IDEA-047,DASHBOARD ACCES,PRODUS,cod,-,→ contopita in IDEA-014,MERGED,,30,2026-04-18
+IDEA-048,WHATSAPP SEAP FOOD,CAMPANIE,cod,-,WhatsApp Business API catre 4175 numere SEAP food. 90% open rate,PLANIFICAT,500-5000/contract,5,2026-04-13
+IDEA-049,LEAD BROKER RO,PRODUS,plan,-,→ contopita in IDEA-004,MERGED,,5,2026-04-18
+IDEA-050,LANDING A/B TEST,PRODUS,cod,-,Generator automat variante landing page (titluri+layout) + tracking conversii pe 28 domenii,PLANIFICAT,multiplicator conversii,15,2026-04-13
+IDEA-051,UPSELL RECOMMENDER,PRODUS,cod,-,Post-zbor: sugereaza hotel (Booking 25-40%) + activitati (GetYourGuide 8%). Cross-sell pe trafic,PLANIFICAT,comisioane affiliate,20,2026-04-13
+IDEA-052,SEO CONTENT REWRITER,PRODUS,cod,-,LLM rescrie+expandeaza pagini SEO pe 28 domenii. Google adora continut actualizat. Qwen automat,PLANIFICAT,trafic organic x2,10,2026-04-13
+IDEA-053,FRAUD BOT DETECTION,PRODUS,cod,-,Detecteaza trafic fake + click-uri suspecte pe affiliate links. Analiza access logs A2,PLANIFICAT,protejeaza comisioane,8,2026-04-13
+IDEA-054,TIME OPTIMIZATION,PRODUS,cod,-,Invata cand cumpara oamenii. Optimizeaza timing emailuri + promotii rute. Date din pipeline,PLANIFICAT,+20-30% open rate,10,2026-04-13
+IDEA-055,API HEALTH AGENT,PRODUS,cod,-,Monitorizeza API-uri (Kiwi etc). Fallback automat daca pica. Uptime = bani,PLANIFICAT,zero downtime,8,2026-04-13
+IDEA-056,TERENURI AGENTS,PRODUS,cod,INVENTAR/IDEA-056/,10 agenti: ListingHunter + PriceAnomaly + Geo + Legal + DevPotential + CMA + Resale + DealAlert + SellerMotivation + Portfolio. OLX+Imobiliare+ANAF+BPI,ACTIV,flip-uri imobiliare,40,2026-04-13
+IDEA-057,SELL NGO LEADS,PRODUS,plan,ASOCIATII/ONG_SHORTLIST_5000.csv,Vinde lista 5000 ONG-uri scoruite catre agentii marketing + consultanti ONG + furnizori IT. EUR 50-200/lista,PLANIFICAT,50-200/lista,3,2026-04-14
+IDEA-058,HORECA BROKER,PRODUS,plan,FOOD/SUPERMARKETS_CLAUDE/,→ contopita in IDEA-005,MERGED,,8,2026-04-18
+IDEA-059,INSOLVENTA ALERTS SUB,PRODUS,cod,UNIFIED DB USAGE/company_lookup.py,→ contopita in IDEA-003,MERGED,,4,2026-04-18
+IDEA-060,LLM EMAIL SAAS,PRODUS,cod,LLM/email_responder.py,→ contopita in IDEA-030,MERGED,,15,2026-04-18
+IDEA-061,COMPANY REPORT SHOP,PRODUS,cod,UNIFIED DB USAGE/,→ contopita in IDEA-043,MERGED,,6,2026-04-18
+IDEA-062,EBRD CONTRACTOR ALERTS,PRODUS,plan,BERD EBRD/,→ contopita in IDEA-101,MERGED,,8,2026-04-18
+IDEA-063,CV LINKEDIN ENRICHMENT API,PRODUS,cod,CV/,"Enrichment date recrutare: CV parsing API (EUR 0.50-2/CV, 100/zi = EUR 50-200/zi) + scraper LinkedIn profile (EUR 0.10/profil, 50K/luna = EUR 5K). Agentii cumpara profile imbogatite candidati + decidenti.",PLANIFICAT,1500-6000/luna,15,2026-04-18
+IDEA-064,DOMAIN MONETIZATION,PRODUS,plan,-,15 domenii job (.eu) cu trafic SEO. Affiliate links (Indeed EUR 0.10-1/click + Booking + Travelpayouts). Zero efort dupa setup,PLANIFICAT,500-3000/luna,4,2026-04-14
+IDEA-065,TELEGRAM PREMIUM CHANNELS,PRODUS,cod,-,→ contopita in IDEA-008,MERGED,,6,2026-04-18
+IDEA-066,ANAF ENRICHMENT SERVICE,PRODUS,cod,-,→ contopita in IDEA-043,MERGED,,8,2026-04-18
+IDEA-067,WHITE LABEL CATALOGS,PRODUS,cod,D:\AUTOMATION\generate_catalog_master.py,→ contopita in IDEA-046,MERGED,,5,2026-04-18
+IDEA-068,NEWSLETTER PROCUREMENT JOBS,PRODUS,cod,-,"Newsletter-uri B2B nisa: EU tenders (EUR 19-49/luna), job alerts (EUR 5/luna), procurement intelligence (EUR 99/luna), digest CPV top sectoare, sponsorizari EUR 50-200 per 1000 emailuri. Publicat via Substack/Mailrelay.",PLANIFICAT,2000-8000/luna,10,2026-04-18
+IDEA-069,EXPAT RELOCATION SERVICES,PRODUS,plan,EXPAT RELOCATION SERVICE PLAN/,"Monetizare relocation expati: retea 1166 furnizori (consultanti fiscali, avocati, contabili) + pachete corporatiste relocation. Comision 10-15% per referral (EUR 50-150) + EUR 500/persoana pachet complet (documente, cazare, asigurare, transport).",PLANIFICAT,1000-5000/luna,10,2026-04-18
+IDEA-070,MADR LAND INVESTOR DATA,PRODUS,plan,MADR/,→ contopita in IDEA-154,MERGED,,14,2026-04-18
+IDEA-071,NEWSLETTER SPONSORSHIP,CAMPANIE,plan,-,→ contopita in IDEA-068,MERGED,,2,2026-04-18
+IDEA-072,CHINA IMPORT BROKER,CAMPANIE,plan,CHINA/,2.5M fabrici chineze + cooperativa RO. Conecteaza producatori chinezi cu importatori RO/UE. Comision 3-5% pe comanda,PLANIFICAT,5000-50000/an,20,2026-04-14
+IDEA-073,RECRUITMENT DATA API,PRODUS,cod,-,→ contopita in IDEA-014,MERGED,,25,2026-04-18
+IDEA-074,COOPERATIVE MEMBERSHIP FEE,PRODUS,plan,COOPERATIVA BUSINESS/,→ contopita in IDEA-011,MERGED,,2,2026-04-18
+IDEA-075,MULTILINGUAL JOB ADS,PRODUS,cod,ARTICLES/,Sistem articole LLM → 11 limbi → 15 domenii. Vinde serviciu traducere anunturi job catre agentii: EUR 10-50/anunt x 11 limbi,PLANIFICAT,1000-5000/luna,5,2026-04-14
+IDEA-076,EMAIL MARKETING AGENCY,SERVICIU,plan,-,Agentie email marketing pt firme RO. Ai infra (6300/zi + 11 Brevo + Mailrelay + Zoho). EUR 300-1000/client/luna. Stii Brevo mai bine ca oricine,PLANIFICAT,3000-10000/luna,10,2026-04-14
+IDEA-077,SEAP BIDDING ASSISTANT,SERVICIU,plan,-,Asistenta licitare SEAP/TED: consultanti ajuta firme sa liciteze folosind DB 5.1M tenders + draft propuneri auto-generate LLM. Monetizare: EUR 200-500/oferta + 5% taxa succes sau EUR 50-200/propunere LLM.,PLANIFICAT,5000-20000/luna,15,2026-04-18
+IDEA-078,WORKER ACCOMMODATION,PRODUS,plan,-,Platforma cazare muncitori langa santiere/fabrici. Conecteaza proprietari cu angajatori care plaseaza muncitori. Comision EUR 50-100/luna/pat,PLANIFICAT,2000-10000/luna,20,2026-04-14
+IDEA-079,DUE DILIGENCE REPORTS,PRODUS,cod,-,→ contopita in IDEA-043,MERGED,,15,2026-04-18
+IDEA-080,SEASONAL AGRI PLACEMENT,CAMPANIE,plan,-,→ contopita in IDEA-011,MERGED,,5,2026-04-18
+IDEA-081,SUBSTACK JOBS NEWSLETTER,PRODUS,plan,-,→ contopita in IDEA-068,MERGED,,4,2026-04-18
+IDEA-082,DATA CLEANING SERVICE,SERVICIU,cod,-,→ contopita in IDEA-043,MERGED,,6,2026-04-18
+IDEA-083,SALARY BENCHMARKING,PRODUS,plan,-,Rapoarte salariale pe sector/tara din datele job de pe 15 domenii + TED + SEAP. Agentii platesc EUR 49-199/raport. Generat automat,PLANIFICAT,1000-5000/luna,12,2026-04-14
+IDEA-084,WHITELABEL CAMPAIGNS,SERVICIU,plan,-,→ contopita in IDEA-004,MERGED,,8,2026-04-18
+IDEA-085,WORKER INSURANCE BROKER,PARTENERIAT,plan,-,Brokeraj asigurari muncitori: plasati au nevoie de acoperire medicala + accidente. Parteneriat ALLIANZ/GROUPAMA. Comision 10-20% din prima. 100+ plasari/luna = EUR 2-5K + sezoniere EUR 50-100/polita.,PLANIFICAT,2000-5000/luna,3,2026-04-18
+IDEA-086,WORKER DOCUMENTATION SERVICE,SERVICIU,plan,-,"Serviciu documentatie relocare muncitori: EUR 100-300/dosar pentru permise, vize, contracte munca, declaratii A1, setup payroll, D-number norvegian, cont bancar, training pre-plecare. 50+ dosare/luna = EUR 5-15K venituri.",PLANIFICAT,5000-15000/luna,25,2026-04-18
+IDEA-087,PRINT TRADE FAIR CATALOGS,PRODUS,cod,-,→ contopita in IDEA-046,MERGED,,5,2026-04-18
+IDEA-088,NODE-RED AUTOMATION SHOP,PRODUS,plan,-,Vinde flow-uri Node-RED pre-construite: email sorter + campaign sender + IMAP monitor + webhook. EUR 20-100/flow. Piata IoT/automation,PLANIFICAT,500-2000/luna,8,2026-04-14
+IDEA-089,WORDPRESS MAINTENANCE,SERVICIU,plan,-,8 WP site-uri proprii = expertiza. Ofera mentenanta WP altor firme RO: update+backup+security+SEO. EUR 50-200/site/luna. 20 clienti = EUR 1000-4000,PLANIFICAT,1000-4000/luna,5,2026-04-14
+IDEA-090,FRANCHISE RECRUITMENT,PRODUS,plan,-,→ contopita in IDEA-004,MERGED,,40,2026-04-18
+IDEA-091,FARMER WHATSAPP BOT,PRODUS,cod,-,Bot WhatsApp pt producatori cooperativa: pret piata azi + meteo + cerere cumparatori + compliance deadlines. LLM local. EUR 5-20/producator/luna,PLANIFICAT,700-2800/luna,15,2026-04-14
+IDEA-092,JOB FAIR PLATFORM,CAMPANIE,cod,D:\MEMORY\JOBFAIRS\,"Platforma job fair virtual + fizic pe 28 domenii. Angajatori platesc EUR 200-500/stand. Tiers: evenimente fizice (Bucuresti/Hunedoara), online reverse job fairs (buildjobs.eu), expansiune internationala (FI/DK/DE/NL, EUR 15-30K/targ).",ACTIV,4000-10000/targ,40,2026-04-18
+IDEA-093,GDPR COMPLIANCE TOOL,PRODUS,cod,-,Audit GDPR automat pt firmele din DB: scaneaza website → raporteaza lipsuri (cookie banner/privacy policy/DPO). EUR 29-99/audit. 770K firme RO = piata mare,PLANIFICAT,2000-8000/luna,15,2026-04-14
+IDEA-094,PAYROLL BRIDGE,SERVICIU,plan,-,→ contopita in IDEA-086,MERGED,,25,2026-04-18
+IDEA-095,ESCROW FARM TRANSACTIONS,PRODUS,plan,-,Plati securizate intre cumparatori si producatori prin cooperativa. Comision 2-3% pe tranzactie. 100 tranzactii x EUR 500 avg = EUR 1000-1500/luna,PLANIFICAT,1000-1500/luna,15,2026-04-14
+IDEA-096,NORWAY AGENCIES JOBFAIR,CAMPANIE,date,norway_companies_314K.csv,→ contopita in IDEA-002,MERGED,,5,2026-04-18
+IDEA-097,NORWAY DIRECT EMPLOYERS,CAMPANIE,date,norway_companies_314K.csv,→ contopita in IDEA-002,MERGED,,5,2026-04-18
+IDEA-098,SELL NO DATA TO RO AGENCIES,PRODUS,plan,norway_companies_314K.csv,→ contopita in IDEA-001,MERGED,,2,2026-04-18
+IDEA-099,REVERSE JOBFAIR ONLINE,PRODUS,cod,D:\MEMORY\JOBFAIRS\,→ contopita in IDEA-092,MERGED,,8,2026-04-18
+IDEA-100,DELECROIX X NORWAY AGRI,PARTENERIAT,plan,norway_companies_314K.csv,→ contopita in IDEA-029,MERGED,,3,2026-04-18
+IDEA-101,EBRD SUBCONTRACT & ALERTS,CAMPANIE,plan,-,"Conectare firme RO cu contractori EBRD (134 companii, 4176 proiecte 42 tari). Model dual: matching subcontractare cu comision 5-15% + alerte abonament EUR 299-999/luna pentru firme care vor sa monitorizeze licitatii EBRD pe sectorul lor.",PLANIFICAT,5000-50000/proiect,10,2026-04-18
+IDEA-102,EXPAT UPSELL NORWAY,SERVICIU,plan,-,→ contopita in IDEA-069,MERGED,,2,2026-04-18
+IDEA-103,EURES PARTNERSHIP NO,PARTENERIAT,plan,-,Devino partener oficial EURES Norvegia. Pozitioneaza InterJob ca recrutor autorizat. Legitimitate + referral-uri gratuite,PLANIFICAT,legitimitate+referrals,5,2026-04-14
+IDEA-104,NORWEGIAN JOBS NEWSLETTER,PRODUS,plan,-,→ contopita in IDEA-068,MERGED,,4,2026-04-18
+IDEA-105,GUMROAD ALL IDEAS BUNDLE,PRODUS,plan,-,Vinde MASTER INVENTORY (aceasta lista) ca 'European Business Intelligence Kit' pe Gumroad. 95 idei documentate + date + scripturi. EUR 499 one-shot,PLANIFICAT,499/vanzare,1,2026-04-14
+IDEA-106,TRASABILITATE FINISH MVP,PRODUS,cod,TRASABILITATE PRODUS ALIMENTAR/,Termina SaaS trasabilitate (60% facut). Zero competitori RO. Pitch 5 producatori din cooperativa. EUR 99-999/luna,PLANIFICAT,99-999/luna/client,40,2026-04-14
+IDEA-107,ASOCIATII CROSS-SELL,CAMPANIE,date,ASOCIATII/ONG_SHORTLIST_5000.csv,Top 5K ONG-uri → email cu servicii existente (contabilitate/IT/staffing/expat). Cross-sell din ce ai deja,PLANIFICAT,variabil,3,2026-04-14
+IDEA-108,FRESKON X PRODUS MONTAN,CAMPANIE,date,FRESKON/freskon_exhibitors.csv,→ contopita in IDEA-005,MERGED,,3,2026-04-18
+IDEA-109,EU FUNDS STAFFING,CAMPANIE,date,-,Campanie 15969 beneficiari fonduri UE → ofera muncitori pt proiecte finantate. Ei au buget alocat. Mailrelay 2666/zi,PLANIFICAT,500-5000/plasare,2,2026-04-14
+IDEA-110,LEO BUZAU CAMPAIGN,CAMPANIE,date,LEO CASA BUZAU/,374 companii cu email din 4 judete → campanie inchiriere 220 mp birou. Simplu outreach,PLANIFICAT,variabil,1,2026-04-14
+IDEA-111,NORWAY WORKER SUPPLY CHAIN,PRODUS,cod,buildjobs.eu/no/,"Servicii complete muncitori Norvegia: CV database de pe buildjobs.eu/no/ (EUR 20-50/CV agentii), sponsorizare job fair (EUR 500-2000), curs norvegiana Gumroad (EUR 19), brokeraj cazare (EUR 100-200/plasare).",PLANIFICAT,2000-10000/luna,10,2026-04-18
+IDEA-112,JOBFAIR SPONSORSHIP,CAMPANIE,plan,-,→ contopita in IDEA-111,MERGED,,3,2026-04-18
+IDEA-113,PRE-DEPARTURE TRAINING,SERVICIU,plan,-,→ contopita in IDEA-086,MERGED,,5,2026-04-18
+IDEA-114,NORWAY PERMIT SERVICE,SERVICIU,plan,-,→ contopita in IDEA-086,MERGED,,5,2026-04-18
+IDEA-115,NORWEGIAN LANGUAGE COURSE,PRODUS,plan,-,→ contopita in IDEA-111,MERGED,,8,2026-04-18
+IDEA-116,NORWAY ACCOMMODATION,SERVICIU,plan,-,→ contopita in IDEA-111,MERGED,,10,2026-04-18
+IDEA-117,MULTI-COUNTRY JOBFAIR,CAMPANIE,plan,-,→ contopita in IDEA-092,MERGED,,40,2026-04-18
+IDEA-118,RECRUITMENT LICENSE BROKER,SERVICIU,plan,-,Pregatire dosar licenta ANOFM pt agentii recrutare. EUR 500-1000/dosar. 20 agentii/an = EUR 10K-20K,PLANIFICAT,10000-20000/an,5,2026-04-14
+IDEA-119,SUPPLIER DEATH ALERTS,PRODUS,cod,-,→ contopita in IDEA-003,MERGED,,8,2026-04-18
+IDEA-120,REVERSE RECRUITMENT,PRODUS,cod,-,Muncitorii platesc EUR 10/luna acces DB angajatori verificati. 15 domenii x 1% conversie = EUR 1500/luna pasiv,PLANIFICAT,1500-5000/luna,10,2026-04-14
+IDEA-121,LINKEDIN SCRAPER SERVICE,SERVICIU,cod,-,→ contopita in IDEA-063,MERGED,,15,2026-04-18
+IDEA-122,SMS CAMPAIGNS,CAMPANIE,cod,-,SMS bulk via Twilio EUR 0.04/sms. Charge EUR 0.15/sms. Open rate 95%. 10K sms/campanie = EUR 1100 profit. Numere telefon in DB,PLANIFICAT,3000-10000/luna,8,2026-04-14
+IDEA-123,WEBSITE BUILDER AGENCIES,SERVICIU,cod,-,Clone site-uri .eu pt agentii recrutare. EUR 500 setup + EUR 50/luna hosting A2. 20 agentii = EUR 10K + EUR 1K/luna recurent,PLANIFICAT,1000-2000/luna+setup,10,2026-04-14
+IDEA-124,PROCUREMENT INTELLIGENCE,PRODUS,cod,-,→ contopita in IDEA-068,MERGED,,10,2026-04-18
+IDEA-125,DEBT COLLECTION LEADS,PRODUS,plan,-,222K insolvente = debitori verificati. Agentii colectare platesc EUR 1-5/lead. 1000 leads/luna = EUR 1K-5K,PLANIFICAT,1000-5000/luna,3,2026-04-14
+IDEA-126,SEASONAL WORKER INSURANCE,PARTENERIAT,plan,-,→ contopita in IDEA-085,MERGED,,3,2026-04-18
+IDEA-127,COUNTY ECONOMIC REPORTS,PRODUS,cod,-,→ contopita in IDEA-043,MERGED,,12,2026-04-18
+IDEA-128,COMPETITOR MONITORING SAAS,PRODUS,cod,-,"Monitorizare concurenta SaaS: client da lista CUI → sistem urmareste contracte SEAP, schimbari ANAF, risc insolventa, pattern angajari. EUR 99/luna. Date deja in DB.",PLANIFICAT,2000-8000/luna,10,2026-04-18
+IDEA-129,TRAINING PROVIDER MARKETPLACE,PRODUS,plan,-,Muncitori au nevoie certificari (sudura/schele/stivuitor). Centru training au nevoie cursanti. Comision EUR 50-100/inscriere. 100/luna = EUR 5K-10K,PLANIFICAT,5000-10000/luna,15,2026-04-14
+IDEA-130,EMBASSY PARTNERSHIPS,PARTENERIAT,plan,-,Ambasade RO in NO/FI/DK/DE primesc zilnic intrebari 'unde gasesc muncitori'. Devino referral oficial. Gratis pt ei. 20 ambasade = 20 canale,PLANIFICAT,referrals gratuite,5,2026-04-14
+IDEA-131,CORPORATE RELOCATION PACKAGE,SERVICIU,plan,-,→ contopita in IDEA-069,MERGED,,10,2026-04-18
+IDEA-132,INSOLVENCY REAL ESTATE LEADS,PRODUS,cod,-,→ contopita in IDEA-036,MERGED,,8,2026-04-18
+IDEA-133,API MARKETPLACE BUNDLE,PRODUS,cod,-,→ contopita in IDEA-014,MERGED,,20,2026-04-18
+IDEA-134,FRANCHISE TERRITORY RIGHTS,PRODUS,plan,-,Vinde drepturi exclusive pe teritoriu: singurul agent InterJob in [judet/tara]. EUR 2000-5000/an/teritoriu. 10 teritorii = EUR 20K-50K,PLANIFICAT,20000-50000/an,5,2026-04-14
+IDEA-135,AUTOMATED PROPOSAL WRITER,PRODUS,cod,-,→ contopita in IDEA-077,MERGED,,15,2026-04-18
+IDEA-136,AMAZON KDP PRINT CATALOGS,PRODUS,cod,-,→ contopita in IDEA-046,MERGED,,15,2026-04-18
+IDEA-137,BOOK PUBLISHER SKILL,PRODUS,cod,-,→ contopita in IDEA-046,MERGED,,20,2026-04-18
+IDEA-138,BLACK CARD BOOKS 40 STEPS,CERCETARE,plan,-,Gaseste programul 40 pasi Gerry Robert (Black Card Books) pt publicare carti. Aplica la cataloagele noastre: positioning+pricing+marketing+distribution. Transforma datele in autoritate de nisa,CERCETARE,multiplicator vanzari,5,2026-04-15
+IDEA-139,DATACENTER HEAT RECOVERY,INFRASTRUCTURA,plan,DATACENTERS/,Punct termic Titan S3 → 20-rack datacenter → waste heat → residential blocks. First in CEE. CapEx €247K (€99K cu EU funding). Anchor: Digi edge nodes. Tech partner: Cloud&Heat DE. EU funding: ELENA+Fondul Modernizare+REPowerEU. Start broker then invest.,PLANIFICAT,64000/an profit,40,2026-04-15
+IDEA-140,TUDOR PRINTING HOUSE,PRODUS,cod,D:\MEMORY\PRINTING\CLAUDE.md,"Print-on-demand SaaS: customers upload PDF + cover → we submit to Lulu API → auto-prints+ships. 46% margin (customer pays EUR 15, Lulu costs EUR 8, we keep EUR 7). White-label storefront + author dashboard + ISBN integration",PLANIFICAT,7000-21000/luna,40,2026-04-16
+IDEA-141,WORKFORCE EXCHANGE,PRODUS,cod,/opt/ACTIVE/WORKFORCE/,ANOFM + TED + master_emails angajatori primesc pitch cu 3 sample workers din master_applicants.db (758). Platesc 299 EUR/angajare reusita. Cron 09:00 zilnic 100 emailuri. Sender: office@careworkers.eu,ARHIVAT,28000+/luna,60,2026-04-16
+IDEA-142,PRIMARII CAMPAIGN BOGDAN,CAMPANIE,cod,BUSINESS/BOGDAN GAVRA/,3030 primarii RO cu email+telefon+partid. Brevo 50/day A/B 3 subiecte. Echipamente loc de joaca AVP Park. Comision Bogdan per vanzare 150-400 EUR/unitate.,PLANIFICAT,3000-15000/luna,4,2026-04-18
+IDEA-143,SICAP PROCUREMENT MONITOR,PRODUS,cod,BUSINESS/BOGDAN GAVRA/,Scrape e-licitatie.ro CPV 37535200 saptamanal. Alert Bogdan cand apare licitatie noua echipamente loc de joaca. First mover advantage.,PLANIFICAT,indirect,8,2026-04-18
+IDEA-144,HEATMAP AUTO-LAUNCH,AUTOMATIZARE,cod,EMAIL PERSONAL/CODE/step46,Dupa heatmap (step46): auto-genereaza CSV campanie pentru top 3 sector x country si trimite la raspibig pt trimitere imediata. Zero pasi manuali.,PLANIFICAT,accelerator campanii,3,2026-04-18
+IDEA-145,INSOLVENCY DISTRESSED ALERTS GUMROAD,PRODUS,plan,INSOLVENTA/,→ contopita in IDEA-001,MERGED,,8,2026-04-18
+IDEA-146,COOP MEMBER REGISTRY DIGITAL,PRODUS,cod,BUSINESS/COOP/,"SQLite/Postgres + FastAPI + HTML: registru membri cooperativa. Add member, track documente semnate, export PDF adeziune pre-completat cu date ANAF.",PLANIFICAT,intern/tool,12,2026-04-18
+IDEA-147,COOP BUYER OUTREACH HORECA,CAMPANIE,date,BUSINESS/COOP/,→ contopita in IDEA-011,MERGED,,6,2026-04-18
+IDEA-148,TED WINNERS CSV GUMROAD,PRODUS,plan,IDEAS/GUMROAD/,→ contopita in IDEA-001,MERGED,,4,2026-04-18
+IDEA-149,EU PROCUREMENT NEWSLETTER,PRODUS,plan,IDEAS/,→ contopita in IDEA-068,MERGED,,10,2026-04-18
+IDEA-150,CIFN ENGLISH API TIER,PRODUS,cod,CIFN.EU/,Wrap CIFN API cu documentatie engleza + Stripe payment. 49-99 EUR/luna. Termene.ro n-are concurent in engleza. Moat imediat.,PLANIFICAT,2000-8000/luna,16,2026-04-18
+IDEA-151,COUNTY PRIORITIZATION BOGDAN,ANALIZA,sql,BUSINESS/BOGDAN GAVRA/,Cross-ref primarii cu contracte SICAP trecute: care judete au cumparat echipamente joaca? PSD majority = mai probabil aprobare infrastructura. Coloana partid deja existenta.,PLANIFICAT,optimizare campanie,2,2026-04-18
+IDEA-152,CATALOG PDF AUTO-GENERATOR BOGDAN,PRODUS,cod,BUSINESS/BOGDAN GAVRA/,→ contopita in IDEA-046,MERGED,,8,2026-04-18
+IDEA-153,APIA INTEGRATION COOP,AUTOMATIZARE,cod,BUSINESS/COOP/,Validare CUI membri cooperativa vs ANAF API. Pre-fill formulare adeziune cu date registru public. Economiseste 30 min per membru nou.,PLANIFICAT,intern/eficienta,6,2026-04-18
+IDEA-154,FARM DISTRESSED SALES PLATFORM,PRODUS,cod,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,Platforma RE agricola pentru investitori: alerte saptamanale ferme vandute fortat (insolventa + licitatii silite BPI) + 9658+ listari teren MADR x 36 judete + catalog PDF 50+ ferme + broker achizitie investitori NO/FI/NL (comision 2-3%). Tiers: EUR 29-299/luna date + EUR 2-3% broker.,PLANIFICAT,500-3000/luna,21,2026-04-18
+IDEA-155,AGRI LAND MARKETPLACE,PRODUS,cod,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,→ contopita in IDEA-070,MERGED,,14,2026-04-18
+IDEA-156,FOREIGN INVESTOR FARM ACQUISITION,SERVICIU,plan,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,→ contopita in IDEA-154,MERGED,,21,2026-04-18
+IDEA-157,AGRI BUSINESS DISTRESS MONITOR,PRODUS,cod,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,SaaS B2B: banci+PE+cooperative platesc early warning ferme in dificultate. Surse: ANAF bilant + insolventa DB + APIA subsidii. EUR 299-999/luna/client.,PLANIFICAT,3000-10000/luna,21,2026-04-18
+IDEA-158,MADR LAND AUCTION SCRAPER,AUTOMATIZARE,cod,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,Scrape madr.ro licitatii terenuri stat saptamanal → Telegram alert → cumparatori interesati. Date MADR VANZARE TEREN deja in D:\DATA\. Free list + EUR 49/luna tier premium.,PLANIFICAT,500-2000/luna,3,2026-04-18
+IDEA-159,FARM INVESTOR PDF CATALOG GUMROAD,PRODUS,plan,BUSINESS/IDEAS/REAL ESTATE WITH FARMS AND AGRI/,→ contopita in IDEA-154,MERGED,,2,2026-04-18
+IDEA-160,SEAP BIDDING ASSISTANT LIVE,PRODUS,cod,BUSINESS/IDEAS/SEAP_BIDDING_ASSISTANT/,"Scraper SEAP Romania (e-licitatie.ro) + writer propuneri licitatii bazat pe 6.2M contracte TED + date SEAP. CLI: bid_writer.py --cpv --title --buyer --value → propunere romana cu preturi realiste. API FastAPI port 5077. EUR 200-500/propunere + 5% success fee.",ACTIV,5000-20000/luna,15,2026-04-18
+IDEA-161,NEPALEZI DOFE PARTNER,SERVICIU,plan,BUSINESS/IDEAS/NEPALEZI/,"Parteneriat oficial DoFE Nepal pentru plasare muncitori nepalezi in Romania. Canal legal exclusiv: angajator/agent roman aprobat DoFE = flux constant muncitori. Servicii: reality check salariu (date DB), verificare angajator, curs romana basic Gumroad, coordonare documente. 20K nepalezi deja in RO, creste rapid.",PLANIFICAT,variabil/plasare,20,2026-04-18

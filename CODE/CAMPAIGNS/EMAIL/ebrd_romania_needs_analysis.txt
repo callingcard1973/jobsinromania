@@ -1,0 +1,288 @@
+EBRD ROMANIA — ANALIZĂ PROIECTE ACTIVE (non-Complete, non-Repaying)
+Extras: 9 Aprilie 2026 | 68 proiecte | ~EUR 2.8 miliarde
+============================================================
+
+═══════════════════════════════════════════════════
+ENERGIE — 16 proiecte (~EUR 900M+)
+═══════════════════════════════════════════════════
+
+Tipul: Ferme eoliene, solare, BESS (baterii), centrală nucleară, distribuție electrică
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Sudori autorizați (conducte, structuri metalice)
+- Electricieni industriali (cablare, conectare la rețea)
+- Montatori panouri solare (Giurgiu, Brăila, Dolj, Buzău — ferme mari 60-460 MW)
+- Montatori turbine eoliene (Buzău — Vifor Wind 461 MW, Brăila — Urleasca 102 MW)
+- Muncitori construcții civile (fundații turbine, drumuri de acces)
+- Operatori utilaje grele (macarale, excavatoare)
+- Tehnicieni BESS (Scornicești, Olt — 127 MW/254 MWh baterii)
+- Personal securitate șantier
+
+MATERIALE / PRODUSE:
+- Cabluri electrice MT/JT (sute de km per fermă solară)
+- Structuri metalice galvanizate (suporți panouri)
+- Transformatoare MT/IT
+- Beton armat pentru fundații turbine eoliene (câte 500-1000 m³/turbină)
+- Garduri, împrejmuiri, drumuri pietruit
+- Containere modulare (birouri șantier, vestiare)
+
+PROIECTE SPECIFICE:
+#56557 Scornicești BESS — 127MW baterii, Olt County, rpower.energy
+  → Nevoie: electricieni industriali, montatori, sudori
+#52683 Vifor Wind — 461MW eolian Buzău, Rezolv Energy
+  → Nevoie: fundații beton, montaj turbine, electricieni, drumuri acces
+#54195 Urleasca Wind — 102MW eolian Brăila
+  → Nevoie: similar Vifor dar mai mic
+#56096 Muntenia Solar — 3 ferme solare (Corbii Mari + Iepurești + Slobozia)
+  → Nevoie: montatori panouri, structuri metalice, cablare
+#56363 Dobrun-Sadova Solar — 189.7 MWp, Dolj County, Scatec
+  → Nevoie: mare, 2 locații, montaj + construcții civile
+#56285 INVL Dobrun — EUR 36M bridge loan, construcție fermă solară
+  → Nevoie: finanțare aprobată, construcție iminentă
+#54943 Danube Solar Five — 60MW solar, România
+  → Nevoie: construcție activă (bridge loan = deja în execuție)
+#54160 Delgaz Grid — RON 400M modernizare rețea distribuție Nord România
+  → Nevoie: electricieni, montatori stâlpi, echipe de linii
+#51570 Cernavoda Tritiu — EUR 150M, facilitate nucleară
+  → Nevoie: foarte specializat, sudori nucleari, personal calificat extrem
+#53854 Premier Energy — capital de lucru, mai puțin construcție
+#44317 ICCO/RAJA — energie regenerabilă pt utilități apă
+  → Nevoie: instalatori, electricieni
+
+═══════════════════════════════════════════════════
+INFRASTRUCTURĂ MUNICIPALĂ — 21 proiecte (~EUR 700M+)
+═══════════════════════════════════════════════════
+
+Tipul: Apă/canalizare, termoficare, reabilitare clădiri publice, transport urban
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Instalatori apă/canal (sudură PE-HD, montaj conducte)
+- Muncitori construcții civile (săpături, cofraje, turnare beton)
+- Operatori utilaje (excavatoare, buldozere, autobasculante)
+- Electricieni (stații pompare, iluminat public)
+- Zugravi, tinichigii, izolatori (reabilitare clădiri)
+- Montatori tâmplărie PVC/aluminiu
+- Asfaltatori, pavatori
+- Sudori (conducte termoficare)
+- Șoferi autospeciale (autogunoiere, vidanje)
+
+MATERIALE / PRODUSE:
+- Țevi PE-HD (apă), PVC (canalizare) — sute de km per proiect
+- Stații de pompare complete
+- Stații de epurare / componente (filtre, aeratoare, sedimentatoare)
+- Vane, robinete, hidranți
+- Beton (fundații, camerele de vizitare)
+- Asfalt (refacere drumuri după săpături)
+- Izolații termice (polistiren, vată minerală — reabilitare clădiri)
+- Tâmplărie termoizolantă
+- Cazane termice, pompe de căldură
+- Echipamente SCADA (automatizare rețele)
+
+PROIECTE SPECIFICE:
+#49600 SWIFT Constanța — EUR 45M, RAJA, apă/canalizare
+  → Nevoie: instalatori, săpători, conducte PE-HD, stații pompare
+#56261 SWIFT Hunedoara — EUR 14M, Apa Prod SA
+  → Nevoie: similar, scară mai mică
+#52511 SWIFT Bacău — EUR 22M, CRAB
+  → Nevoie: conducte, stații epurare, muncitori construcții
+#53047 SWIFT Brăila — EUR 14.2M, CUP Dunărea
+#53405 SWIFT Dâmbovița — EUR 18M, CATD Târgoviște
+#54536 SWIFT Olt — EUR 14.5M, CAO
+#53923 Aquatim Timiș — EUR 14.4M
+  → Toate au nevoie de: instalatori apă/canal, operatori utilaje, muncitori necalificați
+  → FURNIZORI: țevi PE-HD, stații pompare, echipamente epurare
+
+#56078 Timișoara DH & Urban — EUR 30M, termoficare + regenerare urbană
+  → Nevoie: sudori (conducte termoficare), izolatori, constructori
+#56281 Brașov Energy Efficiency — EUR 30M, reabilitare clădiri publice
+  → Nevoie: izolatori, zugravi, montatori tâmplărie, instalatori HVAC
+#51703 Iași Green Buildings — EUR 50M, 15 clădiri publice + depou autobuze/tramvaie
+  → Nevoie: construcții civile, izolații, electricieni, instalatori
+#50083 Craiova Urban — EUR 24.2M, 14 clădiri publice + modernizare iluminat
+  → Nevoie: similare Brașov/Iași
+#53901 Alba-Iulia Transport — EUR 15M, reabilitare rețea transport
+  → Nevoie: asfaltare, construcții civile, semnalistică
+#47857 Cluj Transport — EUR 20M, transport public urban
+  → Nevoie: construcții civile, electricieni, montatori
+#43019 Buzău Drumuri — management drumuri urbane
+  → Nevoie: asfaltatori, operatori utilaje, muncitori drumari
+
+═══════════════════════════════════════════════════
+IMOBILIARE / REAL ESTATE — 4 proiecte (~EUR 650M)
+═══════════════════════════════════════════════════
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Fierari betonieri (structuri)
+- Dulgheri cofraje
+- Zugravi, finisori
+- Instalatori sanitare + HVAC
+- Electricieni
+- Montatori fațade ventilate
+- Operatori macarale turn
+
+MATERIALE:
+- Oțel beton, cofraj
+- Beton (cantități masive — depozite logistice de 55,000 m²)
+- Panouri sandwich (hale industriale)
+- Sisteme frigorifice industriale (NewCold — depozit frigorific)
+- Echipamente automatizare depozite
+
+PROIECTE SPECIFICE:
+#56090 NewCold România — RON 347M, depozit frigorific mare (cold storage)
+  → Nevoie: construcție hală, sisteme frigorifice industriale, automatizare
+  → FURNIZORI: echipamente frig, panouri izolate, rafturi industriale
+#54956 Rivus Investments — EUR 132.8M, regenerare urbană mixed-use
+  → Nevoie: construcție pe scară mare, toate meseriile
+#51380 + #53211 WDP — EUR 300M (2 tranșe), hale logistice în România
+  → Nevoie: hale industriale, platfome beton, panouri sandwich
+  → FURNIZORI: structuri metalice, panouri sandwich, echipamente logistice
+
+═══════════════════════════════════════════════════
+FOOD & AGRIBUSINESS — 5 proiecte (~EUR 120M)
+═══════════════════════════════════════════════════
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Muncitori producție alimentară (Lantmännen — brutărie nouă)
+- Operatori linii producție
+- Tehnologi alimentari
+- Muncitori construcții (pentru noua fabrică)
+- Personal depozit / logistică
+- Muncitori procesare carne (Cris-Tim)
+
+MATERIALE:
+- Echipamente brutărie industrială (cuptoare, linii ambalare)
+- Echipamente procesare carne
+- Echipamente vending/distribuție automată (New Europe Vending)
+- Echipamente frigorifice
+- Ambalaje alimentare
+
+PROIECTE SPECIFICE:
+#54683 Lantmännen — EUR 90M, BRUTĂRIE NOUĂ în România
+  → Nevoie MAJORĂ: construcție fabrică + recrutare personal producție
+  → FURNIZORI: echipamente panificație industrială, linii ambalare
+  → Cel mai mare proiect food — brutărie de la zero
+#56818 Cris-Tim — IPO, procesare carne
+  → Nevoie: muncitori procesare carne (DEJA AVEM CONTACT: razvan.furtuna@cristim.ro)
+  → Cris-Tim e cel mai mare procesator de carne din România
+#52088 Agricover — capital de lucru, mai puțin construcție
+#52587 Aquila — logistică/distribuție alimentară
+
+═══════════════════════════════════════════════════
+MANUFACTURING & SERVICES — 6 proiecte (~EUR 70M+)
+═══════════════════════════════════════════════════
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Operatori CNC, muncitori calificați aeronautic (Universal Alloy, Sonaca)
+- Muncitori construcții (depozit Altex 55,000 m²)
+- Personal IT (Tremend, AROBS)
+- Șoferi / operatori fleet (Autonom)
+
+PROIECTE SPECIFICE:
+#47447 Sonaca Aerospace — EUR 8M, fabrică nouă componente aviație
+  → Nevoie: muncitori calificați producție (composit, metal), construcție greenfield
+#41645 Universal Alloy Corporation — aeronautic
+  → Nevoie: operatori CNC, muncitori calificați
+#53363 Altex — EUR 26.25M, depozit 55,000 m² lângă București
+  → Nevoie: construcție hală, echipamente logistice, personal depozit
+
+═══════════════════════════════════════════════════
+TRANSPORT — 3 proiecte (~EUR 390M)
+═══════════════════════════════════════════════════
+
+CE AU NEVOIE:
+
+MUNCITORI:
+- Muncitori drumari (CNAIR — RON 300M reabilitare drumuri naționale)
+- Asfaltatori, operatori utilaje
+- Electricieni industriali (electrificare port Constanța — DP World)
+- Personal sortare/procesare corespondență (Poșta Română)
+
+MATERIALE:
+- Asfalt, pietriș, agregate
+- Echipamente electrificare portuară
+- Echipamente sortare automată (Poșta Română)
+
+PROIECTE SPECIFICE:
+#52472 CNAIR — RON 300M, reabilitare drumuri naționale
+  → Nevoie: MARE — echipe de drumari pe tot teritoriul României
+  → FURNIZORI: stații asfalt, agregate, emulsie bituminoasă
+#54712 DP World Constanța — EUR 25M, electrificare port
+  → Nevoie: electricieni industriali, montatori, sudori
+#48321 Poșta Română — EUR 46.1M, modernizare + extindere coletărie
+  → Nevoie: construcție centre sortare, muncitori, IT, echipamente
+
+═══════════════════════════════════════════════════
+FINANCIAL INSTITUTIONS — 17 proiecte (~EUR 1.2 miliarde)
+═══════════════════════════════════════════════════
+
+NU AU NEVOIE DIRECTĂ de muncitori sau materiale.
+Sunt investiții în obligațiuni, împrumuturi bancare, securitizări.
+Banii ajung la IMM-uri prin intermediul băncilor → efect indirect.
+
+EXCEPȚIE:
+#56227 Libra Internet Bank — EUR 40M garanție portofoliu
+  → Banii merg la IMM-uri — nu e nevoie directă
+#48626 Horizon Innovation — EUR 50M, împrumuturi pt IMM-uri inovative
+  → Similar, efect indirect
+
+═══════════════════════════════════════════════════
+
+REZUMAT — CE POȚI VINDE DIRECT
+
+TOP 10 PROIECTE CU CEL MAI MARE POTENȚIAL DE VÂNZARE:
+
+1. #52683 Vifor Wind 461MW Buzău — CEL MAI MARE proiect eolian
+   Contact: djackson@rezolv.energy
+   Vinde: muncitori construcții + montaj turbine + electricieni
+
+2. #54956 Rivus Urban Regeneration — EUR 132.8M
+   Contact: raluca.munteanu@iuliusmall.com
+   Vinde: toate meseriile construcții + materiale
+
+3. #56090 NewCold Romania — RON 347M depozit frigorific
+   Contact: jan.vanleeuwen@newcold.com
+   Vinde: construcție hală + echipamente frig + personal operare
+
+4. #54683 Lantmännen Brutărie — EUR 90M fabrică nouă
+   Contact: nu avem email direct
+   Vinde: construcție fabrică + personal producție brutărie
+
+5. #56078 Timișoara DH + Urban — EUR 30M
+   Contact: primariatm@primariatm.ro
+   Vinde: sudori termoficare + constructori + izolatori
+
+6. #56281 Brașov Energy Efficiency — EUR 30M
+   Contact: Mihaela.GAL@brasovcity.ro
+   Vinde: izolatori + zugravi + montatori tâmplărie
+
+7. #51703 Iași Green Buildings — EUR 50M, 15 clădiri
+   Contact: nu avem (primăria Iași)
+   Vinde: construcții civile + izolații + electricieni
+
+8. #52472 CNAIR Drumuri — RON 300M pe tot teritoriul
+   Contact: nu avem
+   Vinde: echipe drumari + operatori utilaje (MASIV)
+
+9. #56818 Cris-Tim — procesare carne
+   Contact: razvan.furtuna@cristim.ro
+   Vinde: muncitori procesare carne (Nepal, Bangladesh)
+
+10. #56363 Dobrun-Sadova Solar 189.7 MWp — Scatec
+    Contact: nazar.mashtaler@scatec.com
+    Vinde: montatori panouri + electricieni + construcții civile
+
+TOTAL ESTIMAT VALOARE CONTRACTE RECRUTARE:
+- Dacă plasezi 50 muncitori pe 3 proiecte mari: ~EUR 15,000-30,000/lună comision
+- Dacă vinzi + intermediezi materiale: +10-20% marjă
+
+NEXT STEP: Identifică contractorii prin SEAP/TED pentru top 10 proiecte

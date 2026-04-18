@@ -1,0 +1,30 @@
+{
+  "title": "EU Funding - Open Procurement",
+  "supabase_url": "https://srgfzelqcehzidkzkjyx.supabase.co",
+  "supabase_anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyZ2Z6ZWxxY2Voemlka3pranl4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NTU1MjAsImV4cCI6MjA5MDIzMTUyMH0.ybQVkWw_UFDgqLqCGsOnTvt5weq0ps3N1sZmRSAb2gE",
+  "views": [
+    {
+      "name": "Open Anunturi",
+      "table": "anunturi",
+      "columns": ["titlu_achizitie", "beneficiar", "judet", "buget", "data_limita", "email", "telefon"],
+      "filter": "data_limita=gte.01.04.2026",
+      "sort": "data_limita.desc",
+      "limit": 200
+    },
+    {
+      "name": "Projects",
+      "table": "proiecte_eu",
+      "columns": ["titlu_proiect", "beneficiar", "program_operational", "axa", "judet", "email", "telefon", "data_contract"],
+      "sort": "data_contract.desc",
+      "limit": 200
+    },
+    {
+      "name": "Winners",
+      "table": "anunturi",
+      "columns": ["titlu_achizitie", "contractors", "beneficiar", "judet", "buget"],
+      "filter": "contractors=neq.",
+      "sort": "id.desc",
+      "limit": 200
+    }
+  ]
+}

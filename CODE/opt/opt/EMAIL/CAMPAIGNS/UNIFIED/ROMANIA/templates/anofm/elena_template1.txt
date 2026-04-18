@@ -1,0 +1,23 @@
+Subject: {job_title} -- {company_name}
+
+Buna ziua{contact_greeting}
+
+{sender_tagline}.
+
+{company_name} cauta {job_title}{city_text} -- avem persoane disponibile rapid din Romania, Moldova, Nepal, Pakistan.
+
+0 comisioane, garantie inlocuire.
+
+Raspundeti cu numarul de persoane si perioada.
+
+Elena Vasilescu
+{sender_brand}
+elena.manpower.dristor@gmail.com
+WhatsApp: +33 7 51 17 13 56
+{sender_url}
+
+
+Daca doriti sa vedeti profiluri inainte de a decide, putem trimite un catalog mostra - specializat pe sectorul dvs sau general cu toate domeniile.
+Raspundeti la {catalog_email} pentru catalog.
+
+{gdpr_footer_ro}

@@ -1,0 +1,221 @@
+{
+  "lithium": {
+    "name": "Lithium",
+    "description": "Battery-grade lithium carbonate and hydroxide",
+    "suppliers": [
+      {
+        "company": "Livent Corporation",
+        "country": "Argentina",
+        "region": "Salta",
+        "products": ["Lithium carbonate", "Lithium hydroxide"],
+        "capacity": "25,000 t/yr",
+        "certifications": ["ISO 14001", "IATF 16949"],
+        "website": "livent.com",
+        "status": "verified"
+      },
+      {
+        "company": "Allkem Limited (Olaroz)",
+        "country": "Argentina",
+        "region": "Jujuy",
+        "products": ["Lithium carbonate", "Battery grade"],
+        "capacity": "42,500 t/yr",
+        "certifications": ["ISO 9001"],
+        "website": "allkem.com",
+        "status": "verified"
+      },
+      {
+        "company": "Arcadium Lithium",
+        "country": "Argentina",
+        "region": "Multiple",
+        "products": ["Lithium hydroxide", "Lithium carbonate"],
+        "capacity": "75,000 t/yr (combined)",
+        "certifications": ["ISO 14001", "Responsible Lithium"],
+        "website": "arcadiumlithium.com",
+        "status": "verified"
+      },
+      {
+        "company": "Sigma Lithium",
+        "country": "Brazil",
+        "region": "Minas Gerais",
+        "products": ["Spodumene concentrate", "Green lithium"],
+        "capacity": "104,000 t/yr",
+        "certifications": ["Carbon neutral"],
+        "website": "sigmalithium.com",
+        "status": "verified"
+      },
+      {
+        "company": "CBL - Companhia Brasileira de Litio",
+        "country": "Brazil",
+        "region": "Minas Gerais",
+        "products": ["Lithium carbonate", "Technical grade"],
+        "capacity": "6,000 t/yr",
+        "certifications": ["ISO 9001"],
+        "website": "cbl.com.br",
+        "status": "verified"
+      },
+      {
+        "company": "AMG Lithium",
+        "country": "Brazil",
+        "region": "Minas Gerais",
+        "products": ["Spodumene", "Lithium concentrate"],
+        "capacity": "90,000 t/yr",
+        "certifications": ["ISO 14001"],
+        "website": "amg-nv.com",
+        "status": "verified"
+      }
+    ]
+  },
+  "niobium": {
+    "name": "Niobium",
+    "description": "Ferroniobium, niobium oxide, high-purity niobium",
+    "suppliers": [
+      {
+        "company": "CBMM - Companhia Brasileira de Metalurgia e Mineracao",
+        "country": "Brazil",
+        "region": "Araxa, MG",
+        "products": ["Ferroniobium", "Niobium oxide", "High-purity niobium"],
+        "capacity": "100,000 t/yr",
+        "certifications": ["ISO 9001", "ISO 14001", "IATF 16949"],
+        "website": "cbmm.com",
+        "status": "verified",
+        "notes": "World's largest - 80% global supply"
+      },
+      {
+        "company": "CMOC Brasil / Niobras",
+        "country": "Brazil",
+        "region": "Catalao, GO",
+        "products": ["Ferroniobium"],
+        "capacity": "9,500 t/yr",
+        "certifications": ["ISO 9001", "ISO 14001"],
+        "website": "cmocgroup.com",
+        "status": "verified",
+        "notes": "Second largest producer"
+      },
+      {
+        "company": "Mineracao Taboca / Minsur",
+        "country": "Brazil",
+        "region": "Amazonas",
+        "products": ["Ferroniobium", "Tantalum"],
+        "capacity": "2,000 t/yr",
+        "certifications": ["ISO 14001"],
+        "website": "minsur.com",
+        "status": "verified"
+      }
+    ]
+  },
+  "beef": {
+    "name": "Beef",
+    "description": "Fresh, chilled, and frozen beef - EU approved plants",
+    "suppliers": [
+      {
+        "company": "JBS S.A.",
+        "country": "Brazil",
+        "region": "Multiple plants",
+        "products": ["Fresh beef", "Frozen beef", "Processed meat"],
+        "capacity": "World's largest",
+        "certifications": ["EU SIF approved", "HACCP", "SISBOV"],
+        "website": "jbs.com.br",
+        "status": "verified",
+        "notes": "37 EU-approved plants in Brazil"
+      },
+      {
+        "company": "Minerva Foods",
+        "country": "Brazil",
+        "region": "Multiple",
+        "products": ["Fresh beef", "Chilled", "Frozen"],
+        "capacity": "Major exporter",
+        "certifications": ["EU SIF", "Halal", "Organic available"],
+        "website": "minervafoods.com",
+        "status": "verified",
+        "notes": "Record EUR 162M profit 2025"
+      },
+      {
+        "company": "Marfrig Global Foods",
+        "country": "Brazil",
+        "region": "Multiple",
+        "products": ["Premium beef", "National Beef brand"],
+        "capacity": "Major exporter",
+        "certifications": ["EU SIF", "HACCP"],
+        "website": "marfrig.com.br",
+        "status": "verified"
+      },
+      {
+        "company": "Frigorifico Gorina",
+        "country": "Argentina",
+        "region": "Buenos Aires",
+        "products": ["Hilton quota beef", "Premium cuts"],
+        "capacity": "Premium exporter",
+        "certifications": ["EU SENASA", "Hilton"],
+        "website": "gorina.com.ar",
+        "status": "verified"
+      },
+      {
+        "company": "INAC Members",
+        "country": "Uruguay",
+        "region": "National",
+        "products": ["Premium beef", "Natural grass-fed"],
+        "capacity": "40+ plants",
+        "certifications": ["EU MGAP", "Natural certified"],
+        "website": "inac.uy",
+        "status": "verified",
+        "notes": "Uruguay = 100% traceable"
+      }
+    ]
+  },
+  "honey": {
+    "name": "Honey",
+    "description": "Natural honey, organic certified, multifloral and monofloral",
+    "suppliers": [
+      {
+        "company": "NEXCO (Coop Apicola)",
+        "country": "Argentina",
+        "region": "Buenos Aires",
+        "products": ["Organic honey", "Multifloral", "Bulk"],
+        "capacity": "15,000 t/yr",
+        "certifications": ["EU Organic", "Fair Trade"],
+        "website": "nexco.com.ar",
+        "status": "verified"
+      },
+      {
+        "company": "Mieles del Sur",
+        "country": "Argentina",
+        "region": "Patagonia",
+        "products": ["Premium honey", "Monofloral"],
+        "capacity": "5,000 t/yr",
+        "certifications": ["Organic", "Kosher"],
+        "website": "mielesdelsur.com.ar",
+        "status": "verified"
+      },
+      {
+        "company": "Cooperativa COSAR",
+        "country": "Argentina",
+        "region": "Chaco",
+        "products": ["Wild honey", "Organic"],
+        "capacity": "3,000 t/yr",
+        "certifications": ["EU Organic"],
+        "website": "",
+        "status": "verified"
+      },
+      {
+        "company": "Urucoop",
+        "country": "Uruguay",
+        "region": "National",
+        "products": ["Organic honey", "Premium"],
+        "capacity": "2,000 t/yr",
+        "certifications": ["EU Organic", "MGAP"],
+        "website": "urucoop.com.uy",
+        "status": "verified"
+      },
+      {
+        "company": "CONAP Brazil",
+        "country": "Brazil",
+        "region": "Rio Grande do Sul",
+        "products": ["Eucalyptus honey", "Organic"],
+        "capacity": "8,000 t/yr",
+        "certifications": ["Organic Brazil", "EU compatible"],
+        "website": "conap.coop.br",
+        "status": "verified"
+      }
+    ]
+  }
+}

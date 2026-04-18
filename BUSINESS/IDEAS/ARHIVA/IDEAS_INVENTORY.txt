@@ -1,0 +1,720 @@
+IDEAS INVENTORY — All Machines (2026-03-08)
+=============================================
+
+Full inventory of laptop (D:\MEMORY), raspibig (192.168.100.21), and raspi (192.168.100.20).
+All business ideas, projects, and concepts with implementation proposals.
+
+🚀 **BREAKING: SUPERMARKETS PROJECT READY FOR IMMEDIATE LAUNCH**
+Generate $299-897 within 24 hours using the comprehensive Romanian food database package.
+All deliverables complete - see A5 below or execute LAUNCH_PLAN.md step-by-step.
+
+
+=============================================================================
+A. REVENUE-GENERATING IDEAS (Not Yet Monetized)
+=============================================================================
+
+A1. Construction Data Monetization
+  Source: CLAUDE/CONSTRUCTION_DATA_MONETIZATION_STRATEGY.md, ROMANIAN_CKAN_MONETIZATION_PLAN.md
+  Asset: 117,557 Romanian construction companies (CKAN dataset)
+  Revenue: Lead gen (EUR 7.5K-15K/week), subscriptions (EUR 10K/mo), reports (EUR 2.5-25K each)
+  Status: DOCUMENTED, not started
+  Proposal: Build a simple Flask API on raspibig serving paid queries against existing PostgreSQL
+    data. Start with 3 pilot clients from CONSTRUCTORI campaign replies. MVP = search endpoint +
+    Stripe payment link. 2 weeks to launch.
+
+A2. Telegram Tenders Shop
+  Source: raspibig /opt/Z.AI/TELEGRAM_TENDERS_SHOP/
+  Products: Daily digest (EUR 9.99/mo), single search (EUR 4.99), API (EUR 99/mo)
+  Asset: 5.1M tenders in DB already
+  Status: SCAFFOLDED on raspibig, not live
+  Proposal: Wire up a Telegram payment bot (Stripe/crypto) to existing tender DB. Use
+    @raspibig_controller_bot's /sql as backend. Add /subscribe and /search paid commands.
+
+A3. Construction Tenders Premium Platform
+  Source: raspibig /opt/Z.AI/CONSTRUCTION_TENDERS/, CLAUDE/CONSTRUCTION_DATA_CUSTOMER_DEMAND_ANALYSIS.md
+  Data: TED Romania 5000+ tenders, SEAP quarterly scrapes
+  Status: DATA READY, no frontend
+  Proposal: Static site on A2 Hosting with daily email digest. Monetize via EUR 29-99/mo
+    subscriptions. Use existing SEAP scraper output + TED data.
+
+A4. CUMPARFERME — Bankrupt Asset Marketplace
+  Source: Z.AI/CUMPARFERME/, raspibig /opt/DATA_IMPORT/CUMPARFERME/
+  Asset: 8,663 farms + 192,641 losing-money companies, 836 executori, 3,554 evaluatori
+  Platform: agroevolution.com (WordPress, exists)
+  Status: DATA READY, outreach not started
+  Proposal: List top 50 bankrupt farms on agroevolution.com with pricing. Email 836 executori
+    offering 3-5% commission on deals. Run LICHIDATORI campaign to completion (39 days remaining).
+    First deal = proof of concept.
+
+A5. Romanian Food Database - Complete Monetization Package ✓ COMPLETED
+  Source: D:\MEMORY\Z.AI\SUPERMARKETS\ (comprehensive business package)
+  Asset: 69,582 enriched Romanian food companies (10 data sources integrated)
+  Revenue: Lead generation ($299-999/package), partnerships ($500-5K/month), government consulting ($2.5K-25K)
+  Status: READY TO LAUNCH - All deliverables complete, 2-hour execution plan ready
+  Deliverables:
+    • Complete database: 69,582 records (supermarkets, dairy, meat, logistics, HORECA)
+    • 20,795 verified emails, 4,220 phones, 622 websites
+    • PostgreSQL master database on raspibig (192.168.100.21): food_distribution DB
+    • COMPLETE_BUSINESS_PLAN.md (35-page comprehensive strategy)
+    • LAUNCH_PLAN.md (2-hour step-by-step money-making plan)
+    • HOW_TO_USE_TODAY.md (quick start guide)
+    • suggestions.md (6 revenue generation models)
+  Expected Day 1 Revenue: $299-897 (first 24 hours)
+  30-Day Projection: $1,500-12,000
+  Launch Plan: Go to Wix.com → export 3 data packages → email 20 prospects → start making money
+  All files ready in D:\MEMORY\Z.AI\SUPERMARKETS\ - Execution can start immediately
+
+A5b. SEAP Food Winners — 3,030 Enriched Government Procurement Contacts ✓ COMPLETED
+  Source: D:\MEMORY\CLAUDE\SUPERMARKETS CLAUDE\ (CODE/ + DATA/)
+  Asset: 5,120 unique SEAP food tender winners (CPV 15*/03*, 2B RON total value)
+    - 3,030 with email (59%), 4,175 with phone (81%)
+    - 1,969 insolvent food contacts flagged (acquisition opportunities)
+    - 108 overlap contacts already in food_distribution DB
+  Production: raspibig /opt/ACTIVE/OPENDATA/DATA/SEAP_ENRICHED/seap_food_winners_enriched.csv
+  Enrichment pipeline (7 passes, all scripts in SUPERMARKETS CLAUDE/CODE/):
+    Pass 1: CUI+name match vs interjob_master companies (557 emails, 10%)
+    Pass 2: ANOFM+food_distribution DB+CSV scan (+863, 27%)
+    Pass 3: DSVSA+12 source categories — DSVSA was goldmine: 715 hits (+758, 42%)
+    Pass 4: Big 200MB+ CSVs (+0, 42%)
+    Pass 5: pg_trgm fuzzy 0.45 threshold on 2 DBs — 748 matches (+748, 57%)
+    Pass 6: SQLite 3.5M enrichment index + ANAF API + rapidfuzz (+8, 57%)
+    Pass 7: All 13 PostgreSQL databases scan (+110, 59%)
+  Also built:
+    - seap_food_alerts.py — query SEAP food tenders (47K tenders, 4,728 winners, 932 buyers)
+    - faliment_cross_match.py — 5,367 bankrupt food companies, 1,969 contacts flagged
+  Remaining 2,090 without email: mostly institutions (1,188) and tiny SRLs (868) with no
+    web presence. Listafirme/DDG/website scraping tested — near-zero yield.
+  Status: ENRICHED, campaign-ready
+  Proposal: Add 3,030 contacts as new campaign in unified orchestrator. These companies
+    already buy food through government procurement — ideal for cooperative distribution
+    partnership. Also feed 1,969 insolvent contacts into CUMPARFERME pipeline.
+
+A5c. SEAP Food Monetization Ideas (10 revenue streams from A5b data)
+  Based on: 5,120 SEAP winners, 3,030 emails, 47K tenders, 2B RON, 1,969 insolvent
+
+  IMMEDIATE (this week):
+  1) Email 3,030 SEAP winners — cooperative distribution partnership
+     Message: "We aggregate 680+ mountain producers — partner for your next SEAP tender"
+     Revenue: 15-30% commission on deals. Cost: 0. Effort: 2h (add to orchestrator)
+
+  2) Sell enriched database — 3,030 verified govt food suppliers with email+phone
+     Buyers: packaging, logistics, cold chain, ingredients, equipment companies
+     Price: EUR 500-2,000/dataset. Sell on Wix/Gumroad. Effort: 1h
+
+  3) SEAP tender alert subscription — weekly digest "who's winning food contracts"
+     Audience: food companies wanting competitor intelligence + new tender opportunities
+     Price: EUR 29-99/month. Build with existing email infra. Effort: 3 days
+
+  SHORT-TERM (1-2 weeks):
+  4) Bankrupt food company acquisition brokerage
+     Match SEAP winners (expanding) with 1,969 insolvent food companies (equipment/permits)
+     Broker fee: 3-5% of deal value. One deal = EUR 5-20K. Effort: 1 week
+
+  5) DSVSA permit consulting referral
+     159K food establishments need veterinary permits. Build referral page connecting them
+     with certified consultants. Referral fee: EUR 200-500/client. Low effort, recurring
+
+  6) Food supplier vetting reports
+     932 SEAP buyers need to verify suppliers before awarding contracts. Automated reports:
+     company status, contract history, financial health. EUR 50-150/report from existing DB
+
+  MEDIUM-TERM (1 month):
+  7) Cooperative bids directly on SEAP food tenders
+     47K food tenders with known prices. Cooperative aggregates mountain producers, bids on
+     institutional contracts (schools, hospitals, military). Margin: 20-40%
+
+  8) "Competitor intelligence" SaaS for food companies
+     Dashboard: competitors' SEAP wins, contract values, trends, bankruptcies in sector
+     Monthly: EUR 49-199. All data exists, use Flask dashboard skills. Effort: 1 week
+
+  9) Food logistics matchmaking
+     4,994 logistics + 5,114 distributors + 5,120 SEAP winners needing delivery.
+     Matchmaking page: "Need cold chain for your SEAP contract?" Transaction/listing fee
+
+  10) Export SEAP winners to EU buyers
+      115 Romanian Taste exporters + 500+ diaspora shops need suppliers. 3,030 verified
+      active food companies introduced to export via cooperative. Margin: 30-50%
+
+  Priority ranking:
+    #1 Email campaign (2h, first revenue week 2)
+    #2 Sell database (1h, revenue today)
+    #3 Bankrupt brokerage (1 week, EUR 5-20K/deal)
+    #4 Cooperative SEAP bids (2 weeks, EUR 10-50K/contract)
+    #5 Tender alert subscription (3 days, EUR 29-99/mo recurring)
+
+A5d. SEAP Food Monetization — Advanced Ideas (11-20)
+
+  DATA PRODUCTS:
+  11) SEAP price benchmark tool
+      47K food tenders with prices. Lookup: "What did schools in Cluj pay for milk?"
+      Flask page, EUR 5/query or EUR 49/mo unlimited. No competitor in Romania.
+      Effort: 3 days (Flask + existing tenders table)
+
+  12) "Your competitor won this contract" alert service
+      Monitor SEAP for client's competitors. Instant email when competitor X wins.
+      EUR 19-49/mo to track 5-10 competitors. Automated from existing scraper.
+      Effort: 2 days
+
+  15) Food company financial health scoring
+      Cross-match SEAP winners with ANAF (status, VAT, e-invoice). Score: active/
+      inactive, growing/declining, solvent/at-risk. Govt buyers pay before awarding.
+      EUR 10/report automated, EUR 100 with analysis. Effort: 1 week
+
+  BROKERAGE & MATCHMAKING:
+  13) Insolvent food equipment auctions aggregator
+      1,969 insolvent food companies have equipment (refrigerators, trucks, processing
+      lines). Aggregate UNPIR auction listings, email SEAP winners: "Cold storage from
+      bankrupt company X, 70% off." Commission: 5-10% per sale. Effort: 1 week
+
+  14) DSVSA permit expiry alerts
+      159K food establishments have permits that expire. Scrape renewal dates. Email
+      60 days before: "Your permit expires — renew or lose SEAP eligibility."
+      Consulting referral EUR 100-300/renewal. Effort: 1 week
+
+  17) Mountain producer → school catering connector
+      Schools (SEAP buyers) need food, mountain producers have certified products.
+      Catalog: "Certified mountain cheese/meat/honey for school canteens — one invoice
+      through cooperative." Government loves local sourcing. Effort: 1 week
+
+  CHANNELS & OUTREACH:
+  16) Telegram channel @FoodTendersRO
+      Daily SEAP food tenders + winner announcements + industry news. Grow to 1,000
+      subs, monetize with sponsored posts EUR 50-200/post from food equipment/packaging
+      companies. Effort: 2 days (reuse event publisher infrastructure)
+
+  20) WhatsApp/Telegram bulk outreach to 4,175 phone contacts
+      81% have phone. WhatsApp Business = 90%+ open rate vs 20% email. Send cooperative
+      partnership offer directly. Cost: near zero. Effort: 1 day
+
+  PREMIUM SERVICES:
+  18) Export compliance package
+      3,030 SEAP winners are verified, active, tax-compliant. EU importers need proof.
+      "Romania Food Supplier Compliance Certificate" — status + DSVSA + financials +
+      SEAP track record. EUR 200-500/company. Target EU food importers. Effort: 1 week
+
+  19) Franchise the enrichment pipeline
+      7-pass enrichment (CUI→name→fuzzy→ANAF→SQLite→PG scan) works for any industry.
+      Sell "company enrichment as a service" — client gives CUI list, you return
+      email+phone+status. EUR 0.50-2/record. Effort: 2 days (wrap existing scripts)
+
+  Priority ranking (ideas 11-20):
+    #1 Telegram @FoodTendersRO (2 days, reuse infra, recurring ad revenue)
+    #2 WhatsApp outreach (1 day, 90% open rate, free)
+    #3 Price benchmark tool (3 days, unique product, EUR 49/mo recurring)
+    #4 Competitor alerts (2 days, sticky subscription)
+    #5 Enrichment-as-a-service (2 days, scales to any industry)
+
+A6. TALL_WOMEN_STORE — E-commerce
+  Source: raspibig /opt/Z.AI/TALL_WOMEN_STORE/
+  Status: IDEA ONLY
+  Proposal: Dropshipping store on Shopify/WooCommerce. Niche = women's clothing 175cm+.
+    Low priority unless someone passionate drives it. Park this idea.
+
+A7. GOSPODARII DE ALTADATA — Produs Montan Distribution
+  Cooperative: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)
+  URL: https://listafirme.ro/gospodarii-de-altadata-cooperativa-agricola-51957925/
+  Concept: Scrape the full produsmontan.ro database (https://produsmontan.ro/) of certified
+    Romanian mountain products (cheese, meat, honey, jams, spirits, etc.). Build a structured
+    DB of all producers, products, certifications, and contact info. Use the cooperative as
+    the aggregator/distributor to:
+    1. Sell to Romanian hypermarkets (Kaufland, Lidl, Carrefour, Mega Image, Auchan)
+    2. Sell to small/specialty shops (bio shops, farmers markets, delicatessens)
+    3. Export abroad (EU specialty food distributors, Romanian diaspora shops in IT/ES/DE/UK/FR)
+  Revenue model: 15-30% margin on wholesale, higher on export. Produs Montan label = premium
+    pricing (30-50% above regular). EU protected designation = export advantage.
+  Status: COOPERATIVE EXISTS, scraper not built
+  Proposal:
+    Step 1: Scrape produsmontan.ro — extract all producers, products, locations, certifications.
+      Save to PostgreSQL on raspibig (new table: produs_montan). Estimate: 500-2000 producers.
+    Step 2: Classify products by category (dairy, meat, honey, spirits, preserves).
+    Step 3: Contact top 50 producers — offer aggregation/distribution via the cooperative.
+    Step 4: Build a product catalog (PDF + web page on A2 Hosting).
+    Step 5: Pitch to hypermarket procurement departments (Kaufland has "Din Romania" program,
+      Lidl has "Romaneste" program, Carrefour has local sourcing initiatives).
+    Step 6: For export — target Romanian specialty shops abroad (500+ in Italy, Spain, Germany,
+      UK, France). Use existing email campaign infrastructure.
+  Quick wins: Kaufland/Lidl actively seek Romanian certified products. Having a cooperative
+    with aggregated supply from multiple mountain producers is exactly what they want.
+  EXISTING DATA (from F:\SAFE\...\OIPA EXPORT 2023\ALL\PRODUCATORI):
+    You already have significant data collected from your OIPA export business:
+    - PRODUS MONTAN PRODUCATORI.csv — 680 producers with emails + produsmontan.ro URLs
+    - RNPM emails — 666 unique email addresses extracted
+    - RNPM phones — 651 phone numbers extracted
+    - RNPM CARNE — 54 meat producers with full details (address, QR codes, decisions)
+    - COOPERATIVE AGRICOLE (RNCA 2018-2022) — 2,727 cooperatives with CUI, financials, contacts
+    - Cooperative phones — 495 mobile numbers
+    - ROMANIAN TASTE exporters — 115 companies (IFE London, PLMA Amsterdam, TUTTO FOOD Milano)
+    - AGRO CLUSTER TRANSILVANIA — 66 members with emails
+    - PATRONAT PLANTA ROMANICA — 25 herbal/medicinal producers
+    - PRODUCATORI CERTIFICATI FSSC — 29,863 internationally certified food producers
+    - PRODUS TRADITIONAL (RNPT) — traditional products registry (xlsx)
+    - PRODUCATORI LOCALI — local producers delivering in Bucharest
+    - OVINE — 597 sheep/goat breeders
+    - REPUBLICA MOLDOVA:
+      - APIA contacts — 37 agricultural agency officials with emails
+      - Asociatii general — 43 associations
+      - Asociatii zootehnie — 44 livestock associations
+      - Moldova Fruct — 175 fruit association members
+      - Oieri RM — 13 sheep farmers
+    - GUST DE VARA — site visit photos (90+ photos from Aug 2023 producer visit)
+    - RO LION FOODS — contract + presentation (potential partner)
+    - CatalogArovit.pdf — Arovit canned food catalog
+    - ROMCONSERV patronat — canning industry members list
+    - Cerere preturi export feb 2024 — price request template for exports
+
+A7b. TRASABILITATE PRODUS ALIMENTAR — Food Traceability for Small Producers
+  Source: D:\MEMORY\IDEAS\TRASABILITATE PRODUS ALIMENTAR\CLAUDE.md
+  Concept: Compliance system for small food producers (cheese dairies, farms, small factories).
+    EU Reg 178/2002 requires 1-step-forward, 1-step-back traceability. Hypermarkets + EU buyers
+    demand complete batch tracking with HACCP inspections. Current gap: small producers have no
+    cost-effective system.
+  Tech: PostgreSQL (batches, ingredients, movements, inspections), QR codes per lot, Flask
+    dashboard (https://traceability.example.com/batch/{batch_id}). Producers submit data via
+    CLI scripts (batch_generator.py, track_movement.py, compliance_report.py).
+  Revenue model:
+    a) B2B licensing — EUR 99-499/mo per producer (platform SaaS)
+    b) Compliance consulting — EUR 500-2000 per audit/setup
+    c) Label printing service — EUR 0.05-0.10 per QR label
+  Synergy with PRODUS MONTAN: 680+ mountain producers need traceability to sell to hypermarkets.
+    Offer "Traceability-Ready" as a value-add to Gospodarii de Altadata cooperative. Producers
+    → cooperative → buyers get full compliance + better negotiating power. Cooperative charges
+    EUR 50-100/producer/month = USD 10-15K/month potential.
+  Status: Framework complete, not deployed
+  Proposal:
+    Step 1: Deploy PostgreSQL schema on raspibig
+    Step 2: Build Flask dashboard (/batch/{id} showing timeline + ingredients + inspections)
+    Step 3: Create QR label generator (Pillow + printer integration)
+    Step 4: Pilot with 5-10 PRODUS MONTAN producers (free trial)
+    Step 5: Email all 680 producers: "Trasabilitate-Ready = Hypermarket Ready" + pricing
+    Step 6: Target hypermarket procurement officers: "Pre-vetted, traceable producers"
+
+A8. OIPA AGRI-FOOD PLATFORM — Unified Producer Database & Export Hub
+  Source: F:\SAFE\...\OIPA EXPORT 2023\ALL\PRODUCATORI\ (entire directory)
+  Concept: Consolidate ALL producer data into one PostgreSQL database and build an
+    integrated agri-food export platform using Gospodarii de Altadata cooperative.
+  Total contacts available: ~5,000+ unique (680 produs montan + 2,727 cooperatives +
+    115 Romanian Taste exporters + 597 ovine + 175 Moldova fruit + others)
+  Status: DATA COLLECTED (2023-2024), not consolidated
+  Proposal:
+    Step 1: Import all CSVs into PostgreSQL table `agri_producers` on raspibig:
+      - Merge produs montan, cooperatives, Romanian Taste, ovine, Moldova data
+      - Deduplicate by CUI/email, enrich with listafirme.ro financial data
+    Step 2: Categorize producers: dairy, meat, honey, fruits, vegetables, preserves,
+      spirits, cereals, herbs, organic. Tag: produs montan, produs traditional, FSSC, bio.
+    Step 3: Three revenue channels via the cooperative:
+      a) DOMESTIC: Aggregate supply from 50+ small producers → sell to Kaufland/Lidl/
+         Carrefour/Mega Image (they want "produs montan" but need volume + invoicing)
+      b) EXPORT EU: Use Romanian Taste network (115 companies already export-ready) +
+         FSSC certified producers. Target: Romanian diaspora shops (IT/ES/DE/UK/FR),
+         specialty food importers, trade fairs (IFE London, PLMA Amsterdam, Anuga Cologne)
+      c) EXPORT MOLDOVA: Reverse direction — RO products to Moldova, MD fruits to EU.
+         APIA contacts (37 officials) + Moldova Fruct (175 members) = ready network.
+    Step 4: Build catalog website on A2 Hosting (use existing catalog-generator skill).
+      Show products by category, certifications, MOQ, pricing. Buyers contact cooperative.
+    Step 5: Email campaigns using existing infrastructure:
+      - To producers: "Join our cooperative, we handle sales + export paperwork"
+      - To buyers (hypermarkets, importers): "Certified Romanian mountain products, one invoice"
+    Step 6: Attend/exhibit at food trade fairs (IFE London 2027, PLMA Amsterdam 2027)
+      with aggregated catalog. Cost: EUR 3-5K per fair, ROI: 10-50x.
+  Revenue potential:
+    - Domestic hypermarket supply: EUR 50-200K/year (start with 5-10 products, scale)
+    - Export to diaspora shops: EUR 30-100K/year (500+ shops across EU)
+    - Trade fair deals: EUR 100-500K/year per major buyer acquired
+    - Commission model: 15-30% on all sales through cooperative
+  Competitive advantage: No other cooperative aggregates produs montan + traditional +
+    organic under one umbrella with export capability. The data you have (5,000+ contacts)
+    is the foundation no competitor has.
+
+A9. MED_CLUB — Medical Professional Network
+  Source: Z.AI/MED_CLUB/, raspibig /opt/Z.AI/MED_CLUB/
+  Status: IDEA ONLY
+  Proposal: Healthcare recruitment is high-margin. If pursued: scrape Romanian medical colleges
+    for contact lists, build careworkers.eu landing page (domain exists), target UK/Germany/
+    Scandinavia NHS shortages. Medium priority.
+
+
+=============================================================================
+B. ACTIVE CAMPAIGNS (Running, Need Optimization)
+=============================================================================
+
+B1. CONSTRUCTORI Worker Export
+  Status: LIVE — 1,025 companies, 100/day
+  Staged: Logistics (56), Manufacturing (64), Agriculture (21), Hospitality (17)
+  Proposal: Activate staged campaigns one at a time. Track reply rates. A/B test subject lines.
+    Goal: 2-3% reply rate = 20-30 leads from Phase 1.
+
+B2. LICHIDATORI — Insolvency Practitioners
+  Status: LIVE — 1,960 emails, 50/day, ~30 days remaining
+  Proposal: Let it run to completion. Track opens/replies in pipeline dashboard. Prepare
+    follow-up sequence for non-responders.
+
+B3. Norway/Denmark/Romania Unified Campaigns
+  Status: ORCHESTRATOR ACTIVE but campaigns STOPPED
+  Proposal: Resume Norway first (highest-value market, EUR 550B projects). Send 50/day to
+    scraped mega-project contacts. Monitor via pipeline dashboard.
+
+B4. Event & Job Publisher (6 Telegram Channels)
+  Status: FULLY OPERATIONAL, posting daily
+  Channels: @expatsinromania (EN), JOBS IN EUROPE (EN), @jobsinro (EN),
+    @EmploisEnEurope (FR), @evroparabota (RU), Locuri de Munca Europa (RO)
+  Proposal: Grow channel subscribers. Add job alert bot (/subscribe keyword). Monetize with
+    sponsored job posts (EUR 50-200/post).
+
+
+=============================================================================
+C. DATA ASSETS (Collected, Not Yet Leveraged)
+=============================================================================
+
+C1. 50M+ European Company Database
+  Asset: 43.8M companies across 42 countries in PostgreSQL (13 GB)
+  Countries: FR 17.4M, DE 5.7M, GB 5.2M, CZ 3.1M, PL 1.6M, IE 834K, RO 770K
+  Proposal: Crown jewel. Build a SaaS search API (EUR 99-499/mo). Start with free tier
+    (10 searches/day) to attract users.
+
+C2. Romania Emails DB (30-50K contacts)
+  Script ready: /opt/ACTIVE/DB/create_romania_db.py
+  Status: NOT IMPORTED — tables dropped, needs fresh run
+  Proposal: Run python3 create_romania_db.py immediately. Unlocks targeted Romanian campaigns.
+
+C3. 13,248 TED Contacts (Campaign-Ready)
+  Status: Extracted, not emailed
+  Proposal: Add as new campaign in unified orchestrator. EU procurement winners — offer them
+    Romanian workers at 30-40% cost savings.
+
+C4. Job Fairs Employer Data (784 employers, 4,500+ available)
+  Source: CLAUDE/JOBFAIRS/
+  Status: Partially scraped (rate-limited on EJD at page 193)
+  Proposal: Resume EJD scrape with 2.5s delay. Scrape Targul de Cariere (80+), HR Festival
+    Zurich (150+). Build employer outreach campaign.
+
+C5. EU Agency Databases (15-20K agencies scrapable)
+  Countries: PL KRAZ (9,175), CZ MPSV (2,000+), ES SIGETT (all ETTs), NL ABU/NBBU (1,660+)
+  Status: RESEARCHED, not scraped
+  Proposal: Download PL KRAZ (instant govt CSV). Scrape CZ MPSV. These are recruitment
+    agencies = direct clients for worker placement.
+
+C6. Bulgarian Companies (13.7K scraped)
+  Source: Z.AI/BULGARIA/, raspi scrapers
+  Proposal: Enrich with emails, add to campaign pipeline. Bulgaria = growing construction market.
+
+C7. 222K Insolvency Records
+  Source: /opt/ACTIVE/FALIMENT/ (raspibig)
+  Data: Romanian companies in bankruptcy/liquidation with phones + sectors
+  Proposal: Already feeding LICHIDATORI + CUMPARFERME. Cross-sell to accounting firms,
+    asset recovery companies, and investors.
+
+C8. 836 Executori + 3,554 Evaluatori + 3,311 Primarii
+  Source: Various scrapers on raspibig
+  Proposal: Professional contact databases. Use for targeted B2B outreach across multiple
+    campaigns (CUMPARFERME, construction permits, EU funds).
+
+
+=============================================================================
+D. STRATEGIC BUSINESS PLANS (Documented, Not Executed)
+=============================================================================
+
+D1. Nepalese Manpower Recruitment
+  Source: CLAUDE/NEPALESE_MANPOWER_RECRUITMENT_BUSINESS_MODEL.md
+  Scale: 5,000+ workers/year, EUR 3M Year 1
+  Status: DOCUMENTED
+  Proposal: Requires Nepal partner (agency with DOFE license). Find via LinkedIn/Nepal
+    manpower association. Sign MOU. Start with 50 workers for Romania construction
+    (existing CONSTRUCTORI leads). High effort, high reward.
+
+D2. Eastern European Workforce Deployment
+  Source: CLAUDE/EASTERN_EUROPEAN_WORKFORCE_DEPLOYMENT_STRATEGY.md
+  Scale: RO+MD+BG+UA workers to Western EU, EUR 3.6M Year 1
+  Proposal: Already partially executing via Norway/Denmark campaigns. Formalize by
+    registering a temporary work agency in Romania (AJOFM license). This legitimizes
+    all campaigns.
+
+D3. International Contract Facilitation
+  Source: CLAUDE/INTERNATIONAL_CONTRACT_FACILITATION_FRAMEWORK.md
+  Markets: Saudi (EUR 75B), UAE (EUR 45B), Germany (EUR 120B)
+  Proposal: Too ambitious for now. Park until D1 or D2 generates revenue. Revisit when
+    placing 100+ workers/month.
+
+D4. 17 Construction Business Opportunities
+  Source: CLAUDE/ADDITIONAL_BUSINESS_OPPORTUNITIES.md
+  Ideas: Equipment rental, materials trading, BIM services, waste management, safety
+    training, construction media, smart cities, digital platform, etc.
+  Revenue range: EUR 200K-9M/year per idea
+  Proposal: Cherry-pick 1-2 lowest-barrier entries:
+    1. Construction Safety Training — online course platform, EUR 350K/year, low startup
+    2. Construction Media & Events — already have Telegram channels + event publisher.
+       Monetize with sponsored content.
+
+D5. PLASARE 400 MUNCITORI
+  Source: CLAUDE/PLASARE 400 MUNCITORI/
+  Scale: 400 Indian workers to RO + 400 Romanians to EU. Client: Doamna Elena.
+  Data: 60K local contacts + 454K in country folders (DE, NO, CH, IS, DK, BE)
+  Status: 70 mega-projects mapped (EUR 550B+), outreach emails drafted
+  Proposal: Execute Tier 1 emails first (big companies with scraped contacts).
+    Download 3 govt databases for new agency contacts.
+
+
+=============================================================================
+E. INFRASTRUCTURE & TOOLS (Supporting Ideas)
+=============================================================================
+
+E1. NOTARY_SOFTWARE — Research stage. Park unless a notary client appears.
+
+E2. OPENSANCTIONS Integration — Add sanctions check to PICOCLAW API as task type.
+    Useful for compliance when placing workers internationally. Quick win.
+
+E3. EU Funds Research — Watchdog already running on raspi. Feed results into pipeline
+    dashboard. EU-funded projects = employers needing workers.
+
+E4. Permise Constructie (Building Permits) — Scrape Romanian building permit data.
+    New permits = upcoming construction = worker demand. Add as scraper on raspi.
+
+E5. Email ML Classifier — Already running on raspi (email-classifier.service, 94.5%
+    accuracy). Could be productized as a SaaS for recruitment agencies.
+
+E6. PICOCLAW API — 20+ task types (spam_score, classify, enrich). Running on raspibig
+    port 5055. Could be exposed as a paid API for B2B intelligence.
+
+E7. 355+ Reusable Skills — /opt/ACTIVE/INFRA/SKILLS/ on raspibig. Library of automation
+    modules. Could be packaged as an open-source recruitment toolkit.
+
+
+=============================================================================
+E2. DATABASE-WIDE MONETIZATION IDEAS (from full DB inspection 2026-03-10)
+=============================================================================
+
+Full inventory: 13 PostgreSQL DBs, 200M+ records, 51GB companies table alone.
+
+  HIGHEST PRIORITY — UNTAPPED GOLDMINES:
+
+  21) Norway — 335K emails barely touched
+      155K in norway_emails + 335K in companies (country=NO). Sent only 972.
+      Resume at 3,445/day = 100 days of sending. Highest wages in EU.
+      Revenue: EUR 5-15K commission per worker placement. Effort: 1h (unpause)
+
+  22) Romania 500K emails — mass B2B outreach
+      romania.companies 229K + romania_emails.contacts 355K = ~500K after dedup.
+      Segment by CAEN: food, construction, logistics, IT. Run targeted campaigns.
+      Effort: import DB (5 min) + segment (2h). Revenue: campaign-dependent
+
+  23) Bulgaria — 79K emails ready to campaign
+      bg_companies_registry (6.8K) + bg_ted_notices (63K buyer emails) +
+      bg_ukazatelite (4.3K) + bg_ksb_builders (2.3K) + bg_agencies (642).
+      Campaign: "Romanian workers for Bulgarian construction/manufacturing."
+      Revenue: EUR 3-5K per placement. Effort: 3h (build campaign config)
+
+  DATA PRODUCTS & SAAS:
+
+  25) 5.1M tenders — EU-wide procurement intelligence SaaS
+      PL 1M, FR 709K, RO 496K, DE 478K, ES 274K, BG 149K, UK 141K.
+      Cross-border tender search + alerts. No one combines all 33 EU countries.
+      EUR 99-499/mo subscription. Effort: 2 weeks (Flask + Stripe)
+
+  26) 1M insolvency records — pan-European bankruptcy intelligence
+      Not just RO 222K — 1.03M total across Europe. Sell to: debt collectors,
+      asset recovery, M&A advisors, credit insurers.
+      EUR 199-999/mo subscription. Effort: 1 week
+
+  27) 540K enriched contacts — B2B email list marketplace
+      contacts table: 540K ALL with email. Segment by country/industry.
+      EUR 0.10-0.50/contact or subscription access.
+      Total value: EUR 54K-270K. Effort: 1 day (export + Gumroad)
+
+  30) OpenSanctions compliance check API
+      37K sanctioned entities. "Is my business partner sanctioned?" API.
+      Required by EU Anti-Money Laundering. Every international company needs this.
+      EUR 29-99/mo per user. Effort: 3 days (Flask API over existing data)
+
+  31) 2.1M procurement — Romanian government spending dashboard
+      romania.procurement 2.1M records. Public dashboard: "How is your county
+      spending taxes?" Free tier for traffic, premium for journalists/NGOs/bidders.
+      Ad revenue + EUR 19-49/mo subscriptions. Effort: 1 week
+
+  MATCHMAKING & BROKERAGE:
+
+  24) Moldova — 231K companies, zero emails = enrichment opportunity
+      Enrich from camera.md, idno.md registries. Sell as ONLY structured Moldova
+      B2B database. EUR 5-10K as dataset. Or RO→MD export campaigns.
+      Effort: 1 week (build scraper + enrich)
+
+  28) 106K recruitment agencies — partner network
+      agencies table: 106K with email across EU. Partner for placements or sell
+      worker profiles/candidate databases. EUR 50-200/placement referral.
+      Effort: 2h (campaign config)
+
+  29) 28K Romanian professionals — cross-referral platform
+      3,554 evaluatori + 836 executori + 17K experti contabili + 1,850 auditori
+      + 1,074 consultanti + 995 firme audit + 3,181 primarii.
+      Matchmaking: "Need evaluator for bankrupt company? Here are 3,554 ANEVAR
+      certified." Referral fee: EUR 50-200 per match. Effort: 1 week
+
+  32) Cross-border matchmaking: RO workers ↔ EU tenders
+      5.1M tenders (who needs work) + 175M companies (who does work) +
+      1M insolvency (who can't anymore). When company goes bankrupt mid-project,
+      contracting authority needs replacement. Match them.
+      Commission: 1-3% of contract value. Effort: 2 weeks
+
+  Priority ranking (ideas 21-32):
+    #1 Norway campaign resume (1h, EUR 5-15K/placement, 335K emails)
+    #2 Romania 500K emails import+segment (2h, unlocks all RO campaigns)
+    #3 Bulgaria 79K campaign (3h, EUR 3-5K/placement)
+    #4 540K contacts as B2B list (1 day, EUR 54K-270K total value)
+    #5 5.1M tenders SaaS (2 weeks, EUR 99-499/mo recurring)
+
+
+=============================================================================
+F. DORMANT / LOW PRIORITY
+=============================================================================
+
+  TALL_WOMEN_STORE      Idea only       Park
+  NOTARY_SOFTWARE       Research        Park
+  ALUMINUM sector       Data only       Merge into master DB
+  WHITEPAPERNEWS DE     Prototype       Park unless German market opens
+  ELDERFLOWER SALES     Pivnita Bunicii Separate business, not tech
+  EXPATS_NEWS           Prototype       Merge into event publisher
+  ANOFM_PLUS            Enhancement     Already integrated into job publisher
+
+
+=============================================================================
+FAST EXECUTION IDEAS (under 2 hours each) — Added 2026-03-11
+=============================================================================
+
+  #  | Idea                                     | Effort | Revenue
+  ---+------------------------------------------+--------+---------------------------
+  F1 | Export 540K contacts CSV → Gumroad       | 30 min | EUR 99/country, 499/all — TODAY
+     |   contacts table all with email. Segment by country (RO/PL/NO/DE/BG), upload.
+  F2 | Resume Norway campaign                   | 10 min | EUR 5-15K per placement
+     |   335K emails, only 972 sent. Unpause in orchestrator. Already configured.
+  F3 | SEAP food winners → orchestrator         | 2h     | 3,030 govt food buyers
+     |   Write template, add config, start. Cooperative partnership offer.
+  F4 | Insolvency alerts to accountants         | 1h     | EUR 19/mo per subscriber
+     |   Email 17K experti contabili + 1,850 auditori: "Get notified when YOUR
+     |   clients go bankrupt." 1M insolvency records, build cron email digest.
+  F5 | Bulgaria campaign                        | 2h     | EUR 3-5K per placement
+     |   63K bg_ted_notices buyer emails. "Romanian workers available, 30% cheaper."
+     |   Template + orchestrator config.
+  F6 | Telegram @FoodTendersRO channel          | 1h     | EUR 50-200/sponsored post
+     |   Reuse event publisher. Post daily SEAP food tenders from DB. Grow subs.
+  F7 | WhatsApp to 4,175 SEAP winners (phone)   | 1h     | Direct partnership leads
+     |   WhatsApp Business: "Cooperative partnership for next food tender."
+     |   90% open rate vs 20% email. Free.
+
+  Fastest EUR today:     F1 (30 min, export+sell contacts)
+  Fastest recurring EUR: F4 (1h, insolvency alerts, sticky EUR 19/mo)
+  Highest EUR/hour:      F2 (10 min, Norway resume, EUR 5-15K/conversion)
+
+
+=============================================================================
+IMPLEMENTATION PRIORITY — ALL QUICK WINS (consolidated)
+=============================================================================
+
+  #  | Idea                              | Effort   | Revenue Potential          | Action
+  ---+-----------------------------------+----------+---------------------------+----------------------------------
+  1  | Export 540K contacts → Gumroad    | 30 min   | EUR 99-499 TODAY         | psql COPY + Gumroad upload
+  2  | Resume Norway campaign            | 10 min   | EUR 5-15K/placement      | Unpause in orchestrator
+  3  | SEAP Food Winners campaign        | 2 hours  | 3,030 govt food buyers   | Add to unified orchestrator
+  4  | Bulgaria 63K campaign             | 2 hours  | EUR 3-5K/placement       | bg_ted_notices + template
+  5  | Insolvency alerts to accountants  | 1 hour   | EUR 19/mo recurring      | Cron digest to 17K contabili
+  6  | Run Romania Emails DB import      | 5 min    | Unlocks all RO campaigns | python3 create_romania_db.py
+  7  | Activate staged CONSTRUCTORI      | 1 hour   | 158 more companies       | Start in orchestrator
+  8  | WhatsApp SEAP winners (4,175)     | 1 hour   | Partnership leads        | WhatsApp Business message
+  9  | Telegram @FoodTendersRO           | 1 hour   | EUR 50-200/sponsored     | Reuse event publisher
+  10 | Email 13,248 TED contacts         | 2 hours  | EU procurement winners   | Add campaign config
+  11 | Download PL KRAZ database         | 30 min   | 9,175 agencies           | Direct govt download
+  12 | List farms on agroevolution.com   | 1 day    | EUR 5-50K per deal       | WordPress posts
+  13 | Telegram Tenders Shop bot         | 3 days   | EUR 9.99-99/mo recurring | Wire payments to existing DB
+  14 | Construction Data API (MVP)       | 1 week   | EUR 500-5K/mo            | Flask + Stripe on raspibig
+
+
+=============================================================================
+SUMMARY STATS
+=============================================================================
+
+  Total ideas inventoried:           69+
+  SEAP food monetization (A5c+A5d):  20 ideas (immediate to medium-term)
+  Database-wide monetization (E2):   12 ideas (from 13 DBs, 200M+ records)
+  Revenue-generating (ready):        2 (SUPERMARKETS + SEAP food winners)
+  Revenue-generating (not started):  8
+  Active campaigns:                  4
+  Data assets (unleveraged):         6
+  Strategic plans (documented):      5
+  Infrastructure/tools:              7
+  Dormant/parked:                    7
+
+  Database totals (inspected 2026-03-10):
+    175.6M companies (20 EU countries, 744K with email)
+    5.1M tenders (33 EU countries)
+    1.03M insolvency records
+    540K contacts (all with email)
+    355K Romania emails
+    231K Moldova companies
+    155K Norway emails
+    130K agencies (106K with email)
+    79K Bulgaria contacts with email
+    42K Romanian professionals
+    37K OpenSanctions entities
+
+  Machines scanned:
+    Laptop (D:\MEMORY)        — CLAUDE/, Z.AI/, SANDBOX/, IDEAS/
+    raspibig (192.168.100.21) — /opt/ACTIVE/ (40+ dirs), /opt/Z.AI/ (14 dirs)
+    raspi (192.168.100.20)    — /opt/ (EMAIL, SCRAPERS, SUPERMARKETS, SUPPLIERS, etc.)
+
+  Key infrastructure:
+    13 PostgreSQL databases (51GB+ companies table alone)
+    103 systemd services running (raspibig)
+    355 reusable skills on raspibig
+    7 Telegram bots active
+    6 Telegram channels posting
+    290 emails/day per Brevo sender
+    9K+ ANOFM jobs scraped daily
+    3.5M company enrichment index (SQLite)
+
+
+Generated: 2026-03-11 (updated with EURES revenue plays)
+
+=============================================================================
+NEW: EURES SCRAPER REVENUE PLAYS (2026-03-11)
+=============================================================================
+
+E3a. EURES Employers Direct Outreach — LIVE
+  Source: EURES scraper output -> eures_to_campaigns.py -> campaign DBs
+  Asset: 534 employers (growing daily, 8 profiles scraping 24/7)
+  Campaign: EURES_EMPLOYERS (Brevo, 100/day, cron 09:00+15:00)
+  Revenue: EUR 500-5,000/placement, 10 conversions/month = EUR 5-50K
+  Status: DEPLOYED AND RUNNING on raspibig
+
+E3b. HORECA EU Campaign — LIVE
+  Source: EURES ISCO 51,52 + interjob_master + norway/denmark DBs
+  Asset: 32 from EURES (growing), 3,000-4,000 in master DB, 5K+ in Norway/DK
+  Campaign: HORECA_EU (Brevo horecaworkers2026.eu, 100/day, cron 10:00+16:00)
+  Domains: horecaworkers.eu, horecaworkers2026.eu, horecaworkers2026.com
+  Revenue: Hotel chains, restaurants needing cooks/waiters = recurring placements
+  Status: DEPLOYED, sender ready, needs bulk import from master DB
+  Next: Export HORECA from interjob_master + norway_emails into campaign.db
+
+E3c. Auto-Publish Jobs to 15 Domains — NOT YET WIRED
+  Source: EURES scraper -> multisite_distributor.py -> content_page_generator.py
+  Mapping: ISCO 71,72,74 -> buildjobs.eu | 81,82,83 -> factoryjobs.eu |
+           93 -> warehouseworkers.eu | 51,52 -> horecaworkers.eu
+  Revenue: SEO traffic -> apply button -> placement commissions
+  Status: Scripts exist, not wired to cron
+  Effort: 1 day to wire pipeline + deploy to A2
+
+E3d. PRODUS MONTAN Buyer Leads from EURES HORECA
+  Source: horeca_employers profile scraping ISCO 51,52 from 11 rich countries
+  Concept: Hotels/restaurants hiring on EURES = potential buyers for Romanian
+    mountain cheese, honey, meat from Gospodarii de Altadata cooperative
+  Revenue: One hypermarket/hotel chain deal = EUR 10K+/month recurring
+  Status: Profile running, data accumulating. Cross-reference with sector
+
+E3e. Agency vs Direct Employer Split — LIVE
+  Source: agency_classifier.py auto-tags every scraped contact
+  Output: direct_employers.csv (higher placement fees) + agencies.csv (partnerships)
+  Revenue: Direct employers = EUR 2-5K/placement. Agencies = supply partnerships
+  Status: DEPLOYED in csv_writer.py, PostgreSQL employer_type column added
+
+E3f. Telegram Channel Expansion — LIVE
+  Source: eures_to_campaigns.py maps countries to 6 Telegram channels
+  New: Southern EU -> @evroparabota + Locuri de Munca Europa
+       France -> @EmploisEnEurope | Eastern EU -> Locuri de Munca Europa
+  Revenue: More followers = ads, sponsored posts, premium alerts
+  Status: DEPLOYED, expansion service running

@@ -1,0 +1,191 @@
+REQUEST SET #1 — MERCOSUR DATA FACTORY (INSTALLATION + AUTOMATION)
+(This is the “script #1” rewritten as pure requests, not code.)
+Primary Objective
+Create a fully automated, resilient, Tor-routed Mercosur Data Factory running on two Raspberry Pi devices (raspi and raspibig), capable of scraping, validating, storing, and monitoring open trade data from Brazil, Argentina, and EU–Mercosur sources.
+Requests
+- Install and configure prerequisites
+- Tor with IP rotation
+- Python3 + pip + scraping libraries
+- Prometheus node exporter
+- Git, curl, htop
+- Node-RED with Ollama integration
+- LM Studio / Ollama models (Phi-3 mini or similar)
+- Configure Tor for anonymity and anti-blocking
+- SOCKS5 proxy on port 9050
+- ControlPort 9051
+- Cookie authentication
+- MaxCircuitDirtiness = 60 seconds
+- NewCircuitPeriod = 30 seconds
+- Ensure Tor restarts cleanly and warms up
+- Create directory structure under /opt/MERCOSUR
+- /scrapers
+- /data
+- /logs
+- /config
+- Global logs under /opt/LOGS/mercosur
+- Develop a Python scraper with these capabilities
+- Tor-routed requests
+- Randomized User-Agent rotation
+- Automatic Tor IP renewal before each request
+- HTML parsing with BeautifulSoup
+- CSV output
+- Logging to /opt/LOGS/mercosur/mercosur.log
+- LLM validation using Ollama (Phi-3 mini)
+- Append validation results to /opt/MERCOSUR/llm_validation.txt
+- Scraping targets
+- Brazil: https://comexstat.mdic.gov.br/
+- Argentina: https://www.indec.gob.ar/
+- EU–Mercosur: https://policy.trade.ec.europa.eu/.. (policy.trade.ec.europa.eu in Bing).
+- Ability to add more countries easily
+- Cron scheduling
+- Brazil scrape daily at 00:00
+- Argentina scrape daily at 03:30
+- Supervisor job every 6 hours
+- Supervisor must:
+- Read last 50 log lines
+- Ask LLM for anomalies or next actions
+- Optionally notify Node-RED
+- Install and configure Ollama
+- Pull Phi-3 mini (or Q4 quant)
+- Integrate with Node-RED via node-red-contrib-ollama
+- Prometheus monitoring
+- Track CPU, RAM (especially 15GB on raspibig), and system health
+- Scrape interval 15 seconds
+- Provide test commands
+- Run scraper manually
+- Check Tor IP
+- Tail logs
+- Inspect LLM validation
+- List cron jobs
+Additional Ideas (added)
+- Add retry logic with exponential backoff for unstable government websites
+- Add SQLite/PostgreSQL ingestion layer for structured querying
+- Add Nextcloud sync between raspi ? raspibig
+- Add Grafana dashboards for exporters/importers over time
+- Add anomaly detection (LLM-assisted) for sudden trade pattern changes
+- Add Telegram/Matrix alerts for scraper failures
+- Add checksum validation for CSV integrity
+- Add a “country module” system so each country has its own parser class
+
+? REQUEST SET #2 — MERCOSUR RESEARCH & DATA ACQUISITION ORCHESTRATOR
+(This is the long research prompt rewritten as a structured request set.)
+Primary Objective
+Build a comprehensive, automated research and data-acquisition system across two Raspberry Pi devices to gather, analyze, and maintain open data related to Mercosur countries and EU–Mercosur trade.
+Requests
+1. Inventory & Assessment
+- Inspect /opt and /home/tudor on both devices.
+- Identify:
+- Existing scrapers
+- Databases (SQLite, CSV, Postgres dumps)
+- Scripts, notebooks, datasets
+- Personal databases (“personal db”)
+- Any relevant directories under /opt/ACTIVE/IDEAS/MERCOSUR/
+- Produce a structured inventory report.
+2. Data Acquisition Strategy
+- Use Tor, IP cycling, and anti-blocking techniques.
+- Retrieve open data for:
+- Exporters
+- Importers
+- Company registries
+- Financial data
+- Statistical data
+- Procurement auctions
+- Free trade agreements
+- Focus first on Brazil and Argentina.
+Data Sources to Target
+- Brazil: COMEX STAT, Receita Federal, Comprasnet
+- Argentina: INDEC, ONC procurement
+- Uruguay, Paraguay: customs, procurement portals
+- EU: TED (Tenders Electronic Daily), DG Trade
+- UN: UNGM procurement
+- NGOs: Red Cross, World Bank procurement
+- FTAs:
+- EU–Mercosur
+- Romania’s agreements
+- Canada’s agreements
+- UK’s post-Brexit agreements
+3. Automation & Tools
+- Configure cron jobs for periodic updates
+- Use mcp2cli or similar tools to process datasets
+- Add LLM-based summarization and anomaly detection
+- Maintain logs for every action
+4. Data Processing
+- Extract exporter/importer lists
+- Normalize company names
+- Detect duplicates across countries
+- Build profiles of major companies
+- Track procurement winners
+- Map trade flows between Mercosur ? EU
+- Identify companies active in multiple markets
+5. Procurement & Auction Data
+- Identify TED-like portals for Mercosur countries
+- Extract:
+- Auction winners
+- Contract values
+- Company identifiers
+- Sector classifications
+- Cross-reference with exporter/importer data
+6. Free Trade Agreements
+- Gather FTAs relevant to:
+- Romania (EU member)
+- Canada
+- UK
+- Extract:
+- Tariff schedules
+- Rules of origin
+- Sensitive sectors
+- Implementation timelines
+7. Scheduling & Maintenance
+- Daily scrapes
+- Weekly deep scans
+- Monthly FTA updates
+- Automatic Tor IP cycling
+- Automatic LLM validation
+- Automatic dataset integrity checks
+8. Output Requirements
+- Inventory reports
+- List of discovered data sources
+- Summary of findings
+- Next steps
+- Logging and error-handling recommendations
+- Clear separation between:
+- Raw data
+- Processed data
+- LLM insights
+- Alerts
+
+? Additional Ideas (added by me)
+These strengthen your architecture:
+A. Knowledge Graph
+Build a graph linking:
+- Companies
+- Countries
+- Sectors
+- Procurement wins
+- Export/import volumes
+- FTA benefits
+This enables powerful cross-analysis.
+B. Risk & Opportunity Scoring
+Use LLMs to score:
+- Market attractiveness
+- Supply chain risks
+- Political stability
+- Regulatory barriers
+- FTA advantages
+C. Multi-Agent Workflow
+Use multiple LLM agents:
+- Scraper agent
+- Data validator agent
+- Procurement analyst agent
+- FTA summarizer agent
+- Company profiler agent
+D. Local Embeddings
+Store embeddings for:
+- Company descriptions
+- Procurement notices
+- FTA clauses
+This enables semantic search across all Mercosur–EU data.
+E. Cross-Device Coordination
+raspi ? raspibig roles:
+- raspi: scraping + Tor routing
+- raspibig: heavy LLM analysis + storage + dashboards

@@ -1,0 +1,342 @@
+2026-04-15T23:46:23.637999 | Vinde 5 pachete date CSV pe Gumroad (RO constructii / TED / Norvegia / alimentar competitor alternative 2026
+2026-04-15T23:46:25.638814 | GUMROAD SaaS market size pricing
+2026-04-15T23:46:27.639958 | Vinde 5 pachete date CSV pe Gumroad (RO constructii / TED /  market opportunity Europe
+2026-04-15T23:46:29.640711 | NORVEGIA email campaign best practices recruitment
+2026-04-15T23:46:31.642748 | Relanseaza campanie 335K emailuri Norvegia - plasare muncito market opportunity Europe
+2026-04-15T23:46:33.643508 | Alerte insolventa catre 17K contabili + 1850 auditori - EUR 19/luna abonament competitor alternative 2026
+2026-04-15T23:46:35.645457 | INSOLVENTA SaaS market size pricing
+2026-04-15T23:46:37.646332 | Alerte insolventa catre 17K contabili + 1850 auditori - EUR  market opportunity Europe
+2026-04-15T23:46:39.647182 | AGENTII email campaign best practices recruitment
+2026-04-15T23:46:41.649274 | Campanie 18K agentii recrutare UE - parteneriat plasare munc market opportunity Europe
+2026-04-15T23:46:43.649943 | SEAP FOOD email campaign best practices recruitment
+2026-04-15T23:46:45.652193 | Email 3030 castigatori SEAP alimentari - parteneriat coopera market opportunity Europe
+2026-04-15T23:46:47.653214 | BULGARIA email campaign best practices recruitment
+2026-04-15T23:46:49.655111 | Campanie 79K contacte Bulgaria - plasare muncitori construct market opportunity Europe
+2026-04-15T23:46:51.655884 | buy ROMANIA DB data Europe CSV download
+2026-04-15T23:46:53.658347 | FACUT — 8.9M companii dar doar 19K emailuri unice (144K non- market opportunity Europe
+2026-04-15T23:46:55.659093 | Canal @FoodTendersRO - licitatii SEAP zilnice - posturi sponsorizate competitor alternative 2026
+2026-04-15T23:46:57.661182 | TELEGRAM FOOD SaaS market size pricing
+2026-04-15T23:46:59.666107 | Canal @FoodTendersRO - licitatii SEAP zilnice - posturi spon market opportunity Europe
+2026-04-15T23:47:01.667582 | TED CONTACTE email campaign best practices recruitment
+2026-04-15T23:47:03.669342 | Campanie 13248 contacte TED - ofera muncitori RO la 30-40% e market opportunity Europe
+2026-04-15T23:47:05.670020 | buy POLONIA KRAZ data Europe CSV download
+2026-04-15T23:47:07.671642 | Descarca CSV 9175 agentii recrutare poloneze din registru gu market opportunity Europe
+2026-04-15T23:47:09.672204 | Cooperativa 140 producatori - export UE legume/fructe competitor alternative 2026
+2026-04-15T23:47:11.673798 | COOPERATIVA SaaS market size pricing
+2026-04-15T23:47:13.674361 | Cooperativa 140 producatori - export UE legume/fructe market opportunity Europe
+2026-04-15T23:47:15.675044 | SaaS trasabilitate alimente - FastAPI + CLI competitor alternative 2026
+2026-04-15T23:47:17.678948 | TRASABILITATE SaaS market size pricing
+2026-04-15T23:47:19.680092 | SaaS trasabilitate alimente - FastAPI + CLI market opportunity Europe
+2026-04-15T23:47:21.680644 | Brokerage active falimentare - 8663 ferme + 192K companii competitor alternative 2026
+2026-04-15T23:47:23.682065 | CUMPARFERME SaaS market size pricing
+2026-04-15T23:47:25.682916 | Brokerage active falimentare - 8663 ferme + 192K companii market opportunity Europe
+2026-04-15T23:47:27.683553 | API date constructii Romania - 117K companii competitor alternative 2026
+2026-04-15T23:47:29.686924 | API CONSTRUCTII SaaS market size pricing
+2026-04-15T23:47:31.687600 | API date constructii Romania - 117K companii market opportunity Europe
+2026-04-15T23:47:33.688448 | SaaS 5.1M licitatii UE - cautare + alerte competitor alternative 2026
+2026-04-15T23:47:35.690541 | LICITATII SAAS SaaS market size pricing
+2026-04-15T23:47:37.691184 | SaaS 5.1M licitatii UE - cautare + alerte market opportunity Europe
+2026-04-15T23:47:39.691674 | Catalog 1331 producatori montani - WooCommerce + campanie. Deadline AGRIP: 23 ap competitor alternative 2026
+2026-04-15T23:47:41.693267 | PRODUS MONTAN SaaS market size pricing
+2026-04-15T23:47:43.693846 | Catalog 1331 producatori montani - WooCommerce + campanie. D market opportunity Europe
+2026-04-15T23:47:45.694853 | LEO BUZAU email campaign best practices recruitment
+2026-04-15T23:47:47.696958 | 34K companii Buzau - inchiriere proprietati cand Leo e gata market opportunity Europe
+2026-04-15T23:47:49.697467 | buy ASOCIATII data Europe CSV download
+2026-04-15T23:47:51.699243 | Registru 90K+ ONG-uri Romania - 42 judete, 49 CSV-uri market opportunity Europe
+2026-04-15T23:47:53.699789 | CHINA TRADE feasibility analysis 2026
+2026-04-15T23:47:55.701515 | 3 scrapere (Made-in-China, NBS API, UN Comtrade) + 8 CSV-uri market opportunity Europe
+2026-04-15T23:47:57.702300 | FOOD HORECA email campaign best practices recruitment
+2026-04-15T23:47:59.704132 | 25 scripturi + 28K emailuri HORECA + SEAP winners + faliment market opportunity Europe
+2026-04-15T23:48:01.705018 | buy FRESKON data Europe CSV download
+2026-04-15T23:48:03.706711 | Contacte expozanti targuri europene market opportunity Europe
+2026-04-15T23:48:05.708117 | LEGUME MASINI feasibility analysis 2026
+2026-04-15T23:48:07.709449 | Scrapeaza companii concurente utilaje sortare legume (Delecr market opportunity Europe
+2026-04-15T23:48:09.710243 | Clasificator email sklearn 94.5% + raspunsuri automate + Gmail drafter competitor alternative 2026
+2026-04-15T23:48:11.712160 | LLM CLASSIFIER SaaS market size pricing
+2026-04-15T23:48:13.712951 | Clasificator email sklearn 94.5% + raspunsuri automate + Gma market opportunity Europe
+2026-04-15T23:48:15.713839 | MERCOSUR email campaign best practices recruitment
+2026-04-15T23:48:17.715893 | 22 campanii sectoriale (beef/honey/lithium/etc) + registre 4 market opportunity Europe
+2026-04-15T23:48:19.716757 | NATO feasibility analysis 2026
+2026-04-15T23:48:21.718105 | 5 scripturi achizitii militare SEAP + matching capacitati market opportunity Europe
+2026-04-15T23:48:23.718916 | Utilitare cautare companii in PostgreSQL market opportunity Europe
+2026-04-15T23:48:25.723426 | UK CONTRACTORS email campaign best practices recruitment
+2026-04-15T23:48:27.724947 | 34 contractori majori UK cu sponsor license + 2597 construct market opportunity Europe
+2026-04-15T23:48:29.727821 | ALUMINUM email campaign best practices recruitment
+2026-04-15T23:48:31.729277 | 611 companii reciclare/aluminiu din TED cu email + aluminumr market opportunity Europe
+2026-04-15T23:48:33.730436 | INSOLVENTA ACTIVE feasibility analysis 2026
+2026-04-15T23:48:35.732743 | 8 idei monetizare: licitatii ANAF, BPI, AAAS, bunuri ministe market opportunity Europe
+2026-04-15T23:48:37.736255 | Auto-publicare multi-platforma (Telegram 6 canale + FB + LinkedIn pregatite) competitor alternative 2026
+2026-04-15T23:48:39.737069 | EVENT PUBLISHER SaaS market size pricing
+2026-04-15T23:48:41.737971 | Auto-publicare multi-platforma (Telegram 6 canale + FB + Lin market opportunity Europe
+2026-04-15T23:48:43.738625 | Pivnita Bunicii - agent vanzari 10% comision, Welcome Box expati, export UE competitor alternative 2026
+2026-04-15T23:48:45.741143 | ELDERFLOWER SaaS market size pricing
+2026-04-15T23:48:47.741960 | Pivnita Bunicii - agent vanzari 10% comision, Welcome Box ex market opportunity Europe
+2026-04-15T23:48:49.742888 | CANADA CETA feasibility analysis 2026
+2026-04-15T23:48:51.744393 | Arbitraj CETA/CPTPP, transfer tehnologic, export agri-food C market opportunity Europe
+2026-04-15T23:48:53.745282 | EU PROIECTE email campaign best practices recruitment
+2026-04-15T23:48:55.747039 | 15969 beneficiari fonduri UE cu email - campanie consultanta market opportunity Europe
+2026-04-15T23:48:57.747621 | Cautare profile fdating.com - cont activ Tudor market opportunity Europe
+2026-04-15T23:48:59.749166 | Benzi transportoare recoltare Franta - distribuitor Agri Ali market opportunity Europe
+2026-04-15T23:49:01.750909 | buy ENRICHMENT RO data Europe CSV download
+2026-04-15T23:49:14.547571 | buy ENRICHMENT RO data Europe CSV download
+2026-04-15T23:49:16.548451 | Imbogatire 8.9M companii RO: CUI→ANAF→website→scrape email.  market opportunity Europe
+2026-04-15T23:49:18.549277 | Bot Telegram platit: 5.1M licitatii + TED monitor. Gratuit 3/zi, premium EUR 19/ competitor alternative 2026
+2026-04-15T23:49:20.551212 | TELEGRAM LICITATII BOT SaaS market size pricing
+2026-04-15T23:49:22.551989 | Bot Telegram platit: 5.1M licitatii + TED monitor. Gratuit 3 market opportunity Europe
+2026-04-15T23:49:24.552545 | API clasificare email (sklearn 94.5%). EUR 29/luna/1000 clasificari. FastAPI + l competitor alternative 2026
+2026-04-15T23:49:26.554941 | CLASIFICATOR EMAIL SAAS SaaS market size pricing
+2026-04-15T23:49:28.555802 | API clasificare email (sklearn 94.5%). EUR 29/luna/1000 clas market opportunity Europe
+2026-04-15T23:49:30.556535 | Agent 3: 9 domenii x 20 tari cu cataloage angajatori din DB + Agent 5: Data Qual competitor alternative 2026
+2026-04-15T23:49:32.558902 | CATALOAGE DOMENII SaaS market size pricing
+2026-04-15T23:49:34.559792 | Agent 3: 9 domenii x 20 tari cu cataloage angajatori din DB  market opportunity Europe
+2026-04-15T23:49:36.562552 | Vinde acces dashboard live (insolventa+TED+SEAP) EUR 49-199/luna in loc de CSV o competitor alternative 2026
+2026-04-15T23:49:38.563722 | DASHBOARD ACCES SaaS market size pricing
+2026-04-15T23:49:40.564622 | Vinde acces dashboard live (insolventa+TED+SEAP) EUR 49-199/ market opportunity Europe
+2026-04-15T23:49:42.565269 | WHATSAPP SEAP FOOD email campaign best practices recruitment
+2026-04-15T23:49:44.567429 | WhatsApp Business API catre 4175 numere SEAP food. 90% open  market opportunity Europe
+2026-04-15T23:49:46.568217 | Furnizor leaduri pentru agentii temporare RO. EUR 50-200/lead din campaniile exi competitor alternative 2026
+2026-04-15T23:49:48.570517 | LEAD BROKER RO SaaS market size pricing
+2026-04-15T23:49:50.571389 | Furnizor leaduri pentru agentii temporare RO. EUR 50-200/lea market opportunity Europe
+2026-04-15T23:49:52.572381 | Generator automat variante landing page (titluri+layout) + tracking conversii pe competitor alternative 2026
+2026-04-15T23:49:54.574032 | LANDING A/B TEST SaaS market size pricing
+2026-04-15T23:49:56.574838 | Generator automat variante landing page (titluri+layout) + t market opportunity Europe
+2026-04-15T23:49:58.575556 | Post-zbor: sugereaza hotel (Booking 25-40%) + activitati (GetYourGuide 8%). Cros competitor alternative 2026
+2026-04-15T23:50:00.577414 | UPSELL RECOMMENDER SaaS market size pricing
+2026-04-15T23:50:02.578231 | Post-zbor: sugereaza hotel (Booking 25-40%) + activitati (Ge market opportunity Europe
+2026-04-15T23:50:04.580136 | LLM rescrie+expandeaza pagini SEO pe 28 domenii. Google adora continut actualiza competitor alternative 2026
+2026-04-15T23:50:06.580765 | SEO CONTENT REWRITER SaaS market size pricing
+2026-04-15T23:50:08.582689 | LLM rescrie+expandeaza pagini SEO pe 28 domenii. Google ador market opportunity Europe
+2026-04-15T23:50:10.583407 | Detecteaza trafic fake + click-uri suspecte pe affiliate links. Analiza access l competitor alternative 2026
+2026-04-15T23:50:12.585055 | FRAUD BOT DETECTION SaaS market size pricing
+2026-04-15T23:50:14.585791 | Detecteaza trafic fake + click-uri suspecte pe affiliate lin market opportunity Europe
+2026-04-15T23:50:16.586456 | Invata cand cumpara oamenii. Optimizeaza timing emailuri + promotii rute. Date d competitor alternative 2026
+2026-04-15T23:50:18.588429 | TIME OPTIMIZATION SaaS market size pricing
+2026-04-15T23:50:20.589011 | Invata cand cumpara oamenii. Optimizeaza timing emailuri + p market opportunity Europe
+2026-04-15T23:50:22.590383 | Monitorizeza API-uri (Kiwi etc). Fallback automat daca pica. Uptime = bani competitor alternative 2026
+2026-04-15T23:50:24.591982 | API HEALTH AGENT SaaS market size pricing
+2026-04-15T23:50:26.592791 | Monitorizeza API-uri (Kiwi etc). Fallback automat daca pica. market opportunity Europe
+2026-04-15T23:50:28.594073 | 10 agenti: ListingHunter + PriceAnomaly + Geo + Legal + DevPotential + CMA + Res competitor alternative 2026
+2026-04-15T23:50:30.596114 | TERENURI AGENTS SaaS market size pricing
+2026-04-15T23:50:32.596587 | 10 agenti: ListingHunter + PriceAnomaly + Geo + Legal + DevP market opportunity Europe
+2026-04-15T23:50:34.597311 | Vinde lista 5000 ONG-uri scoruite catre agentii marketing + consultanti ONG + fu competitor alternative 2026
+2026-04-15T23:50:36.598778 | SELL NGO LEADS SaaS market size pricing
+2026-04-15T23:50:38.599498 | Vinde lista 5000 ONG-uri scoruite catre agentii marketing +  market opportunity Europe
+2026-04-15T23:50:40.600116 | Broker campanii email: 27820 emailuri HORECA + 32545 contacte distributie. EUR 5 competitor alternative 2026
+2026-04-15T23:50:42.601906 | HORECA BROKER SaaS market size pricing
+2026-04-15T23:50:44.602702 | Broker campanii email: 27820 emailuri HORECA + 32545 contact market opportunity Europe
+2026-04-15T23:50:46.603348 | Abonament alerte insolventa: 770K companii + 222K falimente + ANAF live. Email z competitor alternative 2026
+2026-04-15T23:50:48.605899 | INSOLVENTA ALERTS SUB SaaS market size pricing
+2026-04-15T23:50:50.606762 | Abonament alerte insolventa: 770K companii + 222K falimente  market opportunity Europe
+2026-04-15T23:50:52.608487 | Vinde clasificator email ca serviciu B2B: agentii recrutare + imobiliare + logis competitor alternative 2026
+2026-04-15T23:50:54.609650 | LLM EMAIL SAAS SaaS market size pricing
+2026-04-15T23:50:56.610383 | Vinde clasificator email ca serviciu B2B: agentii recrutare  market opportunity Europe
+2026-04-15T23:50:58.611589 | Raport companie RO la cerere: ANAF live + bilant + insolventa + SEAP contracte + competitor alternative 2026
+2026-04-15T23:51:00.612819 | COMPANY REPORT SHOP SaaS market size pricing
+2026-04-15T23:51:02.613745 | Raport companie RO la cerere: ANAF live + bilant + insolvent market opportunity Europe
+2026-04-15T23:51:04.614502 | Alerte proiecte EBRD: 4176 proiecte 42 tari + 134 contractori. EUR 49/luna/contr competitor alternative 2026
+2026-04-15T23:51:06.616238 | EBRD CONTRACTOR ALERTS SaaS market size pricing
+2026-04-15T23:51:08.616978 | Alerte proiecte EBRD: 4176 proiecte 42 tari + 134 contractor market opportunity Europe
+2026-04-15T23:51:10.617921 | CV scanner existent → API. Agentii recrutare platesc EUR 0.50-2/CV parsat. 100 C competitor alternative 2026
+2026-04-15T23:51:12.619943 | CV PARSING API SaaS market size pricing
+2026-04-15T23:51:14.620586 | CV scanner existent → API. Agentii recrutare platesc EUR 0.5 market opportunity Europe
+2026-04-15T23:51:16.621216 | 15 domenii job (.eu) cu trafic SEO. Affiliate links (Indeed EUR 0.10-1/click + B competitor alternative 2026
+2026-04-15T23:51:18.623040 | DOMAIN MONETIZATION SaaS market size pricing
+2026-04-15T23:51:20.623680 | 15 domenii job (.eu) cu trafic SEO. Affiliate links (Indeed  market opportunity Europe
+2026-04-15T23:51:22.624109 | Canale Telegram platite: @JobAlerts (EUR 5/luna) + @TenderAlerts (EUR 19/luna) + competitor alternative 2026
+2026-04-15T23:51:24.626249 | TELEGRAM PREMIUM CHANNELS SaaS market size pricing
+2026-04-15T23:51:26.626872 | Canale Telegram platite: @JobAlerts (EUR 5/luna) + @TenderAl market opportunity Europe
+2026-04-15T23:51:28.627735 | Serviciu imbogatire date: clientul trimite lista CUI-uri → primeste inapoi cu AN competitor alternative 2026
+2026-04-15T23:51:30.629253 | ANAF ENRICHMENT SERVICE SaaS market size pricing
+2026-04-15T23:51:32.629771 | Serviciu imbogatire date: clientul trimite lista CUI-uri → p market opportunity Europe
+2026-04-15T23:51:34.630754 | Cataloage angajatori white-label pt agentii recrutare. Agentia isi pune logo → t competitor alternative 2026
+2026-04-15T23:51:36.632569 | WHITE LABEL CATALOGS SaaS market size pricing
+2026-04-15T23:51:38.633419 | Cataloage angajatori white-label pt agentii recrutare. Agent market opportunity Europe
+2026-04-15T23:51:40.634236 | Newsletter platit: licitatii UE filtrate pe sector (constructii/food/IT). 5.1M t competitor alternative 2026
+2026-04-15T23:51:42.636183 | EU TENDER ALERTS NEWSLETTER SaaS market size pricing
+2026-04-15T23:51:44.636623 | Newsletter platit: licitatii UE filtrate pe sector (construc market opportunity Europe
+2026-04-15T23:51:46.638989 | 1166 furnizori (fiscali+avocati+auditori). Cand expatul foloseste furnizorul → c competitor alternative 2026
+2026-04-15T23:51:48.639877 | EXPAT REFERRAL FEES SaaS market size pricing
+2026-04-15T23:51:50.640897 | 1166 furnizori (fiscali+avocati+auditori). Cand expatul folo market opportunity Europe
+2026-04-15T23:51:52.641920 | 9658 anunturi terenuri agricole 36 judete + CMA lunar. Vinde catre fonduri agric competitor alternative 2026
+2026-04-15T23:51:54.643486 | MADR LAND INVESTOR DATA SaaS market size pricing
+2026-04-15T23:51:56.644136 | 9658 anunturi terenuri agricole 36 judete + CMA lunar. Vinde market opportunity Europe
+2026-04-15T23:51:58.644604 | NEWSLETTER SPONSORSHIP email campaign best practices recruitment
+2026-04-15T23:52:00.646520 | 6300 emailuri/zi → vinde spatiu sponsorizat in campaniile ex market opportunity Europe
+2026-04-15T23:52:02.646910 | CHINA IMPORT BROKER email campaign best practices recruitment
+2026-04-15T23:52:04.648473 | 2.5M fabrici chineze + cooperativa RO. Conecteaza producator market opportunity Europe
+2026-04-15T23:52:06.649062 | API REST: cauta companii/angajatori/licitatii din 208M records. EUR 99-499/luna/ competitor alternative 2026
+2026-04-15T23:52:08.651101 | RECRUITMENT DATA API SaaS market size pricing
+2026-04-15T23:52:10.651669 | API REST: cauta companii/angajatori/licitatii din 208M recor market opportunity Europe
+2026-04-15T23:52:12.652493 | Taxa aderare cooperativa: EUR 50-200/producator/an. 140 membri x EUR 100 = EUR 1 competitor alternative 2026
+2026-04-15T23:52:14.653882 | COOPERATIVE MEMBERSHIP FEE SaaS market size pricing
+2026-04-15T23:52:16.654792 | Taxa aderare cooperativa: EUR 50-200/producator/an. 140 memb market opportunity Europe
+2026-04-15T23:52:18.655585 | Sistem articole LLM → 11 limbi → 15 domenii. Vinde serviciu traducere anunturi j competitor alternative 2026
+2026-04-15T23:52:20.656893 | MULTILINGUAL JOB ADS SaaS market size pricing
+2026-04-15T23:52:22.657489 | Sistem articole LLM → 11 limbi → 15 domenii. Vinde serviciu  market opportunity Europe
+2026-04-15T23:52:24.658256 | Agentie email marketing pt firme RO. Ai infra (6300/zi + 11 Brevo + Mailrelay +  competitor alternative 2026
+2026-04-15T23:52:26.659968 | EMAIL MARKETING AGENCY SaaS market size pricing
+2026-04-15T23:52:28.660490 | Agentie email marketing pt firme RO. Ai infra (6300/zi + 11  market opportunity Europe
+2026-04-15T23:52:30.661516 | Ajuta firme sa liciteze pe SEAP. Tu ai 5.1M licitatii + alerte + matchmaking. EU competitor alternative 2026
+2026-04-15T23:52:32.663307 | SEAP BIDDING ASSISTANT SaaS market size pricing
+2026-04-15T23:52:34.663785 | Ajuta firme sa liciteze pe SEAP. Tu ai 5.1M licitatii + aler market opportunity Europe
+2026-04-15T23:52:36.664305 | Platforma cazare muncitori langa santiere/fabrici. Conecteaza proprietari cu ang competitor alternative 2026
+2026-04-15T23:52:38.665971 | WORKER ACCOMMODATION SaaS market size pricing
+2026-04-15T23:52:40.666976 | Platforma cazare muncitori langa santiere/fabrici. Conecteaz market opportunity Europe
+2026-04-15T23:52:42.667590 | Raport complet pre-achizitie: ANAF+bilant+insolventa+SEAP+angajati+actionari. Pe competitor alternative 2026
+2026-04-15T23:52:44.669216 | DUE DILIGENCE REPORTS SaaS market size pricing
+2026-04-15T23:52:46.670215 | Raport complet pre-achizitie: ANAF+bilant+insolventa+SEAP+an market opportunity Europe
+2026-04-15T23:52:48.671140 | SEASONAL AGRI PLACEMENT email campaign best practices recruitment
+2026-04-15T23:52:50.672651 | Plasare sezoniera: recoltare vara (Jun-Sep). 1507 producator market opportunity Europe
+2026-04-15T23:52:52.673134 | Newsletter Substack gratuit (top 10 joburi/saptamana) + platit EUR 5/luna (toate competitor alternative 2026
+2026-04-15T23:52:54.675211 | SUBSTACK JOBS NEWSLETTER SaaS market size pricing
+2026-04-15T23:52:56.675774 | Newsletter Substack gratuit (top 10 joburi/saptamana) + plat market opportunity Europe
+2026-04-15T23:52:58.676511 | Clientul trimite CSV murdar → primeste curat: dedup + validare email + normaliza competitor alternative 2026
+2026-04-15T23:53:00.678444 | DATA CLEANING SERVICE SaaS market size pricing
+2026-04-15T23:53:02.680067 | Clientul trimite CSV murdar → primeste curat: dedup + valida market opportunity Europe
+2026-04-15T23:53:04.682560 | Rapoarte salariale pe sector/tara din datele job de pe 15 domenii + TED + SEAP.  competitor alternative 2026
+2026-04-15T23:53:06.683514 | SALARY BENCHMARKING SaaS market size pricing
+2026-04-15T23:53:08.684385 | Rapoarte salariale pe sector/tara din datele job de pe 15 do market opportunity Europe
+2026-04-15T23:53:10.686173 | Ruleaza campanii email in numele altor firme. Infra ta (6300/zi) + template-uri  competitor alternative 2026
+2026-04-15T23:53:12.693355 | WHITELABEL CAMPAIGNS SaaS market size pricing
+2026-04-15T23:53:14.694600 | Ruleaza campanii email in numele altor firme. Infra ta (6300 market opportunity Europe
+2026-04-15T23:53:16.695547 | Muncitorii plasati in UE au nevoie de asigurare medicala+acc market opportunity Europe
+2026-04-15T23:53:18.698571 | Pregatire documente: permise munca + vize + contracte + detasare A1. EUR 100-300 competitor alternative 2026
+2026-04-15T23:53:20.700140 | DOCUMENT PREPARATION SaaS market size pricing
+2026-04-15T23:53:22.700816 | Pregatire documente: permise munca + vize + contracte + deta market opportunity Europe
+2026-04-15T23:53:24.701922 | Cataloage tiparite pt targuri (FRESKON/INDAGRA/MEAT&CHILL). Acelasi generator HT competitor alternative 2026
+2026-04-15T23:53:26.703741 | PRINT TRADE FAIR CATALOGS SaaS market size pricing
+2026-04-15T23:53:28.704534 | Cataloage tiparite pt targuri (FRESKON/INDAGRA/MEAT&CHILL).  market opportunity Europe
+2026-04-15T23:53:30.705447 | Vinde flow-uri Node-RED pre-construite: email sorter + campaign sender + IMAP mo competitor alternative 2026
+2026-04-15T23:53:32.707534 | NODE-RED AUTOMATION SHOP SaaS market size pricing
+2026-04-15T23:53:34.708105 | Vinde flow-uri Node-RED pre-construite: email sorter + campa market opportunity Europe
+2026-04-15T23:53:36.708632 | 8 WP site-uri proprii = expertiza. Ofera mentenanta WP altor firme RO: update+ba competitor alternative 2026
+2026-04-15T23:53:38.710565 | WORDPRESS MAINTENANCE SaaS market size pricing
+2026-04-15T23:53:40.711496 | 8 WP site-uri proprii = expertiza. Ofera mentenanta WP altor market opportunity Europe
+2026-04-15T23:53:42.712663 | Licentiaza sistemul (28 domenii + DB + campanii + LLM) catre agentii recrutare d competitor alternative 2026
+2026-04-15T23:53:44.714236 | FRANCHISE RECRUITMENT SaaS market size pricing
+2026-04-15T23:53:46.715248 | Licentiaza sistemul (28 domenii + DB + campanii + LLM) catre market opportunity Europe
+2026-04-15T23:53:48.716010 | Bot WhatsApp pt producatori cooperativa: pret piata azi + meteo + cerere cumpara competitor alternative 2026
+2026-04-15T23:53:50.717439 | FARMER WHATSAPP BOT SaaS market size pricing
+2026-04-15T23:53:52.717947 | Bot WhatsApp pt producatori cooperativa: pret piata azi + me market opportunity Europe
+2026-04-15T23:53:54.718999 | JOB FAIR ORGANIZER email campaign best practices recruitment
+2026-04-15T23:53:56.720258 | Targuri joburi virtuale pe domenii .eu. 5601 linii cod exist market opportunity Europe
+2026-04-15T23:53:58.720909 | Audit GDPR automat pt firmele din DB: scaneaza website → raporteaza lipsuri (coo competitor alternative 2026
+2026-04-15T23:54:00.722681 | GDPR COMPLIANCE TOOL SaaS market size pricing
+2026-04-15T23:54:02.723421 | Audit GDPR automat pt firmele din DB: scaneaza website → rap market opportunity Europe
+2026-04-15T23:54:04.725647 | Serviciu salarizare pt muncitori detasati: calcul taxe RO+tara gazda + fluturasi competitor alternative 2026
+2026-04-15T23:54:06.726213 | PAYROLL BRIDGE SaaS market size pricing
+2026-04-15T23:54:08.728716 | Serviciu salarizare pt muncitori detasati: calcul taxe RO+ta market opportunity Europe
+2026-04-15T23:54:10.731659 | Plati securizate intre cumparatori si producatori prin cooperativa. Comision 2-3 competitor alternative 2026
+2026-04-15T23:54:12.733021 | ESCROW FARM TRANSACTIONS SaaS market size pricing
+2026-04-15T23:54:14.733803 | Plati securizate intre cumparatori si producatori prin coope market opportunity Europe
+2026-04-15T23:54:16.734504 | NORWAY AGENCIES JOBFAIR email campaign best practices recruitment
+2026-04-15T23:54:18.735976 | Filtreaza NACE 78.xx din 314K companii NO → invita agentii l market opportunity Europe
+2026-04-15T23:54:20.738726 | NORWAY DIRECT EMPLOYERS email campaign best practices recruitment
+2026-04-15T23:54:22.739690 | Outreach direct catre angajatori NO (constructii/oil/maritim market opportunity Europe
+2026-04-15T23:54:24.740789 | Vinde '500 angajatori NO constructii cu email' pe Gumroad catre agentii RO care  competitor alternative 2026
+2026-04-15T23:54:26.742714 | SELL NO DATA TO RO AGENCIES SaaS market size pricing
+2026-04-15T23:54:28.743462 | Vinde '500 angajatori NO constructii cu email' pe Gumroad ca market opportunity Europe
+2026-04-15T23:54:30.744323 | Angajatori NO posteaza joburi pe buildjobs.eu/no/ → muncitori RO aplica online.  competitor alternative 2026
+2026-04-15T23:54:32.747566 | REVERSE JOBFAIR ONLINE SaaS market size pricing
+2026-04-15T23:54:34.748874 | Angajatori NO posteaza joburi pe buildjobs.eu/no/ → muncitor market opportunity Europe
+2026-04-15T23:54:36.750794 | Filtreaza firme agricole NO din 314K → ofera utilaje Delecro market opportunity Europe
+2026-04-15T23:54:38.752354 | EBRD X ISC SUBCONTRACT email campaign best practices recruitment
+2026-04-15T23:54:40.754093 | Match contractori NO/UE din EBRD (134) cu firme constructii  market opportunity Europe
+2026-04-15T23:54:42.755786 | Firme NO angajeaza romani → vinde servicii relocare expatsinromania.org (EUR 500 competitor alternative 2026
+2026-04-15T23:54:44.756361 | EXPAT UPSELL NORWAY SaaS market size pricing
+2026-04-15T23:54:46.757184 | Firme NO angajeaza romani → vinde servicii relocare expatsin market opportunity Europe
+2026-04-15T23:54:48.759005 | Devino partener oficial EURES Norvegia. Pozitioneaza InterJo market opportunity Europe
+2026-04-15T23:54:50.760869 | Newsletter Substack 'Norwegian Jobs Weekly' — top 10 joburi NO pt romani. Gratis competitor alternative 2026
+2026-04-15T23:54:52.761665 | NORWEGIAN JOBS NEWSLETTER SaaS market size pricing
+2026-04-15T23:54:54.763074 | Newsletter Substack 'Norwegian Jobs Weekly' — top 10 joburi  market opportunity Europe
+2026-04-15T23:54:56.765321 | Vinde MASTER INVENTORY (aceasta lista) ca 'European Business Intelligence Kit' p competitor alternative 2026
+2026-04-15T23:54:58.766065 | GUMROAD ALL IDEAS BUNDLE SaaS market size pricing
+2026-04-15T23:55:00.766885 | Vinde MASTER INVENTORY (aceasta lista) ca 'European Business market opportunity Europe
+2026-04-15T23:55:02.767639 | Termina SaaS trasabilitate (60% facut). Zero competitori RO. Pitch 5 producatori competitor alternative 2026
+2026-04-15T23:55:04.769160 | TRASABILITATE FINISH MVP SaaS market size pricing
+2026-04-15T23:55:06.770876 | Termina SaaS trasabilitate (60% facut). Zero competitori RO. market opportunity Europe
+2026-04-15T23:55:08.773256 | ASOCIATII CROSS-SELL email campaign best practices recruitment
+2026-04-15T23:55:10.773751 | Top 5K ONG-uri → email cu servicii existente (contabilitate/ market opportunity Europe
+2026-04-15T23:55:12.775451 | FRESKON X PRODUS MONTAN email campaign best practices recruitment
+2026-04-15T23:55:14.777046 | Email 233 expozanti FRESKON greci → ofera supply produse mon market opportunity Europe
+2026-04-15T23:55:16.779587 | EU FUNDS STAFFING email campaign best practices recruitment
+2026-04-15T23:55:18.779949 | Campanie 15969 beneficiari fonduri UE → ofera muncitori pt p market opportunity Europe
+2026-04-15T23:55:20.780643 | LEO BUZAU CAMPAIGN email campaign best practices recruitment
+2026-04-15T23:55:22.782422 | 374 companii cu email din 4 judete → campanie inchiriere 220 market opportunity Europe
+2026-04-15T23:55:24.783465 | Colecteaza CV-uri romani care vor Norvegia via buildjobs.eu/no/. Vinde acces age competitor alternative 2026
+2026-04-15T23:55:26.785103 | NORWAY WORKER DATABASE SaaS market size pricing
+2026-04-15T23:55:28.786026 | Colecteaza CV-uri romani care vor Norvegia via buildjobs.eu/ market opportunity Europe
+2026-04-15T23:55:30.787688 | JOBFAIR SPONSORSHIP email campaign best practices recruitment
+2026-04-15T23:55:32.788588 | Angajatori NO platesc EUR 500-2000 sponsorizare targ. Brandi market opportunity Europe
+2026-04-15T23:55:34.790564 | Training pre-plecare pt muncitori NO: limba/siguranta/cultura. Parteneriat AJOFM competitor alternative 2026
+2026-04-15T23:55:36.792959 | PRE-DEPARTURE TRAINING SaaS market size pricing
+2026-04-15T23:55:38.793527 | Training pre-plecare pt muncitori NO: limba/siguranta/cultur market opportunity Europe
+2026-04-15T23:55:40.794143 | Pachet documente Norvegia: D-nummer + cont bancar + NIN. EUR 150-300/dosar. Recu competitor alternative 2026
+2026-04-15T23:55:42.796712 | NORWAY PERMIT SERVICE SaaS market size pricing
+2026-04-15T23:55:44.797501 | Pachet documente Norvegia: D-nummer + cont bancar + NIN. EUR market opportunity Europe
+2026-04-15T23:55:46.797946 | Curs norvegiana 30 zile generat LLM. Gumroad EUR 19. Target: romani care pleaca  competitor alternative 2026
+2026-04-15T23:55:48.799670 | NORWEGIAN LANGUAGE COURSE SaaS market size pricing
+2026-04-15T23:55:50.800383 | Curs norvegiana 30 zile generat LLM. Gumroad EUR 19. Target: market opportunity Europe
+2026-04-15T23:55:52.801247 | Gaseste cazare langa santier/fabrica NO. Parteneriat proprietari sau Finn.no lis competitor alternative 2026
+2026-04-15T23:55:54.803020 | NORWAY ACCOMMODATION SaaS market size pricing
+2026-04-15T23:55:56.803928 | Gaseste cazare langa santier/fabrica NO. Parteneriat proprie market opportunity Europe
+2026-04-15T23:55:58.804519 | MULTI-COUNTRY JOBFAIR email campaign best practices recruitment
+2026-04-15T23:56:00.806919 | Replica model NO pt FI/DK/DE/NL. Aceeasi infra. EUR 15K-30K/ market opportunity Europe
+2026-04-15T23:56:02.807806 | Pregatire dosar licenta ANOFM pt agentii recrutare. EUR 500-1000/dosar. 20 agent competitor alternative 2026
+2026-04-15T23:56:04.809713 | RECRUITMENT LICENSE BROKER SaaS market size pricing
+2026-04-15T23:56:06.810783 | Pregatire dosar licenta ANOFM pt agentii recrutare. EUR 500- market opportunity Europe
+2026-04-15T23:56:08.811685 | Alerta furnizori cand clientii lor intra in insolventa. 770K companii monitoriza competitor alternative 2026
+2026-04-15T23:56:10.813348 | SUPPLIER DEATH ALERTS SaaS market size pricing
+2026-04-15T23:56:12.814336 | Alerta furnizori cand clientii lor intra in insolventa. 770K market opportunity Europe
+2026-04-15T23:56:14.816961 | Muncitorii platesc EUR 10/luna acces DB angajatori verificati. 15 domenii x 1% c competitor alternative 2026
+2026-04-15T23:56:16.817541 | REVERSE RECRUITMENT SaaS market size pricing
+2026-04-15T23:56:18.818820 | Muncitorii platesc EUR 10/luna acces DB angajatori verificat market opportunity Europe
+2026-04-15T23:56:20.819524 | Imbogatire profil angajati + decision-makers pt agentii. EUR 0.10/profil. 50K pr competitor alternative 2026
+2026-04-15T23:56:22.821516 | LINKEDIN SCRAPER SERVICE SaaS market size pricing
+2026-04-15T23:56:24.822311 | Imbogatire profil angajati + decision-makers pt agentii. EUR market opportunity Europe
+2026-04-15T23:56:26.823113 | SMS CAMPAIGNS email campaign best practices recruitment
+2026-04-15T23:56:28.824919 | SMS bulk via Twilio EUR 0.04/sms. Charge EUR 0.15/sms. Open  market opportunity Europe
+2026-04-15T23:56:30.825859 | Clone site-uri .eu pt agentii recrutare. EUR 500 setup + EUR 50/luna hosting A2. competitor alternative 2026
+2026-04-15T23:56:32.827916 | WEBSITE BUILDER AGENCIES SaaS market size pricing
+2026-04-15T23:56:34.828637 | Clone site-uri .eu pt agentii recrutare. EUR 500 setup + EUR market opportunity Europe
+2026-04-15T23:56:36.830288 | Newsletter saptamanal licitatii pe sector. 5.1M tenders + TED + SEAP. Firme cons competitor alternative 2026
+2026-04-15T23:56:38.832403 | PROCUREMENT INTELLIGENCE SaaS market size pricing
+2026-04-15T23:56:40.833422 | Newsletter saptamanal licitatii pe sector. 5.1M tenders + TE market opportunity Europe
+2026-04-15T23:56:42.834392 | 222K insolvente = debitori verificati. Agentii colectare platesc EUR 1-5/lead. 1 competitor alternative 2026
+2026-04-15T23:56:44.836402 | DEBT COLLECTION LEADS SaaS market size pricing
+2026-04-15T23:56:46.837161 | 222K insolvente = debitori verificati. Agentii colectare pla market opportunity Europe
+2026-04-15T23:56:48.840274 | Parteneriat asigurator. Fiecare plasare = polita. Comision E market opportunity Europe
+2026-04-15T23:56:50.840874 | Rapoarte automate: companii noi + insolvente + angajari + top sectoare per judet competitor alternative 2026
+2026-04-15T23:56:52.843319 | COUNTY ECONOMIC REPORTS SaaS market size pricing
+2026-04-15T23:56:54.844189 | Rapoarte automate: companii noi + insolvente + angajari + to market opportunity Europe
+2026-04-15T23:56:56.844829 | Client da 5 CUI concurenti → track SEAP contracte + ANAF schimbari + risc insolv competitor alternative 2026
+2026-04-15T23:56:58.846605 | COMPETITOR MONITORING SaaS market size pricing
+2026-04-15T23:57:00.847232 | Client da 5 CUI concurenti → track SEAP contracte + ANAF sch market opportunity Europe
+2026-04-15T23:57:02.847754 | Muncitori au nevoie certificari (sudura/schele/stivuitor). Centru training au ne competitor alternative 2026
+2026-04-15T23:57:04.849165 | TRAINING PROVIDER MARKETPLACE SaaS market size pricing
+2026-04-15T23:57:06.849931 | Muncitori au nevoie certificari (sudura/schele/stivuitor). C market opportunity Europe
+2026-04-15T23:57:08.850724 | Ambasade RO in NO/FI/DK/DE primesc zilnic intrebari 'unde ga market opportunity Europe
+2026-04-15T23:57:10.852287 | Firma muta 50 muncitori in NO. Tu faci tot: documente + cazare + transport + asi competitor alternative 2026
+2026-04-15T23:57:12.854246 | CORPORATE RELOCATION PACKAGE SaaS market size pricing
+2026-04-15T23:57:14.854795 | Firma muta 50 muncitori in NO. Tu faci tot: documente + caza market opportunity Europe
+2026-04-15T23:57:16.866623 | Firme insolvente = proprietati vandute fortat. Extrage adrese din BPI. Vinde la  competitor alternative 2026
+2026-04-15T23:57:18.869465 | INSOLVENCY REAL ESTATE LEADS SaaS market size pricing
+2026-04-16T03:08:38.071003 | Firme insolvente = proprietati vandute fortat. Extrage adres market opportunity Europe
+2026-04-16T03:08:40.101021 | 5 API-uri pe RapidAPI: ANAF lookup + email validator + company search + CV parse competitor alternative 2026
+2026-04-16T03:08:42.102336 | API MARKETPLACE BUNDLE SaaS market size pricing
+2026-04-16T03:21:02.938389 | 5 API-uri pe RapidAPI: ANAF lookup + email validator + compa market opportunity Europe
+2026-04-16T03:21:04.969119 | Vinde drepturi exclusive pe teritoriu: singurul agent InterJob in [judet/tara].  competitor alternative 2026
+2026-04-16T03:21:06.971208 | FRANCHISE TERRITORY RIGHTS SaaS market size pricing
+2026-04-16T03:21:08.971974 | Vinde drepturi exclusive pe teritoriu: singurul agent InterJ market opportunity Europe
+2026-04-16T03:21:10.972687 | Firma vede licitatie SEAP/TED → LLM scrie draft propunere. EUR 50-200/propunere. competitor alternative 2026
+2026-04-16T03:21:13.014247 | AUTOMATED PROPOSAL WRITER SaaS market size pricing
+2026-04-16T03:21:15.017940 | Firma vede licitatie SEAP/TED → LLM scrie draft propunere. E market opportunity Europe
+2026-04-16T03:21:17.022672 | Cataloage tiparite pe Amazon KDP: joburi/angajatori/oportunitati/proiecte UE. Tu competitor alternative 2026
+2026-04-16T03:21:19.023318 | AMAZON KDP PRINT CATALOGS SaaS market size pricing
+2026-04-16T03:21:21.024475 | Cataloage tiparite pe Amazon KDP: joburi/angajatori/oportuni market opportunity Europe
+2026-04-16T03:21:23.027194 | Skill Claude sau program independent: data(CSV/JSON/PostgreSQL) → Jinja2 templat competitor alternative 2026
+2026-04-16T03:21:25.028357 | BOOK PUBLISHER SKILL SaaS market size pricing
+2026-04-16T03:21:27.029445 | Skill Claude sau program independent: data(CSV/JSON/PostgreS market opportunity Europe
+2026-04-16T03:21:29.032230 | BLACK CARD BOOKS 40 STEPS feasibility analysis 2026
+2026-04-16T03:21:31.033667 | Gaseste programul 40 pasi Gerry Robert (Black Card Books) pt market opportunity Europe
+2026-04-16T03:21:33.039248 | Punct termic Titan S3 → 20-rack datacenter → waste heat → re market opportunity Europe

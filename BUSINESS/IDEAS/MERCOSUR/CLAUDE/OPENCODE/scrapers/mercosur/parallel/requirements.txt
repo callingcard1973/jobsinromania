@@ -1,0 +1,21 @@
+# MERCOSUR Parallel Scraper Dependencies
+
+# Core HTTP
+requests>=2.28.0
+
+# HTML Parsing
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+
+# Selenium (for JS-rendered pages)
+selenium>=4.10.0
+webdriver-manager>=4.0.0
+
+# Data processing
+pandas>=1.5.0  # Optional, for advanced analysis
+
+# Rate limiting (optional)
+ratelimit>=2.2.1
+
+# Retry logic (optional)
+tenacity>=8.2.0

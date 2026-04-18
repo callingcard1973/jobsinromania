@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU-Mercosur Trade Jobs | InterJob Solutions Europe</title>
+    <meta name="description" content="Find jobs in EU-Mercosur trade: import/export managers, supply chain specialists, Portuguese/Spanish speakers, trade compliance roles.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+
+        .header {
+            background: white;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo { font-weight: bold; font-size: 1.3rem; color: #2b6cb0; }
+        .header .logo span { color: #e53e3e; }
+        .header nav a { margin-left: 25px; color: #666; text-decoration: none; }
+        .header nav a:hover { color: #2b6cb0; }
+
+        .hero {
+            background: linear-gradient(135deg, #2b6cb0 0%, #4299e1 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero .badge {
+            background: #fc8181;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.95; }
+
+        .search-box {
+            background: white;
+            max-width: 700px;
+            margin: -40px auto 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 15px;
+            position: relative;
+            z-index: 10;
+        }
+        .search-box input, .search-box select {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .search-box button {
+            background: #e53e3e;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .search-box button:hover { background: #c53030; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat .number { font-size: 2.5rem; font-weight: bold; color: #2b6cb0; }
+        .stat .label { color: #666; }
+
+        .job-categories {
+            padding: 60px 20px;
+            background: #f7fafc;
+        }
+        .job-categories h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .category-card:hover { transform: translateY(-5px); }
+        .category-card h3 { color: #2b6cb0; margin-bottom: 15px; }
+        .category-card ul { list-style: none; }
+        .category-card li { padding: 8px 0; border-bottom: 1px solid #eee; color: #555; }
+        .category-card li:last-child { border: none; }
+        .category-card .salary { color: #38a169; font-weight: 600; margin-top: 15px; }
+
+        .featured-jobs {
+            padding: 60px 20px;
+        }
+        .featured-jobs h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .job-list { max-width: 800px; margin: 0 auto; }
+        .job-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s;
+        }
+        .job-card:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .job-card .job-info h4 { color: #2b6cb0; margin-bottom: 5px; }
+        .job-card .job-info .company { color: #666; margin-bottom: 8px; }
+        .job-card .job-info .tags span {
+            background: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+        .job-card .job-info .tags span.hot { background: #fed7d7; color: #c53030; }
+        .job-card .job-meta { text-align: right; }
+        .job-card .job-meta .salary { font-weight: bold; color: #38a169; font-size: 1.1rem; }
+        .job-card .job-meta .location { color: #666; font-size: 0.9rem; }
+        .job-card .apply-btn {
+            background: #2b6cb0;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .job-card .apply-btn:hover { background: #2c5282; }
+
+        .employers {
+            background: #2b6cb0;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .employers h2 { margin-bottom: 20px; }
+        .employers p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .employers .btn {
+            background: white;
+            color: #2b6cb0;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .employers .btn:hover { background: #f7fafc; }
+
+        .cta-section {
+            padding: 60px 20px;
+            background: #f7fafc;
+        }
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .cta-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .cta-card h3 { margin-bottom: 15px; color: #2b6cb0; }
+        .cta-card p { color: #666; margin-bottom: 20px; }
+        .cta-card .btn {
+            background: #2b6cb0;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-card .btn.secondary { background: #38a169; }
+
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer a { color: #90cdf4; }
+
+        @media (max-width: 600px) {
+            .search-box { flex-direction: column; }
+            .job-card { flex-direction: column; text-align: center; gap: 15px; }
+            .job-card .job-meta { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Inter<span>Job</span> | Mercosur Trade</div>
+        <nav>
+            <a href="#jobs">Jobs</a>
+            <a href="#employers">Employers</a>
+            <a href="https://interjob.ro">Main Site</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="badge">NEW: EU-Mercosur Opens May 2026</div>
+        <h1>Jobs in EU-Mercosur Trade</h1>
+        <p>Companies expanding into Mercosur need talent. Find roles in import/export, supply chain, trade compliance, and bilingual positions.</p>
+    </section>
+
+    <div class="search-box">
+        <input type="text" placeholder="Job title, keyword...">
+        <select>
+            <option value="">All Categories</option>
+            <option value="import_export">Import/Export</option>
+            <option value="supply_chain">Supply Chain</option>
+            <option value="compliance">Trade Compliance</option>
+            <option value="sales">Sales/BD</option>
+            <option value="bilingual">Bilingual Roles</option>
+        </select>
+        <select>
+            <option value="">All Countries</option>
+            <option value="DE">Germany</option>
+            <option value="FR">France</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+            <option value="NL">Netherlands</option>
+            <option value="BE">Belgium</option>
+        </select>
+        <button>Search Jobs</button>
+    </div>
+
+    <section class="stats">
+        <div class="stat">
+            <div class="number">150+</div>
+            <div class="label">Open Positions</div>
+        </div>
+        <div class="stat">
+            <div class="number">45</div>
+            <div class="label">Companies Hiring</div>
+        </div>
+        <div class="stat">
+            <div class="number">7</div>
+            <div class="label">EU Countries</div>
+        </div>
+        <div class="stat">
+            <div class="number">EUR 65K</div>
+            <div class="label">Avg. Salary</div>
+        </div>
+    </section>
+
+    <section class="job-categories">
+        <div class="container">
+            <h2>Hot Job Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <h3>Import/Export Management</h3>
+                    <ul>
+                        <li>Import Manager - Mercosur</li>
+                        <li>Export Coordinator</li>
+                        <li>International Trade Specialist</li>
+                        <li>Customs Documentation Officer</li>
+                    </ul>
+                    <div class="salary">EUR 50,000 - 85,000</div>
+                </div>
+                <div class="category-card">
+                    <h3>Supply Chain & Logistics</h3>
+                    <ul>
+                        <li>Supply Chain Manager (LATAM)</li>
+                        <li>Logistics Coordinator - Brazil</li>
+                        <li>Procurement Specialist</li>
+                        <li>Freight Operations Manager</li>
+                    </ul>
+                    <div class="salary">EUR 45,000 - 75,000</div>
+                </div>
+                <div class="category-card">
+                    <h3>Trade Compliance</h3>
+                    <ul>
+                        <li>Trade Compliance Officer</li>
+                        <li>EUDR Compliance Specialist</li>
+                        <li>Customs & Tariff Analyst</li>
+                        <li>Regulatory Affairs Manager</li>
+                    </ul>
+                    <div class="salary">EUR 55,000 - 90,000</div>
+                </div>
+                <div class="category-card">
+                    <h3>Bilingual Roles</h3>
+                    <ul>
+                        <li>Portuguese-speaking Sales Rep</li>
+                        <li>Spanish/German Account Manager</li>
+                        <li>LATAM Business Developer</li>
+                        <li>Translation/Localization</li>
+                    </ul>
+                    <div class="salary">EUR 40,000 - 70,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-jobs" id="jobs">
+        <div class="container">
+            <h2>Featured Positions</h2>
+            <div class="job-list">
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Import Manager - Raw Materials (Mercosur)</h4>
+                        <div class="company">Leading German Automotive Supplier</div>
+                        <div class="tags">
+                            <span class="hot">Urgent</span>
+                            <span>Full-time</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="salary">EUR 75,000</div>
+                        <div class="location">Munich, DE</div>
+                        <a href="#contact" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>EUDR Compliance Specialist</h4>
+                        <div class="company">Major Food Importer</div>
+                        <div class="tags">
+                            <span class="hot">New</span>
+                            <span>Full-time</span>
+                            <span>Remote OK</span>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="salary">EUR 65,000</div>
+                        <div class="location">Amsterdam, NL</div>
+                        <a href="#contact" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Business Development - Brazil/Argentina</h4>
+                        <div class="company">International Machinery Exporter</div>
+                        <div class="tags">
+                            <span>Full-time</span>
+                            <span>Portuguese Required</span>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="salary">EUR 60,000 + Bonus</div>
+                        <div class="location">Milan, IT</div>
+                        <a href="#contact" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="job-card">
+                    <div class="job-info">
+                        <h4>Supply Chain Coordinator - Lithium Imports</h4>
+                        <div class="company">Battery Materials Company</div>
+                        <div class="tags">
+                            <span class="hot">Hot</span>
+                            <span>Full-time</span>
+                            <span>Green Sector</span>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="salary">EUR 55,000</div>
+                        <div class="location">Brussels, BE</div>
+                        <a href="#contact" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="employers" id="employers">
+        <h2>Hiring for Mercosur Expansion?</h2>
+        <p>We connect you with qualified candidates experienced in international trade, supply chain, and Latin American markets. Post your jobs and reach professionals ready for Mercosur opportunities.</p>
+        <a href="#contact" class="btn">Post a Job - EUR 199</a>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-grid">
+            <div class="cta-card">
+                <h3>For Job Seekers</h3>
+                <p>Upload your CV and get matched with EU-Mercosur trade opportunities. Free for candidates.</p>
+                <a href="mailto:jobs@interjob.ro?subject=CV%20Submission%20-%20Mercosur%20Trade" class="btn">Submit Your CV</a>
+            </div>
+            <div class="cta-card">
+                <h3>For Employers</h3>
+                <p>Post jobs, access our candidate database, or let us headhunt the perfect hire for your Mercosur expansion.</p>
+                <a href="mailto:hire@interjob.ro?subject=Hiring%20Inquiry%20-%20Mercosur" class="btn secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>InterJob Solutions Europe</strong> | EU-Mercosur Trade Recruitment</p>
+        <p style="margin-top: 10px;">
+            <a href="https://interjob.ro">interjob.ro</a> |
+            <a href="https://aluminumrecyclehub.com">Raw Materials</a> |
+            <a href="https://agroevolution.com">Agricultural Trade</a>
+        </p>
+        <p style="margin-top: 20px; opacity: 0.7;">
+            <a href="mailto:office@interjob.ro">office@interjob.ro</a>
+        </p>
+    </footer>
+</body>
+</html>

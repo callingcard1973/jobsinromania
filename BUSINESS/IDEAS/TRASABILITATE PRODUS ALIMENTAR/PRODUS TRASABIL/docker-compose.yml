@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    container_name: trasabilitate_db
+    environment:
+      POSTGRES_DB: trasabilitate_produce
+      POSTGRES_USER: tudor
+      POSTGRES_PASSWORD: tudor
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: trasabilitate_backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://tudor:tudor@db:5432/trasabilitate_produce
+    volumes:
+      - ./backend:/app/backend
+    command: python backend/app.py
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    container_name: trasabilitate_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+
+volumes:
+  postgres_data:

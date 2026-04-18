@@ -1,0 +1,106 @@
+{
+  "brevo": {
+    "buildjobs": {
+      "email": "office@buildjobs.eu",
+      "name": "InterJob - BuildJobs",
+      "api_key_env": "BREVO_BUILDJOBS_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "mivromania_com": {
+      "email": "office@mivromania.com",
+      "name": "MIV Romania",
+      "api_key_env": "BREVO_MIVROMANIA_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "mivromania_online": {
+      "email": "office@mivromania.online",
+      "name": "MIV Romania Online",
+      "api_key_env": "BREVO_MIVROMANIA_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "mivromania_info": {
+      "email": "office@mivromania.info",
+      "name": "MIV Romania Info",
+      "api_key_env": "BREVO_MIVROMANIA_API_KEY",
+      "daily_limit": 300,
+      "enabled": false,
+      "note": "49.8% bounce risk"
+    },
+    "seicarescu": {
+      "email": "tudor@seicarescu.com",
+      "name": "Tudor Seicarescu",
+      "api_key_env": "BREVO_SEICARESCU_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "agroevolution": {
+      "email": "partners@agroevolution.com",
+      "name": "AgroEvolution Partners",
+      "api_key_env": "BREVO_AGROEVOLUTION_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "cumparlegume": {
+      "email": "office@cumparlegume.com",
+      "name": "CumparaLegume",
+      "api_key_env": "BREVO_CUMPARLEGUME_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "careworkers": {
+      "email": "office@careworkers.eu",
+      "name": "CareWorkers EU",
+      "api_key_env": "BREVO_CAREWORKERS_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "horecaworkers2026_eu": {
+      "email": "office@horecaworkers2026.eu",
+      "name": "HorecaWorkers 2026",
+      "api_key_env": "BREVO_HORECAWORKERS2026_EU_API_KEY",
+      "daily_limit": 300,
+      "enabled": true
+    },
+    "bppltd": {
+      "email": "office@bppltd.co.uk",
+      "name": "BP&P Partners",
+      "api_key_env": "BREVO_BPPLTD_API_KEY",
+      "daily_limit": 284,
+      "enabled": true
+    }
+  },
+  "mailrelay": {
+    "expatsinromania": {
+      "email": "office@expatsinromania.org",
+      "name": "Expats in Romania",
+      "api_key_env": "MAILRELAY_API_KEY",
+      "api_url": "https://expatsinromania.ipzmarketing.com/api/v1",
+      "daily_limit": 2666,
+      "enabled": true
+    }
+  },
+  "resend": {
+    "interjob": {
+      "email": "noreply@interjob.ro",
+      "name": "InterJob Solutions",
+      "api_key_env": "RESEND_API_KEY",
+      "daily_limit": 100,
+      "enabled": true
+    }
+  },
+  "gmail": {
+    "manpowersearch": {"email": "manpowersearchromania@gmail.com", "name": "Manpower Search", "daily_limit": 40, "enabled": true},
+    "pamintstrabun": {"email": "pamintstrabun@gmail.com", "name": "Pamint Strabun", "daily_limit": 40, "enabled": true},
+    "casafaur": {"email": "casafaurbucuresti@gmail.com", "name": "Casa Faur", "daily_limit": 40, "enabled": true},
+    "elena": {"email": "elena.manpower.dristor@gmail.com", "name": "Elena Manpower", "daily_limit": 40, "enabled": true},
+    "cumparlegume": {"email": "cumparlegume@gmail.com", "name": "CumparaLegume", "daily_limit": 40, "enabled": true},
+    "fructexport": {"email": "fructexportromania@gmail.com", "name": "Fruct Export", "daily_limit": 40, "enabled": true},
+    "cartele": {"email": "carteledeapel@gmail.com", "name": "Cartele de Apel", "daily_limit": 40, "enabled": true},
+    "vegetables": {"email": "vegetablesbucharest@gmail.com", "name": "Vegetables Bucharest", "daily_limit": 40, "enabled": true},
+    "expats": {"email": "expatsinromania@gmail.com", "name": "Expats in Romania", "daily_limit": 40, "enabled": true},
+    "icral": {"email": "icralbucuresti@gmail.com", "name": "ICRAL Bucuresti", "daily_limit": 40, "enabled": true}
+  }
+}

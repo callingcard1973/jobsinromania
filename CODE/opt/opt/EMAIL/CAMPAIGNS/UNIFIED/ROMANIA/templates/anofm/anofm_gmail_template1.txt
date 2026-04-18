@@ -1,0 +1,23 @@
+Subject: {job_title} -- {company_name}
+
+Buna ziua{contact_greeting}
+
+{sender_tagline}.
+
+Am gasit anuntul dvs pe ANOFM: {job_title}{city_text}.
+
+Avem persoane disponibile rapid din Romania, Moldova, Nepal, Pakistan. 0 costuri, garantie inlocuire.
+
+Raspundeti cu "Da, cautam inca" si revin in 24h.
+
+Elena Vasilescu
+{sender_brand}
+elena.manpower.dristor@gmail.com
+WhatsApp: +33 7 51 17 13 56
+{sender_url}
+
+
+Daca doriti sa vedeti profiluri inainte de a decide, putem trimite un catalog mostra - specializat pe sectorul dvs sau general cu toate domeniile.
+Raspundeti la {catalog_email} pentru catalog.
+
+{gdpr_footer_ro}

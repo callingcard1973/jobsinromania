@@ -1,0 +1,79 @@
+# InterJob Business Model — 2026
+
+## Mission
+Make money moving labor: Asian/African workers → Romania, or Romanian teams → Scandinavia/rich EU.
+
+---
+
+## Revenue Stream 1: Import (Asia/Africa → Romania)
+
+**Model:** Placement fee per worker placed with Romanian employer
+
+| Item | Value |
+|------|-------|
+| Target sectors | Construction, factory, meat, warehouse, care, horeca |
+| Fee per worker | €500–€1,500 (depends on sector + contract length) |
+| Volume target | 10–50 workers/month |
+| Monthly revenue | €5K–€75K |
+| Key bottleneck | Romanian employer with valid work authorization |
+
+**Pipeline:**
+- Employers found via ANOFM campaigns (2,249/day outreach)
+- Workers from: `master_applicants.db` (758 workers), interjob.ro/apply.html
+- Solonet handles work permit logistics → forward fee to solonet.vacancy@gmail.com
+
+---
+
+## Revenue Stream 2: Export (Romanian teams → EU/Scandinavia)
+
+**Model:** Commission from employer OR margin on worker salary
+
+| Item | Value |
+|------|-------|
+| Target countries | Norway, Finland, Sweden, Denmark, Netherlands, Germany |
+| Target sectors | Construction, welding, scaffolding, pipe-fitting, electricians |
+| Commission | 10–15% of first-year gross salary |
+| Per worker value | €3K–€8K |
+| Volume target | 5–20 workers/month |
+| Monthly revenue | €15K–€160K |
+
+**Pipeline:**
+- Employers via EBRD campaigns (150/day), TED procurement, Norway pages on buildjobs.eu/no/
+- Workers from master_applicants.db, interjob.ro, ANOFM referrals
+- Active campaigns: norway_virgil (10/day), FI_TED_CONSTRUCTION (80/day)
+
+---
+
+## Revenue Stream 3: Data / B2B Services
+
+| Product | Price | Status |
+|---------|-------|--------|
+| Employer database access | €200–€500/month | IDEA |
+| ANAF API (FastAPI + RapidAPI) | €0.01/call | In dev |
+| Job catalogs to employers | Free (lead gen) | LIVE |
+| Delecroix machinery commission | ~€1,500/unit (~10%) | Active |
+| Worker placement via solonet | Pass-through + margin | LIVE |
+
+---
+
+## Cost Structure
+
+| Item | Cost/month |
+|------|------------|
+| A2 Hosting (28 domains) | ~€30 |
+| Brevo email | €0 (free tier) |
+| Zoho email | €0 (free tier) |
+| ProtonVPN | €0 (free) |
+| raspibig (electricity) | ~€10 |
+| raspi (electricity) | ~€5 |
+| LLM (local) | €0 |
+| **Total** | **~€45/month** |
+
+---
+
+## Key Constraints
+
+1. Romanian employers need valid work authorization before hiring non-EU workers
+2. Solonet is current logistics partner — margin depends on their terms
+3. Outreach limited by Brevo bounce rate (<30% threshold)
+4. Worker pipeline thinner than employer pipeline — need more applicants

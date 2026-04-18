@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheap Flights for Workers — InterJob</title>
+<meta name="description" content="Book cheap flights to your new job in Europe. Best prices on Romania, Nepal, Bulgaria, Philippines routes.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0e17;color:#e0e0e0;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a237e,#0d47a1);padding:20px 30px;display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:1.5rem;color:#fff}
+.header a{color:#90caf9;text-decoration:none;font-size:0.9rem}
+.hero{text-align:center;padding:40px 20px 20px;background:linear-gradient(180deg,#0d47a1 0%,#0a0e17 100%)}
+.hero h2{font-size:2rem;margin-bottom:10px;color:#fff}
+.hero p{color:#90caf9;font-size:1.1rem;max-width:600px;margin:0 auto}
+.search-box{max-width:900px;margin:30px auto;background:#151b2b;border-radius:12px;padding:30px;border:1px solid #1e3a5f}
+.search-row{display:flex;gap:12px;flex-wrap:wrap;align-items:end}
+.field{flex:1;min-width:150px}
+.field label{display:block;font-size:0.8rem;color:#90caf9;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+.field input,.field select{width:100%;padding:12px;border-radius:8px;border:1px solid #1e3a5f;background:#0a0e17;color:#fff;font-size:1rem}
+.field input:focus,.field select:focus{outline:none;border-color:#42a5f5}
+.btn-search{background:linear-gradient(135deg,#f57c00,#ff9800);color:#fff;border:none;padding:12px 40px;border-radius:8px;font-size:1.1rem;cursor:pointer;font-weight:600;min-width:150px;transition:transform 0.2s}
+.btn-search:hover{transform:scale(1.03)}
+.btn-search:disabled{opacity:0.5;cursor:wait}
+.routes{max-width:900px;margin:30px auto;padding:0 20px}
+.routes h3{color:#90caf9;margin-bottom:15px;font-size:1.2rem}
+.route-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.route-card{background:#151b2b;border:1px solid #1e3a5f;border-radius:10px;padding:16px;cursor:pointer;transition:border-color 0.2s}
+.route-card:hover{border-color:#42a5f5}
+.route-card .cities{font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:4px}
+.route-card .price{color:#4caf50;font-size:1.3rem;font-weight:700}
+.route-card .detail{color:#78909c;font-size:0.85rem;margin-top:4px}
+.results{max-width:900px;margin:20px auto;padding:0 20px}
+.results h3{color:#90caf9;margin-bottom:15px}
+.flight{background:#151b2b;border:1px solid #1e3a5f;border-radius:10px;padding:20px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.flight-info{flex:1}
+.flight-route{font-size:1.1rem;font-weight:600;color:#fff}
+.flight-detail{color:#78909c;font-size:0.9rem;margin-top:4px}
+.flight-price{text-align:right}
+.flight-price .amount{font-size:1.5rem;font-weight:700;color:#4caf50}
+.flight-price .per{color:#78909c;font-size:0.8rem}
+.btn-book{background:#4caf50;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:6px;transition:background 0.2s}
+.btn-book:hover{background:#66bb6a}
+.loading{text-align:center;padding:40px;color:#90caf9}
+.spinner{border:3px solid #1e3a5f;border-top:3px solid #42a5f5;border-radius:50%;width:30px;height:30px;animation:spin 0.8s linear infinite;margin:0 auto 10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.no-results{text-align:center;padding:40px;color:#78909c}
+.footer{text-align:center;padding:30px;color:#455a64;font-size:0.8rem;margin-top:40px}
+.footer a{color:#90caf9;text-decoration:none}
+@media(max-width:600px){.search-row{flex-direction:column}.btn-search{width:100%}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>InterJob Flights</h1>
+  <a href="https://interjob.ro">Back to InterJob</a>
+</div>
+
+<div class="hero">
+  <h2>Cheap Flights to Your New Job</h2>
+  <p>Best prices on worker routes: Romania, Nepal, Bulgaria, Philippines to all of Europe</p>
+</div>
+
+<div class="search-box">
+  <div class="search-row">
+    <div class="field">
+      <label>From</label>
+      <input type="text" id="flyFrom" placeholder="City or airport (e.g. OTP)" value="OTP">
+    </div>
+    <div class="field">
+      <label>To</label>
+      <input type="text" id="flyTo" placeholder="City or airport (e.g. AMS)">
+    </div>
+    <div class="field">
+      <label>Departure</label>
+      <input type="date" id="dateFrom">
+    </div>
+    <div class="field">
+      <label>Return (optional)</label>
+      <input type="date" id="dateTo">
+    </div>
+    <div class="field">
+      <label>Passengers</label>
+      <select id="adults">
+        <option value="1">1 Adult</option>
+        <option value="2">2 Adults</option>
+        <option value="3">3 Adults</option>
+        <option value="4">4 Adults</option>
+        <option value="5">5 Adults</option>
+      </select>
+    </div>
+    <button class="btn-search" id="btnSearch" onclick="searchFlights()">Search Flights</button>
+  </div>
+</div>
+
+<div class="routes">
+  <h3>Popular Worker Routes</h3>
+  <div class="route-grid">
+    <div class="route-card" onclick="quickSearch('OTP','AMS')">
+      <div class="cities">Bucharest → Amsterdam</div>
+      <div class="price" id="price-OTP-AMS">Check price</div>
+      <div class="detail">Warehouse, logistics, factory jobs</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('OTP','BER')">
+      <div class="cities">Bucharest → Berlin</div>
+      <div class="price" id="price-OTP-BER">Check price</div>
+      <div class="detail">Construction, manufacturing, meat processing</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('OTP','OSL')">
+      <div class="cities">Bucharest → Oslo</div>
+      <div class="price" id="price-OTP-OSL">Check price</div>
+      <div class="detail">Care workers, hospitality, cleaning</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('OTP','CPH')">
+      <div class="cities">Bucharest → Copenhagen</div>
+      <div class="price" id="price-OTP-CPH">Check price</div>
+      <div class="detail">Farm workers, food processing</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('KTM','OTP')">
+      <div class="cities">Kathmandu → Bucharest</div>
+      <div class="price" id="price-KTM-OTP">Check price</div>
+      <div class="detail">Nepal workers — all sectors</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('SOF','AMS')">
+      <div class="cities">Sofia → Amsterdam</div>
+      <div class="price" id="price-SOF-AMS">Check price</div>
+      <div class="detail">Bulgaria — warehouse, logistics</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('OTP','HEL')">
+      <div class="cities">Bucharest → Helsinki</div>
+      <div class="price" id="price-OTP-HEL">Check price</div>
+      <div class="detail">Construction, welding, electrical</div>
+    </div>
+    <div class="route-card" onclick="quickSearch('MNL','OTP')">
+      <div class="cities">Manila → Bucharest</div>
+      <div class="price" id="price-MNL-OTP">Check price</div>
+      <div class="detail">Philippines workers — hospitality, care</div>
+    </div>
+  </div>
+</div>
+
+<div class="results" id="resultsSection" style="display:none">
+  <h3 id="resultsTitle">Search Results</h3>
+  <div id="resultsList"></div>
+</div>
+
+<div class="footer">
+  <p>Powered by <a href="https://interjob.ro">InterJob European Recruitment Network</a></p>
+  <p style="margin-top:8px">Flight booking handled by Kiwi.com — InterJob earns a commission at no extra cost to you.</p>
+</div>
+
+<script>
+// CONFIG — Replace with your Tequila API key after registration
+const TEQUILA_API_KEY = 'YOUR_API_KEY_HERE';
+const API_BASE = 'https://api.tequila.kiwi.com';
+
+// Set default dates (tomorrow + 30 days)
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+document.getElementById('dateFrom').value = tomorrow.toISOString().split('T')[0];
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+}
+
+function quickSearch(from, to) {
+  document.getElementById('flyFrom').value = from;
+  document.getElementById('flyTo').value = to;
+  searchFlights();
+}
+
+async function searchFlights() {
+  const from = document.getElementById('flyFrom').value.trim();
+  const to = document.getElementById('flyTo').value.trim();
+  const dateFrom = document.getElementById('dateFrom').value;
+  const dateTo = document.getElementById('dateTo').value;
+  const adults = document.getElementById('adults').value;
+
+  if (!from || !to || !dateFrom) {
+    alert('Please fill in From, To, and Departure date');
+    return;
+  }
+
+  const btn = document.getElementById('btnSearch');
+  btn.disabled = true;
+  btn.textContent = 'Searching...';
+
+  const section = document.getElementById('resultsSection');
+  section.style.display = 'block';
+  document.getElementById('resultsTitle').textContent = `${from} → ${to}`;
+  document.getElementById('resultsList').innerHTML = '<div class="loading"><div class="spinner"></div>Searching best prices...</div>';
+
+  const params = new URLSearchParams({
+    fly_from: from,
+    fly_to: to,
+    date_from: formatDate(dateFrom),
+    adults: adults,
+    curr: 'EUR',
+    locale: 'en',
+    limit: 15,
+    sort: 'price',
+    max_stopovers: 2
+  });
+
+  if (dateTo) {
+    params.append('return_from', formatDate(dateTo));
+    params.append('return_to', formatDate(dateTo));
+  }
+
+  try {
+    const resp = await fetch(`${API_BASE}/v2/search?${params}`, {
+      headers: { 'apikey': TEQUILA_API_KEY }
+    });
+    const data = await resp.json();
+
+    if (!data.data || data.data.length === 0) {
+      document.getElementById('resultsList').innerHTML = '<div class="no-results">No flights found. Try different dates or airports.</div>';
+      return;
+    }
+
+    let html = '';
+    data.data.forEach(f => {
+      const depTime = new Date(f.local_departure).toLocaleString('en-GB', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+      const arrTime = new Date(f.local_arrival).toLocaleString('en-GB', {day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+      const airlines = [...new Set(f.airlines.map(a => a))].join(', ');
+      const stops = f.route.length - 1;
+      const stopText = stops === 0 ? 'Direct' : `${stops} stop${stops>1?'s':''}`;
+      const durationH = Math.floor(f.duration.departure / 3600);
+      const durationM = Math.floor((f.duration.departure % 3600) / 60);
+
+      html += `
+        <div class="flight">
+          <div class="flight-info">
+            <div class="flight-route">${f.cityFrom} (${f.flyFrom}) → ${f.cityTo} (${f.flyTo})</div>
+            <div class="flight-detail">${depTime} → ${arrTime} | ${durationH}h ${durationM}m | ${stopText}</div>
+            <div class="flight-detail">Airlines: ${airlines}</div>
+          </div>
+          <div class="flight-price">
+            <div class="amount">&euro;${f.price}</div>
+            <div class="per">per person</div>
+            <a href="${f.deep_link}" target="_blank" rel="noopener"><button class="btn-book">Book Now</button></a>
+          </div>
+        </div>`;
+    });
+
+    document.getElementById('resultsList').innerHTML = html;
+  } catch (err) {
+    document.getElementById('resultsList').innerHTML = `<div class="no-results">Error: ${err.message}. Check API key.</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Search Flights';
+  }
+}
+</script>
+</body>
+</html>
