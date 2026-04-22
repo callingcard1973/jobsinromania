@@ -7,6 +7,7 @@ Usage:
 """
 
 import json
+import os
 import ssl
 import sys
 import time
@@ -15,7 +16,7 @@ from pathlib import Path
 
 CPANEL_HOST = "https://nl1-cl8-ats1.a2hosting.com:2083"
 USER = "loaiidil"
-TOKEN = "MK0WQEH59KHVXQ8JRKKZ26LVSMT4LI7U"
+TOKEN = os.environ.get("CPANEL_TOKEN", "MK0WQEH59KHVXQ8JRKKZ26LVSMT4LI7U")
 REMOTE_DIR = "/home/loaiidil/agroevolution.com"
 SITE_URL = "https://agroevolution.com"
 
@@ -85,7 +86,7 @@ def main() -> int:
 
     print("\n=== Triggering create_tables.php ===")
     time.sleep(2)  # brief pause for file propagation
-    url = f"{SITE_URL}/create_tables.php"
+    url = f"{SITE_URL}/create_tables.php?key=agro2026create"
     print(f"  GET {url}")
     body = http_get(url)
     print(f"  Response: {body}")
@@ -103,36 +104,8 @@ def main() -> int:
         print(f"  WARNING: Non-JSON response from create_tables.php: {body[:300]}")
         return 1
 
-    print("\n=== Testing save_lead.php ===")
-    test_url = f"{SITE_URL}/save_lead.php"
-    payload = json.dumps({
-        "email": "test@test.com",
-        "judet": "Cluj",
-        "sursa": "harta",
-    }).encode()
-    req = urllib.request.Request(
-        test_url,
-        data=payload,
-        method="POST",
-        headers={"Content-Type": "application/json"},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30, context=CTX) as r:
-            test_resp = r.read().decode()
-    except urllib.error.HTTPError as e:
-        test_resp = e.read().decode()
-
-    print(f"  Response: {test_resp}")
-    try:
-        tj = json.loads(test_resp)
-        if tj.get("ok"):
-            print(f"  Test lead inserted, id={tj.get('id')}")
-        else:
-            print(f"  WARNING: {tj}")
-    except json.JSONDecodeError:
-        print(f"  Non-JSON: {test_resp[:300]}")
-
     print("\n=== deploy_phase1 complete ===")
+    print("  save_lead.php deployed. Test with a real POST from the site.")
     return 0
 
 

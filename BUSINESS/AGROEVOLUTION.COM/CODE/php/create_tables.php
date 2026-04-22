@@ -4,6 +4,12 @@
  * Self-deletes after successful run. Deploy to agroevolution.com docroot, visit once.
  */
 
+$key = $_GET['key'] ?? '';
+if ($key !== 'agro2026create') {
+    http_response_code(403);
+    exit;
+}
+
 define('ABSPATH_GUARD', true);
 
 $docroot = '/home/loaiidil/agroevolution.com';
@@ -31,7 +37,7 @@ $sql_leads = "CREATE TABLE IF NOT EXISTS {$prefix}agro_leads (
     INDEX idx_email (email),
     INDEX idx_judet (judet),
     INDEX idx_sursa (sursa)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+) ENGINE=InnoDB {$charset};";
 
 $r1 = $wpdb->query($sql_leads);
 $results['agro_leads'] = ($r1 !== false) ? 'OK' : $wpdb->last_error;
@@ -51,7 +57,7 @@ $sql_alerts = "CREATE TABLE IF NOT EXISTS {$prefix}agro_price_alerts (
     INDEX idx_email (email),
     INDEX idx_confirmed (confirmed),
     INDEX idx_token (confirm_token)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+) ENGINE=InnoDB {$charset};";
 
 $r2 = $wpdb->query($sql_alerts);
 $results['agro_price_alerts'] = ($r2 !== false) ? 'OK' : $wpdb->last_error;

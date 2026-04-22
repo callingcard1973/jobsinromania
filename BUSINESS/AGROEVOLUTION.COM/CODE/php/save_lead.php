@@ -82,12 +82,13 @@ $inserted = $wpdb->insert(
         'mesaj'         => $mesaj,
         'sursa'         => $sursa,
     ],
-    ['%s', '%s', '%s', '%s', '%f', '%f', '%s', '%s']
+    ['%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s']
 );
 
 if ($inserted === false) {
     http_response_code(500);
-    echo json_encode(['error' => 'Database insert failed: ' . $wpdb->last_error]);
+    error_log('agro_leads insert failed: ' . $wpdb->last_error);
+    echo json_encode(['error' => 'Database error']);
     exit;
 }
 
