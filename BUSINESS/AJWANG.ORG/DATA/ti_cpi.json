@@ -1,0 +1,218 @@
+{
+  "DZA": {
+    "cpi_score": 34,
+    "cpi_rank": 109
+  },
+  "AGO": {
+    "cpi_score": 32,
+    "cpi_rank": 120
+  },
+  "BEN": {
+    "cpi_score": 45,
+    "cpi_rank": 70
+  },
+  "BWA": {
+    "cpi_score": 58,
+    "cpi_rank": 41
+  },
+  "BFA": {
+    "cpi_score": 40,
+    "cpi_rank": 84
+  },
+  "BDI": {
+    "cpi_score": 17,
+    "cpi_rank": 167
+  },
+  "CPV": {
+    "cpi_score": 62,
+    "cpi_rank": 35
+  },
+  "CMR": {
+    "cpi_score": 26,
+    "cpi_rank": 142
+  },
+  "CAF": {
+    "cpi_score": 24,
+    "cpi_rank": 150
+  },
+  "TCD": {
+    "cpi_score": 22,
+    "cpi_rank": 157
+  },
+  "COM": {
+    "cpi_score": 20,
+    "cpi_rank": 163
+  },
+  "COG": {
+    "cpi_score": 23,
+    "cpi_rank": 153
+  },
+  "COD": {
+    "cpi_score": 23,
+    "cpi_rank": 153
+  },
+  "DJI": {
+    "cpi_score": 31,
+    "cpi_rank": 124
+  },
+  "EGY": {
+    "cpi_score": 30,
+    "cpi_rank": 130
+  },
+  "GNQ": {
+    "cpi_score": 15,
+    "cpi_rank": 172
+  },
+  "ERI": {
+    "cpi_score": 13,
+    "cpi_rank": 177
+  },
+  "SWZ": {
+    "cpi_score": 23,
+    "cpi_rank": 153
+  },
+  "ETH": {
+    "cpi_score": 38,
+    "cpi_rank": 96
+  },
+  "GAB": {
+    "cpi_score": 29,
+    "cpi_rank": 135
+  },
+  "GMB": {
+    "cpi_score": 37,
+    "cpi_rank": 99
+  },
+  "GHA": {
+    "cpi_score": 43,
+    "cpi_rank": 76
+  },
+  "GIN": {
+    "cpi_score": 26,
+    "cpi_rank": 142
+  },
+  "GNB": {
+    "cpi_score": 21,
+    "cpi_rank": 161
+  },
+  "CIV": {
+    "cpi_score": 43,
+    "cpi_rank": 76
+  },
+  "KEN": {
+    "cpi_score": 30,
+    "cpi_rank": 130
+  },
+  "LSO": {
+    "cpi_score": 37,
+    "cpi_rank": 99
+  },
+  "LBR": {
+    "cpi_score": 28,
+    "cpi_rank": 136
+  },
+  "LBY": {
+    "cpi_score": 13,
+    "cpi_rank": 177
+  },
+  "MDG": {
+    "cpi_score": 25,
+    "cpi_rank": 148
+  },
+  "MWI": {
+    "cpi_score": 34,
+    "cpi_rank": 109
+  },
+  "MLI": {
+    "cpi_score": 28,
+    "cpi_rank": 136
+  },
+  "MRT": {
+    "cpi_score": 30,
+    "cpi_rank": 130
+  },
+  "MUS": {
+    "cpi_score": 48,
+    "cpi_rank": 61
+  },
+  "MAR": {
+    "cpi_score": 39,
+    "cpi_rank": 91
+  },
+  "MOZ": {
+    "cpi_score": 21,
+    "cpi_rank": 161
+  },
+  "NAM": {
+    "cpi_score": 46,
+    "cpi_rank": 65
+  },
+  "NER": {
+    "cpi_score": 31,
+    "cpi_rank": 124
+  },
+  "NGA": {
+    "cpi_score": 26,
+    "cpi_rank": 142
+  },
+  "RWA": {
+    "cpi_score": 58,
+    "cpi_rank": 41
+  },
+  "STP": {
+    "cpi_score": 45,
+    "cpi_rank": 70
+  },
+  "SEN": {
+    "cpi_score": 46,
+    "cpi_rank": 65
+  },
+  "SYC": {
+    "cpi_score": 68,
+    "cpi_rank": 24
+  },
+  "SLE": {
+    "cpi_score": 34,
+    "cpi_rank": 109
+  },
+  "SOM": {
+    "cpi_score": 9,
+    "cpi_rank": 181
+  },
+  "ZAF": {
+    "cpi_score": 41,
+    "cpi_rank": 81
+  },
+  "SSD": {
+    "cpi_score": 9,
+    "cpi_rank": 181
+  },
+  "SDN": {
+    "cpi_score": 14,
+    "cpi_rank": 175
+  },
+  "TZA": {
+    "cpi_score": 40,
+    "cpi_rank": 84
+  },
+  "TGO": {
+    "cpi_score": 32,
+    "cpi_rank": 120
+  },
+  "TUN": {
+    "cpi_score": 39,
+    "cpi_rank": 91
+  },
+  "UGA": {
+    "cpi_score": 25,
+    "cpi_rank": 148
+  },
+  "ZMB": {
+    "cpi_score": 37,
+    "cpi_rank": 99
+  },
+  "ZWE": {
+    "cpi_score": 22,
+    "cpi_rank": 157
+  }
+}
