@@ -431,8 +431,37 @@
     "evisa_count": 44,
     "visa_required_count": 122,
     "schengen_access": "visa_required",
-    "treaties": [],
-    "treaty_count": 0
+    "treaties": [
+      {
+        "partner": "United Kingdom",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1975",
+        "year_in_force": "1980",
+        "status": "In force"
+      },
+      {
+        "partner": "France",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1974",
+        "year_in_force": "1977",
+        "status": "In force"
+      },
+      {
+        "partner": "United States",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1986",
+        "year_in_force": "1989",
+        "status": "In force"
+      },
+      {
+        "partner": "Germany",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1981",
+        "year_in_force": "1983",
+        "status": "In force"
+      }
+    ],
+    "treaty_count": 4
   },
   {
     "iso2": "GQ",
@@ -1127,8 +1156,44 @@
     "evisa_count": 44,
     "visa_required_count": 129,
     "schengen_access": "visa_required",
-    "treaties": [],
-    "treaty_count": 0
+    "treaties": [
+      {
+        "partner": "United Kingdom",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1990",
+        "year_in_force": "1994",
+        "status": "In force"
+      },
+      {
+        "partner": "France",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1990",
+        "year_in_force": "1991",
+        "status": "In force"
+      },
+      {
+        "partner": "Netherlands",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1992",
+        "year_in_force": "1994",
+        "status": "In force"
+      },
+      {
+        "partner": "Germany",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "2000",
+        "year_in_force": "2002",
+        "status": "In force"
+      },
+      {
+        "partner": "Belgium-Luxembourg",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1998",
+        "year_in_force": "2000",
+        "status": "In force"
+      }
+    ],
+    "treaty_count": 5
   },
   {
     "iso2": "RW",
@@ -1330,8 +1395,51 @@
     "evisa_count": 29,
     "visa_required_count": 131,
     "schengen_access": "visa_required",
-    "treaties": [],
-    "treaty_count": 0
+    "treaties": [
+      {
+        "partner": "United Kingdom",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1994",
+        "year_in_force": "1997",
+        "status": "In force"
+      },
+      {
+        "partner": "France",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1992",
+        "year_in_force": "1994",
+        "status": "In force"
+      },
+      {
+        "partner": "Germany",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1995",
+        "year_in_force": "1998",
+        "status": "In force"
+      },
+      {
+        "partner": "United States",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1999",
+        "year_in_force": "2001",
+        "status": "In force"
+      },
+      {
+        "partner": "Switzerland",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1994",
+        "year_in_force": "1997",
+        "status": "In force"
+      },
+      {
+        "partner": "Belgium-Luxembourg",
+        "type": "Bilateral Investment Treaty",
+        "year_signed": "1996",
+        "year_in_force": "1999",
+        "status": "In force"
+      }
+    ],
+    "treaty_count": 6
   },
   {
     "iso2": "SS",
