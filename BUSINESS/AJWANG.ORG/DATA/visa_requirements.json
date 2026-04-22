@@ -1,0 +1,380 @@
+{
+  "DZ": {
+    "visa_free_count": 4,
+    "voa_count": 31,
+    "evisa_count": 45,
+    "visa_required_count": 119,
+    "schengen_access": "visa_required"
+  },
+  "AO": {
+    "visa_free_count": 2,
+    "voa_count": 25,
+    "evisa_count": 44,
+    "visa_required_count": 128,
+    "schengen_access": "visa_required"
+  },
+  "BJ": {
+    "visa_free_count": 10,
+    "voa_count": 27,
+    "evisa_count": 38,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "BW": {
+    "visa_free_count": 6,
+    "voa_count": 24,
+    "evisa_count": 30,
+    "visa_required_count": 139,
+    "schengen_access": "visa_required"
+  },
+  "BF": {
+    "visa_free_count": 9,
+    "voa_count": 25,
+    "evisa_count": 41,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "BI": {
+    "visa_free_count": 2,
+    "voa_count": 28,
+    "evisa_count": 42,
+    "visa_required_count": 127,
+    "schengen_access": "visa_required"
+  },
+  "CV": {
+    "visa_free_count": 12,
+    "voa_count": 27,
+    "evisa_count": 36,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "CM": {
+    "visa_free_count": 0,
+    "voa_count": 26,
+    "evisa_count": 45,
+    "visa_required_count": 128,
+    "schengen_access": "visa_required"
+  },
+  "CF": {
+    "visa_free_count": 1,
+    "voa_count": 28,
+    "evisa_count": 43,
+    "visa_required_count": 127,
+    "schengen_access": "visa_required"
+  },
+  "TD": {
+    "visa_free_count": 0,
+    "voa_count": 27,
+    "evisa_count": 42,
+    "visa_required_count": 130,
+    "schengen_access": "visa_required"
+  },
+  "KM": {
+    "visa_free_count": 0,
+    "voa_count": 34,
+    "evisa_count": 41,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "CG": {
+    "visa_free_count": 0,
+    "voa_count": 0,
+    "evisa_count": 0,
+    "visa_required_count": 0,
+    "schengen_access": "visa_required"
+  },
+  "CD": {
+    "visa_free_count": 1,
+    "voa_count": 26,
+    "evisa_count": 42,
+    "visa_required_count": 130,
+    "schengen_access": "visa_required"
+  },
+  "DJ": {
+    "visa_free_count": 0,
+    "voa_count": 30,
+    "evisa_count": 46,
+    "visa_required_count": 123,
+    "schengen_access": "visa_required"
+  },
+  "EG": {
+    "visa_free_count": 2,
+    "voa_count": 31,
+    "evisa_count": 44,
+    "visa_required_count": 122,
+    "schengen_access": "visa_required"
+  },
+  "GQ": {
+    "visa_free_count": 1,
+    "voa_count": 32,
+    "evisa_count": 39,
+    "visa_required_count": 127,
+    "schengen_access": "visa_required"
+  },
+  "ER": {
+    "visa_free_count": 0,
+    "voa_count": 27,
+    "evisa_count": 49,
+    "visa_required_count": 123,
+    "schengen_access": "visa_required"
+  },
+  "SZ": {
+    "visa_free_count": 0,
+    "voa_count": 0,
+    "evisa_count": 0,
+    "visa_required_count": 0,
+    "schengen_access": "visa_required"
+  },
+  "ET": {
+    "visa_free_count": 0,
+    "voa_count": 31,
+    "evisa_count": 45,
+    "visa_required_count": 123,
+    "schengen_access": "visa_required"
+  },
+  "GA": {
+    "visa_free_count": 0,
+    "voa_count": 29,
+    "evisa_count": 42,
+    "visa_required_count": 128,
+    "schengen_access": "visa_required"
+  },
+  "GM": {
+    "visa_free_count": 15,
+    "voa_count": 21,
+    "evisa_count": 37,
+    "visa_required_count": 126,
+    "schengen_access": "visa_required"
+  },
+  "GH": {
+    "visa_free_count": 13,
+    "voa_count": 22,
+    "evisa_count": 38,
+    "visa_required_count": 126,
+    "schengen_access": "visa_required"
+  },
+  "GN": {
+    "visa_free_count": 9,
+    "voa_count": 25,
+    "evisa_count": 43,
+    "visa_required_count": 122,
+    "schengen_access": "visa_required"
+  },
+  "GW": {
+    "visa_free_count": 10,
+    "voa_count": 23,
+    "evisa_count": 42,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "CI": {
+    "visa_free_count": 10,
+    "voa_count": 24,
+    "evisa_count": 46,
+    "visa_required_count": 119,
+    "schengen_access": "visa_required"
+  },
+  "KE": {
+    "visa_free_count": 4,
+    "voa_count": 29,
+    "evisa_count": 33,
+    "visa_required_count": 133,
+    "schengen_access": "visa_required"
+  },
+  "LS": {
+    "visa_free_count": 4,
+    "voa_count": 25,
+    "evisa_count": 33,
+    "visa_required_count": 137,
+    "schengen_access": "visa_required"
+  },
+  "LR": {
+    "visa_free_count": 10,
+    "voa_count": 21,
+    "evisa_count": 44,
+    "visa_required_count": 124,
+    "schengen_access": "visa_required"
+  },
+  "LY": {
+    "visa_free_count": 1,
+    "voa_count": 25,
+    "evisa_count": 45,
+    "visa_required_count": 128,
+    "schengen_access": "visa_required"
+  },
+  "MG": {
+    "visa_free_count": 0,
+    "voa_count": 29,
+    "evisa_count": 38,
+    "visa_required_count": 132,
+    "schengen_access": "visa_required"
+  },
+  "MW": {
+    "visa_free_count": 5,
+    "voa_count": 26,
+    "evisa_count": 35,
+    "visa_required_count": 133,
+    "schengen_access": "visa_required"
+  },
+  "ML": {
+    "visa_free_count": 11,
+    "voa_count": 19,
+    "evisa_count": 43,
+    "visa_required_count": 126,
+    "schengen_access": "visa_required"
+  },
+  "MR": {
+    "visa_free_count": 3,
+    "voa_count": 27,
+    "evisa_count": 43,
+    "visa_required_count": 126,
+    "schengen_access": "visa_required"
+  },
+  "MU": {
+    "visa_free_count": 6,
+    "voa_count": 27,
+    "evisa_count": 30,
+    "visa_required_count": 136,
+    "schengen_access": "visa_required"
+  },
+  "MA": {
+    "visa_free_count": 5,
+    "voa_count": 31,
+    "evisa_count": 38,
+    "visa_required_count": 125,
+    "schengen_access": "visa_required"
+  },
+  "MZ": {
+    "visa_free_count": 2,
+    "voa_count": 26,
+    "evisa_count": 37,
+    "visa_required_count": 134,
+    "schengen_access": "visa_required"
+  },
+  "NA": {
+    "visa_free_count": 7,
+    "voa_count": 27,
+    "evisa_count": 34,
+    "visa_required_count": 131,
+    "schengen_access": "visa_required"
+  },
+  "NE": {
+    "visa_free_count": 11,
+    "voa_count": 22,
+    "evisa_count": 43,
+    "visa_required_count": 123,
+    "schengen_access": "visa_required"
+  },
+  "NG": {
+    "visa_free_count": 10,
+    "voa_count": 16,
+    "evisa_count": 44,
+    "visa_required_count": 129,
+    "schengen_access": "visa_required"
+  },
+  "RW": {
+    "visa_free_count": 4,
+    "voa_count": 33,
+    "evisa_count": 35,
+    "visa_required_count": 127,
+    "schengen_access": "visa_required"
+  },
+  "ST": {
+    "visa_free_count": 0,
+    "voa_count": 0,
+    "evisa_count": 0,
+    "visa_required_count": 0,
+    "schengen_access": "visa_required"
+  },
+  "SN": {
+    "visa_free_count": 12,
+    "voa_count": 22,
+    "evisa_count": 45,
+    "visa_required_count": 120,
+    "schengen_access": "visa_required"
+  },
+  "SC": {
+    "visa_free_count": 5,
+    "voa_count": 30,
+    "evisa_count": 27,
+    "visa_required_count": 137,
+    "schengen_access": "visa_required"
+  },
+  "SL": {
+    "visa_free_count": 13,
+    "voa_count": 20,
+    "evisa_count": 37,
+    "visa_required_count": 129,
+    "schengen_access": "visa_required"
+  },
+  "SO": {
+    "visa_free_count": 2,
+    "voa_count": 21,
+    "evisa_count": 45,
+    "visa_required_count": 131,
+    "schengen_access": "visa_required"
+  },
+  "ZA": {
+    "visa_free_count": 6,
+    "voa_count": 33,
+    "evisa_count": 29,
+    "visa_required_count": 131,
+    "schengen_access": "visa_required"
+  },
+  "SS": {
+    "visa_free_count": 2,
+    "voa_count": 25,
+    "evisa_count": 41,
+    "visa_required_count": 131,
+    "schengen_access": "visa_required"
+  },
+  "SD": {
+    "visa_free_count": 1,
+    "voa_count": 26,
+    "evisa_count": 44,
+    "visa_required_count": 128,
+    "schengen_access": "visa_required"
+  },
+  "TZ": {
+    "visa_free_count": 5,
+    "voa_count": 23,
+    "evisa_count": 31,
+    "visa_required_count": 140,
+    "schengen_access": "visa_required"
+  },
+  "TG": {
+    "visa_free_count": 10,
+    "voa_count": 26,
+    "evisa_count": 41,
+    "visa_required_count": 122,
+    "schengen_access": "visa_required"
+  },
+  "TN": {
+    "visa_free_count": 6,
+    "voa_count": 31,
+    "evisa_count": 35,
+    "visa_required_count": 127,
+    "schengen_access": "visa_required"
+  },
+  "UG": {
+    "visa_free_count": 5,
+    "voa_count": 28,
+    "evisa_count": 35,
+    "visa_required_count": 131,
+    "schengen_access": "visa_required"
+  },
+  "ZM": {
+    "visa_free_count": 4,
+    "voa_count": 24,
+    "evisa_count": 33,
+    "visa_required_count": 138,
+    "schengen_access": "visa_required"
+  },
+  "ZW": {
+    "visa_free_count": 5,
+    "voa_count": 23,
+    "evisa_count": 36,
+    "visa_required_count": 135,
+    "schengen_access": "visa_required"
+  }
+}
