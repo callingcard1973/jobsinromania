@@ -1,0 +1,127 @@
+<style>
+#alert-btn {
+  position: fixed; bottom: 24px; right: 220px; z-index: 1000;
+  background: #f5a623; color: #fff; border: none; border-radius: 8px;
+  padding: 14px 22px; font-size: 15px; font-weight: 700;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+  white-space: nowrap;
+}
+#alert-btn:hover { background: #d48b10; }
+#alert-overlay {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.55); align-items: center; justify-content: center;
+}
+#alert-overlay.active { display: flex; }
+#alert-card {
+  background: #fff; border-radius: 14px; padding: 36px 32px 28px;
+  width: 100%; max-width: 420px; position: relative;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+#alert-card h2 { margin: 0 0 6px; font-size: 20px; color: #1a1a1a; }
+#alert-card p { margin: 0 0 20px; font-size: 14px; color: #666; }
+#alert-close {
+  position: absolute; top: 14px; right: 18px;
+  background: none; border: none; font-size: 22px; cursor: pointer; color: #888;
+}
+#alert-form label { display: block; font-size: 13px; color: #444; margin-bottom: 4px; margin-top: 14px; }
+#alert-form input, #alert-form select {
+  width: 100%; padding: 10px 12px; border: 1px solid #ddd;
+  border-radius: 6px; font-size: 14px; box-sizing: border-box;
+}
+#alert-submit {
+  margin-top: 22px; width: 100%; padding: 13px;
+  background: #f5a623; color: #fff; border: none; border-radius: 7px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+}
+#alert-submit:hover { background: #d48b10; }
+#alert-msg {
+  display: none; text-align: center;
+  padding: 20px 0; color: #2d7a2d;
+  font-size: 16px; font-weight: 600;
+}
+</style>
+
+<button id="alert-btn">🔔 Alertă preț</button>
+
+<div id="alert-overlay" role="dialog" aria-modal="true">
+  <div id="alert-card">
+    <button id="alert-close" aria-label="Închide">&times;</button>
+    <h2>🔔 Alertă preț teren</h2>
+    <p>Te anunțăm când apare teren la prețul tău.</p>
+    <form id="alert-form" novalidate>
+      <label for="af-email">Email *</label>
+      <input type="email" id="af-email" name="email" required placeholder="adresa@email.com">
+
+      <label for="af-judet">Județ</label>
+      <select id="af-judet" name="judet">
+        <option value="">— Oricare —</option>
+        <option>Alba</option><option>Arad</option><option>Argeș</option>
+        <option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option>
+        <option>Botoșani</option><option>Brăila</option><option>Brașov</option>
+        <option>Buzău</option><option>Călărași</option><option>Caraș-Severin</option>
+        <option>Cluj</option><option>Constanța</option><option>Covasna</option>
+        <option>Dâmbovița</option><option>Dolj</option><option>Galați</option>
+        <option>Giurgiu</option><option>Gorj</option><option>Harghita</option>
+        <option>Hunedoara</option><option>Ialomița</option><option>Iași</option>
+        <option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option>
+        <option>Mureș</option><option>Neamț</option><option>Olt</option>
+        <option>Prahova</option><option>Sălaj</option><option>Satu Mare</option>
+        <option>Sibiu</option><option>Suceava</option><option>Teleorman</option>
+        <option>Timiș</option><option>Tulcea</option><option>Vâlcea</option>
+        <option>Vaslui</option><option>Vrancea</option>
+      </select>
+
+      <label for="af-cat">Tip teren</label>
+      <select id="af-cat" name="categorie">
+        <option value="">— Oricare —</option>
+        <option>ARABIL</option><option>PĂȘUNI</option><option>LIVEZI</option>
+      </select>
+
+      <label for="af-pret">Preț maxim RON/ha *</label>
+      <input type="number" id="af-pret" name="pret_max_ha" required min="1" step="100" placeholder="ex. 5000">
+
+      <button type="submit" id="alert-submit">Activează alerta</button>
+    </form>
+    <div id="alert-msg">✓ Verifică emailul pentru confirmare!</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('alert-btn');
+  var overlay=document.getElementById('alert-overlay');
+  var closeBtn=document.getElementById('alert-close');
+  var form=document.getElementById('alert-form');
+  var msg=document.getElementById('alert-msg');
+
+  btn.addEventListener('click',function(){ overlay.classList.add('active'); });
+  closeBtn.addEventListener('click',function(){ overlay.classList.remove('active'); });
+  overlay.addEventListener('click',function(e){ if(e.target===overlay) overlay.classList.remove('active'); });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=document.getElementById('af-email').value.trim();
+    var pret=document.getElementById('af-pret').value;
+    if(!email){ document.getElementById('af-email').focus(); return; }
+    if(!pret){ document.getElementById('af-pret').focus(); return; }
+    var payload={
+      email:email,
+      judet:document.getElementById('af-judet').value,
+      categorie:document.getElementById('af-cat').value,
+      pret_max_ha:parseFloat(pret)
+    };
+    fetch('/subscribe_alert.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if(d.ok||d.status==='ok'||d.success){
+        form.style.display='none';
+        msg.style.display='block';
+      } else {
+        alert(d.message||'Eroare. Încearcă din nou.');
+      }
+    }).catch(function(){ alert('Eroare la trimitere. Încearcă din nou.'); });
+  });
+})();
+</script>
