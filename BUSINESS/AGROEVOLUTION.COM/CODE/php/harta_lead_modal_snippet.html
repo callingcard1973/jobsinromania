@@ -1,0 +1,159 @@
+<!-- Lead capture: floating button + modal for harta.php -->
+<style>
+#lead-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  background: #2d7a2d;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+  transition: background 0.2s;
+}
+#lead-btn:hover { background: #235e23; }
+#lead-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+#lead-overlay.active { display: flex; }
+#lead-card {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 94%;
+  padding: 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+  position: relative;
+}
+#lead-card h2 { margin: 0 0 20px; font-size: 20px; color: #1a4a1a; }
+#lead-card label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; color: #444; }
+#lead-card input, #lead-card select {
+  width: 100%; box-sizing: border-box;
+  padding: 9px 11px; border: 1px solid #ccc;
+  border-radius: 7px; font-size: 14px;
+}
+#lead-submit {
+  margin-top: 20px; width: 100%;
+  background: #2d7a2d; color: #fff;
+  border: none; border-radius: 8px;
+  padding: 13px; font-size: 15px;
+  font-weight: 700; cursor: pointer;
+  transition: background 0.2s;
+}
+#lead-submit:hover { background: #235e23; }
+#lead-close {
+  position: absolute; top: 14px; right: 18px;
+  background: none; border: none;
+  font-size: 22px; cursor: pointer; color: #888;
+}
+#lead-success {
+  display: none; text-align: center;
+  padding: 20px 0; color: #2d7a2d;
+  font-size: 16px; font-weight: 600;
+}
+</style>
+
+<button id="lead-btn">🌾 Vreau să cumpăr teren</button>
+
+<div id="lead-overlay" role="dialog" aria-modal="true">
+  <div id="lead-card">
+    <button id="lead-close" aria-label="Închide">&times;</button>
+    <h2>🌾 Caută teren agricol</h2>
+    <div id="lead-form-wrap">
+      <form id="lead-form" novalidate>
+        <label for="lf-email">Email *</label>
+        <input type="email" id="lf-email" name="email" required placeholder="adresa@email.com">
+
+        <label for="lf-tel">Telefon</label>
+        <input type="tel" id="lf-tel" name="telefon" placeholder="07xxxxxxxx">
+
+        <label for="lf-judet">Județ</label>
+        <select id="lf-judet" name="judet">
+          <option value="">— Oricare —</option>
+          <option>Alba</option><option>Arad</option><option>Argeș</option>
+          <option>Bacău</option><option>Bihor</option><option>Bistrița-Năsăud</option>
+          <option>Botoșani</option><option>Brăila</option><option>Brașov</option>
+          <option>Buzău</option><option>Călărași</option><option>Caraș-Severin</option>
+          <option>Cluj</option><option>Constanța</option><option>Covasna</option>
+          <option>Dâmbovița</option><option>Dolj</option><option>Galați</option>
+          <option>Giurgiu</option><option>Gorj</option><option>Harghita</option>
+          <option>Hunedoara</option><option>Ialomița</option><option>Iași</option>
+          <option>Ilfov</option><option>Maramureș</option><option>Mehedinți</option>
+          <option>Mureș</option><option>Neamț</option><option>Olt</option>
+          <option>Prahova</option><option>Sălaj</option><option>Satu Mare</option>
+          <option>Sibiu</option><option>Suceava</option><option>Teleorman</option>
+          <option>Timiș</option><option>Tulcea</option><option>Vâlcea</option>
+          <option>Vaslui</option><option>Vrancea</option>
+        </select>
+
+        <label for="lf-tip">Tip teren</label>
+        <select id="lf-tip" name="tip_teren">
+          <option value="">— Oricare —</option>
+          <option>ARABIL</option><option>PĂȘUNI</option><option>VII</option>
+          <option>LIVEZI</option><option>PĂDURI</option>
+        </select>
+
+        <label for="lf-sup">Suprafață minimă (ha)</label>
+        <input type="number" id="lf-sup" name="suprafata_min" min="0.1" step="0.1" placeholder="ex. 5">
+
+        <label for="lf-pret">Preț maxim (RON/ha)</label>
+        <input type="number" id="lf-pret" name="pret_max" min="0" step="100" placeholder="ex. 15000">
+
+        <button type="submit" id="lead-submit">Trimite cererea</button>
+      </form>
+    </div>
+    <div id="lead-success">✓ Am primit cererea ta. Te contactăm în curând.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('lead-btn');
+  var overlay=document.getElementById('lead-overlay');
+  var closeBtn=document.getElementById('lead-close');
+  var form=document.getElementById('lead-form');
+  var formWrap=document.getElementById('lead-form-wrap');
+  var success=document.getElementById('lead-success');
+
+  btn.addEventListener('click',function(){ overlay.classList.add('active'); });
+  closeBtn.addEventListener('click',function(){ overlay.classList.remove('active'); });
+  overlay.addEventListener('click',function(e){ if(e.target===overlay) overlay.classList.remove('active'); });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=document.getElementById('lf-email').value.trim();
+    if(!email){ document.getElementById('lf-email').focus(); return; }
+    var payload={
+      sursa:'harta',
+      email:email,
+      telefon:document.getElementById('lf-tel').value.trim(),
+      judet:document.getElementById('lf-judet').value,
+      tip_teren:document.getElementById('lf-tip').value,
+      suprafata_min:document.getElementById('lf-sup').value,
+      pret_max:document.getElementById('lf-pret').value
+    };
+    fetch('/save_lead.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if(d.ok){
+        formWrap.style.display='none';
+        success.style.display='block';
+        setTimeout(function(){ overlay.classList.remove('active'); formWrap.style.display=''; success.style.display='none'; form.reset(); },2000);
+      }
+    }).catch(function(){ alert('Eroare la trimitere. Încearcă din nou.'); });
+  });
+})();
+</script>
