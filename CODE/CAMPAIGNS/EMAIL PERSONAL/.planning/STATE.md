@@ -21,9 +21,19 @@
 - step26 ran twice — duplicate work but not harmful (idempotent)
 - step23 has schema mismatch: use email_1/phone_1/company_website, not email/phone/website
 
-## Next action after current queries complete
-1. Verify step 26 standard_sector populated (SELECT COUNT(*) WHERE standard_sector IS NOT NULL)
-2. Verify step 25 revenue updated
-3. Run step 27 (followup_scheduler) — check send_log tables have followup_at column first
-4. Run steps 31, 32, 35, 36 in sequence
-5. Update this file after each step
+## Completed this session (2026-04-25)
+- Step 22: VERIFIED complete (97,332 buyers)
+- Step 23: COMPLETE (180 SE emails — low match rate, correct column names used)
+- Step 24: Previously done
+- Step 26: IN PROGRESS (standard_sector UPDATE running ~1h, 33M rows, will complete autonomously)
+- Step 25: IN PROGRESS (bilant revenue sync, locked behind step 26)
+- Step 27: COMPLETE — 25 RO followup_at populated, 1,497 overdue CSV exported to DATA/followup_overdue.csv
+- Step 32: COMPLETE — 2,384 insolvency targets exported to DATA/insolvency_worker_targets.csv
+- Step 36: COMPLETE — 7,238 IT companies exported to DATA/campaign_IT_europe_10000.csv
+
+## Next action after step 26/25 UPDATE queries finish
+1. Verify: SELECT COUNT(*) FROM companies_clean WHERE standard_sector IS NOT NULL;
+2. Verify: SELECT COUNT(*) FROM companies_clean WHERE revenue > 0 AND country='RO';
+3. Run step 31: buyer enrich via master_emails domain matching (UPDATE companies_clean)
+4. Run step 35: TED lead score decay (UPDATE companies_clean)
+5. Mark all steps done in pipeline.md and STATE.md
