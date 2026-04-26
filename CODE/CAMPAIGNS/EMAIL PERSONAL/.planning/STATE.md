@@ -31,9 +31,11 @@
 - Step 32: COMPLETE — 2,384 insolvency targets exported to DATA/insolvency_worker_targets.csv
 - Step 36: COMPLETE — 7,238 IT companies exported to DATA/campaign_IT_europe_10000.csv
 
-## Next action after step 26/25 UPDATE queries finish
-1. Verify: SELECT COUNT(*) FROM companies_clean WHERE standard_sector IS NOT NULL;
-2. Verify: SELECT COUNT(*) FROM companies_clean WHERE revenue > 0 AND country='RO';
-3. Run step 31: buyer enrich via master_emails domain matching (UPDATE companies_clean)
-4. Run step 35: TED lead score decay (UPDATE companies_clean)
-5. Mark all steps done in pipeline.md and STATE.md
+## Completed 2026-04-26
+- Step 31: COMPLETE — 10 BG procurement buyers enriched (schema note: master_emails.quality_tier exists on laptop DB)
+- Step 35: COMPLETE — 1,960,463 rows updated. Lead score decay applied: 2023(419K avg16), 2022(146K avg10), 2021(128K avg7), 2020(103K avg2), 2019(95K avg1), 2018(87K avg1). Bug fixed: year::integer cast in step35_lead_score_decay.sql
+
+## Status as of 2026-04-26
+Steps 22-27, 31, 32, 35, 36: COMPLETE
+Steps 33, 34, 37-46: built/run (see pipeline.md)
+Raspibig DB mirror has schema drift — quality_tier and year type differ. Run enrichment steps on laptop only.

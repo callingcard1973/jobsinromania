@@ -11,7 +11,7 @@ FROM (
   SELECT
     LOWER(REGEXP_REPLACE(win_name,'[^a-zA-Z0-9]','','g')) AS name_key,
     win_country_code AS country,
-    MAX(year) AS last_year
+    MAX(year::integer) AS last_year
   FROM ted_awards
   WHERE win_name IS NOT NULL AND win_name != ''
   GROUP BY name_key, country
@@ -26,7 +26,7 @@ FROM (
   SELECT
     LOWER(REGEXP_REPLACE(cae_name,'[^a-zA-Z0-9]','','g')) AS name_key,
     iso_country_code AS country,
-    MAX(year) AS last_year
+    MAX(year::integer) AS last_year
   FROM ted_awards
   WHERE cae_name IS NOT NULL
   GROUP BY name_key, country
