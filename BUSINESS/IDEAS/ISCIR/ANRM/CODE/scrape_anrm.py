@@ -82,7 +82,6 @@ def scrape_page(url, session):
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # Extract PDF filenames which often contain company names
     for a in soup.find_all("a", href=True):
         href = a["href"]
         if ".pdf" in href.lower():
@@ -106,9 +105,7 @@ def scrape_page(url, session):
                     "localitate": "", "judet": "", "cui": "", "nr_licenta": "", "email": ""
                 })
 
-    # Extract company names from text paragraphs
     text = soup.get_text(separator=" ")
-    # Look for company patterns
     company_patterns = [
         r'\b((?:SC|SRL|SA|SNP|RA|RNP|OMV|ROMGAZ|PETROM|ENGIE|AMROMCO|CONPET|RAAN)\s+[A-ZĂÂÎȘȚ][A-ZA-ZĂÂÎȘȚa-zăâîșț\s&\-\.]{3,50}?)(?=\s*(?:SRL|SA|S\.R\.L\.|S\.A\.|NV|SE|\.|\,|\;))',
     ]
@@ -123,7 +120,6 @@ def scrape_page(url, session):
                     "localitate": "", "judet": "", "cui": "", "nr_licenta": "", "email": ""
                 })
 
-    # Also look for ANRM-specific company mentions
     known_companies = re.findall(
         r'(?:Titularul?|titular?)\s+([A-ZĂÂÎȘȚ][A-ZA-ZĂÂÎȘȚa-zăâîșț\s&\-\.]{3,60}?)(?=\s+(?:a|au|are|are|SA|SRL|este|detine|detin))',
         text, re.IGNORECASE
@@ -147,9 +143,9 @@ def scrape_all_pages():
 
     all_records = []
     for url in PAGES_TO_SCRAPE:
-        records = scrape_page(url, session)
-        all_records.extend(records)
-        print(f"  {url.split('/')[-2]}: {len(records)} records")
+        recs = scrape_page(url, session)
+        all_records.extend(recs)
+        print(f"  {url.split('/')[-2]}: {len(recs)}")
         time.sleep(SLEEP)
     return all_records
 
@@ -208,7 +204,6 @@ def save_and_import(records):
             w.writerow({k: r.get(k, "") for k in ["cui","denumire","localitate","judet","tip_resursa","nr_licenta","sursa","email"]})
     print(f"CSV: {OUT} ({len(unique)} rows)")
 
-    # DB import (optional — skip if unavailable)
     try:
         conn = psycopg2.connect(**DB)
         cur = conn.cursor()
