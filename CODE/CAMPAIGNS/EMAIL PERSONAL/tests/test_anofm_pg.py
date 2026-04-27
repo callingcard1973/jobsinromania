@@ -34,7 +34,7 @@ DB_CONFIG = {
     "database": "interjob_master",
     "user": "tudor",
     "password": "tudor",
-    "timeout": 5,
+    "connect_timeout": 5,
 }
 
 ANOFM_TEST_CSV = Path(__file__).parent / "fixtures" / "anofm_test.csv"
@@ -156,7 +156,7 @@ class TestConnectionHealth:
 
     def test_connection_timeout(self, test_db_config):
         """Verify connection timeout is enforced."""
-        bad_config = {**test_db_config, "host": "192.0.2.1", "timeout": 2}
+        bad_config = {**test_db_config, "host": "192.0.2.1", "connect_timeout": 2}
         with pytest.raises(psycopg2.OperationalError):
             psycopg2.connect(**bad_config)
 

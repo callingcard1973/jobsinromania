@@ -25,7 +25,7 @@ DB_CONFIG = {
     "database": os.getenv("POSTGRES_DB", "interjob_master"),
     "user": os.getenv("POSTGRES_USER", "tudor"),
     "password": os.getenv("POSTGRES_PASSWORD", "tudor"),
-    "timeout": 5,
+    "connect_timeout": 5,
 }
 
 # Setup logging

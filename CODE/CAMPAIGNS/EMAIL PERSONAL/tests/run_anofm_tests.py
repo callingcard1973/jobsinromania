@@ -163,9 +163,9 @@ Examples:
     # Print results
     print(f"\n{'='*70}")
     if exit_code == 0:
-        print("✓ All tests PASSED")
+        print("[OK] All tests PASSED")
     else:
-        print(f"✗ Tests FAILED (exit code: {exit_code})")
+        print(f"[FAIL] Tests FAILED (exit code: {exit_code})")
     print(f"Finished: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*70}\n")
 
