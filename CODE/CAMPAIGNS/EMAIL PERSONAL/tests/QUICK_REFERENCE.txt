@@ -1,0 +1,221 @@
+================================================================================
+ANOFM POSTGRESQL MIGRATION TEST SUITE — QUICK REFERENCE
+================================================================================
+
+LOCATION:
+  D:\MEMORY\CODE\CAMPAIGNS\EMAIL PERSONAL\tests\
+
+REQUIREMENTS:
+  - PostgreSQL 18 on localhost:5433
+  - interjob_master database
+  - Python 3.12+
+  - pytest, psycopg2
+
+================================================================================
+INSTALL (one-time)
+================================================================================
+
+cd "D:\MEMORY\CODE\CAMPAIGNS\EMAIL PERSONAL\tests"
+pip install -r requirements.txt
+
+================================================================================
+QUICK TEST (verify connection)
+================================================================================
+
+# Single test
+python -m pytest test_anofm_pg.py::TestConnectionHealth::test_single_connection_success -v
+
+# Should output: PASSED [100%]
+
+================================================================================
+RUN ALL TESTS
+================================================================================
+
+# Full suite (28+ tests, ~20-30 seconds)
+python -m pytest test_anofm_pg.py -v
+
+# Fast suite (skip load tests, ~5-10 seconds)
+python -m pytest test_anofm_pg.py -v -m "not slow"
+
+# Using helper script
+python run_anofm_tests.py
+python run_anofm_tests.py --fast
+python run_anofm_tests.py --html
+
+================================================================================
+TEST BY CATEGORY
+================================================================================
+
+Connection Health (6 tests):
+  python -m pytest test_anofm_pg.py::TestConnectionHealth -v
+
+Data Integrity (4 tests):
+  python -m pytest test_anofm_pg.py::TestDataIntegrity -v
+
+Idempotency (2 tests):
+  python -m pytest test_anofm_pg.py::TestIdempotency -v
+
+Send Operations (4 tests):
+  python -m pytest test_anofm_pg.py::TestSendOperations -v
+
+Audit Logging (4 tests):
+  python -m pytest test_anofm_pg.py::TestAuditLogging -v
+
+Rollback Recovery (3 tests):
+  python -m pytest test_anofm_pg.py::TestRollbackRecovery -v
+
+Load Simulation (2 tests) — SLOW:
+  python -m pytest test_anofm_pg.py::TestLoadSimulation -v
+
+GDPR Compliance (3 tests):
+  python -m pytest test_anofm_pg.py::TestGDPRCompliance -v
+
+================================================================================
+DATABASE VERIFICATION (no pytest)
+================================================================================
+
+# Test connection manually
+PGPASSWORD=tudor "/c/Program Files/PostgreSQL/18/bin/psql.exe" \
+  -U tudor -h 127.0.0.1 -p 5433 -d interjob_master -c "SELECT 1"
+
+# Check ANOFM records
+PGPASSWORD=tudor "/c/Program Files/PostgreSQL/18/bin/psql.exe" \
+  -U tudor -h 127.0.0.1 -p 5433 -d interjob_master -c \
+  "SELECT count(*), source FROM companies_clean WHERE source LIKE 'ANOFM%' GROUP BY source;"
+
+# Clean test data (if needed)
+PGPASSWORD=tudor "/c/Program Files/PostgreSQL/18/bin/psql.exe" \
+  -U tudor -h 127.0.0.1 -p 5433 -d interjob_master -c \
+  "DELETE FROM companies_clean WHERE source = 'ANOFM_TEST';"
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Connection refused?
+  → Check PostgreSQL: psql -U tudor -h 127.0.0.1 -p 5433 interjob_master -c "SELECT 1"
+
+Table not found?
+  → Verify: \d companies_clean in psql
+
+Test fails with "Duplicate key"?
+  → Clean up: DELETE FROM companies_clean WHERE source = 'ANOFM_TEST'
+
+Tests hang or timeout?
+  → Kill idle: SELECT pg_terminate_backend(pid) FROM pg_stat_activity
+
+Password auth failed?
+  → Set: SET PGPASSWORD=tudor
+  → Or use .pgpass file (Windows: %APPDATA%\postgresql\pgpass.conf)
+
+Pool overflow?
+  → Increase size in conftest.py: SimpleConnectionPool(5, 20, ...)
+
+================================================================================
+PRE-DEPLOYMENT CHECKLIST
+================================================================================
+
+Before running migration on production (raspibig):
+
+☐ All local tests pass
+  python -m pytest test_anofm_pg.py -v
+
+☐ Connection health: No failures
+  python -m pytest test_anofm_pg.py::TestConnectionHealth -v
+
+☐ Data integrity: No duplicates, ≥1418 records
+  python -m pytest test_anofm_pg.py::TestDataIntegrity -v
+
+☐ Idempotency: Safe to re-run
+  python -m pytest test_anofm_pg.py::TestIdempotency -v
+
+☐ Load simulation: Completes < 30s
+  python -m pytest test_anofm_pg.py::TestLoadSimulation -v
+
+☐ Brevo bounce rate < 30% (CRITICAL)
+  Check before each campaign send
+
+☐ Backup table created
+  CREATE TABLE companies_clean_anofm_backup AS SELECT * FROM companies_clean WHERE source LIKE 'ANOFM%';
+
+☐ Audit log table ready
+  CREATE TABLE anofm_audit_log (...); [auto-created in conftest.py]
+
+================================================================================
+FILE REFERENCE
+================================================================================
+
+test_anofm_pg.py           Main test suite (750+ lines, 28+ tests)
+conftest.py                Pytest fixtures, DB config, auto-cleanup
+pytest.ini                 Test markers, timeouts, logging
+requirements.txt           Dependencies (pytest, psycopg2, etc)
+run_anofm_tests.py         Test runner with CLI options
+README_ANOFM_TESTS.md      Test overview (40+ tests, targets, checklist)
+SETUP.md                   Install, usage, troubleshooting
+IMPLEMENTATION_GUIDE.md    Deployment workflow, phases, next steps
+QUICK_REFERENCE.txt        This file
+
+================================================================================
+PERFORMANCE TARGETS
+================================================================================
+
+Pool creation:           < 500ms
+Single query:           < 10ms
+Bulk insert (1418):     < 10s
+SELECT by source:       < 100ms (uses index)
+Batch UPDATE:           < 500ms
+100 concurrent SELECT:  < 30s
+
+================================================================================
+ENVIRONMENT VARIABLES (optional)
+================================================================================
+
+Set to override DB credentials:
+
+set POSTGRES_HOST=127.0.0.1
+set POSTGRES_PORT=5433
+set POSTGRES_DB=interjob_master
+set POSTGRES_USER=tudor
+set POSTGRES_PASSWORD=tudor
+
+Or use .env file (requires: pip install python-dotenv)
+
+================================================================================
+TEST DATA
+================================================================================
+
+All tests use source = 'ANOFM_TEST' for isolation.
+Auto-cleanup runs after each test.
+
+Test email patterns:
+  test-*@test.ro
+  bulk_*@test.ro
+  concurrent_*@test.ro
+  recovery_*@test.ro
+  gdpr_*@test.ro
+
+Manual cleanup:
+  DELETE FROM companies_clean WHERE source = 'ANOFM_TEST';
+  DELETE FROM anofm_audit_log WHERE timestamp > now() - interval '1 hour';
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Install:  pip install -r requirements.txt
+2. Test:     python -m pytest test_anofm_pg.py -v
+3. Deploy:   Run import_anofm_to_companies_clean.py on raspibig
+4. Monitor:  Check Brevo bounce rate < 30%
+
+================================================================================
+SUPPORT
+================================================================================
+
+README_ANOFM_TESTS.md  → Test overview + pre-deploy checklist
+SETUP.md               → Installation + troubleshooting (complete guide)
+IMPLEMENTATION_GUIDE   → Deployment workflow + phases
+
+Email: manpower.dristor@gmail.com
+Docs: .claude/campaigns.md (ANOFM configs)
+
+================================================================================
