@@ -1,0 +1,231 @@
+MASTER CAMPAIGNS CONFIGURATION (2026-04-27)
+============================================
+
+All email campaigns unified under send_campaign.py framework.
+Database: interjob_master (PostgreSQL localhost:5433)
+Deploy target: /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/ on raspibig (192.168.100.21)
+Postfix+DKIM: Enabled for all sectors (use_postfix: true)
+Brevo bounce threshold: 30% hard stop
+
+ACTIVE CAMPAIGNS
+================
+
+1. UNIFIED_ANOFM (Big bang migration)
+   Status: Wave 2 COMPLETE - 13,564 contacts imported
+   Config: unified_ANOFM_config.json
+   Sectors: 14 active (CONSTRUCTII, PRODUCTIE, HORECA, COMERT, TRANSPORT, SANATATE, AGRICULTURA, AUTO, PAZA, VANZARI, CONFECTII, CLEANING, IT, GENERAL)
+
+   Sector details:
+   - ANOFM_CONSTRUCTII: 1,799 contacts, sender=office@buildjobs.eu, limit=50/day
+   - ANOFM_PRODUCTIE: 2,042 contacts, sender=office@factoryjobs.eu, limit=50/day
+   - ANOFM_HORECA: 827 contacts, sender=office@horecaworkers.eu, limit=50/day
+   - ANOFM_COMERT: 1,261 contacts, sender=office@mivromania.info, limit=50/day
+   - ANOFM_TRANSPORT: 1,754 contacts, sender=office@mivromania.online, limit=50/day
+   - ANOFM_SANATATE: 399 contacts, sender=office@careworkers.eu, limit=50/day
+   - ANOFM_AGRICULTURA: 313 contacts, sender=office@farmworkers.eu, limit=50/day
+   - ANOFM_AUTO: 362 contacts, sender=office@mechanicjobs.eu, limit=50/day
+   - ANOFM_PAZA: 191 contacts, sender=office@buildjobs.eu, limit=50/day
+   - ANOFM_VANZARI: 203 contacts, sender=office@mivromania.info, limit=50/day
+   - ANOFM_CONFECTII: 29 contacts, sender=office@buildjobs.eu, limit=50/day
+   - ANOFM_CLEANING: 215 contacts, sender=office@buildjobs.eu, limit=50/day
+   - ANOFM_IT: 419 contacts, sender=office@buildjobs.eu, limit=50/day
+   - ANOFM_GENERAL: 3,629 contacts, sender=office@mivromania.info, limit=50/day
+
+   NOT IN CONFIG (pending):
+   - ANOFM_FOOD: 56 contacts
+   - ANOFM_MOBILA: 65 contacts
+
+2. UNIFIED_NORWAY (Big bang migration)
+   Status: Wave 2 COMPLETE - config validated, data source pending
+   Config: unified_NORWAY_config.json
+   Sectors: 16 defined (AGRICULTURE, CONSTRUCTION, ENGINEERING, FACILITY, HEALTHCARE, HEAVY_INDUSTRY, HORECA, LOGISTICS, MANUFACTURING, PROFESSIONAL, REAL_ESTATE, RETAIL, SHIPYARD, STAFFING, TIER1, WATER_VET)
+   Data: Awaiting SQL dump from norway_emails DB or CSV export
+
+   Sector templates (all with 50/day limit, Postfix enabled):
+   - NORWAY_AGRICULTURE: sender=office@farmworkers.eu
+   - NORWAY_CONSTRUCTION: sender=office@buildjobs.eu
+   - NORWAY_ENGINEERING: sender=office@electricjobs.eu
+   - NORWAY_FACILITY: sender=office@careworkers.eu
+   - NORWAY_HEALTHCARE: sender=office@careworkers.eu
+   - NORWAY_HEAVY_INDUSTRY: sender=office@buildjobs.eu
+   - NORWAY_HORECA: sender=office@horecaworkers.eu
+   - NORWAY_LOGISTICS: sender=office@buildjobs.eu
+   - NORWAY_MANUFACTURING: sender=office@factoryjobs.eu
+   - NORWAY_PROFESSIONAL: sender=office@mivromania.info
+   - NORWAY_REAL_ESTATE: sender=office@buildjobs.eu
+   - NORWAY_RETAIL: sender=office@mivromania.info
+   - NORWAY_SHIPYARD: sender=office@buildjobs.eu
+   - NORWAY_STAFFING: sender=office@buildjobs.eu
+   - NORWAY_TIER1: sender=office@mivromania.info
+   - NORWAY_WATER_VET: sender=office@farmworkers.eu
+
+3. HARGHITA (3-phase regional campaign)
+   Status: ACTIVE - not consolidated into unified framework yet
+   Location: /opt/ACTIVE/EMAIL/CAMPAIGNS/HARGHITA/
+   Scope: 770 companies in Harghita region
+   Note: User marked as "less important now", deferred from consolidation
+
+LEGACY CAMPAIGNS (NOT CONSOLIDATED)
+====================================
+
+- EBRD Procurement (4,176 projects, 42 countries)
+- ANOFM_TUDOR_MIGRATED_TO_RASPI (old code, superseded by UNIFIED_ANOFM)
+- Campaign scripts scattered in /opt/ACTIVE/EMAIL/CAMPAIGNS/
+- Phone campaign code at CAMPAIGNS/PHONE CAMPAIGN/CODE/
+
+CAMPAIGN CONFIGURATOR (LIVE)
+=============================
+
+Text-based interactive configurator on raspibig:
+  Location: /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_TUDOR_MIGRATED_TO_RASPI/campaign_configurator.py
+  Usage: ssh tudor@192.168.100.21 && python3 campaign_configurator.py
+  Features: List campaigns, List senders, Add/Edit/Delete campaigns
+  Stores configs in: configs/campaigns.json (orchestrator auto-loads)
+  Documentation: D:\MEMORY\CODE\CAMPAIGNS\EMAIL\CODE\RASPIBIG_CAMPAIGN_CONFIGURATOR.md
+
+TODO (PENDING)
+==============
+
+Wave 3: Test ANOFM sends (5-email batch per sector, verify Postfix+DKIM)
+Wave 4: Import NORWAY data from norway_emails DB dump or CSV
+Wave 5: Cut over cron jobs (replace old ANOFM_TUDOR + NORWAY crons with UNIFIED crons)
+Wave 6: Phase 2 refactoring (modularize send_config.py, add send_health.py, type hints)
+
+INFRASTRUCTURE
+==============
+
+Laptop (D:\MEMORY):
+  - PostgreSQL 18 at 192.168.100.25:5433 (interjob_master)
+  - companies_clean: 33.6M+ rows (now includes ANOFM_2026 contacts)
+  - Unified config files: EMAIL/CODE/unified_*.json
+  - Import scripts: import_anofm_to_companies_clean.py, import_norway_to_companies_clean.py
+  - Validation: validate_unified_config.py (both configs PASS)
+
+Raspibig (192.168.100.21):
+  - send_campaign.py + Postfix + rspamd DKIM milter (28 domain keys)
+  - Postfix routing: Campaign → Postfix:25 → rspamd (sign) → Brevo SMTP:587
+  - Deployed unified configs: /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/unified_*.json
+  - Templates: /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/
+  - Send logs: /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/logs/
+
+Raspi (192.168.100.20):
+  - Validation layer (email_validator.py, email_mx_verifier.py)
+  - Legacy campaign data (possible database location?)
+
+DATABASE SCHEMA (companies_clean)
+=================================
+
+id INT PRIMARY KEY
+email TEXT (indexed)
+name TEXT
+city TEXT
+sector TEXT (indexed) — format: CAMPAIGN_SECTOR (e.g., ANOFM_CONSTRUCTII, NORWAY_AGRICULTURE)
+source TEXT (indexed) — format: CAMPAIGN_YEAR (e.g., ANOFM_2026, NORWAY_2026)
+country CHAR(2)
+lead_score INT
+enriched_email VARCHAR(255)
+enriched_phone VARCHAR(50)
+... (27 total columns, see CLAUDE.md EMAIL section)
+
+SEND LOGS (send_log)
+====================
+
+id INT PRIMARY KEY
+sector TEXT — matches companies_clean.sector
+sent INT — emails sent in this batch
+bounced INT — hard bounces
+complaints INT — FBL complaints
+date DATE
+status TEXT — 'sent', 'bounced', 'complained'
+
+DNC (Do Not Contact)
+====================
+
+email TEXT PRIMARY KEY
+reason TEXT
+added_at TIMESTAMP
+campaign_blocked_until TIMESTAMP (optional)
+
+POSTFIX+DKIM SETUP (LIVE)
+==========================
+
+Master domains: 28 live (cifn.info pending)
+Selector: mail2026
+DKIM keys: /etc/rspamd/dkim/{domain}.key
+Config: /etc/rspamd/local.d/dkim_signing.conf
+Mail flow: Campaign email → Postfix:25 → rspamd milter:11332 (add DKIM-Signature) → Brevo SMTP:587
+
+Example DKIM-Signature header:
+  DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=factoryjobs.eu;
+    s=mail2026; h=from:to:subject:date; bh=...; b=...
+
+BREVO CONFIGURATION (PRIMARY)
+=============================
+
+13 sender accounts (per email_accounts.py):
+  BREVO_BUILDJOBS_API_KEY: office@buildjobs.eu (270/day)
+  BREVO_FACTORYJOBS_API_KEY: office@factoryjobs.eu (270/day)
+  BREVO_CAREWORKERS_API_KEY: office@careworkers.eu (270/day)
+  BREVO_HORECAWORKERS_API_KEY: office@horecaworkers.eu (270/day)
+  BREVO_MEATWORKERS_API_KEY: office@meatworkers.eu (270/day)
+  BREVO_MECHANICJOBS_API_KEY: office@mechanicjobs.eu (270/day)
+  BREVO_MIVROMANIA_INFO_API_KEY: office@mivromania.info (270/day)
+  BREVO_MIVROMANIA_ONLINE_API_KEY: office@mivromania.online (270/day)
+  BREVO_ELECTRICJOBS_API_KEY: office@electricjobs.eu (270/day)
+  BREVO_EXPATSINROMANIA_API_KEY: office@expatsinromania.org (270/day)
+  BREVO_NEPALEZI_API_KEY: office@nepalezi.com (270/day)
+  BREVO_FARMWORKERS_API_KEY: office@farmworkers.eu (270/day)
+  BREVO_WAREHOUSEWORKERS_API_KEY: office@warehouseworkers.eu (270/day)
+
+Total capacity: 13 × 270 = 3,510/day
+Hard stop: bounce rate > 30%
+Fallback: Gmail (235/day per account), Zoho (50→250/day warmup)
+
+TESTING & VERIFICATION CHECKLIST
+=================================
+
+Wave 3 (Send Testing):
+  [ ] ANOFM_CONSTRUCTII dry-run (5 emails, verify template + postfix flow)
+  [ ] ANOFM_CONSTRUCTII live (10 emails, check Brevo delivery + bounce rate)
+  [ ] Monitor Postfix logs: tail /var/log/mail.log
+  [ ] Monitor Brevo stats: curl -H "api-key: $BREVO_BUILDJOBS_API_KEY" https://api.brevo.com/v3/account
+  [ ] Check send_log table for bounce_rate < 30%
+
+Wave 4 (NORWAY Import):
+  [ ] Find norway_emails DB (search raspi, dump to CSV)
+  [ ] Run import_norway_to_companies_clean.py
+  [ ] Verify 16 sectors imported with NORWAY_ prefix
+  [ ] Validate unified_NORWAY_config.json (test with validate_unified_config.py)
+
+Wave 5 (Cron Migration):
+  [ ] List old cron jobs: crontab -l on raspibig
+  [ ] Disable old ANOFM_TUDOR crons
+  [ ] Disable old NORWAY crons
+  [ ] Add new UNIFIED crons (10 emails/sector per cron run, 6 hours apart)
+  [ ] Test first run: /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/send_campaign.py ANOFM_CONSTRUCTII --limit 10 --dry-run
+
+ROLLBACK PLAN (if issues)
+==========================
+
+1. Revert to old config:
+   ssh tudor@192.168.100.21
+   git -C /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED checkout HEAD -- send_campaign.py send_config.py
+   python3 send_campaign.py ANOFM --limit 5 --dry-run
+
+2. Restore old campaigns:
+   /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_TUDOR_MIGRATED_TO_RASPI/send.py ANOFM_CONSTRUCTII --limit 10
+
+3. Disable unified crons:
+   crontab -e → comment out /opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/ entries
+
+PHASE 2 ROADMAP (6 days)
+=======================
+
+Wave 1: Audit laptop duplicates → archive 100+ old scripts (0.5 day)
+Wave 2: Modularize send_config.py → config/*.json loading (2 days)
+Wave 3: Refactor send_providers.py → EmailProvider interface (1.5 days)
+Wave 4: Add send_health.py → unified health monitor + cron (1 day)
+Wave 5: Type hints + docstrings → send_db.py, send_utils.py (1 day)
+
+Deliverables: Full type coverage (mypy), OWASP Top 10 audit, health dashboard
+
