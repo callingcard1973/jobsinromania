@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>HYPER 1001 - Parc de Joaca Compact - HYPER BNDF SRL</title>
+<style>
+  @page { size: A3 landscape; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    width: 420mm;
+    height: 297mm;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    color: #2c3e50;
+    overflow: hidden;
+  }
+
+  .page {
+    width: 420mm;
+    height: 297mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 8mm 10mm 6mm 10mm;
+    gap: 6mm;
+  }
+
+  /* HEADER */
+  .header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4mm;
+    border-bottom: 3px solid #2E86AB;
+  }
+  .header-brand h1 {
+    font-size: 22pt;
+    color: #2E86AB;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header-brand p {
+    font-size: 7pt;
+    color: #888;
+    margin-top: 1px;
+  }
+  .header-badge {
+    text-align: right;
+  }
+  .header-badge .pkg-name {
+    font-size: 16pt;
+    font-weight: 800;
+    color: #A23B72;
+    letter-spacing: 2px;
+  }
+  .header-badge .sku {
+    font-size: 7pt;
+    color: #999;
+  }
+
+  /* LEFT - Main image */
+  .main-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    min-height: 0;
+  }
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6mm 5mm 4mm 5mm;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    color: #fff;
+  }
+  .image-overlay h2 {
+    font-size: 18pt;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+  .image-overlay p {
+    font-size: 8pt;
+    opacity: 0.9;
+  }
+
+  /* RIGHT - Info panel */
+  .info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4mm;
+  }
+
+  /* Price block */
+  .price-block {
+    background: linear-gradient(135deg, #2E86AB, #A23B72);
+    color: #fff;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    text-align: center;
+  }
+  .price-block .price {
+    font-size: 24pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .price-block .price-note {
+    font-size: 7pt;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .stat-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .stat-card .stat-value {
+    font-size: 13pt;
+    font-weight: 800;
+    color: #2E86AB;
+  }
+  .stat-card .stat-label {
+    font-size: 6pt;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+  }
+
+  /* Include section */
+  .include-section {
+    flex: 1;
+    background: #fff;
+    border-radius: 6px;
+    padding: 3mm 4mm;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .include-section h3 {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #A23B72;
+    margin-bottom: 2mm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .include-section ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 4mm;
+  }
+  .include-item {
+    font-size: 7pt;
+    padding: 1.5px 0 1.5px 4mm;
+    position: relative;
+    color: #444;
+  }
+  .include-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5mm;
+    height: 2.5mm;
+    background: #2E86AB;
+    border-radius: 50%;
+  }
+
+  /* BENEFITS BAR - full width */
+  .benefits-bar {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 5mm;
+    align-items: center;
+  }
+  .benefit-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: #2E86AB;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+  .checkmark {
+    display: inline-block;
+    width: 5mm;
+    height: 5mm;
+    background: #2E86AB;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5mm;
+    height: 1.2mm;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: translate(-50%, -60%) rotate(-45deg);
+  }
+
+  /* FOOTER */
+  .footer {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3mm;
+    border-top: 2px solid #e0e0e0;
+    font-size: 7pt;
+    color: #888;
+  }
+  .footer strong {
+    font-size: 8pt;
+    color: #2E86AB;
+  }
+  .footer-cta {
+    background: #2E86AB;
+    color: #fff;
+    padding: 2mm 5mm;
+    border-radius: 3px;
+    font-size: 7.5pt;
+    font-weight: 700;
+  }
+
+  @media print {
+    body { background: #f5f7fa; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">
+      <h1>HYPER BNDF SRL</h1>
+      <p>Locuri de Joaca &amp; Spatii Verzi | CUI RO33286554 | +40 722 380 349</p>
+    </div>
+    <div class="header-badge">
+      <div class="pkg-name">HYPER 1001</div>
+      <div class="sku">SKU: HYPER-1001-EV101-SET | Editia 2026</div>
+    </div>
+  </div>
+
+  <!-- MAIN IMAGE -->
+  <div class="main-image">
+    <img src="../../MEDIA/RENDER/RENDER_HYPER_1001.png" alt="HYPER 1001 - Parc de Joaca Compact">
+    <div class="image-overlay">
+      <h2>Parc de Joaca Compact</h2>
+      <p>Solutia perfecta pentru comune mici si gradinite</p>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="info-panel">
+    <!-- Price -->
+    <div class="price-block">
+      <div class="price">55.000 - 65.000 EUR</div>
+      <div class="price-note">Pret fara TVA | Include echipamente + suprafata EPDM</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">10 x 12 m</div>
+        <div class="stat-label">Dimensiune</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">120 m2</div>
+        <div class="stat-label">Suprafata</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">16-18 copii</div>
+        <div class="stat-label">Capacitate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">3-12 ani</div>
+        <div class="stat-label">Varsta</div>
+      </div>
+    </div>
+
+    <!-- Include -->
+    <div class="include-section">
+      <h3> Pachetul Include</h3>
+      <ul><li class="include-item">Piesa centrala EV101</li><li class="include-item">Leagane dublu</li><li class="include-item">Balansoar pe arc ZIP</li><li class="include-item">Carusel rotativ</li><li class="include-item">2 banci de parc</li><li class="include-item">2 stalpi LED</li><li class="include-item">Suprafata EPDM + SBR</li><li class="include-item">Gard perimetral optional</li></ul>
+    </div>
+  </div>
+
+  <!-- BENEFITS BAR -->
+  <div class="benefits-bar"><div class="benefit-card"><span class="checkmark"></span>Ideal pentru sate si comune mici</div><div class="benefit-card"><span class="checkmark"></span>Montaj rapid in 3-5 zile</div><div class="benefit-card"><span class="checkmark"></span>Intretinere minima</div><div class="benefit-card"><span class="checkmark"></span>Conform EN 1176 / EN 1177</div></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <strong>HYPER BNDF SRL</strong> | Bogdan Gavra | +40 722 380 349 | gavrabogdan@yahoo.com
+    </div>
+    <div class="footer-cta">Solicitati o oferta personalizata</div>
+  </div>
+
+</div>
+</body>
+</html>

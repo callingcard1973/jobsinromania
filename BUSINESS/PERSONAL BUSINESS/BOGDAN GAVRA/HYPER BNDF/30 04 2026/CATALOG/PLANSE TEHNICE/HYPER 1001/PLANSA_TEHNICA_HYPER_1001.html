@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Plansa Tehnica HYPER 1001 - HYPER BNDF SRL</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  @page { size: A3 landscape; margin: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 420mm;
+    height: 297mm;
+    background: #FFFFFF;
+    color: #333;
+  }
+  .page {
+    width: 420mm;
+    height: 297mm;
+    display: flex;
+    flex-direction: column;
+    padding: 10mm;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2D5F8F;
+    padding-bottom: 6mm;
+    margin-bottom: 6mm;
+  }
+  .header-left h1 { font-size: 16pt; color: #2D5F8F; margin: 0; }
+  .header-left p { font-size: 9pt; color: #666; margin: 2px 0 0 0; }
+  .header-right { text-align: right; }
+  .header-right .sku { font-size: 11pt; font-weight: bold; color: #2D5F8F; }
+  .header-right .scale { font-size: 9pt; color: #666; }
+
+  .main { display: flex; flex: 1; gap: 8mm; }
+  .drawing-area { flex: 1.6; border: 1px solid #CCC; background: #FAFAFA; position: relative; min-height: 0; }
+  .drawing-area svg { width: 100%; height: 100%; }
+
+  .sidebar { flex: 1; display: flex; flex-direction: column; gap: 6mm; }
+  .panel { border: 1px solid #DDD; border-radius: 4px; overflow: hidden; }
+  .panel-title { background: #2D5F8F; color: #FFF; padding: 5px 10px; font-size: 9pt; font-weight: bold; }
+  .panel table { width: 100%; border-collapse: collapse; }
+  .panel td { padding: 3px 8px; }
+  .legend-table td { border-bottom: 1px solid #F0F0F0; }
+  .render-img { width: 100%; height: auto; display: block; border: 1px solid #DDD; }
+
+  .footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #2D5F8F; padding-top: 4mm; font-size: 8pt; color: #666; }
+  .footer strong { color: #2D5F8F; font-size: 9pt; }
+
+  .suprafata-info { background: #E8F5E9; padding: 6px 10px; border-left: 3px solid #4CAF50; margin: 4px 0; font-size: 8pt; }
+  .suprafata-info strong { color: #2E7D32; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-left">
+      <h1>HYPER BNDF SRL</h1>
+      <p>CUI RO33286554 | Calea Serban Voda 234, Sector 4, Bucuresti</p>
+      <p>Plansa Tehnica - Amplasare Echipamente</p>
+    </div>
+    <div class="header-right">
+      <div class="sku">HYPER 1001</div>
+      <div class="scale">Scara: 1:100 | Format: A3</div>
+      <div class="scale">Suprafata: 10 x 12 m (120 m2)</div>
+      <div class="scale">Data: 30.04.2026</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="drawing-area">
+      <svg viewBox="-30 -30 1060 1060" xmlns="http://www.w3.org/2000/svg"><defs>
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#E0E0E0" stroke-width="0.5"/>
+  </pattern>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="url(#grid)"/>
+<rect x="0" y="0" width="1000" height="1000" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" stroke-dasharray="8,4"/>
+<rect x="-20" y="-20" width="1040" height="1040" fill="none" stroke="#FF9800" stroke-width="1.5" stroke-dasharray="5,5"/>
+<rect x="350" y="200" width="250" height="200" fill="#2D5F8F" fill-opacity="0.35" stroke="#2D5F8F" stroke-width="2" rx="3"/>
+<line x1="350" y1="200" x2="350" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="370" y1="200" x2="370" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="390" y1="200" x2="390" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="410" y1="200" x2="410" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="430" y1="200" x2="430" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="450" y1="200" x2="450" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="470" y1="200" x2="470" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="490" y1="200" x2="490" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="510" y1="200" x2="510" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="530" y1="200" x2="530" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="550" y1="200" x2="550" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="570" y1="200" x2="570" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="590" y1="200" x2="590" y2="400" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="200" x2="600" y2="200" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="220" x2="600" y2="220" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="240" x2="600" y2="240" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="260" x2="600" y2="260" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="280" x2="600" y2="280" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="300" x2="600" y2="300" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="320" x2="600" y2="320" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="340" x2="600" y2="340" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="360" x2="600" y2="360" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<line x1="350" y1="380" x2="600" y2="380" stroke="#2D5F8F" stroke-width="0.3" opacity="0.4"/>
+<text x="475.0" y="304.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">EV101</text>
+<line x1="350" y1="188" x2="600" y2="188" stroke="#333" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="350" y1="200" x2="350" y2="191" stroke="#333" stroke-width="0.5"/>
+<line x1="600" y1="200" x2="600" y2="191" stroke="#333" stroke-width="0.5"/>
+<text x="475.0" y="185" text-anchor="middle" font-family="Arial" font-size="9" fill="#C0392B" font-weight="bold">6.16 </text>
+<line x1="338" y1="200" x2="338" y2="400" stroke="#333" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="350" y1="200" x2="341" y2="200" stroke="#333" stroke-width="0.5"/>
+<line x1="350" y1="400" x2="341" y2="400" stroke="#333" stroke-width="0.5"/>
+<text x="334" y="303.0" text-anchor="end" font-family="Arial" font-size="9" fill="#C0392B" font-weight="bold">4.55 m</text>
+<rect x="750" y="250" width="140" height="120" fill="#E67E22" fill-opacity="0.35" stroke="#E67E22" stroke-width="2" rx="3"/>
+<text x="820.0" y="314.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">SE001</text>
+<line x1="750" y1="238" x2="890" y2="238" stroke="#333" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="750" y1="250" x2="750" y2="241" stroke="#333" stroke-width="0.5"/>
+<line x1="890" y1="250" x2="890" y2="241" stroke="#333" stroke-width="0.5"/>
+<text x="820.0" y="235" text-anchor="middle" font-family="Arial" font-size="9" fill="#C0392B" font-weight="bold">3.40 </text>
+<line x1="738" y1="250" x2="738" y2="370" stroke="#333" stroke-width="0.8" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line x1="750" y1="250" x2="741" y2="250" stroke="#333" stroke-width="0.5"/>
+<line x1="750" y1="370" x2="741" y2="370" stroke="#333" stroke-width="0.5"/>
+<text x="734" y="313.0" text-anchor="end" font-family="Arial" font-size="9" fill="#C0392B" font-weight="bold">2.65 m</text>
+<ellipse cx="805.0" cy="575.0" rx="25.0" ry="25.0" fill="#27AE60" fill-opacity="0.6" stroke="#27AE60" stroke-width="1.5"/>
+<text x="805.0" y="579.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">ZIP</text>
+<circle cx="200.0" cy="600.0" r="50.0" fill="#8E44AD" fill-opacity="0.6" stroke="#8E44AD" stroke-width="1.5"/>
+<text x="200.0" y="604.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">CR002</text>
+<rect x="50" y="100" width="60" height="20" fill="#7F8C8D" fill-opacity="0.7" stroke="#555" stroke-width="1" rx="2"/>
+<text x="80.0" y="114.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">B1</text>
+<rect x="880" y="750" width="60" height="20" fill="#7F8C8D" fill-opacity="0.7" stroke="#555" stroke-width="1" rx="2"/>
+<text x="910.0" y="764.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">B2</text>
+<circle cx="30.0" cy="460.0" r="8" fill="#F39C12" fill-opacity="0.8" stroke="#E67E22" stroke-width="1"/>
+<line x1="30.0" y1="448.0" x2="30.0" y2="472.0" stroke="#555" stroke-width="2"/>
+<text x="30.0" y="464.0" text-anchor="middle" font-family="Arial" font-size="8" fill="#333" font-weight="bold">L1</text>
+<circle cx="960.0" cy="160.0" r="8" fill="#F39C12" fill-opacity="0.8" stroke="#E67E22" stroke-width="1"/>
+<line x1="960.0" y1="148.0" x2="960.0" y2="172.0" stroke="#555" stroke-width="2"/>
+<text x="960.0" y="164.0" text-anchor="middle" font-family="Arial" font-size="8" fill="#333" font-weight="bold">L2</text>
+<line x1="800" y1="970" x2="950" y2="970" stroke="#333" stroke-width="2"/>
+<line x1="800" y1="965" x2="800" y2="975" stroke="#333" stroke-width="2"/>
+<line x1="950" y1="965" x2="950" y2="975" stroke="#333" stroke-width="2"/>
+<text x="875" y="962" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">5 m</text>
+<line x1="960" y1="50" x2="960" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="960" y="14" text-anchor="middle" font-family="Arial" font-size="11" fill="#333" font-weight="bold">N</text></svg>
+    </div>
+
+    <div class="sidebar">
+      <div class="panel">
+        <div class="panel-title">DATE TEHNICE</div>
+        <div style="padding:6px 10px;">
+          <div class="suprafata-info">
+            <strong>Suprafata totala:</strong> 10 x 12 m (120 m2)<br>
+            <strong>Zona siguranta EPDM+SBR:</strong> conform EN1177<br>
+            <strong>Strat EPDM:</strong> 10-15 mm | <strong>SBR:</strong> 40-50 mm
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="flex:1;">
+        <div class="panel-title">LEGENDA ECHIPAMENTE</div>
+        <table class="legend-table"><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#2D5F8F;border-radius:2px;"></span></td><td style="font-size:9pt;">Piesa Centrala EV101</td><td style="font-size:8pt;color:#666;">6.16 x 4.55 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#E67E22;border-radius:2px;"></span></td><td style="font-size:9pt;">Leagane Dublu</td><td style="font-size:8pt;color:#666;">3.40 x 2.65 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#27AE60;border-radius:2px;"></span></td><td style="font-size:9pt;">Balansoar ZIP</td><td style="font-size:8pt;color:#666;">0.62 x 0.46 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#8E44AD;border-radius:2px;"></span></td><td style="font-size:9pt;">Carusel</td><td style="font-size:8pt;color:#666;">D 2.15 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#7F8C8D;border-radius:2px;"></span></td><td style="font-size:9pt;">Banca 1</td><td style="font-size:8pt;color:#666;">1.80 x 0.45 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#7F8C8D;border-radius:2px;"></span></td><td style="font-size:9pt;">Banca 2</td><td style="font-size:8pt;color:#666;">1.80 x 0.45 m</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#F39C12;border-radius:2px;"></span></td><td style="font-size:9pt;">Stalp LED 1</td><td style="font-size:8pt;color:#666;">LED parc</td></tr><tr><td style="width:20px;text-align:center;"><span style="display:inline-block;width:14px;height:14px;background:#F39C12;border-radius:2px;"></span></td><td style="font-size:9pt;">Stalp LED 2</td><td style="font-size:8pt;color:#666;">LED parc</td></tr></table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">MATERIALE</div>
+        <table><tr style="background:#F5F5F5;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">1</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Tuburi metalice O76x76x3mm - galvanizate si acoperite cu pulbere epoxidica</td></tr><tr style="background:#FFFFFF;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">2</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Tuburi O48x48x2.5mm si O42x42x2mm - structura secundara</td></tr><tr style="background:#F5F5F5;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">3</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">HPL (High Pressure Laminate) 19mm - panouri decorative</td></tr><tr style="background:#FFFFFF;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">4</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Podea HDPE - platforme si accese</td></tr><tr style="background:#F5F5F5;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">5</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Acoperis policarbonat - protectie UV</td></tr><tr style="background:#FFFFFF;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">6</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Elemente turnate din aluminiu - imbinari</td></tr><tr style="background:#F5F5F5;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">7</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Accesorii din otel inox - prinderi si fixari</td></tr><tr style="background:#FFFFFF;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">8</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Suprafata de siguranta: EPDM 10-15mm + SBR 40-50mm conform AVP Park (Zemin Kaplamalari), EN1177</td></tr><tr style="background:#F5F5F5;"><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">9</td><td style="padding:4px 8px;font-size:8pt;border-bottom:1px solid #E0E0E0;">Borduri elastice: 100x25x5 cm - delimitare suprafata</td></tr></table>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">RENDER 3D</div>
+        <img src="../../MEDIA/RENDER/RENDER_HYPER_1001.png" alt="Render HYPER 1001" class="render-img">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <strong>HYPER BNDF SRL</strong> | Locuri de Joaca &amp; spatii Verzi<br>
+      Bogdan Gavra | +40 722 380 349 | gavrabogdan@yahoo.com
+    </div>
+    <div style="text-align:right;">
+      Plansa Tehnica HYPER 1001 | Pagina 1/1<br>
+      Suprafata de siguranta: EPDM + SBR conform AVP Park, EN1177
+    </div>
+  </div>
+</div>
+</body>
+</html>
