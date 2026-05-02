@@ -1,41 +1,40 @@
 # DB Pipeline STATE
 
-## Last known state (2026-04-25)
-- Steps 1-21: COMPLETE
-- Step 22: COMPLETE — 97,332 procurement buyers imported (verified via COUNT)
-- Step 23: PARTIALLY RUN — SE email enrich, 180 emails (se_companies uses email_1/phone_1 not email/phone — script updated in-session)
-- Step 24: COMPLETE (pipeline.md marked done, 21 rows)
-- Step 25: IN PROGRESS — bilant_years → revenue sync, running as PID 9296 (locked behind step 26)
-- Step 26: IN PROGRESS — standard_sector UPDATE, PID 21036 active (50+ min, 33M rows). NOTE: ran twice accidentally (PIDs 9780 + 21036), second instance will run after first commits
-- Steps 27-36: PENDING
+## Last known state (2026-05-03)
+- Steps 1-36: COMPLETE (all prior work per previous sessions)
+- Step 38: COMPLETE — 42,864 agencies flagged (33,407 name + 9,437 sector). Column already existed.
+- Step 39: COMPLETE — Template routing CSV exported to DATA/template_routing.csv (13 routes). All templates are on raspibig, not laptop — all show MISSING locally, expected.
+- Step 40: COMPLETE — 128,748 contact_first_name values extracted from firstname.lastname@ patterns.
+- Step 41: COMPLETE — v_campaign_roi view created. 71 response records. solonet_orders lacks revenue_eur column (schema drift, non-fatal).
+- Step 42: COMPLETE — 20,000 phone call list exported to DATA/phone_call_list_20k.csv. NO: 403K, RO: 207K, BG: 20K contactable by phone.
+- Step 33: COMPLETE — Daily report HTML generated: daily_report_2026-05-03.html. MX valid: 482K, warm leads: 16, top: NO 305K contactable.
+- Step 34: NOT RUN — raspibig sync; infrastructure step requiring SSH/SCP, skip for laptop-only pipeline.
+- Step 44: IN PROGRESS — GDPR basis UPDATE running (PID 18440, ~33M rows). 97,795 rows done (legitimate_interest + pattern_enriched). Large UPDATE unknown still active.
+- Step 46: PENDING (depends on step 44 completing)
 
-## Active queries on DB (as of 2026-04-25 ~08:30)
-- PID 21036: standard_sector UPDATE (active, ~50 min in)
-- PID 9780: standard_sector UPDATE (locked, waiting on 21036)
-- PID 22672: SE email UPDATE (locked)
-- PID 16792: lead_score UPDATE (locked)
-- PID 9296: bilant_years revenue UPDATE (locked)
+## Completed this session (2026-05-03)
+- DB started: PostgreSQL 18 on D:\DATABASES\pgdata18, port 5433 (had stale postmaster.pid after crash)
+- Step 33: HTML daily report generated
+- Step 38: Re-run, agency flagging complete (42,864 total)
+- Step 39: Template routing CSV generated
+- Step 40: 128,748 contact_first_name values extracted
+- Step 41: v_campaign_roi view created
+- Step 42: phone_call_list_20k.csv exported (20,000 rows)
+- Step 44: Running (GDPR basis column ADD + updates — estimated 60+ min total)
 
 ## Blockers
-- All queries are sequential due to table-level lock contention on companies_clean
-- step26 ran twice — duplicate work but not harmful (idempotent)
-- step23 has schema mismatch: use email_1/phone_1/company_website, not email/phone/website
+- Step 44 large UPDATE (33M rows, ~30min remaining)
+- Step 46 (heatmap) must wait for step 44 to complete
 
-## Completed this session (2026-04-25)
-- Step 22: VERIFIED complete (97,332 buyers)
-- Step 23: COMPLETE (180 SE emails — low match rate, correct column names used)
-- Step 24: Previously done
-- Step 26: IN PROGRESS (standard_sector UPDATE running ~1h, 33M rows, will complete autonomously)
-- Step 25: IN PROGRESS (bilant revenue sync, locked behind step 26)
-- Step 27: COMPLETE — 25 RO followup_at populated, 1,497 overdue CSV exported to DATA/followup_overdue.csv
-- Step 32: COMPLETE — 2,384 insolvency targets exported to DATA/insolvency_worker_targets.csv
-- Step 36: COMPLETE — 7,238 IT companies exported to DATA/campaign_IT_europe_10000.csv
+## DB state
+- companies_clean: 33,604,439 rows
+- master_emails: 1,032,944 rows  
+- ted_awards: 6,198,063 rows
+- Step 38 is_agency: 42,864 flagged
+- Step 40 contact_first_name: 128,748 populated
+- Step 44 gdpr_basis: 97,795 so far (UPDATE unknown pending)
 
-## Completed 2026-04-26
-- Step 31: COMPLETE — 10 BG procurement buyers enriched (schema note: master_emails.quality_tier exists on laptop DB)
-- Step 35: COMPLETE — 1,960,463 rows updated. Lead score decay applied: 2023(419K avg16), 2022(146K avg10), 2021(128K avg7), 2020(103K avg2), 2019(95K avg1), 2018(87K avg1). Bug fixed: year::integer cast in step35_lead_score_decay.sql
-
-## Status as of 2026-04-26
-Steps 22-27, 31, 32, 35, 36: COMPLETE
-Steps 33, 34, 37-46: built/run (see pipeline.md)
-Raspibig DB mirror has schema drift — quality_tier and year type differ. Run enrichment steps on laptop only.
+## Infrastructure note
+- PostgreSQL 18 data dir: D:\DATABASES\pgdata18 (NOT C:\Program Files\PostgreSQL\18\data)
+- Windows service points to wrong dir — must start manually: pg_ctl start -D D:\DATABASES\pgdata18
+- Port: 5433 (not 5432 which is the default service instance)
