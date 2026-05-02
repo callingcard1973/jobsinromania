@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LemonSqueezy Upload Guide — 19 Products</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+  h1 { color: #333; }
+  .instructions { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 30px; }
+  .instructions a { color: #0066cc; font-weight: bold; }
+  .product { background: white; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; padding: 20px; }
+  .product h2 { margin-top: 0; color: #333; font-size: 18px; }
+  .product .price { font-size: 24px; font-weight: bold; color: #27ae60; margin: 5px 0 15px; }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 12px; font-weight: bold; color: #666; text-transform: uppercase; margin-bottom: 4px; }
+  .field .value { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; padding: 8px 12px; font-size: 14px; position: relative; }
+  .field .value pre { margin: 0; white-space: pre-wrap; font-family: inherit; font-size: 14px; }
+  .copy-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #0066cc; color: white; border: none; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 12px; }
+  .copy-btn:hover { background: #0052a3; }
+  .copy-btn.copied { background: #27ae60; }
+  .field .value.multiline { position: relative; padding-right: 70px; }
+  .field .value.multiline .copy-btn { top: 10px; transform: none; }
+  .file-tag { display: inline-block; background: #e8f4fd; color: #0066cc; border: 1px solid #b3d7f0; border-radius: 4px; padding: 3px 8px; font-size: 13px; font-weight: bold; }
+  .step { background: #e8f4fd; border-left: 4px solid #0066cc; padding: 10px 15px; margin: 5px 0; border-radius: 0 4px 4px 0; }
+  .product-num { display: inline-block; background: #333; color: white; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; font-size: 14px; margin-right: 8px; }
+  .status-bar { position: sticky; top: 0; background: #333; color: white; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .progress { font-size: 14px; }
+  .live-warning { background: #fff3cd; border: 1px solid #ffc107; padding: 10px 15px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>📦 LemonSqueezy Upload Guide</h1>
+<p><strong>Store:</strong> Data Driven Lemon &nbsp;|&nbsp; <strong>ID:</strong> 344296 &nbsp;|&nbsp; <strong>19 products to create</strong></p>
+
+<div class="instructions">
+  <strong>⚠️ BEFORE YOU START:</strong> Switch store to <strong>Live Mode</strong>.<br>
+  Go to: <a href="https://app.lemonsqueezy.com/settings/store" target="_blank">app.lemonsqueezy.com/settings/store</a> → Toggle "Test Mode" OFF<br><br>
+  <strong>For each product:</strong>
+  <div class="step">1. Go to <a href="https://app.lemonsqueezy.com/products/new" target="_blank">app.lemonsqueezy.com/products/new</a> → <strong>New Product</strong></div>
+  <div class="step">2. Copy each field below using the blue button → paste in LS dashboard</div>
+  <div class="step">3. Under "Files" → upload the CSV file listed for that product from <code>D:\MEMORY\BUSINESS\IDEAS\GUMROAD_UPLOAD\</code></div>
+  <div class="step">4. Set product as <strong>Published</strong> → Save</div>
+</div>
+
+<div class="status-bar">
+  <span>🛒 Data Driven Lemon — Upload Checklist</span>
+  <span class="progress" id="progress">0 / 19 done</span>
+</div>
+
+<script>
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.innerText.trim()).then(() => {
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+function markDone(cb) {
+  const done = document.querySelectorAll('.done-cb:checked').length;
+  document.getElementById('progress').textContent = done + ' / 19 done';
+}
+</script>
+
+<!-- PRODUCT 1 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">1</span>Germany B2B Procurement Winners — 64,646 Companies</h2>
+  <div class="price">£499</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_DEU.csv</span> (11 MB)</div>
+
+  <div class="field">
+    <label>Product Name</label>
+    <div class="value">
+      <span id="p1name">Germany B2B Procurement Winners — 64,646 Companies (TED EU Data)</span>
+      <button class="copy-btn" onclick="copyText('p1name',this)">Copy</button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Price (GBP)</label>
+    <div class="value"><span id="p1price">499</span><button class="copy-btn" onclick="copyText('p1price',this)">Copy</button></div>
+  </div>
+
+  <div class="field">
+    <label>Summary (short description)</label>
+    <div class="value"><span id="p1sum">64,646 German companies that won EU public procurement contracts 2020–2025. CSV with company name, email, website, city, contract value, sector. Instant download.</span><button class="copy-btn" onclick="copyText('p1sum',this)">Copy</button></div>
+  </div>
+
+  <div class="field">
+    <label>Description (HTML)</label>
+    <div class="value multiline">
+      <pre id="p1desc">&lt;h2&gt;64,646 Verified German B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Companies that won EU public procurement contracts, extracted from official TED (Tenders Electronic Daily) records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;What's included (CSV format):&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Company name&lt;/li&gt;
+&lt;li&gt;Business email (direct contact)&lt;/li&gt;
+&lt;li&gt;Company website&lt;/li&gt;
+&lt;li&gt;City / location&lt;/li&gt;
+&lt;li&gt;Contract value (EUR)&lt;/li&gt;
+&lt;li&gt;Sector (CPV code + description)&lt;/li&gt;
+&lt;li&gt;Contracting authority&lt;/li&gt;
+&lt;li&gt;Year of contract (2020–2025)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Who is this for:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;B2B sales teams targeting German market&lt;/li&gt;
+&lt;li&gt;Recruitment agencies placing staff in Germany&lt;/li&gt;
+&lt;li&gt;Suppliers seeking subcontracting opportunities&lt;/li&gt;
+&lt;li&gt;Market researchers and analysts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Data quality:&lt;/h3&gt;
+&lt;p&gt;Source: Official EU TED database (ted.europa.eu). Deduplicated. Excel compatible (UTF-8 CSV).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download after purchase. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre>
+      <button class="copy-btn" onclick="copyText('p1desc',this)">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">2</span>France B2B Procurement Winners — 62,546 Companies</h2>
+  <div class="price">£499</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_FRA.csv</span> (8.3 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p2name">France B2B Procurement Winners — 62,546 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p2name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p2price">499</span><button class="copy-btn" onclick="copyText('p2price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p2sum">62,546 French companies that won EU public procurement contracts 2020–2025. CSV with company name, email, website, city, contract value, sector. Instant download.</span><button class="copy-btn" onclick="copyText('p2sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p2desc">&lt;h2&gt;62,546 Verified French B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Companies that won EU public procurement contracts, extracted from official TED (Tenders Electronic Daily) records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;What's included (CSV format):&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Company website&lt;/li&gt;&lt;li&gt;City / location&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV code + description)&lt;/li&gt;&lt;li&gt;Contracting authority&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;h3&gt;Who is this for:&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;B2B sales teams targeting French market&lt;/li&gt;&lt;li&gt;Recruitment agencies placing staff in France&lt;/li&gt;&lt;li&gt;Suppliers seeking subcontracting in France&lt;/li&gt;&lt;li&gt;Market researchers&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: Official EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download after purchase. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p2desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">3</span>Norway Full Business Database — 324,000 Companies</h2>
+  <div class="price">£999</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">norway_companies_314K.csv</span> (41 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p3name">Norway Full Business Database — 324,000 Companies with Emails & Phones</span><button class="copy-btn" onclick="copyText('p3name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p3price">999</span><button class="copy-btn" onclick="copyText('p3price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p3sum">Complete Norwegian business registry — 324,000 companies with verified emails, phones, websites, industry codes. Sourced from official Brønnøysund Register. Instant CSV download.</span><button class="copy-btn" onclick="copyText('p3sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p3desc">&lt;h2&gt;324,000 Norwegian Companies — Complete Business Database&lt;/h2&gt;
+&lt;p&gt;The most comprehensive Norway B2B database available. Sourced from the official Brønnøysund Register Centre (Brreg.no), Norway's national business registry.&lt;/p&gt;
+&lt;h3&gt;What's included (CSV format):&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Company name (full legal name)&lt;/li&gt;
+&lt;li&gt;Business email (verified)&lt;/li&gt;
+&lt;li&gt;Phone number (90%+ coverage)&lt;/li&gt;
+&lt;li&gt;Company website&lt;/li&gt;
+&lt;li&gt;Municipality &amp; county&lt;/li&gt;
+&lt;li&gt;Industry code (NACE)&lt;/li&gt;
+&lt;li&gt;Company type (AS, ANS, etc.)&lt;/li&gt;
+&lt;li&gt;Org number (unique ID)&lt;/li&gt;
+&lt;li&gt;Founded year&lt;/li&gt;
+&lt;li&gt;Number of employees (where available)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Who is this for:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Recruiters placing workers in Norway&lt;/li&gt;
+&lt;li&gt;B2B sales teams entering the Norwegian market&lt;/li&gt;
+&lt;li&gt;Suppliers seeking Norwegian clients&lt;/li&gt;
+&lt;li&gt;Market researchers &amp; analysts&lt;/li&gt;
+&lt;li&gt;Investment researchers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;File size: ~41MB. Excel compatible (UTF-8 CSV). Updated March 2026.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download after purchase. One-time payment, no subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p3desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">4</span>Sweden B2B Procurement Winners — 29,409 Companies</h2>
+  <div class="price">£299</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_SWE.csv</span> (4.0 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p4name">Sweden B2B Procurement Winners — 29,409 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p4name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p4price">299</span><button class="copy-btn" onclick="copyText('p4price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p4sum">29,409 Swedish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values, sectors. Instant download.</span><button class="copy-btn" onclick="copyText('p4sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p4desc">&lt;h2&gt;29,409 Verified Swedish B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Swedish companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p4desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">5</span>Poland B2B Procurement Winners — 28,209 Companies</h2>
+  <div class="price">£299</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_POL.csv</span> (4.9 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p5name">Poland B2B Procurement Winners — 28,209 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p5name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p5price">299</span><button class="copy-btn" onclick="copyText('p5price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p5sum">28,209 Polish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values, sectors. Instant download.</span><button class="copy-btn" onclick="copyText('p5sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p5desc">&lt;h2&gt;28,209 Verified Polish B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Polish companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p5desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 6 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">6</span>Spain B2B Procurement Winners — 25,956 Companies</h2>
+  <div class="price">£249</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_ESP.csv</span> (4.5 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p6name">Spain B2B Procurement Winners — 25,956 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p6name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p6price">249</span><button class="copy-btn" onclick="copyText('p6price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p6sum">25,956 Spanish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values, sectors. Instant download.</span><button class="copy-btn" onclick="copyText('p6sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p6desc">&lt;h2&gt;25,956 Verified Spanish B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Spanish companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p6desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 7 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">7</span>Czech Republic B2B Procurement Winners — 18,406 Companies</h2>
+  <div class="price">£199</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_CZE.csv</span> (2.9 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p7name">Czech Republic B2B Procurement Winners — 18,406 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p7name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p7price">199</span><button class="copy-btn" onclick="copyText('p7price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p7sum">18,406 Czech companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p7sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p7desc">&lt;h2&gt;18,406 Verified Czech B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Czech companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p7desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 8 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">8</span>Italy B2B Procurement Winners — 16,750 Companies</h2>
+  <div class="price">£199</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_ITA.csv</span> (2.6 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p8name">Italy B2B Procurement Winners — 16,750 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p8name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p8price">199</span><button class="copy-btn" onclick="copyText('p8price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p8sum">16,750 Italian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p8sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p8desc">&lt;h2&gt;16,750 Verified Italian B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Italian companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p8desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCT 9 -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;" title="Mark as done">
+  <h2><span class="product-num">9</span>Romania B2B Procurement Winners — 12,778 Companies</h2>
+  <div class="price">£149</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_ROU.csv</span> (2.4 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p9name">Romania B2B Procurement Winners — 12,778 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p9name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p9price">149</span><button class="copy-btn" onclick="copyText('p9price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p9sum">12,778 Romanian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values, sectors. Instant download.</span><button class="copy-btn" onclick="copyText('p9sum',this)">Copy</button></div></div>
+  <div class="field"><label>Description (HTML)</label><div class="value multiline"><pre id="p9desc">&lt;h2&gt;12,778 Verified Romanian B2B Contacts&lt;/h2&gt;
+&lt;p&gt;Romanian companies that won EU public procurement contracts, from official TED records 2020–2025.&lt;/p&gt;
+&lt;h3&gt;Includes:&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Company name&lt;/li&gt;&lt;li&gt;Business email&lt;/li&gt;&lt;li&gt;Website&lt;/li&gt;&lt;li&gt;City&lt;/li&gt;&lt;li&gt;Contract value (EUR)&lt;/li&gt;&lt;li&gt;Sector (CPV)&lt;/li&gt;&lt;li&gt;Year 2020–2025&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Source: EU TED database. Deduplicated. Excel compatible.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Instant download. No subscription.&lt;/strong&gt;&lt;/p&gt;</pre><button class="copy-btn" onclick="copyText('p9desc',this)">Copy</button></div></div>
+</div>
+
+<!-- PRODUCTS 10-19: smaller countries £99 each -->
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">10</span>Finland B2B Procurement Winners — 11,694 Companies</h2>
+  <div class="price">£149</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_FIN.csv</span> (1.6 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p10name">Finland B2B Procurement Winners — 11,694 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p10name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p10price">149</span><button class="copy-btn" onclick="copyText('p10price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p10sum">11,694 Finnish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p10sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">11</span>Netherlands B2B Procurement Winners — 10,639 Companies</h2>
+  <div class="price">£149</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_NLD.csv</span> (1.6 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p11name">Netherlands B2B Procurement Winners — 10,639 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p11name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p11price">149</span><button class="copy-btn" onclick="copyText('p11price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p11sum">10,639 Dutch companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p11sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">12</span>Belgium B2B Procurement Winners — 9,128 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_BEL.csv</span> (1.3 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p12name">Belgium B2B Procurement Winners — 9,128 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p12name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p12price">99</span><button class="copy-btn" onclick="copyText('p12price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p12sum">9,128 Belgian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p12sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">13</span>Bulgaria B2B Procurement Winners — 8,671 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_BGR.csv</span> (1.8 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p13name">Bulgaria B2B Procurement Winners — 8,671 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p13name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p13price">99</span><button class="copy-btn" onclick="copyText('p13price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p13sum">8,671 Bulgarian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p13sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">14</span>Austria B2B Procurement Winners — 8,262 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_AUT.csv</span> (1.4 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p14name">Austria B2B Procurement Winners — 8,262 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p14name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p14price">99</span><button class="copy-btn" onclick="copyText('p14price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p14sum">8,262 Austrian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p14sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">15</span>Norway B2B Procurement Winners — 8,261 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_NOR.csv</span> (1.1 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p15name">Norway B2B Procurement Winners — 8,261 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p15name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p15price">99</span><button class="copy-btn" onclick="copyText('p15price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p15sum">8,261 Norwegian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p15sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">16</span>Hungary B2B Procurement Winners — 7,966 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_HUN.csv</span> (1.7 MB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p16name">Hungary B2B Procurement Winners — 7,966 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p16name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p16price">99</span><button class="copy-btn" onclick="copyText('p16price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p16sum">7,966 Hungarian companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p16sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">17</span>Denmark B2B Procurement Winners — 6,568 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_DNK.csv</span> (888 KB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p17name">Denmark B2B Procurement Winners — 6,568 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p17name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p17price">99</span><button class="copy-btn" onclick="copyText('p17price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p17sum">6,568 Danish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p17sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">18</span>Ireland B2B Procurement Winners — 5,527 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_IRL.csv</span> (828 KB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p18name">Ireland B2B Procurement Winners — 5,527 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p18name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p18price">99</span><button class="copy-btn" onclick="copyText('p18price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p18sum">5,527 Irish companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p18sum',this)">Copy</button></div></div>
+</div>
+
+<div class="product">
+  <input type="checkbox" class="done-cb" onchange="markDone()" style="float:right;width:20px;height:20px;cursor:pointer;">
+  <h2><span class="product-num">19</span>UK B2B Procurement Winners — 2,901 Companies</h2>
+  <div class="price">£99</div>
+  <div class="live-warning">📁 File to upload: <span class="file-tag">ted_winners_GBR.csv</span> (462 KB)</div>
+  <div class="field"><label>Product Name</label><div class="value"><span id="p19name">UK B2B Procurement Winners — 2,901 Companies (TED EU Data)</span><button class="copy-btn" onclick="copyText('p19name',this)">Copy</button></div></div>
+  <div class="field"><label>Price (GBP)</label><div class="value"><span id="p19price">99</span><button class="copy-btn" onclick="copyText('p19price',this)">Copy</button></div></div>
+  <div class="field"><label>Summary</label><div class="value"><span id="p19sum">2,901 UK companies that won EU public procurement contracts 2020–2025. CSV with emails, websites, contract values. Instant download.</span><button class="copy-btn" onclick="copyText('p19sum',this)">Copy</button></div></div>
+</div>
+
+<div style="background:#d4edda;border:1px solid #28a745;padding:20px;border-radius:8px;margin-top:30px;">
+  <h2 style="color:#155724;margin-top:0">💰 Revenue Potential (if all sell once)</h2>
+  <p>Germany £499 + France £499 + Norway £999 + Sweden £299 + Poland £299 + Spain £249 + Czech £199 + Italy £199 + Romania £149 + Finland £149 + Netherlands £149 + Belgium £99 + Bulgaria £99 + Austria £99 + Norway TED £99 + Hungary £99 + Denmark £99 + Ireland £99 + UK £99</p>
+  <p><strong>Total if all sell once: ~£4,381 gross / ~£3,943 net (after 10% LS fee)</strong></p>
+  <p>Germany alone selling 10× = £4,990/month passive.</p>
+</div>
+
+</body>
+</html>

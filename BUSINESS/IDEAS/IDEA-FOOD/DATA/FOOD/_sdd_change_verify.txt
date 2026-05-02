@@ -1,0 +1,8 @@
+SPEC_OK
+DESIGN_OK
+TASKS_OK
+EMAIL_OK
+BRIEF_OK
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/specs/outreach-pipeline/spec.md:29:### Requirement: Seller Readiness Must Gate Buyer Outreach
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/wholesale-first-outreach-email.md:1:# Wholesale-First Outreach Email
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/one-page-buyer-brief.md:1:# One-Page Buyer Brief

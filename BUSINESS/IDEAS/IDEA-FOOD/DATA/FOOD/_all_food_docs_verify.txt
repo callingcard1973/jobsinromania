@@ -1,0 +1,10 @@
+OVERLAP_OK
+OUTREACH_OK
+PLAYBOOK_OK
+/opt/ACTIVE/FOOD/SUPERMARKETS_CLAUDE_CODE_OVERLAP.md:126:1. Use `ZAI_SUPERMARKETS` when the task is simple list building, export packaging, and fast commercial data products.
+/opt/ACTIVE/FOOD/SUPERMARKETS_CLAUDE_CODE_OVERLAP.md:133:3. Use `ZAI_SUPERMARKETS` for packaging lists and commercial database products.
+/opt/ACTIVE/FOOD/FOOD_MASTER_PLAYBOOK.md:22:### ZAI_SUPERMARKETS
+/opt/ACTIVE/FOOD/FOOD_MASTER_PLAYBOOK.md:41:3. Use `ZAI_SUPERMARKETS` and `SUPERMARKETS_CLAUDE` to identify buyers, segments, and channels.
+/opt/ACTIVE/FOOD/FOOD_MASTER_PLAYBOOK.md:90:3. Use `ZAI_SUPERMARKETS` for packaging and simple exports.
+/opt/ACTIVE/FOOD/FOOD_MASTER_PLAYBOOK.md:104:  `seller supply -> cooperative aggregation -> wholesale-first buyer outreach -> early orders -> retail expansion -> recurring data and outreach services`.
+/opt/ACTIVE/FOOD/FIRST_OUTREACH_PLAN.md:12:## First 20 Buyer Targets

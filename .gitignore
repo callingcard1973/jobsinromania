@@ -26,3 +26,6 @@ Thumbs.db
 .env
 *.env
 raspi.json
+# Long path names - Windows filesystem limitation
+BUSINESS/BUSINESS TUDOR PERSONAL/TERENURI/TEREN CONSTAM BUZAU/
+BUSINESS/BUSINESS TUDOR PERSONAL/TERENURI/PADINA/DOSAR_8616/

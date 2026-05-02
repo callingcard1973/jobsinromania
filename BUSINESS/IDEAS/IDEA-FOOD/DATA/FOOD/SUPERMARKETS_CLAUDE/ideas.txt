@@ -1,0 +1,122 @@
+ROMANIAN FOOD PRODUCERS — IDEAS & OPPORTUNITIES
+=================================================
+Generated: 2026-03-07
+
+1. DSVSA REGISTRY ENRICHMENT
+   - 48K+ food establishments but only ~3% have emails
+   - Bulk enrichment: scrape websites from CUI/company name via ONRC/listafirme.ro
+   - Extract emails from company websites
+   - Could unlock 10-20K new contacts from data already in hand
+
+2. ROMANIAN PRODUCER DIRECTORY WEBSITE
+   - Searchable directory of Romanian food producers (dairy, meat, bakery, honey, preserves)
+   - Deploy on one of the 28 existing domains
+   - Monetize via featured listings, premium placement
+   - Data: 67K Romanian food companies already available
+   - Nobody has this aggregated publicly
+
+3. "PRODUS ROMANESC" EXPORT MATCHMAKING
+   - Connect Romanian producers with ethnic shops abroad
+   - Both sides available: 67K producers + 96 ethnic shop contacts (expandable)
+   - Platform or email campaigns matching supply to demand
+   - Romanian diaspora (4M+) creates massive demand for traditional products
+   - Products: telemea, branza de burduf, slanina, carnati, zacusca, gem, miere
+
+4. SEAP FOOD PROCUREMENT ALERTS
+   - SEAP scraper already pulls ~100K contracts/year
+   - Filter for food procurement (schools, hospitals, army, prisons)
+   - Alert cooperative members when tenders match their products
+   - First-mover advantage on each tender
+   - Legea 98/2016, Programul Lapte-Corn-Fructe
+
+5. COOPERATIVE BUYING GROUP FOR SMALL PRODUCERS
+   - Thousands of small producers (cheese, honey, sausages, jams) can't supply chains alone
+   - Aggregate under one cooperative brand with unified HACCP/ISO
+   - Approach Kaufland/Lidl/Carrefour as a single supplier
+   - DSVSA data shows exactly who these producers are
+   - Legal: Legea 1/2005 privind cooperatia
+
+6. COLD CHAIN GAP ANALYSIS
+   - Only 159 cold storage facilities in the data — massive deficit
+   - Map gaps: counties with producers but no cold storage
+   - Invest or broker connections
+   - Fundable via AFIR/PNDR Sub-measure 4.2
+
+7. FARM-TO-FORK TRACEABILITY PLATFORM
+   - EU Reg. 178/2002 requires traceability
+   - Most small Romanian producers do it on paper
+   - Build simple digital traceability tool (QR code per lot)
+   - Entry ticket to selling to supermarket chains
+   - Chains increasingly require digital traceability
+
+8. SEASONAL SURPLUS MARKETPLACE
+   - Massive seasonal surplus: tomatoes Aug-Sep, apples Sep-Oct, cabbage Oct-Nov
+   - Connect surplus producers with processors, canners, juice makers in real-time
+   - Both sides available in existing data
+   - Reduce food waste, increase producer income
+
+
+NEXT STEPS — ACTIONABLE PROPOSALS
+==================================
+Updated: 2026-03-07
+
+IMMEDIATE (ready to execute)
+
+A. PHASE 2 ENRICHMENT — Web lookup for 11,750 missing emails
+   - Use listafirme.ro / risco.ro to look up companies by name -> get CUI -> get website -> extract email
+   - Existing tools on raspibig: paginiaurii_scraper.py, website_contact_scraper.py
+   - Estimated yield: 3,000-5,000 new emails (25-40% of remaining)
+   - No new scraper needed, just adapt existing ones
+
+B. CAMPAIGN SETUP — Email the 20,795 contacts
+   - Use existing campaign infrastructure (unified orchestrator, Brevo)
+   - Pitch: cooperative supply partnership
+   - Templates already in TEMPLATES/supplier_registration_template.md
+   - Tier 1: supermarket chains (469 emails) + en-gros (147) = 616 high-value targets
+   - Tier 2: distributors (90) + logistics (1,274) + horeca (18,189)
+
+C. SEAP FOOD TENDERS ALERT SYSTEM
+   - SEAP scraper already runs quarterly on raspibig
+   - Filter for CPV codes 15* (food), 03* (agriculture)
+   - Alert cooperative members when tenders match their products
+   - Quick win: query existing SEAP data for active food procurement contracts
+
+MEDIUM-TERM
+
+D. PRODUS MONTAN / TRADITIONAL PRODUCTS REGISTRY
+   - Scrape registrumontan.ro (MADR maintains this)
+   - High-value niche: "produs montan" label = premium pricing + supermarket shelf preference
+   - 102 companies found in master DB with "montan" in name, only 6 with email
+
+E. PRODUCER DIRECTORY ON CUMPARLEGUME.COM
+   - Domain already owned with food content
+   - Publish the 20K contacts as a searchable directory
+   - SEO traffic -> monetize via featured listings
+   - Nobody has this aggregated publicly
+
+F. CENTROCOOP PARTNERSHIP OUTREACH
+   - 900+ cooperative stores — natural first customer
+   - Draft specific proposal for cooperative-to-cooperative supply
+   - Legal framework: Legea 1/2005 privind cooperatia
+
+LOW-EFFORT / HIGH-VALUE
+
+G. CROSS-MATCH WITH FALIMENT DATA
+   - 222K insolvency records in interjob_master.insolvency table
+   - Find food companies going bankrupt
+   - Buy their client lists, equipment, or distribution contracts
+   - Data already available, just needs a query + analysis
+
+H. EXPORT 20K CONTACTS TO CRM
+   - Use existing create_crm_excel.py to make segmented Excel workbook
+   - Ready for manual outreach by cooperative sales team
+   - Categories: supermarket, distributor, en-gros, processor, dairy, meat, logistics, horeca
+
+
+STATUS SUMMARY
+==============
+- Internal DB enrichment DONE: 674 emails added (Phase 1 complete)
+- food_distribution DB on raspibig: 32,545 contacts, 20,795 with email
+- CSV exported: ROMANIA_FOOD_DISTRIBUTION_CONTACTS.csv
+- Strategy document: COOPERATIVE_DISTRIBUTION_STRATEGY.md (12 channels + regulatory)
+- Remaining: 11,750 contacts without email (mostly small DSVSA shops, IFs, PFAs)
