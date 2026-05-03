@@ -1,40 +1,46 @@
 # DB Pipeline STATE
 
-## Last known state (2026-05-03)
-- Steps 1-36: COMPLETE (all prior work per previous sessions)
-- Step 38: COMPLETE — 42,864 agencies flagged (33,407 name + 9,437 sector). Column already existed.
-- Step 39: COMPLETE — Template routing CSV exported to DATA/template_routing.csv (13 routes). All templates are on raspibig, not laptop — all show MISSING locally, expected.
-- Step 40: COMPLETE — 128,748 contact_first_name values extracted from firstname.lastname@ patterns.
-- Step 41: COMPLETE — v_campaign_roi view created. 71 response records. solonet_orders lacks revenue_eur column (schema drift, non-fatal).
-- Step 42: COMPLETE — 20,000 phone call list exported to DATA/phone_call_list_20k.csv. NO: 403K, RO: 207K, BG: 20K contactable by phone.
-- Step 33: COMPLETE — Daily report HTML generated: daily_report_2026-05-03.html. MX valid: 482K, warm leads: 16, top: NO 305K contactable.
-- Step 34: NOT RUN — raspibig sync; infrastructure step requiring SSH/SCP, skip for laptop-only pipeline.
-- Step 44: IN PROGRESS — GDPR basis UPDATE running (PID 18440, ~33M rows). 97,795 rows done (legitimate_interest + pattern_enriched). Large UPDATE unknown still active.
-- Step 46: PENDING (depends on step 44 completing)
+## Last known state (2026-05-03 — session complete)
 
-## Completed this session (2026-05-03)
-- DB started: PostgreSQL 18 on D:\DATABASES\pgdata18, port 5433 (had stale postmaster.pid after crash)
-- Step 33: HTML daily report generated
-- Step 38: Re-run, agency flagging complete (42,864 total)
-- Step 39: Template routing CSV generated
-- Step 40: 128,748 contact_first_name values extracted
-- Step 41: v_campaign_roi view created
-- Step 42: phone_call_list_20k.csv exported (20,000 rows)
-- Step 44: Running (GDPR basis column ADD + updates — estimated 60+ min total)
+### All Steps Status
+- Steps 1-36: COMPLETE (all prior sessions)
+- Step 37: SKIPPED this session — DK/FI DNS enrichment (hours-long, 44K DK websites to check). Run separately.
+- Step 38: COMPLETE — 42,864 agencies flagged (33,407 name + 9,437 sector)
+- Step 39: COMPLETE — template_routing.csv generated (13 routes, templates on raspibig not laptop)
+- Step 40: COMPLETE — 128,748 contact_first_name extracted (firstname.lastname@ pattern)
+- Step 41: COMPLETE — v_campaign_roi view created (71 response records). solonet_orders lacks revenue_eur (schema drift, non-fatal)
+- Step 42: COMPLETE — phone_call_list_20k.csv exported (20K rows, NO:403K/RO:207K/BG:20K available)
+- Step 33: COMPLETE — daily_report_2026-05-03.html generated (482K MX-valid, 16 warm leads, top: NO 305K)
+- Step 34: SKIPPED — raspibig sync; requires SSH/SCP, not run on laptop
+- Step 44: COMPLETE — gdpr_basis column populated: 97,332 legitimate_interest, 463 pattern_enriched, 33,506,644 unknown
+- Step 45: BUILT (step45_warm_lead_followup.py) — not run (sends emails, requires explicit approval)
+- Step 46: COMPLETE — heatmap_sector_country.csv exported (38 rows, top: other/NO 91K opp score)
+- Step 43: BUILT (step43_website_contact_scraper.py) — not run (external HTTP requests, time-consuming)
 
-## Blockers
-- Step 44 large UPDATE (33M rows, ~30min remaining)
-- Step 46 (heatmap) must wait for step 44 to complete
+### All steps complete as of 2026-05-03 except: 34 (raspibig sync), 37 (DNS enrichment), 43 (scraper), 45 (email sends)
 
-## DB state
-- companies_clean: 33,604,439 rows
-- master_emails: 1,032,944 rows  
+## Final DB Row Counts (2026-05-03)
+- companies_clean: 33,604,439 rows (unchanged — enrichment only added columns)
+- master_emails: 1,032,944 rows
 - ted_awards: 6,198,063 rows
-- Step 38 is_agency: 42,864 flagged
-- Step 40 contact_first_name: 128,748 populated
-- Step 44 gdpr_basis: 97,795 so far (UPDATE unknown pending)
+
+## Final Enrichment Stats (companies_clean)
+- is_agency = true: 42,864
+- contact_first_name: 128,748
+- gdpr_basis: 33,604,439 (all rows populated)
+  - legitimate_interest: 97,332
+  - pattern_enriched: 463
+  - unknown: 33,506,644
 
 ## Infrastructure note
 - PostgreSQL 18 data dir: D:\DATABASES\pgdata18 (NOT C:\Program Files\PostgreSQL\18\data)
 - Windows service points to wrong dir — must start manually: pg_ctl start -D D:\DATABASES\pgdata18
-- Port: 5433 (not 5432 which is the default service instance)
+- Port: 5433 (not 5432)
+- Command: PGPASSWORD=tudor "/c/Program Files/PostgreSQL/18/bin/psql.exe" -U tudor -h 127.0.0.1 -p 5433 -d interjob_master
+
+## Top Campaign Opportunities (from step 46 heatmap)
+1. other/NO: 253K contactable, avg_score 36, opp_score 91,366
+2. unknown/RO: 31K contactable, avg_score 41, opp_score 12,974
+3. retail/NO: 16K contactable, avg_score 38, opp_score 6,278
+4. construction/NO: 13K contactable, avg_score 35, opp_score 4,574
+5. it/NO: 7K contactable, avg_score 36, opp_score 2,624
