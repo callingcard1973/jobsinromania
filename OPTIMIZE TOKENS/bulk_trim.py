@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Bulk CLAUDE.md trimmer - condenses all bloated files to <=50 lines."""
-import os, re, subprocess
+import os, re, subprocess, shutil
+from datetime import datetime
 
 MAX_LINES = 50
 SKIP_SECTIONS = {
@@ -87,6 +88,10 @@ def trim_file(path):
 
     new_content = "\n".join(result) + "\n"
     new_lines = len(new_content.splitlines())
+
+    # Archive before write (safety: prevent data loss)
+    backup_path = f"{path}.backup.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    shutil.copy2(path, backup_path)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(new_content)
