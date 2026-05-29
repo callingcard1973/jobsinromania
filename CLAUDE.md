@@ -48,3 +48,38 @@
 
 ## Sensitive Files
 `raspi.json`, `OPT/opt/EMAIL/.env`, `A2_SITE_DEPLOYER/env/*.env` â€” do not share. OpenCage key in `OPENCAGE_API_KEY` env var.
+
+---
+
+## LOW TOKEN USAGE STRATEGY
+
+**5,869 Python files in CODE/** — NEVER read full codebase. Use:
+
+### 1. Run Locally, NOT in LLM
+- DB enrichment: run `step*.py` scripts directly via `bash`
+- Campaign: run `campaign_manager.py` directly
+- Scrapers: run on raspibig, not here
+- LLM is for DECISIONS only, not execution
+
+### 2. Use Subagents (parallel)
+| Agent | Use For |
+|-------|---------|
+| `pg-enricher` | Pipeline steps, row counts, schema |
+| `brevo-sender` | Campaign status, quota, bounce |
+| `cpanel-deployer` | A2 deploys |
+| `madr-scraper` | MADR county scrape |
+
+### 3. Use Skills On-Demand
+`skill{name}` when task matches: code-reviewer, fastapi-endpoint, frontend-design, python-pro
+
+### 4. Grep/Glob First
+- Find: `grep{pattern}` NOT read all files
+- Locate: `glob{pattern}` for filenames
+
+### 5. MCP for DB
+Configured in `.mcp.json` — use for queries, not `psql.exe` manually
+
+### 6. Minimal Context
+- Pass subagent: task scope + ONE relevant CLAUDE.md section only
+- Resume projects: load `PROJECT.md` + `STATE.md` only
+- No full context dumps
