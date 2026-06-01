@@ -16,41 +16,47 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 
 ---
 
-## 10. PICK-UP STATE — CURRENT (2026-06-01 SESSION 3)
+## 10. PICK-UP STATE — CURRENT (2026-06-01 SESSION 4)
 
 ### ✅ WHAT'S DONE
 
-**3 WP Sites Live & Authenticated:**
-- buildjobs.eu/wp/ (DB: loaiidil_wp500)
-- meatworkers.eu/wp/ (DB: loaiidil_wp351)
-- factoryjobs.eu/wp/ (DB: loaiidil_a2wp496)
+**WordPress at /wp/ (3 sites live):**
+- buildjobs.eu/wp/ (DB: loaiidil_wp500) ✅
+- meatworkers.eu/wp/ (DB: loaiidil_wp351) ✅
+- factoryjobs.eu/wp/ (DB: loaiidil_a2wp496) ✅
+- Credentials in `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
+- wordpress_publisher.py updated with 3 WP_JOB_SITES entries
 
-**Credentials Saved** → `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
-```
-WP_BUILDJOBS_EU_USER=apaminerala / PASS=T39_8GZY0Snp2eZx
-WP_MEATWORKERS_EU_USER=apaminerala / PASS=11oEbWmL-47s3MwD
-WP_FACTORYJOBS_EU_USER=apaminerala / PASS=jVyCZWFOl9WytL1c
-```
+**JobsInRomania Daily Pipeline (COMPLETE):**
+- ✅ GitHub repo: https://github.com/callingcard1973/jobsinromania/
+- ✅ Scripts deployed to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
+  - `generate_romania_jobs.py` — extracts 1,533 ANOFM Romania jobs from ij_jobs
+  - `build_romania_pages.py` — generates responsive HTML pages (color: #e65100)
+  - `deploy_github.py` — commits + pushes to GitHub via SSH
+  - `daily_build.sh` — orchestrates all 3 scripts with logging
+- ✅ Daily cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh` (2 AM UTC)
+- ✅ Full pipeline tested: 1,533 jobs extracted, HTML built, deployed to GitHub
+- ✅ GitHub Pages enabled (source: main branch /docs/)
+- 🔄 **PENDING:** Decide page structure (index only? + sectors? + cities?) before final deploy
 
-**Code Updated:**
-- wordpress_publisher.py: Added 3 WP_JOB_SITES entries
-- install_wp_pilot.py: Ready for 10 remaining sites
+### ⏸ BLOCKERS (WordPress)
 
-### ⏸ BLOCKERS
+1. **10 remaining WP sites need installation** (farmworkers, horecaworkers, etc.)
+2. **WP Core files** not uploaded to A2 (bottleneck: file upload via cPanel Fileman)
 
-1. **WP Core Files** — Not uploaded to A2 (need wget + cPanel Fileman)
-2. **Category Creation Test** — Publisher reported failure on dry-run
+### 📋 NEXT STEPS
 
-### 📋 NEXT STEPS (In Order)
+**JobsInRomania (immediate):**
+1. User decides: how many pages? (index only / +sectors / +top cities / all cities?)
+2. Update build_romania_pages.py per decision
+3. First full run: 2 AM UTC cron job generates and pushes to GitHub Pages
+4. Verify jobsinromania.github.io live
 
-1. Download WP core → `wget https://wordpress.org/latest.zip` (once on raspibig)
-2. Install 10 remaining sites (farmworkers, horecaworkers, warehouseworkers, careworkers, electricjobs, mechanicjobs, internaltransfers, expatsinromania, horecaworkers2026, nepalezi)
-3. Add 10 sites to wp_sites.env with credentials
-4. Expand wordpress_publisher.py WP_JOB_SITES dict (10 new entries)
-5. Add cron jobs for daily publishing (7 templates, see detailed plan)
-6. Test publisher on all 13 sites (dry-run → live)
-
-**Est. Time:** 2-3 hours (file upload bottleneck)
+**WordPress (parallel, 2-3 hours):**
+1. Download WP core: `wget https://wordpress.org/latest.zip` (once on raspibig)
+2. Install 10 remaining sites (farmworkers → nepalezi)
+3. Update wp_sites.env + wordpress_publisher.py (10 new entries)
+4. Test publisher on all 13 sites (dry-run → live)
 
 ### 📂 CRITICAL FILES
 
@@ -67,80 +73,42 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ## NEW PROJECT: JobsInRomania Daily Pages
 
-**Status:** Repo cloned, ready for implementation
+**Status:** Scripts ready (laptop), deployment to raspibig in progress
 
 **GitHub:** https://github.com/callingcard1973/jobsinromania/
 
-**Goal:** Daily HTML pages publishing ANOFM jobs (Romania-focused)
+**Goal:** Daily HTML pages publishing ANOFM jobs (Romania-focused), integrated with WordPress publisher for interjob.ro
 
-### Current Repo State
-- README.md: Describes purpose (job opportunities, workforce, recruitment info for Romania)
-- .gitignore: AL/Dynamics 365 template (needs update)
-- No code/pages yet
+### Current Implementation ✅
+**Scripts complete (committed to GitHub):**
+- `generate_romania_jobs.py` — Extract ANOFM Romania jobs from ij_jobs PostgreSQL (→ JSON feed)
+- `build_romania_pages.py` — Generate responsive HTML pages (index, sectors/, cities/) with #e65100 branding
+- `deploy_github.py` — Commit + push to GitHub daily
+- `daily_build.sh` — Master orchestrator script (runs all 3 in sequence with logging)
 
-### Implementation Plan
-
-**Source Data:**
-- ANOFM jobs from ij_jobs table (9,087 total)
-- Filter by: geografia = "Romania" OR sector in [agricultura, constructii, horeca, logistica, etc.]
-- Expected: ~3,000-5,000 Romania-specific ANOFM jobs
-
-**Output Structure:**
-```
-jobsinromania/
-├── index.html (main listing page with all jobs)
-├── sectors/
-│   ├── constructii.html (construction jobs)
-│   ├── agricultura.html (agriculture)
-│   ├── horeca.html (hospitality)
-│   ├── logistica.html (logistics)
-│   └── ... (per sector)
-├── cities/
-│   ├── bucuresti.html
-│   ├── cluj.html
-│   └── ... (major cities)
-├── css/
-│   └── style.css
-├── js/
-│   └── app.js
-└── data/
-    └── jobs.json (data feed)
-```
-
-**Daily Publishing Pipeline:**
-1. Query ij_jobs for Romania ANOFM jobs (daily @ 2 AM)
-2. Generate HTML pages using Jinja2 template (match existing buildjobs.eu style)
-3. Commit + push to GitHub daily
-4. GitHub Pages serves static HTML (auto-deploy on push)
-
-**Required Scripts (to create):**
-- `generate_romania_jobs.py` — extract ANOFM Romania jobs from ij_jobs
-- `build_romania_pages.py` — generate HTML pages (reuse publish_html.py pattern)
-- `deploy_github.py` — commit + push to GitHub daily (or use GitHub Actions)
-
-**Template Reference:**
-- Use publish_html_new.py SITE_CONFIGS for colors/styling
-- Use buildjobs.eu HTML template as starting point
-- Colors: buildJobs orange #e65100 (construction focus) OR blue #1a3c5e (professional)
+**Integration:**
+- WordPress publisher (existing) continues to post ANOFM jobs to interjob.ro via CSV
+- JobsInRomania pipeline reads from PostgreSQL ij_jobs table (independent feed)
+- Both daily pipelines run on raspibig with separate cron jobs
 
 **GitHub Pages Setup:**
-- Enable in repo settings
-- Source: main branch /docs folder OR root (to be decided)
-- Custom domain: jobsinromania.github.io or separate domain?
+- Repo: callingcard1973/jobsinromania
+- Source: main branch /docs folder (GitHub Pages enabled)
+- Status: Ready for cron deployment to raspibig
 
-**Daily Cron (on raspibig):**
-```bash
-0 2 * * * python3 /opt/ACTIVE/INTERJOB/build/generate_romania_jobs.py && \
-           python3 /opt/ACTIVE/INTERJOB/build/build_romania_pages.py && \
-           python3 /opt/ACTIVE/INTERJOB/deploy/deploy_github.py
-```
+### Deploy Steps (Next 30 min)
+1. Copy scripts to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
+2. Install deps: `pip install psycopg2-binary`
+3. Test generate_romania_jobs.py locally on raspibig
+4. Add cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh`
+5. Verify first run outputs to /docs and pushes to GitHub
 
 **Success Criteria:**
+- ✅ 2 AM cron job runs daily without errors
 - ✅ jobsinromania.github.io shows latest ANOFM Romania jobs
-- ✅ Pages update daily at 2 AM UTC
-- ✅ Responsive HTML (mobile-friendly)
-- ✅ Sector + city filtering working
-- ✅ No contact details exposed (company names OK, no email/phone)
+- ✅ Pages update with sector + city filtering
+- ✅ No contact details exposed (company names OK)
+- ✅ Responsive HTML renders mobile-friendly
 
 ---
 
