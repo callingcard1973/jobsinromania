@@ -47,15 +47,14 @@ def group_by_city(jobs: List[Dict]) -> Dict[str, List[Dict]]:
 def format_job_card(job: Dict) -> str:
     """HTML card for single job."""
     title = job.get("title", "")
-    company = job.get("company", "")
     city = job.get("city", "")
-    sector = job.get("sector", "")
+    sector = job.get("sector", "").title() if job.get("sector") else "General"
     salary = job.get("salary", "")
-    positions = job.get("positions", 1)
-    posted = job.get("posted", "")[:10]
+    contract = job.get("contract", "").title() if job.get("contract") else ""
+    posted = job.get("posted", "")[:10] if job.get("posted") else ""
 
     salary_html = f"<span class='salary'>{salary}</span>" if salary else ""
-    positions_html = f"<span class='positions'>{positions} position{'s' if positions > 1 else ''}</span>" if positions > 1 else ""
+    contract_html = f"<span class='contract'>{contract}</span>" if contract else ""
 
     return f"""
     <div class='job-card'>
@@ -64,12 +63,11 @@ def format_job_card(job: Dict) -> str:
         <span class='sector' style='background:{COLOR_PRIMARY}'>{sector}</span>
       </div>
       <div class='job-meta'>
-        <span class='company'>{company}</span>
         <span class='city'>{city}</span>
+        {contract_html}
       </div>
       <div class='job-details'>
         {salary_html}
-        {positions_html}
         <span class='posted'>{posted}</span>
       </div>
     </div>

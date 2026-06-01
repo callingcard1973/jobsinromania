@@ -51,22 +51,22 @@ def extract_jobs() -> List[Dict]:
     jobs = []
     try:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            # Query: ANOFM jobs, Romania geography, recent postings
+            # Query: ANOFM jobs, Romania (city or county filter), recent postings
             query = """
             SELECT
-                j.job_id, j.job_title, j.job_description, j.sector,
-                j.city, j.salary, j.positions_available,
-                j.application_deadline, j.company_name,
-                j.posted_at, j.source
+                j.id, j.source_job_id, j.title, j.description, j.sector,
+                j.city, j.county, j.salary_min, j.salary_max, j.salary_currency,
+                j.contract_type, j.published_at, j.source, j.company_id
             FROM ij_jobs j
             WHERE j.source = 'anofm'
-                AND (j.geography = 'Romania' OR j.city IS NOT NULL)
-                AND j.sector IN %s
-                AND j.posted_at >= NOW() - INTERVAL '30 days'
-            ORDER BY j.posted_at DESC
+                AND (j.city IS NOT NULL OR j.county IS NOT NULL)
+                AND (j.sector IS NULL OR LOWER(j.sector) = ANY(%s))
+                AND j.published_at >= NOW() - INTERVAL '30 days'
+                AND j.status = 'active'
+            ORDER BY j.published_at DESC
             LIMIT 5000
             """
-            cur.execute(query, (tuple(INCLUDED_SECTORS),))
+            cur.execute(query, (INCLUDED_SECTORS,))
             rows = cur.fetchall()
             for row in rows:
                 jobs.append(dict(row))
@@ -83,18 +83,25 @@ def format_jobs(jobs: List[Dict]) -> List[Dict]:
     """Format jobs for HTML generation."""
     formatted = []
     for job in jobs:
+        salary_range = ""
+        if job.get("salary_min") and job.get("salary_max"):
+            salary_range = f"{job['salary_min']}-{job['salary_max']} {job.get('salary_currency', 'RON')}"
+        elif job.get("salary_min"):
+            salary_range = f"from {job['salary_min']} {job.get('salary_currency', 'RON')}"
+
+        city = job.get("city", "").strip() or job.get("county", "").strip()
+
         formatted.append({
-            "id": str(job.get("job_id", "")),
-            "title": job.get("job_title", "").strip(),
-            "description": job.get("job_description", "").strip()[:500],
-            "sector": job.get("sector", "").lower(),
-            "city": job.get("city", "").strip(),
-            "salary": job.get("salary", ""),
-            "positions": int(job.get("positions_available", 1) or 1),
-            "deadline": str(job.get("application_deadline", "")) if job.get("application_deadline") else "",
-            "company": job.get("company_name", "").strip(),
-            "posted": job.get("posted_at").isoformat() if job.get("posted_at") else "",
-            "url": f"https://jobsinromania.github.io/jobs/{job.get('job_id', '').replace('anofm_', '')}.html"
+            "id": str(job.get("id", "")),
+            "title": job.get("title", "").strip(),
+            "description": job.get("description", "").strip()[:500],
+            "sector": (job.get("sector") or "").lower(),
+            "city": city,
+            "salary": salary_range,
+            "contract": job.get("contract_type", "").lower(),
+            "company_id": job.get("company_id"),
+            "posted": job.get("published_at").isoformat() if job.get("published_at") else "",
+            "url": f"https://jobsinromania.github.io/jobs/{job.get('source_job_id', '').replace('anofm_', '')}.html"
         })
     return formatted
 
