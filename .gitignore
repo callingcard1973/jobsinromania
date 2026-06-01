@@ -39,6 +39,8 @@ Thumbs.db
 .env
 .env.local
 
-# Generated files (excluded, rebuilt daily on raspibig)
-/docs/
+# Generated cache (rebuilt daily on raspibig)
 /data/jobs.json
+
+# Keep generated HTML pages (rebuild daily, commit to git for GitHub Pages)
+# /docs/ — tracked in git

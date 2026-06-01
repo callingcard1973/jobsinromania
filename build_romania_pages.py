@@ -3,9 +3,32 @@
 
 import json
 import os
+import re
+import unicodedata
 from datetime import datetime
 from collections import defaultdict
 from typing import List, Dict
+
+
+def slug(text: str) -> str:
+    """Convert text to URL-safe slug (handles Romanian characters)."""
+    # Transliterate Romanian characters
+    replacements = {
+        'ă': 'a', 'â': 'a', 'î': 'i', 'ș': 's', 'ț': 't',
+        'ö': 'o', 'ü': 'u', 'ç': 'c', 'é': 'e',
+    }
+    for char, repl in replacements.items():
+        text = text.replace(char, repl)
+        text = text.replace(char.upper(), repl.upper())
+
+    # Convert to lowercase
+    text = text.lower()
+    # Replace spaces and special chars with hyphens
+    text = re.sub(r'[^\w\s-]', '', text)
+    text = re.sub(r'[-\s]+', '-', text)
+    # Remove leading/trailing hyphens
+    text = text.strip('-')
+    return text
 
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 JOBS_FILE = os.path.join(OUTPUT_DIR, "data", "jobs.json")
@@ -226,7 +249,7 @@ def build_city_pages(jobs: List[Dict]):
     # Individual city pages
     for city in cities:
         city_jobs = by_city[city]
-        city_slug = city.lower().replace(" ", "-")
+        city_slug = slug(city)
         html = html_header(f"Jobs in {city}")
         html += f'<div class="nav"><a href="/cities/">← Back</a> | <a href="/">← Home</a></div>'
         html += f'<p class="count">{len(city_jobs)} jobs in {city}</p>'
