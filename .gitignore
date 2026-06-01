@@ -39,9 +39,6 @@ Thumbs.db
 .env
 .env.local
 
-# Generated files (keep versioned)
-# /docs/ — keep (GitHub Pages)
-# /index.html — keep
-# /sectors/ — keep
-# /css/ — keep
-# /js/ — keep
+# Generated files (excluded, rebuilt daily on raspibig)
+/docs/
+/data/jobs.json

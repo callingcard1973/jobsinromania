@@ -4,7 +4,7 @@
 import json
 import os
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from typing import List, Dict
 
 try:
@@ -110,7 +110,7 @@ def save_json(jobs: List[Dict]):
     """Save jobs to JSON file."""
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     output = {
-        "generated": datetime.utcnow().isoformat(),
+        "generated": datetime.now(timezone.utc).isoformat(),
         "count": len(jobs),
         "jobs": jobs
     }

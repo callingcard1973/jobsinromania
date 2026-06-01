@@ -4,7 +4,7 @@
 import os
 import sys
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 DOCS_DIR = os.path.join(REPO_DIR, "docs")
@@ -48,7 +48,7 @@ def commit_and_push():
     run_cmd("git add docs/ data/jobs.json")
 
     # Commit
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     run_cmd(f'git commit -m "jobs: update {timestamp}"')
 
     # Push
