@@ -16,43 +16,49 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 
 ---
 
-## 10. PICK-UP STATE — CURRENT (2026-06-01 SESSION 4)
+## 10. PICK-UP STATE — FINAL (2026-06-01 SESSION 4)
 
-### ✅ WHAT'S DONE
+### ✅ COMPLETED THIS SESSION
 
-**WordPress at /wp/ (3 sites live):**
-- buildjobs.eu/wp/ (DB: loaiidil_wp500) ✅
-- meatworkers.eu/wp/ (DB: loaiidil_wp351) ✅
-- factoryjobs.eu/wp/ (DB: loaiidil_a2wp496) ✅
-- Credentials in `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
-- wordpress_publisher.py updated with 3 WP_JOB_SITES entries
-
-**JobsInRomania Daily Pipeline (✅ LIVE & PRODUCTION READY):**
+**JobsInRomania Daily Pipeline (✅ LIVE & PRODUCTION):**
 - ✅ GitHub repo: https://github.com/callingcard1973/jobsinromania/
 - ✅ Live site: https://callingcard1973.github.io/jobsinromania/index.html
-- ✅ Scripts on raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
-  - `generate_romania_jobs.py` — extracts ANOFM Romania jobs from ij_jobs (1,533 jobs)
-  - `build_romania_pages.py` — generates single searchable index.html (color: #e65100)
-  - `deploy_github.py` — auto-commits + pushes to GitHub via SSH
-  - `daily_build.sh` — orchestrates all 3 with logging
-- ✅ Daily cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh` (2 AM UTC)
-- ✅ Pipeline tested: extracts → builds → deploys (all 3 steps pass)
-- ✅ GitHub Pages enabled (source: main branch /docs/)
-- ✅ Client-side search works (filter by title, city, sector)
+- ✅ Deployed to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
+  - `generate_romania_jobs.py` — PostgreSQL ij_jobs → 1,533 ANOFM Romania jobs
+  - `build_romania_pages.py` — single searchable index.html (#e65100 branding)
+  - `deploy_github.py` — auto-commit + SSH push to GitHub
+  - `daily_build.sh` — orchestrator with logging
+- ✅ Cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh` (2 AM UTC)
+- ✅ Full pipeline tested end-to-end (extract → build → deploy all pass)
+- ✅ GitHub Pages active (/docs folder source)
+- ✅ Client-side search (title/city/sector filter)
 
-### ⏸ BLOCKERS (WordPress)
+**WordPress /wp/ Installation (3 confirmed live):**
+- ✅ buildjobs.eu/wp/ (DB: loaiidil_wp500)
+- ✅ meatworkers.eu/wp/ (DB: loaiidil_wp351)
+- ✅ factoryjobs.eu/wp/ (DB: loaiidil_a2wp496)
+- ✅ Credentials: `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
+- ✅ wordpress_publisher.py: 3 WP_JOB_SITES entries added
 
-1. **10 remaining WP sites need installation** (farmworkers, horecaworkers, etc.)
-2. **WP Core files** not uploaded to A2 (bottleneck: file upload via cPanel Fileman)
+### ⏸ REMAINING WORK
 
-### 📋 NEXT STEPS
+**WordPress: 10 remaining sites** (user to confirm which are already done):
+- farmworkers.eu, horecaworkers.eu, warehouseworkers.eu, careworkers.eu
+- electricjobs.eu, mechanicjobs.eu, internaltransfers.eu, expatsinromania.org
+- horecaworkers2026.eu, nepalezi.com
 
-**WordPress Installation (10 remaining sites, 2-3 hours):**
-1. Download WP core: `wget https://wordpress.org/latest.zip` (once on raspibig)
-2. Install on: farmworkers, horecaworkers, warehouseworkers, careworkers, electricjobs, mechanicjobs, internaltransfers, expatsinromania, horecaworkers2026, nepalezi
-3. Update wp_sites.env + wordpress_publisher.py with 10 new entries
-4. Test publisher dry-run → live on all 13 sites
-5. Add cron jobs for daily publishing per site
+**Blockers:**
+1. WP Core files (wordpress.org/latest.zip) not yet on A2
+2. User to clarify: which of the 10 sites already installed?
+
+### 📋 NEXT STEPS (After user clarifies WP status)
+
+1. Confirm which of 10 remaining sites are already done
+2. For any not done: download WP core, install via cPanel API
+3. Update wp_sites.env with all 10 new credentials
+4. Expand wordpress_publisher.py WP_JOB_SITES (10 entries)
+5. Test publisher dry-run on all 13 sites
+6. Add daily cron jobs per site for publishing
 
 ### 📂 CRITICAL FILES
 
