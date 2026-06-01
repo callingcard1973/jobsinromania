@@ -1,6 +1,6 @@
 # HANDOFF — InterJob Engine
 
-**Status:** 2026-06-01 Session 3 Final | **Mode:** Upgrade & extend (70-80% exists)
+**Status:** 2026-06-01 Session 4 Final | **Mode:** Upgrade & extend (70-80% exists)
 
 ---
 
@@ -67,47 +67,6 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ---
 
-## NEW PROJECT: JobsInRomania Daily Pages
-
-**Status:** Scripts ready (laptop), deployment to raspibig in progress
-
-**GitHub:** https://github.com/callingcard1973/jobsinromania/
-
-**Goal:** Daily HTML pages publishing ANOFM jobs (Romania-focused), integrated with WordPress publisher for interjob.ro
-
-### Current Implementation ✅
-**Scripts complete (committed to GitHub):**
-- `generate_romania_jobs.py` — Extract ANOFM Romania jobs from ij_jobs PostgreSQL (→ JSON feed)
-- `build_romania_pages.py` — Generate responsive HTML pages (index, sectors/, cities/) with #e65100 branding
-- `deploy_github.py` — Commit + push to GitHub daily
-- `daily_build.sh` — Master orchestrator script (runs all 3 in sequence with logging)
-
-**Integration:**
-- WordPress publisher (existing) continues to post ANOFM jobs to interjob.ro via CSV
-- JobsInRomania pipeline reads from PostgreSQL ij_jobs table (independent feed)
-- Both daily pipelines run on raspibig with separate cron jobs
-
-**GitHub Pages Setup:**
-- Repo: callingcard1973/jobsinromania
-- Source: main branch /docs folder (GitHub Pages enabled)
-- Status: Ready for cron deployment to raspibig
-
-### Deploy Steps (Next 30 min)
-1. Copy scripts to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
-2. Install deps: `pip install psycopg2-binary`
-3. Test generate_romania_jobs.py locally on raspibig
-4. Add cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh`
-5. Verify first run outputs to /docs and pushes to GitHub
-
-**Success Criteria:**
-- ✅ 2 AM cron job runs daily without errors
-- ✅ jobsinromania.github.io shows latest ANOFM Romania jobs
-- ✅ Pages update with sector + city filtering
-- ✅ No contact details exposed (company names OK)
-- ✅ Responsive HTML renders mobile-friendly
-
----
-
 ## Database Inventory
 
 **ANOFM (ij_jobs):** 9,087 jobs (agricultura 83, constructii 1,386, horeca 432, IT 1,199, logistica 378, productie 570, sanatate 218, transport 452, vanzari 1,143, altul 3,226)
@@ -151,4 +110,4 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ---
 
-**Last Updated:** 2026-06-01 17:00 UTC | **Next Review:** When 10 remaining WP sites installed
+**Last Updated:** 2026-06-01 13:06 UTC (Session 4 Final) | **Next:** User to confirm which WP sites already installed, then proceed with remaining sites
