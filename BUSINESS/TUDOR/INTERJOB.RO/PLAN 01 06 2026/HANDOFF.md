@@ -27,17 +27,18 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 - Credentials in `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
 - wordpress_publisher.py updated with 3 WP_JOB_SITES entries
 
-**JobsInRomania Daily Pipeline (COMPLETE):**
+**JobsInRomania Daily Pipeline (✅ LIVE & PRODUCTION READY):**
 - ✅ GitHub repo: https://github.com/callingcard1973/jobsinromania/
-- ✅ Scripts deployed to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
-  - `generate_romania_jobs.py` — extracts 1,533 ANOFM Romania jobs from ij_jobs
-  - `build_romania_pages.py` — generates responsive HTML pages (color: #e65100)
-  - `deploy_github.py` — commits + pushes to GitHub via SSH
-  - `daily_build.sh` — orchestrates all 3 scripts with logging
+- ✅ Live site: https://callingcard1973.github.io/jobsinromania/index.html
+- ✅ Scripts on raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
+  - `generate_romania_jobs.py` — extracts ANOFM Romania jobs from ij_jobs (1,533 jobs)
+  - `build_romania_pages.py` — generates single searchable index.html (color: #e65100)
+  - `deploy_github.py` — auto-commits + pushes to GitHub via SSH
+  - `daily_build.sh` — orchestrates all 3 with logging
 - ✅ Daily cron: `0 2 * * * bash /opt/ACTIVE/JOBSINROMANIA/daily_build.sh` (2 AM UTC)
-- ✅ Full pipeline tested: 1,533 jobs extracted, HTML built, deployed to GitHub
+- ✅ Pipeline tested: extracts → builds → deploys (all 3 steps pass)
 - ✅ GitHub Pages enabled (source: main branch /docs/)
-- 🔄 **PENDING:** Decide page structure (index only? + sectors? + cities?) before final deploy
+- ✅ Client-side search works (filter by title, city, sector)
 
 ### ⏸ BLOCKERS (WordPress)
 
@@ -46,17 +47,12 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 
 ### 📋 NEXT STEPS
 
-**JobsInRomania (immediate):**
-1. User decides: how many pages? (index only / +sectors / +top cities / all cities?)
-2. Update build_romania_pages.py per decision
-3. First full run: 2 AM UTC cron job generates and pushes to GitHub Pages
-4. Verify jobsinromania.github.io live
-
-**WordPress (parallel, 2-3 hours):**
+**WordPress Installation (10 remaining sites, 2-3 hours):**
 1. Download WP core: `wget https://wordpress.org/latest.zip` (once on raspibig)
-2. Install 10 remaining sites (farmworkers → nepalezi)
-3. Update wp_sites.env + wordpress_publisher.py (10 new entries)
-4. Test publisher on all 13 sites (dry-run → live)
+2. Install on: farmworkers, horecaworkers, warehouseworkers, careworkers, electricjobs, mechanicjobs, internaltransfers, expatsinromania, horecaworkers2026, nepalezi
+3. Update wp_sites.env + wordpress_publisher.py with 10 new entries
+4. Test publisher dry-run → live on all 13 sites
+5. Add cron jobs for daily publishing per site
 
 ### 📂 CRITICAL FILES
 
