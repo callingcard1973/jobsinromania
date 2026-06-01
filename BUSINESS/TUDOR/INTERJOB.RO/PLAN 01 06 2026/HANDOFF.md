@@ -65,6 +65,25 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ---
 
+## NEW PROJECT: JobsInRomania Daily Pages
+
+**Status:** Pending repo inspection/setup
+
+**Goal:** Publish daily job listing pages for Romania market
+
+**TBD:**
+- Is this a new GitHub repo, Telegram channel, or website?
+- What content? (ANOFM jobs? EURES? Sector-specific?)
+- Publishing cadence? (Daily HTML pages? Social posts? Feed?)
+- Where hosted? (GitHub Pages? A2? raspi blog?)
+
+**Sync with:** 
+- ANOFM scraper (9,087 jobs in ij_jobs)
+- Publisher pipeline (wordpress_publisher.py)
+- Existing 14-domain structure (fw_websites)
+
+---
+
 ## Database Inventory
 
 **ANOFM (ij_jobs):** 9,087 jobs (agricultura 83, constructii 1,386, horeca 432, IT 1,199, logistica 378, productie 570, sanatate 218, transport 452, vanzari 1,143, altul 3,226)
