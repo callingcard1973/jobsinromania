@@ -67,20 +67,80 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ## NEW PROJECT: JobsInRomania Daily Pages
 
-**Status:** Pending repo inspection/setup
+**Status:** Repo cloned, ready for implementation
 
-**Goal:** Publish daily job listing pages for Romania market
+**GitHub:** https://github.com/callingcard1973/jobsinromania/
 
-**TBD:**
-- Is this a new GitHub repo, Telegram channel, or website?
-- What content? (ANOFM jobs? EURES? Sector-specific?)
-- Publishing cadence? (Daily HTML pages? Social posts? Feed?)
-- Where hosted? (GitHub Pages? A2? raspi blog?)
+**Goal:** Daily HTML pages publishing ANOFM jobs (Romania-focused)
 
-**Sync with:** 
-- ANOFM scraper (9,087 jobs in ij_jobs)
-- Publisher pipeline (wordpress_publisher.py)
-- Existing 14-domain structure (fw_websites)
+### Current Repo State
+- README.md: Describes purpose (job opportunities, workforce, recruitment info for Romania)
+- .gitignore: AL/Dynamics 365 template (needs update)
+- No code/pages yet
+
+### Implementation Plan
+
+**Source Data:**
+- ANOFM jobs from ij_jobs table (9,087 total)
+- Filter by: geografia = "Romania" OR sector in [agricultura, constructii, horeca, logistica, etc.]
+- Expected: ~3,000-5,000 Romania-specific ANOFM jobs
+
+**Output Structure:**
+```
+jobsinromania/
+├── index.html (main listing page with all jobs)
+├── sectors/
+│   ├── constructii.html (construction jobs)
+│   ├── agricultura.html (agriculture)
+│   ├── horeca.html (hospitality)
+│   ├── logistica.html (logistics)
+│   └── ... (per sector)
+├── cities/
+│   ├── bucuresti.html
+│   ├── cluj.html
+│   └── ... (major cities)
+├── css/
+│   └── style.css
+├── js/
+│   └── app.js
+└── data/
+    └── jobs.json (data feed)
+```
+
+**Daily Publishing Pipeline:**
+1. Query ij_jobs for Romania ANOFM jobs (daily @ 2 AM)
+2. Generate HTML pages using Jinja2 template (match existing buildjobs.eu style)
+3. Commit + push to GitHub daily
+4. GitHub Pages serves static HTML (auto-deploy on push)
+
+**Required Scripts (to create):**
+- `generate_romania_jobs.py` — extract ANOFM Romania jobs from ij_jobs
+- `build_romania_pages.py` — generate HTML pages (reuse publish_html.py pattern)
+- `deploy_github.py` — commit + push to GitHub daily (or use GitHub Actions)
+
+**Template Reference:**
+- Use publish_html_new.py SITE_CONFIGS for colors/styling
+- Use buildjobs.eu HTML template as starting point
+- Colors: buildJobs orange #e65100 (construction focus) OR blue #1a3c5e (professional)
+
+**GitHub Pages Setup:**
+- Enable in repo settings
+- Source: main branch /docs folder OR root (to be decided)
+- Custom domain: jobsinromania.github.io or separate domain?
+
+**Daily Cron (on raspibig):**
+```bash
+0 2 * * * python3 /opt/ACTIVE/INTERJOB/build/generate_romania_jobs.py && \
+           python3 /opt/ACTIVE/INTERJOB/build/build_romania_pages.py && \
+           python3 /opt/ACTIVE/INTERJOB/deploy/deploy_github.py
+```
+
+**Success Criteria:**
+- ✅ jobsinromania.github.io shows latest ANOFM Romania jobs
+- ✅ Pages update daily at 2 AM UTC
+- ✅ Responsive HTML (mobile-friendly)
+- ✅ Sector + city filtering working
+- ✅ No contact details exposed (company names OK, no email/phone)
 
 ---
 
