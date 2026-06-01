@@ -33,32 +33,38 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 - ✅ GitHub Pages active (/docs folder source)
 - ✅ Client-side search (title/city/sector filter)
 
-**WordPress /wp/ Installation (3 confirmed live):**
-- ✅ buildjobs.eu/wp/ (DB: loaiidil_wp500)
-- ✅ meatworkers.eu/wp/ (DB: loaiidil_wp351)
-- ✅ factoryjobs.eu/wp/ (DB: loaiidil_a2wp496)
+**WordPress /wp/ Installation (8 confirmed LIVE):**
+- ✅ buildjobs.eu/wp/ (REST API 200)
+- ✅ meatworkers.eu/wp/ (REST API 200)
+- ✅ factoryjobs.eu/wp/ (REST API 200)
+- ✅ warehouseworkers.eu/wp/ (REST API 200)
+- ✅ careworkers.eu/wp/ (REST API 200)
+- ✅ mechanicjobs.eu/wp/ (REST API 200)
+- ✅ internaltransfers.eu/wp/ (REST API 200)
+- ✅ horecaworkers2026.eu/wp/ (REST API 200)
 - ✅ Credentials: `/opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env`
-- ✅ wordpress_publisher.py: 3 WP_JOB_SITES entries added
 
 ### ⏸ REMAINING WORK
 
-**WordPress: 10 remaining sites** (user to confirm which are already done):
-- farmworkers.eu, horecaworkers.eu, warehouseworkers.eu, careworkers.eu
-- electricjobs.eu, mechanicjobs.eu, internaltransfers.eu, expatsinromania.org
-- horecaworkers2026.eu, nepalezi.com
+**WordPress: 5 remaining sites to install:**
+- ❌ farmworkers.eu (404 — NOT installed)
+- ❌ horecaworkers.eu (404 — NOT installed)
+- ❌ electricjobs.eu (404 — NOT installed)
+- ❌ expatsinromania.org (404 — NOT installed)
+- ❌ nepalezi.com (404 — NOT installed)
 
 **Blockers:**
-1. WP Core files (wordpress.org/latest.zip) not yet on A2
-2. User to clarify: which of the 10 sites already installed?
+1. WP Core files (wordpress.org/latest.zip) — need to download once
+2. cPanel API setup for the 5 remaining sites
 
-### 📋 NEXT STEPS (After user clarifies WP status)
+### 📋 NEXT STEPS (5 sites remaining)
 
-1. Confirm which of 10 remaining sites are already done
-2. For any not done: download WP core, install via cPanel API
-3. Update wp_sites.env with all 10 new credentials
-4. Expand wordpress_publisher.py WP_JOB_SITES (10 entries)
-5. Test publisher dry-run on all 13 sites
-6. Add daily cron jobs per site for publishing
+1. Download WP core: `wget https://wordpress.org/latest.zip` (once on raspibig)
+2. Install on 5 remaining sites via cPanel API (install_wp_pilot.py)
+3. Get & save credentials for 5 new sites → wp_sites.env
+4. Expand wordpress_publisher.py WP_JOB_SITES dict (5 new entries)
+5. Test publisher dry-run on all 13 sites (should all be 200 OK)
+6. Add daily cron jobs for each site's publishing schedule
 
 ### 📂 CRITICAL FILES
 
