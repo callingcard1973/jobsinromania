@@ -7,7 +7,7 @@
 ## 0. CRITICAL: 70-80% of System Already Exists
 
 This is NOT greenfield. Key infrastructure on raspibig:
-- PostgreSQL interjob_master (434 tables, 9,087 ANOFM jobs)
+- PostgreSQL interjob_master (434 tables, 9,087 jobs)
 - Production ingest/build/deploy pipeline (working daily)
 - 14 live domains generating HTML weekly
 - farmworkers.eu CV pipeline (221 applicants)
@@ -24,7 +24,7 @@ See `/opt/ACTIVE/INTERJOB/` and `/opt/ACTIVE/FARMWORKERS/` on raspibig.
 - ✅ GitHub repo: https://github.com/callingcard1973/jobsinromania/
 - ✅ Live site: https://callingcard1973.github.io/jobsinromania/index.html
 - ✅ Deployed to raspibig: `/opt/ACTIVE/JOBSINROMANIA/`
-  - `generate_romania_jobs.py` — PostgreSQL ij_jobs → 1,533 ANOFM Romania jobs
+  - `generate_romania_jobs.py` — PostgreSQL ij_jobs → 1,533 Romania jobs
   - `build_romania_pages.py` — single searchable index.html (#e65100 branding)
   - `deploy_github.py` — auto-commit + SSH push to GitHub
   - `daily_build.sh` — orchestrator with logging
@@ -75,7 +75,7 @@ All 13 WP sites respond 200 OK to REST API `/wp-json/wp/v2/posts` + publisher ca
 
 ## Database Inventory
 
-**ANOFM (ij_jobs):** 9,087 jobs (agricultura 83, constructii 1,386, horeca 432, IT 1,199, logistica 378, productie 570, sanatate 218, transport 452, vanzari 1,143, altul 3,226)
+**ij_jobs:** 9,087 jobs (agricultura 83, constructii 1,386, horeca 432, IT 1,199, logistica 378, productie 570, sanatate 218, transport 452, vanzari 1,143, altul 3,226)
 
 **EURES:** job_listings table exists (65 rows)
 
