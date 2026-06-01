@@ -45,7 +45,7 @@ def commit_and_push():
         return False
 
     # Stage changes
-    run_cmd("git add docs/ data/jobs.json")
+    run_cmd("git add docs/")
 
     # Commit
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
