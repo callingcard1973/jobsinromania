@@ -22,7 +22,7 @@ from preview_catalog import (
 
 ROOT = Path(__file__).parent.parent
 MASTER_CSV = ROOT / "DATA" / "candidates_master_final.csv"
-OUTPUT = ROOT / "factoryjobs_catalog.html"
+OUTPUT = ROOT / "FOR CLIENTS" / "factoryjobs_catalog.html"
 
 OFFICE_EMAIL = "office@factoryjobs.eu"
 PHONE_WA = "+33 7 51 17 13 56"

@@ -23,8 +23,9 @@ Brand: navy `#0f2942` + portocaliu `#f5a000`. Contact ops: `office@factoryjobs.e
 
 **Structură:**
 ```
-factoryjobs_catalog.html       ← deliverable client (root)
 CLAUDE.md                       ← acest fișier
+FOR CLIENTS/
+  factoryjobs_catalog.html      ← deliverable client (de trimis)
 CODE/
   build_single_html.py          ← generator catalog
   preview_catalog.py            ← modul cu logica (importat de build_single_html)
@@ -46,7 +47,7 @@ ARCHIVE/                        ← versiuni vechi
 ```powershell
 cd "D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\CATALOG CANDIDATI"
 python CODE\build_single_html.py
-Start-Process "factoryjobs_catalog.html"
+Start-Process "FOR CLIENTS\factoryjobs_catalog.html"
 ```
 
 Output: `factoryjobs_catalog.html` (~2 MB, 569 candidați, fără dependențe externe).
