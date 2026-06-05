@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Candidate Contact — FactoryJobs EU</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+           background: #f0f2f5; color: #222; display: flex; flex-direction: column; min-height: 100vh; }
+    .header-simple { background: #fff; border-bottom: 1px solid #e0e4ea;
+                     padding: 28px 20px; text-align: center; }
+    .header-simple .header-title { font-size: 30px; font-weight: 800; color: #0f2942;
+                                   letter-spacing: -.5px; }
+    .header-simple .header-sub { font-size: 13px; color: #666; margin-top: 5px; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 36px 20px; flex: 1; width: 100%; }
+    .card { background: #fff; padding: 32px; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    h1 { font-size: 22px; color: #0f2942; margin-bottom: 8px; }
+    .lead { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.6; }
+    .ref-box { display: inline-block; background: #fff3e0; color: #c77000;
+               font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 13px;
+               font-weight: 700; padding: 6px 14px; border-radius: 4px; margin-bottom: 24px;
+               letter-spacing: .5px; }
+    label { display: block; font-size: 12px; font-weight: 600; color: #555;
+            text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; margin-top: 16px; }
+    input, textarea, select { width: 100%; padding: 11px 14px; border: 1px solid #d0d6dd;
+            border-radius: 6px; font-size: 14px; font-family: inherit; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #f5a000; }
+    textarea { resize: vertical; min-height: 100px; }
+    .btn { background: #f5a000; color: #fff; border: none; padding: 13px 32px;
+           font-size: 15px; font-weight: 700; border-radius: 6px; cursor: pointer;
+           margin-top: 24px; width: 100%; }
+    .btn:hover { background: #d98e00; }
+    .note { font-size: 12px; color: #888; margin-top: 18px; text-align: center; }
+    .back { display: inline-block; color: #0f2942; text-decoration: none;
+            font-size: 13px; font-weight: 600; margin-bottom: 18px; }
+    .back:hover { color: #f5a000; }
+    footer { background: #0f2942; color: rgba(255,255,255,.7); text-align: center;
+             padding: 24px 20px; font-size: 13px; line-height: 1.7; margin-top: auto; }
+    footer strong { color: #f5a000; display: block; margin-bottom: 6px; font-size: 14px; }
+    footer .contact-line { color: #f5a000; font-weight: 600; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="header-simple">
+    <div class="header-title">factoryjobs.eu</div>
+    <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
+    <div style="margin-top:8px"><a href="mailto:office@factoryjobs.eu" style="color:#f5a000;font-weight:700;text-decoration:none">office@factoryjobs.eu</a></div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <a class="back" href="index.html">← Back to Catalog</a>
+      <h1>Request Candidate Contact Details</h1>
+      <p class="lead">Fill out the form below and we will send you the candidate's full CV, contact details, and availability within 24 hours.</p>
+
+      <div class="ref-box" id="ref-display">Reference: —</div>
+
+      <form id="contact-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+        <input type="hidden" name="candidate_ref" id="candidate_ref" value="">
+
+        <label for="company">Company Name *</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="contact_name">Your Name *</label>
+        <input type="text" id="contact_name" name="contact_name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone / WhatsApp</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="country">Country of Deployment *</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="positions">Number of Workers Needed</label>
+        <input type="number" id="positions" name="positions" min="1" value="1">
+
+        <label for="start_date">Expected Start Date</label>
+        <input type="date" id="start_date" name="start_date">
+
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="notes" placeholder="Sector, role specifics, accommodation provided, salary range, etc."></textarea>
+
+        <button class="btn" type="submit">Send Request</button>
+        <p class="note">We respond within 24 hours · Free consultation</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <strong>FactoryJobs EU © 2026</strong>
+    Skilled Workers. Verified Profiles. Fast Deployment Across Europe.
+    <div class="contact-line">office@factoryjobs.eu · Tel/WhatsApp: +33 7 51 17 13 56</div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref') || '';
+    if (ref) {
+      document.getElementById('candidate_ref').value = ref;
+      document.getElementById('ref-display').textContent = 'Reference: ' + ref;
+    } else {
+      document.getElementById('ref-display').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

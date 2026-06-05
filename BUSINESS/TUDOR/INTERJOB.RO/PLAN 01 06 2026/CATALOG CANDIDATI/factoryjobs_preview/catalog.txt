@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FactoryJobs EU — Candidate Catalog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #F5F7FA;
+        color: #0F2942;
+    }
+
+    /* HEADER */
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: white;
+        border-bottom: 4px solid #F28C28;
+    }
+    .header img {
+        height: 70px;
+        margin-right: 20px;
+    }
+    .header-title {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .header-sub {
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* CATEGORY BAR */
+    .category-bar {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+        background: #0F2942;
+    }
+    .category-bar a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* SECTION HEADERS */
+    .section-header {
+        background: #0F2942;
+        color: white;
+        padding: 12px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 40px;
+    }
+
+    /* TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0;
+        background: white;
+    }
+    th {
+        background: #E8EEF5;
+        padding: 10px;
+        text-align: left;
+        font-size: 14px;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        font-size: 13px;
+    }
+    tr:nth-child(even) {
+        background: #F7FAFC;
+    }
+
+    /* PDF BUTTON */
+    .pdf-button {
+        display: inline-block;
+        margin: 30px auto;
+        padding: 12px 20px;
+        background: #F28C28;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        background: #0F2942;
+        color: white;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="factoryjobs_logo" alt="FactoryJobs EU Logo">
+    <div>
+        <div class="header-title">FactoryJobs EU — Candidate Catalog</div>
+        <div class="header-sub">Skilled workers across Packaging, Machinery, Logistics, Warehouse, and Factory roles</div>
+    </div>
+</div>
+
+<!-- CATEGORY BAR -->
+<div class="category-bar">
+    <a href="#packaging">Packaging</a>
+    <a href="#machinery">Machinery</a>
+    <a href="#logistics">Logistics</a>
+    <a href="#warehouse">Warehouse</a>
+    <a href="#factory">Factory</a>
+</div>
+
+<!-- ENTRY LEVEL -->
+<div class="section-header">ENTRY‑LEVEL (0–3 years)</div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Country</th>
+        <th>Location</th>
+        <th>Experience</th>
+        <th>Languages</th>
+        <th>Profile</th>
+    </tr>
+
+    <!-- ENTRY-LEVEL CANDIDATES WILL BE INSERTED HERE -->
+</table>
+
+<!-- MID LEVEL -->
+<div class="section-header">MID‑LEVEL (3–10 years)</div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Country</th>
+        <th>Location</th>
+        <th>Experience</th>
+        <th>Languages</th>
+        <th>Profile</th>
+    </tr>
+
+    <!-- MID-LEVEL CANDIDATES WILL BE INSERTED HERE -->
+</table>
+
+<!-- SENIOR -->
+<div class="section-header">SENIOR (10+ years)</div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Country</th>
+        <th>Location</th>
+        <th>Experience</th>
+        <th>Languages</th>
+        <th>Profile</th>
+    </tr>
+
+    <!-- SENIOR CANDIDATES WILL BE INSERTED HERE -->
+</table>
+
+<!-- PDF BUTTON -->
+<div style="text-align:center;">
+    <div class="pdf-button">Download as PDF</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    FactoryJobs EU © 2026 — Employers Catalog
+</div>
+
+</body>
+</html>

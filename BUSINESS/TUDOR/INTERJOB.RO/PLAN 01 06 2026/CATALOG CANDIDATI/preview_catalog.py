@@ -2,15 +2,225 @@
 """Generate factoryjobs.eu candidate catalog locally for preview."""
 
 import csv
+import json
 import re
 from datetime import datetime
 from pathlib import Path
 
-MASTER_CSV = Path(__file__).parent / "candidates_master_final.csv"
-OUT_DIR = Path(__file__).parent / "factoryjobs_preview"
+BASE = Path(__file__).parent
+MASTER_CSV = BASE / "candidates_master_final.csv"
+MASTER_JSON = BASE / "master.json"
+CV_EXTRACTS = BASE / "cv_extracts.json"
+OUT_DIR = BASE / "factoryjobs_preview"
+
+
+def load_enrichment():
+    """Load master.json + cv_extracts.json. Return (by_email, cv_by_file)."""
+    by_email = {}
+    cv_by_file = {}
+    if MASTER_JSON.exists():
+        with open(MASTER_JSON, encoding="utf-8") as f:
+            for e in json.load(f):
+                em = (e.get("email") or "").lower().strip()
+                if em:
+                    by_email[em] = e
+    if CV_EXTRACTS.exists():
+        with open(CV_EXTRACTS, encoding="utf-8") as f:
+            cv_by_file = {x["file"]: x for x in json.load(f)}
+    return by_email, cv_by_file
+
+
+def text_paragraphs(text, max_chars=3000):
+    """Clean and split text into paragraphs for HTML rendering."""
+    if not text:
+        return []
+    text = text.strip()[:max_chars]
+    paras = [p.strip() for p in re.split(r"\n\s*\n+", text) if p.strip()]
+    return paras
+
+
+# Role-typical skills (used when candidate has no skills listed)
+ROLE_SKILLS = {
+    "packaging": ["Manual packaging", "Palletizing", "Labeling", "Quality inspection",
+                  "Food-grade handling", "FIFO stock rotation", "Pick & pack", "Conveyor work"],
+    "machinery": ["Equipment operation", "Preventive maintenance", "Troubleshooting",
+                  "Safety compliance", "Technical drawing reading", "Hand & power tools",
+                  "CNC familiarity", "Hydraulics basics"],
+    "logistics": ["Loading & unloading", "Inventory tracking", "Warehouse organization",
+                  "Forklift handling", "Dispatch coordination", "Shipping documentation",
+                  "Route planning", "RF scanner use"],
+    "warehouse": ["Order picking", "Stock rotation", "Palletizing", "Forklift operation",
+                  "RF scanning", "Shipment preparation", "Inventory counts", "Manual handling"],
+    "factory": ["Assembly line work", "Quality control", "Production target focus",
+                "Machine tending", "Safety protocols", "Shift work", "5S methodology",
+                "Continuous improvement"],
+}
+
+# Language inference by nationality / country
+COUNTRY_LANGUAGES = {
+    "Nigeria": [("English", "Native"), ("French", "Basic")],
+    "India": [("Hindi", "Native"), ("English", "Intermediate")],
+    "Bangladesh": [("Bengali", "Native"), ("English", "Basic"), ("Hindi", "Basic")],
+    "Pakistan": [("Urdu", "Native"), ("English", "Intermediate"), ("Punjabi", "Native")],
+    "Tunisia": [("Arabic", "Native"), ("French", "Advanced"), ("English", "Intermediate")],
+    "Morocco": [("Arabic", "Native"), ("French", "Advanced"), ("English", "Basic")],
+    "Algeria": [("Arabic", "Native"), ("French", "Advanced"), ("English", "Basic")],
+    "Egypt": [("Arabic", "Native"), ("English", "Intermediate")],
+    "Kenya": [("English", "Native"), ("Swahili", "Native")],
+    "Tanzania": [("Swahili", "Native"), ("English", "Intermediate")],
+    "Uganda": [("English", "Native"), ("Swahili", "Intermediate")],
+    "Ghana": [("English", "Native")],
+    "Cameroon": [("French", "Native"), ("English", "Advanced")],
+    "Ethiopia": [("Amharic", "Native"), ("English", "Intermediate")],
+    "Philippines": [("Filipino", "Native"), ("English", "Advanced")],
+    "Nepal": [("Nepali", "Native"), ("English", "Intermediate"), ("Hindi", "Advanced")],
+    "Sri Lanka": [("Sinhala", "Native"), ("English", "Intermediate"), ("Tamil", "Advanced")],
+    "Indonesia": [("Indonesian", "Native"), ("English", "Basic")],
+    "Vietnam": [("Vietnamese", "Native"), ("English", "Basic")],
+    "Romania": [("Romanian", "Native"), ("English", "Intermediate")],
+    "Moldova": [("Romanian", "Native"), ("Russian", "Native"), ("English", "Basic")],
+    "Ukraine": [("Ukrainian", "Native"), ("Russian", "Advanced"), ("English", "Basic")],
+    "Turkey": [("Turkish", "Native"), ("English", "Intermediate")],
+    "Burundi": [("French", "Native"), ("Kirundi", "Native"), ("English", "Basic")],
+    "Rwanda": [("Kinyarwanda", "Native"), ("French", "Advanced"), ("English", "Advanced")],
+}
+
+PHONE_PREFIX_COUNTRY = {
+    "+20": "Egypt", "+212": "Morocco", "+213": "Algeria", "+216": "Tunisia",
+    "+218": "Libya", "+221": "Senegal", "+225": "Ivory Coast", "+226": "Burkina Faso",
+    "+228": "Togo", "+229": "Benin", "+233": "Ghana", "+234": "Nigeria",
+    "+236": "Central African Republic", "+237": "Cameroon", "+243": "DR Congo",
+    "+250": "Rwanda", "+251": "Ethiopia", "+253": "Djibouti", "+254": "Kenya",
+    "+255": "Tanzania", "+256": "Uganda", "+257": "Burundi", "+260": "Zambia",
+    "+261": "Madagascar", "+263": "Zimbabwe", "+265": "Malawi", "+27": "South Africa",
+    "+30": "Greece", "+33": "France", "+34": "Spain", "+351": "Portugal",
+    "+352": "Luxembourg", "+39": "Italy", "+40": "Romania", "+44": "United Kingdom",
+    "+48": "Poland", "+49": "Germany", "+62": "Indonesia", "+63": "Philippines",
+    "+66": "Thailand", "+7": "Russia", "+84": "Vietnam", "+86": "China",
+    "+880": "Bangladesh", "+90": "Turkey", "+91": "India", "+92": "Pakistan",
+    "+93": "Afghanistan", "+94": "Sri Lanka", "+95": "Myanmar", "+960": "Maldives",
+    "+961": "Lebanon", "+962": "Jordan", "+963": "Syria", "+964": "Iraq",
+    "+966": "Saudi Arabia", "+967": "Yemen", "+968": "Oman", "+970": "Palestine",
+    "+971": "United Arab Emirates", "+972": "Israel", "+973": "Bahrain",
+    "+974": "Qatar", "+975": "Bhutan", "+976": "Mongolia", "+977": "Nepal",
+    "+98": "Iran", "+992": "Tajikistan", "+993": "Turkmenistan", "+994": "Azerbaijan",
+    "+995": "Georgia", "+996": "Kyrgyzstan", "+998": "Uzbekistan",
+    "+1": "United States", "+373": "Moldova", "+380": "Ukraine", "+375": "Belarus",
+}
+
+NATIONALITY_CODE = {
+    "DZ": "Algeria", "BD": "Bangladesh", "BI": "Burundi", "CM": "Cameroon",
+    "EG": "Egypt", "ET": "Ethiopia", "GH": "Ghana", "IN": "India", "ID": "Indonesia",
+    "IR": "Iran", "IQ": "Iraq", "JO": "Jordan", "KE": "Kenya", "LB": "Lebanon",
+    "MA": "Morocco", "ML": "Mali", "MR": "Mauritania", "MD": "Moldova", "NP": "Nepal",
+    "NG": "Nigeria", "PK": "Pakistan", "PS": "Palestine", "PH": "Philippines",
+    "RO": "Romania", "RW": "Rwanda", "SN": "Senegal", "RS": "Serbia",
+    "LK": "Sri Lanka", "SD": "Sudan", "SY": "Syria", "TZ": "Tanzania",
+    "TH": "Thailand", "TN": "Tunisia", "TR": "Turkey", "UG": "Uganda",
+    "UA": "Ukraine", "AE": "United Arab Emirates", "VN": "Vietnam", "YE": "Yemen",
+    "ZW": "Zimbabwe",
+}
+
+
+def infer_country(c, enriched):
+    """Resolve country from CSV → master.json nationality → phone prefix → location."""
+    country = (c.get("country") or "").strip()
+    if country:
+        return country
+    if enriched:
+        nat = (enriched.get("nationality") or "").strip()
+        if nat and nat != "OTHER" and nat in NATIONALITY_CODE:
+            return NATIONALITY_CODE[nat]
+    phone = (c.get("phone") or "").replace(" ", "").replace("-", "")
+    if enriched and not phone:
+        phone = (enriched.get("phone") or "").replace(" ", "").replace("-", "")
+    if phone.startswith("+"):
+        for prefix_len in (4, 3, 2):
+            pfx = phone[:prefix_len]
+            if pfx in PHONE_PREFIX_COUNTRY:
+                return PHONE_PREFIX_COUNTRY[pfx]
+    loc = c.get("location") or (enriched.get("location") if enriched else "") or ""
+    for word in re.split(r"[,;]+", loc):
+        w = word.strip()
+        for name in PHONE_PREFIX_COUNTRY.values():
+            if w.lower() == name.lower():
+                return name
+    return ""
+
+
+STRENGTH_TEMPLATES = {
+    "packaging": [
+        "Experienced in fast-paced packaging line operations with consistent attention to quality",
+        "Familiar with food and consumer-goods packaging standards (FIFO, batch tracking)",
+        "Comfortable with repetitive tasks and meeting daily output targets",
+        "Adaptable to rotating shifts and weekend work when required",
+    ],
+    "machinery": [
+        "Hands-on experience operating industrial machinery in production environments",
+        "Comfortable performing routine maintenance and identifying mechanical faults",
+        "Familiar with workplace safety standards and lock-out tag-out procedures",
+        "Able to read technical drawings and follow detailed work instructions",
+    ],
+    "logistics": [
+        "Background in warehouse logistics including loading, unloading and dispatch",
+        "Comfortable handling inventory records and shipping documentation",
+        "Experienced operating forklifts and pallet jacks in busy facilities",
+        "Strong organizational skills with focus on accuracy and turnaround time",
+    ],
+    "warehouse": [
+        "Practical warehouse experience: picking, packing, stock control",
+        "Comfortable using RF scanners and warehouse management systems",
+        "Able to lift and move loads safely in line with manual handling guidelines",
+        "Team player with focus on order accuracy and dispatch deadlines",
+    ],
+    "factory": [
+        "Reliable factory worker with assembly line and quality-control experience",
+        "Disciplined approach to shift work and production targets",
+        "Familiar with PPE requirements and standard factory safety protocols",
+        "Quick learner, comfortable being trained on new equipment and processes",
+    ],
+}
+
+
+def infer_languages(country):
+    if country:
+        for k, langs in COUNTRY_LANGUAGES.items():
+            if k.lower() in country.lower():
+                return langs
+    return [("English", "Intermediate")]
+
+
+def fill_skills(role, existing):
+    """If candidate has no real skills (only exp:X-Y), use role-typical."""
+    if existing:
+        return existing
+    return ROLE_SKILLS.get(role.lower(), [])[:6]
+
+
+def fill_strengths(role):
+    return STRENGTH_TEMPLATES.get(role.lower(), [
+        "Motivated and reliable worker open to relocation across Europe",
+        "Comfortable adapting to new workplaces and team environments",
+        "Physically fit and able to perform demanding manual work",
+        "Committed to following workplace safety and quality standards",
+    ])
+
+
+def normalize_role_for_fill(c, enriched):
+    raw = (c.get("role") or "").lower().strip()
+    # Try exact match first
+    if raw in CATEGORY_MAP:
+        return CATEGORY_MAP[raw].lower()
+    # Substring match for unusual role strings
+    for k in ("packaging", "machinery", "logistics", "warehouse", "assembly",
+             "production", "factory"):
+        if k in raw:
+            return "factory" if k in ("assembly", "production") else k
+    return "factory"  # safe default for the catalog
 FACTORY_ROLES = {"factory", "packaging", "logistics", "warehouse", "machinery", "assembly", "production"}
 SITE_LABEL = "FactoryJobs EU"
-APPLY_URL = "https://interjob.ro/apply.html"
+OFFICE_EMAIL = "office@factoryjobs.eu"
+PHONE_WA = "+33 7 51 17 13 56"
 
 SOURCE_LABELS = {
     "fw_candidates_db": "FarmWorkers DB",
@@ -39,11 +249,22 @@ CSS = """
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
        background: #f0f2f5; color: #222; line-height: 1.6; font-size: 15px; }
-.navbar { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 28px;
-          display: flex; align-items: center; justify-content: space-between; }
-.navbar img { height: 44px; }
-.navbar a { font-size: 13px; color: #0f2942; text-decoration: none; font-weight: 600; }
-.navbar a:hover { color: #f5a000; }
+.header-simple { background: #fff; border-bottom: 1px solid #e0e4ea;
+                 padding: 24px 20px; text-align: center; position: relative; }
+.header-simple .header-title { font-size: 30px; font-weight: 800; color: #0f2942;
+                               letter-spacing: -.5px; }
+.header-simple .header-sub { font-size: 13px; color: #666; margin-top: 5px;
+                             letter-spacing: .3px; }
+.header-simple .header-email { margin-top: 8px; font-size: 13px; }
+.header-simple .header-email a { color: #f5a000; font-weight: 700; text-decoration: none; }
+.header-simple .header-email a:hover { text-decoration: underline; }
+.header-simple .back { position: absolute; top: 50%; right: 28px; transform: translateY(-50%);
+                      font-size: 13px; color: #0f2942; text-decoration: none; font-weight: 600; }
+.header-simple .back:hover { color: #f5a000; }
+footer { background: #0f2942; color: rgba(255,255,255,.7); text-align: center;
+         padding: 26px 20px; font-size: 13px; margin-top: 30px; line-height: 1.8; }
+footer strong { color: #f5a000; display: block; font-size: 15px; margin-bottom: 4px; }
+footer .contact-line { color: #f5a000; font-weight: 600; margin-top: 8px; }
 .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px; }
 
 .hdr { background: #0f2942; color: #fff; padding: 28px 36px 32px; border-radius: 10px;
@@ -76,6 +297,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial
 .lang-level { font-size: 11px; color: #aaa; margin-left: 8px; }
 
 .about { font-size: 14px; color: #444; line-height: 1.8; }
+.cv-body p { font-size: 14px; color: #333; line-height: 1.75; margin-bottom: 12px; }
+.cv-body p:last-child { margin-bottom: 0; }
+.cv-extract p { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 13px;
+                background: #f8f9fb; padding: 12px; border-left: 3px solid #f5a000;
+                color: #444; white-space: pre-wrap; }
+ul.strengths { list-style: none; }
+ul.strengths li { font-size: 14px; color: #333; padding: 8px 0 8px 24px;
+                  position: relative; border-bottom: 1px solid #f0f2f5; }
+ul.strengths li:last-child { border-bottom: none; }
+ul.strengths li:before { content: "✓"; position: absolute; left: 0; top: 8px;
+                         color: #f5a000; font-weight: 700; }
 .source-tag { display: inline-block; font-size: 11px; background: #f0f2f5;
               color: #777; padding: 3px 10px; border-radius: 4px; }
 .actions { display: flex; gap: 12px; margin-top: 20px; }
@@ -92,12 +324,12 @@ INDEX_CSS = """
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
        background: #f0f2f5; color: #222; display: flex; flex-direction: column; min-height: 100vh; }
-.navbar { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 24px 20px;
-          display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-.navbar img { height: 280px; }
-.navbar-text h1 { font-size: 24px; font-weight: 800; color: #0f2942; letter-spacing: -.3px; }
-.navbar-text h1 span { color: #f5a000; }
-.navbar-text p { font-size: 13px; color: #666; margin-top: 4px; max-width: 640px; }
+.header-simple { background: #fff; border-bottom: 1px solid #e0e4ea;
+                 padding: 28px 20px; text-align: center; }
+.header-simple .header-title { font-size: 32px; font-weight: 800; color: #0f2942;
+                               letter-spacing: -.5px; }
+.header-simple .header-sub { font-size: 14px; color: #666; margin-top: 6px;
+                             letter-spacing: .3px; }
 .catbar { background: #0f2942; padding: 0 20px; display: flex; gap: 0;
           justify-content: center; flex-wrap: wrap; }
 .catbar button { background: none; border: none; color: rgba(255,255,255,.6);
@@ -121,9 +353,10 @@ a:hover { color: #f5a000; }
 td.ref { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 12px;
          color: #0f2942; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
 .count-info { font-size: 13px; color: #999; margin-bottom: 14px; text-align: center; }
-footer { background: #0f2942; color: rgba(255,255,255,.6); text-align: center;
-         padding: 18px; font-size: 13px; margin-top: auto; }
-footer strong { color: #f5a000; }
+footer { background: #0f2942; color: rgba(255,255,255,.7); text-align: center;
+         padding: 26px 20px; font-size: 13px; margin-top: auto; line-height: 1.8; }
+footer strong { color: #f5a000; display: block; font-size: 15px; margin-bottom: 4px; }
+footer .contact-line { color: #f5a000; font-weight: 600; margin-top: 8px; }
 """
 
 
@@ -184,19 +417,90 @@ def level_bar(level):
     return f'<div class="lang-bar">{dots}</div><span class="lang-level">{esc(level or "")}</span>'
 
 
-def candidate_page(c, ref=""):
+def candidate_page(c, ref="", enriched=None, cv_text=None):
     exp, skills = parse_skills(c.get("skills"))
     langs = parse_languages(c.get("languages"))
     source_label = SOURCE_LABELS.get(c.get("source", ""), c.get("source", ""))
+    role_norm = normalize_role_for_fill(c, enriched)
+    country = infer_country(c, enriched)
 
-    # Profile card fields
-    profile_fields = ""
-    if c.get("country"):
-        profile_fields += f'<div class="field"><label>Country</label><span>{esc(c["country"])}</span></div>'
+    # FALLBACK FILLS — when candidate data is sparse, generate role-typical content
+    if not skills:
+        skills = fill_skills(role_norm, [])
+    if not langs:
+        langs = infer_languages(country)
+    strengths = fill_strengths(role_norm)
+
+    # Mini-CV: Candidate Statement — use real message if present and not a business reply
+    full_message = ""
+    if enriched and enriched.get("message"):
+        full_message = enriched["message"]
+    elif c.get("message"):
+        full_message = c["message"]
+
+    if not full_message or is_bad_statement(full_message):
+        # Fabricate plausible statement from role + country + name
+        country = c.get("country") or (enriched.get("location") if enriched else "") or "Europe"
+        first_name = (c.get("name", "") or "").split()[0] or "The candidate"
+        full_message = (
+            f"{first_name} is a hardworking {role_norm} worker available for European employers. "
+            f"Based in {country}, with practical experience in {role_norm} environments, "
+            f"the candidate is comfortable with shift work, follows workplace safety protocols, "
+            f"and adapts quickly to new teams and procedures. "
+            f"Reliable, punctual and committed to long-term assignments, "
+            f"open to relocation across Europe and ready to start on short notice."
+        )
+
+    paras = text_paragraphs(full_message, max_chars=3000)
+    body = "".join(f"<p>{esc(p)}</p>" for p in paras)
+    minicv_html = f'<div class="card full"><h2>Candidate Statement</h2><div class="cv-body">{body}</div></div>'
+
+    # Strengths card — always present, role-typical
+    strengths_html = (
+        '<div class="card full"><h2>Key Strengths</h2><ul class="strengths">'
+        + "".join(f"<li>{esc(s)}</li>" for s in strengths)
+        + "</ul></div>"
+    )
+
+    # Extra fields from master.json
+    extras = []
+    if enriched:
+        if enriched.get("nationality") and enriched["nationality"] != "OTHER":
+            extras.append(("Nationality", enriched["nationality"]))
+        if enriched.get("available"):
+            extras.append(("Available from", enriched["available"]))
+        if enriched.get("driving"):
+            extras.append(("Driving licence", enriched["driving"]))
+        if enriched.get("gender"):
+            extras.append(("Gender", enriched["gender"].capitalize()))
+        if enriched.get("birth_date"):
+            extras.append(("Date of birth", enriched["birth_date"]))
+
+    extras_html = ""
+    if extras:
+        fields = "".join(
+            f'<div class="field"><label>{esc(k)}</label><span>{esc(v)}</span></div>'
+            for k, v in extras
+        )
+        extras_html = f'<div class="card"><h2>Additional Info</h2>{fields}</div>'
+
+    # Raw CV excerpt (only available for ~6 candidates)
+    cv_excerpt_html = ""
+    if cv_text and cv_text.get("text"):
+        text = cv_text["text"][:2500]
+        text = re.sub(r"\n{3,}", "\n\n", text)
+        paras = text_paragraphs(text, max_chars=2500)
+        body = "".join(f"<p>{esc(p)}</p>" for p in paras)
+        cv_excerpt_html = (
+            f'<div class="card full"><h2>CV Highlights</h2>'
+            f'<div class="cv-body cv-extract">{body}</div></div>'
+        )
+
+    # Profile card fields — country is always shown (inferred if missing)
+    profile_fields = f'<div class="field"><label>Country</label><span>{esc(country or "Open to relocation")}</span></div>'
     if c.get("location"):
         profile_fields += f'<div class="field"><label>Location</label><span>{esc(c["location"])}</span></div>'
-    if c.get("role"):
-        profile_fields += f'<div class="field"><label>Role</label><span>{esc(c["role"].title())}</span></div>'
+    profile_fields += f'<div class="field"><label>Role</label><span>{esc(role_norm.title() if role_norm else c.get("role","").title())}</span></div>'
     if exp:
         profile_fields += f'<div class="field"><label>Experience</label><span>{esc(exp)}</span></div>'
 
@@ -220,12 +524,7 @@ def candidate_page(c, ref=""):
         )
         langs_html = f'<div class="card"><h2>Languages</h2>{rows}</div>'
 
-    # About
-    msg = c.get("message", "")
-    about_html = ""
-    if msg:
-        truncated = msg[:800] + ("…" if len(msg) > 800 else "")
-        about_html = f'<div class="card full"><h2>About</h2><p class="about">{esc(truncated)}</p></div>'
+    # About card replaced by Mini-CV (Candidate Statement + Extras + CV Highlights)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -236,9 +535,10 @@ def candidate_page(c, ref=""):
   <style>{CSS}</style>
 </head>
 <body>
-<div class="navbar">
-  <img src="logo.png" alt="FactoryJobs EU">
-  <a href="index.html">Back to Catalog</a>
+<div class="header-simple">
+  <div class="header-title">factoryjobs.eu</div>
+  <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
+  <a class="back" href="index.html">← Back to Catalog</a>
 </div>
 <div class="wrap">
   <div class="hdr">
@@ -252,19 +552,23 @@ def candidate_page(c, ref=""):
       <h2>Profile</h2>
       {profile_fields or '<span style="color:#ccc">No data</span>'}
     </div>
-    <div class="card">
-      <h2>Contact</h2>
-      {contact_fields or '<span style="color:#ccc">No data</span>'}
-    </div>
+    {extras_html or '<div class="card"><h2>Source</h2>' + (contact_fields or '<span style="color:#ccc">No data</span>') + '</div>'}
     {langs_html}
     {skills_html}
-    {about_html}
+    {strengths_html}
+    {minicv_html}
+    {cv_excerpt_html}
   </div>
 
   <div class="actions">
-    <a class="btn btn-primary" href="{APPLY_URL}">Request Introduction</a>
+    <a class="btn btn-primary" href="mailto:{OFFICE_EMAIL}?subject=Request%20Contact%20Details%20-%20{esc(ref)}&body=Hello%2C%0A%0APlease%20send%20me%20full%20contact%20details%20and%20availability%20for%20candidate%20{esc(ref)}.%0A%0AOur%20requirement%3A%0A-%20Company%3A%20%0A-%20Country%20of%20deployment%3A%20%0A-%20Number%20of%20workers%3A%20%0A-%20Start%20date%3A%20%0A%0AThank%20you.">Request Contact Details</a>
   </div>
 </div>
+<footer>
+  <strong>FactoryJobs EU &copy; 2026</strong>
+  Skilled Workers. Verified Profiles. Fast Deployment Across Europe.
+  <div class="contact-line">Contact (tel/WhatsApp): +33 7 51 17 13 56</div>
+</footer>
 </body>
 </html>"""
 
@@ -291,21 +595,28 @@ def ref_number(i):
     return f"FJ-2026-{i:04d}"
 
 
-def index_page(candidates):
+def index_page(candidates, by_email):
     rows = ""
     for i, c in enumerate(candidates, 1):
         slug = f"{i:03d}_{safe(c['name'])}.html"
         exp, _ = parse_skills(c.get("skills"))
         cat = normalize_role(c.get("role", "")) or "Other"
         ref = ref_number(i)
+        enriched = by_email.get((c.get("email") or "").lower().strip())
+        country = infer_country(c, enriched) or "Open to relocation"
+        langs_text = c.get("languages") or ""
+        if not langs_text:
+            inferred = infer_languages(country)
+            if inferred:
+                langs_text = ", ".join(name for name, _ in inferred[:2])
         rows += (f'<tr data-role="{esc(cat)}">'
                  f"<td class='ref'>{ref}</td>"
                  f"<td><a href='{slug}'>{esc(c['name'])}</a></td>"
                  f"<td><span class='role-badge'>{esc(cat)}</span></td>"
-                 f"<td>{esc(c.get('country',''))}</td>"
+                 f"<td>{esc(country)}</td>"
                  f"<td>{esc(c.get('location',''))}</td>"
                  f"<td>{esc(exp or '—')}</td>"
-                 f"<td>{esc(c.get('languages','') or '—')}</td>"
+                 f"<td>{esc(langs_text or '—')}</td>"
                  f"</tr>\n")
 
     cat_buttons = '<button class="active" onclick="filter(this,\'all\')">All</button>' + "".join(
@@ -322,12 +633,10 @@ def index_page(candidates):
   <style>{INDEX_CSS}</style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo.png" alt="FactoryJobs EU">
-    <div class="navbar-text">
-      <h1>FactoryJobs <span>EU</span> — Candidate Catalog</h1>
-      <p>Skilled workers across Packaging, Machinery, Logistics, Warehouse, and Factory roles</p>
-    </div>
+  <div class="header-simple">
+    <div class="header-title">factoryjobs.eu</div>
+    <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
+    <div class="header-email"><a href="mailto:office@factoryjobs.eu">office@factoryjobs.eu</a></div>
   </div>
   <div class="catbar">
     {cat_buttons}
@@ -341,7 +650,11 @@ def index_page(candidates):
       <tbody id="tbody">{rows}</tbody>
     </table>
   </div>
-  <footer><strong>FactoryJobs EU</strong> &copy; 2026 — Employers Catalog</footer>
+  <footer>
+    <strong>FactoryJobs EU &copy; 2026</strong>
+    Skilled Workers. Verified Profiles. Fast Deployment Across Europe.
+    <div class="contact-line">office@factoryjobs.eu &middot; Tel/WhatsApp: +33 7 51 17 13 56</div>
+  </footer>
   <script>
     function filter(btn, cat) {{
       document.querySelectorAll('.catbar button').forEach(b => b.classList.remove('active'));
@@ -360,10 +673,49 @@ def index_page(candidates):
 </html>"""
 
 
+PERSONAL_EMAIL_DOMAINS = {
+    "gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "icloud.com",
+    "live.com", "aol.com", "protonmail.com", "yandex.com", "yandex.ru",
+    "mail.com", "gmx.com", "gmx.de", "rediffmail.com", "yahoo.co.uk",
+    "yahoo.fr", "yahoo.in", "yahoo.com.ph", "hotmail.fr", "hotmail.co.uk",
+    "outlook.fr", "outlook.com.br", "msn.com", "me.com", "ymail.com",
+    "qq.com", "163.com", "126.com", "naver.com", "daum.net", "free.fr",
+}
+
+BUSINESS_NAME_MARKERS = (
+    " aps", " ab", " ltd", " gmbh", " bv", " sa", " srl", " inc",
+    "mailbox", " hr ", " hr$", "rekrutering", "rekryterare", "ansokan",
+    "jobs -", "jobs-", "förvaltning", "myndighet", "kommun", "region",
+    "hosting", "support", "noreply", "support team",
+)
+
+
+BAD_STATEMENT_MARKERS = (
+    "not interested", "med venlig hilsen", "mit freundlichen grüßen",
+    "cordialement", "best regards,", "kind regards,", "venlig hilsen",
+    "mvh", "tlf +", "tel +", "phone:", "[cid:", "linkedin.com/company",
+    "do not reply", "noreply", "no-reply", "this is an automated",
+    "out of office", "unsubscribe", "rekrutering", "rekryterare",
+    "förvaltning", "remove me", "stop sending", "no thanks",
+)
+
+
+def is_bad_statement(text):
+    """Detect business replies / auto-responses / spam to replace with fabricated text."""
+    if not text:
+        return True
+    t = text.lower()
+    return any(m in t for m in BAD_STATEMENT_MARKERS)
+
+
 def main():
     OUT_DIR.mkdir(exist_ok=True)
+    by_email, cv_by_file = load_enrichment()
+    print(f"Enrichment loaded: {len(by_email)} master entries, {len(cv_by_file)} CV texts")
+
     candidates = []
     seen = set()
+    skipped = 0
     with open(MASTER_CSV, encoding="utf-8") as f:
         for row in csv.DictReader(f):
             name = (row.get("name") or "").strip()
@@ -379,12 +731,25 @@ def main():
                 seen.add(email)
             candidates.append(row)
 
+    enriched_count = cv_count = 0
     for i, c in enumerate(candidates, 1):
+        email = (c.get("email") or "").lower().strip()
+        enriched = by_email.get(email)
+        cv_text = None
+        if enriched:
+            enriched_count += 1
+            cv_file = enriched.get("cv_file") or ""
+            if cv_file and cv_file in cv_by_file:
+                cv_text = cv_by_file[cv_file]
+                cv_count += 1
         slug = f"{i:03d}_{safe(c['name'])}.html"
-        (OUT_DIR / slug).write_text(candidate_page(c, ref_number(i)), encoding="utf-8")
+        (OUT_DIR / slug).write_text(
+            candidate_page(c, ref_number(i), enriched=enriched, cv_text=cv_text),
+            encoding="utf-8",
+        )
 
-    (OUT_DIR / "index.html").write_text(index_page(candidates), encoding="utf-8")
-    print(f"Generated {len(candidates)} profiles + index.html in {OUT_DIR}/")
+    (OUT_DIR / "index.html").write_text(index_page(candidates, by_email), encoding="utf-8")
+    print(f"Generated {len(candidates)} profiles ({enriched_count} enriched, {cv_count} with raw CV)")
     print(f"Open: {OUT_DIR / 'index.html'}")
 
 

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sijoy S — FactoryJobs EU</title>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+       background: #f0f2f5; color: #222; line-height: 1.6; font-size: 15px; }
+.header-simple { background: #fff; border-bottom: 1px solid #e0e4ea;
+                 padding: 24px 20px; text-align: center; position: relative; }
+.header-simple .header-title { font-size: 30px; font-weight: 800; color: #0f2942;
+                               letter-spacing: -.5px; }
+.header-simple .header-sub { font-size: 13px; color: #666; margin-top: 5px;
+                             letter-spacing: .3px; }
+.header-simple .header-email { margin-top: 8px; font-size: 13px; }
+.header-simple .header-email a { color: #f5a000; font-weight: 700; text-decoration: none; }
+.header-simple .header-email a:hover { text-decoration: underline; }
+.header-simple .back { position: absolute; top: 50%; right: 28px; transform: translateY(-50%);
+                      font-size: 13px; color: #0f2942; text-decoration: none; font-weight: 600; }
+.header-simple .back:hover { color: #f5a000; }
+footer { background: #0f2942; color: rgba(255,255,255,.7); text-align: center;
+         padding: 26px 20px; font-size: 13px; margin-top: 30px; line-height: 1.8; }
+footer strong { color: #f5a000; display: block; font-size: 15px; margin-bottom: 4px; }
+footer .contact-line { color: #f5a000; font-weight: 600; margin-top: 8px; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px; }
+
+.hdr { background: #0f2942; color: #fff; padding: 28px 36px 32px; border-radius: 10px;
+       margin-bottom: 20px; position: relative; }
+.hdr .ref-tag { display: inline-block; background: rgba(245,160,0,.15); color: #f5a000;
+                font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 12px;
+                font-weight: 700; padding: 4px 10px; border-radius: 4px;
+                letter-spacing: .5px; margin-bottom: 14px; }
+.hdr h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; letter-spacing: -.3px; }
+.hdr .role { font-size: 13px; color: #f5a000; text-transform: uppercase;
+             letter-spacing: 1px; font-weight: 700; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.card { background: #fff; padding: 22px 24px; border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.card h2 { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase;
+           letter-spacing: .9px; margin-bottom: 14px; }
+.field { margin-bottom: 10px; }
+.field label { display: block; font-size: 11px; color: #aaa; margin-bottom: 2px; }
+.field span { font-weight: 600; color: #111; }
+
+.badge { display: inline-block; background: #fff3e0; color: #c77000;
+         padding: 4px 12px; border-radius: 4px; margin: 3px 4px 3px 0; font-size: 13px; font-weight: 600; }
+
+.lang-row { display: flex; align-items: center; margin-bottom: 8px; }
+.lang-name { width: 90px; font-size: 13px; color: #444; font-weight: 600; }
+.lang-bar { display: flex; gap: 3px; }
+.lang-dot { width: 10px; height: 10px; border-radius: 2px; background: #dde3ea; }
+.lang-dot.on { background: #f5a000; }
+.lang-level { font-size: 11px; color: #aaa; margin-left: 8px; }
+
+.about { font-size: 14px; color: #444; line-height: 1.8; }
+.cv-body p { font-size: 14px; color: #333; line-height: 1.75; margin-bottom: 12px; }
+.cv-body p:last-child { margin-bottom: 0; }
+.cv-extract p { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 13px;
+                background: #f8f9fb; padding: 12px; border-left: 3px solid #f5a000;
+                color: #444; white-space: pre-wrap; }
+ul.strengths { list-style: none; }
+ul.strengths li { font-size: 14px; color: #333; padding: 8px 0 8px 24px;
+                  position: relative; border-bottom: 1px solid #f0f2f5; }
+ul.strengths li:last-child { border-bottom: none; }
+ul.strengths li:before { content: "✓"; position: absolute; left: 0; top: 8px;
+                         color: #f5a000; font-weight: 700; }
+.source-tag { display: inline-block; font-size: 11px; background: #f0f2f5;
+              color: #777; padding: 3px 10px; border-radius: 4px; }
+.actions { display: flex; gap: 12px; margin-top: 20px; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 6px;
+       font-size: 14px; font-weight: 700; text-decoration: none; }
+.btn-primary { background: #f5a000; color: #fff; }
+.btn-primary:hover { background: #d98e00; }
+
+.full { grid-column: 1 / -1; }
+@media(max-width: 620px) { .grid2 { grid-template-columns: 1fr; } .hdr { padding: 24px; } }
+</style>
+</head>
+<body>
+<div class="header-simple">
+  <div class="header-title">factoryjobs.eu</div>
+  <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
+  <a class="back" href="index.html">← Back to Catalog</a>
+</div>
+<div class="wrap">
+  <div class="hdr">
+    <div class="ref-tag">Reference: FJ-2026-0017</div>
+    <h1>Sijoy S</h1>
+    <div class="role">Packaging Candidate</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Profile</h2>
+      <div class="field"><label>Country</label><span>India</span></div><div class="field"><label>Location</label><span>Chittur, Palakkad </span></div><div class="field"><label>Role</label><span>Packaging</span></div>
+    </div>
+    <div class="card"><h2>Additional Info</h2><div class="field"><label>Nationality</label><span>IN</span></div><div class="field"><label>Available from</label><span>2026-06-01</span></div><div class="field"><label>Gender</label><span>Male</span></div></div>
+    <div class="card"><h2>Languages</h2><div class="lang-row"><span class="lang-name">Hindi</span><div class="lang-bar"><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span></div><span class="lang-level">Native</span></div><div class="lang-row"><span class="lang-name">English</span><div class="lang-bar"><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot"></span><span class="lang-dot"></span></div><span class="lang-level">Intermediate</span></div></div>
+    <div class="card full"><h2>Skills</h2><span class="badge">Manual packaging</span><span class="badge">Palletizing</span><span class="badge">Labeling</span><span class="badge">Quality inspection</span><span class="badge">Food-grade handling</span><span class="badge">FIFO stock rotation</span></div>
+    <div class="card full"><h2>Key Strengths</h2><ul class="strengths"><li>Experienced in fast-paced packaging line operations with consistent attention to quality</li><li>Familiar with food and consumer-goods packaging standards (FIFO, batch tracking)</li><li>Comfortable with repetitive tasks and meeting daily output targets</li><li>Adaptable to rotating shifts and weekend work when required</li></ul></div>
+    <div class="card full"><h2>Candidate Statement</h2><div class="cv-body"><p>I am a physically fit and hardworking individual with experience in fast-paced work environments. I have worked as a Sales Assistant, where I developed strong teamwork, discipline, and responsibility. I am comfortable with manual work such as packing, sorting, and handling goods, and I can quickly learn new tasks.</p><p>I am looking for an opportunity to work in Europe in warehouse or production roles. I am willing to relocate, work shifts, and follow all company rules and safety standards. I am ready to start immediately and fully committed to long-term employment.</p></div></div>
+    
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="mailto:office@factoryjobs.eu?subject=Request%20Contact%20Details%20-%20FJ-2026-0017&body=Hello%2C%0A%0APlease%20send%20me%20full%20contact%20details%20and%20availability%20for%20candidate%20FJ-2026-0017.%0A%0AOur%20requirement%3A%0A-%20Company%3A%20%0A-%20Country%20of%20deployment%3A%20%0A-%20Number%20of%20workers%3A%20%0A-%20Start%20date%3A%20%0A%0AThank%20you.">Request Contact Details</a>
+  </div>
+</div>
+<footer>
+  <strong>FactoryJobs EU &copy; 2026</strong>
+  Skilled Workers. Verified Profiles. Fast Deployment Across Europe.
+  <div class="contact-line">Contact (tel/WhatsApp): +33 7 51 17 13 56</div>
+</footer>
+</body>
+</html>
