@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Build a single self-contained HTML file with all 569 candidates as accordion."""
+"""Build a single self-contained HTML catalog. Use --internal to include phone/email."""
 
+import argparse
 import base64
 import csv
 import json
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -22,10 +24,13 @@ from preview_catalog import (
 
 ROOT = Path(__file__).parent.parent
 MASTER_CSV = ROOT / "DATA" / "candidates_master_final.csv"
-OUTPUT = ROOT / "FOR CLIENTS" / "factoryjobs_catalog.html"
+OUTPUT_CLIENT = ROOT / "FOR CLIENTS" / "factoryjobs_catalog.html"
+OUTPUT_INTERNAL = ROOT / "FOR FACTORYJOBS INTERNALLY" / "factoryjobs_catalog_internal.html"
 
 OFFICE_EMAIL = "office@factoryjobs.eu"
 PHONE_WA = "+33 7 51 17 13 56"
+
+INTERNAL = False  # set in main()
 
 
 CSS = """
@@ -184,6 +189,21 @@ def candidate_block(c, ref, enriched, cv_text, slug_id=""):
     if exp:
         profile_fields += f'<div class="field"><label>Experience</label><span>{esc(exp)}</span></div>'
 
+    # Contact card (internal version only)
+    contact_card = ""
+    if INTERNAL:
+        cf = ""
+        email = c.get("email") or (enriched.get("email") if enriched else "")
+        phone = c.get("phone") or (enriched.get("phone") if enriched else "")
+        if email:
+            cf += f'<div class="field"><label>Email</label><span><a href="mailto:{esc(email)}">{esc(email)}</a></span></div>'
+        if phone:
+            wa = re.sub(r"[^\d+]", "", phone)
+            cf += f'<div class="field"><label>Phone</label><span><a href="tel:{esc(wa)}">{esc(phone)}</a></span></div>'
+            cf += f'<div class="field"><label>WhatsApp</label><span><a href="https://wa.me/{esc(wa.lstrip("+"))}" target="_blank">Open chat</a></span></div>'
+        if cf:
+            contact_card = f'<div class="cand-card"><h3>Contact</h3>{cf}</div>'
+
     # Additional info from master.json
     extras = []
     if enriched:
@@ -243,18 +263,27 @@ def candidate_block(c, ref, enriched, cv_text, slug_id=""):
   <div class="cand-body">
     <div class="cand-grid">
       <div class="cand-card"><h3>Profile</h3>{profile_fields}</div>
-      {extras_html}
+      {contact_card if INTERNAL else extras_html}
+      {extras_html if (INTERNAL and contact_card) else ""}
       <div class="cand-card"><h3>Languages</h3>{langs_html}</div>
       <div class="cand-card full"><h3>Skills</h3>{badges_html}</div>
       <div class="cand-card full"><h3>Key Strengths</h3><ul class="strengths">{strengths_html}</ul></div>
       <div class="cand-card full"><h3>Candidate Statement</h3><div class="statement">{statement_html}</div></div>
     </div>
-    <a class="btn" href="mailto:{OFFICE_EMAIL}?subject=Request%20Contact%20Details%20-%20{esc(ref)}&body=Hello%2C%0A%0APlease%20send%20me%20full%20contact%20details%20and%20availability%20for%20candidate%20{esc(ref)}.%0A%0AThank%20you.">Request Contact Details</a>
+    {"" if INTERNAL else f'<a class="btn" href="mailto:{OFFICE_EMAIL}?subject=Request%20Contact%20Details%20-%20{esc(ref)}&body=Hello%2C%0A%0APlease%20send%20me%20full%20contact%20details%20and%20availability%20for%20candidate%20{esc(ref)}.%0A%0AThank%20you.">Request Contact Details</a>'}
   </div>
 </div>"""
 
 
 def main():
+    global INTERNAL
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--internal", action="store_true",
+                        help="Build internal version with phone/email/WhatsApp visible.")
+    parser.add_argument("--all", action="store_true",
+                        help="Build both client and internal versions.")
+    args = parser.parse_args()
+
     by_email, cv_by_file = load_enrichment()
     print(f"Loaded {len(by_email)} master entries, {len(cv_by_file)} CV texts")
 
@@ -275,56 +304,73 @@ def main():
                 seen.add(email)
             candidates.append(row)
 
-    # Build summary table + accordion blocks
-    rows = []
-    blocks = []
-    for i, c in enumerate(candidates, 1):
-        ref = ref_number(i)
-        email = (c.get("email") or "").lower().strip()
-        enriched = by_email.get(email)
-        cv_file = enriched.get("cv_file") if enriched else ""
-        cv_text = cv_by_file.get(cv_file) if cv_file else None
+    def build_rows_blocks():
+        rows, blocks = [], []
+        for i, c in enumerate(candidates, 1):
+            ref = ref_number(i)
+            em = (c.get("email") or "").lower().strip()
+            enriched = by_email.get(em)
+            cv_file = enriched.get("cv_file") if enriched else ""
+            cv_text = cv_by_file.get(cv_file) if cv_file else None
 
-        # Pre-compute fields shared between table + accordion
-        exp, _ = parse_skills(c.get("skills"))
-        role_norm = normalize_role_for_fill(c, enriched)
-        country = infer_country(c, enriched) or "Open to relocation"
-        role_cat = normalize_role(c.get("role", "")) or "Other"
-        langs = parse_languages(c.get("languages"))
-        if not langs:
-            langs = infer_languages(country)
-        langs_short = ", ".join(n for n, _ in langs[:3]) or "—"
+            exp, _ = parse_skills(c.get("skills"))
+            role_norm = normalize_role_for_fill(c, enriched)
+            country = infer_country(c, enriched) or "Open to relocation"
+            role_cat = normalize_role(c.get("role", "")) or "Other"
+            langs = parse_languages(c.get("languages"))
+            if not langs:
+                langs = infer_languages(country)
+            langs_short = ", ".join(n for n, _ in langs[:3]) or "—"
 
-        slug_id = f"c{i:04d}"
-        rows.append(
-            f'<tr data-target="{slug_id}" data-role="{esc(role_cat)}" '
-            f'data-search="{esc((c["name"] + " " + country + " " + (c.get("location","") or "") + " " + role_cat + " " + langs_short).lower())}" '
-            f'onclick="jumpTo(\'{slug_id}\')">'
-            f'<td class="ref">{ref}</td>'
-            f'<td><a href="#{slug_id}">{esc(c["name"])}</a></td>'
-            f'<td><span class="role-pill">{esc(role_cat)}</span></td>'
-            f'<td>{esc(country)}</td>'
-            f'<td>{esc(c.get("location","") or "—")}</td>'
-            f'<td>{esc(exp or "—")}</td>'
-            f'<td>{esc(langs_short)}</td>'
-            f'</tr>'
+            slug_id = f"c{i:04d}"
+            extra_cells = ""
+            search_extra = ""
+            if INTERNAL:
+                phone = c.get("phone") or (enriched.get("phone") if enriched else "") or "—"
+                email_disp = c.get("email") or (enriched.get("email") if enriched else "") or "—"
+                extra_cells = (
+                    f'<td>{esc(email_disp)}</td>'
+                    f'<td>{esc(phone)}</td>'
+                )
+                search_extra = f' {email_disp} {phone}'
+            rows.append(
+                f'<tr data-target="{slug_id}" data-role="{esc(role_cat)}" '
+                f'data-search="{esc((c["name"] + " " + country + " " + (c.get("location","") or "") + " " + role_cat + " " + langs_short + search_extra).lower())}" '
+                f'onclick="jumpTo(\'{slug_id}\')">'
+                f'<td class="ref">{ref}</td>'
+                f'<td><a href="#{slug_id}">{esc(c["name"])}</a></td>'
+                f'<td><span class="role-pill">{esc(role_cat)}</span></td>'
+                f'<td>{esc(country)}</td>'
+                f'<td>{esc(c.get("location","") or "—")}</td>'
+                f'<td>{esc(exp or "—")}</td>'
+                f'<td>{esc(langs_short)}</td>'
+                f'{extra_cells}'
+                f'</tr>'
+            )
+            blocks.append(candidate_block(c, ref, enriched, cv_text, slug_id))
+        return rows, blocks
+
+    def render(output_path):
+        cat_buttons = '<button class="active" onclick="filter(this,\'all\')">All</button>' + "".join(
+            f'<button onclick="filter(this,\'{cat}\')">{cat}</button>' for cat in CATEGORIES
         )
-        blocks.append(candidate_block(c, ref, enriched, cv_text, slug_id))
-
-    cat_buttons = '<button class="active" onclick="filter(this,\'all\')">All</button>' + "".join(
-        f'<button onclick="filter(this,\'{cat}\')">{cat}</button>' for cat in CATEGORIES
-    )
-
-    html = f"""<!DOCTYPE html>
+        rows, blocks = build_rows_blocks()
+        title_tag = "INTERNAL — FactoryJobs EU" if INTERNAL else "FactoryJobs EU — Candidate Catalog"
+        internal_banner = ('<div style="background:#c62828;color:#fff;text-align:center;padding:8px;'
+                           'font-weight:700;letter-spacing:.5px;font-size:13px">'
+                           'INTERNAL — Contains personal contact details · Do not share externally</div>'
+                           ) if INTERNAL else ""
+        extra_th = "<th>Email</th><th>Phone</th>" if INTERNAL else ""
+        html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FactoryJobs EU — Candidate Catalog</title>
+<title>{title_tag}</title>
 <style>{CSS}</style>
 </head>
 <body>
-
+{internal_banner}
 <div class="header-simple">
   <div class="header-title">factoryjobs.eu</div>
   <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
@@ -343,7 +389,7 @@ def main():
 <div class="section-title">Overview</div>
 <table class="summary-table">
   <thead>
-    <tr><th>Ref</th><th>Name</th><th>Role</th><th>Country</th><th>Location</th><th>Experience</th><th>Languages</th></tr>
+    <tr><th>Ref</th><th>Name</th><th>Role</th><th>Country</th><th>Location</th><th>Experience</th><th>Languages</th>{extra_th}</tr>
   </thead>
   <tbody id="summary-tbody">
     {''.join(rows)}
@@ -413,12 +459,20 @@ function jumpTo(id) {{
 
 </body>
 </html>"""
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(html, encoding="utf-8")
+        size_mb = output_path.stat().st_size / 1024 / 1024
+        mode_lbl = "INTERNAL" if INTERNAL else "CLIENT"
+        print(f"[{mode_lbl}] {output_path}  ({size_mb:.2f} MB, {len(candidates)} candidates)")
 
-    OUTPUT.write_text(html, encoding="utf-8")
-    size_mb = OUTPUT.stat().st_size / 1024 / 1024
-    print(f"Generated: {OUTPUT}")
-    print(f"Size: {size_mb:.2f} MB")
-    print(f"Candidates: {len(candidates)}")
+    # Decide which mode(s) to build
+    if args.all:
+        INTERNAL = False; render(OUTPUT_CLIENT)
+        INTERNAL = True;  render(OUTPUT_INTERNAL)
+    elif args.internal:
+        INTERNAL = True; render(OUTPUT_INTERNAL)
+    else:
+        INTERNAL = False; render(OUTPUT_CLIENT)
 
 
 if __name__ == "__main__":
