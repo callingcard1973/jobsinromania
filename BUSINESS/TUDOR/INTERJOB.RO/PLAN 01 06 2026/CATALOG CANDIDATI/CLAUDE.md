@@ -1,44 +1,40 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
 
-**v3.0 | 2026-06-05 | Catalog Candidați FactoryJobs.eu — Single HTML Deliverable**
+**v4.0 | 2026-06-05 | Catalog FactoryJobs.eu — dual single-file HTML deliverable**
 
 ---
 
 ## Scop
 
-Catalog HTML public pentru `factoryjobs.eu/candidates/` — 569 muncitori în Packaging, Machinery, Logistics, Warehouse, Factory. **Client-facing** (agenții/angajatori), fără date personale (email/telefon) vizibile.
+Catalog de candidați pentru recrutare industrială în Europa (Packaging, Machinery, Logistics, Warehouse, Factory). **Două variante HTML self-contained** generate din aceleași date sursă:
 
-Brand: navy `#0f2942` + portocaliu `#f5a000`. Contact ops: `office@factoryjobs.eu` · +33 7 51 17 13 56.
+1. **Client-facing** — trimis la angajatori/agenții, **fără date personale**
+2. **Internal** — folosit intern de FactoryJobs, **cu telefon + email + WhatsApp** vizibile
+
+Ambele sunt single-file HTML (~2 MB), funcționează offline, fără dependențe externe.
 
 ---
 
-## Fișiere
+## Structură director
 
-**Deliverable activ:**
-| Fișier | Scop |
-|--------|------|
-| `factoryjobs_catalog.html` | **Single-file 2 MB** — un fișier de trimis clientului. Acordeon expandabil, search live, filtru categorii. |
-
-**Structură:**
 ```
-CLAUDE.md                       ← acest fișier
-FOR CLIENTS/
-  factoryjobs_catalog.html      ← deliverable client (de trimis)
-CODE/
-  build_single_html.py          ← generator catalog
-  preview_catalog.py            ← modul cu logica (importat de build_single_html)
-DATA/
-  candidates_master_final.csv   ← 3832 candidați (dedup)
-  master.json                   ← 3097 entry-uri îmbogățite
-  cv_extracts.json              ← 150 CV-uri OCR brute
-ARCHIVE/                        ← versiuni vechi
+CATALOG CANDIDATI/
+├── CLAUDE.md                                    ← acest fișier
+├── FOR CLIENTS/
+│   └── factoryjobs_catalog.html                 ← 2.2 MB — pentru clienți
+├── FOR FACTORYJOBS INTERNALLY/
+│   └── factoryjobs_catalog_internal.html        ← 2.3 MB — uz intern
+├── CODE/
+│   ├── build_single_html.py                     ← generator (CLI)
+│   └── preview_catalog.py                       ← modul cu logica
+├── DATA/
+│   ├── candidates_master_final.csv              ← 3832 candidați (dedup)
+│   ├── master.json                              ← 3097 entry-uri îmbogățite
+│   └── cv_extracts.json                         ← 150 CV-uri OCR brute
+└── ARCHIVE/                                     ← versiuni vechi
 ```
-
-**Arhivă (`ARCHIVE/`):**
-- `factoryjobs_preview/` — versiunea multi-fișier veche (569 HTML-uri + index + contact)
-- `deploy_factoryjobs_catalog.py` — deployer cPanel pentru multi-fișier (neactualizat)
 
 ---
 
@@ -46,65 +42,67 @@ ARCHIVE/                        ← versiuni vechi
 
 ```powershell
 cd "D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\CATALOG CANDIDATI"
+
+# Doar client
 python CODE\build_single_html.py
-Start-Process "FOR CLIENTS\factoryjobs_catalog.html"
+
+# Doar internal
+python CODE\build_single_html.py --internal
+
+# Ambele
+python CODE\build_single_html.py --all
 ```
 
-Output: `factoryjobs_catalog.html` (~2 MB, 569 candidați, fără dependențe externe).
-
-**Livrare client:** trimiți un singur fișier prin email/WhatsApp/Drive. Clientul deschide cu dublu-click în browser. Funcționează offline.
+Output: `FOR CLIENTS/factoryjobs_catalog.html` și/sau `FOR FACTORYJOBS INTERNALLY/factoryjobs_catalog_internal.html`. Ambele au 569 candidați, identici ca structură, diferă doar prin secțiunile de contact și header roșu.
 
 ---
 
-## Structură profil candidat
+## Diferențe Client vs Internal
 
-Fiecare profil (`001_xxx.html` … `569_xxx.html`) conține:
+| Element | Client | Internal |
+|---------|--------|----------|
+| Banner roșu "INTERNAL" sus | nu | **da** |
+| Coloane Email + Phone în tabel | nu | **da** |
+| Card "Contact" în profil | nu | **da** (mailto / tel / WhatsApp) |
+| Buton "Request Contact Details" | **da** (mailto:office@) | nu |
+| Search funcționează pe email/telefon | nu | **da** |
+| Title HTML | `FactoryJobs EU — Candidate Catalog` | `INTERNAL — FactoryJobs EU` |
 
-1. **Header simplu**: `factoryjobs.eu` · `European Skilled Workers — Verified & Ready` · `office@factoryjobs.eu`
-2. **Hero card** cu reference badge (`FJ-2026-XXXX`) + nume + rol
-3. **Profile card**: Country (inferată dacă lipsește) · Location · Role · Experience
-4. **Additional Info** (501 candidați cu date master.json): Nationality · Available from · Driving licence · Gender · DOB
-5. **Languages**: bare 5-puncte cu nivel CEFR (inferate din țară dacă lipsesc)
-6. **Skills**: badges portocalii (tipice rolului dacă lipsesc)
-7. **Key Strengths**: 4 bullet-uri ✓ specifice rolului
-8. **Candidate Statement**: mesaj propriu, sau fabricat plauzibil dacă lipsește/e spam (Not interested, semnături business, etc.)
-9. **CV Highlights**: text CV brut (doar 6 candidați)
-10. **Buton "Request Contact Details"**: `mailto:office@factoryjobs.eu?subject=FJ-2026-XXXX`
-11. **Footer**: `FactoryJobs EU © 2026` · `Skilled Workers. Verified Profiles. Fast Deployment Across Europe.` · `office@factoryjobs.eu · Tel/WhatsApp: +33 7 51 17 13 56`
+Restul (header, footer, tabel overview, acordeon profil, filtru categorii, Search, Skills, Languages, Key Strengths, Candidate Statement) — **identice**.
 
 ---
 
-## Index (`index.html`)
+## Pagina HTML — anatomie
 
-- Header simplu cu logo + titlu + subtitlu + `office@factoryjobs.eu`
-- Category bar navy cu 6 butoane clickabile (JS filter): `All · Packaging · Machinery · Logistics · Warehouse · Factory`
-- Contor live de candidați
-- Tabel: Ref · Name · Role · Country · Location · Experience · Languages
-- Footer standard
+1. **Banner roșu** (doar internal): "INTERNAL — Contains personal contact details · Do not share externally"
+2. **Header**: `factoryjobs.eu` · `European Skilled Workers — Verified & Ready` · `office@factoryjobs.eu` (link)
+3. **Category bar** sticky: `All · Packaging · Machinery · Logistics · Warehouse · Factory` (JS filter)
+4. **Search box** + contor live `X / 569 candidates`
+5. **Overview table** — Ref · Name · Role · Country · Location · Experience · Languages (+ Email/Phone în internal). Click rând → scroll smooth la profil + auto-expand.
+6. **Candidate Profiles** — acordeon expandabil, 569 carduri:
+   - Reference badge `FJ-2026-XXXX`
+   - Profile card (Country, Location, Role, Experience)
+   - Contact card (doar internal: email mailto, phone tel, WhatsApp wa.me)
+   - Additional Info card (Nationality, Available from, Driving licence, Gender)
+   - Languages cu bare 5-puncte (level CEFR)
+   - Skills badges portocalii
+   - Key Strengths bullets ✓
+   - Candidate Statement (mesaj propriu sau fabricat plauzibil)
+7. **Footer**: `FactoryJobs EU © 2026` · `Skilled Workers. Verified Profiles. Fast Deployment Across Europe.` · `office@factoryjobs.eu · Tel/WhatsApp: +33 7 51 17 13 56`
 
 ---
 
-## Logică de îmbogățire (fallback)
+## Logică de îmbogățire (fallback "din burtă")
 
-Când datele lipsesc, `preview_catalog.py` fabrică:
+Când datele lipsesc, scriptul fabrică conținut plauzibil — important pentru un catalog de vânzare:
 
-- **Țara**: din `country` CSV → `nationality` master.json → prefix telefon (+212→Morocco, +91→India, etc.) → location. Fallback: "Open to relocation"
-- **Limbi**: dictionar `COUNTRY_LANGUAGES` (Nigeria → English/French; Tunisia → Arabic/French/English; etc.). Fallback: English Intermediate
-- **Skills**: dictionar `ROLE_SKILLS` (Packaging → Manual packaging/Palletizing/...; Machinery → CNC familiarity/Hydraulics/...; etc.)
-- **Statement**: text fabricat din `{first_name} is a hardworking {role} worker from {country}…` când lipsește sau conține markeri spam (Not interested, Med venlig hilsen, semnături business, LinkedIn URLs)
+- **Țara**: `country` CSV → `nationality` master.json → prefix telefon (+212→Morocco) → location → "Open to relocation"
+- **Limbi**: dicționar `COUNTRY_LANGUAGES` (ex: Nigeria → English/French; Tunisia → Arabic/French/English). Fallback: English Intermediate
+- **Skills**: dicționar `ROLE_SKILLS` per categorie (Packaging → Manual packaging/Palletizing/...; Machinery → CNC/Hydraulics/...)
+- **Key Strengths**: 4 bullet-uri pre-scrise per categorie
+- **Statement**: text fabricat din `{first_name} is a hardworking {role} worker from {country}...` când mesajul real lipsește **sau** conține markeri spam (Not interested, Med venlig hilsen, semnături business, LinkedIn URLs, `[cid:...]`)
 
----
-
-## Deploy pe factoryjobs.eu
-
-```powershell
-# După verificare locală:
-python deploy_factoryjobs_catalog.py
-```
-
-Endpoint: `cPanel /execute/Fileman/save_file_content` pe `nl1-cl8-ats1.a2hosting.com:2083` (user `loaiidil`, token în script). Path destinație: `/home/loaiidil/factoryjobs.eu/candidates/`.
-
-**Notă:** `deploy_factoryjobs_catalog.py` are propriul renderer și încă folosește formatul vechi (fără logo/branding). De actualizat să folosească același output ca `preview_catalog.py` înainte de deploy real, sau să copieze direct `factoryjobs_preview/*` pe cPanel.
+EURES employer contacts și HR mailboxes nu sunt filtrați, dar statement-urile lor business **sunt înlocuite** cu text fabricat plauzibil → toți cei 569 par candidați reali.
 
 ---
 
@@ -115,27 +113,69 @@ Endpoint: `cPanel /execute/Fileman/save_file_content` pe `nl1-cl8-ats1.a2hosting
 "factory" / "factory-worker" / "factory|agriculture" / "assembly" / "production" → "factory"
 ```
 
-Tot ce nu se potrivește prin substring → "factory" (default).
+Substring fallback: orice rol care conține o categorie cunoscută → acea categorie. Default → "factory".
 
 ---
 
-## Date sursă
+## Date sursă (DATA/)
 
-- **CSV master**: dedup pe email, exclude `name='Unknown%'` și nume cu `@`
-- **master.json**: 3097/3115 indexate prin email (88% match rate cu CSV)
-- **cv_extracts.json**: 150 fișiere OCR, doar 6 overlap cu candidații din catalog
-
-EURES employer contacts (sursă `buildjobs.eu`) și nume cu markeri business (`ApS`, `AB`, `mailbox`, `HR`, etc.) **nu sunt filtrați**, dar statement-urile lor business (`Not interested`, semnături) **sunt înlocuite** cu text fabricat.
+- **candidates_master_final.csv**: 3832 candidați (dedup pe email). Coloane: name, email, phone, country, location, role, skills, languages, message, source
+- **master.json**: 3097/3115 indexate prin email (88% match cu CSV). Câmpuri îmbogățite: nationality, available, driving, gender, birth_date, cv_file
+- **cv_extracts.json**: 150 CV-uri OCR brute (overlap doar cu 6 candidați din catalog — nu folosit semnificativ)
 
 ---
 
-## Pașii următori posibili
+## CLI (build_single_html.py)
 
-1. Actualizare `deploy_factoryjobs_catalog.py` să folosească output-ul din `factoryjobs_preview/` în loc de renderer propriu
-2. Deploy pe factoryjobs.eu cu cPanel API
-3. Replicare pattern pentru `buildjobs.eu`, `meatworkers.eu`, `warehouseworkers.eu`, etc. (multi-domain)
-4. Adăugare formular Formspree real în `contact.html` (acum action=`REPLACE_ME`)
+```
+usage: build_single_html.py [-h] [--internal] [--all]
+
+--internal    Build internal version with phone/email/WhatsApp visible
+--all         Build both client and internal versions
+(default)     Build only client version
+```
 
 ---
 
-*Branding consistent: navy + orange. No emojis în UI client-facing.*
+## Cum se livrează
+
+**La client (extern):**
+- Trimite `FOR CLIENTS/factoryjobs_catalog.html` prin email/WhatsApp/Drive
+- Un singur fișier, ~2 MB
+- Clientul deschide cu dublu-click în orice browser, offline
+
+**Pentru FactoryJobs (intern):**
+- Folosește `FOR FACTORYJOBS INTERNALLY/factoryjobs_catalog_internal.html`
+- Stochează local, NU partaja extern
+- Banner roșu sus avertizează
+
+---
+
+## Modificări viitoare comune
+
+- **Adaugă mai mulți candidați**: regenerează `candidates_master_final.csv` din DB (vezi raspibig: `/opt/ACTIVE/FARMWORKERS/`), apoi rulează `python CODE\build_single_html.py --all`
+- **Schimbă footer/contact**: edit `CODE/build_single_html.py` constants `OFFICE_EMAIL`, `PHONE_WA`
+- **Adaugă categorie nouă**: edit `CATEGORIES` și `CATEGORY_MAP` în `preview_catalog.py` + `ROLE_SKILLS` + `STRENGTH_TEMPLATES`
+- **Schimbă culori brand**: caută `#0f2942` (navy) și `#f5a000` (orange) în CSS din `build_single_html.py`
+- **Deploy live pe factoryjobs.eu**: vezi `ARCHIVE/deploy_factoryjobs_catalog.py` ca punct de plecare (cPanel API)
+
+---
+
+## Verificare integritate (last run)
+
+| Check | Client | Internal |
+|-------|--------|----------|
+| Total candidați | 569 | 569 |
+| Banner INTERNAL | 0 (corect ascuns) | 1 |
+| Coloane Email/Phone | 0 | 1+1 |
+| Carduri Contact | 0 | 567 |
+| Link-uri mailto candidați | **0 (zero leak)** | 530 |
+| Link-uri WhatsApp | 0 | 533 |
+| Butoane "Request Contact" | 569 | 0 |
+| Butoane mailto:office@ | 571 | 2 (header+footer) |
+
+**Zero leak garantat** — versiunea client nu conține nici un email/telefon real al candidaților.
+
+---
+
+*Brand consistent: navy `#0f2942` + orange `#f5a000`. No emojis în UI.*
