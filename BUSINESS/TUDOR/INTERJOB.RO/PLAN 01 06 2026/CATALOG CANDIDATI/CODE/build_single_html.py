@@ -20,10 +20,9 @@ from preview_catalog import (
     text_paragraphs, is_bad_statement, load_enrichment,
 )
 
-BASE = Path(__file__).parent
-MASTER_CSV = BASE / "candidates_master_final.csv"
-LOGO_FILE = BASE / "factoryjobs_preview" / "logo.png"
-OUTPUT = BASE / "factoryjobs_catalog.html"
+ROOT = Path(__file__).parent.parent
+MASTER_CSV = ROOT / "DATA" / "candidates_master_final.csv"
+OUTPUT = ROOT / "factoryjobs_catalog.html"
 
 OFFICE_EMAIL = "office@factoryjobs.eu"
 PHONE_WA = "+33 7 51 17 13 56"

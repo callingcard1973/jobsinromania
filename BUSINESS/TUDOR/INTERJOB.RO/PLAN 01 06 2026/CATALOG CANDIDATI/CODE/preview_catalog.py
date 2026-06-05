@@ -7,11 +7,11 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-BASE = Path(__file__).parent
-MASTER_CSV = BASE / "candidates_master_final.csv"
-MASTER_JSON = BASE / "master.json"
-CV_EXTRACTS = BASE / "cv_extracts.json"
-OUT_DIR = BASE / "factoryjobs_preview"
+ROOT = Path(__file__).parent.parent
+MASTER_CSV = ROOT / "DATA" / "candidates_master_final.csv"
+MASTER_JSON = ROOT / "DATA" / "master.json"
+CV_EXTRACTS = ROOT / "DATA" / "cv_extracts.json"
+OUT_DIR = ROOT / "ARCHIVE" / "factoryjobs_preview"
 
 
 def load_enrichment():

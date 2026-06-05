@@ -21,14 +21,19 @@ Brand: navy `#0f2942` + portocaliu `#f5a000`. Contact ops: `office@factoryjobs.e
 |--------|------|
 | `factoryjobs_catalog.html` | **Single-file 2 MB** — un fișier de trimis clientului. Acordeon expandabil, search live, filtru categorii. |
 
-**Scripturi & date:**
-| Fișier | Scop |
-|--------|------|
-| `build_single_html.py` | Generează `factoryjobs_catalog.html` (single-file) |
-| `preview_catalog.py` | Modul cu logica de îmbogățire (import dependency pentru build_single_html.py) |
-| `candidates_master_final.csv` | Sursă: 3832 candidați (dedup) |
-| `master.json` | Îmbogățire: 3115 entry-uri din formulare aplicare |
-| `cv_extracts.json` | Text CV brut OCR (150 fișiere) |
+**Structură:**
+```
+factoryjobs_catalog.html       ← deliverable client (root)
+CLAUDE.md                       ← acest fișier
+CODE/
+  build_single_html.py          ← generator catalog
+  preview_catalog.py            ← modul cu logica (importat de build_single_html)
+DATA/
+  candidates_master_final.csv   ← 3832 candidați (dedup)
+  master.json                   ← 3097 entry-uri îmbogățite
+  cv_extracts.json              ← 150 CV-uri OCR brute
+ARCHIVE/                        ← versiuni vechi
+```
 
 **Arhivă (`ARCHIVE/`):**
 - `factoryjobs_preview/` — versiunea multi-fișier veche (569 HTML-uri + index + contact)
@@ -40,7 +45,7 @@ Brand: navy `#0f2942` + portocaliu `#f5a000`. Contact ops: `office@factoryjobs.e
 
 ```powershell
 cd "D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\CATALOG CANDIDATI"
-python build_single_html.py
+python CODE\build_single_html.py
 Start-Process "factoryjobs_catalog.html"
 ```
 
