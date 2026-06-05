@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**v2.0 | 2026-06-05 | Catalog Candidați FactoryJobs.eu — Client-Facing HTML**
+**v3.0 | 2026-06-05 | Catalog Candidați FactoryJobs.eu — Single HTML Deliverable**
 
 ---
 
@@ -16,26 +16,37 @@ Brand: navy `#0f2942` + portocaliu `#f5a000`. Contact ops: `office@factoryjobs.e
 
 ## Fișiere
 
+**Deliverable activ:**
 | Fișier | Scop |
 |--------|------|
-| `preview_catalog.py` | Generator catalog (rulează local pe Windows) |
-| `deploy_factoryjobs_catalog.py` | Deploy pe factoryjobs.eu/candidates/ via cPanel API |
+| `factoryjobs_catalog.html` | **Single-file 2 MB** — un fișier de trimis clientului. Acordeon expandabil, search live, filtru categorii. |
+
+**Scripturi & date:**
+| Fișier | Scop |
+|--------|------|
+| `build_single_html.py` | Generează `factoryjobs_catalog.html` (single-file) |
+| `preview_catalog.py` | Modul cu logica de îmbogățire (import dependency pentru build_single_html.py) |
 | `candidates_master_final.csv` | Sursă: 3832 candidați (dedup) |
 | `master.json` | Îmbogățire: 3115 entry-uri din formulare aplicare |
 | `cv_extracts.json` | Text CV brut OCR (150 fișiere) |
-| `factoryjobs_preview/` | Output: 569 profiluri + `index.html` + `contact.html` + `logo.png` |
+
+**Arhivă (`ARCHIVE/`):**
+- `factoryjobs_preview/` — versiunea multi-fișier veche (569 HTML-uri + index + contact)
+- `deploy_factoryjobs_catalog.py` — deployer cPanel pentru multi-fișier (neactualizat)
 
 ---
 
-## Generare locală
+## Generare
 
 ```powershell
 cd "D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\CATALOG CANDIDATI"
-python preview_catalog.py
-Start-Process "factoryjobs_preview\index.html"
+python build_single_html.py
+Start-Process "factoryjobs_catalog.html"
 ```
 
-Output: 569 profiluri HTML + index + contact + footer/header standardizat.
+Output: `factoryjobs_catalog.html` (~2 MB, 569 candidați, fără dependențe externe).
+
+**Livrare client:** trimiți un singur fișier prin email/WhatsApp/Drive. Clientul deschide cu dublu-click în browser. Funcționează offline.
 
 ---
 
