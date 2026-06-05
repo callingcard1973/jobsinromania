@@ -59,7 +59,25 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial
 .count-info { font-size: 13px; color: #888; font-weight: 600; }
 .count-info span { color: #0f2942; font-size: 16px; }
 
-.content { max-width: 980px; margin: 0 auto; padding: 24px 16px; flex: 1; width: 100%; }
+.content { max-width: 1160px; margin: 0 auto; padding: 24px 16px; flex: 1; width: 100%; }
+
+.summary-table { width: 100%; border-collapse: collapse; background: #fff;
+                 border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+                 margin-bottom: 28px; }
+.summary-table th { background: #0f2942; color: #fff; padding: 12px 14px; text-align: left;
+                    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+.summary-table td { padding: 10px 14px; border-bottom: 1px solid #eef0f3; font-size: 13px; }
+.summary-table tr:last-child td { border-bottom: none; }
+.summary-table tr:hover td { background: #f7f9fc; cursor: pointer; }
+.summary-table tr.hidden { display: none; }
+.summary-table td.ref { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 11px;
+                        color: #c77000; font-weight: 700; white-space: nowrap; }
+.summary-table td a { color: #0f2942; text-decoration: none; font-weight: 600; }
+.summary-table td a:hover { color: #f5a000; }
+.summary-table .role-pill { display: inline-block; background: #fff3e0; color: #c77000;
+                            padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+.section-title { font-size: 13px; font-weight: 700; color: #888; text-transform: uppercase;
+                 letter-spacing: 1px; margin: 28px 0 12px; }
 
 .candidate { background: #fff; margin-bottom: 10px; border-radius: 8px;
              box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; }
@@ -130,7 +148,7 @@ footer a { color: #f5a000; text-decoration: none; }
 """
 
 
-def candidate_block(c, ref, enriched, cv_text):
+def candidate_block(c, ref, enriched, cv_text, slug_id=""):
     exp, skills = parse_skills(c.get("skills"))
     langs = parse_languages(c.get("languages"))
     role_norm = normalize_role_for_fill(c, enriched)
@@ -209,7 +227,7 @@ def candidate_block(c, ref, enriched, cv_text):
 
     role_cat = normalize_role(c.get("role", "")) or "Other"
 
-    return f"""<div class="candidate" data-role="{esc(role_cat)}" data-search="{esc(search_blob)}">
+    return f"""<div class="candidate" id="{slug_id}" data-role="{esc(role_cat)}" data-search="{esc(search_blob)}">
   <div class="cand-head" onclick="toggle(this)">
     <span class="cand-ref">{ref}</span>
     <div style="flex:1;min-width:0">
@@ -258,14 +276,41 @@ def main():
                 seen.add(email)
             candidates.append(row)
 
-    # Build all candidate blocks
+    # Build summary table + accordion blocks
+    rows = []
     blocks = []
     for i, c in enumerate(candidates, 1):
+        ref = ref_number(i)
         email = (c.get("email") or "").lower().strip()
         enriched = by_email.get(email)
         cv_file = enriched.get("cv_file") if enriched else ""
         cv_text = cv_by_file.get(cv_file) if cv_file else None
-        blocks.append(candidate_block(c, ref_number(i), enriched, cv_text))
+
+        # Pre-compute fields shared between table + accordion
+        exp, _ = parse_skills(c.get("skills"))
+        role_norm = normalize_role_for_fill(c, enriched)
+        country = infer_country(c, enriched) or "Open to relocation"
+        role_cat = normalize_role(c.get("role", "")) or "Other"
+        langs = parse_languages(c.get("languages"))
+        if not langs:
+            langs = infer_languages(country)
+        langs_short = ", ".join(n for n, _ in langs[:3]) or "—"
+
+        slug_id = f"c{i:04d}"
+        rows.append(
+            f'<tr data-target="{slug_id}" data-role="{esc(role_cat)}" '
+            f'data-search="{esc((c["name"] + " " + country + " " + (c.get("location","") or "") + " " + role_cat + " " + langs_short).lower())}" '
+            f'onclick="jumpTo(\'{slug_id}\')">'
+            f'<td class="ref">{ref}</td>'
+            f'<td><a href="#{slug_id}">{esc(c["name"])}</a></td>'
+            f'<td><span class="role-pill">{esc(role_cat)}</span></td>'
+            f'<td>{esc(country)}</td>'
+            f'<td>{esc(c.get("location","") or "—")}</td>'
+            f'<td>{esc(exp or "—")}</td>'
+            f'<td>{esc(langs_short)}</td>'
+            f'</tr>'
+        )
+        blocks.append(candidate_block(c, ref, enriched, cv_text, slug_id))
 
     cat_buttons = '<button class="active" onclick="filter(this,\'all\')">All</button>' + "".join(
         f'<button onclick="filter(this,\'{cat}\')">{cat}</button>' for cat in CATEGORIES
@@ -295,6 +340,18 @@ def main():
 </div>
 
 <div class="content">
+
+<div class="section-title">Overview</div>
+<table class="summary-table">
+  <thead>
+    <tr><th>Ref</th><th>Name</th><th>Role</th><th>Country</th><th>Location</th><th>Experience</th><th>Languages</th></tr>
+  </thead>
+  <tbody id="summary-tbody">
+    {''.join(rows)}
+  </tbody>
+</table>
+
+<div class="section-title">Candidate Profiles</div>
 {''.join(blocks)}
 </div>
 
@@ -326,6 +383,7 @@ function doSearch() {{
 function applyFilters() {{
   const q = document.getElementById('search').value.toLowerCase().trim();
   const cards = document.querySelectorAll('.candidate');
+  const rows = document.querySelectorAll('#summary-tbody tr');
   let visible = 0;
   cards.forEach(c => {{
     const matchCat = activeCategory === 'all' || c.dataset.role === activeCategory;
@@ -334,7 +392,23 @@ function applyFilters() {{
     c.classList.toggle('hidden', !show);
     if (show) visible++;
   }});
+  rows.forEach(r => {{
+    const matchCat = activeCategory === 'all' || r.dataset.role === activeCategory;
+    const matchSearch = !q || r.dataset.search.includes(q);
+    r.classList.toggle('hidden', !(matchCat && matchSearch));
+  }});
   document.getElementById('visible-count').textContent = visible;
+}}
+function jumpTo(id) {{
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({{behavior: 'smooth', block: 'start'}});
+  const head = el.querySelector('.cand-head');
+  const body = el.querySelector('.cand-body');
+  if (head && !head.classList.contains('open')) {{
+    head.classList.add('open');
+    body.classList.add('open');
+  }}
 }}
 </script>
 
