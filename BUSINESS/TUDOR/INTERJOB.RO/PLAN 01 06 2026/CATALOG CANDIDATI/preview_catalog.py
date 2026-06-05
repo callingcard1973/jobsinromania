@@ -39,43 +39,50 @@ CSS = """
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
        background: #f0f2f5; color: #222; line-height: 1.6; font-size: 15px; }
+.navbar { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 14px 28px;
+          display: flex; align-items: center; justify-content: space-between; }
+.navbar img { height: 44px; }
+.navbar a { font-size: 13px; color: #0f2942; text-decoration: none; font-weight: 600; }
+.navbar a:hover { color: #f5a000; }
 .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px; }
 
-.hdr { background: linear-gradient(135deg, #0f2942 0%, #1a4a7a 100%);
-       color: #fff; padding: 36px 40px; border-radius: 10px; margin-bottom: 20px; }
-.hdr h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; letter-spacing: -.3px; }
-.hdr .role { font-size: 14px; opacity: .7; text-transform: uppercase; letter-spacing: .8px; }
+.hdr { background: #0f2942; color: #fff; padding: 28px 36px 32px; border-radius: 10px;
+       margin-bottom: 20px; position: relative; }
+.hdr .ref-tag { display: inline-block; background: rgba(245,160,0,.15); color: #f5a000;
+                font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 12px;
+                font-weight: 700; padding: 4px 10px; border-radius: 4px;
+                letter-spacing: .5px; margin-bottom: 14px; }
+.hdr h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; letter-spacing: -.3px; }
+.hdr .role { font-size: 13px; color: #f5a000; text-transform: uppercase;
+             letter-spacing: 1px; font-weight: 700; }
 
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .card { background: #fff; padding: 22px 24px; border-radius: 8px;
         box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-.card h2 { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase;
+.card h2 { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase;
            letter-spacing: .9px; margin-bottom: 14px; }
 .field { margin-bottom: 10px; }
-.field label { display: block; font-size: 11px; color: #999; margin-bottom: 2px; }
-.field span { font-weight: 500; color: #111; }
+.field label { display: block; font-size: 11px; color: #aaa; margin-bottom: 2px; }
+.field span { font-weight: 600; color: #111; }
 
-.badge { display: inline-block; background: #e8eef5; color: #1a4a7a;
-         padding: 4px 12px; border-radius: 4px; margin: 3px 4px 3px 0; font-size: 13px; font-weight: 500; }
-.exp-badge { background: #1a4a7a; color: #fff; }
+.badge { display: inline-block; background: #fff3e0; color: #c77000;
+         padding: 4px 12px; border-radius: 4px; margin: 3px 4px 3px 0; font-size: 13px; font-weight: 600; }
 
 .lang-row { display: flex; align-items: center; margin-bottom: 8px; }
-.lang-name { width: 90px; font-size: 13px; color: #444; font-weight: 500; }
+.lang-name { width: 90px; font-size: 13px; color: #444; font-weight: 600; }
 .lang-bar { display: flex; gap: 3px; }
 .lang-dot { width: 10px; height: 10px; border-radius: 2px; background: #dde3ea; }
-.lang-dot.on { background: #1a4a7a; }
-.lang-level { font-size: 11px; color: #999; margin-left: 8px; }
+.lang-dot.on { background: #f5a000; }
+.lang-level { font-size: 11px; color: #aaa; margin-left: 8px; }
 
-.about { font-size: 14px; color: #444; line-height: 1.75; }
-
+.about { font-size: 14px; color: #444; line-height: 1.8; }
 .source-tag { display: inline-block; font-size: 11px; background: #f0f2f5;
-              color: #666; padding: 3px 10px; border-radius: 4px; }
+              color: #777; padding: 3px 10px; border-radius: 4px; }
 .actions { display: flex; gap: 12px; margin-top: 20px; }
-.btn { display: inline-block; padding: 11px 24px; border-radius: 6px;
-       font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
-.btn-primary { background: #1a4a7a; color: #fff; }
-.btn-secondary { background: #fff; color: #1a4a7a; border: 2px solid #1a4a7a; }
-.btn:hover { opacity: .9; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 6px;
+       font-size: 14px; font-weight: 700; text-decoration: none; }
+.btn-primary { background: #f5a000; color: #fff; }
+.btn-primary:hover { background: #d98e00; }
 
 .full { grid-column: 1 / -1; }
 @media(max-width: 620px) { .grid2 { grid-template-columns: 1fr; } .hdr { padding: 24px; } }
@@ -84,15 +91,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial
 INDEX_CSS = """
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-       background: #f0f2f5; color: #222; }
-.top { background: linear-gradient(135deg, #0f2942, #1a4a7a); color: #fff; padding: 32px 40px; }
-.top h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
-.top p { opacity: .75; font-size: 14px; }
-.content { max-width: 1100px; margin: 0 auto; padding: 28px 20px; }
-.role-summary { margin-bottom: 24px; }
-.role-summary ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 0; }
-.role-summary li { font-size: 14px; font-weight: 600; color: #0f2942; }
-.role-summary .count { font-weight: 400; color: #888; }
+       background: #f0f2f5; color: #222; display: flex; flex-direction: column; min-height: 100vh; }
+.navbar { background: #fff; border-bottom: 1px solid #e0e4ea; padding: 24px 20px;
+          display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.navbar img { height: 280px; }
+.navbar-text h1 { font-size: 24px; font-weight: 800; color: #0f2942; letter-spacing: -.3px; }
+.navbar-text h1 span { color: #f5a000; }
+.navbar-text p { font-size: 13px; color: #666; margin-top: 4px; max-width: 640px; }
+.catbar { background: #0f2942; padding: 0 20px; display: flex; gap: 0;
+          justify-content: center; flex-wrap: wrap; }
+.catbar button { background: none; border: none; color: rgba(255,255,255,.6);
+                 padding: 14px 24px; font-size: 14px; font-weight: 600; cursor: pointer;
+                 border-bottom: 3px solid transparent; transition: all .15s; }
+.catbar button:hover { color: #fff; }
+.catbar button.active { color: #f5a000; border-bottom-color: #f5a000; }
+.content { max-width: 1160px; margin: 0 auto; padding: 28px 20px; flex: 1; width: 100%; }
 table { width: 100%; border-collapse: collapse; background: #fff;
         border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
 th { background: #0f2942; color: #fff; padding: 12px 16px; text-align: left;
@@ -100,11 +113,17 @@ th { background: #0f2942; color: #fff; padding: 12px 16px; text-align: left;
 td { padding: 12px 16px; border-bottom: 1px solid #eef0f3; font-size: 14px; }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: #f7f9fc; }
-a { color: #1a4a7a; text-decoration: none; font-weight: 600; }
-a:hover { text-decoration: underline; }
-.role-badge { display: inline-block; background: #e8eef5; color: #1a4a7a;
-              padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
-.dim { color: #aaa; font-size: 12px; margin-top: 20px; text-align: right; }
+tr.hidden { display: none; }
+a { color: #0f2942; text-decoration: none; font-weight: 600; }
+a:hover { color: #f5a000; }
+.role-badge { display: inline-block; background: #fff3e0; color: #c77000;
+              padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+td.ref { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 12px;
+         color: #0f2942; font-weight: 700; letter-spacing: .3px; white-space: nowrap; }
+.count-info { font-size: 13px; color: #999; margin-bottom: 14px; text-align: center; }
+footer { background: #0f2942; color: rgba(255,255,255,.6); text-align: center;
+         padding: 18px; font-size: 13px; margin-top: auto; }
+footer strong { color: #f5a000; }
 """
 
 
@@ -165,7 +184,7 @@ def level_bar(level):
     return f'<div class="lang-bar">{dots}</div><span class="lang-level">{esc(level or "")}</span>'
 
 
-def candidate_page(c):
+def candidate_page(c, ref=""):
     exp, skills = parse_skills(c.get("skills"))
     langs = parse_languages(c.get("languages"))
     source_label = SOURCE_LABELS.get(c.get("source", ""), c.get("source", ""))
@@ -217,8 +236,13 @@ def candidate_page(c):
   <style>{CSS}</style>
 </head>
 <body>
+<div class="navbar">
+  <img src="logo.png" alt="FactoryJobs EU">
+  <a href="index.html">Back to Catalog</a>
+</div>
 <div class="wrap">
   <div class="hdr">
+    <div class="ref-tag">Reference: {esc(ref)}</div>
     <h1>{esc(c['name'])}</h1>
     <div class="role">{esc(c.get('role','').title())} Candidate</div>
   </div>
@@ -245,27 +269,48 @@ def candidate_page(c):
 </html>"""
 
 
+CATEGORY_MAP = {
+    "packaging": "Packaging",
+    "machinery": "Machinery",
+    "logistics": "Logistics",
+    "warehouse": "Warehouse",
+    "factory": "Factory",
+    "factory-worker": "Factory",
+    "factory|agriculture": "Factory",
+    "assembly": "Factory",
+    "production": "Factory",
+}
+CATEGORIES = ["Packaging", "Machinery", "Logistics", "Warehouse", "Factory"]
+
+
+def normalize_role(raw):
+    return CATEGORY_MAP.get((raw or "").lower().strip(), None)
+
+
+def ref_number(i):
+    return f"FJ-2026-{i:04d}"
+
+
 def index_page(candidates):
     rows = ""
     for i, c in enumerate(candidates, 1):
         slug = f"{i:03d}_{safe(c['name'])}.html"
         exp, _ = parse_skills(c.get("skills"))
-        rows += (f"<tr>"
+        cat = normalize_role(c.get("role", "")) or "Other"
+        ref = ref_number(i)
+        rows += (f'<tr data-role="{esc(cat)}">'
+                 f"<td class='ref'>{ref}</td>"
                  f"<td><a href='{slug}'>{esc(c['name'])}</a></td>"
-                 f"<td><span class='role-badge'>{esc(c.get('role','').title())}</span></td>"
+                 f"<td><span class='role-badge'>{esc(cat)}</span></td>"
                  f"<td>{esc(c.get('country',''))}</td>"
                  f"<td>{esc(c.get('location',''))}</td>"
                  f"<td>{esc(exp or '—')}</td>"
                  f"<td>{esc(c.get('languages','') or '—')}</td>"
                  f"</tr>\n")
 
-    role_counts = {}
-    for c in candidates:
-        r = c.get("role", "other").title()
-        role_counts[r] = role_counts.get(r, 0) + 1
-    role_lines = "".join(
-        f'<li>{esc(r)} <span class="count">({n})</span></li>'
-        for r, n in sorted(role_counts.items(), key=lambda x: -x[1])
+    cat_buttons = '<button class="active" onclick="filter(this,\'all\')">All</button>' + "".join(
+        f'<button onclick="filter(this,\'{cat}\')">{cat}</button>'
+        for cat in CATEGORIES
     )
 
     return f"""<!DOCTYPE html>
@@ -277,27 +322,40 @@ def index_page(candidates):
   <style>{INDEX_CSS}</style>
 </head>
 <body>
-  <div class="top">
-    <div style="max-width:1100px;margin:0 auto">
-      <h1>{SITE_LABEL} — Candidate Catalog</h1>
-      <p>{len(candidates)} available candidates</p>
+  <div class="navbar">
+    <img src="logo.png" alt="FactoryJobs EU">
+    <div class="navbar-text">
+      <h1>FactoryJobs <span>EU</span> — Candidate Catalog</h1>
+      <p>Skilled workers across Packaging, Machinery, Logistics, Warehouse, and Factory roles</p>
     </div>
+  </div>
+  <div class="catbar">
+    {cat_buttons}
   </div>
   <div class="content">
-    <div class="role-summary">
-      <ul>
-        <li>All <span class="count">({len(candidates)})</span></li>
-        {role_lines}
-      </ul>
-    </div>
+    <p class="count-info" id="count-info">{len(candidates)} candidates</p>
     <table>
       <thead>
-        <tr><th>Name</th><th>Role</th><th>Country</th><th>Location</th><th>Experience</th><th>Languages</th></tr>
+        <tr><th>Ref</th><th>Name</th><th>Role</th><th>Country</th><th>Location</th><th>Experience</th><th>Languages</th></tr>
       </thead>
-      <tbody>{rows}</tbody>
+      <tbody id="tbody">{rows}</tbody>
     </table>
-    <p class="dim">Updated {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
   </div>
+  <footer><strong>FactoryJobs EU</strong> &copy; 2026 — Employers Catalog</footer>
+  <script>
+    function filter(btn, cat) {{
+      document.querySelectorAll('.catbar button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const rows = document.querySelectorAll('#tbody tr');
+      let visible = 0;
+      rows.forEach(r => {{
+        const show = cat === 'all' || r.dataset.role === cat;
+        r.classList.toggle('hidden', !show);
+        if (show) visible++;
+      }});
+      document.getElementById('count-info').textContent = visible + ' candidates';
+    }}
+  </script>
 </body>
 </html>"""
 
@@ -323,7 +381,7 @@ def main():
 
     for i, c in enumerate(candidates, 1):
         slug = f"{i:03d}_{safe(c['name'])}.html"
-        (OUT_DIR / slug).write_text(candidate_page(c), encoding="utf-8")
+        (OUT_DIR / slug).write_text(candidate_page(c, ref_number(i)), encoding="utf-8")
 
     (OUT_DIR / "index.html").write_text(index_page(candidates), encoding="utf-8")
     print(f"Generated {len(candidates)} profiles + index.html in {OUT_DIR}/")
