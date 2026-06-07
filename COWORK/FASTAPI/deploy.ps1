@@ -28,7 +28,20 @@ try {
     if ($status) {
         git add COWORK/FASTAPI/
         git commit -m "deploy: FASTAPI — $Message"
+
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "  ❌ Commit failed"
+            Pop-Location
+            exit 1
+        }
+
         git push
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "  ❌ Push failed - aborting deployment"
+            Pop-Location
+            exit 1
+        }
+
         Write-Host "  ✅ Committed and pushed"
     } else {
         Write-Host "  ℹ️  No changes to commit"
@@ -88,14 +101,22 @@ $skillCount = $files.Count
 try {
     # raspibig
     $sourceGlob = "$skillsPath\*.py"
-    & $PSCPPath -batch -pw $Password $sourceGlob "$User@$RaspibigIP`:/opt/ACTIVE/SKILLS/" 2>&1 | Out-Null
+    & $PSCPPath -batch -pw $Password $sourceGlob "$User@$RaspibigIP`:/opt/ACTIVE/SKILLS/"
 
-    # raspi
-    & $PSCPPath -batch -pw $Password $sourceGlob "$User@192.168.100.20`:/opt/ACTIVE/INFRA/SKILLS/" 2>&1 | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  ⚠️  Skill sync to raspibig failed" -ForegroundColor Yellow
+    } else {
+        # raspi
+        & $PSCPPath -batch -pw $Password $sourceGlob "$User@192.168.100.20`:/opt/ACTIVE/INFRA/SKILLS/"
 
-    Write-Host "  ✅ Synced $skillCount skills to raspibig + raspi"
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "  ⚠️  Skill sync to raspi failed" -ForegroundColor Yellow
+        } else {
+            Write-Host "  ✅ Synced $skillCount skills to raspibig + raspi"
+        }
+    }
 } catch {
-    Write-Host "  ⚠️  Skill sync skipped: $_" -ForegroundColor Yellow
+    Write-Host "  ⚠️  Skill sync error: $_" -ForegroundColor Yellow
 }
 
 Write-Host ""

@@ -28,14 +28,14 @@ SMTP_PORT = 25
 EMAIL_FROM = "monitor@raspibig.local"
 EMAIL_TO = "fruitnature4@gmail.com"
 
-# Telegram config (from environment or hardcoded)
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8731910997:AAEwRCaZNXKeY-seWZfMOD-gqQclR-xeQBU")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "-1003830000766")  # @expatsinromania_news
+# Telegram config (from environment - required)
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 def get_all_crons() -> dict:
     """Auto-detect all active crons from crontab"""
     try:
-        result = subprocess.run("crontab -l", shell=True, capture_output=True, text=True)
+        result = subprocess.run(["crontab", "-l"], capture_output=True, text=True, timeout=10)
         crons = {}
 
         for line in result.stdout.split("\n"):
@@ -89,21 +89,28 @@ def send_email(subject: str, body: str, is_alert: bool = False):
 
         msg.attach(MIMEText(body, "plain"))
 
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=10) as server:
             server.send_message(msg)
         return True
-    except Exception as e:
-        print(f"❌ Email failed: {e}")
+    except smtplib.SMTPException as e:
+        print(f"❌ Email failed (SMTP): {e}")
+        return False
+    except OSError as e:
+        print(f"❌ Email failed (connection): {e}")
         return False
 
 def send_telegram(message: str):
     """Send Telegram alert"""
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("⚠️  Telegram skipped: credentials not configured")
+        return False
+
     try:
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         data = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
         response = requests.post(url, json=data, timeout=10)
         return response.status_code == 200
-    except Exception as e:
+    except requests.RequestException as e:
         print(f"❌ Telegram failed: {e}")
         return False
 
@@ -111,10 +118,14 @@ def check_cron_status(cron_name: str) -> bool:
     """Check if a cron ran successfully in last 90 minutes"""
     try:
         # Check systemd journal for cron name
-        cmd = f"journalctl --user -u {cron_name}.service -n 1 --output=short-iso 2>/dev/null | grep -q 'Finished'"
-        result = subprocess.run(cmd, shell=True, capture_output=True)
+        result = subprocess.run(
+            ["journalctl", "--user", "-u", f"{cron_name}.service", "-n", "1", "--output=short-iso"],
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
 
-        if result.returncode == 0:
+        if "Finished" in result.stdout:
             return True
 
         # Fallback: check log files
@@ -138,7 +149,10 @@ def check_cron_status(cron_name: str) -> bool:
                                 pass
 
         return False
-    except Exception as e:
+    except subprocess.TimeoutExpired:
+        print(f"⚠️  Timeout checking {cron_name}")
+        return False
+    except OSError as e:
         print(f"⚠️  Error checking {cron_name}: {e}")
         return False
 
@@ -178,7 +192,7 @@ def monitor_crons():
 
     # Append to history
     with open(CRON_HISTORY_FILE, "a") as f:
-        f.write(f"[{timestamp}] Failed: {len(failed_crons)}/{len(CRITICAL_CRONS)}\n")
+        f.write(f"[{timestamp}] Failed: {len(failed_crons)}/{len(all_crons)}\n")
         for cron_name, desc in failed_crons:
             f.write(f"  - {cron_name}: {desc}\n")
 
