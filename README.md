@@ -1,8 +1,17 @@
-Jobs in Romania
+# Jobs in Romania
 
-A curated collection of job opportunities, workforce resources, recruitment information, and employment-related content focused on Romania.
+Daily job opportunities for workers in Romania. **Live site:** https://callingcard1973.github.io/jobsinromania/index.html
 
-This repository serves as a public resource for employers, recruiters, job seekers, and international workers interested in employment opportunities across Romania.
+## About
+
+A curated, automatically updated collection of job opportunities sourced from ANOFM (National Employment Agency) for workers in Romania. The site rebuilds daily with the latest job postings.
+
+## Features
+
+- **1,500+ Jobs** — Updated daily from ANOFM
+- **Searchable** — Filter by title, city, or sector
+- **Mobile-Friendly** — Responsive design
+- **Free to Browse** — No registration required
 
 What You Can Find
 Current job opportunities
