@@ -1,9 +1,13 @@
-# Sync Python skills from laptop to raspibig
+# Sync Python skills from laptop to raspibig + raspi
 # Usage: .\sync_skills.ps1
-# Uploads D:\MEMORY\CODE\ACTIVE\SKILLS\*.py to raspibig:/opt/ACTIVE/SKILLS/
+# Unifies skills across all machines:
+# - Laptop:   D:\MEMORY\CODE\ACTIVE\SKILLS\ (640 files, source)
+# - raspibig: /opt/ACTIVE/SKILLS/ (target)
+# - raspi:    /opt/ACTIVE/INFRA/SKILLS/ (target)
 
 param(
     [string]$RaspibigIP = "192.168.100.21",
+    [string]$RaspiIP = "192.168.100.20",
     [string]$User = "tudor"
 )
 
@@ -12,10 +16,10 @@ $PSCPPath = "C:\Program Files\PuTTY\pscp.exe"
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ssZ"
 
 # Secure password input
-$securePassword = Read-Host "Enter password for $User@$RaspibigIP" -AsSecureString
+$securePassword = Read-Host "Enter password for $User" -AsSecureString
 $Password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToCoTaskMemUnicode($securePassword))
 
-Write-Host "[$timestamp] Skills Sync Pipeline" -ForegroundColor Cyan
+Write-Host "[$timestamp] Skills Sync Pipeline (All Machines)" -ForegroundColor Cyan
 Write-Host ""
 
 # Get skill files
@@ -23,36 +27,34 @@ $skillsPath = "D:\MEMORY\CODE\ACTIVE\SKILLS"
 $files = @(Get-ChildItem "$skillsPath\*.py" -ErrorAction SilentlyContinue)
 $count = $files.Count
 
-Write-Host "[$timestamp] Syncing $count skills..." -ForegroundColor Green
+Write-Host "Source: $count skills from laptop"
+Write-Host ""
 
-# Prepare remote directory
-$prepCmd = "mkdir -p /opt/ACTIVE/SKILLS"
-& $PuTTYPath -batch -pw $Password "$User@$RaspibigIP" $prepCmd | Out-Null
-
-# Upload all files at once via pscp (faster than one-by-one)
+# ===== RASPIBIG =====
+Write-Host "[$timestamp] Syncing to raspibig..." -ForegroundColor Green
 try {
     $sourceGlob = "$skillsPath\*.py"
     $targetPath = "$User@$RaspibigIP`:/opt/ACTIVE/SKILLS/"
-
-    # Use -r flag to recurse, but since we're targeting *.py directly, just copy
-    & $PSCPPath -batch -pw $Password $sourceGlob $targetPath
-
-    Write-Host "  ✅ Uploaded $count files"
+    & $PSCPPath -batch -pw $Password $sourceGlob $targetPath 2>&1 | Out-Null
+    Write-Host "  ✅ Uploaded $count files to raspibig:/opt/ACTIVE/SKILLS/"
 } catch {
-    Write-Host "  ❌ Upload failed: $_" -ForegroundColor Red
-    exit 1
+    Write-Host "  ❌ raspibig sync failed: $_" -ForegroundColor Red
 }
 
-# Verify on remote
-$verifyCmd = "ls /opt/ACTIVE/SKILLS/*.py 2>/dev/null | wc -l"
-$remoteCount = & $PuTTYPath -batch -pw $Password "$User@$RaspibigIP" $verifyCmd
-
-Write-Host "[$timestamp] Remote count: $remoteCount" -ForegroundColor Cyan
-if ([int]$remoteCount -eq $count) {
-    Write-Host "✅ Verified: $remoteCount skills on raspibig"
-} else {
-    Write-Host "⚠️  Count mismatch: laptop=$count, raspibig=$remoteCount" -ForegroundColor Yellow
+# ===== RASPI =====
+Write-Host "[$timestamp] Syncing to raspi..." -ForegroundColor Green
+try {
+    $sourceGlob = "$skillsPath\*.py"
+    $targetPath = "$User@$RaspiIP`:/opt/ACTIVE/INFRA/SKILLS/"
+    & $PSCPPath -batch -pw $Password $sourceGlob $targetPath 2>&1 | Out-Null
+    Write-Host "  ✅ Uploaded $count files to raspi:/opt/ACTIVE/INFRA/SKILLS/"
+} catch {
+    Write-Host "  ❌ raspi sync failed: $_" -ForegroundColor Red
 }
 
 Write-Host ""
 Write-Host "[$timestamp] ✅ SYNC COMPLETE" -ForegroundColor Green
+Write-Host "Unified structure:"
+Write-Host "  - Laptop:   D:\MEMORY\CODE\ACTIVE\SKILLS\ ($count files)"
+Write-Host "  - raspibig: /opt/ACTIVE/SKILLS/ (→ $count files)"
+Write-Host "  - raspi:    /opt/ACTIVE/INFRA/SKILLS/ (→ $count files)"

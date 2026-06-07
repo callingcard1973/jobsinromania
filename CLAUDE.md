@@ -183,28 +183,27 @@ Result: Automatic execution without user interaction, persistent connection reus
 
 ## Skills Synchronization
 
-**640 Python skills** on laptop (`D:\MEMORY\CODE\ACTIVE\SKILLS\`). Sync to raspibig on-demand via PowerShell script.
+**640 Python skills** — unified across all 3 machines. Sync from laptop (master source) to raspibig + raspi on-demand.
 
-**v1.6.9 (2026-06-08):** Implemented on-demand sync system (replaces non-functional `weekly_skills_sync.py`).
+**v1.6.9 (2026-06-08):** Consolidated archived directories into active locations; unifying across machines.
+
+**Unified directory structure:**
+- Laptop: `D:\MEMORY\CODE\ACTIVE\SKILLS\` (640 .py files, source)
+- raspibig: `/opt/ACTIVE/SKILLS/` (target, synced to 640)
+- raspi: `/opt/ACTIVE/INFRA/SKILLS/` (target, synced to 640; symlinks from `/opt/SKILLS`, `/opt/ROMANIA/SKILLS`)
+
+**Sync methods:**
 
 ```powershell
-# From laptop — push all skills to raspibig
+# Manual on-demand: push to both machines
 D:\MEMORY\COWORK\INFRA\sync_skills.ps1
 
-# Or integrate into deployment (add to deploy.ps1 after FastAPI deployment)
-& D:\MEMORY\COWORK\INFRA\sync_skills.ps1
-```
+# Automatic with FastAPI deploy
+.\deploy.ps1 "message"  # Includes skills sync in Step 3
 
-**Optional scheduled sync:** Windows Task Scheduler Sunday 4 AM (if laptop is on)
-```powershell
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\MEMORY\COWORK\INFRA\sync_skills.ps1"
-$trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At 4AM
-Register-ScheduledTask -TaskName "SyncSkills" -Action $action -Trigger $trigger
+# Scheduled: Daily at 10 AM UTC (Windows Task Scheduler)
+Get-ScheduledTask SyncSkills
 ```
-
-**Paths:**
-- Laptop source: `D:\MEMORY\CODE\ACTIVE\SKILLS\` (640 .py files)
-- raspibig target: `/opt/ACTIVE/SKILLS/` (synced on-demand)
 
 ---
 

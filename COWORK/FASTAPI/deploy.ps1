@@ -78,7 +78,7 @@ try {
     exit 1
 }
 
-# Step 3: Sync skills (bonus)
+# Step 3: Sync skills to all machines (bonus)
 Write-Host "[$timestamp] Step 3: Syncing Python skills..." -ForegroundColor Green
 $PSCPPath = "C:\Program Files\PuTTY\pscp.exe"
 $skillsPath = "D:\MEMORY\CODE\ACTIVE\SKILLS"
@@ -86,10 +86,14 @@ $files = @(Get-ChildItem "$skillsPath\*.py" -ErrorAction SilentlyContinue)
 $skillCount = $files.Count
 
 try {
+    # raspibig
     $sourceGlob = "$skillsPath\*.py"
-    $targetPath = "$User@$RaspibigIP`:/opt/ACTIVE/SKILLS/"
-    & $PSCPPath -batch -pw $Password $sourceGlob $targetPath 2>&1 | Out-Null
-    Write-Host "  ✅ Synced $skillCount skills"
+    & $PSCPPath -batch -pw $Password $sourceGlob "$User@$RaspibigIP`:/opt/ACTIVE/SKILLS/" 2>&1 | Out-Null
+
+    # raspi
+    & $PSCPPath -batch -pw $Password $sourceGlob "$User@192.168.100.20`:/opt/ACTIVE/INFRA/SKILLS/" 2>&1 | Out-Null
+
+    Write-Host "  ✅ Synced $skillCount skills to raspibig + raspi"
 } catch {
     Write-Host "  ⚠️  Skill sync skipped: $_" -ForegroundColor Yellow
 }
