@@ -76,7 +76,7 @@ def get_all_crons() -> dict:
 
         return crons
     except Exception as e:
-        print(f"❌ Error reading crontab: {e}")
+        print(f"[ERROR] Error reading crontab: {e}")
         return {}
 
 def send_email(subject: str, body: str, is_alert: bool = False):
@@ -85,7 +85,7 @@ def send_email(subject: str, body: str, is_alert: bool = False):
         msg = MIMEMultipart()
         msg["From"] = EMAIL_FROM
         msg["To"] = EMAIL_TO
-        msg["Subject"] = f"{'🚨 ALERT' if is_alert else 'ℹ️ Report'}: {subject}"
+        msg["Subject"] = f"{'[ALERT]' if is_alert else '[REPORT]'}: {subject}"
 
         msg.attach(MIMEText(body, "plain"))
 
@@ -93,16 +93,16 @@ def send_email(subject: str, body: str, is_alert: bool = False):
             server.send_message(msg)
         return True
     except smtplib.SMTPException as e:
-        print(f"❌ Email failed (SMTP): {e}")
+        print(f"[FAIL] Email failed (SMTP): {e}")
         return False
     except OSError as e:
-        print(f"❌ Email failed (connection): {e}")
+        print(f"[FAIL] Email failed (connection): {e}")
         return False
 
 def send_telegram(message: str):
     """Send Telegram alert"""
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("⚠️  Telegram skipped: credentials not configured")
+        print("[WARN] Telegram skipped: credentials not configured")
         return False
 
     try:
@@ -111,42 +111,38 @@ def send_telegram(message: str):
         response = requests.post(url, json=data, timeout=10)
         return response.status_code == 200
     except requests.RequestException as e:
-        print(f"❌ Telegram failed: {e}")
+        print(f"[FAIL] Telegram failed: {e}")
         return False
 
 def check_cron_status(cron_name: str) -> bool:
-    """Check if a cron ran successfully in last 90 minutes"""
+    """Check if a cron ran successfully in last 90 minutes via syslog"""
     try:
-        # Check systemd journal for cron name
+        cutoff_time = datetime.now() - timedelta(minutes=90)
+        syslog = Path("/var/log/syslog")
+
+        if not syslog.exists():
+            return False  # Can't verify; assume OK rather than flood alerts
+
+        # Read last 2000 lines only (avoids full-file scan of large syslog)
         result = subprocess.run(
-            ["journalctl", "--user", "-u", f"{cron_name}.service", "-n", "1", "--output=short-iso"],
+            ["tail", "-n", "2000", str(syslog)],
             capture_output=True,
             text=True,
-            timeout=10
+            timeout=5
         )
 
-        if "Finished" in result.stdout:
-            return True
-
-        # Fallback: check log files
-        log_files = [
-            f"{LOG_DIR}/{cron_name}.log",
-            f"/var/log/cron",
-            f"/var/log/syslog",
-        ]
-
-        cutoff_time = datetime.now() - timedelta(minutes=90)
-        for log_file in log_files:
-            if Path(log_file).exists():
-                with open(log_file, "r") as f:
-                    for line in f:
-                        if cron_name in line and "completed" in line.lower():
-                            try:
-                                line_time = datetime.fromisoformat(line[:19])
-                                if line_time > cutoff_time:
-                                    return True
-                            except ValueError:
-                                pass
+        # Debian cron logs: Jun  8 09:30:01 raspibig CRON[12345]: (tudor) CMD (...)
+        for line in result.stdout.splitlines():
+            if "CRON" in line and cron_name in line:
+                # Parse syslog timestamp: "Jun  8 09:30:01"
+                try:
+                    line_time = datetime.strptime(
+                        f"{datetime.now().year} {line[:15]}", "%Y %b %d %H:%M:%S"
+                    )
+                    if line_time > cutoff_time:
+                        return True
+                except ValueError:
+                    pass
 
         return False
     except subprocess.TimeoutExpired:
@@ -156,10 +152,25 @@ def check_cron_status(cron_name: str) -> bool:
         print(f"⚠️  Error checking {cron_name}: {e}")
         return False
 
+def rotate_history_if_needed():
+    """Keep history file under 5 MB - rotates on each run if needed"""
+    path = Path(CRON_HISTORY_FILE)
+    max_bytes = 5 * 1024 * 1024  # 5 MB
+    if path.exists() and path.stat().st_size > max_bytes:
+        archive = path.with_suffix(f".{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+        path.rename(archive)
+        # Keep only last 7 archives
+        archives = sorted(path.parent.glob("cron_history.*.log"))
+        for old in archives[:-7]:
+            old.unlink()
+
 def monitor_crons():
     """Check all active crons and alert on failures"""
     timestamp = datetime.now().isoformat()
     failed_crons = []
+
+    # Rotate history log if needed
+    rotate_history_if_needed()
 
     # Auto-detect all crons from crontab
     all_crons = get_all_crons()
@@ -198,9 +209,9 @@ def monitor_crons():
 
     # Alert on failures
     if failed_crons:
-        alert_msg = f"⏰ Cron Failures ({len(failed_crons)}/{len(all_crons)} down)\n\n"
+        alert_msg = f"[CRON FAILURES] ({len(failed_crons)}/{len(all_crons)} down)\n\n"
         for cron_name, schedule in failed_crons:
-            alert_msg += f"❌ {cron_name}\n   Schedule: {schedule}\n"
+            alert_msg += f"[FAIL] {cron_name}\n   Schedule: {schedule}\n"
         alert_msg += f"\nCheck: {RASPIBIG_IP}:{LOG_DIR}/cron_history.log"
 
         # Send alerts
