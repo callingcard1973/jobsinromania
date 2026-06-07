@@ -32,15 +32,52 @@ EMAIL_TO = "fruitnature4@gmail.com"
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8731910997:AAEwRCaZNXKeY-seWZfMOD-gqQclR-xeQBU")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "-1003830000766")  # @expatsinromania_news
 
-# Critical crons to monitor (name: description)
-CRITICAL_CRONS = {
-    "press_review": "Press review poster (08:50 UTC)",
-    "application_fetcher": "Job application fetcher (09:30 UTC)",
-    "cv_pipeline": "CV pipeline (09:00 UTC)",
-    "daily_roundup": "Daily jobs roundup (09:00 UTC, weekdays)",
-    "fb_jobs_by_page": "Facebook jobs poster (11:30 UTC, weekdays)",
-    "skills_sync": "Skills synchronizer (10:00 UTC daily)",
-}
+def get_all_crons() -> dict:
+    """Auto-detect all active crons from crontab"""
+    try:
+        result = subprocess.run("crontab -l", shell=True, capture_output=True, text=True)
+        crons = {}
+
+        for line in result.stdout.split("\n"):
+            line = line.strip()
+            # Skip comments and empty lines
+            if not line or line.startswith("#"):
+                continue
+
+            # Parse cron line: minute hour day month weekday command
+            parts = line.split(None, 5)
+            if len(parts) < 6:
+                continue
+
+            minute, hour, day, month, weekday = parts[:5]
+            command = parts[5]
+
+            # Extract cron name from command (e.g., press_review.py -> press_review)
+            cron_name = command.split("/")[-1].split(".")[0]
+
+            # Build readable schedule
+            if minute == "*" and hour == "*":
+                schedule = "Every minute"
+            elif minute == "*/30":
+                schedule = "Every 30 min"
+            elif hour == "*":
+                schedule = f"Every hour at :{minute} min"
+            elif weekday != "*":
+                days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                schedule = f"Specific days at {hour}:{minute:0>2}"
+            else:
+                schedule = f"{hour}:{minute:0>2} UTC"
+
+            crons[cron_name] = {
+                "schedule": schedule,
+                "command": command,
+                "line": line,
+            }
+
+        return crons
+    except Exception as e:
+        print(f"❌ Error reading crontab: {e}")
+        return {}
 
 def send_email(subject: str, body: str, is_alert: bool = False):
     """Send email alert"""
@@ -106,18 +143,25 @@ def check_cron_status(cron_name: str) -> bool:
         return False
 
 def monitor_crons():
-    """Check all critical crons and alert on failures"""
+    """Check all active crons and alert on failures"""
     timestamp = datetime.now().isoformat()
     failed_crons = []
 
-    print(f"[{timestamp}] Checking cron status...")
+    # Auto-detect all crons from crontab
+    all_crons = get_all_crons()
 
-    for cron_name, description in CRITICAL_CRONS.items():
+    if not all_crons:
+        print(f"[{timestamp}] No active crons found in crontab")
+        return True
+
+    print(f"[{timestamp}] Checking {len(all_crons)} crons...")
+
+    for cron_name, cron_info in all_crons.items():
         status = check_cron_status(cron_name)
 
         if not status:
-            failed_crons.append((cron_name, description))
-            print(f"  ❌ {cron_name}: FAILED")
+            failed_crons.append((cron_name, cron_info["schedule"]))
+            print(f"  ❌ {cron_name}: FAILED ({cron_info['schedule']})")
         else:
             print(f"  ✅ {cron_name}: OK")
 
@@ -126,9 +170,10 @@ def monitor_crons():
     with open(CRON_STATUS_FILE, "w") as f:
         json.dump({
             "timestamp": timestamp,
-            "failed": [{"name": c[0], "desc": c[1]} for c in failed_crons],
-            "total_checked": len(CRITICAL_CRONS),
+            "failed": [{"name": c[0], "schedule": c[1]} for c in failed_crons],
+            "total_checked": len(all_crons),
             "total_failed": len(failed_crons),
+            "all_crons": list(all_crons.keys()),
         }, f, indent=2)
 
     # Append to history
@@ -139,14 +184,14 @@ def monitor_crons():
 
     # Alert on failures
     if failed_crons:
-        alert_msg = f"⏰ Cron Failures Detected ({len(failed_crons)} failed)\n\n"
-        for cron_name, desc in failed_crons:
-            alert_msg += f"❌ {cron_name}\n   {desc}\n"
+        alert_msg = f"⏰ Cron Failures ({len(failed_crons)}/{len(all_crons)} down)\n\n"
+        for cron_name, schedule in failed_crons:
+            alert_msg += f"❌ {cron_name}\n   Schedule: {schedule}\n"
         alert_msg += f"\nCheck: {RASPIBIG_IP}:{LOG_DIR}/cron_history.log"
 
         # Send alerts
         print(f"\n🚨 Alerting on {len(failed_crons)} failures...")
-        send_email(f"Cron Failures ({len(failed_crons)})", alert_msg, is_alert=True)
+        send_email(f"Cron Failures ({len(failed_crons)}/{len(all_crons)})", alert_msg, is_alert=True)
         send_telegram(alert_msg)
 
     return len(failed_crons) == 0

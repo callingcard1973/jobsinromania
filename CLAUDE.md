@@ -213,8 +213,10 @@ Get-ScheduledTask SyncSkills
 
 **Deployment:** `/opt/ACTIVE/INFRA/monitor_crons.py`
 
-**Cron schedules:**
-- Every 30 minutes: Check critical crons (press_review, application_fetcher, cv_pipeline, daily_roundup, fb_jobs_by_page, skills_sync)
+**Coverage:** Auto-detects ALL active crons from crontab (25+ jobs monitored)
+
+**Check schedule:**
+- Every 30 minutes: Scan all crons, alert on failures
 - Daily 08:00 UTC: Send digest report
 
 **Alert methods:**
