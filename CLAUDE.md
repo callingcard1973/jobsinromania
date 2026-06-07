@@ -207,6 +207,34 @@ Get-ScheduledTask SyncSkills
 
 ---
 
+## Cron Monitoring & Alerts (v1.6.9)
+
+**System:** monitor_crons.py on raspibig alerts on failures via email + Telegram + daily digest.
+
+**Deployment:** `/opt/ACTIVE/INFRA/monitor_crons.py`
+
+**Cron schedules:**
+- Every 30 minutes: Check critical crons (press_review, application_fetcher, cv_pipeline, daily_roundup, fb_jobs_by_page, skills_sync)
+- Daily 08:00 UTC: Send digest report
+
+**Alert methods:**
+- 📧 Email to fruitnature4@gmail.com
+- 📱 Telegram to @expatsinromania_news
+- 📋 Log file: `/opt/ACTIVE/INFRA/LOGS/cron_history.log`
+
+**Configuration (environment variables on raspibig):**
+```bash
+TELEGRAM_BOT_TOKEN = "8731910997:AAEwRCaZNXKeY-seWZfMOD-gqQclR-xeQBU"
+TELEGRAM_CHAT_ID = "-1003830000766"
+```
+
+**Logs:**
+- Monitor log: `/opt/ACTIVE/INFRA/LOGS/monitor.log`
+- Status file: `/opt/ACTIVE/INFRA/LOGS/cron_status.json`
+- History: `/opt/ACTIVE/INFRA/LOGS/cron_history.log`
+
+---
+
 ## Low Token Strategy
 
 1. Run locally (DB, campaigns, scrapers = scripts, not LLM)
