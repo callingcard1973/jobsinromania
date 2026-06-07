@@ -42,6 +42,13 @@ These are the single source of truth. Do NOT duplicate them inside individual pr
 
 **See STATE.md for live infrastructure status, queue metrics, and scraper state.**
 
+**v1.6.10 additions (2026-06-08 02:51 UTC):**
+- **Skills Unification:** All 3 machines unified to 640 Python skills (laptop → raspibig → raspi via on-demand sync)
+- **Cron Monitoring:** 30+ active crons monitored every 30 min via monitor_crons.py; alerts via email + Telegram + daily digest
+- **Code Review & Fixes:** 8 critical bugs fixed from full code review (undefined vars, security issues, error handling)
+- **Deploy Hardening:** deploy.ps1 now validates git operations before SSH deploy, catches pscp failures
+- **All Tests Passing:** Skills sync (640/640/640), monitoring (working), error handling (verified)
+
 v1.6.8 additions (2026-06-07):
 - **FastAPI Job Publishing Pipeline:** Complete 6-step deployment (SEO → Deploy → WordPress → Social → Meta Graph) with 2,800+ lines, 91% coverage, 78/78 tests passing. 6 reusable skills created. All 4 database tables + migrations deployed.
 - **Documentation Consolidation:** 5 core reference files synced to all 3 machines (CLAUDE.md, STATE.md, INFRASTRUCTURE_MASTER_REFERENCE.md, QUICK_REFERENCE_CARD.txt, DEPLOYMENT_CHECKLIST.md). Verification & cleanup scripts created.
