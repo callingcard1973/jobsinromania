@@ -1,3 +1,5 @@
+let editingAdId = null;
+
 async function populateCategories() {
     const select = document.getElementById('category');
     if (!select) return;
@@ -16,8 +18,39 @@ function escapeHtmlCa(text) {
     return div.innerHTML;
 }
 
+async function loadAdForEdit(adId) {
+    try {
+        const ad = await API.getAd(adId);
+        document.getElementById('title').value = ad.title || '';
+        document.getElementById('description').value = ad.description || '';
+        document.getElementById('category').value = ad.category || '';
+        document.getElementById('price').value = ad.price ? parseFloat(ad.price) : '';
+        document.getElementById('location').value = ad.location || '';
+        document.getElementById('contact-info').value = ad.contact_info || '';
+        document.getElementById('tags').value = ad.tags || '';
+        // Update UI to show edit mode
+        const header = document.querySelector('.card-header h4');
+        if (header) header.textContent = 'Edit Ad';
+        const submitBtn = document.querySelector('#create-ad-form button[type=submit]');
+        if (submitBtn) submitBtn.textContent = 'Save Changes';
+    } catch (error) {
+        const errorDiv = document.getElementById('create-ad-error');
+        errorDiv.textContent = 'Failed to load ad: ' + error.message;
+        errorDiv.classList.remove('d-none');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     populateCategories();
+
+    // Check if editing existing ad (?edit=ID)
+    const params = new URLSearchParams(window.location.search);
+    const editId = params.get('edit');
+    if (editId) {
+        editingAdId = parseInt(editId);
+        // Wait for categories to load first, then populate ad data
+        populateCategories().then(() => loadAdForEdit(editingAdId));
+    }
 
     document.getElementById('create-ad-form').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -36,7 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const errorDiv = document.getElementById('create-ad-error');
 
         try {
-            const ad = await API.createAd(adData);
+            let ad;
+            if (editingAdId) {
+                // Update existing ad
+                ad = await API.updateAd(editingAdId, adData);
+            } else {
+                // Create new ad
+                ad = await API.createAd(adData);
+            }
 
             if (imagesInput.files.length > 0) {
                 for (const file of imagesInput.files) {
@@ -48,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Pay-to-publish: send the user to the ad page to pay & submit for review.
+            // Go to ad detail page (pay flow or view)
             window.location.href = `/ads/${ad.id}`;
         } catch (error) {
             errorDiv.textContent = error.message;

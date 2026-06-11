@@ -15,8 +15,8 @@
 
     <!-- Analytics Scripts -->
     <script src="{{ url_for('static', path='js/analytics.js') }}"></script>
+    {% if posthog_api_key is defined and posthog_api_key %}
     <script>
-        // Configure analytics with API key from backend
         const posthogKey = '{{ posthog_api_key }}';
         if (posthogKey) {
             window.analytics = new Analytics(posthogKey, {
@@ -25,6 +25,7 @@
             });
         }
     </script>
+    {% endif %}
     {% block extra_scripts %}{% endblock %}
 </body>
 </html>

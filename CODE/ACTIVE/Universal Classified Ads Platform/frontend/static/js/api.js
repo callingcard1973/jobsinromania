@@ -120,10 +120,6 @@ class API {
         return this.delete(`/ads/${id}`);
     }
 
-    static async submitAd(id) {
-        return this.post(`/ads/${id}/submit`);
-    }
-
     static async uploadAdImage(adId, file) {
         const formData = new FormData();
         formData.append('file', file);

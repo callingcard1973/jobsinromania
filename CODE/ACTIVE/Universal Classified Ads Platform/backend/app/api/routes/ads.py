@@ -204,37 +204,6 @@ async def delete_ad(
     db.commit()
 
 
-@router.post("/{ad_id}/submit", response_model=AdResponse)
-async def submit_ad_for_review(
-    ad_id: int,
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
-):
-    ad = db.query(Ad).filter(Ad.id == ad_id).first()
-    if not ad:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Ad not found"
-        )
-
-    if ad.user_id != current_user.id:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Access denied"
-        )
-
-    if ad.status not in [AdStatus.DRAFT, AdStatus.REJECTED]:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Only draft or rejected ads can be submitted"
-        )
-
-    ad.status = AdStatus.PENDING_REVIEW
-    db.commit()
-    db.refresh(ad)
-    return ad
-
-
 @router.post("/{ad_id}/approve", response_model=AdResponse)
 async def approve_ad(
     ad_id: int,
