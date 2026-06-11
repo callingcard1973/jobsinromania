@@ -1,0 +1,192 @@
+<!-- Document Tracking with PostHog Marks - Example Template -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Tracking Example</title>
+    <script src="/static/js/analytics.js"></script>
+    <script src="/static/js/document-tracking.js"></script>
+</head>
+<body>
+    <!-- Ad Document Example with PostHog Marks -->
+    <div class="ad-card"
+         data-posthog-mark="doc_ad_12345_view"
+         data-doc-type="ad"
+         data-doc-id="12345"
+         data-action="viewed"
+         data-prop-category="vehicles"
+         data-prop-price="5000"
+         data-prop-location="NYC">
+
+        <h2>
+            <a href="/ads/12345"
+               data-posthog-mark="doc_ad_12345_click"
+               data-doc-type="ad"
+               data-doc-id="12345"
+               data-action="clicked">
+                2020 Honda Civic
+            </a>
+        </h2>
+
+        <p class="price">$5,000</p>
+        <p class="description">Great condition, low mileage</p>
+
+        <!-- Contact Button with tracking mark -->
+        <button class="contact-btn"
+                data-posthog-mark="doc_ad_12345_contact"
+                data-doc-type="ad"
+                data-doc-id="12345"
+                data-action="contact"
+                data-prop-interaction-type="contact_click">
+            Contact Seller
+        </button>
+
+        <!-- Share Button with tracking mark -->
+        <button class="share-btn"
+                data-posthog-mark="doc_ad_12345_share"
+                data-doc-type="ad"
+                data-doc-id="12345"
+                data-action="shared">
+            Share
+        </button>
+
+        <!-- Flag Button with tracking mark -->
+        <button class="flag-btn"
+                data-posthog-mark="doc_ad_12345_flag"
+                data-doc-type="ad"
+                data-doc-id="12345"
+                data-action="flagged"
+                data-prop-reason="inappropriate">
+            Flag
+        </button>
+    </div>
+
+    <!-- Create Ad Form with tracking marks -->
+    <form class="create-ad-form"
+          data-posthog-doc-type="ad"
+          data-action="created">
+
+        <input type="text"
+               name="title"
+               placeholder="Ad Title"
+               data-posthog-mark="form_field_title"
+               required>
+
+        <input type="number"
+               name="price"
+               placeholder="Price"
+               data-posthog-mark="form_field_price"
+               required>
+
+        <select name="category"
+                data-posthog-mark="form_field_category">
+            <option>Vehicles</option>
+            <option>Real Estate</option>
+            <option>Electronics</option>
+        </select>
+
+        <textarea name="description"
+                  placeholder="Description"
+                  data-posthog-mark="form_field_description"></textarea>
+
+        <button type="submit"
+                data-posthog-mark="form_submit_create_ad"
+                data-doc-type="ad">
+            Create Ad
+        </button>
+    </form>
+
+    <!-- Search Form with tracking -->
+    <form class="search-form">
+        <input type="text"
+               name="q"
+               placeholder="Search ads"
+               id="search-input">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Filter Buttons with tracking -->
+    <div class="filters">
+        <button class="filter-btn" data-filter="price" data-value="under-5000">Under $5,000</button>
+        <button class="filter-btn" data-filter="category" data-value="vehicles">Vehicles</button>
+        <button class="filter-btn" data-filter="location" data-value="nyc">NYC</button>
+    </div>
+
+    <script>
+    // Initialize document tracker
+    const tracker = window.documentTracker;
+
+    // Track search
+    document.querySelector('.search-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = document.getElementById('search-input').value;
+        tracker.trackDocumentSearch('ad', query, 42); // Results count example
+    });
+
+    // Track filters
+    document.querySelectorAll('.filter-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const filters = {
+                [btn.dataset.filter]: btn.dataset.value,
+            };
+            tracker.trackDocumentFilter('ad', filters, 15); // Results count example
+        });
+    });
+
+    // Track specific document actions
+    // When user views an ad detail page:
+    // tracker.trackDocumentView('ad', 12345, { category: 'vehicles', price: 5000 });
+
+    // When user creates an ad:
+    // tracker.trackDocumentCreated('ad', 12346, { category: 'vehicles' });
+
+    // When user edits an ad:
+    // tracker.trackDocumentEdited('ad', 12345, { fields_changed: ['price', 'description'] });
+
+    // When user deletes an ad:
+    // tracker.trackDocumentDeleted('ad', 12345);
+    </script>
+
+    <!-- Documentation -->
+    <div class="tracking-docs">
+        <h3>PostHog Document Tracking Marks</h3>
+
+        <h4>HTML Attributes for Tracking:</h4>
+        <ul>
+            <li><code>data-posthog-mark</code> - Unique identifier for the tracked element (required)</li>
+            <li><code>data-doc-type</code> - Type of document (ad, user, media, message, review)</li>
+            <li><code>data-doc-id</code> - Unique ID of the document</li>
+            <li><code>data-action</code> - Action performed (viewed, clicked, created, etc.)</li>
+            <li><code>data-prop-*</code> - Custom properties to track (prefix with data-prop-)</li>
+        </ul>
+
+        <h4>Mark Format:</h4>
+        <p><code>doc_{doc_type}_{doc_id}_{action}</code></p>
+        <p>Example: <code>doc_ad_12345_view</code>, <code>doc_ad_12345_contact</code></p>
+
+        <h4>Tracked Events:</h4>
+        <ul>
+            <li><code>document_ad_viewed</code> - Ad viewed in list/detail</li>
+            <li><code>document_ad_clicked</code> - Ad link clicked</li>
+            <li><code>document_ad_contact</code> - Contact button clicked</li>
+            <li><code>document_ad_shared</code> - Ad shared</li>
+            <li><code>document_ad_flagged</code> - Ad flagged</li>
+            <li><code>document_ad_created</code> - New ad created</li>
+            <li><code>document_ad_edited</code> - Ad edited</li>
+            <li><code>document_ad_deleted</code> - Ad deleted</li>
+            <li><code>document_ad_search</code> - Search performed</li>
+            <li><code>document_ad_filter</code> - Filters applied</li>
+            <li><code>document_ad_visible_in_viewport</code> - Ad became visible</li>
+        </ul>
+
+        <h4>JavaScript Tracking API:</h4>
+        <pre>
+tracker.trackDocumentView('ad', 12345, { category: 'vehicles' });
+tracker.trackDocumentCreated('ad', 12346, { category: 'vehicles' });
+tracker.trackDocumentEdited('ad', 12345, { fields_changed: ['price'] });
+tracker.trackDocumentDeleted('ad', 12345);
+tracker.trackDocumentSearch('ad', 'honda', 42);
+tracker.trackDocumentFilter('ad', { category: 'vehicles', price: '&lt;5000' }, 15);
+        </pre>
+    </div>
+</body>
+</html>

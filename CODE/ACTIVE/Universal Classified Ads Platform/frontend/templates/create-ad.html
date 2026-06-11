@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ad - Universal Classified Ads</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Classified Ads</a>
+            <div class="navbar-nav ms-auto" id="auth-nav">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Create New Ad</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="create-ad-form">
+                            <div class="mb-3">
+                                <label class="form-label">Title *</label>
+                                <input type="text" class="form-control" id="title" required maxlength="200">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description *</label>
+                                <textarea class="form-control" id="description" required rows="5" minlength="10"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Category *</label>
+                                    <select class="form-select" id="category" required>
+                                        <option value="">Select Category</option>
+                                        <option value="real_estate">Real Estate</option>
+                                        <option value="jobs">Jobs</option>
+                                        <option value="services">Services</option>
+                                        <option value="vehicles">Vehicles</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="miscellaneous">Miscellaneous</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Price</label>
+                                    <input type="number" class="form-control" id="price" step="0.01" min="0">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Location *</label>
+                                <input type="text" class="form-control" id="location" required maxlength="200">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Contact Info</label>
+                                <input type="text" class="form-control" id="contact-info" maxlength="500">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tags (comma separated)</label>
+                                <input type="text" class="form-control" id="tags" maxlength="500">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Images</label>
+                                <input type="file" class="form-control" id="images" multiple accept="image/*">
+                                <small class="text-muted">Upload images for your ad (optional)</small>
+                            </div>
+                            <div id="create-ad-error" class="alert alert-danger d-none"></div>
+                            <button type="submit" class="btn btn-success">Create Ad</button>
+                            <a href="/ads" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/create-ad.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>

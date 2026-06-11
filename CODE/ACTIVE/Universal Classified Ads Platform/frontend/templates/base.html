@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Universal Classified Ads{% endblock %}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <!-- Analytics Scripts -->
+    <script src="{{ url_for('static', path='js/analytics.js') }}"></script>
+    <script>
+        // Configure analytics with API key from backend
+        const posthogKey = '{{ posthog_api_key }}';
+        if (posthogKey) {
+            window.analytics = new Analytics(posthogKey, {
+                host: '{{ posthog_host }}',
+                enabled: {{ 'true' if posthog_enabled else 'false' }},
+            });
+        }
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

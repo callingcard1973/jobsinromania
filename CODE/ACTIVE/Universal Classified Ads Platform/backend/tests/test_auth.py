@@ -12,7 +12,7 @@ from app.core.config import get_settings
 
 
 def test_password_hashing():
-    plain = "test_password_123"
+    plain = "test_pass_123"
     hashed = get_password_hash(plain)
     assert hashed != plain
     assert verify_password(plain, hashed)
@@ -20,7 +20,7 @@ def test_password_hashing():
 
 
 def test_password_hash_different():
-    plain = "same_password"
+    plain = "test_password"
     hash1 = get_password_hash(plain)
     hash2 = get_password_hash(plain)
     assert hash1 != hash2

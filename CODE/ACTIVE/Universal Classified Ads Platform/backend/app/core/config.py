@@ -1,11 +1,12 @@
 import os
 from typing import Optional
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import field_validator
 from functools import lru_cache
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", case_sensitive=False, extra="ignore")
     database_url: str = "sqlite:///./classified_ads.db"
     secret_key: str
     algorithm: str = "HS256"
@@ -14,6 +15,14 @@ class Settings(BaseSettings):
     upload_dir: str = "uploads"
     max_upload_size: int = 10485760
     allowed_image_types: str = "image/jpeg,image/png,image/webp"
+    posthog_api_key: str = ""
+    posthog_host: str = "https://us.posthog.com"
+    posthog_enabled: bool = True
+    stripe_secret_key: str = ""
+    stripe_publishable_key: str = ""
+    stripe_webhook_secret: str = ""
+    ad_publish_price_cents: int = 500
+    currency: str = "usd"
 
     @field_validator('secret_key')
     @classmethod
@@ -37,10 +46,6 @@ class Settings(BaseSettings):
         if v <= 0:
             raise ValueError("access_token_expire_minutes must be > 0")
         return v
-
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
 
 
 @lru_cache()

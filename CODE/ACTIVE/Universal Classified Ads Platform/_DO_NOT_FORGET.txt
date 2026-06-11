@@ -1,0 +1,22 @@
+=== DO NOT FORGET — Universal Classified Ads Platform ===
+Marked: 2026-06-11
+
+STATUS: Fixed + runnable. Was dead on arrival (2 startup crashes), now boots clean
+        and the full auth -> ad -> media flow is verified at runtime.
+
+READ THESE:
+  - verification_droid.txt  (this folder) — full inspection + fix report
+  - Daily handoff:
+    D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\HANDOFF DAILY\2026_06_11_CLASSIFIED_ADS_PLATFORM_FIXES.md
+
+OPEN TODO (non-blocking):
+  1. tests/ empty — add pytest suite (docs falsely claim 30+ passing)
+  2. approve/reject lack source-status guard
+  3. expires_at not enforced
+  4. Alembic vs create_all drift
+  5. no rate limiting on /login, /register
+  6. PROJECT_SUMMARY.md "production ready, 0 issues" is INACCURATE
+  7. PostHog OFF until real posthog_api_key in .env
+
+RUN:  cd backend ; python run.py   ->  http://localhost:8000  (/docs)
+=========================================================
