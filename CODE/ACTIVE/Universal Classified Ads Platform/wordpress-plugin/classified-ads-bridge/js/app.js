@@ -23,17 +23,35 @@
         if (typeof FB === 'undefined') { alert('Facebook SDK not loaded'); return; }
         FB.login(function (resp) {
             if (resp.authResponse) {
-                sendFbTokenToWP(resp.authResponse.accessToken);
+                sendToWP('cab_fb_login', { access_token: resp.authResponse.accessToken });
             } else {
                 alert('Facebook login cancelled');
             }
         }, { scope: 'email,public_profile' });
     }
 
-    async function sendFbTokenToWP(accessToken) {
+    // --- Native WP login/register ---
+    async function nativeLogin() {
+        await sendToWP('cab_native_login', {
+            email: document.getElementById('cab-email').value,
+            password: document.getElementById('cab-password').value,
+        });
+    }
+
+    async function nativeRegister() {
+        await sendToWP('cab_native_register', {
+            name: document.getElementById('cab-reg-name').value,
+            email: document.getElementById('cab-reg-email').value,
+            password: document.getElementById('cab-reg-password').value,
+        });
+    }
+
+    async function sendToWP(action, fields) {
+        const errDiv = document.getElementById('cab-auth-error');
+        errDiv.style.display = 'none';
         const fd = new FormData();
-        fd.append('action', 'cab_fb_login');
-        fd.append('access_token', accessToken);
+        fd.append('action', action);
+        for (const [k, v] of Object.entries(fields)) fd.append(k, v);
         try {
             const r = await fetch(cabConfig.ajaxUrl, { method: 'POST', body: fd });
             const data = await r.json();
@@ -41,10 +59,12 @@
                 localStorage.setItem(TOKEN_KEY, data.data.api_token);
                 location.reload();
             } else {
-                alert('Login failed: ' + (data.data || 'unknown'));
+                errDiv.textContent = data.data || 'Login failed';
+                errDiv.style.display = 'block';
             }
         } catch (e) {
-            alert('Login error: ' + e.message);
+            errDiv.textContent = 'Error: ' + e.message;
+            errDiv.style.display = 'block';
         }
     }
 
@@ -109,16 +129,41 @@
                 try { await apiUpload('/api/ads/' + ad.id + '/media', fd); } catch (e) { console.error('Upload failed', e); }
             }
 
-            // 3. Checkout (pay)
-            const checkout = await apiPost('/api/payments/ads/' + ad.id + '/checkout');
-            if (checkout.sandbox) {
-                // Sandbox: auto-confirm
-                await apiPost('/api/payments/sandbox/' + checkout.payment_id + '/confirm');
-                alert('Payment received! Your ad is now in review and will be published once approved.');
-                location.href = cabConfig.homeUrl + '/my-ads/?paid=1';
+            // 3. Checkout (pay) — skip if no Stripe and sandbox available
+            if (cabConfig.stripePk || cabConfig.priceCents === 0) {
+                // Free mode or Stripe configured
+                if (cabConfig.priceCents === 0) {
+                    // Free: submit directly (skip payment)
+                    try { await apiPost('/api/ads/' + ad.id + '/submit'); } catch (e) { console.error('Submit failed', e); }
+                    alert('Your ad has been submitted for review!');
+                    location.href = cabConfig.homeUrl + '/my-ads/';
+                } else {
+                    const checkout = await apiPost('/api/payments/ads/' + ad.id + '/checkout');
+                    if (checkout.sandbox) {
+                        await apiPost('/api/payments/sandbox/' + checkout.payment_id + '/confirm');
+                        alert('Payment received! Your ad is now in review and will be published once approved.');
+                        location.href = cabConfig.homeUrl + '/my-ads/?paid=1';
+                    } else {
+                        location.href = checkout.checkout_url;
+                    }
+                }
             } else {
-                // Real Stripe: redirect to hosted checkout
-                location.href = checkout.checkout_url;
+                // No Stripe: try sandbox checkout
+                try {
+                    const checkout = await apiPost('/api/payments/ads/' + ad.id + '/checkout');
+                    if (checkout.sandbox) {
+                        await apiPost('/api/payments/sandbox/' + checkout.payment_id + '/confirm');
+                        alert('Payment confirmed (sandbox). Your ad is in review.');
+                        location.href = cabConfig.homeUrl + '/my-ads/?paid=1';
+                    } else {
+                        location.href = checkout.checkout_url;
+                    }
+                } catch (e) {
+                    // If checkout fails, just submit for review
+                    try { await apiPost('/api/ads/' + ad.id + '/submit'); } catch (e2) {}
+                    alert('Ad created! Submitted for review.');
+                    location.href = cabConfig.homeUrl + '/my-ads/';
+                }
             }
         } catch (error) {
             errDiv.textContent = error.message;
@@ -163,6 +208,26 @@
         // FB SDK init after loaded
         if (typeof FB !== 'undefined') initFB();
         else window.fbAsyncInit = initFB;
+
+        // Native auth
+        const loginBtn = document.getElementById('cab-login-btn');
+        if (loginBtn) loginBtn.addEventListener('click', nativeLogin);
+        const regBtn = document.getElementById('cab-register-btn');
+        if (regBtn) regBtn.addEventListener('click', nativeRegister);
+
+        // Toggle login/register forms
+        const showReg = document.getElementById('cab-show-register');
+        if (showReg) showReg.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('cab-login-form').style.display = 'none';
+            document.getElementById('cab-register-form').style.display = 'block';
+        });
+        const showLogin = document.getElementById('cab-show-login');
+        if (showLogin) showLogin.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('cab-register-form').style.display = 'none';
+            document.getElementById('cab-login-form').style.display = 'block';
+        });
 
         // Ad form
         const form = document.getElementById('cab-ad-form');

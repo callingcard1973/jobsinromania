@@ -132,19 +132,106 @@ function cab_ajax_fb_login() {
     ]);
 }
 
+// --- AJAX: WP native register/login → FastAPI account ---
+add_action('wp_ajax_nopriv_cab_native_register', 'cab_ajax_native_register');
+add_action('wp_ajax_cab_native_register', 'cab_ajax_native_register');
+
+function cab_ajax_native_register() {
+    $name = sanitize_text_field($_POST['name'] ?? '');
+    $email = sanitize_email($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    if (!$name || !$email || !$password) wp_send_json_error('All fields required');
+
+    if (get_user_by('email', $email)) wp_send_json_error('Email already registered');
+
+    $user_id = wp_create_user($email, $password, $email);
+    if (is_wp_error($user_id)) wp_send_json_error($user_id->get_error_message());
+    wp_update_user(['ID' => $user_id, 'display_name' => $name, 'nickname' => $name]);
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id, true);
+
+    // Also register on FastAPI backend
+    $api_url = rtrim(get_option('cab_api_url', ''), '/');
+    $api_token = '';
+    if ($api_url) {
+        wp_remote_post("$api_url/api/auth/register", [
+            'timeout' => 10,
+            'headers' => ['Content-Type' => 'application/json'],
+            'body' => json_encode(['name' => $name, 'email' => $email, 'password' => $password]),
+        ]);
+        $login_resp = wp_remote_post("$api_url/api/auth/login", [
+            'timeout' => 10,
+            'body' => ['username' => $email, 'password' => $password],
+        ]);
+        if (!is_wp_error($login_resp)) {
+            $body = json_decode(wp_remote_retrieve_body($login_resp), true);
+            $api_token = $body['access_token'] ?? '';
+        }
+    }
+
+    wp_send_json_success(['user_id' => $user_id, 'name' => $name, 'email' => $email, 'api_token' => $api_token]);
+}
+
+add_action('wp_ajax_nopriv_cab_native_login', 'cab_ajax_native_login');
+add_action('wp_ajax_cab_native_login', 'cab_ajax_native_login');
+
+function cab_ajax_native_login() {
+    $email = sanitize_email($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    if (!$email || !$password) wp_send_json_error('Email and password required');
+
+    $user = wp_authenticate($email, $password);
+    if (is_wp_error($user)) wp_send_json_error('Invalid credentials');
+    wp_set_current_user($user->ID);
+    wp_set_auth_cookie($user->ID, true);
+
+    // Login on FastAPI backend
+    $api_url = rtrim(get_option('cab_api_url', ''), '/');
+    $api_token = '';
+    if ($api_url) {
+        $login_resp = wp_remote_post("$api_url/api/auth/login", [
+            'timeout' => 10,
+            'body' => ['username' => $email, 'password' => $password],
+        ]);
+        if (!is_wp_error($login_resp)) {
+            $body = json_decode(wp_remote_retrieve_body($login_resp), true);
+            $api_token = $body['access_token'] ?? '';
+        }
+    }
+
+    wp_send_json_success(['user_id' => $user->ID, 'name' => $user->display_name, 'email' => $email, 'api_token' => $api_token]);
+}
+
 // --- Shortcode: [classified_ads_form] ---
 add_shortcode('classified_ads_form', 'cab_render_post_form');
 
 function cab_render_post_form() {
     if (!is_user_logged_in()) {
         $fb_app_id = get_option('cab_fb_app_id', '');
-        return '<div class="cab-login">
-            <h3>Post your ad</h3>
-            <p>Login with Facebook to get started:</p>
-            <button id="cab-fb-login-btn" class="button button-primary" style="font-size:16px;padding:10px 24px">
-                <span style="margin-right:8px">📘</span> Login with Facebook
-            </button>
-        </div>';
+        $html = '<div class="cab-auth" style="max-width:420px;margin:20px auto">';
+        $html .= '<h3>Post your ad</h3>';
+        if ($fb_app_id) {
+            $html .= '<button id="cab-fb-login-btn" class="button button-primary" style="font-size:16px;padding:10px 24px;width:100%;margin-bottom:12px"><span style="margin-right:8px">📘</span> Login with Facebook</button>';
+            $html .= '<hr style="margin:16px 0"><p style="text-align:center;color:#888">or</p>';
+        }
+        $html .= '<div id="cab-native-auth">';
+        $html .= '<div id="cab-login-form">';
+        $html .= '<p><label><strong>Email</strong></label><br><input type="email" id="cab-email" required class="regular-text" style="width:100%"></p>';
+        $html .= '<p><label><strong>Password</strong></label><br><input type="password" id="cab-password" required class="regular-text" style="width:100%"></p>';
+        $html .= '<button id="cab-login-btn" class="button button-primary" style="width:100%">Login</button>';
+        $html .= '<p style="text-align:center;margin-top:8px"><a href="#" id="cab-show-register">Create account</a></p>';
+        $html .= '</div>';
+        $html .= '<div id="cab-register-form" style="display:none">';
+        $html .= '<p><label><strong>Name</strong></label><br><input type="text" id="cab-reg-name" required class="regular-text" style="width:100%"></p>';
+        $html .= '<p><label><strong>Email</strong></label><br><input type="email" id="cab-reg-email" required class="regular-text" style="width:100%"></p>';
+        $html .= '<p><label><strong>Password</strong></label><br><input type="password" id="cab-reg-password" required minlength="6" class="regular-text" style="width:100%"></p>';
+        $html .= '<button id="cab-register-btn" class="button button-primary" style="width:100%">Create Account & Login</button>';
+        $html .= '<p style="text-align:center;margin-top:8px"><a href="#" id="cab-show-login">Already have account? Login</a></p>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '<div id="cab-auth-error" class="notice notice-error" style="display:none;margin-top:8px"></div>';
+        $html .= '</div>';
+        return $html;
     }
 
     ob_start();
@@ -162,7 +249,7 @@ function cab_render_post_form() {
             <p><label><strong>Contact Info</strong></label><br><input type="text" id="cab-contact" maxlength="500" class="regular-text" style="width:100%"></p>
             <p><label><strong>Images</strong></label><br><input type="file" id="cab-images" multiple accept="image/*"></p>
             <div id="cab-error" class="notice notice-error" style="display:none"></div>
-            <p><button type="submit" class="button button-primary button-hero">Pay &amp; Post Ad</button></p>
+            <p><button type="submit" class="button button-primary button-hero">Post Ad</button></p>
         </form>
     </div>
     <?php
