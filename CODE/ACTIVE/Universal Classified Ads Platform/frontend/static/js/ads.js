@@ -1,3 +1,15 @@
+async function populateCategoryFilter() {
+    const select = document.getElementById('category-filter');
+    if (!select) return;
+    try {
+        const categories = await API.getCategories();
+        select.innerHTML = '<option value="">All Categories</option>' +
+            categories.map(c => `<option value="${c.slug}">${escapeHtml(c.name)}</option>`).join('');
+    } catch (error) {
+        console.error('Failed to load categories:', error);
+    }
+}
+
 async function loadAds() {
     const container = document.getElementById('ads-container');
     if (!container) return;
@@ -47,4 +59,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-document.addEventListener('DOMContentLoaded', loadAds);
+document.addEventListener('DOMContentLoaded', () => {
+    populateCategoryFilter();
+    loadAds();
+});

@@ -7,11 +7,19 @@ async function updateAuthNav() {
     if (token) {
         try {
             const user = await API.getCurrentUser();
-            authNav.innerHTML = `
+            let links = `
                 <span class="navbar-text me-3">Hello, ${user.name}</span>
-                <a class="nav-link" href="/ads">My Ads</a>
-                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                <a class="nav-link" href="/my-ads">My Ads</a>
+                <a class="nav-link" href="/create-ad">Post Ad</a>
             `;
+            if (user.role === 'moderator' || user.role === 'admin') {
+                links += `<a class="nav-link" href="/moderation">Moderation</a>`;
+            }
+            if (user.role === 'admin') {
+                links += `<a class="nav-link" href="/admin">Admin</a>`;
+            }
+            links += `<a class="nav-link" href="#" onclick="logout()">Logout</a>`;
+            authNav.innerHTML = links;
         } catch (error) {
             localStorage.removeItem('token');
             authNav.innerHTML = `

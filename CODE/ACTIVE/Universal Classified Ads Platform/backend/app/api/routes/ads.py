@@ -73,7 +73,7 @@ async def list_ads(
                 status_code=403,
                 detail="Only moderators/admins can view non-published ads"
             )
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
         query = query.filter(or_(Ad.expires_at == None, Ad.expires_at > now))
 
     if status:
@@ -139,7 +139,7 @@ async def get_ad(
 
     if (
         ad.expires_at is not None
-        and ad.expires_at <= datetime.now(timezone.utc)
+        and ad.expires_at <= datetime.utcnow()
         and not is_owner_or_mod
     ):
         raise HTTPException(

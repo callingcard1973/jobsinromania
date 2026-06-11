@@ -94,6 +94,36 @@ async def create_ad_page(request: Request):
     return templates.TemplateResponse("create-ad.html", {"request": request})
 
 
+@app.get("/ads/{ad_id}", response_class=HTMLResponse)
+async def ad_detail_page(request: Request, ad_id: int):
+    Analytics.track_user_action("anonymous", "page_view", {"page": "ad_detail"})
+    return templates.TemplateResponse("ad-detail.html", {"request": request})
+
+
+@app.get("/my-ads", response_class=HTMLResponse)
+async def my_ads_page(request: Request):
+    Analytics.track_user_action("anonymous", "page_view", {"page": "my_ads"})
+    return templates.TemplateResponse("my-ads.html", {"request": request})
+
+
+@app.get("/moderation", response_class=HTMLResponse)
+async def moderation_page(request: Request):
+    Analytics.track_user_action("anonymous", "page_view", {"page": "moderation"})
+    return templates.TemplateResponse("moderation.html", {"request": request})
+
+
+@app.get("/admin", response_class=HTMLResponse)
+async def admin_page(request: Request):
+    Analytics.track_user_action("anonymous", "page_view", {"page": "admin"})
+    return templates.TemplateResponse("admin.html", {"request": request})
+
+
+@app.get("/checkout/sandbox", response_class=HTMLResponse)
+async def checkout_sandbox_page(request: Request):
+    Analytics.track_user_action("anonymous", "page_view", {"page": "checkout_sandbox"})
+    return templates.TemplateResponse("checkout-sandbox.html", {"request": request})
+
+
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
