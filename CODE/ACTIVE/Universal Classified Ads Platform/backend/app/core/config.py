@@ -23,6 +23,12 @@ class Settings(BaseSettings):
     stripe_webhook_secret: str = ""
     ad_publish_price_cents: int = 500
     currency: str = "usd"
+    # WordPress integration — push published ads as WP posts
+    wp_site_url: str = ""  # e.g. https://interjob.ro
+    wp_user: str = ""
+    wp_app_password: str = ""
+    wp_enabled: bool = False
+    wp_default_category_id: int = 0  # WP term ID for "Classifieds"
 
     @field_validator('secret_key')
     @classmethod

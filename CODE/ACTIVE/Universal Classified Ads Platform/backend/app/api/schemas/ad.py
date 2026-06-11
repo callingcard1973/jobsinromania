@@ -48,6 +48,8 @@ class AdResponse(AdBase):
     rejection_reason: Optional[str] = None
     created_at: datetime
     updated_at: Optional[datetime] = None
+    wp_post_id: Optional[int] = None
+    wp_post_url: Optional[str] = None
 
     class Config:
         from_attributes = True

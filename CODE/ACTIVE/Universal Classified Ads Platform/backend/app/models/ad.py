@@ -23,6 +23,8 @@ class Ad(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now(), index=True)
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     expires_at = Column(DateTime(timezone=True), nullable=True)
+    wp_post_id = Column(Integer, nullable=True)
+    wp_post_url = Column(String(500), nullable=True)
 
     user = relationship("User", back_populates="ads")
     media = relationship("AdMedia", back_populates="ad", cascade="all, delete-orphan")

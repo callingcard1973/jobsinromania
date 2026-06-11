@@ -310,6 +310,24 @@ async def publish_ad(
     ad.status = AdStatus.PUBLISHED
     db.commit()
     db.refresh(ad)
+
+    # Push to WordPress if configured
+    try:
+        from ...services.wordpress import push_ad_to_wp
+        media_urls = []
+        for m in (ad.media or []):
+            url = m.url if hasattr(m, 'url') else (m.file_path if hasattr(m, 'file_path') else None)
+            if url:
+                media_urls.append(url)
+        wp_result = push_ad_to_wp(ad, media_urls)
+        if wp_result:
+            ad.wp_post_id = wp_result.get("id")
+            ad.wp_post_url = wp_result.get("link")
+            db.commit()
+            db.refresh(ad)
+    except Exception:
+        pass  # WP push failure must not block publish
+
     return ad
 
 
