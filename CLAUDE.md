@@ -1,6 +1,29 @@
 # CLAUDE.md — D:\MEMORY
 
-**v1.6.9 | 2026-06-08**
+**v1.6.9 | 2026-06-08** · Strategic Directive added 2026-06-11
+
+---
+
+## STRATEGIC DIRECTIVE — AgroEvolution / InterJob / FarmWorkers (2026-06-11)
+
+You are not merely a software development assistant. Mission: continuously analyze, improve and expand the AgroEvolution + InterJob + FarmWorkers ecosystem to maximize (1) traffic, (2) lead generation, (3) revenue, (4) market intelligence, (5) operational efficiency, (6) long-term competitive advantage.
+
+**Core principle — do not think like a programmer. Think like CTO + Product Manager + Business Analyst + SEO Expert + Data Scientist + Marketplace Operator.** Every feature, page, table, scraper and API is evaluated by business value.
+
+**Analyze continuously.** For each component ask: what value does it create, who benefits, can it drive traffic / leads / revenue, can it improve data quality or market intelligence? Flag low-value components; propose higher-value alternatives.
+
+**Hunt for opportunities:**
+- Data: government / open-agri / employment / insolvency / land-transaction / cooperative / production / grant-subsidy datasets. Evaluate integration; propose plans.
+- Revenue: premium listings, lead-gen, recruitment, agri consultancy, land brokerage, investor access, market reports, cooperative services, data subscriptions, advertising. Estimate effort vs return.
+- SEO: per dataset, generate landing / county / municipality / job / land / market-report / seasonal / industry pages. Find missing high-traffic pages; prioritize auto-generated ones.
+- Automation: scraping, cleaning, classification, dedup, report generation, social posting, email alerts, lead routing. Always suggest automation before manual work.
+- Competitive edge: what can AgroEvolution know that competitors cannot — land liquidity by county, agri-insolvency trends, labor shortages, regional investment, farm-expansion activity, market signals. Propose data products rivals are unlikely to have.
+
+**Cooperative perspective:** also weigh member outcomes — better prices, market access, recruitment, land acquisition, operational visibility.
+
+**Decision framework (answer before proposing any feature):** 1) problem solved? 2) who benefits? 3) revenue impact? 4) traffic impact? 5) data-quality impact? 6) implementation difficulty? 7) simpler solution? Rank recommendations by impact, cost, time-to-implement. Highest ROI first.
+
+**Tech standards:** prefer PostgreSQL, PostGIS, FastAPI, Next.js, Redis, Playwright. Avoid unnecessary complexity; maintainable over fashionable.
 
 ---
 
@@ -25,7 +48,7 @@ Persistent context for every project lives in 5 ABOUT folders at this root. Read
 - `ABOUT TUDOR/` — persona, communication style, decision framework, legal cases, infrastructure context
 - `ABOUT RASPIBIG/` — 192.168.100.21 production hub: services, crons, coding rules, what not to do
 - `ABOUT RASPI/` — 192.168.100.20 scraper node
-- `ABOUT A2 HOSTING/` — 30 domains, cPanel-only quirks, deploy patterns, domain list
+- `ABOUT A2 HOSTING/` — 34 domains, cPanel-only quirks, deploy patterns, domain list
 - `ABOUT BUSINESSES/` — InterJob, FarmWorkers, AgroEvolution, ExpatsInRomania
 
 These are the single source of truth. Do NOT duplicate them inside individual project folders.
@@ -61,7 +84,7 @@ v1.6.7 additions (2026-06-04):
 v1.6.6 additions:
 - Cleanup completed: Removed 20+ unnecessary root files/dirs
 - Final structure: 6 root items (CODE, BUSINESS, DATA, PERSONAL, .claude, .gitignore)
-- PERSONAL detailed: LUCIU (10.322 RON), BILIE (3.250 EUR), ASOC PROP (9510), HEALTH
+- PERSONAL detailed: LUCIU (contract arrears), BILIE (rent arrears), ASOC PROP (housing case), HEALTH
 
 ---
 
@@ -73,7 +96,7 @@ v1.6.6 additions:
 | WSL2 Debian | 172.21.138.13 | PostgreSQL 15.15, Ollama |
 | raspibig | 192.168.100.21 | FastAPI:8000, N8N, campaigns, email |
 | raspi | 192.168.100.20 | Scrapers, ProtonVPN |
-| A2 Hosting | nl1-cl8-ats1.a2hosting.com | 30 domains (cPanel only) |
+| A2 Hosting | nl1-cl8-ats1.a2hosting.com | 34 domains (cPanel only) |
 
 **DB:** PostgreSQL **15.15** (Debian; verified 2026-06-07 — NOT 17/18), interjob_master | **cPanel:** loaiidil | `K9ATCMHPKVSKUV2M97447JLY45EH29KQ` ✅ verified live 2026-06-07 (200 AUTH OK; old MK0W… token dead) | **PG pass:** in `~/.pgpass` (chmod 600 — psql wasn't auto-reading it)
 
@@ -90,7 +113,7 @@ v1.6.6 additions:
 - `SKILLS/` — 640 Python skills (agents, scrapers, infrastructure); sync via `sync_skills.ps1` on-demand
 - `CAMPAIGNS/` — Brevo email (1,560→2,560/day)
 - `WEB/` — Dashboard, feeds, employer pages
-- `INFRA/` — AUTOMATE (queue_worker, email_poller), WEBPAGES (30 domains), FASTAPI (Job Publishing Pipeline: SEO→Deploy→WP→Social→Meta)
+- `INFRA/` — AUTOMATE (queue_worker, email_poller), WEBPAGES (34 domains), FASTAPI (cifn.eu company API + InterJob SEO/social API stub, Tasks 8-9, 22 tests; raspibig:8000 serves a generic health/status stub — NOT a job-publishing pipeline)
 
 **BUSINESS/ACTIVE/ (High-frequency):**
 - `AGROEVOLUTION.COM/` — 9,658 land listings
@@ -116,7 +139,7 @@ v1.6.6 additions:
 - `DATA/ARCHIVE/OLD/` — HAMBARUL ROMANESC, restaurant data, old projects
 
 **PERSONAL:**
-- LUCIU (contract arrears 10.322 RON, evidence), BILIE (rent arrears 3.250 EUR, executor campaign), ASOC PROP (housing association case 9510, Dorombach abuses), HEALTH (gout research)
+- LUCIU (contract arrears, evidence), BILIE (rent arrears, executor campaign), ASOC PROP (housing association case, abuses), HEALTH (gout research)
 
 ---
 
@@ -178,7 +201,7 @@ Result: Automatic execution without user interaction, persistent connection reus
 4. Note knowledge cutoff (Feb 2025)
 5. Don't attribute quotes without certainty
 
-**CRITICAL:** Legal cases (LUCIU 10.322 RON, BILIE 3.250 EUR, ASOC PROP 9510) — source every claim.
+**CRITICAL:** Legal cases (LUCIU, BILIE, ASOC PROP) — source every claim. Amounts and case numbers stay in PERSONAL/ internal files only — never in this GitHub-synced doc.
 
 ---
 
@@ -257,6 +280,6 @@ TELEGRAM_CHAT_ID = "-1003830000766"
 ## Next Maintenance (2026-06-28)
 
 - Weekly SSL check (nepalezi.com auto-renewal)
-- Monthly full audit (30 domains)
+- Monthly full audit (34 domains)
 - Monitor EURES metrics pipeline
 - Test cache effectiveness (post-warmup TTFB)

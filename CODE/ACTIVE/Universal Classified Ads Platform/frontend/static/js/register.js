@@ -15,6 +15,9 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
 
     try {
         await API.register(name, email, password);
+        if (window.analytics) {
+            window.analytics.identify(email, { email, name, source: 'register' });
+        }
         window.location.href = '/login';
     } catch (error) {
         errorDiv.textContent = error.message;

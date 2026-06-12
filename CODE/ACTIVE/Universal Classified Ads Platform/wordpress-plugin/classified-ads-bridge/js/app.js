@@ -46,6 +46,11 @@
         });
     }
 
+    // Record login method so the PostHog mu-plugin can tag the identified user on reload.
+    function markLoginMethod(method) {
+        document.cookie = 'cab_login_method=' + method + ';path=/;max-age=120;SameSite=Lax';
+    }
+
     async function sendToWP(action, fields) {
         const errDiv = document.getElementById('cab-auth-error');
         errDiv.style.display = 'none';
@@ -57,6 +62,8 @@
             const data = await r.json();
             if (data.success && data.data.api_token) {
                 localStorage.setItem(TOKEN_KEY, data.data.api_token);
+                markLoginMethod(action === 'cab_fb_login' ? 'facebook'
+                    : action === 'cab_native_register' ? 'native_register' : 'native');
                 location.reload();
             } else {
                 errDiv.textContent = data.data || 'Login failed';

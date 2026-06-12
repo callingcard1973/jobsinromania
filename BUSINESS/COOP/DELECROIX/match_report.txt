@@ -1,7 +1,0 @@
-MATCH REPORT
-Distributors: 1185
-Matched DDG: 3 (email: 3)
-Matched Harvested: 0
-Matched Romania Agri: 0 (email: 0)
-Total matched: 3
-STILL MISSING: 1182

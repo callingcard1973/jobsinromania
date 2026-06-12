@@ -44,3 +44,23 @@ Thumbs.db
 
 # Keep generated HTML pages (rebuild daily, commit to git for GitHub Pages)
 # /docs/ — tracked in git
+
+# === Repo-health additions (2026-06-12) — keep large/data/binary out of git ===
+node_modules/
+.venv/
+.aider*
+*.parquet
+*.zip
+*.wav
+*.aup3
+*.m4a
+*.mp4
+*.xlsx
+# Large data dumps (regenerable via scrapers)
+DATA/OPENTENDER/
+CODE/INFRA/CLAUDE/OPT/SANDBOX/EU_SUPPLIERS/
+# Personal/large local-only folders (keep on disk, never in git)
+BUSINESS/IDEAS/CASA BUZAU/CASABUZAU/SAFE/
+EXPORTS/
+UPLOADS/
+SCRATCH/

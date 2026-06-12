@@ -3,24 +3,27 @@
 
 from fastapi import APIRouter, status
 
+__version__ = "1.0.0"
+SERVICE_NAME = "fastapi-raspibig"
+
 router = APIRouter(prefix="/api", tags=["health"])
 
 
 @router.get("/health", status_code=status.HTTP_200_OK)
 def health_check():
-    """Health check endpoint."""
+    """Check service availability."""
     return {
         "status": "healthy",
-        "service": "fastapi-raspibig",
-        "version": "1.0.0"
+        "service": SERVICE_NAME,
+        "version": __version__
     }
 
 
 @router.get("/status")
 def service_status():
-    """Service status and info."""
+    """Current service state."""
     return {
-        "service": "raspibig-api",
-        "version": "1.0.0",
+        "service": SERVICE_NAME,
+        "version": __version__,
         "status": "running"
     }

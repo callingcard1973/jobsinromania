@@ -7,6 +7,13 @@ async function updateAuthNav() {
     if (token) {
         try {
             const user = await API.getCurrentUser();
+            if (window.analytics) {
+                window.analytics.identify(user.id || user.email, {
+                    email: user.email,
+                    name: user.name,
+                    role: user.role,
+                });
+            }
             let links = `
                 <span class="navbar-text me-3">Hello, ${user.name}</span>
                 <a class="nav-link" href="/my-ads">My Ads</a>
@@ -37,6 +44,7 @@ async function updateAuthNav() {
 
 function logout() {
     localStorage.removeItem('token');
+    if (window.analytics) window.analytics.reset();
     window.location.href = '/';
 }
 

@@ -220,7 +220,7 @@ async def approve_ad(
     if ad.status != AdStatus.PENDING_REVIEW:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Only ads pending review can be approved"
+            detail=f"Ad must be in 'pending_review' to approve (current: {ad.status})"
         )
 
     ad.status = AdStatus.APPROVED
@@ -247,7 +247,7 @@ async def reject_ad(
     if ad.status != AdStatus.PENDING_REVIEW:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Only ads pending review can be rejected"
+            detail=f"Ad must be in 'pending_review' to reject (current: {ad.status})"
         )
 
     ad.status = AdStatus.REJECTED
