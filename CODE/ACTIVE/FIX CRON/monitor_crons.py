@@ -213,9 +213,27 @@ def send_daily_digest():
     send_email("Daily Cron Report", digest, is_alert=False)
     send_telegram(f"📊 Daily Cron Digest:\n\n{digest[:500]}...")
 
+def send_verify_report():
+    """Send full cron status to Telegram (--verify flag)."""
+    all_crons = get_all_crons()
+    results = {n: check_cron_status(n, i.get("schedule", "")) for n, i in all_crons.items()}
+    ok = sum(1 for v in results.values() if v)
+    fail = [n for n, v in results.items() if not v]
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M")
+    parts = ["Cron Verify " + ts + " UTC", str(ok) + "/" + str(len(results)) + " passing"]
+    if fail:
+        parts.append("FAILED: " + ", ".join(fail))
+    else:
+        parts.append("All crons OK")
+    msg = chr(10).join(parts)
+    send_telegram(msg)
+    print(msg)
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "--daily-digest":
         send_daily_digest()
+    elif len(sys.argv) > 1 and sys.argv[1] == "--verify":
+        send_verify_report()
     else:
         success = monitor_crons()
         sys.exit(0 if success else 1)
