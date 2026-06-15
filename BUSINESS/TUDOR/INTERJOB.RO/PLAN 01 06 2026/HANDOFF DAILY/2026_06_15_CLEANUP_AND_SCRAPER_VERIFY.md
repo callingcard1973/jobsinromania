@@ -70,6 +70,13 @@ Also: that handoff claimed "FastAPI `GET /api/jobs` → empty". **Live re-test: 
 - **Land drain gap** → `terenuri_listings = 0`, `madr_terenuri = 10129`, `harghita_lmv = 10268`. ✅ confirmed. (`drain_terenuri.py` now in `CODE/`, ready to run.)
 - **LLM queue infra deployed** → `enqueue.py` + `queue_worker.py` present on raspibig, `llm_queue` table has rows. ✅ confirmed.
 
+### FIX DETAIL — Email classifier wiring (2026-06-15 14:25)
+- `rule_labeler.py` defers ambiguous emails "for Claude" but has **0 references** to agent 05 → 6,219 stuck at `intent='other'` (mostly bounces + Brevo confirmations, not lost leads).
+- Agent 05 standalone: ✅ `ORDER, 5 workers, HIGH urgency` (correct, uses free NVIDIA/OpenRouter chain — no Claude).
+- New: `/opt/ACTIVE/AGENTS/drain_email_backlog.py` (local mirror `CODE/`). Reads `other`-intent rows from `/opt/ACTIVE/EMAIL/PROCESSORS/data/training_data/labels.db`, classifies via `agent.classify_single()`, maps CAT→intent (`ORDER/QUESTION→inquiry`, `BOUNCE→bounce`, etc.), writes back `model='agent05-llm'` + full JSON in `claude_response`.
+- Cron: `0 3 * * * cd /opt/ACTIVE/AGENTS && python3 drain_email_backlog.py --limit 200 --delay 0.4`. Log: `/opt/ACTIVE/INFRA/LOGS/drain_email_backlog.log`. Crontab backed up.
+- Proven live: 10 emails, backlog 6219→6209. ~30 nights to clear at 200/night.
+
 ### FIX DETAIL — Gmail/senders (2026-06-15 14:08)
 - Crontab backed up: `/home/tudor/crontab.bak.20260615_140647`
 - `followup_sender.py:22`: `SMTP_PASS = (os.environ.get("FOLLOWUP_SMTP_PASS") or os.environ.get("GMAIL_APP_PASSWORD"))`
@@ -80,13 +87,15 @@ Also: that handoff claimed "FastAPI `GET /api/jobs` → empty". **Live re-test: 
 
 ---
 
-## NEXT STEPS (updated 2026-06-15 14:08)
+## NEXT STEPS (updated 2026-06-15 14:40)
 
-1. ~~**Reset Gmail app password**~~ **✅ DONE (was a wiring bug, not a password issue).**
+1. ~~**Reset Gmail app password**~~ **✅ DONE 14:08 (was a wiring bug, not a password issue).**
 2. ~~**daily_roundup no-op**~~ **CANCELLED — not broken.** Replaced by: regenerate 3 dead FB page tokens (Meta re-auth).
-3. **Ship unified pipeline as cron flow** (the real June goal) — reuse build_pages.py + social gen + wordpress_publisher.
-4. **Land drain** — run `CODE/drain_terenuri.py` to populate `terenuri_listings` (20K raw → sellable inventory). Highest moat. **← NEXT**
-5. Rewire `email_pipeline` cron LLM (drop dead Ollama `localhost:11434` URL → use `llm_client.py`).
+3. ~~**Rewire email_pipeline LLM**~~ **✅ DONE 14:37 — was already rewired (misreported).** Removed vestigial `LLM_URL`/`LLM_MODEL` dead lines (`localhost:1234`, `qwen2.5-coder-1.5b`). Live test: `LLM: ready`, `USES_CHAIN: llm_client`. No laptop/Ollama/LM Studio anywhere (`.env` clean, only `nvidia,openrouter`).
+4. ~~**Email classifier not wired**~~ **✅ DONE 14:25.** Agent 05 worked standalone but `rule_labeler.py` never called it (0 refs) — 6,219 emails stuck at `intent='other'`. Built `CODE/drain_email_backlog.py` (bridges agent 05 → `labels.db`, free-tier chain, nightly cron `0 3 * * *`). Proven live: 10 classified+written, backlog 6219→6209. Cron drains 200/night.
+5. **Ship unified pipeline as cron flow** (the real June goal) — reuse build_pages.py + social gen + wordpress_publisher.
+6. **Land drain** — run `CODE/drain_terenuri.py` to populate `terenuri_listings` (20K raw → sellable inventory). Highest moat. **← NEXT**
+7. Regenerate 3 dead FB page tokens (Meta re-auth).
 
 ---
 
