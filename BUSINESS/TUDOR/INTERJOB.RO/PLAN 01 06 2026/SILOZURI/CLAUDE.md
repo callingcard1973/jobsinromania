@@ -31,7 +31,30 @@
 
 ---
 
-## DATA SCHEMA
+## CURRENT STATE (remediated 2026-06-14)
+
+`DATA/MASTER.csv` = **13,287 unique entities** (4 sources merged: MADR/NEW, CEREAL, SILO, RECALL). See memory `silozuri_remediation_2026_06_14.md` and `HANDOFF_2026_06_14.md` for the full audit.
+
+**Live schema (14 cols):**
+```csv
+auth_code, name, phone, email, county, city, cui, caen, capacity_total_t, capacity_grains_t, capacity_oilseeds_t, _source, _quality_tier, _issues
+```
+- `auth_code` = MADR silo license code (true facility key; do NOT merge distinct auth_codes)
+- `capacity_total_t / grains_t / oilseeds_t` = storage tonnes (E/F/G in raw MADR)
+- `_quality_tier`: TIER_1 (CUI+contact) 808 · TIER_2 (CUI only) 7,664 · TIER_3 (contact only) 2,294 · TIER_4 2,521
+- Coverage: CUI 63.8% · county 80.7% · city 65.3% · phone 22.4% · email 6.1%. 48 rows flagged `BAD_CAPACITY`.
+
+**Pipeline (reproducible):**
+- `remediate_master.py` — backfill CUI/county from ANAF `od_firme.csv`, rename cols, rebuild tiers, dedup
+- `analyze_master.py` — read-only QA report (matches live schema)
+- `DATA/MASTER_TIER1_READY_TO_CALL.csv` — 808 ready-to-call rows
+- Backup: `ARCHIVE/MASTER_pre_remediation_*.csv`
+
+⚠️ Original handoff "100% CUI / 4,098 TIER_1" claims were FALSE — corrected above.
+
+---
+
+## TARGET SCHEMA (aspirational — for future enrichment)
 
 ```csv
 silo_id, name, county, city, address, phone, email, manager_name, manager_phone, manager_email, 
