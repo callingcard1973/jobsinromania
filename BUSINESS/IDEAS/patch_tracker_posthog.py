@@ -6,7 +6,7 @@ if "POSTHOG_KEY" not in content:
     new_imports = """import psycopg2
 import requests as _req
 
-POSTHOG_KEY = "phx_ZKBT7BuYJ2UQZZVJN62uqp95U5nrYZK79auQzCxc7Ad7n64i"
+POSTHOG_KEY = "POSTHOG_KEY_REDACTED"
 POSTHOG_PROJECT = "377581"
 
 def _ph_event(event, props):

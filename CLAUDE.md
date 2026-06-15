@@ -65,6 +65,8 @@ These are the single source of truth. Do NOT duplicate them inside individual pr
 
 **See STATE.md for live infrastructure status, queue metrics, and scraper state.**
 
+**2026-06-12 ~17:45 session:** (1) Llama-server restart-loop fixed (model path /mnt/hdd). (2) Cron monitor rewritten (36→0 failures). (3) 40-cron audit complete (terenuri_regenerate, log paths). (4) FastAPI Step 2 deployed: systemd service active, routes (jobs/companies/applications/candidates) live, **internal-only on localhost:8000** (Caddy public proxy removed per user request). Load 14.5→6.4, swap 6.3→2.9GB. Memories: `raspibig_fix_session_2026_06_12_afternoon.md`, `fastapi_step2_deployment_2026_06_12.md`. (5) Email orchestrator ✅ LIVE: supervisor_email_orchestrator.py (PID 536857) fixed config path resolution. 10 active campaigns + PRIMARII + FACTORY_RO. Daily sends 312 (BG_INDUSTRIAL 181). 6h cron. Config mapping reference at MEMORY.md.
+
 **v1.6.10 additions (2026-06-08 02:51 UTC):**
 - **Skills Unification:** All 3 machines unified to 640 Python skills (laptop → raspibig → raspi via on-demand sync)
 - **Cron Monitoring:** 30+ active crons monitored every 30 min via monitor_crons.py; alerts via email + Telegram + daily digest
@@ -73,9 +75,9 @@ These are the single source of truth. Do NOT duplicate them inside individual pr
 - **All Tests Passing:** Skills sync (640/640/640), monitoring (working), error handling (verified)
 
 v1.6.8 additions (2026-06-07):
-- **FastAPI Job Publishing Pipeline:** Complete 6-step deployment (SEO → Deploy → WordPress → Social → Meta Graph) with 2,800+ lines, 91% coverage, 78/78 tests passing. 6 reusable skills created. All 4 database tables + migrations deployed.
+- **FastAPI Job Publishing Pipeline:** ~~Complete 6-step deployment~~ **RETRACTED 2026-06-12:** code/tests exist but NOT deployed. raspibig:8000 = generic stub only (no /health, no job routes); interjob-api.service inactive; api.interjob.ro has no DNS record.
 - **Documentation Consolidation:** 5 core reference files synced to all 3 machines (CLAUDE.md, STATE.md, INFRASTRUCTURE_MASTER_REFERENCE.md, QUICK_REFERENCE_CARD.txt, DEPLOYMENT_CHECKLIST.md). Verification & cleanup scripts created.
-- **Infrastructure Status:** FastAPI on raspibig:8000, reverse proxy via Caddy (api.interjob.ro), PostgreSQL 15.15, 640 Python skills with on-demand sync, 25+ crons active.
+- **Infrastructure Status:** raspibig:8000 = generic FastAPI stub (localhost-only; Caddy/api.interjob.ro NOT live — corrected 2026-06-12), PostgreSQL 15.15, 640 Python skills with on-demand sync, 37 crontab entries (verified 2026-06-12).
 
 v1.6.7 additions (2026-06-04):
 - **News Empire integration:** press_review.py posts to WordPress + Facebook daily (7/7) at 08:50 UTC. city_news_aggregator posts to Mastodon+Telegram at 09:30 UTC. Fixed 3 critical bugs (credentials, datetime, dedup).
@@ -98,7 +100,7 @@ v1.6.6 additions:
 | raspi | 192.168.100.20 | Scrapers, ProtonVPN |
 | A2 Hosting | nl1-cl8-ats1.a2hosting.com | 34 domains (cPanel only) |
 
-**DB:** PostgreSQL **15.15** (Debian; verified 2026-06-07 — NOT 17/18), interjob_master | **cPanel:** loaiidil | `K9ATCMHPKVSKUV2M97447JLY45EH29KQ` ✅ verified live 2026-06-07 (200 AUTH OK; old MK0W… token dead) | **PG pass:** in `~/.pgpass` (chmod 600 — psql wasn't auto-reading it)
+**DB:** PostgreSQL **15.15** (Debian; verified 2026-06-07 — NOT 17/18), interjob_master | **cPanel:** loaiidil | `CPANEL_TOKEN_REDACTED` ✅ verified live 2026-06-07 (200 AUTH OK; old MK0W… token dead) | **PG pass:** in `~/.pgpass` (chmod 600 — psql wasn't auto-reading it)
 
 ---
 
@@ -147,7 +149,7 @@ v1.6.6 additions:
 
 - SSH raspibig: `192.168.100.21` (always IP, not hostname)
 - SSH ControlMaster+ControlPersist 15m active
-- **raspibig SSH from Windows laptop (no key):** `plink -batch -pw 'bucare' tudor@192.168.100.21 "<cmd>"` | Plink path: `C:\Program Files\PuTTY\plink.exe`
+- **raspibig SSH from Windows laptop (no key):** `plink -batch -pw 'REDACTED' tudor@192.168.100.21 "<cmd>"` | Plink path: `C:\Program Files\PuTTY\plink.exe`
 - A2 docroot: `~/domainname/` (not ~/public_html/)
 - Email: manpower.dristor@gmail.com
 - Apply link: https://interjob.ro/apply.html
@@ -256,7 +258,7 @@ Get-ScheduledTask SyncSkills
 
 **Configuration (environment variables on raspibig):**
 ```bash
-TELEGRAM_BOT_TOKEN = "8731910997:AAEwRCaZNXKeY-seWZfMOD-gqQclR-xeQBU"
+TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN_REDACTED"
 TELEGRAM_CHAT_ID = "-1003830000766"
 ```
 

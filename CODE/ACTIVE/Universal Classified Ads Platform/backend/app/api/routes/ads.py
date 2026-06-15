@@ -9,6 +9,7 @@ from app.models.ad import Ad, AdStatus
 from app.models.category import Category
 from app.models.user import User
 from app.api.schemas import AdCreate, AdUpdate, AdResponse, AdModerationAction, AdSearchFilters
+from app.services.ai_service import get_ai_service
 
 router = APIRouter(prefix="/ads", tags=["ads"])
 
@@ -33,9 +34,32 @@ async def create_ad(
     db: Session = Depends(get_db)
 ):
     _validate_category(db, ad_data.category)
+
+    # Use AI to enhance ad if title is generic or missing
+    ai_service = get_ai_service()
+    ad_dict = ad_data.model_dump()
+
+    # Generate title from description if not provided or too short
+    if ai_service.enabled and (not ad_dict.get("title") or len(ad_dict.get("title", "")) < 5):
+        generated_title = await ai_service.generate_title(
+            ad_dict.get("description", ""),
+            ad_dict.get("category", "")
+        )
+        if generated_title:
+            ad_dict["title"] = generated_title
+
+    # Extract tags if not provided
+    if ai_service.enabled and not ad_dict.get("tags"):
+        tags = await ai_service.extract_tags(
+            ad_dict.get("title", ""),
+            ad_dict.get("description", "")
+        )
+        if tags:
+            ad_dict["tags"] = ", ".join(tags)
+
     ad = Ad(
         user_id=current_user.id,
-        **ad_data.model_dump(),
+        **ad_dict,
         status=AdStatus.DRAFT
     )
     db.add(ad)
@@ -339,6 +363,48 @@ async def archive_ad(
         )
 
     ad.status = AdStatus.ARCHIVED
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.post("/{ad_id}/improve", response_model=AdResponse)
+async def improve_ad_with_ai(
+    ad_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Use AI to improve ad description and generate better tags."""
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.user_id != current_user.id and current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    ai_service = get_ai_service()
+    if not ai_service.enabled:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="AI enhancement service not available"
+        )
+
+    # Improve description
+    improved_desc = await ai_service.improve_description(ad.description)
+    if improved_desc:
+        ad.description = improved_desc
+
+    # Extract better tags
+    tags = await ai_service.extract_tags(ad.title, ad.description)
+    if tags:
+        ad.tags = ", ".join(tags)
+
     db.commit()
     db.refresh(ad)
     return ad

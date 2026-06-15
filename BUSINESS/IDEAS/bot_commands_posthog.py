@@ -5,7 +5,7 @@ from datetime import date, timedelta
 from telegram import Update
 from telegram.ext import ContextTypes
 
-POSTHOG_KEY = "phx_ZKBT7BuYJ2UQZZVJN62uqp95U5nrYZK79auQzCxc7Ad7n64i"
+POSTHOG_KEY = "POSTHOG_KEY_REDACTED"
 POSTHOG_PROJECT = "377581"
 POSTHOG_HOST = "https://us.posthog.com"
 

@@ -74,7 +74,7 @@ def _send_brevo(to_email, subject, body, pdf_path):
 def _ph_event(email, sector):
     try:
         requests.post("https://us.i.posthog.com/capture/", json={
-            "api_key": "phc_shRANXNXNAHmSgf3Y3pBHWyg3X2h7C87B8xoem3rWehi",
+            "api_key": "POSTHOG_KEY_REDACTED",
             "event": "catalog_sent",
             "distinct_id": email,
             "properties": {"email": email, "sector": sector, "funnel_stage": "catalog_sent"},

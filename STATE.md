@@ -1,7 +1,31 @@
 # STATE.md — Live Infrastructure Status
 
-**Last updated: 2026-06-07 07:58 UTC**  
+**Last updated: 2026-06-12 ~17:45 UTC** (Complete: llama-server fixed, crons 36→0 failures, FastAPI routes deployed internal-only; Caddy public proxy removed. See memories `raspibig_fix_session_2026_06_12_afternoon.md` + `fastapi_step2_deployment_2026_06_12.md`)
 **Verification method: Direct psql + systemctl + plink SSH**
+
+---
+
+## 2026-06-12 LIVE SNAPSHOT (supersedes tables below where they conflict)
+
+| Component | Status | Value |
+|-----------|--------|-------|
+| Reboot | ✅ | Booted 11:01; shell switched to zsh+oh-my-zsh |
+| Load | 🟢 | **6.42** (down from 14.48 after llama-server restart-loop fix) |
+| Swap | 🟢 | **2.9/8.4 GB** (down from 6.3; 451 MiB RAM free) |
+| Monitor crons | 🟢 | **0 failures** (down from 36 after monitor rewrite + 40-cron audit) |
+| Failed units | 🟡 | 2 (padina-tracker, romania-nightly) — still need proper disable; 9 loopers pending triage |
+| llama-server | 🟢 | Active, `/health` returns ok, model loading from /mnt/hdd path |
+| Crontab | ✅ | **40 entries**; all today's crons ran clean (press_review 08:51, roundup 09:01, wp_publisher 11:01, fb_jobs 11:30, cv_pipeline, backup_sync 12:43) |
+| ij_jobs active | ✅ | 10,701 (2026-06-12 psql) |
+| FastAPI | ❌ | NOT deployed. `/opt/ACTIVE/INTERJOB/api/` = `applications.py` ONLY (no scaffold); :8000 = generic localhost stub |
+| Hermes agent | ⚠️ | Nous Research gateway LIVE (pid 1512, installed ~Jun 8 via curl\|bash) — pending keep/remove decision |
+| New packages today | ⚠️ | rabbitmq-server (+mgmt plugin), clamav, htop/ncdu/tree/tmux/screen/zsh — verify listeners |
+| PRIMARII campaign | ✅ | 16 sent today (stopped at 16/50 — investigate); cron.log path typo |
+| FACTORY_RO campaign | ⚠️ | **LIVE-SENDING** — 20 sent today; cron 09:00 exists WITHOUT flock/log; memory said approval-pending |
+| Orchestrator 24/7 | ⚠️ | Running (pid 246748), cycling 9 sectors, total_sent_today: 0 |
+| Bounce cleaner | ⚠️ | Working (dnc_list 4,497) but **fruitnature4@gmail.com IMAP AUTH FAILED** |
+| governor.log | ⚠️ | 41 MB, no rotation |
+| Junk dirs | ⚠️ | Literal `D:` (21M) and `C:\Users\apami\...` (9.2M) dirs in /home/tudor and /opt/ACTIVE; 3.7G raspibig_final.tar in home |
 
 ---
 
