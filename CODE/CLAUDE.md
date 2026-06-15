@@ -20,7 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Configuration:** `.env` or environment variables
 
 ```bash
-OPENROUTER_API_KEY=sk-or-v1-REDACTED
+OPENROUTER_API_KEY=sk-or-v1-REPLACE_WITH_YOUR_KEY
 ```
 
 **Free Models Available:**

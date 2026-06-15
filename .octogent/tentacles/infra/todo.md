@@ -27,7 +27,7 @@
 - `D:\MEMORY\CODE\POSTHOG\.env` — `phc_nUcX...` US host
 
 ### Notes
-- PostHog personal key: `POSTHOG_KEY_REDACTED`
+- PostHog personal key: `$POSTHOG_API_KEY` (see .env)
 - Host real: `https://us.posthog.com` (nu EU cum părea inițial)
 - raspibig: `send_campaign`, `bot_watchdog`, `email_processor` DEAD — Telegram alertat
 

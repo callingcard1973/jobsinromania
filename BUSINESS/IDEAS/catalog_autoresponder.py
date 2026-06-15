@@ -7,7 +7,7 @@ BREVO_KEY = os.getenv("BREVO_CAREWORKERS_API_KEY", "")
 SENDER_EMAIL = "office@careworkers.eu"
 SENDER_NAME = "Tudor Seicarescu - InterJob Solutions"
 REPLY_TO = "manpower.dristor@gmail.com"
-POSTHOG_KEY = "POSTHOG_KEY_REDACTED"
+POSTHOG_KEY = os.getenv("POSTHOG_API_KEY", "")
 
 # catalog@domain → (specialized_pdf, general_pdf)
 CATALOG_DOMAIN_MAP = {
