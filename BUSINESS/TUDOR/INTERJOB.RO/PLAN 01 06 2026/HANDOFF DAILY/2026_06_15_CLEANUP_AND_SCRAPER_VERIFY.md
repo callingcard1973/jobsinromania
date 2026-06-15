@@ -66,18 +66,26 @@ Also: that handoff claimed "FastAPI `GET /api/jobs` → empty". **Live re-test: 
 
 ## STILL TRUE from this morning's handoffs (re-verified or unchanged)
 
-- **Gmail app password broken** → `followup.log` shows live `smtplib 535 BadCredentials`. ✅ confirmed broken. (Fix #1: reset Gmail app password.)
+- ~~**Gmail app password broken**~~ **✅ FIXED 2026-06-15 14:08.** Misdiagnosed — password was never revoked (both auth-tested live OK). Real cause = cron doesn't load `.env`, so `SMTP_PASS=None` surfaced as Gmail `535`. Fixes: (a) `followup_sender.py:22` falls back to `GMAIL_APP_PASSWORD`; (b) both cron lines now inline passwords. **Proven live:** followup → `SENT sales@negro2000.ro`; factory → `SENT ancuta.branzei@alu-menziken.com`. Accounts: `manpower.dristor@gmail.com` (`REDACTED`) for followup; `elena.manpower.dristor@gmail.com` (`REDACTED`) for factory. See FIX DETAIL below.
 - **Land drain gap** → `terenuri_listings = 0`, `madr_terenuri = 10129`, `harghita_lmv = 10268`. ✅ confirmed. (`drain_terenuri.py` now in `CODE/`, ready to run.)
 - **LLM queue infra deployed** → `enqueue.py` + `queue_worker.py` present on raspibig, `llm_queue` table has rows. ✅ confirmed.
 
+### FIX DETAIL — Gmail/senders (2026-06-15 14:08)
+- Crontab backed up: `/home/tudor/crontab.bak.20260615_140647`
+- `followup_sender.py:22`: `SMTP_PASS = (os.environ.get("FOLLOWUP_SMTP_PASS") or os.environ.get("GMAIL_APP_PASSWORD"))`
+- followup cron: `0 10 * * * FOLLOWUP_SMTP_PASS=REDACTED python3 /opt/ACTIVE/INFRA/SKILLS/followup_sender.py ...`
+- factory cron: `... GMAIL_USER=elena.manpower.dristor@gmail.com GMAIL_APP_PASSWORD=REDACTED python CODE/campaign_factory.py ...`
+- TRAP caught: `campaign_factory` defaults `GMAIL_USER` to elena but shared `GMAIL_APP_PASSWORD` var holds manpower.dristor's pw — must set both explicitly to avoid mismatch.
+- Both logs refreshed 14:08 (clean, no errors).
+
 ---
 
-## NEXT STEPS (unchanged priority from morning handoff, with corrections)
+## NEXT STEPS (updated 2026-06-15 14:08)
 
-1. **Reset Gmail app password** → revives `followup` + `campaign_factory`. ~15 min. Highest revenue/effort ratio. (still valid)
+1. ~~**Reset Gmail app password**~~ **✅ DONE (was a wiring bug, not a password issue).**
 2. ~~**daily_roundup no-op**~~ **CANCELLED — not broken.** Replaced by: regenerate 3 dead FB page tokens (Meta re-auth).
 3. **Ship unified pipeline as cron flow** (the real June goal) — reuse build_pages.py + social gen + wordpress_publisher.
-4. **Land drain** — run `CODE/drain_terenuri.py` to populate `terenuri_listings` (20K raw → sellable inventory). Highest moat.
+4. **Land drain** — run `CODE/drain_terenuri.py` to populate `terenuri_listings` (20K raw → sellable inventory). Highest moat. **← NEXT**
 5. Rewire `email_pipeline` cron LLM (drop dead Ollama `localhost:11434` URL → use `llm_client.py`).
 
 ---
@@ -97,6 +105,10 @@ plink -batch -pw REDACTED tudor@192.168.100.21 "curl -s http://127.0.0.1:8000/ap
 
 # 4. Land drain pending
 plink -batch -pw REDACTED tudor@192.168.100.21 "psql -h 127.0.0.1 -U tudor -d interjob_master -tc 'SELECT count(*) FROM terenuri_listings'"
+
+# 5. Gmail senders healthy (logs fresh, no 535 errors)
+plink -batch -pw REDACTED tudor@192.168.100.21 "tail -2 /opt/ACTIVE/INFRA/LOGS/followup.log /opt/ACTIVE/INFRA/LOGS/campaign_factory.log"
+plink -batch -pw REDACTED tudor@192.168.100.21 "psql -h 127.0.0.1 -U tudor -d interjob_master -tc 'SELECT count(*) FROM pipeline_followup_queue WHERE sent_at IS NULL'"
 ```
 
 ---
