@@ -5,7 +5,7 @@ Classifies replies, auto-adds opt-outs to the shared DNC (compliance across the 
 domain portfolio), auto-replies job-seekers with the apply link (recruitment domains that
 have a Brevo key), and surfaces business-domain leads in a digest. Bounces are handled
 separately by bounce_manager.py (universal-bounce-monitor, every 7min)."""
-import json, imaplib, email, email.utils, os, re, hashlib, requests, psycopg2
+import json, imaplib, email, email.utils, os, re, sys, hashlib, requests, psycopg2
 from email.header import decode_header
 from datetime import datetime, timedelta
 
@@ -140,7 +140,7 @@ def main():
             name,frm=email.utils.parseaddr(dec(msg.get("From",""))); frm=frm.lower()
             subj=dec(msg.get("Subject",""));
             try: mdate=email.utils.parsedate_to_datetime(msg.get("Date","")).replace(tzinfo=None)
-            except Exception: mdate=datetime.now()
+            except Exception: mdate=datetime(2000,1,1)  # undated -> treat as old, never auto-reply
             body=""
             for part in (msg.walk() if msg.is_multipart() else [msg]):
                 if part.get_content_type()=="text/plain":
@@ -160,12 +160,11 @@ def main():
                 except Exception: pass
             d2=frm.split("@")[-1]
             if (rt=="interested" or (rt=="neutral" and d2 not in FREE)): leads.append(f"[{dom}][{rt}] {name} <{frm}>: {subj}")
-            conn.commit()  # each message independent; failure rolls back only itself
-          except Exception:
-            conn.rollback(); continue  # one bad message must not abort the domain
+            conn.commit(); save_set(STATE,seen); save_set(WR_STATE,wr)  # durable after each message: a crash can't re-send or re-insert
+          except Exception as e:
+            conn.rollback(); print(f"[skip] {dom}: {e}",file=sys.stderr); continue  # one bad message must not abort the domain
         try: m.logout()
         except Exception: pass
-        save_set(STATE,seen); save_set(WR_STATE,wr)  # persist dedup state per domain (atomic)
     conn.close()
     summary=f"Universal reply handler {datetime.now():%F %H:%M}\nDomains scanned: {len(doms)}\n"+"\n".join(f"  {k}: {v}" for k,v in sorted(totals.items()))+(f"\n\nLEADS / REVIEW ({len(leads)}):\n"+"\n".join(leads[:60]) if leads else "")
     print(summary)
