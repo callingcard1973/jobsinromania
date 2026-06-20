@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Regression test for the reply classifier — guards the opt-out / bounce false-positive
 bug class (quoted footers, 'nu mai', 'stop ' substrings) that 3 reviews kept catching."""
-import sys
+import sys, os
+# find universal_reply_handler whether on raspibig (/opt) or alongside the repo copy
 sys.path.insert(0, "/opt/ACTIVE/EMAIL/CAMPAIGNS")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import universal_reply_handler as h
 
 # (from_addr, subject, body, expected_label)
