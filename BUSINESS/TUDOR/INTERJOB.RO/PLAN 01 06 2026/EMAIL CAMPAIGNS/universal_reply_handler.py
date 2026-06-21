@@ -41,10 +41,10 @@ def save_set(path,s):
 
 OPTOUT=("unsubscribe","dezabonare","please remove","remove me","take me off","do not contact","do not email","stop sending","stop emailing","nu ma mai","nu mă mai","scoateti-ma","scoateți-mă","radiati-ma")
 BOUNCE=("mailer-daemon","postmaster","delivery failed","delivery status","undeliverable","mail delivery","user unknown","mailbox full","550 ","not found","recipient")
-AUTO=("out of office","automatic reply","autosvar","fraver","thank you for your message","ute av kontoret","vil bli besvart","concediu","odihna","tack for din ansok")
+AUTO=("out of office","automatic reply","autosvar","fraver","ute av kontoret","vil bli besvart","concediu","odihna","tack for din ansok")
 TICKET=("ticket received","ticket closed","nytt arende","arende skapat","case #","sak #","ref:")
-WORKER=("applying for","apply for","looking for job","looking for work","i have experience","ready to join","visa procedure","my cv","attached cv","jobb som","i am a ","seeking employment","interested in applying")
-INTEREST=("send profiles","send rates","send your","interested in your","need workers","need crew","looking for crew","tilbud","prosjekt i","kontakt oss","please call","price per","how much","more details","send details","send catalog","send me")
+WORKER=("applying for","apply for","looking for job","looking for work","i have experience","ready to join","visa procedure","my cv","attached cv","jobb som","i am a ","seeking employment","interested in applying","i want to work","want to work","need work","give me chance","i need a job","need a job","as a worker","i am a worker","looking for a job","need your help","want to join")
+INTEREST=("send profiles","send rates","send your","interested in your","need workers","need crew","looking for crew","tilbud","prosjekt i","kontakt oss","please call","price per","how much","more details","send details","send catalog","catalog","catalogue","katalog","send me","send us","want to hire","need staff","need people","trenger folk")
 IGNORE_FROM=("noreply","no-reply","mailer-daemon","postmaster","@system.","freshservice","zohomail.eu","workers.europe","e-conomic","notifications@","m.brevo.com","@brevo.com","t.brevo.com","wordpress@","@customeriotest")
 FREE={"gmail.com","yahoo.com","hotmail.com","outlook.com","live.com","icloud.com","me.com","aol.com","yahoo.co.uk","proton.me","protonmail.com"}
 

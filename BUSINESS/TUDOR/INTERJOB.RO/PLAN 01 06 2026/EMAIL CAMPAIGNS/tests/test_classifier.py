@@ -33,6 +33,13 @@ CASES = [
     ("account-alerts@t.brevo.com", "Security alert", "new login to your account", "ignore"),
     # --- neutral business ---
     ("j@firma.no", "Re: samarbeid", "Takk for henvendelsen, vi vurderer det.", "neutral"),
+    # --- regression: worker pleas + employer catalog + Norwegian OOO (the Zeeshan class) ---
+    ("mjani1190@gmail.com", "Re: Thank you for your message",
+     "Sir i am from Pakistan stay in Malaysia as worker, i want to work with you, please give me chance", "worker_application"),
+    ("a@bygg.no", "Re: workers",
+     "Yes please send the catalog.\n\nOn Mon someone wrote:\n> unsubscribe reply STOP", "interested"),
+    ("x@firma.no", "Automatisk svar", "Jeg er ute av kontoret til mandag.", "auto_reply"),
+    ("d@firma.ro", "Re: muncitori", "Nu mai avem nevoie momentan, multumesc.", "neutral"),
 ]
 
 
