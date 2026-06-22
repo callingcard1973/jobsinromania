@@ -1,5 +1,5 @@
 ---
-name: daily-data-validator
+name: data-validator
 description: Validate ANOFM job counts, EURES CSV integrity, sector distribution, translation API before daily roundup publishing. Abort if counts are zero or data malformed.
 ---
 

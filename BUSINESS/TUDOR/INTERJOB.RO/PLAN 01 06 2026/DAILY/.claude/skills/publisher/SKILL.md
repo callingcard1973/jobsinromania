@@ -1,5 +1,5 @@
 ---
-name: daily-publisher
+name: publisher
 description: Publish RO+EN articles to WordPress REST API with Yoast SEO metadata, category management, retry logic, deduplication checks. Handles WP auth, error recovery, logging.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: daily-monitor
+name: monitor
 description: Track post-publication performance (TTFB, load time, HTTP status), generate alerts (slow pages, 404s, indexing issues), compile engagement report. Non-blocking observability.
 ---
 

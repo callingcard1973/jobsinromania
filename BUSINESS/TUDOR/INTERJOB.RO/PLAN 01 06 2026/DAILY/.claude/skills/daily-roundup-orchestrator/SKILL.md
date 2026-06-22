@@ -88,7 +88,7 @@ When triggered, first check:
 echo "${VALIDATOR_OUTPUT}" > _workspace/01_validator_output.json
 ```
 
-## Phase 2 — Content Creator (120s timeout)
+## Phase 2 — Content Creator (180s timeout)
 
 **Agent:** content-creator (subagent_type: "general-purpose", model: "opus")
 
@@ -125,9 +125,18 @@ echo "${CREATOR_OUTPUT}" > _workspace/02_content_output.json
 
 **Config loaded from environment:**
 ```bash
-export WP_INTERJOB_USER="apaminerala"
-export WP_INTERJOB_PASS="$(cat /opt/ACTIVE/EMAIL/CAMPAIGNS/SILOZURI/.env.backup | grep WP_INTERJOB_PASS | cut -d= -f2)"
+# Source from official wp_sites.env (used by daily_roundup.py and other pub workflows)
+source /opt/ACTIVE/SCRAPERS/EUROPE/SCRIPTS/SHARED/wp_sites.env
+
+export WP_INTERJOB_USER="${WP_INTERJOB_USER:-apaminerala}"
+export WP_INTERJOB_PASS="${WP_INTERJOB_PASS}"
 export DB_PASS=$(grep '^tudor:' ~/.pgpass | cut -d: -f3)
+
+# Validate credentials loaded
+if [ -z "$WP_INTERJOB_PASS" ]; then
+  echo "ERROR: WP_INTERJOB_PASS not found in wp_sites.env"
+  exit 1
+fi
 ```
 
 **Expected output:**

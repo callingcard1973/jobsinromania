@@ -1,5 +1,5 @@
 ---
-name: daily-content-creator
+name: content-creator
 description: Generate bilingual (RO+EN) WordPress article HTML with SEO metadata, newsletter CTAs, batch translations. Returns ready-to-publish article content for both languages.
 ---
 
@@ -31,14 +31,14 @@ Receive validated data from data-validator:
 <h3>Construcții — 1,240 posturi</h3>
 <ul>
   <li>Electrician — Bucharest (3,000 RON)</li>
-  <li>Carpenter — Iasi</li>
-  <li>Foreman — Cluj</li>
-  <li>Welder — Constanta</li>
+  <li>Tâmplar — Iași</li>
+  <li>Șef de echipă — Cluj</li>
+  <li>Sudor — Constanța</li>
 </ul>
 
 <h3>IT & Tehnologie — 850 posturi</h3>
 <ul>
-  <li>Senior Developer — Bucharest (5,500 RON)</li>
+  <li>Developer Senior — Bucharest (5,500 RON)</li>
   ...
 </ul>
 
@@ -106,12 +106,12 @@ orig_titles = [title for title, city in jobs[:4]]
 
 # Translate to RO
 tr_ro = GoogleTranslator(source="auto", target="ro")
-ro_titles = tr_ro.translate("\n".join(orig_titles[:120] for t in orig_titles)).split("\n")
+ro_titles = tr_ro.translate("\n".join(t[:120] for t in orig_titles)).split("\n")
 time.sleep(0.4)  # Anti rate-limit
 
 # Translate to EN
 tr_en = GoogleTranslator(source="auto", target="en")
-en_titles = tr_en.translate("\n".join(orig_titles[:120] for t in orig_titles)).split("\n")
+en_titles = tr_en.translate("\n".join(t[:120] for t in orig_titles)).split("\n")
 time.sleep(0.4)
 ```
 

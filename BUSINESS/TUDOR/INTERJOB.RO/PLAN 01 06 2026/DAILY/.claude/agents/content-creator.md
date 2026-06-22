@@ -48,7 +48,7 @@ From data-validator agent:
   "anofm_by_sector": {sector: [job, job, ...]},
   "anofm_count_sector": {sector: count},
   "eures_total": 4320,
-  "eures_by_country": {country: [(original_title, original_title, city)]},
+  "eures_by_country": {country: [(original_title, city), (original_title, city), ...]},
   "run_timestamp": "2026-06-23T09:00:00Z"
 }
 ```
@@ -129,4 +129,4 @@ If translation fails for EN but RO succeeds:
 
 **Model:** Opus  
 **Tools:** Read, Write (for temporary files if needed), Bash (for translation API calls)  
-**Timeout:** 120s (translation batching can take 30-60s)
+**Timeout:** 180s (translation batching: ANOFM + EURES × 7 countries with 0.4s sleeps + retry backoff can approach 120s; 180s ensures completion under normal rate-limiting)

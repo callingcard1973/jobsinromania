@@ -45,9 +45,11 @@ From orchestrator:
 ```
 
 ## Output Protocol (Success)
+Can be either `valid` (no anomalies) or `valid_with_warnings` (data passes but has anomalies to flag):
+
 ```json
 {
-  "status": "valid",
+  "status": "valid" | "valid_with_warnings",
   "anofm_total": 5795,
   "anofm_by_sector": {
     "constructii": [{"title": "Electrician", "city": "Bucharest", "salary_min": 3000},...],
@@ -58,7 +60,7 @@ From orchestrator:
   "eures_total": 4320,
   "eures_by_country": {
     "Norway": [("Senior Developer", "Oslo"), ("Nurse", "Bergen"),...],
-    "Denmark": [...],
+    "Denmark": [("Toldassistent", "Copenhagen"),...],
     ...
   },
   "warnings": ["EURES Sweden CSV is 8 days old, may be stale"],
