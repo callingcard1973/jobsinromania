@@ -1,108 +1,114 @@
-# CLAUDE.md — SILOZURI (Storage & Silos Directory)
+# CLAUDE.md
 
-**v1.0 | 2026-06-14**
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+**v1.2 | 2026-06-23**
+
+---
+
+## HARNESS: SILOZURI DATA PIPELINE
+
+**Goal:** Automated enrichment + validation + campaign-ready segmentation for 13K+ silo records.
+
+**Trigger:** Use `silozuri-orchestrator` skill for any silozuri domain work:
+- "Enrich silozuri data"
+- "Prepare campaigns"
+- "Validate coverage"
+- "Rebuild from MADR sources"
+
+**Architecture:** 4-agent sub-agent model
+- `data-collector` — MADR county + ANAF parsing
+- `data-enricher` — Phone/email/CUI backfill via raspibig DB
+- `data-analyst` — Quality validation + tier assignment
+- `campaign-ready` — Segmentation for outreach
+
+**Change History:**
+| Date | Change | Reason |
+|------|--------|--------|
+| 2026-06-23 | Harness v1.0 added (4 agents + 5 skills, droid verified) | Automate full data pipeline |
 
 ---
 
 ## PROJECT OVERVIEW
 
-**Goal:** Build a master directory of all agricultural storage facilities (silozuri) in Romania with contact info (email, phone, address, manager names).
+Master directory of Romanian agricultural storage facilities (silozuri) — 13,287 unique entities from 4 merged MADR/ANAF sources. Goal: B2B outreach to silo operators (lead-gen, supply-chain mapping, cooperative aggregation).
 
-**Use cases:**
-1. Lead generation — sell to silo operators (storage optimization, grain trading, agri consultancy)
-2. Supply chain mapping — know where product flows (for buyers/sellers/cooperatives)
-3. Market intelligence — silo capacity by county = production indicators
-4. B2B outreach — coordinate aggregation (e.g., cooperative grain sales)
+**Primary output:** `DATA/MASTER.csv` (14 cols) + `DATA/MASTER_TIER1_READY_TO_CALL.csv` (808 rows).
+
+---
+
+## CURRENT STATE
+
+- **13,287 unique entities** — deduped, remediated 2026-06-14
+- **Schema:** `auth_code, name, phone, email, county, city, cui, caen, capacity_total_t, capacity_grains_t, capacity_oilseeds_t, _source, _quality_tier, _issues`
+- **`auth_code`** = MADR silo license code — the true facility key; never merge distinct auth_codes
+- **Quality tiers:** TIER_1 808 (CUI+contact) · TIER_2 7,664 (CUI only) · TIER_3 2,294 (contact only) · TIER_4 2,521
+- **Coverage:** CUI 63.8% · county 80.7% · city 65.3% · phone 22.4% · email 6.1%
+- **48 rows** flagged `BAD_CAPACITY` (garbage parse values)
+- **Backups:** `ARCHIVE/MASTER_pre_remediation_*.csv`
+
+---
+
+## SCRIPTS (`CODE/`)
+
+Toate scripturile sunt în `CODE/`. Se rulează din root-ul SILOZURI:
+
+```
+cd "D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 06 2026\SILOZURI"
+python CODE\remediate_master.py
+```
+
+Path-urile din scripturi sunt **absolute** (ROOT hardcodat la SILOZURI root) — funcționează indiferent de unde se rulează.
+
+### Pipeline activ
+
+| Script | Scop |
+|--------|------|
+| `CODE\remediate_master.py` | **Rebuild canonic** — backfill CUI/county din ANAF, redenumire coloane, tiere, dedup |
+| `CODE\analyze_master.py` | **QA read-only** — stats acoperire, tier breakdown, capacitate |
+| `CODE\merge_masters.py` | Merge surse raw în master pre-remediere |
+| `CODE\enrich_master.py` | Enrichment telefoane din `companies_clean` pe raspibig (SSH) |
+| `CODE\enrich_email.py` | Enrichment emailuri din `master_emails` pe raspibig |
+| `CODE\enrich_via_anaf_dsvsa.py` | Cross-reference lista ANAF DSVSA firme agro |
+| `CODE\build_cereal_buyers.py` | Construiește `BUYERS/cereal_buyers_romania.csv` (CAEN 4621/4622) |
+
+### Scripturi legacy (preced remedierea — păstrate pentru referință)
+
+`CODE\build_master.py`, `CODE\enrich_anofm.py`, `CODE\enrich_anofm_final.py`, `CODE\enrich_cui.py`, `CODE\normalize_and_regulate.py`, `CODE\dump_anofm.sh`, `CODE\extract_silos_madr.py`, `CODE\parse_madr.py`, `CODE\parse_madr_correct.py`, `CODE\parse_all_43_counties.py`, `CODE\parse_all_formats.py`, `CODE\enrich_silos.py`, `CODE\final_interjob_match.py`
 
 ---
 
 ## DATA SOURCES
 
-| Source | Type | Coverage | Status |
-|--------|------|----------|--------|
-| ANAF (National Agency) | Gov registry | All commercial entities | ✅ Available (DSVSA has ag companies) |
-| County Ag Directorates (DAJ) | Gov registry | By county | 🔍 To scrape |
-| Google Maps / Apple Maps | Search engine | Partial | 🔍 To verify |
-| MADR Databases | Ministry | Cooperatives, grain traders | ✅ MADR census exists |
-| LinkedIn / Facebook | Social | Operator profiles | 🔍 To verify |
-| Local business sites | Web | Ad hoc listings | 🔍 To crawl |
-
-**Primary source:** ANAF + MADR census (most reliable, government-backed).
+- `DATA/raw/ANAF/od_firme.csv` — ANAF open-data company registry (used for CUI + county backfill)
+- `DATA/raw/` — Raw MADR county Excel files (source of silo licenses + capacity)
+- `DATA/csv/` — Intermediate parsed CSVs before merge
+- `BUYERS/` — Separate cereal buyers list (CAEN 4621/4622 from companies_clean)
 
 ---
 
-## CURRENT STATE (remediated 2026-06-14)
+## KEY INVARIANTS
 
-`DATA/MASTER.csv` = **13,287 unique entities** (4 sources merged: MADR/NEW, CEREAL, SILO, RECALL). See memory `silozuri_remediation_2026_06_14.md` and `HANDOFF_2026_06_14.md` for the full audit.
-
-**Live schema (14 cols):**
-```csv
-auth_code, name, phone, email, county, city, cui, caen, capacity_total_t, capacity_grains_t, capacity_oilseeds_t, _source, _quality_tier, _issues
-```
-- `auth_code` = MADR silo license code (true facility key; do NOT merge distinct auth_codes)
-- `capacity_total_t / grains_t / oilseeds_t` = storage tonnes (E/F/G in raw MADR)
-- `_quality_tier`: TIER_1 (CUI+contact) 808 · TIER_2 (CUI only) 7,664 · TIER_3 (contact only) 2,294 · TIER_4 2,521
-- Coverage: CUI 63.8% · county 80.7% · city 65.3% · phone 22.4% · email 6.1%. 48 rows flagged `BAD_CAPACITY`.
-
-**Pipeline (reproducible):**
-- `remediate_master.py` — backfill CUI/county from ANAF `od_firme.csv`, rename cols, rebuild tiers, dedup
-- `analyze_master.py` — read-only QA report (matches live schema)
-- `DATA/MASTER_TIER1_READY_TO_CALL.csv` — 808 ready-to-call rows
-- Backup: `ARCHIVE/MASTER_pre_remediation_*.csv`
-
-⚠️ Original handoff "100% CUI / 4,098 TIER_1" claims were FALSE — corrected above.
+- **Do NOT merge rows with different `auth_code` values** — each is a distinct licensed facility
+- **Dedup key for cross-source merging:** (name core-match OR CUI match) AND distinct auth_code
+- Phone normalization: E.164 `+40...` (strip non-digits, convert `0040→+40`, `07→+407`)
+- Name matching: strip diacritics → uppercase → remove legal tokens (SRL, SA, PFA…) → compare core tokens
+- ANAF enrichment source: local `od_firme.csv` (not ANAF API — API returns 0 matches)
+- DB enrichment runs via SSH plink to raspibig `192.168.100.21` (see CLAUDE.md root for plink syntax)
 
 ---
 
-## TARGET SCHEMA (aspirational — for future enrichment)
+## NEXT ENRICHMENT OPPORTUNITIES
 
-```csv
-silo_id, name, county, city, address, phone, email, manager_name, manager_phone, manager_email, 
-capacity_tonnes, grain_types, owned_by_coop, website, source, last_verified_date
-```
-
----
-
-## SCRAPING STRATEGY
-
-1. **ANAF CAEN lookup** — Search ANAF registry for CAEN codes related to grain/storage (01.13, 01.30, 49.40)
-2. **DAJ county pages** — Each county has a Directorate of Agriculture with licensed operators
-3. **Google/Apple** — Verify geo-location and cross-reference contact info
-4. **LinkedIn** — Find operator profiles + manager details
-5. **Dedup** — Email + phone + name key
+1. **Google Places API** — fetch emails for TIER_2 (7,664 with CUI, no contact)
+2. **raspibig `master_emails`** — already partially applied; re-run `enrich_email.py` after new email imports
+3. **DAJ county pages** — web scrape county Agriculture Directorates for licensed operators
+4. **LinkedIn** — manager names for top-50 operators by capacity
 
 ---
 
-## TOOL SELECTION
+## OUTREACH READINESS
 
-- **ro-contact-extract skill** — Auto-loads; use for PDF registries, web directories
-- **MCP query** — Run PostgreSQL enrichment queries (join with master_emails, companies_clean)
-- **Bash scraping** — County DAJ websites (if HTML-based)
-- **Agent** — Parallel scraping (3-4 counties simultaneously)
-
----
-
-## TIMELINE
-
-- **Phase 1 (Now)** — Validate data sources, identify top 5-10 counties by silo density
-- **Phase 2** — Build scraper for ANAF + DAJ
-- **Phase 3** — Enrich with Google/LinkedIn verification
-- **Phase 4** — Dedup, QA, publish master CSV
-
----
-
-## CONSTRAINTS & NOTES
-
-- ⚠️ **Privacy:** Phone/email from public registries only (ANAF is public; GDPR-compliant)
-- ⚠️ **Rate limiting:** DAJ websites may have throttling; use 2-3s delays
-- ⚠️ **Language:** ANAF/DAJ pages in Romanian; may need translation for business_name parsing
-- ✅ **Budget:** Zero scraping cost (public data)
-
----
-
-## Next Step
-
-Use `ro-contact-extract` skill or Agent to:
-1. Query ANAF for grain storage CAEN codes (01.13.20, 01.30.30, 49.40.51)
-2. Identify top 5 counties by silo count
-3. Download first batch of contact data
+- **TIER_1 (808):** `DATA/MASTER_TIER1_READY_TO_CALL.csv` — phone-first cold calls
+- **Brevo campaign:** use `email` column; integrate via brevo-sender agent
+- **Phone-first strategy** — email plateau at ~6%; phone coverage 22% (post-enrichment up to 60% on subsets)
