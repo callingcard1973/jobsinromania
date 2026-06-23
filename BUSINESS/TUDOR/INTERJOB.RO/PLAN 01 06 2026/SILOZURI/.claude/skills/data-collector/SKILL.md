@@ -34,11 +34,12 @@ Parse MADR county files + ANAF open-data → deduplicated raw master CSV.
 3. **County normalization:** Standardize RO diacritics (Braşov → Brașov, Suceava → Suceava)
 4. **Blank handling:** Skip rows where auth_code is empty
 
-### ANAF od_firme.csv
+### ANAF od_firme.csv (Optional)
 
-1. **Columns:** CUI, name, county, address, CAEN, etc.
-2. **Filter:** Keep rows with CAEN in (0161, 0162, 01610, 01620, 01630, 01640, 0164) — agricultural production
-3. **Link to MADR:** CUI + name match → enrich with MADR data
+1. **If exists:** Load `DATA/raw/ANAF/od_firme.csv`
+   - Filter: CAEN in (0161, 0162, 01610, 01620, 01630, 01640, 0164) — agricultural production
+   - Link to MADR: CUI + name match → enrich with MADR data
+2. **If missing:** Skip ANAF step (not fatal; enricher will backfill CUI via raspibig DB)
 
 ### Deduplication
 
