@@ -17,7 +17,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - "Rebuild from MADR sources"
 
 **Architecture:** 4-agent sub-agent model
-- `data-collector` — MADR county + ANAF parsing
+- `data-collector` — MADR county + ANAF parsing (ANAF optional if missing)
 - `data-enricher` — Phone/email/CUI backfill via raspibig DB
 - `data-analyst` — Quality validation + tier assignment
 - `campaign-ready` — Segmentation for outreach
@@ -26,6 +26,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | Date | Change | Reason |
 |------|--------|--------|
 | 2026-06-23 | Harness v1.0 added (4 agents + 5 skills, droid verified) | Automate full data pipeline |
+| 2026-06-23 | ANAF optional (skip if missing) | od_firme.csv not present; enricher uses raspibig DB |
+
+---
+
+## CAMPAIGN STATUS: SILOZURI
+
+**Contacts prepared:** 1,049 (with email)
+**Contacts sent:** 0 (as of 2026-06-23, dry-run mode only)
+**Daily limit:** 290/day via Brevo (office@cumparlegume.com)
+**Last run:** 2026-06-20 13:42:59
+**Status:** Ready but NOT LIVE (dry_run=True, cron disabled)
+
+**See:** MEMORY.md for full campaign status + next steps
 
 ---
 
