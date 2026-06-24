@@ -79,3 +79,18 @@ BUSINESS/IDEAS/LLM/training_data/raw_emails.jsonl
 
 # Norway lead lists (PII — kept out of git; data lives in norway_campaign DB)
 BUSINESS/TUDOR/INTERJOB.RO/PLAN 01 06 2026/EMAIL CAMPAIGNS/norway_clients_*.csv
+
+# === PII — candidate CVs / passports / applications (GDPR — NEVER commit) (2026-06-24) ===
+AGENTII DE MUNCA TEMPORARA CONTRACTE/
+**/STERKE CANDIDATES/
+**/cvs/
+**/CVS/
+**/CV_*/
+**/*passport*
+**/*Passport*
+**/*PASSPORT*
+# Candidate document PDFs (CVs, certs, IDs) — keep job/land catalogs which live elsewhere
+**/STERKE_CVs/
+training_data/
+# Quarantined broken source (local only)
+*.broken

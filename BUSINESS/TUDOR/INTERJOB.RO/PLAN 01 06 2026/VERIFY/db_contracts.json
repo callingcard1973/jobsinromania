@@ -1,0 +1,19 @@
+{
+  "_comment": "Each contract asserts a table + columns exist on host/db. Verified by verify_db.py. Extend as scripts add DB dependencies.",
+  "contracts": [
+    {
+      "name": "anofm-daily-report",
+      "host": "192.168.100.20",
+      "db": "anofm_db",
+      "table": "ij_jobs",
+      "columns": ["source", "status", "sector", "city", "title", "salary_min", "salary_max", "created_at"]
+    },
+    {
+      "name": "anofm-campaign",
+      "host": "192.168.100.20",
+      "db": "anofm_db",
+      "table": "ij_jobs",
+      "columns": ["source", "status"]
+    }
+  ]
+}

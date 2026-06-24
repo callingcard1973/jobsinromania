@@ -1,0 +1,17 @@
+# Bug-class focus, not style. Catches the failures past code reviews hit
+# (undefined names, unused imports/vars, f-string bugs) without flooding
+# legacy scripts with cosmetic warnings.
+line-length = 120
+target-version = "py313"  # raspi/raspibig + laptop run 3.13/3.14; py39 falsely flags 3.12 f-strings
+
+[lint]
+select = [
+  "F",      # pyflakes: undefined names, unused imports/vars, f-string issues
+  "E9",     # syntax errors
+  "B",      # flake8-bugbear: likely bugs (mutable defaults, etc.)
+  "PLE",    # pylint errors
+]
+ignore = ["B008"]  # function-call-in-default-arg (common, intentional here)
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]
