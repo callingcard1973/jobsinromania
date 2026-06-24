@@ -1,0 +1,9 @@
+cui,category,required_cert,status
+ALL_DAIRY,dairy,DSVSA registration/authorization (raw-milk special rules - verify ANSVSA),blocked
+ALL_MEAT,meat/charcuterie,DSVSA authorization + health mark (verify),blocked
+ALL_EGGS,eggs,DSVSA registration + egg grading/marking (verify),in-progress
+ALL_HONEY,honey,DSVSA registration + Honey Directive 2001/110/EC labelling,in-progress
+ALL_CEREALS,cereals/grain,Food-business registration + mycotoxin control (verify),in-progress
+ALL_BAKERY,bakery,Food-business registration + allergen declaration,in-progress
+ALL_PRODUCE,produce/vegetables,Food-business registration + MRL Reg 396/2005,in-progress
+ANY_BIO_CLAIM,any,Organic cert Reg (UE) 2018/848 - only if bio/eco claimed,in-progress

@@ -1,0 +1,8 @@
+city,area,score,catchment_pop,median_income,competitors_500m,est_rent_eur_m2,supplier_proximity,rank
+Brasov,Centru/Astra-Racadau,8.7,~250000 (estimate; INS Brasov urban),high (estimate; top-5 metro net wage INS),2,12 (estimate; needs field check),very_high (919 in-county + Sibiu/Covasna/Arges adj),1
+Bucuresti,Sector 1 (Floreasca/Dorobanti/Aviatiei),8.5,~225000 (estimate; INS Sector 1),highest (estimate; Sector 1 top income INS),3,18 (estimate; needs field check),high (817 in-county + Giurgiu/Arges/Buzau adj),2
+Bucuresti,Sector 4 (Tineretului/Vacaresti),7.9,~290000 (estimate; INS Sector 4),high (estimate; INS),2,14 (estimate; needs field check),high (817 in-county + S Romania adj),3
+Iasi,Copou/Centru,7.6,~290000 (estimate; INS Iasi urban),mid-high (estimate; INS Moldova metro),2,9 (estimate; needs field check),high (647 in-county + Botosani/Vaslui/Neamt adj),4
+Timisoara,Centru/Cetate-Circumvalatiunii,7.4,~250000 (estimate; INS Timis urban),high (estimate; west metro INS),2,11 (estimate; needs field check),high (645 in-county + Arad adj),5
+Bucuresti,Sector 2 (Pipera-Tei border),7.1,~360000 (estimate; INS Sector 2),mid-high (estimate; INS),3,15 (estimate; needs field check),high (817 in-county),6
+Cluj-Napoca,Andrei Muresanu/Gheorgheni,6.8,~290000 (estimate; INS Cluj urban),highest provincial (estimate; INS top wage),3,16 (estimate; high RO rent; field check),low (93 in-county; rely on Alba/Mures/Bihor adj),7
