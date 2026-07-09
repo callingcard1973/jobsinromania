@@ -1,0 +1,32 @@
+{
+  "llm": {
+    "raspibig": "http://192.168.100.21:1234/v1",
+    "laptop": "http://192.168.100.25:1234/v1",
+    "model": "google/gemma-3-4b",
+    "temperature": 0.3,
+    "max_tokens": 800
+  },
+  "classifier": {
+    "api_url": "http://localhost:5080/classify",
+    "model_path": "models/email_classifier.pkl"
+  },
+  "db": {
+    "host": "192.168.100.21",
+    "port": 5432,
+    "dbname": "interjob_master",
+    "user": "tudor",
+    "password": "tudor"
+  },
+  "telegram": {
+    "bot_token": "",
+    "admin_chat_id": "",
+    "notify_on": ["inquiry", "application", "campaign_reply"]
+  },
+  "review": {
+    "auto_archive": ["spam", "bounce", "newsletter"],
+    "auto_folder": ["auto_reply"],
+    "needs_draft": ["inquiry", "campaign_reply"],
+    "auto_reply": ["application"],
+    "daily_limit": 50
+  }
+}

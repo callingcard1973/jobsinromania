@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renewal Radar ISCIR - Nu mai pierzi niciodata o autorizatie</title>
+<meta name="description" content="Alerte automate la 90/60/30 zile inainte ca autorizatia sau echipamentul ISCIR sa expire. Seif fizic + arhiva cloud pentru operatori RSVTI si firme cu echipamente sub presiune si de ridicat.">
+<style>
+  :root{
+    --ink:#161412; --paper:#f4f0e8; --card:#fffdf8;
+    --radar:#1f6b4f; --radar-d:#13412f; --alert:#c0341d; --amber:#d98a1f;
+    --line:#dcd4c4; --muted:#6b6357;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",-apple-system,Roboto,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit}
+
+  /* top bar */
+  .top{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.02em}
+  .pip{width:14px;height:14px;border-radius:50%;background:var(--radar);box-shadow:0 0 0 4px rgba(31,107,79,.22);animation:ping 2.4s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(31,107,79,.45)}70%{box-shadow:0 0 0 12px rgba(31,107,79,0)}100%{box-shadow:0 0 0 0 rgba(31,107,79,0)}}
+  .top .cta{background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:2px;text-decoration:none;font-weight:700;font-size:14px}
+
+  /* hero */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+  .kick{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--alert);border:1.5px solid var(--alert);padding:5px 11px;border-radius:2px;margin-bottom:22px}
+  .hero h1{font-size:46px;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--alert);text-decoration:underline;text-decoration-color:rgba(192,52,29,.35);text-underline-offset:5px}
+  .lead{font-size:18.5px;color:#3a352e;max-width:38ch}
+  .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:2px;font-size:15px;transition:transform .08s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--radar);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .micro{margin-top:14px;font-size:13px;color:var(--muted)}
+
+  /* radar visual */
+  .scope{aspect-ratio:1;border-radius:50%;background:
+     radial-gradient(circle at center, #1c5e46 0%, #15402f 70%, #0e2c20 100%);
+     position:relative;border:6px solid var(--radar-d);box-shadow:inset 0 0 60px rgba(0,0,0,.5),0 18px 40px rgba(0,0,0,.18)}
+  .scope::before,.scope::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(120,220,170,.22)}
+  .scope::before{inset:18%}.scope::after{inset:36%}
+  .sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg, rgba(120,255,180,.42), rgba(120,255,180,0) 38%);animation:spin 4.2s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .blip{position:absolute;width:10px;height:10px;border-radius:50%;background:#ff5a3c;box-shadow:0 0 10px #ff5a3c}
+  .b1{top:30%;left:62%}.b2{top:58%;left:40%}.b3{top:46%;left:70%}
+  .scope-tag{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:6px 14px;border-radius:2px;white-space:nowrap}
+
+  /* stat strip */
+  .strip{background:var(--ink);color:var(--paper)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{padding:26px 18px;border-right:1px solid #34302a}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:Georgia,serif;font-size:30px;line-height:1;color:#f0c14b}
+  .stat span{display:block;margin-top:7px;font-size:13px;color:#cbc3b6}
+  .stat.red b{color:#ff7a5e}
+
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--radar);margin-bottom:12px}
+  .sec-h{font-size:31px;margin-bottom:10px;max-width:24ch}
+  .sec-sub{color:var(--muted);max-width:62ch;font-size:16px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:24px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+  .card .ico{width:40px;height:40px;border-radius:3px;display:grid;place-items:center;font-weight:800;color:#fff;margin-bottom:14px;font-family:Georgia,serif}
+  .card h3{font-size:18px;margin-bottom:7px}
+  .card p{font-size:14.5px;color:#4a443b}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+  .tl .step{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--radar);border-radius:4px;padding:20px}
+  .tl .d{font-family:Georgia,serif;font-size:26px;font-weight:700}
+  .tl .step:nth-child(1){border-top-color:#3aa66f}
+  .tl .step:nth-child(2){border-top-color:var(--amber)}
+  .tl .step:nth-child(3){border-top-color:var(--alert)}
+  .tl .step:nth-child(4){border-top-color:var(--ink)}
+  .tl .step:nth-child(3) .d{color:var(--alert)}
+  .tl small{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1.1fr repeat(3,1fr);gap:16px;margin-top:34px;align-items:stretch}
+  .kit{background:var(--radar-d);color:#eafff4;border-radius:6px;padding:26px;position:relative}
+  .kit h3{color:#fff;font-size:21px}
+  .kit .p{font-family:Georgia,serif;font-size:38px;margin:10px 0 2px}
+  .kit ul{list-style:none;margin-top:16px}
+  .kit li{padding:7px 0 7px 22px;position:relative;font-size:14px;border-top:1px solid rgba(255,255,255,.12)}
+  .kit li::before{content:"+";position:absolute;left:0;color:#7ff0b6;font-weight:800}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column}
+  .plan.pop{border:2px solid var(--radar);box-shadow:0 12px 28px rgba(31,107,79,.16)}
+  .tagpop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--radar);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;padding:4px 12px;border-radius:20px}
+  .plan{position:relative}
+  .plan h4{font-family:Georgia,serif;font-size:18px}
+  .plan .p{font-family:Georgia,serif;font-size:30px;margin:8px 0}
+  .plan .p small{font-size:14px;color:var(--muted);font-family:inherit}
+  .plan ul{list-style:none;font-size:13.5px;color:#4a443b;margin-top:6px;flex:1}
+  .plan li{padding:5px 0 5px 18px;position:relative}
+  .plan li::before{content:"\2713";position:absolute;left:0;color:var(--radar);font-weight:800}
+  .pricenote{margin-top:16px;font-size:13px;color:var(--muted)}
+
+  /* form */
+  .formsec{background:#efe8db}
+  .form-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:start}
+  form{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+  .field{margin-bottom:15px}
+  label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+  input{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:3px;font-size:15px;background:#fff;font-family:inherit}
+  input:focus{outline:none;border-color:var(--radar)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .submit{width:100%;background:var(--alert);color:#fff;border:0;padding:15px;font-size:16px;font-weight:800;border-radius:3px;cursor:pointer;margin-top:6px}
+  .submit:hover{background:#a52c18}
+  .formnote{font-size:12px;color:var(--muted);margin-top:11px;text-align:center}
+  .checklist-link{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1.5px dashed var(--amber);border-radius:4px;padding:13px 16px;text-decoration:none;font-weight:700;font-size:14px;color:var(--ink);margin-top:20px}
+
+  .faq{max-width:760px}
+  details{border-bottom:1px solid var(--line);padding:16px 0}
+  summary{font-weight:700;cursor:pointer;font-size:16px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--radar);font-weight:800;margin-right:10px}
+  details[open] summary::before{content:"\2013"}
+  details p{margin-top:10px;color:#4a443b;font-size:14.5px}
+
+  footer{background:var(--ink);color:#cbc3b6;padding:40px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer b{color:#fff}
+
+  @media(max-width:820px){
+    .hero .wrap,.form-wrap{grid-template-columns:1fr}
+    .scope{max-width:320px;margin:0 auto}
+    .strip .wrap{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .grid3,.tl,.price-grid{grid-template-columns:1fr}
+    .hero h1{font-size:36px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="pip"></span> RENEWAL&nbsp;RADAR <span style="font-weight:500;color:var(--muted);font-size:13px">/ ISCIR</span></div>
+    <a class="cta" href="#demo">Cerere demo</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">Autorizatie expirata = drept de operare pierdut</span>
+      <h1>Cand expira autorizatia ISCIR, <em>nu mai ai voie sa operezi.</em></h1>
+      <p class="lead">Renewal Radar te avertizeaza cu <strong>90, 60 si 30 de zile</strong> inainte ca autorizatia RSVTI sau scadenta de verificare a echipamentului sa expire &mdash; si pastreaza fiecare proces-verbal intr-un seif fizic plus o arhiva in cloud.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demo">Rezerva kitul &amp; cere demo</a>
+        <a class="btn btn-ghost" href="#pret">Vezi preturile</a>
+      </div>
+      <p class="micro">Seif metalic + RFID + SaaS de la <strong>160&nbsp;EUR</strong> kit unic, abonament de la <strong>25&nbsp;EUR/luna</strong>. Fara card pentru demo.</p>
+    </div>
+    <div>
+      <div class="scope">
+        <div class="sweep"></div>
+        <div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div>
+        <div class="scope-tag">SCANARE SCADENTE &mdash; 3 ALERTE ACTIVE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP (social proof from registry data) -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stat red"><b>441</b><span>operatori RSVTI au deja autorizatia EXPIRATA in registrul ISCIR</span></div>
+    <div class="stat red"><b>311</b><span>firme cu autorizatie suspendata sau retrasa de stat</span></div>
+    <div class="stat"><b>1.250</b><span>operatori RSVTI persoane juridice in evidenta</span></div>
+    <div class="stat"><b>~42.000</b><span>firme cu echipamente ISCIR in cod CAEN-tinta</span></div>
+  </div>
+</div>
+
+<!-- PROBLEM / VALUE -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">De ce conteaza</div>
+    <h2 class="sec-h">O scadenta ratata costa mai mult decat tot abonamentul pe un an</h2>
+    <p class="sec-sub">Procesul-verbal de verificare se pierde, scadenta vine pe nesimtite, iar la control echipamentul este oprit. Renewal Radar inchide cele trei gauri care fac diferenta intre o firma autorizata si una sanctionata.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico" style="background:var(--alert)">!</div>
+        <h3>Alerte 90 / 60 / 30 zile</h3>
+        <p>Pentru fiecare autorizatie RSVTI si fiecare scadenta de verificare periodica a echipamentului. Pe e-mail si in calendar, cu confirmare ca le-ai vazut.</p>
+      </div>
+      <div class="card">
+        <div class="ico" style="background:var(--radar)">&#9635;</div>
+        <h3>Seif de conformitate</h3>
+        <p>Seif metalic ignifug cu etichete RFID si formulare ISCIR laminate. Documentul fizic exista mereu, chiar daca pica internetul sau laptopul.</p>
+      </div>
+      <div class="card">
+        <div class="ico" style="background:var(--amber)">&#8682;</div>
+        <h3>Arhiva gata de audit</h3>
+        <p>Scanezi procesul-verbal pe telefon, datele se extrag automat, iar la control exporti un PDF complet in 30 de secunde &mdash; nu 20-40 de ore de cautat prin bibliorafturi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:#efe8db">
+  <div class="wrap">
+    <div class="eyebrow">Cum functioneaza radarul</div>
+    <h2 class="sec-h">Numaratoarea inversa care nu te lasa descoperit</h2>
+    <div class="tl">
+      <div class="step"><div class="d">-90</div><strong>zile</strong><small>Prima alerta. Programezi din timp verificarea / reautorizarea, fara graba.</small></div>
+      <div class="step"><div class="d">-60</div><strong>zile</strong><small>Reminder + checklist documente. Vezi exact ce proces-verbal lipseste din dosar.</small></div>
+      <div class="step"><div class="d">-30</div><strong>zile</strong><small>Alerta rosie de urgenta. Escaladare catre responsabilul desemnat din firma.</small></div>
+      <div class="step"><div class="d">Zi&nbsp;0</div><strong>scadenta</strong><small>Documentul nou intra in arhiva si in seif. Radarul porneste urmatorul ciclu.</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pret">
+  <div class="wrap">
+    <div class="eyebrow">Preturi transparente</div>
+    <h2 class="sec-h">Un kit fizic, plus abonamentul care iti potriveste numarul de echipamente</h2>
+    <p class="sec-sub">Preturi conform portofoliului ISCIR Compliance Vault. Kitul se achizitioneaza o singura data; abonamentul SaaS porneste cu 30 de zile trial complet.</p>
+    <div class="price-grid">
+      <div class="kit">
+        <h3>Starter Kit</h3>
+        <div class="p">160 EUR</div>
+        <div style="font-size:13px;opacity:.8">plata unica</div>
+        <ul>
+          <li>Seif metalic ignifug 300&times;400&times;250&nbsp;mm</li>
+          <li>RFID starter: 10 etichete + cititor</li>
+          <li>7 formulare ISCIR laminate</li>
+          <li>Checklist de conformitate quick-reference</li>
+          <li>30 zile SaaS Pro inclus</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h4>SaaS Starter</h4>
+        <div class="p">25&nbsp;EUR<small>/luna</small></div>
+        <ul>
+          <li>100 documente arhivate</li>
+          <li>1 utilizator</li>
+          <li>Alerte 90/60/30 zile</li>
+          <li>Export PDF audit</li>
+        </ul>
+        <div class="pricenote">Pentru o singura locatie / putine echipamente.</div>
+      </div>
+      <div class="plan pop">
+        <span class="tagpop">RECOMANDAT</span>
+        <h4>SaaS Pro</h4>
+        <div class="p">45&nbsp;EUR<small>/luna</small></div>
+        <ul>
+          <li>1.000 documente</li>
+          <li>5 utilizatori</li>
+          <li>Registru echipamente pe serie</li>
+          <li>Calendar reautorizari + escaladare</li>
+          <li>OCR scanare procese-verbale</li>
+        </ul>
+        <div class="pricenote">Alegerea firmelor cu mai multe puncte de lucru.</div>
+      </div>
+      <div class="plan">
+        <h4>SaaS Enterprise</h4>
+        <div class="p">90&nbsp;EUR<small>/luna</small></div>
+        <ul>
+          <li>Documente nelimitate</li>
+          <li>Utilizatori nelimitati</li>
+          <li>Acces multi-locatie</li>
+          <li>Alerte de licitatii echipamente sub presiune</li>
+        </ul>
+        <div class="pricenote">Pentru operatori RSVTI care gestioneaza mai multi clienti.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET + FORM -->
+<section class="formsec" id="demo">
+  <div class="wrap">
+    <div class="form-wrap">
+      <div>
+        <div class="eyebrow">Cerere demo / rezervare kit</div>
+        <h2 class="sec-h">Vezi radarul pe propriile tale scadente</h2>
+        <p class="sec-sub">Lasa datele firmei si iti aratam, pe un demo de 15 minute, cum arata alertele si arhiva pentru echipamentele tale. Fara obligatii, fara card.</p>
+        <a class="checklist-link" href="../../DATA/lead_magnets/iscir_checklist_conformitate.html" target="_blank">
+          &#11015; Descarca gratuit: Checklist conformitate ISCIR &mdash; 12 puncte
+        </a>
+        <p class="micro" style="margin-top:22px">Datele tale raman confidentiale si nu sunt transmise tertilor. Te contactam o singura data pentru programarea demo-ului.</p>
+      </div>
+
+      <form action="#" method="post" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('ok').style.display='block';">
+        <div class="field">
+          <label for="name">Nume si prenume</label>
+          <input id="name" name="name" type="text" placeholder="Ion Popescu" required>
+        </div>
+        <div class="field">
+          <label for="company">Firma</label>
+          <input id="company" name="company" type="text" placeholder="Denumire firma" required>
+        </div>
+        <div class="field">
+          <label for="cui">CUI</label>
+          <input id="cui" name="cui" type="text" placeholder="RO12345678" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="nume@firma.ro" required>
+          </div>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" type="tel" placeholder="07xx xxx xxx" required>
+          </div>
+        </div>
+        <button class="submit" type="submit">Cere demo &amp; rezerva kitul</button>
+        <p class="formnote">Apasand butonul accepti sa fii contactat pentru programarea demo-ului.</p>
+      </form>
+      <div id="ok" style="display:none;background:var(--radar-d);color:#eafff4;padding:26px;border-radius:6px">
+        <strong style="font-family:Georgia,serif;font-size:20px">Multumim!</strong>
+        <p style="margin-top:8px;font-size:15px">Cererea ta a fost inregistrata. Te contactam in scurt timp pentru a programa demo-ul si rezervarea kitului.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Intrebari frecvente</div>
+    <h2 class="sec-h">Ce vor sa stie operatorii RSVTI</h2>
+    <div class="faq">
+      <details open><summary>De unde stiti cate scadente am de urmarit?</summary><p>La instalare introducem fiecare echipament ISCIR si fiecare autorizatie cu scadenta lor. Radarul calculeaza automat ferestrele de 90/60/30 zile pentru fiecare si te anunta din timp.</p></details>
+      <details><summary>Ce se intampla daca pierd un proces-verbal pe hartie?</summary><p>De aceea exista dublu strat: documentul scanat ramane in arhiva cloud, iar originalul in seiful metalic ignifug cu eticheta RFID. La un control ai mereu ambele variante.</p></details>
+      <details><summary>Pot adauga colegi din firma?</summary><p>Da. SaaS Pro permite 5 utilizatori, iar Enterprise utilizatori nelimitati cu acces multi-locatie &mdash; util cand mai multi responsabili urmaresc aceleasi echipamente.</p></details>
+      <details><summary>Cat dureaza pana sunt gata de audit?</summary><p>Exportul PDF gata de audit se genereaza in cateva secunde din arhiva, in loc de zilele pierdute cautand manual prin dosare inainte de control.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Renewal Radar ISCIR</b><br>Seif de conformitate + arhiva cloud pentru echipamente sub presiune si de ridicat.</div>
+    <div>Parte din <b>ISCIR Compliance Vault</b><br>Pentru operatori RSVTI si firme cu echipamente autorizate ISCIR.</div>
+  </div>
+</footer>
+
+</body>
+</html>

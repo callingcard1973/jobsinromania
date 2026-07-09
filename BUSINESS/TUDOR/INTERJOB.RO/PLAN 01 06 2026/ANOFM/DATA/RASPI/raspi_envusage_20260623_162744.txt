@@ -1,0 +1,74 @@
+﻿ANOFM .env usage inspection
+Host: 192.168.100.20   2026-06-23 16:27:44
+=====================================================
+=== files referencing ANOFM/.env ===
+/opt/ACTIVE/EMAIL/CAMPAIGNS/run_anofm_campaign.py
+
+=== run_anofm_campaign.py : env-related lines ===
+2:import subprocess, sys, os
+9:env_file = Path('/opt/ACTIVE/ANOFM/.env')
+15:                os.environ[key] = val.strip("'")
+28:result = subprocess.run(cmd, env=os.environ)
+
+=== run_anofm_campaign.py : first 50 lines ===
+#!/usr/bin/env python3
+import subprocess, sys, os
+from pathlib import Path
+from datetime import datetime
+
+os.chdir('/opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI')
+sys.path.insert(0, '/opt/ACTIVE/EMAIL/CAMPAIGNS/SCRIPTS/SHARED')
+
+env_file = Path('/opt/ACTIVE/ANOFM/.env')
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            if line.startswith('export '):
+                key, val = line.replace('export ', '').strip().split('=', 1)
+                os.environ[key] = val.strip("'")
+
+limit = int(sys.argv[1]) if len(sys.argv) > 1 else 150
+delay = int(sys.argv[2]) if len(sys.argv) > 2 else 8
+
+cmd = [
+    'python3', 'campaign_anofm_angajatori.py',
+    '--limit', str(limit),
+    '--delay', str(delay),
+    '--daily-cap', str(limit)
+]
+
+print(f'[{datetime.now().isoformat()}] Running: {" ".join(cmd)}')
+result = subprocess.run(cmd, env=os.environ)
+sys.exit(result.returncode)
+
+=== campaign_anofm_angajatori.py : env-related lines ===
+21:BREVO_KEY   = os.environ.get("BREVO_WAREHOUSEWORKERS_API_KEY",
+
+=== any .sh that sources the .env ===
+
+=== ingest_anofm.py : db/env lines ===
+11:DB = dict(host='/var/run/postgresql', dbname='anofm_db', user='tudor')
+59:    import psycopg2
+60:    conn = psycopg2.connect(**DB)
+
+=== units EnvironmentFile/ExecStart ===
+[anofm-ingest.service]
+User=tudor
+ExecStart=/usr/bin/python3 ingest_anofm.py
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+[anofm-scraper.service]
+ExecStart=/bin/bash -c 'cd /opt/ACTIVE/INTERJOB && bash run_parallel_scrapers.sh'
+User=tudor
+[anofm-audience-rebuild.service]
+User=tudor
+ExecStart=/usr/bin/python3 anofm_angajatori_rebuild.py
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+
+=== python-dotenv installed? ===
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import dotenv; print('dotenv', dotenv.__version__)
+                                   ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'dotenv' has no attribute '__version__'
+
+=== DONE ===

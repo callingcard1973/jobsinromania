@@ -1,0 +1,142 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>%%NAME%% - %%ACT_TITLE%%</title>
+<meta name="description" content="%%NAME%% - %%ACT_TITLE%% in %%LOC%%. Servicii profesionale de inspectii, verificari si consultanta ISCIR. Contact: %%PHONE%%">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:16px;line-height:1.6;color:#1a1f2b;background:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+:root{--navy:#0b1a2e;--navy-light:#142b44;--orange:#e8872a;--orange-light:#f5a623;--gray:#f5f7fa;--gray-border:#e2e6ee;--text-muted:#6b7485;--radius:12px;--shadow:0 2px 12px rgba(0,0,0,.06)}
+
+/* banner */
+.top-banner{background:linear-gradient(135deg,#fef7ed,#fef0da);border-bottom:1px solid #f5dba8;text-align:center;padding:10px 16px;font-size:13px;color:#6b4a1a}
+.top-banner strong{color:#c47a1a}
+
+/* nav */
+.header{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--orange)}
+.header .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.brand{font-weight:800;font-size:20px;letter-spacing:-.3px}
+.badge{display:inline-block;background:rgba(232,135,42,.15);color:var(--orange);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle;text-transform:uppercase;letter-spacing:.5px}
+.phone-btn{display:inline-flex;align-items:center;gap:6px;background:var(--orange);color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;transition:background .2s}
+.phone-btn:hover{background:#d4781e}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-40%;right:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,135,42,.08) 0%,transparent 70%)}
+.hero .container{position:relative;z-index:1}
+.hero-tag{display:inline-block;background:rgba(232,135,42,.2);color:var(--orange);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;font-weight:800;max-width:720px}
+.hero p{font-size:clamp(16px,2vw,19px);color:#a8b8cf;margin-top:14px;max-width:600px;line-height:1.5}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;margin-top:28px;background:var(--orange);color:var(--navy);font-weight:800;padding:15px 32px;border-radius:10px;font-size:16px;transition:all .2s}
+.hero-cta:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,135,42,.35)}
+.hero-info{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;font-size:14px;color:#889bb3}.hero-info span{background:rgba(255,255,255,.06);padding:4px 12px;border-radius:6px}
+
+/* sections */
+section{padding:64px 0}
+.section-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--navy);margin-bottom:8px}
+.section-sub{color:var(--text-muted);font-size:15px;margin-bottom:36px}
+
+/* services grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.service-card{background:var(--gray);border:1px solid var(--gray-border);border-radius:var(--radius);padding:28px 24px;transition:all .2s}
+.service-card:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.service-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.service-card p{font-size:14px;color:var(--text-muted);line-height:1.5}
+.service-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--orange),var(--orange-light));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;color:#fff}
+
+/* trust section */
+.trust{background:var(--gray);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border)}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
+.trust-item{text-align:center;padding:20px}
+.trust-nr{font-size:28px;font-weight:800;color:var(--orange)}
+.trust-label{font-size:13px;color:var(--text-muted);margin-top:4px}
+
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .section-title{color:#fff}
+.contact .section-sub{color:#889bb3}
+.contact-flex{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}
+.contact-card{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:16px 22px;min-width:200px;transition:background .2s}
+.contact-card:hover{background:rgba(255,255,255,.1)}
+.contact-icon{width:40px;height:40px;border-radius:8px;background:rgba(232,135,42,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-label{font-size:12px;color:#889bb3;text-transform:uppercase;letter-spacing:.5px}
+.contact-value{font-size:16px;font-weight:700;margin-top:2px}
+
+/* footer */
+.footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:24px 0;font-size:13px;color:#6b7f99;text-align:center}
+.footer strong{color:#889bb3}
+</style></head><body>
+
+<div class="top-banner">Pagina de prezentare generata pentru <strong>%%NAME%%</strong> &mdash; o doresti publicata pe domeniul propriu? <a href="#" style="color:#c47a1a;font-weight:700;text-decoration:underline">Suna-ne</a>.</div>
+
+<header class="header">
+<div class="container">
+<div class="brand">%%NAME%%<span class="badge">%%CAENLBL%%</span></div>
+%%TEL_BTN%%
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-tag">%%ACT_TITLE%%%%LOC_IN%%</div>
+<h1>%%NAME%%</h1>
+<p>Operator autorizat ISCIR pentru inspectii, verificari tehnice si consultanta de specialitate. Profesionalism, promptitudine si conformitate deplina cu legislatia in vigoare.</p>
+%%EXTRA_INFO%% %%CTA%%
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">Servicii oferite</h2>
+<p class="section-sub">Expertiza tehnica autorizata pentru toate tipurile de echipamente si instalatii sub incidenta ISCIR</p>
+<div class="grid">
+%%SERVICII%%
+</div>
+</div>
+</section>
+
+<section class="trust">
+<div class="container">
+<div class="trust-grid">
+<div class="trust-item">
+<div class="trust-nr">%%PHONE%%</div>
+<div class="trust-label">Telefon contact</div>
+</div>
+<div class="trust-item">
+<div class="trust-nr">%%AUTH_NR_SHORT%%</div>
+<div class="trust-label">%%AUTH_NR_LBL%%</div>
+</div>
+<div class="trust-item">
+<div class="trust-nr">%%EXPIRY_DATE%%</div>
+<div class="trust-label">Valabil pana la</div>
+</div>
+<div class="trust-item">
+<div class="trust-nr">&#10003;</div>
+<div class="trust-label">Conformitate legala</div>
+</div>
+<div class="trust-item">
+<div class="trust-nr">&#10003;</div>
+<div class="trust-label">Raspuns prompt</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact">
+<div class="container">
+<h2 class="section-title">Contacteaza-ne</h2>
+<p class="section-sub">%%NAME%% &mdash; %%LOC%%%%ADDRESS_LINE%%</p>
+<div class="contact-flex">
+%%CONTACT%%
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">&copy; %%NAME%% &middot; %%LOC%% &middot; Operator RSVTI autorizat ISCIR</div>
+</footer>
+
+</body></html>

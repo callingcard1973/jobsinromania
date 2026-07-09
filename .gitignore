@@ -1,0 +1,137 @@
+# IMAP / email credentials (never commit)
+imap_config.env
+imap_all_accounts.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Generated cache (rebuilt daily on raspibig)
+/data/jobs.json
+
+# Keep generated HTML pages (rebuild daily, commit to git for GitHub Pages)
+# /docs/ — tracked in git
+
+# === Repo-health additions (2026-06-12) — keep large/data/binary out of git ===
+node_modules/
+.venv/
+.aider*
+*.parquet
+*.zip
+*.wav
+*.aup3
+*.m4a
+*.mp4
+*.xlsx
+# Large data dumps (regenerable via scrapers)
+DATA/OPENTENDER/
+CODE/INFRA/CLAUDE/OPT/SANDBOX/EU_SUPPLIERS/
+# Personal/large local-only folders (keep on disk, never in git)
+BUSINESS/IDEAS/CASA BUZAU/CASABUZAU/SAFE/
+EXPORTS/
+UPLOADS/
+SCRATCH/
+# Large ANAF DB dumps — local only
+BUSINESS/TUDOR/INTERJOB.RO/PLAN 01 06 2026/SILOZURI/DATA/raw/ANAF/
+
+# Large data dumps — local only, never commit (just code in git)
+BUSINESS/TUDOR/INTERJOB.RO/PLAN 01 06 2026/SILOZURI/DATA/raw/
+BUSINESS/IDEAS/ASOCIATII/ASOC PROP/ONG_REGISTRU_NATIONAL.tsv
+BUSINESS/IDEAS/ASOCIATII/ASOC PROP/ONG_ACTIVE.tsv
+BUSINESS/IDEAS/LLM/training_data/raw_emails.jsonl
+
+# Norway lead lists (PII — kept out of git; data lives in norway_campaign DB)
+BUSINESS/TUDOR/INTERJOB.RO/PLAN 01 06 2026/EMAIL CAMPAIGNS/norway_clients_*.csv
+
+# === PII — candidate CVs / passports / applications (GDPR — NEVER commit) (2026-06-24) ===
+AGENTII DE MUNCA TEMPORARA CONTRACTE/
+**/STERKE CANDIDATES/
+**/cvs/
+**/CVS/
+**/CV_*/
+**/*passport*
+**/*Passport*
+**/*PASSPORT*
+# Candidate document PDFs (CVs, certs, IDs) — keep job/land catalogs which live elsewhere
+**/STERKE_CVs/
+training_data/
+# Quarantined broken source (local only)
+*.broken
+
+# === PII — ISCIR operatori demo-site data (GDPR — NEVER commit) (2026-07-01) ===
+# Contains operator names/phones/emails in static HTML + _index.csv
+**/websites_operatori/
+# ANRSC + other operator contact CSVs (emails) — untracked 2026-07-02
+**/DATA/*operatori*.csv
+**/ANRSC/DATA/anrsc_operatori.csv
+# Lead CSVs with emails/phones — never commit
+**/*_YAHOO_*.csv
+**/IDEAS/MASTER.csv
+
+# === WhatsApp internal connector (session auth + Tudor number PII) (2026-07-01) ===
+**/whatsapp_session/
+**/whatsapp_internal.json
+**/telegram_cereale.json
+
+# === NIGHT 1 GDPR additions (2026-07-08) — untrack lead/contact + personal PII ===
+# Personal legal cases hold third-party PII (names/phones/emails/WhatsApp). Never sync.
+PERSONAL/
+# Deploy scratch trees (contain mailbox addresses)
+TEMP_DEPLOY_RASPI_CAMPAIGNS/
+# Archived buyer/horeca contact dumps
+DATA/ARCHIVE/Z.AI_SUPERMARKETS/
+DATA/ARCHIVE/ZCLAW PERSONAL ASSISTANT/deploy/horeca_emails_campaign.csv
+# Norway lead lists (generalize; old rule only matched PLAN 01 06 path)
+**/norway_clients_*.csv
+# Lead/contact CSVs across PLAN business dirs (emails/phones/names)
+**/PLAN 01 07 2026/DATA/00_SHARED_leads_si_dnc/LEADS_TRACKER.csv
+**/COOP GOSPODARII DE ALTADATA/DATA/DATE_leads_*.csv
+**/SILOZURI/DATA/*emails*.csv
+**/SILOZURI/DATA/MASTER*.csv
+**/CATALOG CANDIDATI/DATA/*.csv
+**/INTERJOB MANPOWER/DATA/DATE_candidati_*.csv
+**/INTERJOB MANPOWER/DATA/DATE_angajatori_*.csv
+**/ANOFM/DATA/ANGAJATORI/*.csv
+**/EMAIL CAMPAIGNS/DATA/*.csv
+**/PRIMARII/DATA/*.csv
+**/BIROU DE ARHITECTURA/DATA/*.csv
+**/DATA/MALTA/malta_accommodations_*.csv
+**/UKRAINE/**/*.csv
+**/Legume fructe agri zootehnie/**/*.csv

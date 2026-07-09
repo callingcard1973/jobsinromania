@@ -1,0 +1,75 @@
+﻿ANOFM raspi FIX+INGEST
+Host: 192.168.100.20   2026-06-23 16:22:12
+=====================================================
+=== BEFORE counts ===
+total=16963
+maxcreated=2026-06-23 15:53:52.147598
+today=534
+
+=== FORCE INGEST now ===
+is-active: inactive
+result: success
+
+=== this ingest run log ===
+Jun 23 16:22:14 raspi systemd[1]: Starting anofm-ingest.service - ANOFM Ingest (Raspi)...
+Jun 23 16:22:17 raspi python3[38213]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv...
+Jun 23 16:22:17 raspi python3[38213]: Done: 49 inserted, 8351 skipped
+Jun 23 16:22:17 raspi systemd[1]: anofm-ingest.service: Deactivated successfully.
+Jun 23 16:22:17 raspi systemd[1]: Finished anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 16:22:17 raspi systemd[1]: anofm-ingest.service: Consumed 1.132s CPU time.
+
+=== AFTER counts ===
+total=17012
+maxcreated=2026-06-23 16:22:14.651004
+today=583
+
+=== FAILURE investigation (today, no secret lines) ===
+Jun 23 13:08:17 raspi python3[997]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_raw_manual_20260421.csv...
+Jun 23 13:08:17 raspi systemd[1]: anofm-ingest.service: Main process exited, code=exited, status=1/FAILURE
+Jun 23 13:08:17 raspi systemd[1]: anofm-ingest.service: Failed with result 'exit-code'.
+Jun 23 13:08:17 raspi systemd[1]: Failed to start anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 15:52:18 raspi python3[32025]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_122501.csv...
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Main process exited, code=exited, status=1/FAILURE
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Failed with result 'exit-code'.
+Jun 23 15:52:18 raspi systemd[1]: Failed to start anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 15:54:13 raspi python3[32537]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_122501.csv...
+Jun 23 15:54:13 raspi python3[32537]: Done: 0 inserted, 8399 skipped
+Jun 23 16:22:17 raspi python3[38213]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv...
+Jun 23 16:22:17 raspi python3[38213]: Done: 49 inserted, 8351 skipped
+
+=== unit config ===
+User=tudor
+WorkingDirectory=/opt/ACTIVE/INTERJOB/ingest
+ExecStart=/usr/bin/python3 ingest_anofm.py
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+
+=== how ingest script loads env ===
+
+=== who else references the .env (run scripts) ===
+/opt/ACTIVE/EMAIL/CAMPAIGNS/run_anofm_campaign.py
+
+=== .env structure (values masked) ===
+# ANOFM Independent (Raspi) Credentials
+
+# PostgreSQL (local raspi)
+export PG_HOST=<masked>
+export PG_PORT=<masked>
+export PG_DB=<masked>
+export PG_USER=<masked>
+export PG_PASSWORD=<masked>
+
+# Brevo (warehouseworkers.eu account)
+export BREVO_WAREHOUSEWORKERS_API_KEY=<masked>
+
+# Gmail (Elena)
+export GMAIL_USER=<masked>
+export GMAIL_APP_PASSWORD=<masked>
+
+# Brevo alt (buildjobs.eu - for fallback)
+export BREVO_BUILDJOBS_API_KEY=<masked>
+
+# Storage
+export SCRAPER_CSV_DIR=<masked>
+export CAMPAIGN_DATA_DIR=<masked>
+
+=== DONE ===

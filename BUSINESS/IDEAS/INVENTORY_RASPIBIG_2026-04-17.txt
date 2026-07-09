@@ -1,0 +1,109 @@
+# RASPIBIG Inventory — 2026-04-17
+
+Machine: tudor@192.168.100.21 | Role: All campaigns, telegram, automation, LLM
+
+## PostgreSQL (21 databases, ~500M rows)
+
+### interjob_master (primary, tudor owner)
+| Table | Rows | Content |
+|-------|------|---------|
+| companies | 208.9M | EU company master |
+| companies_clean | 40.7M | Deduped + verified |
+| fr_companies | 29.2M | France |
+| master_romania_companies | 8.9M | ONRC (145K emails) |
+| uk_companies | 5.68M | Companies House |
+| ted_awards | 6.18M | TED procurement awards |
+| de_companies | 5.3M | Handelsregister |
+| tenders | 5.14M | TED contracts |
+| ro_companies_onrc | 4.12M | RO registry |
+| procurements | 3.46M | Mixed EU tenders |
+| ted_winners | 1.57M | 370K unique emails |
+| master_emails | 1.06M | Deduped contacts |
+| insolvency | 1.03M | EU bankruptcies |
+| agencies | 148K | 18K unique valid emails |
+| no_companies_full | 1.15M | Norway (324K emails) |
+| master_applicants (SQLite sep) | 758 | Worker CVs |
+
+### european_funds (32K)
+- beneficiari_privati: 27.5K grant recipients (9,227 emails)
+- dnc: 4.4K do-not-contact
+- proiecte: 15,969 (15,932 emails)
+
+### Other DBs
+archives, bulgaria_emails, campaign_csv, email_sender, eu_funds_bg, eures, moldova, romania, romania_emails, scraper, uk_data, anofm, api, pnrr, openclaw, opendata
+
+## Email Campaigns (125 configs)
+
+Location: `/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/configs/`
+
+**Active now** (ANOFM live, 2,249/day):
+- ANOFM 14 sectors (all other disabled)
+- Previously ran: A1 Transport (8 countries), agroevolution, TED construction (11 countries), Harghita 3 phases, DELIVERY_RO, norway_virgil
+
+**Sender pool**:
+- Brevo: 11 working keys (5 branded domains: buildjobs, careworkers, seicarescu, mivromania, cifn, horecaworkers)
+- Zoho SMTP: 2 accounts (transport.work + workers.europe) via ProtonVPN
+- Gmail: 13 accounts (≤40/day each)
+- A2 SMTP: 14 accounts
+- Yahoo: 2
+
+**Capacity**: 2,560/day target (Zoho warming to 500/day both)
+
+**State**: DELIVERY_RO.csv 529, DELIVERY_RO_BREVO 265, DELIVERY_RO_ZOHO 265, DNC 67
+
+## Scrapers & Data Pullers
+
+Services (systemd):
+- eures-scraper (Nordic + EU core)
+- eures-expansion (Southern/Eastern/HORECA/FR)
+- eures-western
+- opendata-downloader v4.0
+- interjob-governor (2GB RAM)
+- interjob-nanoclaw (4GB RAM)
+
+Data on disk:
+- `/opt/ACTIVE/SCRAPERS/`: 2.4GB (spider code)
+- `/opt/ACTIVE/SCRAPER_DATA/`: 3.1GB (raw outputs)
+- `/opt/ACTIVE/OPENDATA/DATA/`: 2.9GB (300+ country subdirs, MASTER_ALL.csv 136M)
+- `/opt/ACTIVE/SELL/DATA/ted_winners_by_country/`: 172 country CSVs (370K emails total)
+
+## AI/LLM
+
+- **Ollama** 11434: qwen2.5:1.5b, qwen3-4b, llama3.2:3b (NanoClaw + smart_router)
+- **llama.cpp server** :8082: qwen3-4b-q4.gguf (16384 ctx, 4 threads)
+- **LLM Task Feeder** systemd `llm-task-feeder.service` (email_classify, company_enrich, cv_parse, data_quality, article_generate)
+
+## Telegram Bots (4 live)
+
+- **@raspibig_controller_bot** — 37 commands (primary)
+- horecajobs-bot — hospitality recruiting
+- multi-cv-bot — CV matching
+- vreau-muncitori-bot — labor sourcing
+
+## Email System Intelligence
+
+- `/opt/ACTIVE/INFRA/SKILLS/response_tracker.py` — 19 IMAP, every 5min
+- `/opt/ACTIVE/INFRA/SKILLS/email_processor.py` — sklearn→Ollama qwen3-4b, every 10min
+- `/opt/ACTIVE/INFRA/SKILLS/solonet_pipeline.py` — RO employer→order drafts
+- `/opt/ACTIVE/INFRA/SKILLS/worker_router.py` — apps→master_applicants.db
+- llm-email-processor, email-action-api, email-health-dashboard services
+
+## Autoheal / Watchdog
+
+- `/opt/ACTIVE/INFRA/SKILLS/bot_watchdog.py` (cron 15min): services, bot 409s, disk auto-clean >85%, Ollama, dashboard :8096, cron, NanoClaw heartbeat, Caddy HTTPS
+
+## Revenue-Ready Assets (already priced)
+
+| Asset | Path | Price |
+|-------|------|-------|
+| RO Construction CSV (117K) | `/opt/ACTIVE/SELL/DATA/ted_winners_by_country/` | EUR 499 |
+| TED Winners EU CSV | same dir | EUR 299 |
+| Norvegia CSV (155K) | same dir | EUR 999 |
+| RO Alimentar (69K) | same dir | EUR 499 |
+| Recruitment Agencies EU (106K) | same dir | EUR 4,999 |
+
+## Disk Distribution (Top 10)
+- SCRAPER_DATA 3.1G, OPENDATA 2.9G, SCRAPERS 2.4G, EU_FUNDING 1.7G, EMAIL 1.2G, IDEAS 836M, WEB 764M, CRM 615M
+
+## Summary (business terms)
+Mid-scale B2B platform: 500M row DB, 125 campaign templates, 4 Telegram bots, LLM autonomous cascade, 370K unique email contacts, Brevo+Zoho+Gmail delivery 2.5K/day, response tracker + order pipeline generating Solonet drafts. Operational since Apr 11.

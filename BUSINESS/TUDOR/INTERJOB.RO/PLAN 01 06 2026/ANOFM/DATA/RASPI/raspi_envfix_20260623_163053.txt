@@ -1,0 +1,43 @@
+﻿ANOFM .env systemd fix (drop-in)
+Host: 192.168.100.20   2026-06-23 16:30:53
+=====================================================
+=== BEFORE: EnvironmentFile in units ===
+[anofm-ingest]
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+[anofm-audience-rebuild]
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+
+=== applying drop-in overrides (clear EnvironmentFile) ===
+override written: anofm-ingest
+override written: anofm-audience-rebuild
+
+=== daemon-reload ===
+reloaded OK
+
+=== AFTER: drop-in visible ===
+[anofm-ingest]
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+# /etc/systemd/system/anofm-ingest.service.d/zz-no-envfile.conf
+EnvironmentFile=
+[anofm-audience-rebuild]
+EnvironmentFile=/opt/ACTIVE/ANOFM/.env
+# /etc/systemd/system/anofm-audience-rebuild.service.d/zz-no-envfile.conf
+EnvironmentFile=
+
+=== test ingest run (expect NO 'Ignoring invalid environment') ===
+result: success
+Jun 23 16:30:56 raspi systemd[1]: Starting anofm-ingest.service - ANOFM Ingest (Raspi)...
+Jun 23 16:30:59 raspi python3[39967]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv...
+Jun 23 16:30:59 raspi python3[39967]: Done: 0 inserted, 8400 skipped
+Jun 23 16:30:59 raspi systemd[1]: anofm-ingest.service: Deactivated successfully.
+Jun 23 16:30:59 raspi systemd[1]: Finished anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 16:30:59 raspi systemd[1]: anofm-ingest.service: Consumed 1.117s CPU time.
+
+=== warnings still present today? (should be only old ones) ===
+count since this run:
+0
+
+=== DB ok ===
+total=17012
+
+=== DONE ===

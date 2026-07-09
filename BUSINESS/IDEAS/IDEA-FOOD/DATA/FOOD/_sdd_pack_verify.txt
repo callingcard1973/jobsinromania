@@ -1,0 +1,11 @@
+SELLERS_OK
+SKU_OK
+DELIVERY_OK
+COMPLIANCE_OK
+COOP_OK
+SENDLIST_OK
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/first-wave-seller-readiness-sheet.md:23:## Wave 1 Inclusion Rule
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/first-wave-sku-pricing-sheet.md:27:## Commercial Use Rule
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/delivery-coverage-note.md:17:## Buyer-Safe Language
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/compliance-checklist.md:7:## Minimum Checklist
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/wave-1-send-list.md:3:## Priority Sequence

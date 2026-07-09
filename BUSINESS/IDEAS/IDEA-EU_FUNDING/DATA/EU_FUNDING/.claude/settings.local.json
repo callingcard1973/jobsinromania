@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh tudor@192.168.100.21 \"cat /opt/ACTIVE/EU_FUNDING/CLAUDE.md && echo '===SEPARATOR===' && cat /opt/ACTIVE/EU_FUNDING/openspec/config.yaml\")",
+      "Bash(ssh tudor@192.168.100.21 \"for f in /opt/ACTIVE/EU_FUNDING/SCRIPTS/*.py /opt/ACTIVE/EU_FUNDING/CONFIG/wp_config.json; do echo '===FILE: '\\\\$f'==='; cat \\\\$f; echo; done\")",
+      "Bash(ssh tudor@192.168.100.21 'for f in /opt/ACTIVE/EU_FUNDING/SCRIPTS/*.py; do echo \"===FILE: $f===\"; cat \"$f\"; echo; done')",
+      "Bash(ssh tudor@192.168.100.21 'ls -la /opt/ACTIVE/EU_FUNDING/TEMPLATES/ /opt/ACTIVE/EU_FUNDING/ALERTS/ /opt/ACTIVE/EU_FUNDING/CAMPAIGNS/ /opt/ACTIVE/EU_FUNDING/RESEARCH/ /opt/ACTIVE/EU_FUNDING/DATA/ /opt/ACTIVE/EU_FUNDING/OUTPUT/ /opt/ACTIVE/EU_FUNDING/CONFIG/')",
+      "Bash(ssh tudor@192.168.100.21 'cat /opt/ACTIVE/EU_FUNDING/RESEARCH/competitive_analysis_20260313.md')",
+      "Bash(ssh tudor@192.168.100.21 'cat /opt/ACTIVE/EU_FUNDING/GITHUB_PAGES/index.html && echo \"===CNAME===\" && cat /opt/ACTIVE/EU_FUNDING/GITHUB_PAGES/CNAME && echo \"===GIT===\" && cd /opt/ACTIVE/EU_FUNDING/GITHUB_PAGES && git remote -v && git log --oneline -5')",
+      "Bash(ssh tudor@192.168.100.21 'cat /opt/ACTIVE/EU_FUNDING/CONFIG/wp_config.json && echo \"===DB===\" && psql -U tudor -d cifn_eu -c \"\\\\dt\" 2>&1 && echo \"===COUNT===\" && psql -U tudor -d cifn_eu -c \"SELECT COUNT\\(*\\) FROM calls\" 2>&1')",
+      "Bash(ssh tudor@192.168.100.21 'cat /opt/ACTIVE/EU_FUNDING/TEMPLATES/base.html && echo \"===INDEX===\" && cat /opt/ACTIVE/EU_FUNDING/TEMPLATES/index.html && echo \"===PROGRAMME===\" && cat /opt/ACTIVE/EU_FUNDING/TEMPLATES/programme.html')",
+      "Bash(ssh tudor@192.168.100.21 'psql -U tudor -d cifn_eu -c \"\\\\d calls\" && echo \"===SAMPLE===\" && psql -U tudor -d cifn_eu -c \"SELECT identifier, programme, title, status, deadline FROM calls LIMIT 5\"')",
+      "WebFetch(domain:medium.com)",
+      "Bash(curl -sL -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/131.0.0.0 Safari/537.36\" -H \"Accept: text/html\" \"https://medium.com/@unicodeveloper/10-must-have-skills-for-claude-and-any-coding-agent-in-2026-b5451b013051\" 2>/dev/null | python3 -c \"\nimport sys, re, html\ntext = sys.stdin.read\\(\\)\n# Remove scripts, styles\ntext = re.sub\\(r'<script[^>]*>.*?</script>', '', text, flags=re.DOTALL\\)\ntext = re.sub\\(r'<style[^>]*>.*?</style>', '', text, flags=re.DOTALL\\)\n# Convert common tags\ntext = re.sub\\(r'<h[1-3][^>]*>\\(.*?\\)</h[1-3]>', r'\\\\n## \\\\1\\\\n', text, flags=re.DOTALL\\)\ntext = re.sub\\(r'<p[^>]*>\\(.*?\\)</p>', r'\\\\1\\\\n', text, flags=re.DOTALL\\)\ntext = re.sub\\(r'<li[^>]*>\\(.*?\\)</li>', r'- \\\\1', text, flags=re.DOTALL\\)\ntext = re.sub\\(r'<br\\\\s*/?>', '\\\\n', text\\)\n# Remove remaining HTML tags\ntext = re.sub\\(r'<[^>]+>', '', text\\)\ntext = html.unescape\\(text\\)\n# Remove excessive whitespace\ntext = re.sub\\(r'\\\\n{3,}', '\\\\n\\\\n', text\\)\ntext = re.sub\\(r' {2,}', ' ', text\\)\n# Print article content \\(skip header junk\\)\nlines = text.split\\('\\\\n'\\)\nprinting = False\nfor line in lines:\n    line = line.strip\\(\\)\n    if '10 must-have' in line.lower\\(\\) or 'skills for claude' in line.lower\\(\\):\n        printing = True\n    if printing and line:\n        print\\(line\\)\n\" 2>/dev/null | head -500)",
+      "Read(//c/Users/apami/.ssh/**)",
+      "Bash(ssh-add -l)",
+      "Bash(ssh tudor@192.168.100.21 \"cat /opt/ACTIVE/EU_FUNDING/OUTPUT/style.css\")",
+      "Bash(ssh tudor@192.168.100.21 \"cat /opt/ACTIVE/EU_FUNDING/OUTPUT/index.html\")",
+      "Bash(ssh tudor@192.168.100.21 'cat /opt/ACTIVE/EU_FUNDING/CONFIG/.credentials')"
+    ]
+  }
+}

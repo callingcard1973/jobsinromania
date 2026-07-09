@@ -1,0 +1,77 @@
+{
+  "db": {
+    "host": "/var/run/postgresql",
+    "dbname": "interjob_master",
+    "user": "tudor",
+    "password": "scraper123"
+  },
+  "env_file": "/opt/ACTIVE/EMAIL/CAMPAIGNS/.env",
+  "campaign_name": "JOBFAIRS",
+  "templates_dir": "/opt/ACTIVE/EMAIL/CAMPAIGNS/UNIFIED/templates/jobfairs/",
+  "null_status_is_pending": true,
+  "tables": {
+    "contacts": "jobfairs_campaign",
+    "send_log": "jobfairs_send_log",
+    "dnc": "jobfairs_dnc",
+    "col_email": "email",
+    "col_name": "contact_name",
+    "col_company": "company",
+    "col_city": "city",
+    "col_sector": "sector",
+    "col_campaign_status": "campaign_status",
+    "col_last_contacted": "last_contacted"
+  },
+  "sectors": {
+    "HR_MANAGERS": {
+      "sender_key": "BREVO_BUILDJOBS_API_KEY",
+      "sender_email": "office@buildjobs.eu",
+      "sender_name": "InterJob Recruitment Fairs",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 100,
+      "delay_min": 360,
+      "delay_max": 600,
+      "enabled": false,
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      }
+    },
+    "EURES_CONTACTS": {
+      "sender_key": "BREVO_BUILDJOBS_API_KEY",
+      "sender_email": "office@buildjobs.eu",
+      "sender_name": "InterJob Recruitment Fairs",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 50,
+      "delay_min": 360,
+      "delay_max": 600,
+      "enabled": false,
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      }
+    },
+    "NORWAY_OIL": {
+      "sender_key": "BREVO_BUILDJOBS_API_KEY",
+      "sender_email": "office@buildjobs.eu",
+      "sender_name": "InterJob Recruitment Fairs",
+      "reply_to": "manpower.dristor@gmail.com",
+      "daily_limit": 150,
+      "delay_min": 360,
+      "delay_max": 600,
+      "enabled": false,
+      "business_hours": {
+        "enabled": true,
+        "days": [0, 1, 2, 3, 4],
+        "start": 8,
+        "end": 18
+      }
+    }
+  },
+  "notes": "Physical job fairs in Romania - Norwegian oil/EU employers recruit Romanian workers. 3 sectors: direct HR contacts, EURES network, Norway oil/offshore. ALL DISABLED until Tudor approves.",
+  "enabled": false,
+  "daily_limit": 300
+}

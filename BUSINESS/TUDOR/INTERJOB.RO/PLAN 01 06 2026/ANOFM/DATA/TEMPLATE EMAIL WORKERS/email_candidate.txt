@@ -1,0 +1,21 @@
+SUBJECT: Thank you - we received your CV
+
+{greeting}
+
+Thank you for sending us your CV. We have received it.
+
+Our team is now working to match you with suitable jobs in Europe,
+and we will contact you as soon as we have something for you.
+
+Stay close to new openings in the meantime:
+- Telegram (apply): https://t.me/interjob_apply_bot
+- Telegram (Jobs in Romania): https://t.me/jobsinro
+- WhatsApp group: https://chat.whatsapp.com/DvnchNG3vYBLnLuqY3DW9K
+- Facebook group: https://www.facebook.com/groups/3115280525381395
+
+Best regards,
+Elena Vasilescu
+InterJob European Recruitment Network
+office@interjob.ro
+
+To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.

@@ -1,0 +1,81 @@
+﻿host=192.168.100.21
+=== A) CRED DISCOVERY ===
+/opt/ACTIVE/SILOZURI/CAMPAIGN/CODE/reply_handler_silozuri.py
+/opt/ACTIVE/EMAIL/CAMPAIGNS/.env.corrupted
+/opt/ACTIVE/EMAIL/CAMPAIGNS/.env
+--- matching lines ---
+09/04/2026 16:07:04,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:05,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:06,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:07,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:08,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:09,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:07:10,Elena - INTERJOB SOLUTIONS,elena.manpower.dristor@gmail.com,+40 750 609 594,,inquiry,gmail-fruitnature
+09/04/2026 16:14:36,Elena Popescu,elena.manpower.dristor@gmail.com,,,inquiry,yahoo-apa
+09/04/2026 16:14:41,Elena Popescu,elena.manpower.dristor@gmail.com,,,inquiry,yahoo-apa
+09/04/2026 16:23:57,Elena Manpower Dristor,elena.manpower.dristor@gmail.com,0765028217-,,inquiry,gmail-mpd
+=== B) WRITE HEALTH SCRIPT ===
+wrote bytes:
+3069 /opt/ACTIVE/INTERJOB/anofm_health_check.py
+=== C) TEST RUN ===
+Traceback (most recent call last):
+  File "/opt/ACTIVE/INTERJOB/anofm_health_check.py", line 80, in <module>
+    s.login(GMAIL_USER, GMAIL_PASS)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.13/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-466648c698dsm38498118f8f.16 - gsmtp')
+ANOFM raspibig health  2026-06-23
+==================================================
+
+[TIMERS] active / enabled
+  anofm-scraper              active / enabled
+  anofm-ingest               active / enabled
+  anofm-audience-rebuild     active / enabled
+
+[DATABASE] interjob_master.ij_jobs
+  total ij_jobs   : 17054
+  active anofm    : 13762
+  created today   : 371
+
+[CSV] /mnt/hdd/SCRAPER_DATA/csv/ANOFM/
+  newest : anofm_latest.csv
+  mtime  : 2026-06-23 16:01:57
+  lines  : 11852
+
+[CAMPAIGNS] sent today
+  ANOFM_ANGAJATORI : 0
+  CANDIDATE_BCAST  : 1
+
+[SYSTEM]
+  disk / : /dev/nvme0n1p2  235G  108G  115G  49% /
+  uptime : 17:10:04 up 2 days,  7:45,  4 users,  load average: 30.69, 25.42, 22.67
+
+[INGEST LOG] journalctl -u anofm-ingest -n 8
+Jun 23 13:00:02 raspibig systemd[1]: Starting anofm-ingest.service - ANOFM CSV ingest into ij_jobs (interjob_master)...
+Jun 23 13:00:19 raspibig systemd[1]: anofm-ingest.service: Deactivated successfully.
+Jun 23 13:00:19 raspibig systemd[1]: Finished anofm-ingest.service - ANOFM CSV ingest into ij_jobs (interjob_master).
+Jun 23 13:00:19 raspibig systemd[1]: anofm-ingest.service: Consumed 1.549s CPU time, 17.9M memory peak.
+Jun 23 16:30:00 raspibig systemd[1]: Starting anofm-ingest.service - ANOFM CSV ingest into ij_jobs (interjob_master)...
+Jun 23 16:30:24 raspibig systemd[1]: anofm-ingest.service: Deactivated successfully.
+Jun 23 16:30:24 raspibig systemd[1]: Finished anofm-ingest.service - ANOFM CSV ingest into ij_jobs (interjob_master).
+Jun 23 16:30:24 raspibig systemd[1]: anofm-ingest.service: Consumed 1.736s CPU time, 19.5M memory peak.
+HEALTH_EMAIL_FAIL
+=== D) INSTALL CRON ===
+cron installed
+--- crontab tail ---
+0 14 * * * /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/run_construction_ramp.sh >> /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/logs/cron.log 2>&1
+# Daily roundup orchestrator ÔÇö 09:00 UTC
+0 9 * * * cd /opt/ACTIVE/EVENT_PUBLISHER && python3 orchestrator.py >> /opt/ACTIVE/INFRA/LOGS/daily_roundup.log 2>&1
+0 3 * * * /opt/ACTIVE/EURES/eures_cron.sh >> /tmp/eures_cron.log 2>&1
+5 8 * * * /usr/bin/python3 /opt/ACTIVE/INTERJOB/anofm_health_check.py >> /opt/ACTIVE/INFRA/LOGS/anofm_health.log 2>&1
+=== DONE ===

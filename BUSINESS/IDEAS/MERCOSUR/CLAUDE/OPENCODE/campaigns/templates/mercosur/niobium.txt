@@ -1,0 +1,37 @@
+Subject: Brazilian Niobium - 82% of World Supply, Now Tariff-Free
+
+Dear {company},
+
+Brazil controls 82% of global niobium production. Under the EU-Mercosur agreement (May 2026), European steel and aerospace companies gain tariff-free access.
+
+I connect EU manufacturers with Brazilian niobium suppliers.
+
+PRODUCTS AVAILABLE:
+- Ferroniobium (FeNb) for HSLA steel
+- Niobium oxide for superalloys
+- Niobium metal for aerospace applications
+
+APPLICATIONS:
+- High-strength low-alloy steel (pipelines, automotive)
+- Superalloys (jet engines, gas turbines)
+- Superconducting magnets (MRI, particle accelerators)
+
+WHY SECURE SUPPLY NOW:
+- EU has no domestic niobium production
+- Brazil is the only reliable large-scale source
+- Tariffs eliminated under Mercosur agreement
+- {supplier_count} major producers available
+
+SUPPLIERS:
+{top_suppliers}
+
+If your steel, aerospace, or advanced materials operations require niobium, I can arrange supplier contacts.
+
+Best regards,
+
+Tudor Seicarescu
+Trade Facilitation - EU/Mercosur
+tudor@interjob.ro
+
+--
+Sent to {email}. Reply STOP to unsubscribe.

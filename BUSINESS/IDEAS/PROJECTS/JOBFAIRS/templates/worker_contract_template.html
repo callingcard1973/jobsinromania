@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU Employment Contract</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .contract-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #003d82;
+            padding-bottom: 25px;
+        }
+        .header h1 {
+            color: #003d82;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .header h2 {
+            color: #666;
+            font-weight: normal;
+            margin: 0;
+            font-size: 16px;
+            font-style: italic;
+        }
+        .eu-flag {
+            width: 80px;
+            height: 50px;
+            background: linear-gradient(to bottom, #003d82 0%, #ffdd00 50%, #003d82 100%);
+            margin: 0 auto 20px auto;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .parties-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .parties {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .party {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+        .party h4 {
+            color: #003d82;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid #003d82;
+            padding-bottom: 8px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h3 {
+            color: #003d82;
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-left: 4px solid #003d82;
+            padding-left: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: linear-gradient(135deg, #003d82 0%, #0056b8 100%);
+            color: white;
+            font-weight: bold;
+            width: 35%;
+        }
+        td {
+            background: #fff;
+        }
+        tr:nth-child(even) td {
+            background: #f8f9fa;
+        }
+        .legal-framework {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .legal-framework h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        .worker-rights {
+            background: #f3e5f5;
+            border: 2px solid #7b1fa2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .worker-rights h3 {
+            color: #7b1fa2;
+            margin-top: 0;
+        }
+        .signature-section {
+            margin-top: 50px;
+            border-top: 3px solid #003d82;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .signature {
+            text-align: center;
+            flex: 1;
+            margin: 0 20px;
+        }
+        .signature-line {
+            border-bottom: 2px solid #333;
+            margin-bottom: 8px;
+            height: 40px;
+            width: 250px;
+            margin: 0 auto 8px auto;
+        }
+        .signature h4 {
+            color: #003d82;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .disclaimer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .disclaimer h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .contract-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #003d82;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        @media print {
+            body { background: white; }
+            .contract-container { box-shadow: none; }
+            .parties { flex-direction: column; }
+            .party { margin-bottom: 15px; }
+        }
+        @media (max-width: 768px) {
+            .parties {
+                flex-direction: column;
+            }
+            .signature-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contract-container">
+        <div class="contract-number">Contract #EU-{{ current_date | replace('/', '') }}-001</div>
+
+        <div class="header">
+            <div class="eu-flag">★ EU ★</div>
+            <h1>European Union Employment Contract</h1>
+            <h2>In accordance with EU Directive 91/533/EEC and Directive (EU) 2018/957</h2>
+            <p style="margin: 15px 0 0 0; font-size: 14px; color: #666;">
+                Cross-border employment under European Union free movement provisions
+            </p>
+        </div>
+
+        <div class="parties-section">
+            <h3 style="text-align: center; color: #003d82; margin-bottom: 20px;">CONTRACTING PARTIES</h3>
+            <div class="parties">
+                <div class="party">
+                    <h4>🏢 EMPLOYER</h4>
+                    <p><strong>Company Name:</strong> {{ employer_name }}</p>
+                    <p><strong>Registered Address:</strong><br>{{ employer_address }}</p>
+                    <p><strong>Country:</strong> <span class="highlight">{{ employer_country }}</span></p>
+                    <p><strong>EU Member State:</strong> ✓ Confirmed</p>
+                </div>
+                <div class="party">
+                    <h4>👤 EMPLOYEE</h4>
+                    <p><strong>Full Name:</strong> {{ worker_name }}</p>
+                    <p><strong>Address:</strong><br>{{ worker_address }}</p>
+                    <p><strong>Nationality:</strong> <span class="highlight">Romanian (EU Citizen)</span></p>
+                    <p><strong>EU Mobility Rights:</strong> ✓ Confirmed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>📋 Position and Job Details</h3>
+            <table>
+                <tr><th>🎯 Position Title</th><td><strong>{{ job_title }}</strong></td></tr>
+                <tr><th>📍 Work Location</th><td>{{ work_location }}, {{ employer_country }}</td></tr>
+                <tr><th>📄 Job Description</th><td>{{ job_description }}</td></tr>
+                <tr><th>📅 Employment Start Date</th><td><strong>{{ start_date }}</strong></td></tr>
+                <tr><th>⏱️ Contract Duration</th><td>{{ contract_duration }}</td></tr>
+                <tr><th>🔄 Probationary Period</th><td>{{ probation_period }}</td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>💼 Working Conditions and Compensation</h3>
+            <table>
+                <tr><th>⏰ Working Hours</th><td>{{ working_hours }} (in accordance with {{ employer_country }} labor law)</td></tr>
+                <tr><th>💰 Gross Monthly Salary</th><td><strong>{{ salary }} {{ currency }}</strong></td></tr>
+                <tr><th>🏖️ Annual Leave</th><td>{{ vacation_days }} (minimum EU requirement: 20 working days)</td></tr>
+                <tr><th>📢 Notice Period</th><td>{{ notice_period }} for contract termination</td></tr>
+                <tr><th>🏥 Social Security</th><td>Coverage under {{ employer_country }} system with EU coordination</td></tr>
+                <tr><th>🏠 Accommodation</th><td>To be specified in separate agreement if provided</td></tr>
+            </table>
+        </div>
+
+        <div class="legal-framework">
+            <h3>⚖️ Applicable Legal Framework</h3>
+            <ul>
+                <li><strong>Primary Legislation:</strong> Employment laws of {{ employer_country }} govern this contract</li>
+                <li><strong>EU Free Movement:</strong> Treaty on the Functioning of the European Union (TFEU) Articles 45-48</li>
+                <li><strong>EU Regulation 492/2011:</strong> Free movement of workers within the Union</li>
+                <li><strong>Social Security Coordination:</strong> EU Regulations 883/2004 and 987/2009</li>
+                <li><strong>Posted Workers Directive:</strong> Directive (EU) 2018/957 (if applicable)</li>
+                <li><strong>Working Time Directive:</strong> Directive 2003/88/EC on working time organization</li>
+            </ul>
+        </div>
+
+        <div class="worker-rights">
+            <h3>🛡️ EU Mobile Worker Rights</h3>
+            <p>As a Romanian citizen working in {{ employer_country }}, you are entitled to:</p>
+            <ul>
+                <li><strong>Equal Treatment:</strong> Same working conditions, pay, and benefits as national workers</li>
+                <li><strong>Social Security Benefits:</strong> Access to healthcare, unemployment benefits, and pensions</li>
+                <li><strong>Professional Recognition:</strong> Recognition of qualifications acquired in Romania</li>
+                <li><strong>Family Reunification:</strong> Right to bring family members under EU law</li>
+                <li><strong>Tax Benefits:</strong> Access to same tax advantages as national workers</li>
+                <li><strong>Language Support:</strong> Access to language training where available</li>
+                <li><strong>Legal Protection:</strong> Access to courts and legal aid on equal terms</li>
+                <li><strong>Trade Union Rights:</strong> Right to join trade unions and participate in collective bargaining</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>📞 Support and Contact Information</h3>
+            <table>
+                <tr><th>🏛️ National Employment Services</th><td>Contact {{ employer_country }} employment services for guidance</td></tr>
+                <tr><th>🇪🇺 EURES Network</th><td>European Employment Services - eures.ec.europa.eu</td></tr>
+                <tr><th>📞 Emergency Contacts</th><td>Romanian Consulate in {{ employer_country }} for citizen support</td></tr>
+                <tr><th>⚖️ Labor Dispute Resolution</th><td>{{ employer_country }} Labor Courts have jurisdiction</td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>🔄 Contract Modification and Termination</h3>
+            <ul>
+                <li>Any contract modifications must be made in writing and signed by both parties</li>
+                <li>Termination notice periods must comply with {{ employer_country }} labor law minimums</li>
+                <li>Severance pay and benefits follow {{ employer_country }} national legislation</li>
+                <li>Return travel costs may be covered as per bilateral agreements (where applicable)</li>
+                <li>All disputes will be resolved under {{ employer_country }} jurisdiction</li>
+            </ul>
+        </div>
+
+        <div class="signature-section">
+            <div class="signature">
+                <div class="signature-line"></div>
+                <h4>EMPLOYER SIGNATURE</h4>
+                <p>{{ employer_name }}</p>
+                <p><strong>Date:</strong> {{ current_date }}</p>
+                <p><small>Authorized Representative</small></p>
+            </div>
+
+            <div style="text-align: center; align-self: center; color: #003d82; font-size: 24px;">
+                ★
+            </div>
+
+            <div class="signature">
+                <div class="signature-line"></div>
+                <h4>EMPLOYEE SIGNATURE</h4>
+                <p>{{ worker_name }}</p>
+                <p><strong>Date:</strong> {{ current_date }}</p>
+                <p><small>Romanian EU Citizen</small></p>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <h4>⚠️ Legal Disclaimer and Important Notes</h4>
+            <ul>
+                <li><strong>Legal Compliance:</strong> This contract template complies with EU employment law requirements and Directive 91/533/EEC on written employment information.</li>
+                <li><strong>Local Law Variations:</strong> Employment law in {{ employer_country }} may impose additional rights and obligations beyond those specified in this template.</li>
+                <li><strong>Professional Advice:</strong> It is strongly recommended that both parties consult with qualified legal counsel familiar with {{ employer_country }} employment law before signing.</li>
+                <li><strong>Language Versions:</strong> If translations are needed, legal advice should be sought to ensure accuracy across all language versions.</li>
+                <li><strong>Updates and Changes:</strong> EU employment law is subject to updates and changes. Ensure compliance with the most current legislation.</li>
+            </ul>
+            <p><strong>Document Version:</strong> EU-Contract-Template-v2.0 | <strong>Last Updated:</strong> {{ current_date }}</p>
+        </div>
+    </div>
+</body>
+</html>

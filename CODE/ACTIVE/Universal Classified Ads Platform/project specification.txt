@@ -1,0 +1,259 @@
+PROJECT SPECIFICATION
+
+PROJECT NAME:
+Universal Classified Ads Platform
+
+OBJECTIVE:
+Build a scalable web platform where users can create, manage, and publish classified advertisements across multiple categories. Ads can be displayed on a public website and optionally distributed to external platforms (e.g., Facebook Pages). The system must support moderation, search, and flexible ad types.
+
+---
+
+TECH STACK:
+
+* Backend: FastAPI (Python)
+* Database: PostgreSQL (SQLite optional for local dev)
+* Frontend: HTML5 + Bootstrap 5 + Vanilla JavaScript
+* Authentication: JWT-based auth
+* ORM: SQLAlchemy
+* Deployment: Docker + Raspberry Pi / Linux VPS
+* Background jobs: Celery or FastAPI BackgroundTasks
+* File storage: Local + optional S3-compatible storage
+
+---
+
+CORE CONCEPT:
+Everything in the system revolves around an “Ad”.
+
+An Ad is a structured content object created by a user and optionally published publicly.
+
+---
+
+AD TYPES (CATEGORIES):
+System must support dynamic categories:
+
+* Real estate (sale / rent)
+* Jobs
+* Services
+* Vehicles
+* Electronics
+* Agriculture
+* Miscellaneous / general listings
+
+Categories must be extensible without code changes.
+
+---
+
+CORE FEATURES
+
+1. USER SYSTEM
+
+* Register / login
+* Profile management
+* Role system:
+
+  * User
+  * Moderator
+  * Admin
+
+---
+
+2. AD CREATION
+   Users can create ads with:
+
+Required:
+
+* title
+* description
+* category
+* location
+
+Optional:
+
+* price
+* contact info
+* images
+* tags
+* expiry date
+
+Each ad has status:
+
+* draft
+* pending_review
+* approved
+* rejected
+* published
+* archived
+
+---
+
+3. MODERATION SYSTEM
+   Moderators/Admins can:
+
+* Approve ads
+* Reject ads with reason
+* Edit ads
+* Delete ads
+* Feature ads (boost visibility)
+
+---
+
+4. PUBLIC LISTING
+   Public users can:
+
+* Browse ads
+* Filter by category, price, location, date
+* Search full-text
+* View ad details page
+
+---
+
+5. FACEBOOK / EXTERNAL PUBLISHING MODULE
+   System supports optional integrations:
+
+* Facebook Page posting via Graph API
+* Other future connectors (Telegram, X, etc.)
+
+Rules:
+
+* Only “approved” ads can be published externally
+* Each external post stores:
+
+  * platform name
+  * external post ID
+  * publish timestamp
+
+---
+
+6. MEDIA HANDLING
+
+* Multiple images per ad
+* Image validation (type, size limit)
+* Thumbnail generation
+* Compression pipeline
+
+---
+
+7. SEARCH SYSTEM
+
+* Full-text search on title + description
+* Filters:
+
+  * category
+  * location
+  * price range
+  * date range
+* Optional ranking:
+
+  * newest first
+  * featured first
+
+---
+
+8. API STRUCTURE
+
+Auth:
+POST /auth/register
+POST /auth/login
+
+Ads:
+POST /ads
+GET /ads
+GET /ads/{id}
+PUT /ads/{id}
+DELETE /ads/{id}
+
+Moderation:
+POST /ads/{id}/approve
+POST /ads/{id}/reject
+POST /ads/{id}/feature
+
+Admin:
+GET /admin/users
+GET /admin/stats
+
+---
+
+9. DATABASE MODEL
+
+Users:
+
+* id
+* name
+* email
+* password_hash
+* role
+* created_at
+
+Ads:
+
+* id
+* user_id
+* title
+* description
+* category
+* price
+* location
+* status
+* created_at
+* updated_at
+* expires_at
+
+AdMedia:
+
+* id
+* ad_id
+* file_path
+* thumbnail_path
+
+ExternalPosts:
+
+* id
+* ad_id
+* platform
+* external_id
+* created_at
+
+---
+
+10. SECURITY
+
+* Password hashing (bcrypt/argon2)
+* JWT auth
+* Role-based access control
+* Input validation
+* Rate limiting
+* Basic anti-spam protection
+
+---
+
+11. DEPLOYMENT REQUIREMENTS
+
+* Must run on Raspberry Pi (ARM64 compatible)
+* Dockerized setup
+* Environment variable configuration
+* Separate dev/prod configs
+* Lightweight mode using SQLite if needed
+
+---
+
+12. FUTURE EXTENSIONS
+
+* Paid ads / subscriptions
+* Featured listings
+* AI-generated ad descriptions
+* Multi-language support
+* Email notifications
+* SMS notifications
+* WhatsApp integration
+* Mobile app API support
+
+---
+
+DELIVERABLES:
+
+* Full backend source code (FastAPI)
+* Frontend templates
+* Docker Compose setup
+* Database migrations
+* README installation guide
+* API documentation (OpenAPI/Swagger)

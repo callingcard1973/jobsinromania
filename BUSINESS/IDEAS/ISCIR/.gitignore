@@ -1,0 +1,5 @@
+# ISCIR harness — exclude bulk data, scraped PDFs, lead PII, browser profile
+DATA/
+.cf_profile/
+.playwright-mcp/
+*.pdf

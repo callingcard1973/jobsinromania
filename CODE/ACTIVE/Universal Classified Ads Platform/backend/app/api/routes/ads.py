@@ -1,0 +1,410 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query, Response
+from sqlalchemy.orm import Session
+from sqlalchemy import or_, and_
+from typing import List, Optional
+from datetime import datetime, timezone
+from app.core.database import get_db
+from app.core.deps import get_current_user, get_optional_user, get_current_moderator, get_current_admin
+from app.models.ad import Ad, AdStatus
+from app.models.category import Category
+from app.models.user import User
+from app.api.schemas import AdCreate, AdUpdate, AdResponse, AdModerationAction, AdSearchFilters
+from app.services.ai_service import get_ai_service
+
+router = APIRouter(prefix="/ads", tags=["ads"])
+
+
+def _validate_category(db: Session, slug: Optional[str]) -> None:
+    if slug is None:
+        return
+    if db.query(Category).count() == 0:
+        return
+    valid = db.query(Category).filter(Category.slug == slug, Category.is_active == True).first()
+    if not valid:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Invalid or inactive category: {slug}",
+        )
+
+
+@router.post("/", response_model=AdResponse, status_code=status.HTTP_201_CREATED)
+async def create_ad(
+    ad_data: AdCreate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    _validate_category(db, ad_data.category)
+
+    # Use AI to enhance ad if title is generic or missing
+    ai_service = get_ai_service()
+    ad_dict = ad_data.model_dump()
+
+    # Generate title from description if not provided or too short
+    if ai_service.enabled and (not ad_dict.get("title") or len(ad_dict.get("title", "")) < 5):
+        generated_title = await ai_service.generate_title(
+            ad_dict.get("description", ""),
+            ad_dict.get("category", "")
+        )
+        if generated_title:
+            ad_dict["title"] = generated_title
+
+    # Extract tags if not provided
+    if ai_service.enabled and not ad_dict.get("tags"):
+        tags = await ai_service.extract_tags(
+            ad_dict.get("title", ""),
+            ad_dict.get("description", "")
+        )
+        if tags:
+            ad_dict["tags"] = ", ".join(tags)
+
+    ad = Ad(
+        user_id=current_user.id,
+        **ad_dict,
+        status=AdStatus.DRAFT
+    )
+    db.add(ad)
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.get("/", response_model=List[AdResponse])
+async def list_ads(
+    response: Response,
+    status: Optional[str] = None,
+    category: Optional[str] = None,
+    location: Optional[str] = None,
+    min_price: Optional[float] = None,
+    max_price: Optional[float] = None,
+    search: Optional[str] = None,
+    featured_only: bool = False,
+    created_from: Optional[datetime] = None,
+    created_to: Optional[datetime] = None,
+    sort: str = Query("newest", pattern="^(newest|oldest|featured)$"),
+    skip: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1, le=100),
+    current_user: Optional[User] = Depends(get_optional_user),
+    db: Session = Depends(get_db)
+):
+    query = db.query(Ad)
+    is_privileged = bool(current_user and current_user.role in ["moderator", "admin"])
+
+    if not is_privileged:
+        if not status:
+            query = query.filter(Ad.status == AdStatus.PUBLISHED)
+        elif status != AdStatus.PUBLISHED:
+            raise HTTPException(
+                status_code=403,
+                detail="Only moderators/admins can view non-published ads"
+            )
+        now = datetime.utcnow()
+        query = query.filter(or_(Ad.expires_at == None, Ad.expires_at > now))
+
+    if status:
+        query = query.filter(Ad.status == status)
+    if category:
+        query = query.filter(Ad.category == category)
+    if location:
+        query = query.filter(Ad.location.ilike(f"%{location}%"))
+    if min_price is not None:
+        query = query.filter(Ad.price >= min_price)
+    if max_price is not None:
+        query = query.filter(Ad.price <= max_price)
+    if featured_only:
+        query = query.filter(Ad.is_featured == True)
+    if created_from is not None:
+        query = query.filter(Ad.created_at >= created_from)
+    if created_to is not None:
+        query = query.filter(Ad.created_at <= created_to)
+    if search:
+        query = query.filter(
+            or_(
+                Ad.title.ilike(f"%{search}%"),
+                Ad.description.ilike(f"%{search}%")
+            )
+        )
+
+    total = query.count()
+    if sort == "oldest":
+        query = query.order_by(Ad.created_at.asc())
+    elif sort == "featured":
+        query = query.order_by(Ad.is_featured.desc(), Ad.created_at.desc())
+    else:
+        query = query.order_by(Ad.created_at.desc())
+
+    ads = query.offset(skip).limit(limit).all()
+    response.headers["X-Total-Count"] = str(total)
+    return ads
+
+
+@router.get("/{ad_id}", response_model=AdResponse)
+async def get_ad(
+    ad_id: int,
+    current_user: Optional[User] = Depends(get_optional_user),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    is_owner_or_mod = bool(
+        current_user
+        and (current_user.id == ad.user_id or current_user.role in ["moderator", "admin"])
+    )
+
+    if ad.status != AdStatus.PUBLISHED and not is_owner_or_mod:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    if (
+        ad.expires_at is not None
+        and ad.expires_at <= datetime.utcnow()
+        and not is_owner_or_mod
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    return ad
+
+
+@router.put("/{ad_id}", response_model=AdResponse)
+async def update_ad(
+    ad_id: int,
+    ad_data: AdUpdate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.user_id != current_user.id and current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    update_data = ad_data.model_dump(exclude_unset=True)
+    if "category" in update_data:
+        _validate_category(db, update_data["category"])
+    for field, value in update_data.items():
+        setattr(ad, field, value)
+
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.delete("/{ad_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_ad(
+    ad_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.user_id != current_user.id and current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    db.delete(ad)
+    db.commit()
+
+
+@router.post("/{ad_id}/approve", response_model=AdResponse)
+async def approve_ad(
+    ad_id: int,
+    current_user: User = Depends(get_current_moderator),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.status != AdStatus.PENDING_REVIEW:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Ad must be in 'pending_review' to approve (current: {ad.status})"
+        )
+
+    ad.status = AdStatus.APPROVED
+    ad.rejection_reason = None
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.post("/{ad_id}/reject", response_model=AdResponse)
+async def reject_ad(
+    ad_id: int,
+    action: AdModerationAction,
+    current_user: User = Depends(get_current_moderator),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.status != AdStatus.PENDING_REVIEW:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Ad must be in 'pending_review' to reject (current: {ad.status})"
+        )
+
+    ad.status = AdStatus.REJECTED
+    ad.rejection_reason = action.rejection_reason
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.post("/{ad_id}/publish", response_model=AdResponse)
+async def publish_ad(
+    ad_id: int,
+    current_user: User = Depends(get_current_moderator),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.status not in [AdStatus.APPROVED, AdStatus.PUBLISHED]:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Only approved ads can be published"
+        )
+
+    ad.status = AdStatus.PUBLISHED
+    db.commit()
+    db.refresh(ad)
+
+    # Push to WordPress if configured
+    try:
+        from ...services.wordpress import push_ad_to_wp
+        media_urls = []
+        for m in (ad.media or []):
+            url = m.url if hasattr(m, 'url') else (m.file_path if hasattr(m, 'file_path') else None)
+            if url:
+                media_urls.append(url)
+        wp_result = push_ad_to_wp(ad, media_urls)
+        if wp_result:
+            ad.wp_post_id = wp_result.get("id")
+            ad.wp_post_url = wp_result.get("link")
+            db.commit()
+            db.refresh(ad)
+    except Exception:
+        pass  # WP push failure must not block publish
+
+    return ad
+
+
+@router.post("/{ad_id}/feature", response_model=AdResponse)
+async def feature_ad(
+    ad_id: int,
+    current_user: User = Depends(get_current_moderator),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    ad.is_featured = not ad.is_featured
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.post("/{ad_id}/archive", response_model=AdResponse)
+async def archive_ad(
+    ad_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.user_id != current_user.id and current_user.role not in ["moderator", "admin"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    ad.status = AdStatus.ARCHIVED
+    db.commit()
+    db.refresh(ad)
+    return ad
+
+
+@router.post("/{ad_id}/improve", response_model=AdResponse)
+async def improve_ad_with_ai(
+    ad_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Use AI to improve ad description and generate better tags."""
+    ad = db.query(Ad).filter(Ad.id == ad_id).first()
+    if not ad:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Ad not found"
+        )
+
+    if ad.user_id != current_user.id and current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied"
+        )
+
+    ai_service = get_ai_service()
+    if not ai_service.enabled:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="AI enhancement service not available"
+        )
+
+    # Improve description
+    improved_desc = await ai_service.improve_description(ad.description)
+    if improved_desc:
+        ad.description = improved_desc
+
+    # Extract better tags
+    tags = await ai_service.extract_tags(ad.title, ad.description)
+    if tags:
+        ad.tags = ", ".join(tags)
+
+    db.commit()
+    db.refresh(ad)
+    return ad

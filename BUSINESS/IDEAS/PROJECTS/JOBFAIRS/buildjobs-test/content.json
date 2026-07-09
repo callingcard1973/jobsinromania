@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "h1": "Construction <em>Jobs</em> in Europe",
+    "p": "Skilled construction workers needed in Germany, Netherlands, Belgium, Austria. Carpenters, masons, plumbers, electricians welcome.",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=300&fit=crop",
+        "alt": "Construction crane at sunset"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=400&h=200&fit=crop",
+        "alt": "Workers on construction site"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=200&fit=crop",
+        "alt": "Steel structure construction"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=200&fit=crop",
+        "alt": "Highway construction aerial"
+      }
+    ],
+    "cta_apply": "Apply Now",
+    "cta_pdf": "View Complete Job List (PDF)",
+    "pdf_desc": "Free PDF catalog with jobs, salaries, locations, requirements. Download or share!"
+  },
+  "stats": [
+    {"num": 2, "label": "Available Jobs", "id": "jobs-count"},
+    {"num": 2, "label": "Open Positions"},
+    {"num": 11, "label": "EU Countries"}
+  ],
+  "languages": [
+    {"code": "en", "name": "English"},
+    {"code": "ro", "name": "Romana"},
+    {"code": "ne", "name": "नेपाली"},
+    {"code": "hi", "name": "हिंदी"},
+    {"code": "ur", "name": "اردو"},
+    {"code": "ar", "name": "العربية"},
+    {"code": "ru", "name": "Русский"},
+    {"code": "uk", "name": "Українська"}
+  ],
+  "features": [
+    {
+      "icon": "💰",
+      "title": "High Salaries",
+      "desc": "Earn 1,500-4,000 EUR/month with legal contracts and social benefits."
+    },
+    {
+      "icon": "🏠",
+      "title": "Accommodation",
+      "desc": "Many employers provide free or subsidized housing for workers."
+    },
+    {
+      "icon": "✈️",
+      "title": "Visa Support",
+      "desc": "We help with work permits and visa processing for non-EU citizens."
+    },
+    {
+      "icon": "📋",
+      "title": "Legal Employment",
+      "desc": "All jobs are 100% legal with proper contracts and insurance."
+    }
+  ],
+  "countries": [
+    "Germany", "Netherlands", "Belgium", "Austria", "Switzerland",
+    "Denmark", "Sweden", "Norway", "Finland", "Ireland", "Luxembourg"
+  ],
+  "telegram": {
+    "title": "Send Your CV on Telegram",
+    "desc": "The fastest way to apply. Open our Telegram bot, send your CV, and get matched with construction employers across Europe. Available in 13 languages.",
+    "btn_text": "@BuildJobsEU_bot",
+    "btn_link": "https://t.me/BuildJobsEU_bot",
+    "note": "Free • No registration • 13 languages supported"
+  },
+  "pdf_section": {
+    "h2": "Download Job Catalog (PDF)",
+    "p": "Complete list of available positions with salaries, locations, and requirements.",
+    "note": "Print it, share it with friends, or save for later!"
+  },
+  "footer": {
+    "tagline": "BuildJobs.eu — Connecting Workers with European Opportunities",
+    "links": [
+      {"text": "Jobs", "href": "/jobs/"},
+      {"text": "Apply", "href": "https://interjob.ro/apply.html"},
+      {"text": "Privacy", "href": "/privacy.html"},
+      {"text": "Contact", "href": "/contact.html"}
+    ],
+    "copyright": "© 2026 buildjobs.eu — All jobs sourced from official EU job portals"
+  }
+}

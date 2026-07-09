@@ -1,0 +1,23 @@
+{
+  "_comment": "Scheduled scripts to smoke-test before deploy/enable. 'compile' always runs (remote py_compile). 'dry_run' runs only if set (must be side-effect-free). Extend as crons/timers are added.",
+  "scripts": [
+    {
+      "name": "anofm-daily-report",
+      "host": "192.168.100.20",
+      "path": "/opt/ACTIVE/INTERJOB/anofm_daily_report.py",
+      "dry_run": null
+    },
+    {
+      "name": "anofm-campaign",
+      "host": "192.168.100.20",
+      "path": "/opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI/campaign_anofm_angajatori.py",
+      "dry_run": "cd /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI && PGHOST=localhost python3 campaign_anofm_angajatori.py --dry-run --limit 2"
+    },
+    {
+      "name": "anofm-scraper",
+      "host": "192.168.100.20",
+      "path": "/opt/ACTIVE/INTERJOB/anofm_scraper.py",
+      "dry_run": null
+    }
+  ]
+}

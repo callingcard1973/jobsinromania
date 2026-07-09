@@ -1,0 +1,60 @@
+﻿ANOFM raspi health check
+Host: 192.168.100.21   User: tudor
+Timestamp: 2026-06-23 16:14:45
+=====================================================
+=== HOST ===
+raspibig
+ 16:14:46 up 2 days,  6:50,  2 users,  load average: 21.61, 18.35, 17.79
+
+=== TIMERS anofm ===
+NEXT                          LEFT LAST                               PASSED UNIT                         ACTIVATES
+Tue 2026-06-23 16:30:00 EEST 15min Tue 2026-06-23 13:00:02 EEST 3h 14min ago anofm-ingest.timer           anofm-ingest.service
+Tue 2026-06-23 16:40:00 EEST 25min Tue 2026-06-23 13:10:02 EEST  3h 4min ago anofm-audience-rebuild.timer anofm-audience-rebuild.service
+Wed 2026-06-24 04:00:00 EEST   11h Tue 2026-06-23 04:00:02 EEST      12h ago anofm-daily-report.timer     anofm-daily-report.service
+Wed 2026-06-24 08:25:00 EEST   16h Tue 2026-06-23 15:59:00 EEST    15min ago anofm-scraper.timer          anofm-scraper.service
+
+4 timers listed.
+
+=== TIMER STATUS ===
+anofm-scraper.timer          enabled=enabled active=active
+anofm-ingest.timer           enabled=enabled active=active
+anofm-audience-rebuild.timer enabled=enabled active=active
+
+=== DB anofm_db ===
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "anofm_db" does not exist
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  database "anofm_db" does not exist
+
+=== LATEST CSV ===
+rows in newest:
+no csv found
+
+=== TMP leftovers ===
+none
+
+=== SENT csv ===
+388 /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI/DATA/sent.csv
+--- last 5 ---
+tehnic@instalelectro.ro,RAPIDELECTROINSTAL S.R.L.,IT / Telecomunica╚øii,2026-06-22
+george.calinescu@peikko.com,PEIKKO ROMANIA SRL,Altele,2026-06-22
+nicoleta.tonca@drakuplast.eu,DRAKUPLAST S.R.L.,Produc╚øie / Logistic─â,2026-06-22
+office@metrologie3d.ro,DCA DIMENSIONAL CONTROL SRL,Inginerie,2026-06-22
+personal@reconcraiova.ro,RECON SA,Construc╚øii / Instala╚øii,2026-06-22
+--- sent today ---
+0
+
+=== DISK ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  235G  108G  115G  49% /
+csv dir size:
+
+=== SCRAPER LOG last 15 ===
+Jun 23 12:25:01 raspibig systemd[1]: Starting anofm-scraper.service - ANOFM Scraper + Auto-Feed...
+Jun 23 12:28:12 raspibig systemd[1]: anofm-scraper.service: Deactivated successfully.
+Jun 23 12:28:12 raspibig systemd[1]: Finished anofm-scraper.service - ANOFM Scraper + Auto-Feed.
+Jun 23 12:28:12 raspibig systemd[1]: anofm-scraper.service: Consumed 5.014s CPU time, 107.4M memory peak.
+Jun 23 15:59:00 raspibig systemd[1]: Starting anofm-scraper.service - ANOFM Scraper + Auto-Feed...
+Jun 23 16:01:57 raspibig systemd[1]: anofm-scraper.service: Deactivated successfully.
+Jun 23 16:01:57 raspibig systemd[1]: Finished anofm-scraper.service - ANOFM Scraper + Auto-Feed.
+Jun 23 16:01:57 raspibig systemd[1]: anofm-scraper.service: Consumed 4.982s CPU time, 106.8M memory peak, 12M memory swap peak.
+
+=== DONE ===

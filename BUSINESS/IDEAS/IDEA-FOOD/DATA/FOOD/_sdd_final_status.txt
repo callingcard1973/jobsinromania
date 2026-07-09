@@ -1,0 +1,4 @@
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/tasks.md:25:- [x] 4.1 Verify the tasks and outreach assets satisfy the scenarios in `specs/outreach-pipeline/spec.md`.
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/tasks.md:26:- [x] 4.2 Sync the change artifacts and any updated FOOD documents to `/opt/ACTIVE/FOOD` on raspibig.
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/tasks.md:27:- [x] 4.3 Record remote verification for the spec, design, tasks, and outreach asset files.
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/state.yaml:2:phase: assets-prepared

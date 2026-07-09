@@ -1,0 +1,7 @@
+[Unit]
+Description=EURES audience build daily 05:30 UTC
+[Timer]
+OnCalendar=*-*-* 05:30:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

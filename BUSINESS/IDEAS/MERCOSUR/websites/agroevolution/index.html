@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroEvolution | EU-Mercosur Agricultural Trade Platform</title>
+    <meta name="description" content="Import premium beef, honey, and agricultural products from Brazil and Argentina under the new EU-Mercosur trade agreement. Duty-free quotas available.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+
+        .hero {
+            background: linear-gradient(135deg, #276749 0%, #38a169 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.95; }
+        .hero .badge {
+            background: #f6e05e;
+            color: #276749;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .quotas {
+            background: #f0fff4;
+            padding: 60px 20px;
+        }
+        .quotas h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #276749; }
+        .quota-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .quota-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .quota-card .product { font-size: 1.3rem; font-weight: bold; color: #276749; margin-bottom: 15px; }
+        .quota-card .volume { font-size: 2rem; font-weight: bold; color: #333; }
+        .quota-card .duty { background: #c6f6d5; color: #276749; padding: 5px 15px; border-radius: 15px; display: inline-block; margin-top: 10px; font-weight: 600; }
+        .quota-card .note { color: #666; font-size: 0.9rem; margin-top: 10px; }
+
+        .suppliers {
+            padding: 60px 20px;
+        }
+        .suppliers h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .supplier-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 30px;
+            transition: box-shadow 0.3s;
+        }
+        .supplier-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .supplier-card h3 { color: #276749; margin-bottom: 10px; }
+        .supplier-card .country { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+        .supplier-card ul { list-style: none; }
+        .supplier-card li { padding: 6px 0; }
+        .supplier-card .tag {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin: 2px;
+        }
+        .supplier-card .tag.verified { background: #c6f6d5; color: #276749; }
+
+        .compliance {
+            background: #fffaf0;
+            padding: 60px 20px;
+            border-top: 3px solid #f6ad55;
+        }
+        .compliance h2 { text-align: center; margin-bottom: 20px; color: #c05621; }
+        .compliance p { text-align: center; max-width: 700px; margin: 0 auto 30px; }
+        .compliance-list {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .compliance-list li {
+            padding: 15px 20px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .compliance-list .icon { font-size: 1.3rem; }
+
+        .cta-section {
+            background: #276749;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .cta-section h2 { margin-bottom: 20px; }
+        .cta-section p { margin-bottom: 30px; opacity: 0.9; }
+
+        .form-container {
+            background: white;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .form-container h3 { color: #333; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; color: #333; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #276749; }
+        .btn {
+            background: #f6ad55;
+            color: #744210;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover { background: #ed8936; }
+
+        .stats-bar {
+            background: #276749;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .stats-bar .stat { text-align: center; }
+        .stats-bar .number { font-size: 1.5rem; font-weight: bold; }
+        .stats-bar .label { font-size: 0.85rem; opacity: 0.9; }
+
+        footer {
+            background: #1a4731;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer a { color: #9ae6b4; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="badge">New Trade Quotas Open May 2026</div>
+        <h1>Import Premium Agricultural Products from Mercosur</h1>
+        <p>Connect with certified Brazilian and Argentine exporters of beef, honey, and specialty foods. Take advantage of new duty-free quotas under the EU-Mercosur agreement.</p>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="number">99,000t</div>
+            <div class="label">Beef quota at 7.5% duty</div>
+        </div>
+        <div class="stat">
+            <div class="number">180,000t</div>
+            <div class="label">Poultry quota duty-free</div>
+        </div>
+        <div class="stat">
+            <div class="number">45,000t</div>
+            <div class="label">Honey quota duty-free</div>
+        </div>
+        <div class="stat">
+            <div class="number">50+</div>
+            <div class="label">Verified exporters</div>
+        </div>
+    </div>
+
+    <section class="quotas">
+        <div class="container">
+            <h2>Available Import Quotas</h2>
+            <div class="quota-grid">
+                <div class="quota-card">
+                    <div class="product">Beef</div>
+                    <div class="volume">99,000 tonnes</div>
+                    <div class="duty">7.5% tariff</div>
+                    <div class="note">55% fresh/chilled, 45% frozen</div>
+                </div>
+                <div class="quota-card">
+                    <div class="product">Poultry</div>
+                    <div class="volume">180,000 tonnes</div>
+                    <div class="duty">0% duty-free</div>
+                    <div class="note">Phased in over 5 years</div>
+                </div>
+                <div class="quota-card">
+                    <div class="product">Honey</div>
+                    <div class="volume">45,000 tonnes</div>
+                    <div class="duty">0% duty-free</div>
+                    <div class="note">Immediate access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="suppliers">
+        <div class="container">
+            <h2>Featured Exporters in Our Network</h2>
+            <div class="supplier-grid">
+                <div class="supplier-card">
+                    <h3>Major Beef Processors</h3>
+                    <div class="country">Brazil & Argentina</div>
+                    <ul>
+                        <li>JBS S.A. - World's largest meat processor</li>
+                        <li>Minerva Foods - Record EUR 162M profit 2025</li>
+                        <li>Marfrig Global Foods</li>
+                        <li>Frigorifico Gorina (Argentina)</li>
+                    </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="tag verified">EU-Approved</span>
+                        <span class="tag">EUDR Ready</span>
+                    </div>
+                </div>
+                <div class="supplier-card">
+                    <h3>Honey Producers</h3>
+                    <div class="country">Argentina & Brazil</div>
+                    <ul>
+                        <li>Cooperativa COSAR</li>
+                        <li>Apiarios del Sur</li>
+                        <li>Brazilian Organic Honey Co-op</li>
+                        <li>Premium multifloral & organic</li>
+                    </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="tag verified">Certified Organic</span>
+                        <span class="tag">Fair Trade</span>
+                    </div>
+                </div>
+                <div class="supplier-card">
+                    <h3>Specialty Foods</h3>
+                    <div class="country">Mercosur Region</div>
+                    <ul>
+                        <li>Argentine wines (Malbec, Torrontes)</li>
+                        <li>Yerba mate producers</li>
+                        <li>Dulce de leche manufacturers</li>
+                        <li>Premium coffee (Brazil)</li>
+                    </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="tag">GI Protected</span>
+                        <span class="tag">Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="compliance">
+        <h2>EUDR Compliance Guaranteed</h2>
+        <p>All suppliers in our network are pre-screened for EU Deforestation Regulation compliance, effective end of 2026.</p>
+        <ul class="compliance-list">
+            <li><span class="icon">&#9989;</span> Deforestation-free certification verified</li>
+            <li><span class="icon">&#9989;</span> Full supply chain traceability documentation</li>
+            <li><span class="icon">&#9989;</span> EU-approved slaughterhouses (1,220 farms certified)</li>
+            <li><span class="icon">&#9989;</span> Hormone-free production verified</li>
+            <li><span class="icon">&#9989;</span> Pesticide compliance with EU standards</li>
+        </ul>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h2>Request Supplier Introductions</h2>
+        <p>Tell us what you want to import. We'll match you with 3 verified suppliers within 5 business days. Free for EU importers.</p>
+        <div class="form-container">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label>Company Name *</label>
+                    <input type="text" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Country *</label>
+                    <input type="text" name="country" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Interest *</label>
+                    <select name="product" required>
+                        <option value="">Select product...</option>
+                        <option value="beef_fresh">Beef - Fresh/Chilled</option>
+                        <option value="beef_frozen">Beef - Frozen</option>
+                        <option value="poultry">Poultry</option>
+                        <option value="honey">Honey</option>
+                        <option value="wine">Wine</option>
+                        <option value="specialty">Specialty foods</option>
+                        <option value="other">Other agricultural products</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimated Annual Volume</label>
+                    <input type="text" name="volume" placeholder="e.g., 100 tonnes/year">
+                </div>
+                <div class="form-group">
+                    <label>Current Supplier (if any)</label>
+                    <input type="text" name="current_supplier" placeholder="Optional">
+                </div>
+                <button type="submit" class="btn">Find Mercosur Suppliers</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>AgroEvolution</strong> | EU-Mercosur Agricultural Trade Platform</p>
+        <p>Connecting European importers with South American agricultural exporters</p>
+        <p style="margin-top: 20px; opacity: 0.7;">
+            Part of <a href="https://interjob.ro">InterJob Solutions Europe</a> |
+            <a href="mailto:office@agroevolution.com">office@agroevolution.com</a>
+        </p>
+    </footer>
+</body>
+</html>

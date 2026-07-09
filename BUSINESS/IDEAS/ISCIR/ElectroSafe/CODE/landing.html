@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroSafe - Organizează-ți certificatele</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; color: #333; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header p { font-size: 1.2em; opacity: 0.9; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        .hero { text-align: center; margin-bottom: 60px; }
+        .hero img { width: 100%; max-width: 500px; margin: 30px 0; }
+
+        .pain-points { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; }
+        .pain-point { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .pain-point h3 { color: #667eea; margin-bottom: 10px; }
+
+        .solution { background: #f0f4ff; padding: 40px; border-radius: 8px; margin: 40px 0; }
+        .solution h2 { margin-bottom: 20px; }
+        .kit-contents { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .kit-item { background: white; padding: 15px; border-left: 4px solid #667eea; }
+
+        .pricing { margin: 40px 0; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pricing-table th, .pricing-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        .pricing-table th { background: #667eea; color: white; }
+        .highlight { background: #fff3cd; }
+
+        .cta { background: #667eea; color: white; padding: 60px 20px; text-align: center; }
+        .cta h2 { margin-bottom: 20px; font-size: 2em; }
+        .cta button { background: white; color: #667eea; border: none; padding: 15px 40px; font-size: 1.1em; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        .cta button:hover { background: #f0f4ff; }
+
+        .faq { margin: 40px 0; }
+        .faq-item { background: white; padding: 20px; margin-bottom: 10px; border-radius: 8px; }
+        .faq-item h3 { cursor: pointer; color: #667eea; }
+        .faq-item p { margin-top: 10px; display: none; }
+        .faq-item.open p { display: block; }
+
+        footer { background: #333; color: white; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚡ ElectroSafe</h1>
+        <p>Electricianul care-și pierde certificatele pierde 6 luni și €2000. Tu nu.</p>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Organizează certificatele. Obține job-uri EU.</h2>
+            <p style="font-size: 1.1em; color: #666; margin: 20px 0;">Binder profesional + aplicație digitală + portofoliu public = licență renovată în 2 ore, nu 20.</p>
+        </div>
+
+        <div class="pain-points">
+            <div class="pain-point">
+                <h3>🔍 Problema 1: Certificate pierdute</h3>
+                <p>80% dintre electricieni au pierdut măcar un certificat. Nu poți dovedi calificarile. Auditorii îți dau amenzi.</p>
+            </div>
+            <div class="pain-point">
+                <h3>📅 Problema 2: Licență expiră</h3>
+                <p>Nu știi când se termină licența. Se expirează. Trebuie să refaci toți pașii. Cost: €500-€2000 + 6 luni inactiv.</p>
+            </div>
+            <div class="pain-point">
+                <h3>💼 Problema 3: Job-urile EU au nevoie de dovezi</h3>
+                <p>Angajatorii din Olanda, Germania cer CV + certificatele. Tu le cauți 3 săptămâni. Job-ul se ocupă.</p>
+            </div>
+            <div class="pain-point">
+                <h3>📁 Problema 4: Portofoliu neorganizat</h3>
+                <p>Nu ai unde să arăți ce ai făcut. Nu poți dovedi experiența. Clienții nu te cred.</p>
+            </div>
+        </div>
+
+        <div class="solution">
+            <h2>✅ Soluția: ElectroSafe Vault</h2>
+            <p style="margin-bottom: 20px;">Kit fizic (binder profesional) + aplicație digitală (calendar + portofoliu + job portal)</p>
+
+            <h3>Ce primești:</h3>
+            <div class="kit-contents">
+                <div class="kit-item">
+                    <strong>📦 Binder ElectroSafe (€150)</strong><br/>
+                    - Lambinate profesionale (20 pagini)<br/>
+                    - Card skills (cu data expirării)<br/>
+                    - RFID tags (pentru raportare)<br/>
+                    - Portabil în cutia de scule
+                </div>
+                <div class="kit-item">
+                    <strong>📱 Aplicația (€30/lună)</strong><br/>
+                    - Upload certificat → OCR automat<br/>
+                    - Calendar: "Licența expirează pe 25 martie"<br/>
+                    - Portofoliu public (QR code)<br/>
+                    - Notificări 30/60/90 zile
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing">
+            <h2>💰 Prețuri</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>Plan</th>
+                    <th>Binder</th>
+                    <th>Aplicație</th>
+                    <th>Caracteristici</th>
+                </tr>
+                <tr>
+                    <td><strong>Starter</strong></td>
+                    <td>€150</td>
+                    <td>€15/lună</td>
+                    <td>5 certificatelor, fără portofoliu public</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Professional ⭐</strong></td>
+                    <td>€150</td>
+                    <td>€30/lună</td>
+                    <td>Unlimited, portofoliu public, job portal</td>
+                </tr>
+                <tr>
+                    <td><strong>Premium</strong></td>
+                    <td>€200</td>
+                    <td>€60/lună</td>
+                    <td>Team management (5 electricieni), analytics</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="faq">
+            <h2>❓ FAQ</h2>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <h3>Cât de rapid se scanează un certificat?</h3>
+                <p>2-3 secunde. Faci poza, aplicația extrage automat: tip, dată expirării, emitent.</p>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <h3>De ce am nevoie de binder fizic dacă am aplicația?</h3>
+                <p>Auditorul vrea vedere: certificatele în mână. Binderul ElectroSafe = profesionist = tine mai mult timp inspecția.</p>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <h3>Cum mă conectez la job-uri EU?</h3>
+                <p>Plan Professional include acces la electricjobs.eu. Angajatorii din Olanda, Germania, Franța vin la tine.</p>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <h3>Ce se întâmplă dacă licența mea expirează?</h3>
+                <p>Primești alertă pe email și SMS la 90, 60, 30 zile înainte. Link direct la ANRE pentru reînnoire.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Rezervă-ți ElectroSafe azi</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1em;">Early bird: €20 reducere (pana 30 aprilie)</p>
+        <button onclick="openSignup()">Vreau ElectroSafe</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ElectroSafe. Organizează certificatele. Obține job-uri EU.</p>
+    </footer>
+
+    <script>
+        function openSignup() {
+            window.location.href = 'https://forms.google.com/electrosafe-signup';
+        }
+    </script>
+</body>
+</html>

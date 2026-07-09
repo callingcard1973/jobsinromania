@@ -1,0 +1,165 @@
+{
+  "campaigns": [
+    {
+      "name": "PRIMARII",
+      "enabled": true,
+      "type": "python",
+      "script": "PRIMARII/CODE/campaign_primarii.py",
+      "daily_limit": 50,
+      "daily_cap": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "Cold email 2904 primarii — oferta agroevolution (gospodarii)",
+      "env": {
+        "GMAIL_USER": "telegestiuneprimarii@gmail.com",
+        "GMAIL_APP_PASSWORD": "bpnjfmqkvbyqqxfr",
+        "CSV_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/PRIMARII/DATA/primarii_campanie_clean.csv",
+        "SENT_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/PRIMARII/DATA/primarii_sent.json",
+        "LOG_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/PRIMARII/LOGS/campaign.log"
+      }
+    },
+    {
+      "name": "FACTORY_RO",
+      "enabled": true,
+      "type": "python",
+      "script": "FACTORY_RO/CODE/campaign_factory.py",
+      "daily_limit": 50,
+      "daily_cap": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "Outreach 728 fabrici RO verificate — muncitori disponibili",
+      "env": {
+        "GMAIL_USER": "elena.manpower.dristor@gmail.com",
+        "GMAIL_APP_PASSWORD": "wmfnpikkcierkmrq",
+        "REPLY_TO": "elena.manpower.dristor@gmail.com",
+        "CSV_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/FACTORY_RO/DATA/factory_ro_verified.csv",
+        "SENT_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/FACTORY_RO/DATA/campaign_sent.json",
+        "LOG_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/FACTORY_RO/LOGS/campaign.log"
+      }
+    },
+    {
+      "name": "SME_DEFICIT",
+      "enabled": true,
+      "type": "python",
+      "script": "SME_DEFICIT/campaign_sme_deficit.py",
+      "daily_limit": 50,
+      "daily_cap": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "32K IMM-uri <50 angajati — ocupatii deficitare ANOFM (Elena)",
+      "env": {
+        "GMAIL_USER": "elena.manpower.dristor@gmail.com",
+        "GMAIL_APP_PASSWORD": "wmfnpikkcierkmrq",
+        "REPLY_TO": "elena.manpower.dristor@gmail.com",
+        "CSV_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/SME_DEFICIT/DATA/factory_ro_verified.csv",
+        "SENT_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/SME_DEFICIT/DATA/campaign_sent.json",
+        "LOG_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/SME_DEFICIT/LOGS/campaign.log",
+        "TEMPLATE_FILE": "/opt/ACTIVE/EMAIL/CAMPAIGNS/SME_DEFICIT/TEMPLATES/SME_OCUPATII_DEFICITARE_RO.txt"
+      }
+    },
+    {
+      "name": "DEFICIT_CONSTRUCTII",
+      "enabled": true,
+      "type": "python",
+      "script": "DEFICIT_OCUPATII/CODE/campaign_constructii.py",
+      "daily_limit": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "1915 firme constructii — personal verificat SMTP buildjobs.eu"
+    },
+    {
+      "name": "DEFICIT_HORECA",
+      "enabled": true,
+      "type": "python",
+      "script": "DEFICIT_OCUPATII/CODE/campaign_horeca.py",
+      "daily_limit": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "409 firme horeca — personal verificat SMTP buildjobs.eu"
+    },
+    {
+      "name": "DEFICIT_PRODUCTIE",
+      "enabled": true,
+      "type": "python",
+      "script": "DEFICIT_OCUPATII/CODE/campaign_productie.py",
+      "daily_limit": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "1019 firme productie — personal verificat SMTP buildjobs.eu"
+    },
+    {
+      "name": "DEFICIT_TRANSPORT",
+      "enabled": true,
+      "type": "python",
+      "script": "DEFICIT_OCUPATII/CODE/campaign_transport.py",
+      "daily_limit": 50,
+      "delay_s": 480,
+      "restart_delay": 86400,
+      "description": "498 firme transport — personal verificat SMTP buildjobs.eu"
+    },
+    {
+      "name": "NECALIFICATI",
+      "enabled": false,
+      "disabled_reason": "Dead Brevo key (HTTP 401) — needs valid BREVO_CAREWORKERS_API_KEY. Disabled in production 2026-06-18.",
+      "type": "shell",
+      "script": "UNIFIED/run_necalificati.sh",
+      "daily_limit": 90,
+      "restart_delay": 86400,
+      "description": "Muncitori necalificati via send_campaign.py + Brevo"
+    },
+    {
+      "name": "LUCIAN_HORECA",
+      "enabled": true,
+      "type": "shell",
+      "script": "UNIFIED/run_lucian_horeca.sh",
+      "daily_limit": 290,
+      "restart_delay": 86400,
+      "description": "Horeca EU via send_campaign.py + Brevo"
+    },
+    {
+      "name": "ANOFM_TUDOR",
+      "enabled": false,
+      "type": "shell",
+      "script": "UNIFIED/run_anofm.sh",
+      "daily_limit": 90,
+      "restart_delay": 86400,
+      "description": "ANOFM joburi — dezactivat, tabel jobs inexistent in DB"
+    },
+    {
+      "name": "RO_CONSTRUCTII",
+      "enabled": false,
+      "type": "shell",
+      "script": "UNIFIED/run_ro_constructii.sh",
+      "daily_limit": 269,
+      "restart_delay": 86400,
+      "description": "Constructii RO 372K contacte — dezactivat"
+    },
+    {
+      "name": "RO_TRANSPORT",
+      "enabled": false,
+      "type": "shell",
+      "script": "UNIFIED/run_ro_transport.sh",
+      "daily_limit": 266,
+      "restart_delay": 86400,
+      "description": "Transport RO 102K contacte — dezactivat"
+    },
+    {
+      "name": "BG_CONSTRUCTION",
+      "enabled": false,
+      "type": "shell",
+      "script": "UNIFIED/run_bg_construction.sh",
+      "daily_limit": 270,
+      "restart_delay": 86400,
+      "description": "Bulgaria constructii — dezactivat"
+    },
+    {
+      "name": "BG_INDUSTRIAL",
+      "enabled": false,
+      "type": "shell",
+      "script": "UNIFIED/run_bg_industrial.sh",
+      "daily_limit": 290,
+      "restart_delay": 86400,
+      "description": "Bulgaria industrial — dezactivat"
+    }
+  ]
+}

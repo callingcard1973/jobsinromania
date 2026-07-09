@@ -1,0 +1,30 @@
+{
+  "_comment": "Sender map extras din raspibig /opt/ACTIVE/EMAIL/CAMPAIGNS/campaigns.json la 2026-07-01. NU contine API keys sau app passwords — alea se citesc din campaigns.json pe raspibig. 52 campanii total.",
+  "_canonical_source": "raspibig:/opt/ACTIVE/EMAIL/CAMPAIGNS/campaigns.json",
+  "brevo_accounts": {
+    "CUMPARLEGUME": { "sender": "office@cumparlegume.com", "reply_to": "office@cumparlegume.com", "campaigns": ["PRIMARII", "COOP_EXPORT", "SILOZURI_CEREALE_11JUD"] },
+    "BPPLTD": { "sender": "office@bppltd.co.uk", "reply_to": "manpower.dristor@gmail.com", "campaigns": ["SONOMA_BREVO_BPPLTD"] },
+    "FACTORYJOBS": { "sender": "office@factoryjobs.eu", "reply_to": "manpower.dristor@gmail.com", "campaigns": ["SONOMA_BREVO_FACTORYJOBS"] }
+  },
+  "brevo_direct_senders": {
+    "export@bppltd.co.uk": ["EXPORT_PEPENI_BPP"],
+    "office@farmworkers.eu": ["EXPORT_PEPENI_FARM"],
+    "office@seicarescu.com": ["EXPORT_PEPENI_SEI"],
+    "vegetablesbucharest@gmail.com": ["SUPERMARKETURI"]
+  },
+  "gmail_smtp_senders_yahoo": {
+    "cumparlegume@gmail.com": { "alias": "cumparlegume", "campaigns": ["SILOZURI_CEREALE_11JUD_GMAIL_CUMPARLEGUME"] },
+    "vegetablesbucharest@gmail.com": { "alias": "vegetables", "campaigns": ["SILOZURI_CEREALE_11JUD_GMAIL_VEGETABLES"] },
+    "fructexportromania@gmail.com": { "alias": "fructexport", "campaigns": ["SILOZURI_CEREALE_11JUD_GMAIL_FRUCTEXPORT"] },
+    "manpower.dristor@gmail.com": { "alias": "manpower", "campaigns": ["FACTORY_RO", "SONOMA_AGENTII", "SONOMA_G1", "SONOMA_G2", "SONOMA_G3"] },
+    "elena.manpower.dristor@gmail.com": { "alias": "elena", "campaigns": ["EXPORT_AT", "EURO_DEALERS_FRANCE", "EURO_DEALERS_GERMANY", "EURO_DEALERS_SOUTHCENTRALEU", "CANDIDATE_BROADCAST", "SONOMA_FABRICI", "EXPORT_FR", "EXPORT_ES", "EXPORT_BE", "SILOZURI"] }
+  },
+  "sender_in_script_undocumented": ["SME_DEFICIT", "NECALIFICATI", "BDA_ARHITECTI", "SILOZURI_BREVO", "SILOZURI_GMAIL_CUMPARLEGUME", "SILOZURI_GMAIL_VEGETABLES", "SILOZURI_GMAIL_FRUCTEXPORT"],
+  "rules": {
+    "yahoo_recipients": "DOAR Gmail SMTP (DMARC strict); restul pe Brevo relay",
+    "gmail_daily_cap": 50,
+    "brevo_daily_cap_max": 290,
+    "sender_custom_must_accept": "--limit --delay --daily-cap (altfel exit 2)",
+    "campaigns_json_reload": "systemctl restart campaign-orchestrator.service"
+  }
+}

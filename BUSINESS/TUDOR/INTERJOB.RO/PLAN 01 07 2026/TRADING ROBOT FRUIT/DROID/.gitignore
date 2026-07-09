@@ -1,0 +1,11 @@
+# PII: oferte, contacte furnizori/cumparatori, emailuri brute - NU pe GitHub
+DATA/
+__pycache__/
+*.pyc
+*.sh
+HANDOFF_*.md
+
+# PUBLISHING_ROBOT - credentiale + DB generata
+PUBLISHING_ROBOT/publish_config.json
+PUBLISHING_ROBOT/publish_queue.db
+PUBLISHING_ROBOT/*.log

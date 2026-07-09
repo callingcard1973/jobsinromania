@@ -1,0 +1,223 @@
+{
+ "_comment": "ANOFM gentle multi-sender, occupation-PERFECT routing on 6 domains (IPv4-forced for Brevo allowlist). occupations = diacritic-stripped substring on job_title. Disjoint partition in main: each email claimed by first segment. ramp=[[day_threshold, per_day],...]. Keys by key_name from anofm_brevo_keys.json (raspi chmod 600).",
+ "segments": [
+  {
+   "name": "ANOFM_FACTORY",
+   "sender_email": "office@factoryjobs.eu",
+   "key_name": "FACTORYJOBS",
+   "occupations": [
+    "sudor",
+    "mecanic"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true
+  },
+  {
+   "name": "ANOFM_ELECTRIC",
+   "sender_email": "office@electricjobs.eu",
+   "key_name": "ELECTRICJOBS",
+   "occupations": [
+    "electrician"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true,
+   "method": "smtp"
+  },
+  {
+   "name": "ANOFM_BUILD",
+   "sender_email": "office@buildjobs.eu",
+   "key_name": "BUILDJOBS",
+   "occupations": [
+    "zidar",
+    "tamplar",
+    "dulgher"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true
+  },
+  {
+   "name": "ANOFM_HORECA",
+   "sender_email": "office@horecaworkers2026.eu",
+   "key_name": "HORECA2026EU",
+   "occupations": [
+    "bucatar"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true
+  },
+  {
+   "name": "ANOFM_WAREHOUSE",
+   "sender_email": "office@warehouseworkers.eu",
+   "key_name": "WAREHOUSE",
+   "occupations": [
+    "sofer"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true
+  },
+  {
+   "name": "ANOFM_CARE",
+   "sender_email": "office@careworkers.eu",
+   "key_name": "CAREWORKERS",
+   "occupations": [
+    "bucatar"
+   ],
+   "ramp": [
+    [
+     2,
+     30
+    ],
+    [
+     4,
+     60
+    ],
+    [
+     6,
+     100
+    ],
+    [
+     9999,
+     150
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": false
+  },
+  {
+   "name": "ANOFM_YAHOO",
+   "sender_email": "office@bppltd.co.uk",
+   "key_name": "BPPLTD",
+   "occupations": [
+    "bucatar",
+    "electrician",
+    "mecanic",
+    "sofer",
+    "sudor",
+    "tamplar",
+    "zidar",
+    "dulgher"
+   ],
+   "allow_yahoo": true,
+   "daily_cap": 10,
+   "ramp": [
+    [
+     9999,
+     10
+    ]
+   ],
+   "delay": [
+    180,
+    360
+   ],
+   "enabled": true
+  }
+ ]
+}

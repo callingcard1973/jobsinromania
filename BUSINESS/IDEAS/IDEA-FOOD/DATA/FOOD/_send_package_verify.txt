@@ -1,0 +1,8 @@
+PACKAGE_OK
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/wholesale-first-outreach-email.md:12:We are preparing a cooperative-led Romanian food assortment through Gospodarii de Altadata Cooperativa Agricola, built from verified regional and mountain-product producers, with an initial focus on shelf-stable lines that are easier to onboard and scale.
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/wholesale-first-outreach-email.md:38:Gospodarii de Altadata Cooperativa Agricola
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/one-page-buyer-brief.md:7:- Gospodarii de Altadata Cooperativa Agricola
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/one-page-buyer-brief.md:26:- Commercial aggregation is handled through Gospodarii de Altadata Cooperativa Agricola.
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/metro-selgros-send-package.md:1:# Metro And Selgros Send Package
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/assets/metro-selgros-send-package.md:8:- Gospodarii de Altadata Cooperativa Agricola
+/opt/ACTIVE/FOOD/openspec/changes/launch-food-outreach-pipeline/state.yaml:2:phase: send-package-prepared

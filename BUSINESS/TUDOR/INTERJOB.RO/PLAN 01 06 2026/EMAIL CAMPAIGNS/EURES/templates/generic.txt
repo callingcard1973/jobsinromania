@@ -1,0 +1,19 @@
+Subject: {company} - Romanian workers for {job_title} roles in {country}
+
+Hello,
+
+I saw {company} is hiring in {country}, including {job_title} positions.
+
+InterJob.ro supplies reliable workers from Romania for exactly these roles. Many have EU work experience, speak working English, and are ready to relocate to {country} and start quickly.
+
+You stay in control: you review the candidates, you decide. It costs nothing to see a shortlist matched to {company}'s hiring needs.
+
+Shall I send you a few available Romanian candidates for {company} this week? Just reply "yes".
+
+Best regards,
+InterJob.ro Team
+---
+InterJob.ro | Romanian workforce for European employers
+You received this because {company} posted a public vacancy on EURES.
+To opt out, reply "STOP" and we will not contact you again.
+Unsubscribe: https://interjob.ro/unsubscribe?e={email}

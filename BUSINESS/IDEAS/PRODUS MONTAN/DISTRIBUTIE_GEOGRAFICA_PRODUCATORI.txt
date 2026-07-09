@@ -1,0 +1,203 @@
+DISTRIBUTIE GEOGRAFICA — PRODUCATORI PRODUS MONTAN
+===================================================
+Data: 2026-03-08
+Sursa: rnpm_producers_1331.csv (RNPM — Registrul National al Produselor Montane)
+
+TOTAL: 1.331 producatori | 977 cu email | 590 legume/fructe
+
+----------------------------------------------------------------------
+PRODUCATORI PE HUB-URI DE LIVRARE (oras mare cel mai apropiat)
+----------------------------------------------------------------------
+
+Hub Livrare          | Producatori | Cu Email | Judete
+---------------------|-------------|----------|---------------------------
+BRASOV (hub #1)      | 331         | 297      | Covasna 265, Brasov 66
+CLUJ (hub #2)        | 282         | 123      | Bistrita-Nasaud 206, Cluj 76
+RM. VALCEA           | 96          | 61       | Valcea 96
+TARGU MURES          | 89          | 79       | Harghita 73, Mures 16
+BAIA MARE            | 88          | 67       | Maramures 88
+DEVA                 | 61          | 41       | Hunedoara 61
+TG. JIU              | 50          | 44       | Gorj 50
+ALBA IULIA           | 45          | 35       | Alba 45
+RESITA               | 43          | 36       | Caras-Severin 43
+SUCEAVA              | 42          | 24       | Suceava 42
+SIBIU                | 40          | 37       | Sibiu 40
+BACAU                | 35          | 30       | Bacau 35
+SATU MARE            | 32          | 25       | Satu Mare 32
+ZONA BUCURESTI       | 38          | 33       | Buzau 14, Prahova 10,
+                     |             |          | Dambovita 8, Arges 6
+ALTE ZONE            | 59          | 25       | Vrancea 23, Neamt 19,
+                     |             |          | Bihor 9, Mehedinti 6,
+                     |             |          | Arad 1, Timis 1
+
+----------------------------------------------------------------------
+DISTRIBUTIE PE JUDETE — TOTI PRODUCATORII (1.331)
+----------------------------------------------------------------------
+
+1.  COVASNA:          265 producatori (20% din total)
+2.  BISTRITA NASAUD:  206
+3.  VALCEA:            96
+4.  MARAMURES:         88
+5.  CLUJ:              76
+6.  HARGHITA:          73
+7.  BRASOV:            66
+8.  HUNEDOARA:         61
+9.  GORJ:              50
+10. ALBA:              45
+11. CARAS SEVERIN:     43
+12. SUCEAVA:           42
+13. SIBIU:             40
+14. BACAU:             35
+15. SATU MARE:         32
+16. VRANCEA:           23
+17. NEAMT:             19
+18. MURES:             16
+19. BUZAU:             14
+20. PRAHOVA:           10
+21. BIHOR:              9
+22. DAMBOVITA:          8
+23. MEHEDINTI:          6
+24. ARGES:              6
+25. ARAD:               1
+26. TIMIS:              1
+
+----------------------------------------------------------------------
+DISTRIBUTIE PE JUDETE — PRODUCATORI LEGUME/FRUCTE (590)
+----------------------------------------------------------------------
+
+1.  COVASNA:          194 (33% din total legume!)
+2.  MARAMURES:         53
+3.  BRASOV:            37
+4.  HUNEDOARA:         37
+5.  VALCEA:            35
+6.  HARGHITA:          33
+7.  CLUJ:              30
+8.  GORJ:              26
+9.  SATU MARE:         25
+10. BACAU:             19
+11. CARAS SEVERIN:     16
+12. BISTRITA NASAUD:   14
+13. SUCEAVA:           10
+14. NEAMT:              9
+15. MURES:              9
+16. SIBIU:              9
+17. MEHEDINTI:          6
+18. DAMBOVITA:          6
+19. ARGES:              5
+20. BUZAU:              4
+21. ALBA:               4
+22. VRANCEA:            3
+23. BIHOR:              3
+24. PRAHOVA:            2
+25. TIMIS:              1
+
+----------------------------------------------------------------------
+LOCALITATI PRINCIPALE (din adresa sediu)
+----------------------------------------------------------------------
+
+COVASNA: Targu Secuiesc(14), Sfantu Gheorghe(7), Covasna(5),
+         Intorsura Buzaului(3)
+HARGHITA: Miercurea Ciuc(8), Gheorgheni(7), Cristuru Secuiesc(1)
+SIBIU: Sibiu(5), Talmacel(3)
+HUNEDOARA: Deva(8), Orastie(1)
+BRASOV: Brasov(4), Sambata de Sus(1), Zarnesti(1)
+ALBA: Zlatna(4), Alba Iulia(1), Cugir(1)
+BACAU: Moinesti(2), Targu Ocna(2), Onesti(2)
+VALCEA: Ramnicu Valcea(3), Calimanesti(1)
+MARAMURES: Baia Mare(4), Sighetu Marmatiei(1)
+GORJ: Novaci(1), Targu Jiu(2)
+CLUJ: Cluj-Napoca(3), Turda(1)
+NEAMT: Piatra Neamt(2)
+
+----------------------------------------------------------------------
+CONCLUZII STRATEGICE
+----------------------------------------------------------------------
+
+1. BRASOV/COVASNA = CEL MAI MARE HUB
+   - 331 producatori (25% din total), 297 cu email
+   - Covasna singur = 265 producatori (20% din tot!)
+   - Peter Miklo (Kereszturi) deja ofera transport la Bucuresti
+   - Distanta Brasov-Bucuresti: 160 km (2h masina, next-day curier)
+   - IDEAL pentru cos saptamanal Brasov + Bucuresti
+
+2. CLUJ = AL DOILEA HUB
+   - 282 producatori (Bistrita-Nasaud 206 + Cluj 76)
+   - Doar 123 cu email (rest fara contact electronic)
+   - Piata Cluj deja are Colina Farms si Cutia Taranului
+   - Diferentiator: CERTIFICAT PRODUS MONTAN (nimeni altul)
+
+3. ZONA BUCURESTI = PUTINI PRODUCATORI APROAPE
+   - Doar 38 producatori in judete limitrofe (Buzau, Prahova, DB, AG)
+   - DAR: Fan Courier/Sameday livreaza din toata tara next-day
+   - Costul livrare: 15-25 RON
+   - Clientii expati sunt concentrati in Bucuresti!
+
+4. ZERO IN DOBROGEA/MUNTENIA/OLTENIA SUD
+   - Normal: nu sunt zone montane
+   - Clienti in aceste zone = livram din hub-urile montane prin curier
+
+5. ZONA VEST (TIMIS/ARAD) = APROAPE GOL
+   - Doar 2 producatori (1 Arad, 1 Timis)
+   - Timisoara = oras mare fara acoperire producatori montani
+
+----------------------------------------------------------------------
+STRATEGIE LIVRARE RECOMANDATA
+----------------------------------------------------------------------
+
+HUB 1: BRASOV/COVASNA (331 producatori)
+  - Cos saptamanal pentru: Brasov, Bucuresti, Ploiesti
+  - Livrare Bucuresti: Fan Courier next-day sau transport propriu
+  - Peter Miklo = partener logistic (deja are ruta Covasna-Bucuresti)
+  - Punct ridicare Brasov: in oras
+  - Punct ridicare Bucuresti: zona centrala/nord (expati)
+
+HUB 2: CLUJ (282 producatori)
+  - Cos saptamanal pentru: Cluj-Napoca, Oradea, Targu Mures
+  - Livrare locala + curier national
+  - Competitori locali: Colina Farms (69-90 RON bio)
+  - Avantaj: produs montan certificat + pret competitiv
+
+HUB 3: SIBIU/ALBA (85 producatori)
+  - Cos saptamanal pentru: Sibiu, Alba Iulia, Deva
+  - Zona turistica = potential agriturism + hoteluri boutique
+
+HUB 4: MARAMURES/SATU MARE (120 producatori)
+  - Cos saptamanal pentru: Baia Mare, Satu Mare
+  - Zona turistica populara la expati
+  - Produse traditionale autentice
+
+NATIONAL (prin curier):
+  - Cosuri livrate oriunde in Romania prin Fan Courier/Sameday
+  - Cost livrare: 15-25 RON (next-day)
+  - Minim comanda: 100 RON (ca sa justifice logistica)
+  - Ramburs (plata la livrare) = zero risc financiar
+
+----------------------------------------------------------------------
+PRODUCATORI CHEIE DEJA CONTACTATI (din campania Jan 2024)
+----------------------------------------------------------------------
+
+- Peter Miklo (Kereszturi, Covasna) — lactate, 500-700kg/sapt,
+  TRANSPORT LA BUCURESTI, plata 30 zile
+- Peter Tanko (Cooperativa Trotusi) — branza, unt, telemea, sana,
+  500-700kg/sapt
+- Afin Fruct SRL (Vaideeni, Valcea) — afine certificate bio+montan
+- Stupina Igna — miere (salcam 24 EUR, pastura, cirese)
+- Montlact (Oliviu Costea) — cascaval traditional, CEO 0756164333
+- Mister Juice — sucuri naturale 100%
+- Branzaturi UzOnkA — cascaval maturat
+- Mierecarpatica — miere carpat varietati
+- Zsolt Papp — catina bio certificata (12 tone/dec)
+
+----------------------------------------------------------------------
+DATE ACTUALIZARE VERDE STOP (verde-stop.ro)
+----------------------------------------------------------------------
+
+Cos Mic Legume: 65 RON (initial 55, marit)
+Continut cos mic (14 produse):
+  Rosii 1kg, Castraveti 0.5kg, Ardei gras 2 buc, Ardei iute 1 buc,
+  Ridichii 1 leg, Cartofi 1kg, Dovlecel 1 buc, Salata 1 buc,
+  Marar 1 leg, Patrunjel 1 leg, Ceapa verde 2 leg, Morcovi 300g,
+  Usturoi uscat 1 buc, Telina 1 buc
+Cos Mediu Legume: 75 RON
+Cos Mare Legume: 120 RON
+Cos Verde Legume: 50 RON

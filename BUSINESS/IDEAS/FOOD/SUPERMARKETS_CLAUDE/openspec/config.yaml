@@ -1,0 +1,33 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Python 3.12, psycopg2, CSV processing
+  Database: PostgreSQL 15 on raspibig (food_distribution + interjob_master)
+  Architecture: CLI scripts in CODE/, CSV data in DATA/, 26 Python modules
+  Testing: None (manual verification)
+  Style: Unix conventions, max 250 lines/file, no over-engineering
+  Deploy: SCP to raspibig, systemctl restart, curl verify
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected scripts and DATA/ files
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Document PostgreSQL schema changes with rationale
+    - Include data flow diagrams for pipeline changes
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing code patterns (shebang, docstring, argparse)
+    - Use psycopg2 with parameterized queries and conn.close()
+    - Max 250 lines per file
+  verify:
+    - Run scripts with --stats or --dry-run flags
+    - Compare output counts against expected values
+  archive:
+    - Warn before merging destructive deltas (large removals)

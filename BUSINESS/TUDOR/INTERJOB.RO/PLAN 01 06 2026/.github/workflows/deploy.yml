@@ -1,0 +1,39 @@
+name: Deploy Static HTML to GitHub Pages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3:00 AM UTC
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Generate HTML files
+        run: |
+          # Copy pre-generated HTML files from CODE/output/
+          mkdir -p public
+          cp CODE/output/jobs/buildjobs_jobs_homepage.html public/index.html
+          cp CODE/output/jobs/buildjobs_jobs_seo.html public/seo.html
+          
+      - name: Create CNAME for custom domain
+        run: echo "buildjobs.eu" > public/CNAME
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true

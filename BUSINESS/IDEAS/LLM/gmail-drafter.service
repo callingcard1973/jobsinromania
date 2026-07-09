@@ -1,0 +1,17 @@
+[Unit]
+Description=Gmail Draft Creator for Email Review
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=tudor
+WorkingDirectory=/opt/ACTIVE/EMAIL/LLM_RESPONDER
+ExecStart=/usr/bin/python3 /opt/ACTIVE/EMAIL/LLM_RESPONDER/gmail_drafter.py --daemon
+Restart=on-failure
+RestartSec=60
+Environment="GMAIL_APP_PASSWORD=mhob iaco okxo pggk"
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

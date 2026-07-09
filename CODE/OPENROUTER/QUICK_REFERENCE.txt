@@ -1,0 +1,118 @@
+═══════════════════════════════════════════════════════════════════════════
+                        OPENROUTER QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════
+
+📍 LOCATION: D:\MEMORY\CODE\OPENROUTER\
+
+🔑 API KEY: sk-or-v1-[configured]
+
+─────────────────────────────────────────────────────────────────────────────
+INSTANT START (Copy-Paste)
+─────────────────────────────────────────────────────────────────────────────
+
+from openrouter import quick_complete
+import asyncio
+
+result = asyncio.run(quick_complete("Hello world"))
+print(result)
+
+─────────────────────────────────────────────────────────────────────────────
+AVAILABLE MODELS (Free)
+─────────────────────────────────────────────────────────────────────────────
+
+✓ openrouter/auto              → Default (auto-routes to free tier)
+✓ nvidia/nemotron-3-super      → Fast general model
+✓ nvidia/nemotron-3-ultra      → Best quality free tier
+✓ meta-llama/llama-3-8b        → Instruction following
+✓ mistralai/mistral-7b         → Very fast
+
+─────────────────────────────────────────────────────────────────────────────
+USAGE PATTERNS
+─────────────────────────────────────────────────────────────────────────────
+
+1. QUICK COMPLETION (one-off):
+   result = await quick_complete("Your prompt")
+
+2. CHAT CLIENT (conversation):
+   client = OpenRouterClient(model="nvidia/nemotron-3-ultra")
+   response = await client.chat(messages=[...])
+
+3. SPECIFIC MODEL:
+   client = OpenRouterClient(model="meta-llama/llama-3-8b-instruct")
+
+4. OVERRIDE PER-REQUEST:
+   await client.chat(messages=[...], model="mistralai/mistral-7b")
+
+─────────────────────────────────────────────────────────────────────────────
+SETUP CHECKLIST
+─────────────────────────────────────────────────────────────────────────────
+
+☑ API key saved in .env
+☑ client.py downloaded
+☑ requirements.txt (httpx, python-dotenv)
+☑ examples.py ready to run
+☑ CLAUDE.md updated with OpenRouter section
+
+─────────────────────────────────────────────────────────────────────────────
+FILES
+─────────────────────────────────────────────────────────────────────────────
+
+.env                  — Configuration (API key, default model)
+client.py             — Main async client (OpenRouterClient, quick_complete)
+__init__.py           — Package imports
+requirements.txt      — Python dependencies
+examples.py           — 6 runnable examples
+README.md             — Full integration guide
+SETUP_SUMMARY.md      — Installation & verification
+QUICK_REFERENCE.txt   — This file
+
+─────────────────────────────────────────────────────────────────────────────
+COMMON TASKS
+─────────────────────────────────────────────────────────────────────────────
+
+Task: Generate ad description
+   model = "nvidia/nemotron-3-super"
+   prompt = "Write a classified ad for a bicycle"
+
+Task: Code review/analysis
+   model = "nvidia/nemotron-3-ultra"
+   prompt = "Review this code: ..."
+
+Task: Fast turnaround
+   model = "openrouter/auto"  (default, fastest)
+
+Task: Best quality
+   model = "nvidia/nemotron-3-ultra"
+   max_tokens = 2048
+
+─────────────────────────────────────────────────────────────────────────────
+ENVIRONMENT VARIABLES
+─────────────────────────────────────────────────────────────────────────────
+
+Required:
+  OPENROUTER_API_KEY=sk-or-v1-...
+
+Optional:
+  OPENROUTER_DEFAULT_MODEL=nvidia/nemotron-3-ultra
+  OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+
+─────────────────────────────────────────────────────────────────────────────
+COST
+─────────────────────────────────────────────────────────────────────────────
+
+All free models: $0
+No payment method required
+No rate limiting for development
+Production rate limits: See openrouter.ai/limits
+
+─────────────────────────────────────────────────────────────────────────────
+SUPPORT
+─────────────────────────────────────────────────────────────────────────────
+
+• OpenRouter Docs: https://openrouter.ai/api/documentation
+• Status: https://status.openrouter.io
+• Issue? Switch to openrouter/auto (most resilient)
+
+═══════════════════════════════════════════════════════════════════════════
+Version: 1.0 | Setup: 2026-06-15
+═══════════════════════════════════════════════════════════════════════════

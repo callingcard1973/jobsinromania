@@ -1,0 +1,8 @@
+[Unit]
+Description=EURES audience build
+After=network-online.target postgresql.service
+[Service]
+Type=oneshot
+Environment=PGHOST=localhost
+WorkingDirectory=/opt/ACTIVE/EURES
+ExecStart=/usr/bin/python3 /opt/ACTIVE/EURES/build_audience.py

@@ -1,0 +1,322 @@
+[
+  {
+    "name": "JBS S.A.",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Meat",
+    "website": "jbs.com.br",
+    "employees": 150000
+  },
+  {
+    "name": "BRF S.A.",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Poultry/Pork",
+    "website": "brf.com",
+    "employees": 90000
+  },
+  {
+    "name": "Marfrig Global Foods",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Beef",
+    "website": "marfrig.com.br",
+    "employees": 30000
+  },
+  {
+    "name": "Minerva Foods",
+    "country": "BR",
+    "city": "Barretos",
+    "sector": "Beef",
+    "website": "minervafoods.com",
+    "employees": 20000
+  },
+  {
+    "name": "Cargill Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Grains/Food",
+    "website": "cargill.com.br"
+  },
+  {
+    "name": "Bunge Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Grains/Food",
+    "website": "bunge.com.br"
+  },
+  {
+    "name": "ADM do Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Grains",
+    "website": "adm.com"
+  },
+  {
+    "name": "Louis Dreyfus Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Commodities",
+    "website": "ldc.com"
+  },
+  {
+    "name": "Citrosuco",
+    "country": "BR",
+    "city": "Matao",
+    "sector": "Orange Juice",
+    "website": "citrosuco.com.br"
+  },
+  {
+    "name": "Cutrale",
+    "country": "BR",
+    "city": "Araraquara",
+    "sector": "Orange Juice",
+    "website": "cutrale.com.br"
+  },
+  {
+    "name": "Raizen",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Sugar/Ethanol",
+    "website": "raizen.com.br",
+    "employees": 40000
+  },
+  {
+    "name": "Copersucar",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Sugar/Ethanol",
+    "website": "copersucar.com.br"
+  },
+  {
+    "name": "Sao Martinho",
+    "country": "BR",
+    "city": "Pradopolis",
+    "sector": "Sugar/Ethanol",
+    "website": "saomartinho.com.br"
+  },
+  {
+    "name": "Biosev",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Sugar/Ethanol",
+    "website": "biosev.com"
+  },
+  {
+    "name": "Tereos Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Sugar",
+    "website": "tereos.com"
+  },
+  {
+    "name": "Vale S.A.",
+    "country": "BR",
+    "city": "Rio de Janeiro",
+    "sector": "Iron Ore/Mining",
+    "website": "vale.com",
+    "employees": 70000
+  },
+  {
+    "name": "CSN Mineracao",
+    "country": "BR",
+    "city": "Congonhas",
+    "sector": "Iron Ore",
+    "website": "csn.com.br"
+  },
+  {
+    "name": "Anglo American Brasil",
+    "country": "BR",
+    "city": "Belo Horizonte",
+    "sector": "Iron Ore/Nickel",
+    "website": "angloamerican.com"
+  },
+  {
+    "name": "Samarco",
+    "country": "BR",
+    "city": "Mariana",
+    "sector": "Iron Ore",
+    "website": "samarco.com"
+  },
+  {
+    "name": "CBMM",
+    "country": "BR",
+    "city": "Araxa",
+    "sector": "Niobium",
+    "website": "cbmm.com",
+    "employees": 2000
+  },
+  {
+    "name": "Suzano",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Pulp/Paper",
+    "website": "suzano.com.br",
+    "employees": 35000
+  },
+  {
+    "name": "Klabin",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Pulp/Paper",
+    "website": "klabin.com.br"
+  },
+  {
+    "name": "Eldorado Brasil",
+    "country": "BR",
+    "city": "Tres Lagoas",
+    "sector": "Pulp",
+    "website": "eldoradobrasil.com.br"
+  },
+  {
+    "name": "Gerdau",
+    "country": "BR",
+    "city": "Porto Alegre",
+    "sector": "Steel",
+    "website": "gerdau.com",
+    "employees": 30000
+  },
+  {
+    "name": "Usiminas",
+    "country": "BR",
+    "city": "Belo Horizonte",
+    "sector": "Steel",
+    "website": "usiminas.com"
+  },
+  {
+    "name": "CSN - Cia Siderurgica Nacional",
+    "country": "BR",
+    "city": "Volta Redonda",
+    "sector": "Steel",
+    "website": "csn.com.br"
+  },
+  {
+    "name": "ArcelorMittal Brasil",
+    "country": "BR",
+    "city": "Belo Horizonte",
+    "sector": "Steel",
+    "website": "arcelormittal.com.br"
+  },
+  {
+    "name": "CBA - Cia Brasileira de Aluminio",
+    "country": "BR",
+    "city": "Aluminio",
+    "sector": "Aluminum",
+    "website": "cba.com.br"
+  },
+  {
+    "name": "Alcoa Brasil",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Aluminum",
+    "website": "alcoa.com"
+  },
+  {
+    "name": "Embraer",
+    "country": "BR",
+    "city": "Sao Jose dos Campos",
+    "sector": "Aerospace",
+    "website": "embraer.com",
+    "employees": 18000
+  },
+  {
+    "name": "Helibras",
+    "country": "BR",
+    "city": "Itajuba",
+    "sector": "Aerospace",
+    "website": "helibras.com.br"
+  },
+  {
+    "name": "WEG S.A.",
+    "country": "BR",
+    "city": "Jaragua do Sul",
+    "sector": "Electric Motors",
+    "website": "weg.net",
+    "employees": 30000
+  },
+  {
+    "name": "Tupy S.A.",
+    "country": "BR",
+    "city": "Joinville",
+    "sector": "Auto Parts",
+    "website": "tupy.com.br"
+  },
+  {
+    "name": "Iochpe-Maxion",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Wheels/Chassis",
+    "website": "iochpe.com.br"
+  },
+  {
+    "name": "Randon",
+    "country": "BR",
+    "city": "Caxias do Sul",
+    "sector": "Trailers/Parts",
+    "website": "randon.com.br"
+  },
+  {
+    "name": "Braskem",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Petrochemicals",
+    "website": "braskem.com.br",
+    "employees": 8000
+  },
+  {
+    "name": "Unipar",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Chemicals",
+    "website": "unipar.com"
+  },
+  {
+    "name": "Cooxupe",
+    "country": "BR",
+    "city": "Guaxupe",
+    "sector": "Coffee",
+    "website": "cooxupe.com.br"
+  },
+  {
+    "name": "Cocapec",
+    "country": "BR",
+    "city": "Franca",
+    "sector": "Coffee",
+    "website": "cocapec.com.br"
+  },
+  {
+    "name": "Amaggi",
+    "country": "BR",
+    "city": "Cuiaba",
+    "sector": "Soy/Grains",
+    "website": "amaggi.com.br"
+  },
+  {
+    "name": "SLC Agricola",
+    "country": "BR",
+    "city": "Porto Alegre",
+    "sector": "Soy/Cotton",
+    "website": "slcagricola.com.br"
+  },
+  {
+    "name": "Grendene",
+    "country": "BR",
+    "city": "Sobral",
+    "sector": "Footwear",
+    "website": "grendene.com.br"
+  },
+  {
+    "name": "Alpargatas",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Footwear",
+    "website": "alpargatas.com.br"
+  },
+  {
+    "name": "JBS Couros",
+    "country": "BR",
+    "city": "Sao Paulo",
+    "sector": "Leather",
+    "website": "jbscouros.com.br"
+  }
+]

@@ -1,0 +1,62 @@
+﻿ANOFM raspi health check
+Host: 192.168.100.20   User: tudor
+Timestamp: 2026-06-23 16:08:52
+=====================================================
+=== HOST ===
+raspi
+ 16:08:54 up  3:00,  3 users,  load average: 0.96, 0.99, 0.98
+
+=== TIMERS anofm ===
+NEXT                          LEFT LAST                               PASSED UNIT                         ACTIVATES
+Tue 2026-06-23 16:30:00 EEST 21min Tue 2026-06-23 13:00:00 EEST            - anofm-ingest.timer           anofm-ingest.service
+Tue 2026-06-23 16:40:00 EEST 31min Tue 2026-06-23 13:10:01 EEST 2h 58min ago anofm-audience-rebuild.timer anofm-audience-rebuild.service
+Wed 2026-06-24 08:25:00 EEST   16h Tue 2026-06-23 15:59:01 EEST     9min ago anofm-scraper.timer          anofm-scraper.service
+
+3 timers listed.
+
+=== TIMER STATUS ===
+anofm-scraper.timer          enabled=enabled active=active
+anofm-ingest.timer           enabled=enabled active=active
+anofm-audience-rebuild.timer enabled=enabled active=active
+
+=== DB anofm_db ===
+16963
+13671
+
+=== LATEST CSV ===
+total 1159332
+lrwxrwxrwx 1 tudor tudor      57 Jun 23 15:59 anofm_jobs_latest.csv -> /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv
+-rw-r--r-- 1 tudor tudor 4482183 Jun 23 15:59 anofm_jobs_20260623_155713.csv
+-rw-r--r-- 1 tudor tudor 4482063 Jun 23 12:28 anofm_jobs_20260623_122501.csv
+-rw-r--r-- 1 tudor tudor 4468412 Jun 23 08:28 anofm_jobs_20260623_082504.csv
+rows in newest:
+/opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_latest.csv
+11852 /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_latest.csv
+
+=== TMP leftovers ===
+none
+
+=== SENT csv ===
+329 /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI/DATA/sent.csv
+--- last 5 ---
+dispo@derombigal-spedition.de,S.C. DEROMBIGAL SRL,Servicii transport / curierat,2026-06-23
+alina.dusleag@carlogisticcompany.ro,CAR LOGISTIC COMPANY SRL,Servicii transport / curierat,2026-06-23
+m.neagoie@hrsystems.ro,HR SYSTEMS INTERNATIONAL SRL,Produc╚øie / Logistic─â,2026-06-23
+ana.condrat@yazaki-europe.com,YAZAKI ROMANIA SRL,Produc╚øie / Logistic─â,2026-06-23
+hr@tgg-transport.net,TGG SERVICE TRANS S.R.L.,Servicii transport / curierat,2026-06-23
+--- sent today ---
+83
+
+=== DISK ===
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2       880G  649G  196G  77% /
+csv dir size:
+1.2G	/opt/ACTIVE/ANOFM_DATA/csv/
+
+=== SCRAPER LOG last 15 ===
+Jun 23 15:57:13 raspi systemd[1]: Starting anofm-scraper.service - ANOFM Scraper (Parallel 4 workers)...
+Jun 23 15:59:59 raspi systemd[1]: anofm-scraper.service: Deactivated successfully.
+Jun 23 15:59:59 raspi systemd[1]: Finished anofm-scraper.service - ANOFM Scraper (Parallel 4 workers).
+Jun 23 15:59:59 raspi systemd[1]: anofm-scraper.service: Consumed 8.292s CPU time.
+
+=== DONE ===

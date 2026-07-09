@@ -1,0 +1,57 @@
+﻿ANOFM raspi INGEST check
+Host: 192.168.100.20   2026-06-23 16:17:10
+=====================================================
+=== ij_jobs columns ===
+id, company_id, salary_min, salary_max, published_at, expires_at, created_at, updated_at, county, remote_status, sector, contract_type, content_hash, status, salary_currency, description, title, slug, requirements, source, source_url, source_job_id, city
+
+=== counts ===
+total=16963
+anofm_active=13671
+
+=== rows with today date (per timestamp col) ===
+created_at today: 534
+updated_at today: 534
+
+=== max timestamps ===
+max created_at: 2026-06-23 15:53:52.147598
+max updated_at: 2026-06-23 15:53:52.147598
+
+=== latest CSV files ===
+lrwxrwxrwx 1 tudor tudor      57 Jun 23 15:59 /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_latest.csv -> /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv
+-rw-r--r-- 1 tudor tudor 4482183 Jun 23 15:59 /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_155713.csv
+-rw-r--r-- 1 tudor tudor 4482063 Jun 23 12:28 /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_122501.csv
+
+=== ingest service log last 25 ===
+Jun 23 15:52:16 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export BREVO_BUILDJOBS_API_KEY=xkeysib-REDACTED': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:52:16 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export SCRAPER_CSV_DIR=/opt/ACTIVE/ANOFM_DATA/csv': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:52:16 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export CAMPAIGN_DATA_DIR=/opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI/DATA': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:52:16 raspi systemd[1]: Starting anofm-ingest.service - ANOFM Ingest (Raspi)...
+Jun 23 15:52:18 raspi python3[32025]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_122501.csv...
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Main process exited, code=exited, status=1/FAILURE
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Failed with result 'exit-code'.
+Jun 23 15:52:18 raspi systemd[1]: Failed to start anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export PG_HOST=localhost': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export PG_PORT=5432': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export PG_DB=anofm_db': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export PG_USER=tudor': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export PG_PASSWORD=tudor': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export BREVO_WAREHOUSEWORKERS_API_KEY=xkeysib-REDACTED': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export GMAIL_USER=elena.manpower.dristor@gmail.com': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export GMAIL_APP_PASSWORD=wmfnpikkcierkmrq': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export BREVO_BUILDJOBS_API_KEY=xkeysib-REDACTED': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export SCRAPER_CSV_DIR=/opt/ACTIVE/ANOFM_DATA/csv': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: anofm-ingest.service: Ignoring invalid environment assignment 'export CAMPAIGN_DATA_DIR=/opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI/DATA': /opt/ACTIVE/ANOFM/.env
+Jun 23 15:54:09 raspi systemd[1]: Starting anofm-ingest.service - ANOFM Ingest (Raspi)...
+Jun 23 15:54:13 raspi python3[32537]: Processing /opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_20260623_122501.csv...
+Jun 23 15:54:13 raspi python3[32537]: Done: 0 inserted, 8399 skipped
+Jun 23 15:54:13 raspi systemd[1]: anofm-ingest.service: Deactivated successfully.
+Jun 23 15:54:13 raspi systemd[1]: Finished anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 15:54:13 raspi systemd[1]: anofm-ingest.service: Consumed 1.352s CPU time.
+
+=== ingest timer ===
+NEXT                          LEFT LAST                         PASSED UNIT               ACTIVATES
+Tue 2026-06-23 16:30:00 EEST 12min Tue 2026-06-23 13:00:00 EEST      - anofm-ingest.timer anofm-ingest.service
+
+1 timers listed.
+
+=== DONE ===

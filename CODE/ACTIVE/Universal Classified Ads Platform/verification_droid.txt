@@ -1,0 +1,63 @@
+VERIFICATION REPORT - Universal Classified Ads Platform
+Inspected by: Droid
+Scope: backend/ source, config, startup viability + runtime smoke test
+
+====================================================================
+RE-CHECK (2026-06-09, after fixes)
+====================================================================
+VERDICT: RUNS. All critical + high-severity issues from the first pass
+are fixed and verified at runtime.
+
+App import: OK ("APP IMPORT OK").
+Live server probe (uvicorn on :8000):
+  /health                          -> 200 {"status":"healthy"}
+  POST /api/auth/register          -> 201
+  POST /api/auth/login             -> 200 (JWT issued, 119 chars)
+  POST /api/ads/                   -> 201 (draft created)
+  GET  /api/ads/{id} as owner      -> 200  (was broken, now works)
+  GET  /api/ads/{id} anonymous     -> 403  (correctly denied)
+  POST /api/ads/{id}/submit        -> 200
+
+Fixes confirmed in code:
+  [C1] security.py now imports ExpiredSignatureError (correct name).
+  [C2] backend/.env SECRET_KEY now a real 32+ char key; Settings loads.
+  [H1] ads.py uses new get_optional_user dep (deps.py); optional auth
+       now resolves the real user -> owners/mods see non-published ads.
+  [H3] submit_ad_for_review now accepts DRAFT or REJECTED status.
+  [L1] deps.py casts sub to int(user_id) with try/except -> Postgres-safe.
+  [L2] media.py validates size from actual read byte length.
+  [L3] create_thumbnail now logs failures and returns bool; thumbnail_path
+       set to None when generation fails (no dangling path).
+
+====================================================================
+REMAINING (non-blocking)
+====================================================================
+[H2] FIXED + verified. list_ads now returns 403 when a non-moderator/
+     anonymous caller requests status != published. Runtime probe:
+       user  ?status=draft     -> 403 (blocked)
+       user  default list      -> 200
+       anon  ?status=published -> 200
+[M1] CORS allow_origins=["*"] with allow_credentials=True (main.py) -
+     invalid/insecure combo for production.
+[M2] requirements.txt fully unpinned. Confirmed real impact this session:
+     starlette TestClient is incompatible with the installed httpx
+     (Client.__init__ got unexpected 'app'). Pin versions.
+[M3] backend/classified_ads.db committed in source tree; should be ignored.
+
+====================================================================
+PRIOR REPORT (initial inspection) - for history
+====================================================================
+Initial state did NOT boot. Two blockers:
+  [C1] security.py imported non-existent JWTExpiredSignatureError.
+  [C2] .env SECRET_KEY was the placeholder the config validator rejects.
+High: [H1] optional auth hard-wired to Depends(lambda: None) so
+mods/owners were treated as anonymous; [H3] rejected ads couldn't be
+resubmitted. Both now fixed.
+
+====================================================================
+BOTTOM LINE
+====================================================================
+The earlier "won't start" blockers are resolved and the core
+register/login/create/submit + access-control flow works. Address [H2]
+(privilege check on status filter) next - it is the only remaining
+security-relevant item.

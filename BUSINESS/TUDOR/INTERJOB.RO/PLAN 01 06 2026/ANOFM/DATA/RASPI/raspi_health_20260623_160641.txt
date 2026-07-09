@@ -1,0 +1,5 @@
+﻿ANOFM raspi health check
+Host: 192.168.100.21   User: tudor
+Timestamp: 2026-06-23 16:06:41
+=====================================================
+zsh:1: == not found

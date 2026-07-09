@@ -1,0 +1,107 @@
+﻿host=192.168.100.20
+=== HOSTNAME: raspi ===
+CSVDIR=/opt/ACTIVE/ANOFM_DATA/csv DB=anofm_db
+=== PART A: scraper service show ===
+Result=success
+ExecMainStatus=0
+ActiveEnterTimestamp=
+=== PART A: newest CSV ===
+FILE=/opt/ACTIVE/ANOFM_DATA/csv/anofm_jobs_latest.csv
+mtime=2026-06-23 15:59:59.024164465 +0300
+lines=11852
+=== PART A: scraper journal last 10 ===
+Jun 23 15:57:13 raspi systemd[1]: Starting anofm-scraper.service - ANOFM Scraper (Parallel 4 workers)...
+Jun 23 15:59:59 raspi systemd[1]: anofm-scraper.service: Deactivated successfully.
+Jun 23 15:59:59 raspi systemd[1]: Finished anofm-scraper.service - ANOFM Scraper (Parallel 4 workers).
+Jun 23 15:59:59 raspi systemd[1]: anofm-scraper.service: Consumed 8.292s CPU time.
+=== PART A: scraper FAILURE today? ===
+=== PART B: timers ===
+anofm-scraper active=active enabled=enabled
+anofm-ingest active=active enabled=enabled
+anofm-audience-rebuild active=active enabled=enabled
+=== PART B: DB counts ===
+tables:
+ij_jobs
+anofm_jobs_total=ERROR:  relation "anofm_jobs" does not exist
+LINE 1: SELECT count(*) FROM anofm_jobs
+                             ^
+anofm_jobs_today=ERROR:  relation "anofm_jobs" does not exist
+LINE 1: SELECT count(*) FROM anofm_jobs WHERE created_at::date=CURRE...
+                             ^
+=== PART B: sent-today per campaign ===
+ANOFM_ANGAJATORI sent.csv today=83
+PRIMARII dir absent
+FACTORY_RO dir absent
+CANDIDATE_BROADCAST dir absent
+=== PART B: disk / ===
+/dev/sda2       880G  649G  196G  77% /
+=== PART B: uptime/load ===
+ 16:43:18 up  3:34,  3 users,  load average: 0.94, 0.94, 0.97
+=== PART B: ingest failures today ===
+Jun 23 13:08:17 raspi systemd[1]: anofm-ingest.service: Main process exited, code=exited, status=1/FAILURE
+Jun 23 13:08:17 raspi systemd[1]: anofm-ingest.service: Failed with result 'exit-code'.
+Jun 23 13:08:17 raspi systemd[1]: Failed to start anofm-ingest.service - ANOFM Ingest (Raspi).
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Main process exited, code=exited, status=1/FAILURE
+Jun 23 15:52:18 raspi systemd[1]: anofm-ingest.service: Failed with result 'exit-code'.
+Jun 23 15:52:18 raspi systemd[1]: Failed to start anofm-ingest.service - ANOFM Ingest (Raspi).
+=== PART D: ingest invalid env count ===
+ignoring_invalid_env=55
+=== PART D: crontab ===
+# ========== WAVE 0: European Wholesale Scrapers (02:00 UTC staggered) ==========
+# Wave 1: Berlin + new framework
+02:30 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 berliner_grossmarkt_scraper.py >> /opt/ACTIVE/INFRA/LOGS/berlin.log 2>&1
+# Consolidation (runs after all market scrapers finish)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py >> /opt/ACTIVE/INFRA/LOGS/consolidate.log 2>&1
+# ========== WAVE 2: New European Markets (03:00-03:35 UTC) ==========
+# Note: URLs in wave2_markets_config.json need verification against real endpoints
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py warsaw >> /opt/ACTIVE/INFRA/LOGS/wave2_warsaw.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py amsterdam >> /opt/ACTIVE/INFRA/LOGS/wave2_amsterdam.log 2>&1
+03:10 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py vienna >> /opt/ACTIVE/INFRA/LOGS/wave2_vienna.log 2>&1
+03:15 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py brussels >> /opt/ACTIVE/INFRA/LOGS/wave2_brussels.log 2>&1
+03:20 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py antwerp >> /opt/ACTIVE/INFRA/LOGS/wave2_antwerp.log 2>&1
+# Master consolidation (runs all markets - Wave 0, 1, 2)
+# Updated: consolidate all CSVs from /opt/ACTIVE/DATA/european_wholesale/
+04:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py /opt/ACTIVE/DATA/european_wholesale >> /opt/ACTIVE/INFRA/LOGS/master_consolidate.log 2>&1
+# TIER 1 ÔÇö New European wholesale markets (staggered after Berlin 02:30)
+02:35 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_munich.py >> /opt/ACTIVE/INFRA/LOGS/scrape_munich.log 2>&1
+02:40 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_stuttgart.py >> /opt/ACTIVE/INFRA/LOGS/scrape_stuttgart.log 2>&1
+02:45 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_warsaw_bronisze.py >> /opt/ACTIVE/INFRA/LOGS/scrape_warsaw.log 2>&1
+02:50 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_brussels_mabru.py >> /opt/ACTIVE/INFRA/LOGS/scrape_brussels.log 2>&1
+02:55 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_amsterdam_foodcenter.py >> /opt/ACTIVE/INFRA/LOGS/scrape_amsterdam.log 2>&1
+# TIER 2 ÔÇö Markets with SSL issues (need Playwright)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_vienna_grossmarkt.py >> /opt/ACTIVE/INFRA/LOGS/scrape_vienna.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_budapest_nagybani.py >> /opt/ACTIVE/INFRA/LOGS/scrape_budapest.log 2>&1
+# ========== WAVE 0: European Wholesale Scrapers (02:00 UTC staggered) ==========
+# Wave 1: Berlin + new framework
+02:30 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 berliner_grossmarkt_scraper.py >> /opt/ACTIVE/INFRA/LOGS/berlin.log 2>&1
+# Consolidation (runs after all market scrapers finish)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py >> /opt/ACTIVE/INFRA/LOGS/consolidate.log 2>&1
+# ========== WAVE 2: New European Markets (03:00-03:35 UTC) ==========
+# Note: URLs in wave2_markets_config.json need verification against real endpoints
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py warsaw >> /opt/ACTIVE/INFRA/LOGS/wave2_warsaw.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py amsterdam >> /opt/ACTIVE/INFRA/LOGS/wave2_amsterdam.log 2>&1
+03:10 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py vienna >> /opt/ACTIVE/INFRA/LOGS/wave2_vienna.log 2>&1
+03:15 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py brussels >> /opt/ACTIVE/INFRA/LOGS/wave2_brussels.log 2>&1
+03:20 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py antwerp >> /opt/ACTIVE/INFRA/LOGS/wave2_antwerp.log 2>&1
+# Master consolidation (runs all markets - Wave 0, 1, 2)
+# Updated: consolidate all CSVs from /opt/ACTIVE/DATA/european_wholesale/
+04:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py /opt/ACTIVE/DATA/european_wholesale >> /opt/ACTIVE/INFRA/LOGS/master_consolidate.log 2>&1
+# TIER 1 ÔÇö New European wholesale markets (staggered after Berlin 02:30)
+02:35 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_munich.py >> /opt/ACTIVE/INFRA/LOGS/scrape_munich.log 2>&1
+02:40 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_stuttgart.py >> /opt/ACTIVE/INFRA/LOGS/scrape_stuttgart.log 2>&1
+02:45 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_warsaw_bronisze.py >> /opt/ACTIVE/INFRA/LOGS/scrape_warsaw.log 2>&1
+02:50 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_brussels_mabru.py >> /opt/ACTIVE/INFRA/LOGS/scrape_brussels.log 2>&1
+02:55 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_amsterdam_foodcenter.py >> /opt/ACTIVE/INFRA/LOGS/scrape_amsterdam.log 2>&1
+# TIER 2 ÔÇö Markets with SSL issues (need Playwright)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_vienna_grossmarkt.py >> /opt/ACTIVE/INFRA/LOGS/scrape_vienna.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_budapest_nagybani.py >> /opt/ACTIVE/INFRA/LOGS/scrape_budapest.log 2>&1
+# ========== ANOFM PIPELINE (Added 2026-06-23) ==========
+# Daily campaign sends: Mon-Fri 09:00, 150 emails/day
+0 9 * * 1-5 export PGHOST=localhost && cd /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI && python3 campaign_anofm_angajatori.py --limit 150 --delay 8 >> /opt/ACTIVE/INFRA/LOGS/anofm_campaign.log 2>&1
+# Health check: Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+0 */6 * * * export PGHOST=localhost && python3 /opt/ACTIVE/INFRA/SKILLS/anofm_pipeline_health.py >> /opt/ACTIVE/INFRA/LOGS/anofm_health.log 2>&1
+0 8 * * * /usr/bin/python3 /opt/ACTIVE/INTERJOB/anofm_health_check.py >> /opt/ACTIVE/INFRA/LOGS/anofm_health.log 2>&1
+=== PART C: locate .env with GMAIL_APP_PASSWORD ===
+/opt/ACTIVE/ANOFM/.env
+/opt/ACTIVE/INTERJOB/anofm_health_check.py
+=== DONE ===

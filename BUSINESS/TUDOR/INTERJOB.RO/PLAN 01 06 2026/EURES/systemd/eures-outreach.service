@@ -1,0 +1,8 @@
+[Unit]
+Description=EURES employer outreach (multi-sender, gentle ramp)
+After=network-online.target postgresql.service
+[Service]
+Type=oneshot
+Environment=PGHOST=localhost
+WorkingDirectory=/opt/ACTIVE/EURES
+ExecStart=/usr/bin/python3 /opt/ACTIVE/EURES/eures_outreach_orchestrator.py

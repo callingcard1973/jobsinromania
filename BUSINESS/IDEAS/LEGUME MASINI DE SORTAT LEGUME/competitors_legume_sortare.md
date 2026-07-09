@@ -1,0 +1,33 @@
+# Analiză competiție mașini de sortat legume (RO)
+
+## Instrucțiuni
+1. Completează datele preluate de pe site-uri și din discuții cu distribuitorii.
+2. Salvează versiunea actualizată cu dată și sursă.
+3. Marchează propunerile acceptate și follow-up-uri.
+
+## Tabel comparativ
+
+| # | Furnizor | Localizare | URL | Gamă produse | Capacitate (kg/h) | Tehnologie | Preț listă / ofertă | Condiții (garanție/service/finanțare) | Observații / Interlocutor |
+|---|----------|------------|-----|--------------|-------------------|------------|---------------------|--------------------------------------|--------------------------|
+| 1 | AGRITECH (Ograda) |   | https://www.agritech.com.ro/category/recoltare-si-ambalare/masini-de-recoltat-legume/ |   |   |   |   |   |   |
+| 2 | Green Garden SRL (Călărași) | Călărași | https://www.greengarden.ro |   |   |   |   |   |   |
+| 3 | MARCOSER (Matca) | Matca | https://www.marcoser.ro/ |   |   |   |   |   |   |
+| 4 | Equinto Service SRL (Galați) | Galați | https://www.eqinto.eu |   |   |   |   |   |   |
+| 5 | Agrialianta (Satu Nou) | Satu Nou | https://agrialianta.com/ |   |   |   |   |   |   |
+| 6 | TOMRA (distributor local) | România / UE | https://www.tomra.com/ro-ro/food | sortare optică legume, fructe | 100-4000 kg/h | optic, NIR | la cerere | service, contract TCO | Lider global optică
+| 7 | KEY TECHNOLOGY | România / UE | https://www.key.net | linie de sortare + paletizare | 500-5000 kg/h | optic + dozare | la cerere | service internațional | Partener integrator
+| 8 | SATAKE | România / UE | https://www.satake-group.com | prelucrare legume & sortare | 500-3000 kg/h | optic, vibro | la cerere | mentenanță globală | Focus tuberculi
+| 9 | W.D.C. (WDC Sortare) | România | https://www.wdc.ro | sortatoare optice și mecanice | 200-2000 kg/h | optic, mecanic | la cerere | service local | prezență agresivă RO
+|10 | EUROTECHNICA/VARVAGAS | România | https://www.eurotechnica.ro | utilaje procesare legume | 100-2500 kg/h | mecanic, optic | la cerere | contracte AFIR | echipamente fermă
+
+## Priorități de acțiune
+
+- [ ] Contactează AGRITECH și solicită ofertă specifică pentru linie de sortare + ambalare, capacitate 1-2 t/h, preț + lead time.
+- [ ] Contactează Green Garden și obține scheme echipamente similare.
+- [ ] Contactează MARCOSER și solicită referințe ferme/centrale.
+- [ ] Contactează Equinto și probează soluție locală.
+- [ ] Contactează Agrialianta pentru analize ROI / suport AFIR.
+
+## Concluzii preliminare
+- Dacă ai deja date concrete de preț la diverși furnizori, le transcriem aici și facem scoring pe 5 ani.
+- Concept: „Total Cost of Ownership” (investiție + consum + mentenanță + pierderi) pentru decizie corectă.

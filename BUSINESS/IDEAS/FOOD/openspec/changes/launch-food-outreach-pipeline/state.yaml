@@ -1,0 +1,16 @@
+change: launch-food-outreach-pipeline
+phase: send-package-prepared
+status: active
+updated: 2026-03-12
+artifacts:
+  proposal: openspec/changes/launch-food-outreach-pipeline/proposal.md
+  spec: openspec/changes/launch-food-outreach-pipeline/specs/outreach-pipeline/spec.md
+  design: openspec/changes/launch-food-outreach-pipeline/design.md
+  tasks: openspec/changes/launch-food-outreach-pipeline/tasks.md
+  seller_readiness: openspec/changes/launch-food-outreach-pipeline/assets/first-wave-seller-readiness-sheet.md
+  sku_sheet: openspec/changes/launch-food-outreach-pipeline/assets/first-wave-sku-pricing-sheet.md
+  delivery_note: openspec/changes/launch-food-outreach-pipeline/assets/delivery-coverage-note.md
+  compliance_checklist: openspec/changes/launch-food-outreach-pipeline/assets/compliance-checklist.md
+  cooperative_outline: openspec/changes/launch-food-outreach-pipeline/assets/cooperative-presentation-outline.md
+  send_list: openspec/changes/launch-food-outreach-pipeline/assets/wave-1-send-list.md
+  metro_selgros_send_package: openspec/changes/launch-food-outreach-pipeline/assets/metro-selgros-send-package.md

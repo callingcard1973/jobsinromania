@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ title }}</title>
+<style>
+@page {
+  size: {{ page_width }} {{ page_height }};
+  margin: 0.75in 0.625in 0.75in 0.875in; /* inside margin larger for binding */
+}
+@page :first {
+  margin-top: 2in;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+/* Title page */
+.title-page {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 3in;
+}
+.title-page h1 {
+  font-size: 28pt;
+  color: #1a3a5c;
+  margin-bottom: 12pt;
+  letter-spacing: 1px;
+}
+.title-page h2 {
+  font-size: 16pt;
+  color: #555;
+  font-weight: normal;
+  margin-bottom: 24pt;
+}
+.title-page .edition {
+  font-size: 11pt;
+  color: #888;
+  margin-top: 48pt;
+}
+.title-page .publisher {
+  font-size: 10pt;
+  color: #999;
+  margin-top: 12pt;
+}
+
+/* Copyright page */
+.copyright-page {
+  page-break-after: always;
+  padding-top: 4in;
+  font-size: 8pt;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* TOC */
+.toc {
+  page-break-after: always;
+}
+.toc h2 {
+  font-size: 18pt;
+  color: #1a3a5c;
+  margin-bottom: 24pt;
+  border-bottom: 2px solid #1a3a5c;
+  padding-bottom: 8pt;
+}
+.toc-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 4pt 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 10pt;
+}
+.toc-entry .section { font-weight: bold; color: #1a3a5c; }
+.toc-entry .count { color: #888; }
+
+/* Section headers */
+.section-header {
+  page-break-before: always;
+  padding-top: 1in;
+  margin-bottom: 24pt;
+}
+.section-header h2 {
+  font-size: 20pt;
+  color: #1a3a5c;
+  border-bottom: 3px solid #1a3a5c;
+  padding-bottom: 8pt;
+  margin-bottom: 4pt;
+}
+.section-header .count {
+  font-size: 10pt;
+  color: #888;
+}
+
+/* Entries */
+.entry {
+  padding: 6pt 0;
+  border-bottom: 1px solid #eee;
+  break-inside: avoid;
+}
+.entry-name {
+  font-weight: bold;
+  font-size: 10pt;
+  color: #1a3a5c;
+}
+.entry-details {
+  font-size: 8.5pt;
+  color: #444;
+  margin-top: 2pt;
+}
+.entry-details span {
+  margin-right: 12pt;
+}
+.entry-details .label {
+  color: #888;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+}
+.entry-sector {
+  display: inline-block;
+  background: #e8eef5;
+  color: #1a3a5c;
+  font-size: 7pt;
+  padding: 1pt 6pt;
+  border-radius: 3pt;
+  margin-top: 2pt;
+}
+
+/* Footer note */
+.footer-note {
+  page-break-before: always;
+  padding-top: 2in;
+  text-align: center;
+  font-size: 10pt;
+  color: #666;
+}
+.footer-note h2 {
+  font-size: 16pt;
+  color: #1a3a5c;
+  margin-bottom: 16pt;
+}
+.footer-note p {
+  margin-bottom: 8pt;
+}
+.footer-note .url {
+  font-size: 14pt;
+  color: #1a3a5c;
+  font-weight: bold;
+}
+
+/* Two column layout for dense catalogs */
+.two-col {
+  columns: 2;
+  column-gap: 24pt;
+}
+</style>
+</head>
+<body>
+
+<!-- TITLE PAGE -->
+<div class="title-page">
+  <h1>{{ title }}</h1>
+  <h2>{{ subtitle }}</h2>
+  <div class="edition">{{ edition }}</div>
+  <div class="publisher">Published by {{ publisher }}</div>
+</div>
+
+<!-- COPYRIGHT PAGE -->
+<div class="copyright-page">
+  <p><strong>{{ title }}</strong></p>
+  <p>{{ subtitle }}</p>
+  <br>
+  <p>&copy; {{ year }} {{ publisher }}. All rights reserved.</p>
+  <p>No part of this publication may be reproduced, distributed, or transmitted
+  in any form without prior written permission.</p>
+  <br>
+  <p>Published by {{ publisher }}</p>
+  <p>{{ publisher_url }}</p>
+  <br>
+  <p>{{ edition }}</p>
+  <p>Data sources: {{ data_sources }}</p>
+  <br>
+  <p>While every effort has been made to ensure accuracy, the publisher
+  assumes no responsibility for errors or omissions. Company information
+  is subject to change.</p>
+  {% if isbn %}<br><p>ISBN: {{ isbn }}</p>{% endif %}
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Contents</h2>
+  {% for section in sections %}
+  <div class="toc-entry">
+    <span class="section">{{ section.name }}</span>
+    <span class="count">{{ section.count }} entries</span>
+  </div>
+  {% endfor %}
+  <div class="toc-entry" style="margin-top: 12pt; border: none;">
+    <span><strong>Total: {{ total_entries }} entries</strong></span>
+  </div>
+</div>
+
+<!-- ENTRIES BY SECTION -->
+{% for section in sections %}
+<div class="section-header">
+  <h2>{{ section.name }}</h2>
+  <div class="count">{{ section.count }} companies</div>
+</div>
+
+<div class="two-col">
+{% for entry in section.entries %}
+<div class="entry">
+  <div class="entry-name">{{ entry.company }}</div>
+  <div class="entry-details">
+    {% if entry.city %}<span><span class="label">City:</span> {{ entry.city }}</span>{% endif %}
+    {% if entry.county %}<span><span class="label">County:</span> {{ entry.county }}</span>{% endif %}
+    {% if entry.country %}<span><span class="label">Country:</span> {{ entry.country }}</span>{% endif %}
+  </div>
+  {% if entry.sector %}<div class="entry-sector">{{ entry.sector }}</div>{% endif %}
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+
+<!-- BACK MATTER -->
+<div class="footer-note">
+  <h2>About {{ publisher }}</h2>
+  <p>{{ about_publisher }}</p>
+  <br>
+  <p>For the digital version with full contact details, visit:</p>
+  <p class="url">{{ publisher_url }}</p>
+  <br>
+  <p>For bulk orders or sponsorship inquiries:</p>
+  <p>{{ contact_email }}</p>
+</div>
+
+</body>
+</html>

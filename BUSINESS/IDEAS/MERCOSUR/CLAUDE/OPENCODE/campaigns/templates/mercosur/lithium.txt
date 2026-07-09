@@ -1,0 +1,32 @@
+Subject: Brazilian Lithium Suppliers - EU-Mercosur Agreement May 2026
+
+Dear {company},
+
+The EU-Mercosur agreement enters provisional application in May 2026, eliminating tariffs on critical raw materials including lithium.
+
+I represent Brazilian lithium producers seeking European battery manufacturers and technology companies.
+
+PRODUCTS AVAILABLE:
+- Lithium carbonate (battery grade, 99.5%+)
+- Lithium hydroxide (for high-nickel cathodes)
+- Spodumene concentrate
+
+WHY BRAZILIAN LITHIUM:
+- EU is 79% dependent on imports for lithium
+- Zero tariffs under EU-Mercosur (from May 2026)
+- Shorter shipping routes than Asia-Pacific
+- {supplier_count} active producers in Brazil
+
+SUPPLIERS:
+{top_suppliers} - operational mines with export capacity.
+
+If you manufacture batteries, energy storage systems, or EV components, I can facilitate introductions to secure your lithium supply chain.
+
+Best regards,
+
+Tudor Seicarescu
+Trade Facilitation - EU/Mercosur
+tudor@interjob.ro
+
+--
+Sent to {email}. Reply STOP to unsubscribe.

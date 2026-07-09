@@ -1,0 +1,16 @@
+start
+cursor_ready
+scanned=50000 matches=0
+scanned=100000 matches=0
+scanned=150000 matches=0
+scanned=200000 matches=0
+scanned=250000 matches=0
+scanned=300000 matches=0
+scanned=350000 matches=0
+scanned=400000 matches=0
+{
+  "number": "0757 698 050",
+  "scanned": 404539,
+  "matches": []
+}
+done

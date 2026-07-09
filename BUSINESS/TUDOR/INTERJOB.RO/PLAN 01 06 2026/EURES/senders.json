@@ -1,0 +1,82 @@
+{
+  "factoryjobs.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": false,
+    "sector": "manufacturing"
+  },
+  "buildjobs.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": false,
+    "sector": "construction"
+  },
+  "careworkers.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": false,
+    "sector": "healthcare"
+  },
+  "horecaworkers2026.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": false,
+    "sector": "hospitality"
+  },
+  "warehouseworkers.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "smtp",
+    "enabled": false,
+    "sector": "general"
+  },
+  "meatworkers.eu": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": false,
+    "sector": "agriculture"
+  },
+  "interjob.ro": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "smtp",
+    "enabled": false,
+    "sector": "general"
+  },
+  "bppltd.co.uk": {
+    "start_daily_cap": 30,
+    "max_daily_cap": 150,
+    "ramp_step": 20,
+    "min_delay_sec": 180,
+    "max_delay_sec": 360,
+    "provider": "brevo",
+    "enabled": true,
+    "sector": "general"
+  }
+}

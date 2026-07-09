@@ -1,0 +1,19 @@
+Subject: {company} - production/warehouse workers from RO and EU
+
+Hello,
+
+I saw {company} is recruiting in {country} for roles such as {job_title}.
+
+InterJob.ro connects manufacturers and logistics employers with available Romanian and EU workers - machine operators, assembly, welders, warehouse and forklift staff - ready to relocate and start.
+
+We put you in direct contact with the candidates. It costs nothing to review a shortlist.
+
+Shall I send you available profiles for your {sector} roles in {country}? Reply "yes" and I will follow up this week.
+
+Best regards,
+InterJob.ro Team
+---
+InterJob.ro | Romanian and EU workforce connections
+You received this because {company} posted a public vacancy on EURES.
+To opt out, reply with "STOP" and we will not contact you again.
+Unsubscribe: https://interjob.ro/unsubscribe?e={email}

@@ -1,0 +1,93 @@
+# LAPTOP Inventory — 2026-04-17
+
+Machine: Windows 11, D:\MEMORY | Role: Dev + data storage + LM Studio :1234
+
+## Data Assets (top 30 by rows, ~650K unique live contacts)
+
+| File/Dataset | Rows | Content | Path |
+|--------------|------|---------|------|
+| ANAF Romania Full | 2,778,123 | All RO companies CUI/CAEN/contact | D:\MEMORY\ANAF\ |
+| Public Procurement RO 2025 | 2,108,273 | EU/RO tender awards + direct | D:\MEMORY\ |
+| TED 2024-2023 historical | 954,362 | Previous years | D:\MEMORY\ |
+| TED Winners 2025 | 871,732 | European winners all sectors | D:\MEMORY\ |
+| BERD/EBRD Master | 230,280 | EU + RO email lookup | D:\MEMORY\BERD EBRD\CAMPAIGNS\ |
+| Faliment Master | 222,737 | Insolvent companies (ONRC) | — |
+| NGO 42 counties | 142,000 | 49 CSVs per county (24,509 Bucuresti) | D:\MEMORY\IDEAS\ASOCIATII\ASOC PROP\ |
+| BERD RO Campaigns | 100,001 | No-email fallback | D:\MEMORY\BERD EBRD\CAMPAIGNS\ |
+| AIR TICKETS Hotels EU | 30,001 | Wikidata + OSM enriched, 9,652 EU | D:\MEMORY\AIR TICKETS\ |
+| ONG Bucuresti (segment) | 24,509 | NGO biggest county | — |
+| MADR Land Sales | 18,043 | ISC contractors + 9,659 sellers | D:\MEMORY\MADR VANZARE TEREN\ISC_DATA\ |
+| EU Beneficiaries | 15,969 | Fund recipients w/ emails | D:\MEMORY\ |
+| AIR TICKETS Agencies RO | 15,769 | IT agencies + 3,020 RO tourism | D:\MEMORY\AIR TICKETS\ |
+| BERD Enriched | 13,703 | Domain-validated + 40K live emails | — |
+| MADR ISC Contacts | 5,363 | Phone-verified construction | — |
+| Call Centers RO | 2,302 | 424 master + 285 enriched | D:\MEMORY\CLAUDE\CALLCENTERS\ |
+| MERCOSURVEY | 50+ CSVs | 22 countries (beef/honey/lithium) | D:\MEMORY\ |
+| Freskon Exhibitors | ~500 | Exhibition contacts | D:\MEMORY\IDEAS\INVENTAR\IDEA-028 |
+
+## Content Assets
+
+| Asset | Count | Format | Status |
+|-------|-------|--------|--------|
+| SEICARESCU Articles | 35 | HTML + MD styled | Ready for web + LinkedIn |
+| Book Publisher PDFs | 2 | KDP-ready | MVP complete |
+| Printing/Lulu Templates | 3 | HTML→PDF | Tudor Printing House MVP |
+| Freskon Exhibitors | ~500 | CSV + HTML | Exhibition leads |
+
+## Python Capabilities (621 scripts AUTOMATE/SKILLS)
+
+**Scrapers (flagship 5)**:
+- agency_scraper_runner.py (multi-thread)
+- anofm_fresh_scraper.py (job feed + CAEN)
+- beneficiar_fonduri_ue_scraper.py (EU funds)
+- europages_agencies_scraper.py (cross-border HR)
+- ebrd_psd_scraper.py (project monitor)
+
+**Email senders**:
+- anofm_instant_send.py, email_action_executor.py, anofm_email_enrich.py, campaign_manager_api.py, send_campaigns_dispatcher.py
+
+**PDF/HTML generators**:
+- generate_employer_catalog.py, generate_campaign_pdfs.py, email_template_generator.py, fill_pdf_form_with_annotations.py, static_html_automation.py
+
+**LLM processors**:
+- reply_classifier_service.py (94.5% sklearn)
+- bounce_analyzer_llm.py, campaign_monitor_llm.py, llm_cli.py, ollama_triage.py
+
+**DB tools**:
+- consolidate_to_postgres.py, create_anofm_db.py, cross_db_dedup.py, norway_db_enricher.py, sync_sends_to_db.py
+
+**cPanel/WP/APIs**:
+- a2_cpanel.py, a2_wordpress_install.py, cpanel_dns_manager.py, dashboard_server.py, anaf_api.py
+
+## Partnerships
+
+| Partner | Status | Evidence |
+|---------|--------|----------|
+| Delecroix (FR) | ACTIVE 10% commission | Quote PDF, Agri Alianta distributor |
+| OIPA | Merged with Cooperativa scope | IDEA-024 |
+| Agri Alianta | Distribution partner | HTML + catalog |
+| Seicarescu | Investment funnel | 35 articles |
+| Hambarul Romanesc | Prospecting | — |
+| ANOFM | Direct API | 12K+/wk updates |
+| EURES | Scraper active | Z.AI/EURES SCRAPING/ |
+| Freskon | Event-based | Exhibitor CSV |
+
+## Productized Ideas (Top 20 by revenue, from PRIORITY_REPORT)
+
+**Tier 0 (this week)**: 016 PRODUS MONTAN (€7.5-52K/yr, AGRIP APR 23), 004 AGENTII (€420K/yr, 18K agencies), 009 TED CONTACTE (€150K+), 040 EU PROIECTE (consulting, 15,969 bene), 002 NORVEGIA (€5-30K/placement, 335K emails)
+
+**Tier 1 (this month)**: 005 SEAP FOOD, 006 BULGARIA, 034 UK CONTRACTORS, 035 ALUMINUM, 062 EBRD ALERTS
+
+**Tier 2 (build)**: 073 RECRUITMENT API (€3-15K/mo, 208M), 044 TELEGRAM LICITATII (€500-2K), 047 DASHBOARD (€2-10K/mo bundle), 061 COMPANY REPORT SHOP, 046 CATALOAGE DOMENII (€10-60K/yr)
+
+**Tier 3 (validate)**: 076 EMAIL AGENCY, 058 HORECA BROKER, 082 DATA CLEANING, 049 LEAD BROKER RO, 071 NEWSLETTER SPONSORSHIP
+
+**Total @ 30% hit rate: €670K/yr on €85/mo infrastructure. 99.8% margin.**
+
+## Critical Deadlines
+- **APR 23, 2026** — AGRIP Produs Montan (6 days)
+- **MAY 2026** — Seasonal agri placement (summer)
+- **Weekly** — ANOFM/EURES/TED/SEAP feeds
+
+## Delta vs Raspibig
+Laptop holds deeper/raw CSVs; raspibig has the PG mirror (208M companies tableis synced). Laptop has 142K NGOs + 2.78M ANAF RO + 30K hotels NOT visible in raspibig tables = unique laptop-only assets.

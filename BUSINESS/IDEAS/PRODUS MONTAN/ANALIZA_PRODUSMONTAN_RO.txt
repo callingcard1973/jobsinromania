@@ -1,0 +1,87 @@
+ANALIZA TEHNICA — produsmontan.ro
+===================================
+Data: 2026-03-08
+URL: https://produsmontan.ro/produse_montane/
+
+----------------------------------------------------------------------
+STACK TEHNIC
+----------------------------------------------------------------------
+
+CMS:            WordPress
+Page Builder:   Oxygen Builder (tema: oxygen-is-not-a-theme)
+Filtrare:       Beautiful Taxonomy Filters + Select2 (dropdown-uri)
+Cautare:        Ivory Search
+Animatii:       AOS (Animate On Scroll) + Splide (carousel)
+Fonturi:        Inter (300-900) + Cardo serif
+Analytics:      Google Analytics UA-256872699-1 + GTM G-BL26FQX70T
+Social:         Add to Any
+Imagini:        WebP optimization
+Formulare:      WPForms, Formidable Forms, Caldera Forms
+
+----------------------------------------------------------------------
+STRUCTURA CONTINUT
+----------------------------------------------------------------------
+
+Total pagini:   95 pagini
+Produse/pagina: 20
+Total produse:  ~1.900 produse listate
+Paginare:       Next/Previous + numere de pagina (1-95)
+Card produs:    imagine (placeholder logo), titlu, judet, ODM
+
+Filtre dropdown:
+  - Categorie produs
+  - Judet
+  - ODM (Organizatie de Dezvoltare Montana)
+  - Producator
+
+----------------------------------------------------------------------
+8 CATEGORII OFICIALE PRODUS MONTAN
+----------------------------------------------------------------------
+
+1. Legume-Fructe
+2. Panificatie si Patiserie
+3. Produse Apicole
+4. Oua
+5. Produse din Carne
+6. Produse din Lapte
+7. Produse din Peste
+8. Produse Vegetale
+
+----------------------------------------------------------------------
+MENIU PRINCIPAL
+----------------------------------------------------------------------
+
+1. Home
+2. Produse Montane (cu 8 subcategorii)
+3. Depunere Documentatie Online
+4. Cum se obtine mentiunea de calitate
+5. Blog
+6. Contact
+
+----------------------------------------------------------------------
+COMPARATIE CU CATALOGUL NOSTRU (agroevolution.com/catalog/)
+----------------------------------------------------------------------
+
+                    | produsmontan.ro      | agroevolution.com/catalog
+--------------------|----------------------|---------------------------
+Platforma           | WordPress + Oxygen   | HTML static (generat Python)
+Produse             | ~1.900               | 3.812 (in DB)
+Producatori         | ~1.300               | 1.331
+Comanda online      | NU (doar registry)   | DA (WhatsApp + email)
+Viteza              | Lent (Oxygen heavy)  | Rapid (HTML static)
+Filtrare            | Dropdown-uri         | Search text + judet
+Imagini             | Placeholder logo     | Fara (text-only)
+Cost intretinere    | Ridicat (hosting WP) | Zero (static files)
+Mobile              | Da (responsive)      | Da (responsive grid)
+
+----------------------------------------------------------------------
+OPORTUNITATI IDENTIFICATE
+----------------------------------------------------------------------
+
+1. produsmontan.ro NU are comanda online — noi avem
+2. Ei au placeholder pt imagini — nimeni nu a pus poze reale
+3. Site-ul lor e lent (Oxygen Builder = JavaScript heavy)
+4. Ei NU au pret pe produse — doar informatii de registry
+5. Ei NU au contact direct producator vizibil
+6. Noi avem 3.812 produse vs ~1.900 ale lor (dublu)
+7. Noi putem adauga si producatori BIO (13.521 din agriculturaecologica.ro)

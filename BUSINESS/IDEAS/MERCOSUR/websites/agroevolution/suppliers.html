@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercosur Supplier Directory | Beef & Honey</title>
+    <meta name="description" content="Verified Brazilian, Argentine, and Uruguayan suppliers of beef, honey, and agricultural products for EU importers.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f7fafc; }
+
+        .header {
+            background: linear-gradient(135deg, #276749 0%, #38a169 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .quota-banner {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .quota-item { text-align: center; }
+        .quota-item .product { font-weight: 600; color: #276749; }
+        .quota-item .volume { font-size: 1.5rem; font-weight: bold; }
+        .quota-item .duty { color: #38a169; }
+
+        .filters {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filters label { font-weight: 600; }
+        .filters select, .filters input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .commodity-section {
+            background: white;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .commodity-header {
+            background: #c53030;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .commodity-header.honey { background: #d69e2e; }
+        .commodity-header h2 { font-size: 1.5rem; }
+        .commodity-header .count { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 15px; }
+
+        .supplier-grid {
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .supplier-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .supplier-card:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+
+        .supplier-info h3 { color: #276749; margin-bottom: 5px; font-size: 1.2rem; }
+        .supplier-info .location { color: #666; margin-bottom: 10px; }
+        .supplier-info .products { margin-bottom: 10px; }
+        .supplier-info .products span {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin: 2px;
+        }
+        .supplier-info .capacity { color: #38a169; font-weight: 600; }
+        .supplier-info .notes { color: #666; font-style: italic; margin-top: 5px; font-size: 0.9rem; }
+
+        .supplier-meta { text-align: right; }
+        .supplier-meta .certifications {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .supplier-meta .cert {
+            background: #c6f6d5;
+            color: #276749;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .supplier-meta .cert.eu { background: #bee3f8; color: #2b6cb0; }
+        .supplier-meta .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .supplier-meta .status.verified { background: #c6f6d5; color: #276749; }
+        .supplier-meta a {
+            display: block;
+            margin-top: 10px;
+            color: #276749;
+            text-decoration: none;
+        }
+        .supplier-meta a:hover { text-decoration: underline; }
+
+        .cta-banner {
+            background: #f6ad55;
+            color: #744210;
+            padding: 30px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+        }
+        .cta-banner h3 { margin-bottom: 10px; }
+        .cta-banner a {
+            display: inline-block;
+            background: #744210;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .compliance-note {
+            background: #fffaf0;
+            border: 1px solid #f6ad55;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            border-radius: 10px;
+        }
+        .compliance-note h4 { color: #c05621; margin-bottom: 10px; }
+
+        footer {
+            background: #1a4731;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer a { color: #9ae6b4; }
+
+        @media (max-width: 700px) {
+            .supplier-card { grid-template-columns: 1fr; }
+            .supplier-meta { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Mercosur Agricultural Supplier Directory</h1>
+        <p>Verified suppliers of beef, honey, and agricultural products from Brazil, Argentina, and Uruguay</p>
+    </header>
+
+    <div class="quota-banner">
+        <div class="quota-item">
+            <div class="product">Beef</div>
+            <div class="volume">99,000 t</div>
+            <div class="duty">7.5% tariff</div>
+        </div>
+        <div class="quota-item">
+            <div class="product">Poultry</div>
+            <div class="volume">180,000 t</div>
+            <div class="duty">Duty-free</div>
+        </div>
+        <div class="quota-item">
+            <div class="product">Honey</div>
+            <div class="volume">45,000 t</div>
+            <div class="duty">Duty-free</div>
+        </div>
+    </div>
+
+    <div class="filters">
+        <label>Filter:</label>
+        <select id="commodity-filter">
+            <option value="all">All Products</option>
+            <option value="beef">Beef</option>
+            <option value="honey">Honey</option>
+        </select>
+        <select id="country-filter">
+            <option value="all">All Countries</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Uruguay">Uruguay</option>
+        </select>
+        <input type="text" placeholder="Search company..." id="search">
+    </div>
+
+    <!-- BEEF SECTION -->
+    <section class="commodity-section" data-commodity="beef">
+        <div class="commodity-header">
+            <h2>Beef Suppliers</h2>
+            <span class="count">5 verified suppliers</span>
+        </div>
+        <div class="supplier-grid">
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>JBS S.A.</h3>
+                    <div class="location">Multiple plants, Brazil</div>
+                    <div class="products">
+                        <span>Fresh beef</span>
+                        <span>Frozen beef</span>
+                        <span>Processed meat</span>
+                    </div>
+                    <div class="capacity">World's largest meat processor</div>
+                    <div class="notes">37 EU-approved plants in Brazil. Actively seeking European acquisitions.</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU SIF Approved</span>
+                        <span class="cert">HACCP</span>
+                        <span class="cert">SISBOV Traceable</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://jbs.com.br" target="_blank">jbs.com.br</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>Minerva Foods</h3>
+                    <div class="location">Multiple plants, Brazil</div>
+                    <div class="products">
+                        <span>Fresh beef</span>
+                        <span>Chilled</span>
+                        <span>Frozen</span>
+                    </div>
+                    <div class="capacity">Major exporter - EUR 162M profit 2025</div>
+                    <div class="notes">Completed Marfrig acquisition, doubled processing capacity.</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU SIF Approved</span>
+                        <span class="cert">Halal</span>
+                        <span class="cert">Organic available</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://minervafoods.com" target="_blank">minervafoods.com</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>Marfrig Global Foods</h3>
+                    <div class="location">Multiple plants, Brazil</div>
+                    <div class="products">
+                        <span>Premium beef</span>
+                        <span>National Beef brand</span>
+                    </div>
+                    <div class="capacity">Major exporter</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU SIF Approved</span>
+                        <span class="cert">HACCP</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://marfrig.com.br" target="_blank">marfrig.com.br</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Frigorifico Gorina</h3>
+                    <div class="location">Buenos Aires, Argentina</div>
+                    <div class="products">
+                        <span>Hilton quota beef</span>
+                        <span>Premium cuts</span>
+                    </div>
+                    <div class="capacity">Premium exporter - Hilton quota holder</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU SENASA</span>
+                        <span class="cert">Hilton Certified</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://gorina.com.ar" target="_blank">gorina.com.ar</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Uruguay">
+                <div class="supplier-info">
+                    <h3>INAC Member Plants</h3>
+                    <div class="location">National, Uruguay</div>
+                    <div class="products">
+                        <span>Premium beef</span>
+                        <span>Natural grass-fed</span>
+                        <span>100% traceable</span>
+                    </div>
+                    <div class="capacity">40+ certified plants</div>
+                    <div class="notes">Uruguay has 100% traceability from birth to export.</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU MGAP</span>
+                        <span class="cert">Natural Certified</span>
+                        <span class="cert">Full Traceability</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://inac.uy" target="_blank">inac.uy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HONEY SECTION -->
+    <section class="commodity-section" data-commodity="honey">
+        <div class="commodity-header honey">
+            <h2>Honey Suppliers</h2>
+            <span class="count">5 verified suppliers</span>
+        </div>
+        <div class="supplier-grid">
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>NEXCO (Cooperativa Apicola)</h3>
+                    <div class="location">Buenos Aires, Argentina</div>
+                    <div class="products">
+                        <span>Organic honey</span>
+                        <span>Multifloral</span>
+                        <span>Bulk export</span>
+                    </div>
+                    <div class="capacity">Capacity: 15,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU Organic</span>
+                        <span class="cert">Fair Trade</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://nexco.com.ar" target="_blank">nexco.com.ar</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Mieles del Sur</h3>
+                    <div class="location">Patagonia, Argentina</div>
+                    <div class="products">
+                        <span>Premium honey</span>
+                        <span>Monofloral</span>
+                    </div>
+                    <div class="capacity">Capacity: 5,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">Organic</span>
+                        <span class="cert">Kosher</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://mielesdelsur.com.ar" target="_blank">mielesdelsur.com.ar</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Argentina">
+                <div class="supplier-info">
+                    <h3>Cooperativa COSAR</h3>
+                    <div class="location">Chaco, Argentina</div>
+                    <div class="products">
+                        <span>Wild honey</span>
+                        <span>Organic</span>
+                    </div>
+                    <div class="capacity">Capacity: 3,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU Organic</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Uruguay">
+                <div class="supplier-info">
+                    <h3>Urucoop</h3>
+                    <div class="location">National, Uruguay</div>
+                    <div class="products">
+                        <span>Organic honey</span>
+                        <span>Premium quality</span>
+                    </div>
+                    <div class="capacity">Capacity: 2,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert eu">EU Organic</span>
+                        <span class="cert">MGAP Certified</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://urucoop.com.uy" target="_blank">urucoop.com.uy</a>
+                </div>
+            </div>
+
+            <div class="supplier-card" data-country="Brazil">
+                <div class="supplier-info">
+                    <h3>CONAP Brazil</h3>
+                    <div class="location">Rio Grande do Sul, Brazil</div>
+                    <div class="products">
+                        <span>Eucalyptus honey</span>
+                        <span>Organic</span>
+                    </div>
+                    <div class="capacity">Capacity: 8,000 t/yr</div>
+                </div>
+                <div class="supplier-meta">
+                    <div class="certifications">
+                        <span class="cert">Organic Brazil</span>
+                        <span class="cert">EU Compatible</span>
+                    </div>
+                    <span class="status verified">Verified</span>
+                    <a href="https://conap.coop.br" target="_blank">conap.coop.br</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="compliance-note">
+        <h4>EUDR Compliance Note</h4>
+        <p>All beef suppliers in our directory are screened for EU Deforestation Regulation compliance. We verify traceability documentation and certification status before connecting you with suppliers. Starting end of 2026, only deforestation-free products will be allowed into the EU market.</p>
+    </div>
+
+    <div class="cta-banner">
+        <h3>Need an Introduction to These Suppliers?</h3>
+        <p>We connect EU importers directly with verified Mercosur agricultural exporters. Free for buyers.</p>
+        <a href="index.html#contact">Request Introductions</a>
+    </div>
+
+    <footer>
+        <p><strong>AgroEvolution</strong> | EU-Mercosur Agricultural Trade Platform</p>
+        <p>Part of <a href="https://interjob.ro">InterJob Solutions Europe</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('commodity-filter').addEventListener('change', filterSuppliers);
+        document.getElementById('country-filter').addEventListener('change', filterSuppliers);
+        document.getElementById('search').addEventListener('input', filterSuppliers);
+
+        function filterSuppliers() {
+            const commodity = document.getElementById('commodity-filter').value;
+            const country = document.getElementById('country-filter').value;
+            const search = document.getElementById('search').value.toLowerCase();
+
+            document.querySelectorAll('.commodity-section').forEach(section => {
+                const sectionCommodity = section.dataset.commodity;
+                if (commodity === 'all' || commodity === sectionCommodity) {
+                    section.style.display = 'block';
+                    section.querySelectorAll('.supplier-card').forEach(card => {
+                        const cardCountry = card.dataset.country;
+                        const cardText = card.textContent.toLowerCase();
+                        const countryMatch = country === 'all' || cardCountry === country;
+                        const searchMatch = !search || cardText.includes(search);
+                        card.style.display = countryMatch && searchMatch ? 'grid' : 'none';
+                    });
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

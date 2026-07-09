@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samir Nouaji — FactoryJobs EU</title>
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+       background: #f0f2f5; color: #222; line-height: 1.6; font-size: 15px; }
+.header-simple { background: #fff; border-bottom: 1px solid #e0e4ea;
+                 padding: 24px 20px; text-align: center; position: relative; }
+.header-simple .header-title { font-size: 30px; font-weight: 800; color: #0f2942;
+                               letter-spacing: -.5px; }
+.header-simple .header-sub { font-size: 13px; color: #666; margin-top: 5px;
+                             letter-spacing: .3px; }
+.header-simple .header-email { margin-top: 8px; font-size: 13px; }
+.header-simple .header-email a { color: #f5a000; font-weight: 700; text-decoration: none; }
+.header-simple .header-email a:hover { text-decoration: underline; }
+.header-simple .back { position: absolute; top: 50%; right: 28px; transform: translateY(-50%);
+                      font-size: 13px; color: #0f2942; text-decoration: none; font-weight: 600; }
+.header-simple .back:hover { color: #f5a000; }
+footer { background: #0f2942; color: rgba(255,255,255,.7); text-align: center;
+         padding: 26px 20px; font-size: 13px; margin-top: 30px; line-height: 1.8; }
+footer strong { color: #f5a000; display: block; font-size: 15px; margin-bottom: 4px; }
+footer .contact-line { color: #f5a000; font-weight: 600; margin-top: 8px; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px; }
+
+.hdr { background: #0f2942; color: #fff; padding: 28px 36px 32px; border-radius: 10px;
+       margin-bottom: 20px; position: relative; }
+.hdr .ref-tag { display: inline-block; background: rgba(245,160,0,.15); color: #f5a000;
+                font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 12px;
+                font-weight: 700; padding: 4px 10px; border-radius: 4px;
+                letter-spacing: .5px; margin-bottom: 14px; }
+.hdr h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; letter-spacing: -.3px; }
+.hdr .role { font-size: 13px; color: #f5a000; text-transform: uppercase;
+             letter-spacing: 1px; font-weight: 700; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.card { background: #fff; padding: 22px 24px; border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.card h2 { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase;
+           letter-spacing: .9px; margin-bottom: 14px; }
+.field { margin-bottom: 10px; }
+.field label { display: block; font-size: 11px; color: #aaa; margin-bottom: 2px; }
+.field span { font-weight: 600; color: #111; }
+
+.badge { display: inline-block; background: #fff3e0; color: #c77000;
+         padding: 4px 12px; border-radius: 4px; margin: 3px 4px 3px 0; font-size: 13px; font-weight: 600; }
+
+.lang-row { display: flex; align-items: center; margin-bottom: 8px; }
+.lang-name { width: 90px; font-size: 13px; color: #444; font-weight: 600; }
+.lang-bar { display: flex; gap: 3px; }
+.lang-dot { width: 10px; height: 10px; border-radius: 2px; background: #dde3ea; }
+.lang-dot.on { background: #f5a000; }
+.lang-level { font-size: 11px; color: #aaa; margin-left: 8px; }
+
+.about { font-size: 14px; color: #444; line-height: 1.8; }
+.cv-body p { font-size: 14px; color: #333; line-height: 1.75; margin-bottom: 12px; }
+.cv-body p:last-child { margin-bottom: 0; }
+.cv-extract p { font-family: "SF Mono", Consolas, Monaco, monospace; font-size: 13px;
+                background: #f8f9fb; padding: 12px; border-left: 3px solid #f5a000;
+                color: #444; white-space: pre-wrap; }
+ul.strengths { list-style: none; }
+ul.strengths li { font-size: 14px; color: #333; padding: 8px 0 8px 24px;
+                  position: relative; border-bottom: 1px solid #f0f2f5; }
+ul.strengths li:last-child { border-bottom: none; }
+ul.strengths li:before { content: "✓"; position: absolute; left: 0; top: 8px;
+                         color: #f5a000; font-weight: 700; }
+.source-tag { display: inline-block; font-size: 11px; background: #f0f2f5;
+              color: #777; padding: 3px 10px; border-radius: 4px; }
+.actions { display: flex; gap: 12px; margin-top: 20px; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 6px;
+       font-size: 14px; font-weight: 700; text-decoration: none; }
+.btn-primary { background: #f5a000; color: #fff; }
+.btn-primary:hover { background: #d98e00; }
+
+.full { grid-column: 1 / -1; }
+@media(max-width: 620px) { .grid2 { grid-template-columns: 1fr; } .hdr { padding: 24px; } }
+</style>
+</head>
+<body>
+<div class="header-simple">
+  <div class="header-title">factoryjobs.eu</div>
+  <div class="header-sub">European Skilled Workers — Verified &amp; Ready</div>
+  <a class="back" href="index.html">← Back to Catalog</a>
+</div>
+<div class="wrap">
+  <div class="hdr">
+    <div class="ref-tag">Reference: FJ-2026-0371</div>
+    <h1>Samir Nouaji</h1>
+    <div class="role">Machinery Candidate</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Profile</h2>
+      <div class="field"><label>Country</label><span>Tunisia</span></div><div class="field"><label>Location</label><span>Mednine</span></div><div class="field"><label>Role</label><span>Machinery</span></div>
+    </div>
+    <div class="card"><h2>Additional Info</h2><div class="field"><label>Available from</label><span>2026-02-11</span></div><div class="field"><label>Gender</label><span>Male</span></div></div>
+    <div class="card"><h2>Languages</h2><div class="lang-row"><span class="lang-name">Arabic</span><div class="lang-bar"><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span></div><span class="lang-level">Native</span></div><div class="lang-row"><span class="lang-name">French</span><div class="lang-bar"><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot"></span></div><span class="lang-level">Advanced</span></div><div class="lang-row"><span class="lang-name">English</span><div class="lang-bar"><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot  on"></span><span class="lang-dot"></span><span class="lang-dot"></span></div><span class="lang-level">Intermediate</span></div></div>
+    <div class="card full"><h2>Skills</h2><span class="badge">Equipment operation</span><span class="badge">Preventive maintenance</span><span class="badge">Troubleshooting</span><span class="badge">Safety compliance</span><span class="badge">Technical drawing reading</span><span class="badge">Hand &amp; power tools</span></div>
+    <div class="card full"><h2>Key Strengths</h2><ul class="strengths"><li>Hands-on experience operating industrial machinery in production environments</li><li>Comfortable performing routine maintenance and identifying mechanical faults</li><li>Familiar with workplace safety standards and lock-out tag-out procedures</li><li>Able to read technical drawings and follow detailed work instructions</li></ul></div>
+    <div class="card full"><h2>Candidate Statement</h2><div class="cv-body"><p>Vous avez dit :
+اين أجد عقود عمل مجاني</p><p>ChatGPT a dit :
+تقدر تحصل عقود عمل مجانية (نماذج جاهزة) من أكثر من مكان 👇
+حسب ما إذا كنت تريدها بالعربي أو بالإنجليزي، ولأي دولة.</p><p>📄 مواقع تقدم نماذج عقود عمل مجانية
+نماذج بالعربي</p><p>نماذج Word وPDF:</p><p>موقع نماذج بالعربي</p><p>موقع مستند</p><p>موقع إي عربي</p><p>ابحث في جوجل:</p><p>نموذج عقد عمل عربي Word
+نموذج عقد عمل سعودي / مصري / إماراتي</p><p>نماذج بالإنجليزي</p><p>Indeed (قسم Career Guide)</p><p>LawDepot (فيه نسخ مجانية مع تعديل)</p><p>Jotform Contracts</p><p>Template.net</p><p>🧾 أنواع العقود المتوفرة عادة
+عقد عمل محدد المدة</p><p>عقد عمل غير محدد المدة</p><p>عقد دوام كامل / جزئي</p><p>عقد مستقل (Freelancer)</p><p>عقد عمل للشركات أو الأفراد</p><p>⚠️ نصيحة مهمة
+النماذج المجانية ممتازة كبداية،
+لكن لازم تعدّلها حسب نظام العمل في بلدك (خصوصًا الرواتب، الإجازات، إنهاء العقد).</p><p>إذا تحب:</p><p>أجيب لك نموذج جاهز الآن</p><p>أو أعدّل عقد حسب دولتك ونوع الوظيفة</p><p>قولي:
+أي دولة؟ وأي نوع عقد؟ 👍</p><p>Vous avez dit :
+في اوروبا</p><p>ChatGPT a dit :
+تمام 👍
+إذا كنت تبحث عن نماذج عقود عمل مجانية تُستخدم في أوروبا، فهذه أفضل الخيارات الموثوقة:</p><p>📄 مواقع توفر عقود عمل أوروبية مجانية
+(بالإنجليزي – وهي المعتمدة غالبًا في أوروبا)</p><p>EUROPASS</p><p>يوفر نماذج وعقود وإرشادات رسمية من الاتحاد الأوروبي</p><p>مناسب لمعظم دول أوروبا</p><p>LawDepot</p><p>فيه Employment Contract و Freelance Contract</p><p>تقدر تعدّل العقد حسب الدولة (ألمانيا، فرنسا، إسبانيا…)</p><p>النسخة المجانية كافية للاستخدام الأساسي</p><p>Indeed Europe</p><p>قسم Career Guide → Employment Contract Template</p><p>جيد للوظائف العادية والشركات الصغيرة</p><p>Jotform Contracts</p><p>عقود جاهزة + توقيع إلكتروني</p><p>مناسب للعمل عن بُعد داخل أوروبا</p><p>Template.net</p><p>عقود Word وPDF</p><p>ابحث:</p><p>European Employment Contract</p><p>🧾 أنواع العقود الشائعة في أوروبا
+Fixed-term Contract (محدد المدة)</p><p>Permanent Contract (غير محدد المدة)</p><p>Part-time Contract</p><p>Freelance / Independent Contractor</p><p>Remote Work Contract</p><p>⚠️ مهم جدًا
+كل دولة أوروبية لها قانون عمل مختلف:</p><p>ألمانيا ≠ فرنسا ≠ إسبانيا</p><p>بعض الدول تشترط:</p><p>حد أدنى للأجور</p><p>ساعات عمل محددة</p><p>إجازات إلزامية</p><p>تأمين اجتماعي</p><p>النموذج المجاني ممتاز، لكن لا يُستخدم كما هو دون تعديل.</p><p>لو تحب، أقدر:</p><p>أختار لك نموذج مناسب لدولة معينة</p><p>أو أعدّل لك عقد حسب:</p><p>🇩🇪 ألمانيا</p><p>🇫🇷 فرنسا</p><p>🇪🇸 إسبانيا</p><p>🇮🇹 إيطاليا</p><p>🇳🇱 هولندا</p><p>بس قلّي: أي دولة؟ ونوع العمل؟</p><p>Vous avez dit :
+أبحث لي عن عقد</p><p>ChatGPT a dit :
+إليك عقد عمل مجاني جاهز للتحميل والتعديل 👇</p><p>📄 نموذج عقد عمل (قابل للتعديل)
+Employment Contract Template – Dualoo
+تحميل عقد عمل بصيغ Word جاهز للتعديل (بما يشمل عقود محددة المدة وبدوام كامل) – مجاني ✨</p><p>🔗 يمكنك البحث على الموقع لتحميل النموذج.</p><p>Contract of Employment Template – Nomify
+عقد عمل مجاني بصيغة Word يمكنك فتحه وتعديله بنفسك.</p><p>Employment Agreement Template – SolvLegal
+أنشئ عقد توظيف عبر تعبئة نموذج ثم احصل على ملف Word/PDF مجاني.</p><p>SimpleForms Employment Contract
+نموذج عقد عمل بصيغ Word وPDF جاهز للتعديل.</p><p>Free Employment Contract – Unrubble Templates
+عقد عمل DOCX وPDF مجاني مناسب لمختلف الوظائف.</p><p>Factorial HR Contract Template
+قالب عقد عمل مجاني (مناسب للشركات أو التوظيف الأوروبي).</p><p>📌 نصائح قبل استخدام العقد
+هذه النماذج قابلة للتعديل حسب عملك، راتبك، ومدة العقد.</p><p>عند استخدامها في دولة أوروبية تأكد من مطا</p></div></div>
+    
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="mailto:office@factoryjobs.eu?subject=Request%20Contact%20Details%20-%20FJ-2026-0371&body=Hello%2C%0A%0APlease%20send%20me%20full%20contact%20details%20and%20availability%20for%20candidate%20FJ-2026-0371.%0A%0AOur%20requirement%3A%0A-%20Company%3A%20%0A-%20Country%20of%20deployment%3A%20%0A-%20Number%20of%20workers%3A%20%0A-%20Start%20date%3A%20%0A%0AThank%20you.">Request Contact Details</a>
+  </div>
+</div>
+<footer>
+  <strong>FactoryJobs EU &copy; 2026</strong>
+  Skilled Workers. Verified Profiles. Fast Deployment Across Europe.
+  <div class="contact-line">Contact (tel/WhatsApp): +33 7 51 17 13 56</div>
+</footer>
+</body>
+</html>

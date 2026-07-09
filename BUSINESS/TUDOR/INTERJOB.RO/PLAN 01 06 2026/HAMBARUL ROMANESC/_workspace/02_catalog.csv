@@ -1,0 +1,157 @@
+sku,name,category,supplier_cui,unit,cost,vat,retail_price,gross_margin_pct,is_private_label,origin
+HR-DRY-001,Branza de burduf in coaja de brad,dairy,PLACEHOLDER-DRY,kg,28.00 (estimated),0.09,41.18,32.0,False,Romania
+HR-DRY-002,Telemea de vaca maturata,dairy,PLACEHOLDER-DRY,kg,20.00 (estimated),0.09,29.41,32.0,False,Romania
+HR-DRY-003,Telemea de oaie,dairy,PLACEHOLDER-DRY,kg,34.00 (estimated),0.09,50.00,32.0,False,Romania
+HR-DRY-004,Cas proaspat de oaie,dairy,PLACEHOLDER-DRY,kg,24.00 (estimated),0.09,35.29,32.0,False,Romania
+HR-DRY-005,Cascaval afumat de Saveni,dairy,PLACEHOLDER-DRY,kg,30.00 (estimated),0.09,44.12,32.0,False,Romania
+HR-DRY-006,Cascaval Dalia traditional,dairy,PLACEHOLDER-DRY,kg,27.00 (estimated),0.09,39.71,32.0,False,Romania
+HR-DRY-007,Urda proaspata,dairy,PLACEHOLDER-DRY,kg,18.00 (estimated),0.09,26.47,32.0,False,Romania
+HR-DRY-008,Branza de capra,dairy,PLACEHOLDER-DRY,kg,36.00 (estimated),0.09,52.94,32.0,False,Romania
+HR-DRY-009,Lapte crud de ferma 3.8%,dairy,PLACEHOLDER-DRY,l,4.20 (estimated),0.09,6.18,32.0,False,Romania
+HR-DRY-010,Lapte batut de ferma,dairy,PLACEHOLDER-DRY,l,5.00 (estimated),0.09,7.35,32.0,False,Romania
+HR-DRY-011,Iaurt grecesc 10% artizanal,dairy,PLACEHOLDER-DRY,500g,7.50 (estimated),0.09,11.03,32.0,False,Romania
+HR-DRY-012,Iaurt natural de oaie,dairy,PLACEHOLDER-DRY,350g,6.00 (estimated),0.09,8.82,32.0,False,Romania
+HR-DRY-013,Sana traditionala,dairy,PLACEHOLDER-DRY,500g,4.00 (estimated),0.09,5.88,32.0,False,Romania
+HR-DRY-014,Kefir de ferma,dairy,PLACEHOLDER-DRY,500g,4.50 (estimated),0.09,6.62,32.0,False,Romania
+HR-DRY-015,Smantana 30% de ferma,dairy,PLACEHOLDER-DRY,400g,6.50 (estimated),0.09,9.56,32.0,False,Romania
+HR-DRY-016,Smantana 12% pentru gatit,dairy,PLACEHOLDER-DRY,350g,4.00 (estimated),0.09,5.88,32.0,False,Romania
+HR-DRY-017,Unt de ferma 82%,dairy,PLACEHOLDER-DRY,200g,8.00 (estimated),0.09,11.76,32.0,False,Romania
+HR-DRY-018,Unt traditional din smantana,dairy,PLACEHOLDER-DRY,250g,10.00 (estimated),0.09,14.71,32.0,False,Romania
+HR-DRY-019,Branza framantata de Moldova,dairy,PLACEHOLDER-DRY,kg,26.00 (estimated),0.09,38.24,32.0,False,Romania
+HR-DRY-020,Cas afumat,dairy,PLACEHOLDER-DRY,kg,28.00 (estimated),0.09,41.18,32.0,False,Romania
+HR-DRY-021,Branza topita artizanala,dairy,PLACEHOLDER-DRY,150g,5.00 (estimated),0.09,7.35,32.0,False,Romania
+HR-DRY-022,Lapte de capra pasteurizat,dairy,PLACEHOLDER-DRY,l,7.00 (estimated),0.09,10.29,32.0,False,Romania
+HR-MEA-001,Carnati de Plescoi,meat/charcuterie,PLACEHOLDER-MEA,kg,42.00 (estimated),0.09,60.00,30.0,False,Romania
+HR-MEA-002,Carnati de casa afumati,meat/charcuterie,PLACEHOLDER-MEA,kg,36.00 (estimated),0.09,51.43,30.0,False,Romania
+HR-MEA-003,Slanina afumata taraneasca,meat/charcuterie,PLACEHOLDER-MEA,kg,30.00 (estimated),0.09,42.86,30.0,False,Romania
+HR-MEA-004,Costita afumata,meat/charcuterie,PLACEHOLDER-MEA,kg,34.00 (estimated),0.09,48.57,30.0,False,Romania
+HR-MEA-005,Jumari de porc,meat/charcuterie,PLACEHOLDER-MEA,350g,18.00 (estimated),0.09,25.71,30.0,False,Romania
+HR-MEA-006,Toba de casa,meat/charcuterie,PLACEHOLDER-MEA,kg,32.00 (estimated),0.09,45.71,30.0,False,Romania
+HR-MEA-007,Caltabos traditional,meat/charcuterie,PLACEHOLDER-MEA,kg,28.00 (estimated),0.09,40.00,30.0,False,Romania
+HR-MEA-008,Salam de Sibiu maturat 90 zile,meat/charcuterie,PLACEHOLDER-MEA,kg,58.00 (estimated),0.09,82.86,30.0,False,Romania
+HR-MEA-009,Muschi file afumat,meat/charcuterie,PLACEHOLDER-MEA,kg,62.00 (estimated),0.09,88.57,30.0,False,Romania
+HR-MEA-010,Ceafa afumata,meat/charcuterie,PLACEHOLDER-MEA,kg,44.00 (estimated),0.09,62.86,30.0,False,Romania
+HR-MEA-011,Pastrama de oaie,meat/charcuterie,PLACEHOLDER-MEA,kg,48.00 (estimated),0.09,68.57,30.0,False,Romania
+HR-MEA-012,Pastrama de porc,meat/charcuterie,PLACEHOLDER-MEA,kg,42.00 (estimated),0.09,60.00,30.0,False,Romania
+HR-MEA-013,Babic de Buzau,meat/charcuterie,PLACEHOLDER-MEA,kg,55.00 (estimated),0.09,78.57,30.0,False,Romania
+HR-MEA-014,Ghiudem uscat,meat/charcuterie,PLACEHOLDER-MEA,kg,60.00 (estimated),0.09,85.71,30.0,False,Romania
+HR-MEA-015,Carnati oltenesti,meat/charcuterie,PLACEHOLDER-MEA,kg,38.00 (estimated),0.09,54.29,30.0,False,Romania
+HR-MEA-016,Carne de porc Mangalita ceafa,meat/charcuterie,PLACEHOLDER-MEA,kg,40.00 (estimated),0.09,57.14,30.0,False,Romania
+HR-MEA-017,Carne de vita Baltata Romaneasca,meat/charcuterie,PLACEHOLDER-MEA,kg,45.00 (estimated),0.09,64.29,30.0,False,Romania
+HR-MEA-018,Pulpa de miel de munte,meat/charcuterie,PLACEHOLDER-MEA,kg,48.00 (estimated),0.09,68.57,30.0,False,Romania
+HR-MEA-019,Pui crescut la curte,meat/charcuterie,PLACEHOLDER-MEA,kg,22.00 (estimated),0.09,31.43,30.0,False,Romania
+HR-MEA-020,Rata crescuta la curte,meat/charcuterie,PLACEHOLDER-MEA,kg,28.00 (estimated),0.09,40.00,30.0,False,Romania
+HR-BAK-001,Paine cu maia din faina de Banat,bakery,PLACEHOLDER-BAK,700g,6.00 (estimated),0.09,9.23,35.0,False,Romania
+HR-BAK-002,Paine de secara integrala,bakery,PLACEHOLDER-BAK,500g,6.50 (estimated),0.09,10.00,35.0,False,Romania
+HR-BAK-003,Paine de casa pe vatra,bakery,PLACEHOLDER-BAK,800g,7.00 (estimated),0.09,10.77,35.0,False,Romania
+HR-BAK-004,Cozonac cu nuca traditional,bakery,PLACEHOLDER-BAK,700g,28.00 (estimated),0.09,43.08,35.0,False,Romania
+HR-BAK-005,Cozonac cu mac,bakery,PLACEHOLDER-BAK,700g,27.00 (estimated),0.09,41.54,35.0,False,Romania
+HR-BAK-006,Covrigi de Buzau,bakery,PLACEHOLDER-BAK,350g,6.00 (estimated),0.09,9.23,35.0,False,Romania
+HR-BAK-007,Placinta cu branza,bakery,PLACEHOLDER-BAK,500g,10.00 (estimated),0.09,15.38,35.0,False,Romania
+HR-BAK-008,Placinta cu mere,bakery,PLACEHOLDER-BAK,500g,10.00 (estimated),0.09,15.38,35.0,False,Romania
+HR-BAK-009,Pasca cu branza sezonier,bakery,PLACEHOLDER-BAK,700g,22.00 (estimated),0.09,33.85,35.0,False,Romania
+HR-BAK-010,Colaci traditionali,bakery,PLACEHOLDER-BAK,400g,8.00 (estimated),0.09,12.31,35.0,False,Romania
+HR-BAK-011,Biscuiti de casa cu unt,bakery,PLACEHOLDER-BAK,300g,9.00 (estimated),0.09,13.85,35.0,False,Romania
+HR-BAK-012,Turta dulce de Brasov,bakery,PLACEHOLDER-BAK,250g,8.00 (estimated),0.09,12.31,35.0,False,Romania
+HR-BAK-013,Paine fara gluten din hrisca,bakery,PLACEHOLDER-BAK,400g,9.00 (estimated),0.09,13.85,35.0,False,Romania
+HR-BAK-014,Lipie de casa,bakery,PLACEHOLDER-BAK,300g,4.00 (estimated),0.09,6.15,35.0,False,Romania
+HR-BAK-015,Gogosi traditionale,bakery,PLACEHOLDER-BAK,6buc,8.00 (estimated),0.09,12.31,35.0,False,Romania
+HR-PRE-001,Zacusca de vinete traditionala,preserves/conserve,PLACEHOLDER-PRE,320g,9.00 (estimated),0.09,15.52,42.0,True,Romania
+HR-PRE-002,Zacusca de ciuperci,preserves/conserve,PLACEHOLDER-PRE,320g,10.00 (estimated),0.09,17.24,42.0,True,Romania
+HR-PRE-003,Zacusca de fasole,preserves/conserve,PLACEHOLDER-PRE,320g,8.50 (estimated),0.09,14.66,42.0,True,Romania
+HR-PRE-004,Bulion de rosii de casa,preserves/conserve,PLACEHOLDER-PRE,720ml,9.00 (estimated),0.09,15.52,42.0,True,Romania
+HR-PRE-005,Pasta de tomate concentrata,preserves/conserve,PLACEHOLDER-PRE,320g,8.00 (estimated),0.09,13.79,42.0,True,Romania
+HR-PRE-006,Gem de prune fara zahar,preserves/conserve,PLACEHOLDER-PRE,350g,12.00 (estimated),0.09,20.69,42.0,True,Romania
+HR-PRE-007,Gem de caise,preserves/conserve,PLACEHOLDER-PRE,350g,11.00 (estimated),0.09,18.97,42.0,True,Romania
+HR-PRE-008,Dulceata de trandafiri,preserves/conserve,PLACEHOLDER-PRE,250g,18.00 (estimated),0.09,31.03,42.0,True,Romania
+HR-PRE-009,Dulceata de nuci verzi,preserves/conserve,PLACEHOLDER-PRE,250g,22.00 (estimated),0.09,37.93,42.0,True,Romania
+HR-PRE-010,Magiun de prune de Topoloveni,preserves/conserve,PLACEHOLDER-PRE,350g,16.00 (estimated),0.09,27.59,42.0,True,Romania
+HR-PRE-011,Muraturi asortate in otet,preserves/conserve,PLACEHOLDER-PRE,720ml,10.00 (estimated),0.09,17.24,42.0,True,Romania
+HR-PRE-012,Gogosari in otet,preserves/conserve,PLACEHOLDER-PRE,720ml,11.00 (estimated),0.09,18.97,42.0,True,Romania
+HR-PRE-013,Castraveti murati,preserves/conserve,PLACEHOLDER-PRE,720ml,9.00 (estimated),0.09,15.52,42.0,False,Romania
+HR-PRE-014,Ardei iute murat,preserves/conserve,PLACEHOLDER-PRE,350g,8.00 (estimated),0.09,13.79,42.0,False,Romania
+HR-PRE-015,Compot de visine,preserves/conserve,PLACEHOLDER-PRE,720ml,10.00 (estimated),0.09,17.24,42.0,False,Romania
+HR-PRE-016,Sirop de soc artizanal,preserves/conserve,PLACEHOLDER-PRE,500ml,14.00 (estimated),0.09,24.14,42.0,True,Romania
+HR-PRE-017,Sirop de catina,preserves/conserve,PLACEHOLDER-PRE,500ml,20.00 (estimated),0.09,34.48,42.0,True,Romania
+HR-PRE-018,Ardei copt in ulei,preserves/conserve,PLACEHOLDER-PRE,350g,10.00 (estimated),0.09,17.24,42.0,True,Romania
+HR-HON-001,Miere de salcam,honey,PLACEHOLDER-HON,500g,22.00 (estimated),0.09,40.00,45.0,True,Romania
+HR-HON-002,Miere de tei,honey,PLACEHOLDER-HON,500g,20.00 (estimated),0.09,36.36,45.0,True,Romania
+HR-HON-003,Miere de mana padure,honey,PLACEHOLDER-HON,500g,26.00 (estimated),0.09,47.27,45.0,True,Romania
+HR-HON-004,Miere poliflora,honey,PLACEHOLDER-HON,500g,18.00 (estimated),0.09,32.73,45.0,True,Romania
+HR-HON-005,Miere de rapita,honey,PLACEHOLDER-HON,500g,16.00 (estimated),0.09,29.09,45.0,True,Romania
+HR-HON-006,Miere de floarea-soarelui,honey,PLACEHOLDER-HON,500g,16.00 (estimated),0.09,29.09,45.0,True,Romania
+HR-HON-007,Miere in fagure,honey,PLACEHOLDER-HON,400g,34.00 (estimated),0.09,61.82,45.0,True,Romania
+HR-HON-008,Polen crud de albine,honey,PLACEHOLDER-HON,250g,28.00 (estimated),0.09,50.91,45.0,False,Romania
+HR-HON-009,Pastura,honey,PLACEHOLDER-HON,200g,40.00 (estimated),0.09,72.73,45.0,False,Romania
+HR-HON-010,Propolis tinctura,honey,PLACEHOLDER-HON,50ml,22.00 (estimated),0.09,40.00,45.0,False,Romania
+HR-HON-011,Laptisor de matca,honey,PLACEHOLDER-HON,25g,45.00 (estimated),0.09,81.82,45.0,False,Romania
+HR-HON-012,Miere cu nuca si fructe,honey,PLACEHOLDER-HON,400g,30.00 (estimated),0.09,54.55,45.0,True,Romania
+HR-EGG-001,Oua de gaina crescute la sol 10buc,eggs,PLACEHOLDER-EGG,10buc,12.00 (estimated),0.09,16.67,28.0,False,Romania
+HR-EGG-002,Oua de gaina ecologice 6buc,eggs,PLACEHOLDER-EGG,6buc,11.00 (estimated),0.09,15.28,28.0,False,Romania
+HR-EGG-003,Oua de prepelita 24buc,eggs,PLACEHOLDER-EGG,24buc,14.00 (estimated),0.09,19.44,28.0,False,Romania
+HR-EGG-004,Oua de rata 6buc,eggs,PLACEHOLDER-EGG,6buc,15.00 (estimated),0.09,20.83,28.0,False,Romania
+HR-EGG-005,Oua de gasca 4buc,eggs,PLACEHOLDER-EGG,4buc,18.00 (estimated),0.09,25.00,28.0,False,Romania
+HR-EGG-006,Oua mari de ferma XL 10buc,eggs,PLACEHOLDER-EGG,10buc,14.00 (estimated),0.09,19.44,28.0,False,Romania
+HR-WIN-001,Tuica de prune de Bistrita 52%,wine/tuica,PLACEHOLDER-WIN,700ml,38.00 (estimated),0.09,69.09,45.0,False,Romania
+HR-WIN-002,Palinca de Maramures 50%,wine/tuica,PLACEHOLDER-WIN,500ml,55.00 (estimated),0.09,100.00,45.0,False,Romania
+HR-WIN-003,Tuica batrana de Arges,wine/tuica,PLACEHOLDER-WIN,700ml,45.00 (estimated),0.09,81.82,45.0,False,Romania
+HR-WIN-004,Visinata de casa,wine/tuica,PLACEHOLDER-WIN,500ml,30.00 (estimated),0.09,54.55,45.0,False,Romania
+HR-WIN-005,Afinata traditionala,wine/tuica,PLACEHOLDER-WIN,500ml,34.00 (estimated),0.09,61.82,45.0,False,Romania
+HR-WIN-006,Vin Feteasca Neagra sec,wine/tuica,PLACEHOLDER-WIN,750ml,28.00 (estimated),0.09,50.91,45.0,False,Romania
+HR-WIN-007,Vin Feteasca Alba demisec,wine/tuica,PLACEHOLDER-WIN,750ml,24.00 (estimated),0.09,43.64,45.0,False,Romania
+HR-WIN-008,Vin Tamaioasa Romaneasca,wine/tuica,PLACEHOLDER-WIN,750ml,30.00 (estimated),0.09,54.55,45.0,False,Romania
+HR-WIN-009,Vin roze Babeasca Neagra,wine/tuica,PLACEHOLDER-WIN,750ml,26.00 (estimated),0.09,47.27,45.0,False,Romania
+HR-WIN-010,Must de struguri natural,wine/tuica,PLACEHOLDER-WIN,1l,10.00 (estimated),0.09,18.18,45.0,False,Romania
+HR-CER-001,Faina alba tip 000 de Banat,cereals/grain,29673838,1kg,4.00 (estimated),0.09,5.97,33.0,True,Romania
+HR-CER-002,Faina integrala de grau,cereals/grain,32772904,1kg,4.50 (estimated),0.09,6.72,33.0,True,Romania
+HR-CER-003,Malai extra din porumb romanesc,cereals/grain,15079348,1kg,4.00 (estimated),0.09,5.97,33.0,True,Romania
+HR-CER-004,Malai de porumb vechi creata,cereals/grain,14822192,1kg,6.00 (estimated),0.09,8.96,33.0,True,Romania
+HR-CER-005,Faina de secara,cereals/grain,25294858,1kg,5.00 (estimated),0.09,7.46,33.0,True,Romania
+HR-CER-006,Faina de hrisca,cereals/grain,21270430,500g,8.00 (estimated),0.09,11.94,33.0,True,Romania
+HR-CER-007,Grau pentru coliva,cereals/grain,5253403,500g,4.00 (estimated),0.09,5.97,33.0,False,Romania
+HR-CER-008,Arpacas de grau,cereals/grain,16414939,500g,4.50 (estimated),0.09,6.72,33.0,True,Romania
+HR-CER-009,Fulgi de ovaz integrali,cereals/grain,3276435,500g,5.00 (estimated),0.09,7.46,33.0,False,Romania
+HR-CER-010,Orez romanesc cu bob rotund,cereals/grain,17812703,1kg,7.00 (estimated),0.09,10.45,33.0,False,Romania
+HR-CER-011,Fasole boabe uscata,cereals/grain,18142229,500g,8.00 (estimated),0.09,11.94,33.0,False,Romania
+HR-CER-012,Mazare uscata,cereals/grain,11327203,500g,6.00 (estimated),0.09,8.96,33.0,False,Romania
+HR-CER-013,Floarea-soarelui decojita,cereals/grain,13446570,250g,7.00 (estimated),0.09,10.45,33.0,False,Romania
+HR-CER-014,Ulei de floarea-soarelui presat la rece,cereals/grain,31704154,500ml,16.00 (estimated),0.09,23.88,33.0,True,Romania
+HR-CER-015,Ulei de dovleac,cereals/grain,18067569,250ml,28.00 (estimated),0.09,41.79,33.0,True,Romania
+HR-CER-016,Ulei de nuca,cereals/grain,1771500,250ml,34.00 (estimated),0.09,50.75,33.0,True,Romania
+HR-PRO-001,Rosii de Buzau sezon,produce/vegetables,PLACEHOLDER-PRO,kg,8.00 (estimated),0.09,11.43,30.0,False,Romania
+HR-PRO-002,Castraveti de gradina,produce/vegetables,PLACEHOLDER-PRO,kg,6.00 (estimated),0.09,8.57,30.0,False,Romania
+HR-PRO-003,Ardei gras de camp,produce/vegetables,PLACEHOLDER-PRO,kg,7.00 (estimated),0.09,10.00,30.0,False,Romania
+HR-PRO-004,Cartofi noi de munte,produce/vegetables,PLACEHOLDER-PRO,kg,3.50 (estimated),0.09,5.00,30.0,False,Romania
+HR-PRO-005,Ceapa rosie de Turda,produce/vegetables,PLACEHOLDER-PRO,kg,4.00 (estimated),0.09,5.71,29.9,False,Romania
+HR-PRO-006,Usturoi romanesc de Copalau,produce/vegetables,PLACEHOLDER-PRO,kg,18.00 (estimated),0.09,25.71,30.0,False,Romania
+HR-PRO-007,Varza de Buzau,produce/vegetables,PLACEHOLDER-PRO,kg,2.50 (estimated),0.09,3.57,30.0,False,Romania
+HR-PRO-008,Morcovi de ferma,produce/vegetables,PLACEHOLDER-PRO,kg,3.50 (estimated),0.09,5.00,30.0,False,Romania
+HR-PRO-009,Sfecla rosie,produce/vegetables,PLACEHOLDER-PRO,kg,4.00 (estimated),0.09,5.71,29.9,False,Romania
+HR-PRO-010,Dovleac placintar,produce/vegetables,PLACEHOLDER-PRO,kg,3.50 (estimated),0.09,5.00,30.0,False,Romania
+HR-PRO-011,Vinete de camp,produce/vegetables,PLACEHOLDER-PRO,kg,6.00 (estimated),0.09,8.57,30.0,False,Romania
+HR-PRO-012,Fasole verde,produce/vegetables,PLACEHOLDER-PRO,kg,9.00 (estimated),0.09,12.86,30.0,False,Romania
+HR-PRO-013,Mere ionatan de Voinesti,produce/vegetables,PLACEHOLDER-PRO,kg,4.50 (estimated),0.09,6.43,30.0,False,Romania
+HR-PRO-014,Pere romanesti,produce/vegetables,PLACEHOLDER-PRO,kg,6.00 (estimated),0.09,8.57,30.0,False,Romania
+HR-PRO-015,Prune de Bistrita,produce/vegetables,PLACEHOLDER-PRO,kg,5.00 (estimated),0.09,7.14,30.0,False,Romania
+HR-PRO-016,Caise de Vrancea,produce/vegetables,PLACEHOLDER-PRO,kg,8.00 (estimated),0.09,11.43,30.0,False,Romania
+HR-PRO-017,Visine de sezon,produce/vegetables,PLACEHOLDER-PRO,kg,9.00 (estimated),0.09,12.86,30.0,False,Romania
+HR-PRO-018,Capsuni de Satu Mare,produce/vegetables,PLACEHOLDER-PRO,kg,14.00 (estimated),0.09,20.00,30.0,False,Romania
+HR-PRO-019,Pepene rosu de Dabuleni,produce/vegetables,PLACEHOLDER-PRO,kg,3.00 (estimated),0.09,4.29,30.1,False,Romania
+HR-PRO-020,Nuci in coaja,produce/vegetables,PLACEHOLDER-PRO,kg,16.00 (estimated),0.09,22.86,30.0,False,Romania
+HR-PRO-021,Cartofi rosii de Brasov,produce/vegetables,PLACEHOLDER-PRO,kg,3.50 (estimated),0.09,5.00,30.0,False,Romania
+HR-PRO-022,Verdeturi de gradina legatura,produce/vegetables,PLACEHOLDER-PRO,leg,2.50 (estimated),0.09,3.57,30.0,False,Romania
+HR-TRA-001,Saramura de branza in ulei,other/traditional,PLACEHOLDER-TRA,350g,16.00 (estimated),0.09,29.09,45.0,True,Romania
+HR-TRA-002,Mamaliga instant traditionala,other/traditional,PLACEHOLDER-TRA,500g,6.00 (estimated),0.09,10.91,45.0,False,Romania
+HR-TRA-003,Sarmale in foi de vita la borcan,other/traditional,PLACEHOLDER-TRA,720g,18.00 (estimated),0.09,32.73,45.0,False,Romania
+HR-TRA-004,Ciuperci uscate de padure,other/traditional,PLACEHOLDER-TRA,50g,18.00 (estimated),0.09,32.73,45.0,False,Romania
+HR-TRA-005,Hribi uscati,other/traditional,PLACEHOLDER-TRA,40g,22.00 (estimated),0.09,40.00,45.0,False,Romania
+HR-TRA-006,Boia de ardei dulce,other/traditional,PLACEHOLDER-TRA,100g,6.00 (estimated),0.09,10.91,45.0,True,Romania
+HR-TRA-007,Cimbru uscat de gradina,other/traditional,PLACEHOLDER-TRA,30g,5.00 (estimated),0.09,9.09,45.0,False,Romania
+HR-TRA-008,Leustean uscat,other/traditional,PLACEHOLDER-TRA,30g,5.00 (estimated),0.09,9.09,45.0,False,Romania
+HR-TRA-009,Ceai de tei din flori romanesti,other/traditional,PLACEHOLDER-TRA,50g,10.00 (estimated),0.09,18.18,45.0,False,Romania
+HR-TRA-010,Ceai de soc,other/traditional,PLACEHOLDER-TRA,50g,10.00 (estimated),0.09,18.18,45.0,False,Romania
+HR-TRA-011,Catina uscata,other/traditional,PLACEHOLDER-TRA,100g,16.00 (estimated),0.09,29.09,45.0,False,Romania
+HR-TRA-012,Macese uscate,other/traditional,PLACEHOLDER-TRA,150g,9.00 (estimated),0.09,16.36,45.0,False,Romania
+HR-TRA-013,Otet de mere natural,other/traditional,PLACEHOLDER-TRA,500ml,10.00 (estimated),0.09,18.18,45.0,True,Romania
+HR-TRA-014,Mujdei de usturoi la borcan,other/traditional,PLACEHOLDER-TRA,200g,9.00 (estimated),0.09,16.36,45.0,False,Romania
+HR-TRA-015,Pateu de ficat de casa,other/traditional,PLACEHOLDER-TRA,180g,10.00 (estimated),0.09,18.18,45.0,False,Romania

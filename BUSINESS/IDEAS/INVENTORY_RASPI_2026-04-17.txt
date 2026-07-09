@@ -1,0 +1,79 @@
+# RASPI Inventory — 2026-04-17
+
+Machine: tudor@192.168.100.20 | Role: Scrapers, APIs, DB, Node-RED (zero Telegram, zero email sending)
+
+## CIFN API (LIVE, 19h uptime)
+
+- **Service**: `cifn-api.service` active, PID 993, Uvicorn :5000
+- **Tunnel**: `cifn-tunnel.service` (Cloudflare quick tunnel, URL changes on restart)
+- **Health**: `{"status":"healthy","db":"connected"}`
+- **Endpoints**: `/api/health`, `/api/company/{id}` (4 total per handoff)
+- **Auth tiers**: 4 (Free, Starter EUR 29, Pro EUR 99, Enterprise)
+- **Logs**: `/home/tudor/anaf_api_requests.jsonl` (7 req day 1, 2 authenticated, 1-106ms)
+- **Frontend**: https://cifn.eu/api/ + buy.php (Stripe TEST — needs LIVE)
+
+## PostgreSQL (13 databases)
+
+| DB | Owner | Tables | Purpose |
+|----|-------|--------|---------|
+| master_db | tudor | 360 (public) | Main mirror |
+| scraper | tudor | ? | Raw scraper outputs |
+| eures | tudor | ? | EURES job data |
+| romania | tudor | ? | RO-specific |
+| csv_raw | tudor | ? | Raw CSV ingestion |
+| jobscraper | tudor | ? | Job board scraping |
+| freescout | tudor | ? | Support ticketing |
+| email_sender | tudor | ? | (Deprecated? Sending moved to raspibig) |
+| bounce_processor | tudor | ? | Bounce tracking |
+| listmonk | tudor | ? | Newsletter DB |
+| ofn_db | tudor | ? | Unknown |
+
+Total tables: 360+ in `master_db.public` alone. Encoding UTF-8.
+
+## Node-RED (LIVE)
+
+- Service: `nodered.service` active, PID 2439
+- Version: 3.6.6
+- Port: 1880 (local only)
+- Flows: `/home/tudor/.node-red/flows.json` (28KB)
+- Dashboard: `/ui` enabled
+- Projects: `/home/tudor/.node-red/projects`
+
+## Cron Jobs
+
+- `@reboot` → inspect_device.py, queue_worker.py
+- Terenuri pipeline: `0 6,18 * * *` → `/opt/LOGS/terenuri.log` (land scraping)
+- Web task runner: `*/5 * * * *` → `/home/tudor/WEBPAGES/task_queue_runner.py`
+
+## VPN (WireGuard)
+
+- **wg0**: :51820, peer handshake 19h ago
+- **proton-nl**: :43312, active (for Zoho SMTP routing when sending from here — but raspi no longer sends email per architecture change 2026-04-16)
+
+## /opt/ Structure (43 dirs)
+
+ACTIVE, SCRAPERS (15 modules), ARCHIVE, BACKUPS, EMAIL, LOGS, SKILLS (120 dirs), DATA, ROMANIA, SUPERMARKETS, SUPPLIERS
+
+## Virtual Envs
+bonsai-venv, llm_env, pdfenv, venv
+
+## Services Status
+
+| Service | State |
+|---------|-------|
+| cifn-api | active 19h |
+| cifn-tunnel | active 19h |
+| nodered | active |
+| postgresql | active |
+| wg-quick@wg0 | active |
+| wg-quick@proton-nl | active |
+| mariadb | inactive |
+
+## Architecture Role (post 2026-04-16)
+- **Zero Telegram bots** — all eliminated
+- **Zero email sending** — moved to raspibig
+- **Focus**: scrapers, APIs (CIFN), PostgreSQL mirror, Node-RED flows
+- **Primary revenue asset**: CIFN API (live, metered, needs Stripe LIVE migration)
+
+## Summary
+Backend/data tier: API + PostgreSQL mirror + Node-RED workflow + land scrapers. CIFN is the sellable artifact. No campaign execution. Low CPU/noise after the 2026-04-16 split.

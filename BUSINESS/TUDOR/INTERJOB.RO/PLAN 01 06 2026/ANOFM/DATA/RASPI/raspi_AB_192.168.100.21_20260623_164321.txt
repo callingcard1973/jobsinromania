@@ -1,0 +1,79 @@
+﻿host=192.168.100.21
+=== HOSTNAME: raspibig ===
+CSVDIR=/mnt/hdd/SCRAPER_DATA/csv/ANOFM DB=interjob_master
+=== PART A: scraper service show ===
+Result=success
+ExecMainStatus=0
+ActiveEnterTimestamp=
+=== PART A: newest CSV ===
+FILE=/mnt/hdd/SCRAPER_DATA/csv/ANOFM/anofm_latest.csv
+mtime=2026-06-23 16:01:57.856638967 +0300
+lines=11852
+=== PART A: scraper journal last 10 ===
+Jun 23 15:59:00 raspibig systemd[1]: Starting anofm-scraper.service - ANOFM Scraper + Auto-Feed...
+Jun 23 16:01:57 raspibig systemd[1]: anofm-scraper.service: Deactivated successfully.
+Jun 23 16:01:57 raspibig systemd[1]: Finished anofm-scraper.service - ANOFM Scraper + Auto-Feed.
+Jun 23 16:01:57 raspibig systemd[1]: anofm-scraper.service: Consumed 4.982s CPU time, 106.8M memory peak, 12M memory swap peak.
+=== PART A: scraper FAILURE today? ===
+=== PART B: timers ===
+anofm-scraper active=active enabled=enabled
+anofm-ingest active=active enabled=enabled
+anofm-audience-rebuild active=active enabled=enabled
+=== PART B: DB counts ===
+total_ij_jobs=17054
+active_anofm=13762
+created_today=371
+=== PART B: sent-today per campaign ===
+ANOFM_ANGAJATORI sent.csv today=0
+PRIMARII no sent file
+FACTORY_RO no sent file
+CANDIDATE_BROADCAST sent.json today=1
+=== PART B: disk / ===
+/dev/nvme0n1p2  235G  108G  115G  49% /
+=== PART B: uptime/load ===
+ 16:43:30 up 2 days,  7:19,  2 users,  load average: 16.56, 17.02, 16.97
+=== PART B: ingest failures today ===
+=== PART D: ingest invalid env count ===
+ignoring_invalid_env=0
+=== PART D: crontab ===
+BREVO_CUMPARLEGUME_API_KEY=xkeysib-REDACTED
+GMAIL_MANPOWER_DRISTOR_APP_PASSWORD=xibcxpuzqxfmcaei
+SILOZURI_DB_HOST=localhost
+SILOZURI_DB_NAME=interjob_master
+SILOZURI_DB_USER=tudor
+SILOZURI_DB_PASSWORD=tudor
+# MADR Scrapers (credentials now in /opt/ACTIVE/.env)
+21 1 * * * source /opt/ACTIVE/.env && /usr/bin/python3 /opt/ACTIVE/SCRAPERS/ROMANIA/MADR/CODE/scrape_madr.py >> /opt/ACTIVE/INFRA/LOGS/scrape.log 2>&1
+31 1 * * * /usr/bin/python3 /opt/ACTIVE/SCRAPERS/ROMANIA/MADR/CODE/scrape_madr_agricole.py >> /opt/ACTIVE/INFRA/LOGS/scrape.log 2>&1
+30 2 * * * /usr/bin/python3 /opt/ACTIVE/SCRAPERS/ROMANIA/MADR/CODE/import_madr_pg.py >> /opt/ACTIVE/INFRA/LOGS/scrape.log 2>&1
+*/30 * * * * /opt/ACTIVE/INFRA/check_memory_alert.sh
+# via-profi monthly re-scrape + email/telegram update
+# via-profi monthly re-scrape + email/telegram update
+0 6 1 * * source /opt/ACTIVE/.env && cd /opt/ACTIVE/FURNIZORI/scrapers && VIAPROFI_DATA=/opt/ACTIVE/FURNIZORI/scrapers/DATA /usr/bin/python3 /opt/ACTIVE/FURNIZORI/scrapers/viaprofi_monthly.py >> /opt/ACTIVE/FURNIZORI/scrapers/REPORTS/cron.log 2>&1
+*/15 * * * * /usr/bin/python3 /opt/ACTIVE/EMAIL/CAMPAIGNS/compute_send_counts.py >> /opt/ACTIVE/INFRA/LOGS/send_counts.log 2>&1
+0 6 * * 1 /usr/bin/python3 /opt/ACTIVE/DB/new_companies_digest.py >> /opt/ACTIVE/INFRA/LOGS/new_companies.log 2>&1
+0 3 6 * * /usr/bin/python3 /opt/ACTIVE/SKILLS/onrc_updater.py --full >> /opt/ACTIVE/INFRA/LOGS/onrc_update.log 2>&1
+30 9 * * * /opt/ACTIVE/EMAIL/CAMPAIGNS/CANDIDATE_BROADCAST/run.sh >> /opt/ACTIVE/EMAIL/CAMPAIGNS/CANDIDATE_BROADCAST/LOGS/cron.log 2>&1
+0 20 * * * /opt/ACTIVE/INFRA/venv/bin/python3 /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/monitor_norway.py >> /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/logs/monitor.log 2>&1
+30 */2 * * * /opt/ACTIVE/INFRA/venv/bin/python3 /opt/ACTIVE/EMAIL/CAMPAIGNS/universal_reply_handler.py >> /opt/ACTIVE/EMAIL/CAMPAIGNS/logs/universal_reply.log 2>&1
+0 */2 * * * cd /opt/ACTIVE/SILOZURI/CAMPAIGN/CODE && python3 reply_handler_silozuri.py --scan-last 2 >> /opt/ACTIVE/SILOZURI/LOGS/replies.log 2>&1
+0 7 * * * export BREVO_CUMPARLEGUME_API_KEY=xkeysib-REDACTED; cd /opt/ACTIVE/SILOZURI/CAMPAIGN/CODE && python3 bounce_monitor_silozuri.py --sync-today >> /opt/ACTIVE/SILOZURI/LOGS/bounces.log 2>&1
+15 * * * * /opt/ACTIVE/INFRA/venv/bin/python3 /opt/ACTIVE/EMAIL/CAMPAIGNS/sync_master_dnc_to_norway.py >> /opt/ACTIVE/EMAIL/CAMPAIGNS/logs/dnc_bridge.log 2>&1
+45 */2 * * * /opt/ACTIVE/INFRA/venv/bin/python3 /opt/ACTIVE/EMAIL/CAMPAIGNS/gmail_master_cleaner.py >> /opt/ACTIVE/EMAIL/CAMPAIGNS/logs/gmail_cleaner.log 2>&1
+0 9 * * * /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/run_construction_ramp.sh >> /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/logs/cron.log 2>&1
+0 14 * * * /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/run_construction_ramp.sh >> /opt/ACTIVE/EMAIL/CAMPAIGNS/NORWAY/logs/cron.log 2>&1
+# Daily roundup orchestrator ÔÇö 09:00 UTC
+0 9 * * * cd /opt/ACTIVE/EVENT_PUBLISHER && python3 orchestrator.py >> /opt/ACTIVE/INFRA/LOGS/daily_roundup.log 2>&1
+0 3 * * * /opt/ACTIVE/EURES/eures_cron.sh >> /tmp/eures_cron.log 2>&1
+=== PART C: locate .env with GMAIL_APP_PASSWORD ===
+/opt/ACTIVE/SKILLS/email_organizer.py
+/opt/ACTIVE/SKILLS/spam_learner.py
+/opt/ACTIVE/SKILLS/__pycache__/email_accounts.cpython-313.pyc
+/opt/ACTIVE/SKILLS/autosvar_filter.py
+/opt/ACTIVE/SKILLS/email_auto_spam.py
+/opt/ACTIVE/SKILLS/email_sending_skill.py
+/opt/ACTIVE/SKILLS/verify_bcc_cleanup.py
+/opt/ACTIVE/SKILLS/migrate_campaign_to_raspi.py
+/opt/ACTIVE/SKILLS/gmail_reply_detector.py
+/opt/ACTIVE/SKILLS/sender_healthcheck.py
+=== DONE ===

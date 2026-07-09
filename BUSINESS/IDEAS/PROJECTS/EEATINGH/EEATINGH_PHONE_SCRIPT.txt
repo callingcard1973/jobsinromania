@@ -1,0 +1,42 @@
+EEATINGH RESTAURANT PHONE SCRIPT
+
+=== INTRODUCERE (15 secunde) ===
+"Bună ziua, mă numesc Tudor de la eeatingh.ro, platforma românească de food delivery. Aveți 2 minute să vă explic cum puteți economisi €1.000+ pe lună la comisioanele de livrare?"
+
+=== DACĂ SPUNE NU ===
+"Înțeleg că sunteți ocupat. Foarte pe scurt: Glovo ia 30-43% comision, noi luăm doar 15%. Pentru 100 começi/lună economisiți €2.000. Pot să vă trimit un email cu calculele?"
+
+=== DACĂ SPUNE DA ===
+"Perfect! Cunoașteți comisioanele pe care le plătiți acum la Glovo sau alte platforme?"
+
+[Ascultă răspunsul]
+
+"Glovo ia între 30-43% din fiecare comandă. La eeatingh.ro luăm doar 15%.
+
+Să vă dau un exemplu concret:
+- 100 comenzi pe lună x €40/comandă = €4.000 venituri
+- Comision Glovo: €1.200-1.720
+- Comision eeatingh: €600
+- Economii: €600-1.120 pe lună
+
+=== ÎNCHIDERE ===
+Sună interesant? Pot să vă trimit detaliile pe email și să vă ajut cu înregistrarea gratuită?"
+
+=== OBIECȚII COMUNE ===
+
+"Nu știu platforma"
+→ "Suntem operaționali în Târgu Mureș, Buzău, Mediaș, Sighișoara din 2015. Aplicația funcționează perfect, iar clienții comandă la fel ca pe Glovo."
+
+"Glovo aduce mulți clienți"
+→ "Absolut corect! Nu sugerăm să renunțați la Glovo. Dar de ce să nu aveți o alternativă cu comision de 3 ori mai mic? Diversificarea e întotdeauna bună."
+
+"Nu am timp pentru o platformă nouă"
+→ "Înțeleg perfect. Setup-ul durează 30 minute, noi vă ajutăm cu tot. Apoi merge automat. Pentru economia de €600-1.000/lună, merită 30 minute investiție."
+
+=== FOLLOW-UP ===
+"Vă trimit emailul astăzi cu toate detaliile și link-ul de înregistrare. Pot să vă sun săptămâna viitoare să văd dacă aveți întrebări?"
+
+=== CONTACT INFO ===
+Email: apaminerala@yahoo.com
+Website: https://eeatingh.ro/admin
+Platform: https://eeatingh.ro

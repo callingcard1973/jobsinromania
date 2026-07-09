@@ -1,0 +1,124 @@
+#!/usr/bin/env markdown
+# Priority Ideas — Numbered Reference (2026-03-11)
+# --
+
+## EXECUTE NOW (30-day revenue window)
+
+### IDEA-001: Sell Data Packages on Gumroad
+- **Effort**: 2 hours | **First EUR**: Day 1 | **Score**: 9.5/10
+- **What**: Export 5 segmented CSVs from PostgreSQL, upload to Gumroad
+- **Packages**: RO food (69K, EUR 499), NO companies (155K, EUR 999), EU tenders (10K, EUR 299), RO construction (117K, EUR 499), Full EU contacts (540K, EUR 4,999)
+- **Revenue**: EUR 900-15,000 in 30 days
+- **Blocker**: Need Gumroad/Stripe account set up FIRST
+- **Solo**: YES
+
+### IDEA-002: Resume Norway Email Campaign
+- **Effort**: 10 minutes | **First EUR**: Week 2-3 | **Score**: 9.0/10
+- **What**: Unpause orchestrator, 335K emails, only 972 sent, 3,445/day capacity
+- **Revenue**: EUR 5-30K per placement (1-2 placements in 60 days)
+- **Blocker**: Need workers ready to deploy. Test 1,000 emails first for bounce rate.
+- **Solo**: YES (but fulfillment needs workers)
+
+### IDEA-003: Insolvency Alerts to Accountants
+- **Effort**: 8 hours | **First EUR**: Week 2-3 | **Score**: 7.5/10
+- **What**: Cron job querying 1M insolvency records, email 17K accountants + 1,850 auditors
+- **Revenue**: EUR 1,900-3,800/month recurring (EUR 19/mo subscription)
+- **Blocker**: Needs landing page + Stripe payment link
+- **Solo**: YES
+- **Moat**: Zero competitors in Romania
+
+## EXECUTE NEXT (after top 3 are live)
+
+### IDEA-004: 106K EU Recruitment Agencies Campaign
+- **Effort**: 3 hours | **Revenue**: EUR 420K/year potential
+- **What**: Email 106K agencies: "We source RO/EE workers. You place them. Split fee."
+- **Asset**: agencies table, 106K with email, all EU
+- **The sleeping goldmine** — direct customers sitting in DB untouched
+
+### IDEA-005: SEAP Food Winners Campaign
+- **Effort**: 2 hours | **Revenue**: EUR 500-5K per deal
+- **What**: Email 3,030 govt food procurement winners, offer cooperative partnership
+- **Asset**: seap_food_winners_enriched.csv, campaign-ready
+
+### IDEA-006: Bulgaria 79K Campaign
+- **Effort**: 3 hours | **Revenue**: EUR 3-5K per placement
+- **What**: Email 79K Bulgarian contacts: "Romanian workers for construction/manufacturing"
+- **Asset**: bg_ted_notices (63K) + bg_companies (6.8K) + bg_ksb_builders (2.3K)
+
+### IDEA-007: Romania 500K Emails Import + Segment
+- **Effort**: 2 hours | **Revenue**: Unlocks all RO campaigns
+- **What**: Run create_romania_db.py, segment by CAEN, feed campaigns
+- **Script**: /opt/ACTIVE/DB/create_romania_db.py (ready, not run)
+
+### IDEA-008: Telegram @FoodTendersRO Channel
+- **Effort**: 1 hour | **Revenue**: EUR 50-200/sponsored post
+- **What**: Reuse event publisher, post daily SEAP food tenders
+- **Asset**: 47K food tenders in DB
+
+### IDEA-009: 13,248 TED Contacts Campaign
+- **Effort**: 2 hours | **Revenue**: EU procurement winners needing workers
+- **What**: Add as campaign in orchestrator, offer RO workers at 30-40% cost savings
+
+### IDEA-010: Download PL KRAZ Database
+- **Effort**: 30 min | **Revenue**: 9,175 Polish recruitment agencies
+- **What**: Direct govt CSV download, enrich, add to agency campaigns
+
+## FROZEN (valid but not now)
+
+### IDEA-011: Cooperativa Gospodarii EU Export
+- **Status**: Week 2 complete, needs co-founder for logistics
+- **Resume when**: Someone joins to handle physical operations
+
+### IDEA-012: Trasabilitate Food Traceability SaaS
+- **Status**: Framework complete, Go/No-Go Mar 28
+- **Resume when**: Kaufland says "yes" or "open to pilots"
+- **Risk**: 200+ dev hours, no validated demand yet
+
+### IDEA-013: CUMPARFERME Bankrupt Asset Brokerage
+- **Status**: Data ready (8,663 farms + 192K companies)
+- **Resume when**: LICHIDATORI campaign generates replies from practitioners
+
+### IDEA-014: Construction Data API (MVP)
+- **Effort**: 1 week | **Revenue**: EUR 500-5K/mo
+- **Resume when**: Top 3 are generating revenue
+
+### IDEA-015: 5.1M Tenders SaaS
+- **Effort**: 2 weeks | **Revenue**: EUR 99-499/mo recurring
+- **Resume when**: Has paying customers from data packages (IDEA-001)
+
+### IDEA-016: Produs Montan + AGRIP Grant
+- **Deadline**: Apr 23, 2026 (EUR 205M EU budget)
+- **Action**: Submit AGRIP application, continue catalog on agroevolution.com
+
+### IDEA-017: LEO CASA BUZAU Property Rental
+- **Effort**: 2 hours when Leo is ready
+- **Asset**: 34,303 companies in CSV, filter + ANAF enrich + send
+
+## KILLED (stop thinking about these)
+
+### IDEA-018: Dating App (SpeedMatch) — KILLED
+- No synergy, $25K to build, different business entirely
+
+### IDEA-019: Nepalese Manpower Recruitment — KILLED
+- Needs Nepal partner + DOFE license, 500+ hours, fantasy without ground infra
+
+### IDEA-020: International Contract Facilitation — KILLED
+- Saudi/UAE/Germany EUR 75-120B — Fortune 500 play, not solo operator
+
+### IDEA-021: TALL_WOMEN_STORE — KILLED
+- Dropshipping, zero passion or expertise
+
+### IDEA-022: NOTARY_SOFTWARE — KILLED
+- No notary client exists
+
+### IDEA-023: Construction Safety Training — KILLED
+- Needs course creation, certification, instructors. Not a 30-day play.
+
+### IDEA-024: OIPA AGRI-FOOD PLATFORM — KILLED (merged)
+- Overlaps with Cooperativa + Produs Montan. Merge data, kill as standalone.
+
+# --
+# Quick reference: IDEA-001 through IDEA-010 = actionable
+# IDEA-011 through IDEA-017 = frozen with conditions
+# IDEA-018 through IDEA-024 = killed
+# Full exploration: openspec/changes/ideas-evaluation/exploration.md

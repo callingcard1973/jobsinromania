@@ -1,0 +1,66 @@
+# 🏠 CASA BUZAU — Str. Bicaz Nr. 8, Buzău
+
+**Proprietar:** Tudor Seicarescu  
+**Data:** 18 aprilie 2026  
+
+---
+
+## PROPRIETATEA
+- **Adresă:** Str. Bicaz Nr. 8, Buzău
+- **Destinație:** Comercial / birouri / locuit
+- **Chirie contractuală:** 650 EUR/lună
+
+## CHIRIAȘ ACTUAL — PROBLEMĂ
+- **Firmă:** SC BETON CONSTRUCT BILIE SRL (CUI: 8969521)
+- **Reprezentant:** Oros Dumitru Florinel
+- **Contract:** Nr. 1/23.10.2024 + Act Aditional 25.03.2025 (01.05.2025 - 30.04.2026)
+- **Status:** NU PLĂTEȘTE de la noiembrie 2025, nu răspunde la email
+
+## SUME DE RECUPERAT
+- **Chirie neplătită:** 2.600 EUR (dec 2025 + ian + feb + mar 2026 = 4 × 650 EUR)
+- **Utilități plătite de Tudor din buzunar:** 2.313,81 RON (6 facturi)
+- **Garantie reținută:** 1.300 EUR (clauză contractuală)
+
+## STRATEGIE JURIDICĂ (două căi paralele)
+
+### Calea 1: Executare silită chirie (2.600 EUR)
+- Contract înregistrat la ANAF = titlu executoriu (Art. 1.798 CC)
+- **Fără instanță, fără taxă timbru** — direct la executor judecătoresc
+- Necesită: adeverință ANAF (de obținut)
+
+### Calea 2: Cerere valoare redusă utilități (2.313,81 RON)
+- Judecătoria Buzău, taxă timbru 150 RON
+- Documente pregătite în DOSAR_INSTANTA/
+
+## TODO URGENT
+- [ ] Depune Declaratia Unica 2025 la ANAF
+- [ ] Cerere adeverință ANAF prin SPV
+- [ ] Modifică CERERE_VALOARE_REDUSA.txt (doar utilități)
+- [ ] Depune cerere la Judecătoria Buzău
+- [ ] După adeverință ANAF → executor judecătoresc
+
+## STRUCTURA DIRECTORULUI
+```
+CASA BUZAU/
+├── claude.txt                    ← acest fișier
+├── casa buzau poze.pdf           ← pozele casei
+└── CASABUZAU/                    ← dosarul juridic complet
+    ├── CLAUDE.md                 ← analiza juridică detaliată
+    ├── DOSAR_INSTANTA/           ← documente pentru instanță + executor
+    │   ├── Anexa_01-11c (PDF)    ← contract, facturi, extrase, emailuri
+    │   ├── CERERE_VALOARE_REDUSA.txt
+    │   ├── CERERE_ANAF_SECTOR3.txt
+    │   ├── CERERE_ORDONANTA_PLATA.txt
+    │   ├── LISTA_FACTURI_PLATI.csv
+    │   └── DOCUMENTE_JUSTIFICATIVE.csv
+    └── SAFE/                     ← toate documentele sursa
+        ├── Contract + Act Aditional (PDF)
+        ├── Facturi originale (PDF)
+        ├── Extrase cont BT (PDF)
+        ├── Gmail dovezi plata Wise (PDF)
+        ├── CASABUZAU.mbox (72 emailuri)
+        ├── whatsapp_chat/ (poze, video, conversații)
+        ├── MEMORANDUM_JURIDIC_BILIE.md
+        ├── ISTORIC_PLATI_COMPLET.csv
+        └── RECUPERARE_UTILITATI.md
+```

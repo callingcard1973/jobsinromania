@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="ro"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peste si Produse din Peste - Catalog Produs Montan</title>
+<meta name="description" content="Catalog complet producatori certificati Produs Montan din Romania. Peste si Produse din Peste">
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f8f9fa;color:#333}
+.top{background:#2d5016;color:#fff;padding:20px 30px}
+.top h1{margin:0;font-size:1.8em}.top p{margin:5px 0 0;opacity:.85}
+.nav{background:#3a6b1e;padding:10px 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nav a{color:#fff;text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.9em;background:rgba(255,255,255,.15)}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,.3)}
+.container{max-width:1200px;margin:20px auto;padding:0 20px}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:20px 0}
+.stat{background:#fff;padding:15px 20px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.1);text-align:center}
+.stat .n{font-size:1.8em;font-weight:700;color:#2d5016}.stat .l{font-size:.85em;color:#666}
+.search{width:100%;padding:12px 18px;border:2px solid #ddd;border-radius:8px;font-size:1em;margin:15px 0;box-sizing:border-box}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.card{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card h3{margin:0 0 8px;font-size:1.05em;color:#2d5016}
+.card .county{color:#666;font-size:.85em;margin-bottom:8px}
+.card .products{font-size:.85em;color:#555;line-height:1.5}
+.card .badge{display:inline-block;background:#e8f5e9;color:#2d5016;padding:2px 8px;border-radius:10px;font-size:.75em;margin:2px}
+.btn{display:inline-block;background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.9em;margin-top:10px}
+.btn:hover{background:#1da851}
+.footer{text-align:center;padding:30px;color:#999;font-size:.85em}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.stats{flex-direction:column}}
+</style></head><body>
+<div class="top"><h1>🏔️ Catalog Produs Montan Romania</h1>
+<p>Producatori certificati RNPM &bull; Agregator: Gospodarii de Altadata Cooperativa</p></div>
+<div class="nav"><a href="index.html">🏠 Acasa</a>
+<a href="carne.html">🥩 Carne si Produse din Carne</a>
+<a href="peste.html" class="active">🐟 Peste si Produse din Peste</a>
+<a href="lapte.html">🧀 Lapte si Produse Lactate</a>
+<a href="apicole.html">🍯 Produse Apicole (Miere)</a>
+<a href="paine.html">🍞 Paine si Patiserie</a>
+<a href="vegetale.html">🥔 Produse Vegetale</a>
+<a href="oua.html">🥚 Oua</a>
+<a href="judete.html">📍 Judete</a>
+</div>
+<div class="container">
+<input type="text" id="q" class="search" placeholder="Cauta producator, produs, judet..." oninput="filterCards()">
+<select onchange="filterByCounty(this.value)" style="padding:8px;border-radius:6px;border:1px solid #ddd;margin:10px 0">
+<option value="">Toate judetele</option><option value="BACAU">BACAU</option><option value="BACĂU">BACĂU</option><option value="BRASOV">BRASOV</option><option value="GORJ">GORJ</option><option value="PRAHOVA">PRAHOVA</option><option value="SUCEAVA">SUCEAVA</option></select>
+<script>function filterByCounty(v){document.querySelectorAll('.card').forEach(function(c){
+c.style.display=(!v||c.dataset.county===v)?'':'none'})}</script><h2>🐟 Peste si Produse din Peste (10 producatori)</h2><div class="grid"><div class="card" data-county="BRASOV">
+<h3>DIVERTIS AGRIPEX S.R.L.</h3>
+<div class="county">📍 BRASOV &mdash; Localitatea Târgu Mureș, Str. Cutezantei, Nr. 25, Ap.4, Județul Mureș</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV DE VIȘTIȘOARA</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="PRAHOVA">
+<h3>ECOTROUT FARM S.R.L</h3>
+<div class="county">📍 PRAHOVA &mdash; Bușteni, str. Crinei nr.23, Județul Prahova</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> FLUȘTUC DE PĂSTRĂV-CURCUBEU, PATE DE FICAT DE PĂSTRĂV ZAMOREAN, PĂSTRĂV MURĂRIT PE ZAMORA, PĂSTRĂV ÎN OSÂNZĂ DE LEGUME</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BACĂU">
+<h3>ÎNTREPRINDERE FAMILIALĂ PALIȘTAN I. MIHAI</h3>
+<div class="county">📍 BACĂU &mdash; Sat Ciugheș, comuna Palanca, jud. Bacău</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV AFUMAT ÎN HÂRZOB DE BRAD, ZACUSCĂ DE PĂSTRĂV</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BACAU">
+<h3>PALIȘTAN I. MIHAI ÎNTREPRINDERE FAMILIALĂ</h3>
+<div class="county">📍 BACAU &mdash; Sat Ciugheș, comuna Palanca, jud. Bacău</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> CÂRNAȚI DIN PĂSTRĂV, PĂSTRĂV</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="PRAHOVA">
+<h3>S.C. ECOTROUT FARM S.R.L.</h3>
+<div class="county">📍 PRAHOVA &mdash; Str. Crinei, nr.23, oraș Bușteni, județul Prahova</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV JĂRUIT, PĂSTRĂV PRĂVĂLIT ȘI PROȚĂPIT, PĂSTRĂV ZAMOREAN, PĂSTRĂV ZAMOREAN MORCOVIT, PĂSTRĂV ÎN ZAMĂ DE ROȘII, TOCANĂ DE PĂSTRĂV CU LEGUME, TOCANĂ DE PĂSTRĂV JĂRUIT CU LEGUME</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="PRAHOVA">
+<h3>SC ECOTROUTFISH SRL</h3>
+<div class="county">📍 PRAHOVA &mdash; Loc. Breaza, str. Erou Caporal Dumitrache, nr. 22 bis, jud. Prahova</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> Cârnați de păstrăv „Doftana”, Păstrăv acvacultură, Păstrăv copt și afumat la jar „Doftana”, Zacuscă de păstrăv „Doftana”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="GORJ">
+<h3>S.C. NORDA S.R.L.</h3>
+<div class="county">📍 GORJ &mdash; Municipiul Târgu Jiu, B-dul Ecaterina Teodoroiu, nr.7, județul Gorj</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV DE IZVOR</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. PALERMO S.R.L.</h3>
+<div class="county">📍 BRASOV &mdash; Sat Sâmbăta de Sus, Comuna Sâmbăta de Sus, Zona Turistică, Km.11, Birou 1, Județ</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV DE MUNTE ”VALEA SÂMBETEI”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="SUCEAVA">
+<h3>SC QUALITY NATURAL SRL</h3>
+<div class="county">📍 SUCEAVA &mdash; Sat Valea Putnei, com. Pojorâta, str. Păstrăvăriei, nr. 135, jud. Suceava</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> Cobză din păstrăv afumat „Valeputna”, Păstrăv afumat file „Valeputna”, Păstrăv afumat „Valeputna”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div>
+<div class="card" data-county="BRASOV">
+<h3>S.C. TURISM PALER S.R.L.</h3>
+<div class="county">📍 BRASOV &mdash; Sat Sâmbăta de Sus, Comuna Sâmbăta de Sus, Zona Turistică, Km.11, Județul Brașov</div>
+<div><span class="badge">🐟 Peste si Produse din Peste</span> </div>
+<div class="products"><strong>Produse:</strong> PĂSTRĂV DE MUNTE ”POPAS SÂMBĂTA”</div>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn">💬 Comanda</a></div></div></div>
+<div class="footer">Catalog generat din Registrul National al Produselor Montane (RNPM)<br>
+Agregator: Gospodarii de Altadata Cooperativa Agricola (CUI 51957925)<br>
+Contact: <a href="mailto:cumparlegume@agroevolution.com">cumparlegume@agroevolution.com</a> | Tel: +33 7 51 17 13 56<br>
+<a href="https://wa.me/33751171356?text=Bonjour%2C%20je%20souhaite%20commander%20des%20produits%20montagne" class="btn" style="margin-top:15px">💬 Comanda pe WhatsApp</a></div>
+<script>
+function filterCards(){var q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(function(c){
+c.style.display=c.textContent.toLowerCase().includes(q)?'':'none';})}
+</script></body></html>

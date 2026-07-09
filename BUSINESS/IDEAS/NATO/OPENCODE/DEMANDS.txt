@@ -1,0 +1,128 @@
+**TITLE:** Feasibility Study – Supplying Bulk Agricultural Products via a Federation of Cooperatives (CAP) to Institutional Procurement Channels
+
+**OBJECTIVE:**
+Evaluate the feasibility of structuring **Gospodarii de Altadata Cooperativa Agricola (CAP)** as a **federation of agricultural cooperatives** to aggregate and supply bulk agricultural and food products to:
+
+1. Romanian public procurement system (SEAP/SICAP)
+2. NATO-related procurement channels in Romania (direct and contractor-based)
+3. United Nations procurement systems (UNGM and affiliated agencies)
+
+---
+
+**SCOPE OF ANALYSIS:**
+
+1. **Organizational Model – Federation Structure**
+
+   * Define CAP as a federation of multiple cooperatives:
+
+     * Membership model (criteria for joining)
+     * Governance structure (central coordination vs decentralized supply)
+   * Legal framework in Romania for cooperative federations
+   * Contracting model:
+
+     * CAP as prime contractor vs intermediary aggregator
+
+2. **Supply Aggregation Capacity**
+
+   * Mapping of member cooperatives:
+
+     * Product categories (grains, vegetables, oils, processed goods)
+     * Production volumes per cooperative
+   * Consolidated supply capacity:
+
+     * Monthly and annual tonnage
+     * Ability to fulfill large contracts
+   * Mechanisms for ensuring:
+
+     * Consistent quality
+     * Delivery reliability
+     * Standardized specifications
+
+3. **Procurement Channel Analysis**
+
+   * SEAP/SICAP:
+
+     * Eligibility of federations for public procurement
+     * Relevant CPV codes for bulk agricultural supply
+     * Historical contracts and key suppliers
+   * NATO procurement:
+
+     * Contractor ecosystem in Romania
+     * Requirements for large-scale suppliers
+   * UN procurement (UNGM):
+
+     * Supplier registration as federation entity
+     * Relevant agencies (WFP, UNICEF, UNDP)
+     * Demand for bulk commodities
+
+4. **Compliance & Standardization**
+
+   * Harmonization of standards across member cooperatives:
+
+     * HACCP, ISO 22000
+     * EU food safety regulations
+   * Centralized quality control system
+   * Traceability across multiple suppliers
+   * Documentation and audit readiness
+
+5. **Logistics & Infrastructure**
+
+   * Centralized vs regional aggregation hubs
+   * Storage requirements (dry, refrigerated, frozen)
+   * Transport coordination:
+
+     * Internal collection from cooperatives
+     * External distribution to clients
+   * Packaging standards for institutional buyers
+
+6. **Commercial & Contracting Strategy**
+
+   * Direct bidding via CAP as a single entity
+   * Subcontracting / supplying larger contractors
+   * Framework agreements and long-term supply contracts
+   * Pricing strategy for bulk volumes
+
+7. **Financial Model**
+
+   * Revenue aggregation model (commission vs margin-based)
+   * Cost structure:
+
+     * Logistics
+     * Coordination
+     * Compliance and certification
+   * Working capital requirements
+   * Payment distribution to member cooperatives
+
+8. **Risk Analysis**
+
+   * Supply inconsistency across cooperatives
+   * Governance risks within federation structure
+   * Price volatility in agricultural markets
+   * Contract execution risks at scale
+   * Dependency on institutional buyers
+
+---
+
+**EXPECTED OUTPUT:**
+
+* Structured feasibility report
+* Evaluation of CAP viability as a federation model
+* Identification of most realistic procurement entry points
+* Operational model for aggregation and delivery
+* Timeline to first institutional contract
+
+---
+
+**CONSTRAINTS:**
+
+* Focus strictly on bulk agricultural and food products
+* Use Romania and EU regulatory context
+* Avoid assumptions of immediate large-scale contracts
+* Emphasize execution feasibility over theoretical structure
+
+---
+
+**TONE & STYLE:**
+
+* Technical, structured, and analytical
+* No marketing language

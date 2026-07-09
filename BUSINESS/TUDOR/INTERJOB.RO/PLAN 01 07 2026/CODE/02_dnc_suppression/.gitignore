@@ -1,0 +1,5 @@
+# DNC mirror — date personale (opt-out emails), nu se publica pe GitHub
+dnc_list.csv
+dnc_bounces.txt
+dnc_bounces_annotated.csv
+.last_sync

@@ -1,0 +1,52 @@
+# HAMBARUL ROMANESC - P&L Model (07_financials.csv)
+# All figures ESTIMATES unless sourced. Currency EUR. Source: _workspace 00-08 artifacts.
+# Pilot = Bucuresti Sector 1, ~300 m2. Bucuresti rent/catchment basis.
+
+SECTION,Item,Unit,Y1,Y2,Y3,Source/Assumption
+ASSUMPTIONS,Stores operating (avg in year),count,1.5,3.5,7,03_locations + rollout (Y1 pilot S1 + S4 mid-year; Y2 3-5; Y3 7)
+ASSUMPTIONS,Stores end of year,count,2,5,8,rollout sequence
+ASSUMPTIONS,Sales floor per store,m2,300,300,300,03_locations pilot format
+ASSUMPTIONS,Transactions/day/store,count,500,550,600,06_brand (400-700 est; ramp)
+ASSUMPTIONS,Avg basket,EUR,21,22,23,06_brand (18-25 est)
+ASSUMPTIONS,Trading days/year,days,360,360,360,proximity grocery
+ASSUMPTIONS,Revenue per store/year,EUR,2700000,2900000,3100000,txns*basket*days (~2-3M anchor 00/06)
+ASSUMPTIONS,Blended gross margin,pct,34,35,36,02_catalog ~36% diluted by import tail (08)
+ASSUMPTIONS,Import tail share of SKUs,pct,12,12,12,08 (~10-15pct, lower GM)
+
+REVENUE,Net revenue (ex-VAT),EUR,4050000,10150000,21700000,avg stores * rev/store (Y1 1.5*2.7M;Y2 3.5*2.9M;Y3 7*3.1M)
+COGS,Cost of goods sold,EUR,-2673000,-6597500,-13888000,revenue*(1-GM)
+GROSS,Gross profit,EUR,1377000,3552500,7812000,revenue-COGS
+GROSS,Gross margin realized,pct,34,35,36,
+
+OPEX,Rent (store + hub),EUR,-388800,-972000,-2160000,Sector1 ~18 EUR/m2*300=5.4k/mo/store + hub Y2+
+OPEX,Payroll (staff + central),EUR,-540000,-1320000,-2700000,~8-10 FTE/store @ RO retail + central team
+OPEX,Logistics + cold chain opex,EUR,-54000,-126000,-252000,05_logistics 2-4.5k/mo/store band
+OPEX,Systems (POS+ERP+eFactura),EUR,-3600,-12600,-30240,05_logistics 100-600/mo
+OPEX,Marketing,EUR,-150000,-355000,-760000,06 pilot 37k then ~3-4pct revenue
+OPEX,Utilities + refrigeration energy,EUR,-21600,-50400,-100800,05 cold-chain energy 400-800/mo/store
+OPEX,Compliance+insurance+admin,EUR,-60000,-140000,-280000,04 DSVSA/HACCP/DDD/ABP + insurance
+OPEX,Total opex,EUR,-1218000,-2976000,-6283040,sum
+
+EBITDA,EBITDA,EUR,159000,576500,1528960,gross-opex
+EBITDA,EBITDA margin,pct,3.9,5.7,7.0,
+DA,Depreciation+amortization,EUR,-90000,-225000,-405000,capex/5yr straight-line
+EBIT,EBIT,EUR,69000,351500,1123960,
+TAX,Tax (est 16pct profit or microenterprise),EUR,-11040,-56240,-179834,Codul fiscal-verify entity regime
+NET,Net profit,EUR,57960,295260,944126,
+NET,Net margin,pct,1.4,2.9,4.4,
+
+CAPEX,Cold-chain fit-out per store,EUR,-36000,-36000,-36000,05_logistics 25-45k est midpoint
+CAPEX,Store fit-out (shelving/signage/build),EUR,-50000,-50000,-50000,300m2 RO retail fit est
+CAPEX,Fiscal POS hardware per store,EUR,-1500,-1500,-1500,05 600-1500/store
+CAPEX,New stores opened in year,count,2,3,3,rollout
+CAPEX,Store capex total,EUR,-175000,-262500,-262500,(36+50+1.5k)*new stores
+CAPEX,Shared city hub (Y2),EUR,0,-80000,0,05 cross-dock at store #2
+CAPEX,ERP/systems setup one-off,EUR,-15000,-20000,-25000,05 SME stack impl
+CAPEX,Pre-launch compliance+CUI resolution,EUR,-25000,-15000,-15000,04 DSVSA/HACCP consultant + CUI enrichment gate
+CAPEX,Total capex,EUR,-215000,-377500,-302500,
+
+BREAKEVEN,Store-level monthly breakeven revenue,EUR,165000,,, fixed store opex / GM ~ per-store
+BREAKEVEN,Store-level breakeven txns/day,count,260,,,at 21 EUR basket 34pct GM
+BREAKEVEN,Company net breakeven,note,Y1-positive-EBITDA,,,thin; cushion needed for ramp risk
+
+FUNDING,Year-1 capital need (capex+working cap+buffer),EUR,500000,,,215k capex + ~150k working capital + ~135k ramp/contingency buffer

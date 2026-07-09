@@ -1,0 +1,66 @@
+﻿TASK2 HEALTH REPORT 20260623_163655
+=== WRITE health script ===
+wrote /opt/ACTIVE/INTERJOB/anofm_health_check.py
+-rwxr-xr-x 1 root root 4608 Jun 23 16:36 /opt/ACTIVE/INTERJOB/anofm_health_check.py
+=== ENSURE LOG DIR ===
+log dir ok
+=== TEST RUN ===
+HEALTH_EMAIL_OK
+=== INSTALL CRON (idempotent) ===
+cron added
+=== CRONTAB -L ===
+# ========== WAVE 0: European Wholesale Scrapers (02:00 UTC staggered) ==========
+# Wave 1: Berlin + new framework
+02:30 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 berliner_grossmarkt_scraper.py >> /opt/ACTIVE/INFRA/LOGS/berlin.log 2>&1
+# Consolidation (runs after all market scrapers finish)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py >> /opt/ACTIVE/INFRA/LOGS/consolidate.log 2>&1
+# ========== WAVE 2: New European Markets (03:00-03:35 UTC) ==========
+# Note: URLs in wave2_markets_config.json need verification against real endpoints
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py warsaw >> /opt/ACTIVE/INFRA/LOGS/wave2_warsaw.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py amsterdam >> /opt/ACTIVE/INFRA/LOGS/wave2_amsterdam.log 2>&1
+03:10 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py vienna >> /opt/ACTIVE/INFRA/LOGS/wave2_vienna.log 2>&1
+03:15 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py brussels >> /opt/ACTIVE/INFRA/LOGS/wave2_brussels.log 2>&1
+03:20 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py antwerp >> /opt/ACTIVE/INFRA/LOGS/wave2_antwerp.log 2>&1
+# Master consolidation (runs all markets - Wave 0, 1, 2)
+# Updated: consolidate all CSVs from /opt/ACTIVE/DATA/european_wholesale/
+04:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py /opt/ACTIVE/DATA/european_wholesale >> /opt/ACTIVE/INFRA/LOGS/master_consolidate.log 2>&1
+# TIER 1 ÔÇö New European wholesale markets (staggered after Berlin 02:30)
+02:35 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_munich.py >> /opt/ACTIVE/INFRA/LOGS/scrape_munich.log 2>&1
+02:40 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_stuttgart.py >> /opt/ACTIVE/INFRA/LOGS/scrape_stuttgart.log 2>&1
+02:45 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_warsaw_bronisze.py >> /opt/ACTIVE/INFRA/LOGS/scrape_warsaw.log 2>&1
+02:50 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_brussels_mabru.py >> /opt/ACTIVE/INFRA/LOGS/scrape_brussels.log 2>&1
+02:55 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_amsterdam_foodcenter.py >> /opt/ACTIVE/INFRA/LOGS/scrape_amsterdam.log 2>&1
+# TIER 2 ÔÇö Markets with SSL issues (need Playwright)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_vienna_grossmarkt.py >> /opt/ACTIVE/INFRA/LOGS/scrape_vienna.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_budapest_nagybani.py >> /opt/ACTIVE/INFRA/LOGS/scrape_budapest.log 2>&1
+# ========== WAVE 0: European Wholesale Scrapers (02:00 UTC staggered) ==========
+# Wave 1: Berlin + new framework
+02:30 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 berliner_grossmarkt_scraper.py >> /opt/ACTIVE/INFRA/LOGS/berlin.log 2>&1
+# Consolidation (runs after all market scrapers finish)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py >> /opt/ACTIVE/INFRA/LOGS/consolidate.log 2>&1
+# ========== WAVE 2: New European Markets (03:00-03:35 UTC) ==========
+# Note: URLs in wave2_markets_config.json need verification against real endpoints
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py warsaw >> /opt/ACTIVE/INFRA/LOGS/wave2_warsaw.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py amsterdam >> /opt/ACTIVE/INFRA/LOGS/wave2_amsterdam.log 2>&1
+03:10 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py vienna >> /opt/ACTIVE/INFRA/LOGS/wave2_vienna.log 2>&1
+03:15 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py brussels >> /opt/ACTIVE/INFRA/LOGS/wave2_brussels.log 2>&1
+03:20 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 wholesale_scraper_wave2.py antwerp >> /opt/ACTIVE/INFRA/LOGS/wave2_antwerp.log 2>&1
+# Master consolidation (runs all markets - Wave 0, 1, 2)
+# Updated: consolidate all CSVs from /opt/ACTIVE/DATA/european_wholesale/
+04:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 merge_wholesale_sources.py /opt/ACTIVE/DATA/european_wholesale >> /opt/ACTIVE/INFRA/LOGS/master_consolidate.log 2>&1
+# TIER 1 ÔÇö New European wholesale markets (staggered after Berlin 02:30)
+02:35 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_munich.py >> /opt/ACTIVE/INFRA/LOGS/scrape_munich.log 2>&1
+02:40 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_stuttgart.py >> /opt/ACTIVE/INFRA/LOGS/scrape_stuttgart.log 2>&1
+02:45 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_warsaw_bronisze.py >> /opt/ACTIVE/INFRA/LOGS/scrape_warsaw.log 2>&1
+02:50 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_brussels_mabru.py >> /opt/ACTIVE/INFRA/LOGS/scrape_brussels.log 2>&1
+02:55 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_amsterdam_foodcenter.py >> /opt/ACTIVE/INFRA/LOGS/scrape_amsterdam.log 2>&1
+# TIER 2 ÔÇö Markets with SSL issues (need Playwright)
+03:00 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_vienna_grossmarkt.py >> /opt/ACTIVE/INFRA/LOGS/scrape_vienna.log 2>&1
+03:05 * * * * cd /opt/ACTIVE/INFRA/SKILLS && python3 scrape_budapest_nagybani.py >> /opt/ACTIVE/INFRA/LOGS/scrape_budapest.log 2>&1
+# ========== ANOFM PIPELINE (Added 2026-06-23) ==========
+# Daily campaign sends: Mon-Fri 09:00, 150 emails/day
+0 9 * * 1-5 export PGHOST=localhost && cd /opt/ACTIVE/EMAIL/CAMPAIGNS/ANOFM_ANGAJATORI && python3 campaign_anofm_angajatori.py --limit 150 --delay 8 >> /opt/ACTIVE/INFRA/LOGS/anofm_campaign.log 2>&1
+# Health check: Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+0 */6 * * * export PGHOST=localhost && python3 /opt/ACTIVE/INFRA/SKILLS/anofm_pipeline_health.py >> /opt/ACTIVE/INFRA/LOGS/anofm_health.log 2>&1
+0 8 * * * /usr/bin/python3 /opt/ACTIVE/INTERJOB/anofm_health_check.py >> /opt/ACTIVE/INFRA/LOGS/anofm_health.log 2>&1
+=== DONE TASK2 ===
