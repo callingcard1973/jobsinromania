@@ -1,0 +1,10 @@
+# OPENCODE TRADING ROBOT — ignore local data + secrets
+DATA/offers_ledger.jsonl
+DATA/price_book.json
+DATA/raw_emails/
+DATA/drafts/
+DATA/*.json
+DATA/*.db
+DATA/__pycache__/
+__pycache__/
+*.pyc
