@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""DEPRECATED — inlocuit de grain_buyer_match.py si fv_buyer_match.py.
-
-Fara scor, fara kw_match, fara praguri:
-  - Cereale: CAEN 4621 direct
-  - F&V:     CAEN 4631 + fabrici conserve
+"""REDIRECT — vezi grain_buyer_match.py (cereale) sau fv_buyer_match.py (F&V).
 
 Usage:
   python GRAIN/grain_buyer_match.py [--csv]
@@ -12,7 +8,7 @@ Usage:
 import sys
 
 def main():
-    print("Acest script este DEPRECATED.")
+    print("Acest script a fost inlocuit.")
     print("  Cereale: python GRAIN/grain_buyer_match.py [--csv]")
     print("  F&V:     python GRAIN/fv_buyer_match.py [--json]")
     return 0
