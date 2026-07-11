@@ -42,10 +42,13 @@ PLAN 01 07 2026/
 │   ├── CLAUDE.md  ├── CODE/  └── DATA/
 │
 ├── SILOZURI/                         <- DIRECTIA 4: campanie cereale (grau/porumb/orz/naut/floarea-soarelui), 11 judete
-│   ├── CLAUDE.md  ├── CODE/  ├── DATA/  ├── CAMPAIGN/  ├── BUYERS/  └── ANOFM/
+│   ├── CLAUDE.md  ├── CODE/  ├── DATA/  ├── CAMPAIGN/  ├── BUYERS/  ├── ANOFM/  └── .claude/ (silozuri-orchestrator)
 │
 ├── TRADING ROBOT FRUIT/              <- DIRECTIA 5: desk automat trading agro (F&V + cereale, acelasi ledger)
 │   ├── CLAUDE.md  ├── CODE/  ├── DATA/  ├── PUBLISHING_ROBOT/  └── .claude/ (fv-trading-orchestrator)
+│
+├── THE AGENCY - CODING AGENTS/       <- harness auxiliar: 14 agenti agency-* (seo/frontend/backend/dba/devops/appsec/etc.)
+│                                        pentru munca de coding/agency; rutat de orchestrator, nu e directie de business
 │
 ├── _ALTE_DOMENII/                    <- nu fac parte din cele 3 directii (land/agro/web/news):
 │   │  AGROEVOLUTION, TERENURI, PROPRIETATI RURALE, WEB, REVISTA PRESEI, SEO, etc. (21)
@@ -90,8 +93,8 @@ Detaliile fiecareia in `<DIRECTIE>/CLAUDE.md`.
 | Masina | IP | Rol | Acces |
 |--------|----|----|-------|
 | Laptop | localhost | sursa cod, D:\MEMORY | local |
-| **raspibig** | 192.168.100.21 | hub automatizare: EURES, COOP_EXPORT, ISCIR campaigns, dashboard 8096, orchestrator email, DB `public.companies` | `plink -batch -pw 'RASPI_PW_REDACTED' tudor@192.168.100.21` |
-| **raspi** | 192.168.100.20 | nod scraper: ANOFM 7/7, scrapere, IMAP purge; ARE root (`echo 'RASPI_PW_REDACTED' \| sudo -S`) | `plink -batch -pw 'RASPI_PW_REDACTED' tudor@192.168.100.20` |
+| **raspibig** | 192.168.100.21 | hub automatizare: EURES, COOP_EXPORT, ISCIR campaigns, dashboard 8096, orchestrator email, DB `public.companies` | `ssh -i ~/.ssh/id_raspibig tudor@192.168.100.21` |
+| **raspi** | 192.168.100.20 | nod scraper: ANOFM 7/7, scrapere, IMAP purge; ARE root (`ssh -i ~/.ssh/id_raspibig tudor@192.168.100.20` apoi `echo '<pw>' \| sudo -S`) | `ssh -i ~/.ssh/id_raspibig tudor@192.168.100.20` |
 | A2 Hosting | nl1-cl8 | 34 domenii cPanel (demo-site ISCIR, site-uri employer); fara root | cPanel API |
 
 DB productie: PostgreSQL 15.17 pe raspibig:5432, `interjob_master`. User `tudor` (~/.pgpass).
@@ -128,7 +131,7 @@ harness-urile de domeniu deja existente din Iunie (NU le reconstrui). Detalii in
 - Arhiveaza inainte de stergere; niciodata `rm` direct.
 - Nu publica date personale (nume/telefon/email) in fisiere sync-uite pe GitHub.
 - **DNC unificat: sursa canonica = raspibig** `/opt/ACTIVE/EMAIL/CAMPAIGNS/dnc_list.csv` + `dnc_bounces.txt` + `SCRIPTS/SHARED/dnc_utils.py` + `PROCESSORS/merge_dnc.py`. Laptopul tine un mirror in `CODE/02_dnc_suppression/` (sync script + pointer); nu mentine DNC separat per directie.
-- **Dubla pipelina cereale (OPEN):** SILOZURI (CAMPAIGN outbound 11 judete) si TRADING ROBOT FRUIT (7.934 comercianti CAEN 4621 in ledger) se suprapun. Pana la unificare, marcheaza clar care ruleaza pentru ce audienta; nu trimite acelasi lead din ambele.
+- **Dubla pipelina cereale (GATED pe Tudor, 2026-07-10):** suprapunere masurata = 153 emailuri deja contactate de SILOZURI in audienta TRADING (119/149 din CODA_cereale_bucket_B; CUI: 3.851/4.653 din call-list in baza 7.919 CAEN 4621). Garda exista: `SILOZURI/CODE/cereale_cross_suppression.py` (ruleaza cu `--refresh-raspibig` inainte de ORICE send cereale; suppression list `SILOZURI/DATA/CEREALE_SUPPRESSION_cross_pipeline.txt`). Canonic propus in `CEREALE_CANONICAL.md`: SILOZURI = contact (outbound), TRADING = semnal (ledger/price book, fara contact direct). Decizia finala + soarta campaniilor TRADING_CEREALE_B* (disabled) = Tudor.
 
 ---
 
@@ -140,4 +143,6 @@ harness-urile de domeniu deja existente din Iunie (NU le reconstrui). Detalii in
 | 2026-06-30 | Harness inspect: regenerated both INDEX.md from disk; added frontmatter to 6 A2/ops agents; marked 18 imported agents as unwired (router uses only the 3 leads + plan-router). |
 | 2026-06-30 | SILOZURI mutat top-level + campanie cereale 11 judete LIVE (yahoo->Gmail, non-yahoo->Brevo); reguli noi (yahoo-gmail, gmail-pw-source=raspibig, sender --daily-cap, enrich-email-dead-end); laptop populat cu interjob_master local. |
 | 2026-06-30 | DEAL SONOMA: plasare 35 muncitori textile/saci PP. Skill nou `worker-placement-outreach` (cablat in manpower-lead) + campanii SONOMA_FABRICI/SONOMA_AGENTII in orchestrator (gentle Gmail 50/zi). Cititor zero-token `extrage_candidati_sonoma_pdf.py`. Regula noua `mailul oficial intotdeauna`. |
+| 2026-07-10 | Harness inspect (audit): frontmatter YAML adaugat la 9 fisiere fara name/description (4 agenti `cereal-*` + 3 skills `cereal-*` + `publishing-robot` in TRADING ROBOT FRUIT; `dnc-mailbox-scan` la root). CLAUDE.md aliniat la teren: adaugat `SILOZURI/.claude/` (silozuri-orchestrator) + `THE AGENCY - CODING AGENTS` (14 agenti agency-*) in structura. Nota: harness-ul `cereal-*` din TRADING ramane unwired (gated pe decizia dubla-pipelina cereale). |
 | 2026-07-01 | Aliniere harta la teren: CLAUDE.md trecut de la 3 la 5 directii (adaugat SILOZURI + TRADING ROBOT FRUIT top-level). Routing orchestrator extins cu directiile 4-5 + PUBLISHING_ROBOT. `CODE/02_dnc_suppression/` populat cu pointer + sync script spre DNC canonical raspibig. Nota OPEN: dubla pipelina cereale (SILOZURI vs TRADING ROBOT FRUIT) de unificat. |
+| 2026-07-11 | **OPENCODE TRADING ROBOT** — cod refactorizat doua desk-uri distincte (FV/CODE + GRAIN), buyer matcheri separati fara scoruri. Evaluare: 7 versiuni de cod grain coexistente pe raspibig (OPENCODE, Claude, Devin, legacy, systemd), nimic nu se suprascrie. Vezi `OPENCODE TRADING ROBOT/CLAUDE.md` sectiunea EVALUARE. |
