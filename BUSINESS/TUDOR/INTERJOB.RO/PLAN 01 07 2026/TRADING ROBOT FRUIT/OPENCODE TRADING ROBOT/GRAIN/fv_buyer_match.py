@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Match FV offers (ledger) to CAEN 4631 traders + fabrici conserve. Fara scoruri.
-
-Usage:
-  python GRAIN/fv_buyer_match.py              # report
-  python GRAIN/fv_buyer_match.py --json        # write matched deals
-"""
-import csv
-import json
-import os
-import sys
+import csv, json, os, sqlite3, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 for p in (os.path.dirname(HERE), HERE):
@@ -16,25 +7,28 @@ for p in (os.path.dirname(HERE), HERE):
         sys.path.insert(0, p)
 import config as CFG
 
-BUYERS_FILE = os.path.join(CFG.DATA, "producers_by_caen", "enriched_final.csv")
+VEGFRU_DB = os.path.join(CFG.DATA, "VegFru.db")
 CONSERVE_FILE = os.path.join(os.path.dirname(os.path.dirname(CFG.ROOT)),
                               "COOP GOSPODARII DE ALTADATA", "DATA",
                               "DATE_fabrici_conserve_cerere.csv")
 OUTPUT_JSONL = os.path.join(CFG.DATA, "fv_matched_deals.jsonl")
 
 
-def load_buyers_caen4631():
-    path = BUYERS_FILE
+def load_buyers_from_db():
+    path = VEGFRU_DB
     if not os.path.exists(path):
-        path = os.path.join(CFG.DATA, "enriched_final.csv")
-    if not os.path.exists(path):
+        print("ERROR: %s not found (run GRAIN/_PIPELINE/enrich_to_db.py first)" % path, file=sys.stderr)
         return []
-    buyers = []
-    with open(path, encoding="utf-8-sig") as f:
-        for r in csv.DictReader(f):
-            if r.get("caen", "").strip() == "4631":
-                buyers.append(r)
-    return buyers
+    con = sqlite3.connect(path)
+    cur = con.cursor()
+    cur.execute("SELECT firma_cui, firma_nume, email_principal, telefon_fix, "
+                "caen_principal, oras, judet, certificari_gmp, insolventa, "
+                "rating_financiar, valoare_contracte "
+                "FROM trading_partners WHERE caen_principal='4631'")
+    cols = [d[0] for d in cur.description]
+    rows = [dict(zip(cols, r)) for r in cur.fetchall()]
+    con.close()
+    return rows
 
 
 def load_fabrici_conserve():
@@ -46,20 +40,27 @@ def load_fabrici_conserve():
     with open(path, encoding="utf-8") as f:
         for r in csv.DictReader(f):
             fabrici.append({
-                "cui": "",
-                "name": r.get("factory_name", "?"),
-                "email": r.get("email", ""),
-                "phone": r.get("phone", ""),
-                "city": r.get("city", ""),
-                "website": r.get("website", ""),
-                "products": r.get("products", ""),
-                "raw_demand": r.get("raw_demand", ""),
+                "firma_cui": "",
+                "firma_nume": r.get("factory_name", "?"),
+                "email_principal": r.get("email", ""),
+                "telefon_fix": r.get("phone", ""),
+                "caen_principal": "FABRICA",
+                "oras": r.get("city", ""),
+                "judet": "",
+                "certificari_gmp": "",
+                "insolventa": "",
+                "rating_financiar": "",
+                "valoare_contracte": "",
+                "buyer_source": "fabrica_conserve",
+                "buyer_products": r.get("products", "") or r.get("raw_demand", ""),
             })
     return fabrici
 
 
 def load_fv_offers():
     path = os.path.join(CFG.DATA, "offers_ledger.jsonl")
+    if not os.path.exists(path):
+        path = os.path.join(os.path.dirname(CFG.ROOT), "DATA", "offers_ledger.jsonl")
     if not os.path.exists(path):
         print("  offers_ledger.jsonl not found", file=sys.stderr)
         return []
@@ -79,12 +80,14 @@ def main():
     do_json = "--json" in sys.argv
 
     offers = load_fv_offers()
-    buyers_4631 = load_buyers_caen4631()
+    buyers_4631 = load_buyers_from_db()
     fabrici = load_fabrici_conserve()
 
-    print("=== FV Buyer Match ===")
+    print("=== FV Buyer Match (SQLite) ===")
     print("  Oferte FV (ledger):  %d" % len(offers))
-    print("  Cumparatori CAEN 4631: %d" % len(buyers_4631))
+    print("  Cumparatori CAEN 4631 (VegFru.db): %d" % len(buyers_4631))
+    enriched = sum(1 for b in buyers_4631 if b["certificari_gmp"] or b["insolventa"] or b["rating_financiar"])
+    print("    din care cu date enrich: %d" % enriched)
     print("  Fabrici conserve:     %d" % len(fabrici))
     print()
 
@@ -113,14 +116,18 @@ def main():
                 "currency": currency,
                 "origin": origin,
                 "supplier_email": supplier_email,
-                "cui": b.get("cui", ""),
-                "buyer": b.get("name") or b.get("factory_name") or "?",
-                "buyer_email": b.get("email", ""),
-                "buyer_phone": b.get("phone", ""),
-                "buyer_source": "caen4631" if b.get("caen") == "4631" else "fabrica_conserve",
-                "buyer_city": b.get("city") or b.get("city", ""),
-                "buyer_website": b.get("website", ""),
-                "buyer_products": b.get("products") or b.get("raw_demand") or "",
+                "cui": b.get("firma_cui", ""),
+                "buyer": b.get("firma_nume", "?"),
+                "buyer_email": b.get("email_principal", ""),
+                "buyer_phone": b.get("telefon_fix", ""),
+                "buyer_source": b.get("buyer_source", "caen4631"),
+                "buyer_city": b.get("oras", ""),
+                "buyer_judet": b.get("judet", ""),
+                "gmp_certificat": "Y" if b.get("certificari_gmp") else "",
+                "insolventa": b.get("insolventa", ""),
+                "rating_financiar": b.get("rating_financiar", ""),
+                "valoare_contracte": b.get("valoare_contracte", ""),
+                "buyer_products": b.get("buyer_products") or "",
             }
             lines_out.append(deal)
 

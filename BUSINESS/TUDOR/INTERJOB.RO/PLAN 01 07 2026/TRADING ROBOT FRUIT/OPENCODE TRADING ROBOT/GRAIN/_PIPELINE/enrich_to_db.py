@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""Pipeline enrich: citeste enriched_final.csv + toate sursele _ENRICH/, 
-merge dupa CUI, scrie in grain.db (CAEN 4621/0111) si VegFru.db (CAEN 4631/0113).
-
-Coloane tinta: 50 (model trading_partners_50columns.csv).
-
-Usage:
-  python GRAIN/_PIPELINE/enrich_to_db.py
-  python GRAIN/_PIPELINE/enrich_to_db.py --quick   # doar GMP+ si DSVSA
-"""
 import csv, json, os, re, sqlite3, sys, time
 from collections import defaultdict
 
@@ -18,6 +9,8 @@ ENRICH = os.path.join(DATA, "_ENRICH")
 BASE_CSV = os.path.join(DATA, "enriched_final.csv")
 GRAIN_DB = os.path.join(DATA, "grain.db")
 VEGFRU_DB = os.path.join(DATA, "VegFru.db")
+GTR_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(HERE)))),
+                        "GRAIN TRADING ROBOT", "DATA")
 
 DEBUG = "--debug" in sys.argv
 QUICK = "--quick" in sys.argv
@@ -27,10 +20,7 @@ def log(msg):
     print("  %s" % msg)
 
 
-# --- Incarcare surse enrich ---
-
 def load_csv(path, key_col="cui", alt_key=None):
-    """Load CSV by key_col, return dict key->row. alt_key = fallback column."""
     if not os.path.exists(path):
         log("  (nu exista: %s)" % os.path.basename(path))
         return {}
@@ -47,7 +37,6 @@ def load_csv(path, key_col="cui", alt_key=None):
 
 
 def load_master_csv(path):
-    """Load CUMPARATORI_MASTER.csv (keyed on cui)."""
     if not os.path.exists(path):
         return {}
     out = {}
@@ -66,7 +55,7 @@ def norm_name(n):
 
 
 def match_by_name(rows, name_key, target, target_name_key="firma"):
-    """Fallback match by normalized name for rows without CUI."""
+    """Fallback match by normalized name. Writes CUI to rows + returns matched rows."""
     name_map = {}
     for k, v in target.items():
         nm = norm_name(v.get(target_name_key, ""))
@@ -83,10 +72,25 @@ def match_by_name(rows, name_key, target, target_name_key="firma"):
     return matched
 
 
-# --- Constructie rand 50 coloane ---
+def match_sellers_by_name(base_rows, sellers):
+    """Match sellers (VANZATORI_MASTER) by name when CUI missing."""
+    name_map = {}
+    for k, v in sellers.items():
+        nm = norm_name(v.get("nume", ""))
+        if nm:
+            name_map[nm] = k
+    matched = 0
+    for r in base_rows:
+        if r.get("cui") and r["cui"] in sellers:
+            continue
+        nm = norm_name(r.get("name", ""))
+        if nm in name_map:
+            r["cui"] = name_map[nm]
+            matched += 1
+    return matched
 
-def build_partner_row(base_row, master_row, enrich_sources):
-    """Merge base + master + enrichment into one 50-col dict."""
+
+def build_partner_row(base_row, master_row, enrich_sources, seller_row=None):
     row = {}
 
     # Identitate
@@ -120,12 +124,20 @@ def build_partner_row(base_row, master_row, enrich_sources):
     # Trading type
     cui = row["firma_cui"]
     caen = row["caen_principal"]
-    if caen in ("4621", "4631"):
+    if seller_row:
+        row["tip_trader"] = "Seller"
+        row["valoare_contracte"] = seller_row.get("valoare_semnal") or ""
+        if not row["telefon_fix"]:
+            row["telefon_fix"] = seller_row.get("telefon") or ""
+        if not row["email_principal"]:
+            row["email_principal"] = seller_row.get("email") or ""
+    elif caen in ("4621", "4631"):
         row["tip_trader"] = "Buyer"
     elif caen in ("0111", "0113"):
         row["tip_trader"] = "Seller"
     else:
         row["tip_trader"] = "Unknown"
+
     row["tip_produs"] = "Cereal" if caen == "4621" else "LegumeFructe" if caen in ("4631", "0113") else "Mix"
     row["segment"] = master_row.get("marime") or ""
     if caen == "4621":
@@ -161,7 +173,8 @@ def build_partner_row(base_row, master_row, enrich_sources):
 
     # Enrichment: licitatii SEAP
     lic = enrich_sources.get("licitatii", {}).get(cui)
-    row["valoare_contracte"] = (lic.get("valoare") if lic else master_row.get("valoare") or "")
+    if lic:
+        row["valoare_contracte"] = lic.get("valoare") or row.get("valoare_contracte", "")
 
     # Enrichment: MFinante
     mf = enrich_sources.get("mfinante", {}).get(cui)
@@ -173,17 +186,34 @@ def build_partner_row(base_row, master_row, enrich_sources):
         row["platitor_tva"] = ""
 
     # Capacitati (MADR)
-    madr = enrich_sources.get("madr_spatii", {}).get(cui)
+    madr = enrich_sources.get("madr_spatii", {}).get(cui) or enrich_sources.get("madr_depozite", {}).get(cui)
     if madr:
-        row["capacitate_stocare"] = madr.get("capacitate", "")
-    else:
-        row["capacitate_stocare"] = ""
+        row["capacitate_stocare"] = madr.get("capacitate", "") or madr.get("adresa_unitate", "")
 
     # APIA
     apia = enrich_sources.get("apia", {}).get(cui)
     if apia:
         row["suprafata_agricola"] = apia.get("suprafata", "")
-        row["valoare_contracte"] = apia.get("valoare", row.get("valoare_contracte", ""))
+        if not row.get("valoare_contracte") or row["valoare_contracte"] == "":
+            row["valoare_contracte"] = apia.get("valoare", "")
+
+    # AFIR
+    afir = enrich_sources.get("afir", {}).get(cui)
+    if afir:
+        if not row.get("valoare_contracte") or row["valoare_contracte"] == "":
+            row["valoare_contracte"] = afir.get("valoare_contractata_eur", "")
+
+    # ANOFM — firme care recruteaza activ
+    anofm = enrich_sources.get("anofm", {}).get(cui)
+    if anofm:
+        if not row["numar_angajati"]:
+            row["numar_angajati"] = anofm.get("joburi_active", "")
+
+    # Firme noi (ONRC recent)
+    fn = enrich_sources.get("firme_noi", {}).get(cui)
+    if fn:
+        row["inregistrare_firma"] = fn.get("data_inregistrare") or fn.get("an") or ""
+        row["capital_social"] = fn.get("capital_social") or fn.get("capital") or row["capital_social"]
 
     # Defaults
     row["suprafata_irie"] = ""
@@ -202,6 +232,10 @@ def build_partner_row(base_row, master_row, enrich_sources):
     row["piata_principala"] = "national"
     row["geo_target"] = "national"
     row["sursa"] = base_row.get("source", "")
+    if enrich_sources.get("anofm", {}).get(cui):
+        row["sursa"] = (row["sursa"] + " | ANOFM").strip(" |")
+    if enrich_sources.get("firme_noi", {}).get(cui):
+        row["sursa"] = (row["sursa"] + " | ONRC").strip(" |")
     row["ultima_actualizare"] = time.strftime("%Y-%m-%d")
 
     return row
@@ -232,7 +266,7 @@ def insert_rows(con, rows):
     cur = con.cursor()
     placeholders = ",".join(["?" for _ in FIELDS_50])
     cols = ",".join(FIELDS_50)
-    sql = f"INSERT OR REPLACE INTO trading_partners ({cols}) VALUES ({placeholders})"
+    sql = "INSERT OR REPLACE INTO trading_partners (%s) VALUES (%s)" % (cols, placeholders)
     vals = [[r.get(c, "") for c in FIELDS_50] for r in rows]
     cur.executemany(sql, vals)
     con.commit()
@@ -243,19 +277,31 @@ def main():
     t0 = time.time()
     print("=== Pipeline Enrich -> 50 coloane ===")
 
-    # 1. Incarca enriched_final.csv
     base = []
     with open(BASE_CSV, encoding="utf-8-sig") as f:
         for r in csv.DictReader(f):
             base.append(r)
     print("  Base enriched_final.csv: %d randuri" % len(base))
 
-    # 2. Incarca master
     master_path = os.path.join(ENRICH, "CUMPARATORI_MASTER.csv")
     master = load_master_csv(master_path)
     print("  Master CUMPARATORI_MASTER: %d CUI" % len(master))
 
-    # 3. Incarca sursele de enrich (CUI-keyed)
+    # Load VANZATORI_MASTER
+    vanz_paths = []
+    for p in (os.path.join(ENRICH, "VANZATORI_MASTER.csv"),
+              os.path.join(GTR_DATA, "VANZATORI_MASTER.csv")):
+        if os.path.exists(p):
+            vanz_paths.append(p)
+    sellers = {}
+    for p in vanz_paths:
+        more = load_csv(p, key_col="cui")
+        sellers.update(more)
+    if sellers:
+        print("  VANZATORI_MASTER: %d CUI (from %s)" % (len(sellers), os.path.basename(vanz_paths[0])))
+    else:
+        print("  VANZATORI_MASTER: nu exista")
+
     sources = {}
     source_files = {
         "gmp": "enrich_certificari.csv",
@@ -271,21 +317,31 @@ def main():
         "firme_noi": "enrich_firme_noi.csv",
         "gmaps": "enrich_gmaps.csv",
         "email_web": "enrich_email_web.csv",
+        "anofm": "enrich_anofm_activi.csv",
+        "comext": "enrich_comext_flows.csv",
     }
     for key, fname in source_files.items():
         fpath = os.path.join(ENRICH, fname)
         alt = "cui_master" if key == "gmp" else ("cui" if key == "brm" else None)
+        if key in ("apia", "afir"):
+            fp2 = os.path.join(GTR_DATA, fname)
+            if os.path.exists(fp2):
+                fpath = fp2
+        # comext flows are product-level, not CUI-keyed
         sources[key] = load_csv(fpath, alt_key=alt)
         cnt = len(sources[key])
         if cnt:
             log("  %s: %d CUI" % (fname, cnt))
 
-    # 4. Fallback match by name for GMP+ rows without CUI
     gmp_matched = match_by_name(base, "name", sources["gmp"], "firma")
     if gmp_matched:
         log("  Name-matched GMP+ -> CUI: %d" % gmp_matched)
 
-    # 5. Construieste randuri 50 coloane pentru fiecare firma de baza
+    if sellers:
+        seller_matched = match_sellers_by_name(base, sellers)
+        if seller_matched:
+            log("  Name-matched VANZATORI -> CUI: %d" % seller_matched)
+
     rows_50 = []
     caen_grain = {"4621", "0111"}
     caen_veg = {"4631", "0113"}
@@ -296,7 +352,8 @@ def main():
     for br in base:
         cui = (br.get("cui") or "").strip()
         mr = master.get(cui, {})
-        row = build_partner_row(br, mr, sources)
+        sr = sellers.get(cui) if sellers else None
+        row = build_partner_row(br, mr, sources, seller_row=sr)
         rows_50.append(row)
 
         caen = row["caen_principal"]
@@ -304,13 +361,11 @@ def main():
             grain_rows.append(row)
         elif caen in caen_veg:
             veg_rows.append(row)
-        # else: skip (other CAEN)
 
     print("\n  Randuri 50 coloane construite: %d" % len(rows_50))
     print("    Grain (CAEN 4621/0111): %d" % len(grain_rows))
     print("    VegFru (CAEN 4631/0113): %d" % len(veg_rows))
 
-    # 6. Scrie in SQLite
     con_g = sqlite3.connect(GRAIN_DB)
     con_v = sqlite3.connect(VEGFRU_DB)
     n_g = insert_rows(con_g, grain_rows)
@@ -320,7 +375,6 @@ def main():
     print("\n  Scris in grain.db: %d parteneri" % n_g)
     print("  Scris in VegFru.db: %d parteneri" % n_v)
 
-    # 7. Optional: export CSV complet
     out_csv = os.path.join(DATA, "trading_partners_50cols.csv")
     with open(out_csv, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS_50)
