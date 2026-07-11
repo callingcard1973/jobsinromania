@@ -5,6 +5,25 @@
 floarea-soarelui, rapita)**. Cod canonic aici; portat din DROID (claude) +
 `TRADING ROBOT FRUIT/CODE` (cereale), refactorizat ca doua desk-uri distincte.
 
+## EVALUARE: multiple versiuni de cod in paralel (2026-07-11)
+
+Acest cod (`OPENCODE TRADING ROBOT/`) este UNA din versiunile in evaluare.
+Pe **raspibig** exista 6 locatii cu cod grain/trading, fiecare scris de
+context/tool diferit, cu structura si stil propriu:
+
+| Cale (pe .21) | Sursa | Ce contine |
+|---------------|-------|------------|
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/CODE/` | FV cron canonic | fv_email_poller, fv_offer_extractor, fv_publish_all, etc. |
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/GRAIN/` | OPENCODE (noi) | doar 4 buyer-matcher scripturi |
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/grain_opencode/` | OPENCODE (scratch) | pipeline + cereale_intake/benchmark/spread + config.py |
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/GRAIN_DESK_CLAUDE/` | Claude | grain_deal_detector, matif carry, dash, vessel lineup |
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/grain_devin/` | Devin | versiune Devin |
+| `/opt/ACTIVE/TRADING_ROBOT_FRUIT/grain_legacy/` | old | versiune veche |
+| `/opt/ACTIVE/CEREAL_TRADING_ROBOT/` | systemd services | cereal-*-fetcher, schema, CODE/ |
+
+Toate sunt pastrate. Nimic nu se suprascrie sau sterge pana la decizia
+finala Tudor. Modificarile din aceasta sesiune raman LOCAL + git.
+
 ## REGULA HARD: grain si fruit/veg sunt DIFERITE
 
 Nu se amesteca. Tradeaza diferit:
