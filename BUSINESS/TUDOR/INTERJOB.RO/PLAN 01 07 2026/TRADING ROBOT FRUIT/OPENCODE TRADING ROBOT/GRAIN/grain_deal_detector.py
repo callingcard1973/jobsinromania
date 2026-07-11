@@ -1,18 +1,11 @@
 #!/usr/bin/env python3
-import csv, json, os, re, sqlite3, sys, time, urllib.parse, urllib.request
+import csv, json, os, re, sys, urllib.parse, urllib.request
 from datetime import datetime, timezone
+from common import setup, data_path, log
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-for p in (os.path.dirname(HERE), HERE):
-    if p not in sys.path:
-        sys.path.insert(0, p)
-import config as CFG
-
-DATA = CFG.DATA
-PORT_CSV = os.path.join(DATA, "cereale_port_prices.csv")
-GRAIN_DB = os.path.join(DATA, "grain.db")
-PENDING = os.path.join(DATA, "grain_alerts_pending.jsonl")
-TG_CFG_PATH = CFG.TG_CEREALE_CFG
+CFG = setup()
+PORT_CSV = data_path("cereale_port_prices.csv")
+PENDING = data_path("grain_alerts_pending.jsonl")
 
 N2_PCT = float(os.environ.get("GRAIN_N2_PCT", "-3"))
 N2_TONS = float(os.environ.get("GRAIN_N2_TONS", "500"))
@@ -151,11 +144,13 @@ def build_alert(offer, bench):
 def send_telegram(text):
     token = os.environ.get("TG_CUMPARLEGUME_TOKEN")
     chat = os.environ.get("TG_CUMPARLEGUME_CHAT")
-    tg_path = TG_CFG_PATH if os.path.exists(TG_CFG_PATH) else None
-    if not tg_path:
-        alt = os.path.join(DATA, "telegram_cumparlegume.json")
-        if os.path.exists(alt):
-            tg_path = alt
+    tg_path = None
+    for p in (data_path("telegram_cumparlegume.json"),
+              data_path("telegram_cereale.json"),
+              os.path.join(os.path.dirname(CFG.ROOT), "DATA", "telegram_cumparlegume.json")):
+        if os.path.exists(p):
+            tg_path = p
+            break
     if tg_path:
         with open(tg_path, encoding="utf-8") as f:
             c = json.load(f)
