@@ -151,8 +151,13 @@ def build_alert(offer, bench):
 def send_telegram(text):
     token = os.environ.get("TG_CUMPARLEGUME_TOKEN")
     chat = os.environ.get("TG_CUMPARLEGUME_CHAT")
-    if os.path.exists(TG_CFG_PATH):
-        with open(TG_CFG_PATH, encoding="utf-8") as f:
+    tg_path = TG_CFG_PATH if os.path.exists(TG_CFG_PATH) else None
+    if not tg_path:
+        alt = os.path.join(DATA, "telegram_cumparlegume.json")
+        if os.path.exists(alt):
+            tg_path = alt
+    if tg_path:
+        with open(tg_path, encoding="utf-8") as f:
             c = json.load(f)
         token = token or c.get("token")
         chat = chat or c.get("chat_id")
