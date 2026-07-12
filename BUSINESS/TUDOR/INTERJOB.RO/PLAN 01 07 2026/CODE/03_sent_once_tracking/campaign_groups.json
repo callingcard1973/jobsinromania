@@ -1,0 +1,35 @@
+{
+  "_comment": "Campanie -> grup de subiect. Un lead se contacteaza o singura data per grup. Campaniile care nu apar aici primesc grup = numele lor (dedup doar cu ele insele = comportament actual, sigur).",
+  "groups": {
+    "CEREALE": ["SILOZURI", "SILOZURI_CEREALE_11JUD"],
+    "DEFICIT_JOBS": [
+      "DEFICIT_OCUPATII",
+      "FACTORY_RO",
+      "SONOMA",
+      "SME_DEFICIT",
+      "DEFICIT_CONSTRUCTII",
+      "DEFICIT_HORECA",
+      "DEFICIT_PRODUCTIE",
+      "DEFICIT_TRANSPORT",
+      "BDA_ARHITECTI",
+      "DEFICIT 7 Ocupatii - Gmail Yahoo",
+      "DEFICIT 7 Ocupatii - Gmail Yahoo 1065",
+      "DEFICIT 7 Ocupatii - Brevo FactoryJobs (GATED)"
+    ],
+    "COOP_FV": [
+      "COOP_EXPORT",
+      "SUPERMARKETURI",
+      "EXPORT_AT",
+      "EXPORT_BE",
+      "EXPORT_FR",
+      "EXPORT_ES",
+      "EXPORT_PEPENI",
+      "PRIMARII"
+    ],
+    "EURO_DEALERS": [
+      "EURO_DEALERS_FRANCE",
+      "EURO_DEALERS_GERMANY",
+      "EURO_DEALERS_SOUTHCENTRALEU"
+    ]
+  }
+}
