@@ -113,6 +113,27 @@ class BackfillTest(unittest.TestCase):
         self.assertTrue(led.already_sent("z@x.ro", group="DEFICIT_JOBS"))
         led.close()
 
+    def test_backfill_many_cross_machine_dedup(self):
+        # Same lead sent on two machines collapses to one ledger row.
+        tmp = tempfile.mkdtemp()
+        for machine, camp, email in [("raspibig", "SILOZURI", "shared@x.ro"),
+                                     ("raspi", "DEFICIT_7OCUPATII", "shared@x.ro"),
+                                     ("raspi", "DEFICIT_7OCUPATII", "only_raspi@x.ro")]:
+            d = os.path.join(tmp, machine, camp, "DATA")
+            os.makedirs(d, exist_ok=True)
+            p = os.path.join(d, "sent.json")
+            existing = json.load(open(p)) if os.path.exists(p) else {"sent": []}
+            existing["sent"].append(email)
+            json.dump(existing, open(p, "w"))
+        db = os.path.join(tmp, "l.sqlite")
+        res = bf.backfill_many([os.path.join(tmp, "raspibig"),
+                                os.path.join(tmp, "raspi")], db, dry_run=False)
+        self.assertEqual(set(res["per_base"]),
+                         {os.path.join(tmp, "raspibig"), os.path.join(tmp, "raspi")})
+        led = SentOnceLedger(db)
+        self.assertEqual(led.stats()["unique_emails"], 2)
+        led.close()
+
     def test_dry_run_writes_nothing(self):
         tmp = tempfile.mkdtemp()
         base = os.path.join(tmp, "CAMPAIGNS", "C", "DATA")

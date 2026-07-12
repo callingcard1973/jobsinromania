@@ -31,6 +31,15 @@ Doar stdlib (sqlite3/json/csv) — ruleaza direct pe raspibig, fara pip.
 python3 backfill_from_sentjson.py --base /opt/ACTIVE/EMAIL/CAMPAIGNS --dry-run
 python3 backfill_from_sentjson.py --base /opt/ACTIVE/EMAIL/CAMPAIGNS
 
+# 1b) CROSS-MASINA: sent-tracking-ul e per-masina. ANOFM + DEFICIT trimit de pe
+#     raspi (.20), restul de pe raspibig (.21). `--base` e repetabil ca ledgerul
+#     sa agrege ambele (masurat 2026-07-12: audienta DEFICIT de pe raspi avea 226
+#     adrese deja contactate de pe raspibig, 203 in acelasi grup DEFICIT_JOBS).
+python3 backfill_from_sentjson.py \
+    --base /mnt/raspibig/opt/ACTIVE/EMAIL/CAMPAIGNS \
+    --base /mnt/raspi/opt/ACTIVE/EMAIL/CAMPAIGNS \
+    --db /opt/ACTIVE/EMAIL/CAMPAIGNS/global_sent_ledger.sqlite
+
 # 2) filtrare inainte de campanie (nu inregistreaza)
 python3 filter_recipients.py --campaign SILOZURI_CEREALE_11JUD \
     --in leads.csv --out leads_dedup.csv --cooldown-days 14

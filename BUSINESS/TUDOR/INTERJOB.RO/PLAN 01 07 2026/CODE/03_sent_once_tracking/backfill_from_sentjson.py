@@ -104,16 +104,37 @@ def backfill(base, db_path, pattern="**/*sent*.json", dry_run=False):
     }
 
 
+def backfill_many(bases, db_path, pattern="**/*sent*.json", dry_run=False):
+    """Backfill one ledger from several campaign roots (e.g. raspi + raspibig).
+
+    The unique index in the ledger dedups identical rows, so overlapping sends
+    recorded on both machines collapse to a single row.
+    """
+    agg = {"files": 0, "records_seen": 0, "records_inserted": 0,
+           "per_campaign": {}, "per_base": {}, "dry_run": dry_run}
+    for base in bases:
+        res = backfill(base, db_path, pattern=pattern, dry_run=dry_run)
+        agg["files"] += res["files"]
+        agg["records_seen"] += res["records_seen"]
+        agg["records_inserted"] += res["records_inserted"]
+        agg["per_base"][base] = res["records_seen"]
+        for camp, n in res["per_campaign"].items():
+            agg["per_campaign"][camp] = agg["per_campaign"].get(camp, 0) + n
+    return agg
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--base", default="/opt/ACTIVE/EMAIL/CAMPAIGNS",
-                    help="Campaigns root containing per-campaign sent.json files")
+    ap.add_argument("--base", action="append", default=None,
+                    help="Campaigns root with per-campaign sent.json (repeatable "
+                         "for cross-machine: --base raspibig_dir --base raspi_dir)")
     ap.add_argument("--db", default=None, help="Ledger sqlite path (default from env)")
     ap.add_argument("--dry-run", action="store_true", help="Count only, do not write")
     args = ap.parse_args()
     from sent_once import DEFAULT_DB
     db = args.db or DEFAULT_DB
-    res = backfill(args.base, db, dry_run=args.dry_run)
+    bases = args.base or ["/opt/ACTIVE/EMAIL/CAMPAIGNS"]
+    res = backfill_many(bases, db, dry_run=args.dry_run)
     print(json.dumps(res, indent=2, sort_keys=True))
 
 
