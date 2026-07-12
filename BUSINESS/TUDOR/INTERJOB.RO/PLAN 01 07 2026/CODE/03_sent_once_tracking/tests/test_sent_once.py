@@ -98,6 +98,21 @@ class BackfillTest(unittest.TestCase):
         self.assertTrue(led.already_sent("d@x.ro", group="COOP_FV"))
         led.close()
 
+    def test_archive_count_by_date_with_emails_list(self):
+        # Archived files store by_date as per-day counts (int) plus an emails list.
+        tmp = tempfile.mkdtemp()
+        d = os.path.join(tmp, "CAMPAIGNS", "DEFICIT_OCUPATII", "DATA")
+        os.makedirs(d)
+        with open(os.path.join(d, "sent_7ocupatii_brevo.json"), "w") as fh:
+            json.dump({"total": 2, "by_date": {"2026-07-11": 2},
+                       "emails": ["z@x.ro", "y@x.ro"]}, fh)
+        db = os.path.join(tmp, "l.sqlite")
+        res = bf.backfill(os.path.join(tmp, "CAMPAIGNS"), db, dry_run=False)
+        self.assertEqual(res["records_inserted"], 2)
+        led = SentOnceLedger(db)
+        self.assertTrue(led.already_sent("z@x.ro", group="DEFICIT_JOBS"))
+        led.close()
+
     def test_dry_run_writes_nothing(self):
         tmp = tempfile.mkdtemp()
         base = os.path.join(tmp, "CAMPAIGNS", "C", "DATA")
