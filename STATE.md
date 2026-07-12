@@ -1,5 +1,22 @@
 # STATE.md — Live Infrastructure Status
 
+**Last updated: 2026-07-12** (ANOFM contact backfill complet; ingest fix; export Anca Popian admin)
+
+---
+
+## 2026-07-12 SESIUNE ANOFM CONTACTS
+
+| Item | Rezultat |
+|------|----------|
+| Backfill contacte ANOFM | 6808/6986 joburi updatate (97.5%). Inainte: 7 cu telefon. Dupa: 6622 cu telefon (94.7%), 6728 cu email (96.2%) |
+| Script | `/opt/ACTIVE/ANOFM_DATA/backfill_anofm_contacts.py` (raspi .20) — sweep API `mediere.anofm.ro`, 75 pagini, ~3 min |
+| Ramase fara contact | 178 joburi — nu apar in API curent (expirate pe ANOFM, inca active in DB) |
+| Fix ingest | `/opt/ACTIVE/INTERJOB/ingest/ingest_anofm.py` — UPDATE bloc extins cu `phone_2`, `email_2`, pattern `NULLIF(%s,'')`. Backup: `ingest_anofm.py.bak_20260712_contacts` |
+| Backfill job_description | 1484 joburi updatate din CSV `anofm_jobs_20260712_122500.csv` |
+| Export Anca Popian | `D:\MEMORY\BUSINESS\TUDOR\INTERJOB.RO\PLAN 01 07 2026\INTERJOB MANPOWER\DATA\ANCA POPIAN\anca_popian_admin_20260712.csv` — 154 joburi (149 admin fizic Buc+Ilfov + 5 online/remote tara); 148 cu email, 143 cu telefon |
+| ij_jobs active | 6993 (raspi anofm_db) |
+| ANOFM online/remote | Practic inexistent in ANOFM — 0 joburi marcate remote in descriere; 15 cu "online/remote/domiciliu" in titlu dar majority irelevante (ingrijitor, vanzator la domiciliu) |
+
 **Last updated: 2026-06-12 ~17:45 UTC** (Complete: llama-server fixed, crons 36→0 failures, FastAPI routes deployed internal-only; Caddy public proxy removed. See memories `raspibig_fix_session_2026_06_12_afternoon.md` + `fastapi_step2_deployment_2026_06_12.md`)
 **Verification method: Direct psql + systemctl + plink SSH**
 
